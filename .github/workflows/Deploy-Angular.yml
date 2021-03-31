@@ -34,7 +34,7 @@ jobs:
         working-directory: /home/runner/work/Platform/ModernaMediaAngular
         run: |
           npm i
-          ng build --prod && ng run ModernaMediaAngular:server:production
+          ng build --prod
       - name: Deploy to dev-server
         uses: garygrossgarten/github-action-scp@release
         with:
