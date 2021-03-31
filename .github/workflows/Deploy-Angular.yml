@@ -31,7 +31,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: npm install and npm run build:ssr
-        working-directory: /home/runner/work/ModernaMediaAngular
+        working-directory: /home/runner/work/Platform/ModernaMedia/ModernaMediaAngular
         run: |
           npm i
           npm run build
