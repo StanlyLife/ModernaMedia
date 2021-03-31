@@ -1,0 +1,53 @@
+
+name: Angular-Deploy
+
+on:
+  push:
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Cache node modules
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: npm install and npm run build
+        working-directory: /home/runner/work/Platform/Platform/CyberRange/CyberRangeAngular/
+        run: |
+          npm i
+          ng build --prod && ng run ModernaMediaAngular:server:production
+      - name: Deploy to dev-server
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: /home/runner/work/Platform/Platform/CyberRange/CyberRangeAngular/dist/
+          remote: /var/www/ModernaMedia/Angular
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_NAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
+
+      - name: Restart web-dev service
+        uses: garygrossgarten/github-action-ssh@v0.5.0
+        with:
+          command: systemctl restart nginx
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_NAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
