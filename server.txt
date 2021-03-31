@@ -1,0 +1,204 @@
+Oppsett og konfigurering av .Net og Angular på Ubuntu 18.04 server
+
+Ting markert med <forklaring> er plassholdere og må byttes ut med det som gjelder for den gitte VM.
+ 
+Tilgang til server fra powershell
+ssh <brukernavn>@<ip-adresse>
+
+
+Installering av .Net SDK 5[1]
+wget https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+sudo dpkg -i packages-microsoft-prod.deb
+
+
+sudo apt-get update; \
+sudo apt-get install -y apt-transport-https && \
+sudo apt-get update && \
+sudo apt-get install -y dotnet-sdk-5.0
+
+Installering av Nginx[1]
+sudo apt update
+sudo apt install nginx
+
+Sjekk status Nginx[1]
+sudo systemctl status nginx
+
+Opprettelse av filstruktur
+sudo mkdir /var/www
+sudo mkdir /var/www/ModernaMedia
+sudo mkdir /var/www/ModernaMedia/Angular
+sudo mkdir /var/www/ModernaMedia/DotNet
+
+Gi bruker og nginx rettigheter til filstruktur
+sudo chown -R <brukernavn>:www-data /var/www
+
+
+Overfør .Net og Angular filene til servern (f.eks via sftp på Filezilla)
+
+Konfigurer Nginx opp mot Angular[2]
+sudo nano /etc/nginx/conf.d/ModernaMedia.conf
+
+Fyll inn det som står under (dette er kun minimum for at angular skal fungere, må supleres)[2]
+server {
+        listen 0.0.0.0:80;
+        root /var/www/ModernaMedia/Angular;
+        location / {
+                    try_files $uri $uri/ /index.html;
+                   }
+}                                                                                                                     } 
+
+Endre default Konfigen til Nginx så det kun er Angular som lytter på port 80
+sudo nano /etc/nginx/sites-available/default
+
+
+server {
+	listen 81 default_server; #Alle andre porter enn de(n) som brukes av angular er ok                                                                                               listen [::]:81 default_server; 
+
+Sjekk at det ikke er noen feil i konfig filene
+sudo nginx -t
+
+Opprett en service som gjør at .Net serveren starter opp automatisk[1]
+sudo nano /etc/systemd/system/ModernaMedia.service
+
+Fyll inn dette[1]
+[Unit]
+Description=ModernaMedia Net5 service
+[Service]
+WorkingDirectory=/var/www/ModernaMedia/DotNet
+ExecStart=/usr/bin/dotnet/var/www/ModernaMedia/DotNet/ModernaMediaDotNet.dll
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+SyslogIdentifier=ModernaMedia-dotnet
+User=www-data
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+[Install]
+WantedBy=multi-user.target
+
+Registrer servicen[1]
+sudo systemctl enable ModernaMedia.service
+
+Start og kontroller at servicen kjører[1]
+sudo systemctl start ModernaMedia.service
+sudo systemctl status ModernaMedia.service
+
+sudo systemctl restart ModernaMedia.service
+
+curl -I -X GET localhost:5000/api/weatherforecast/get
+
+curl GET http://139.162.201.189:5000/api/weatherforecast/get
+curl GET http://139.162.201.189/api/weatherforecast/get
+
+curl GET localhost:5000/api/weatherforecast/get
+curl GET localhost:5000/api/test/get
+curl GET http://localhost:5000/api/weatherforecast/get
+
+sudo service nginx restart
+
+
+
+
+
+
+etc/nginx/sites-enabled/default
+
+
+server {
+    listen        81;
+    server_name   api.modernamedia.no;
+    root /var/www/ModernaMedia/DotNet;
+    location / {
+        proxy_pass         http://localhost:5000;
+        proxy_http_version 1.1;
+        proxy_set_header   Upgrade $http_upgrade;
+        proxy_set_header   Connection keep-alive;
+        proxy_set_header   Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+    }
+}
+etc/nginx/sites-available/default
+server {
+    listen        81;
+    server_name   api.modernamedia.no;
+    root /var/www/ModernaMedia/DotNet;
+    location / {
+        proxy_pass         http://localhost:5000;
+        proxy_http_version 1.1;
+        proxy_set_header   Upgrade $http_upgrade;
+        proxy_set_header   Connection keep-alive;
+        proxy_set_header   Host $host;
+        proxy_cache_bypass $http_upgrade;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+    }
+}
+
+
+sudo nano /etc/nginx/conf.d/ModernaMedia.conf
+
+
+#server {
+# listen 0.0.0.0:80;
+# server_name ModernaMedia.no;
+# root /var/www/ModernaMedia/Angular/dist/ModernaMediaAngular/browser;
+# location / {
+#  try_files $uri $uri @backend /index.html $uri $uri/;
+# }
+
+# location @backend {
+ # proxy_pass http://your_upstream_config;
+ # proxy_pass http://139.162.201.189:4000;
+#  proxy_pass http://localhost:4000;
+#  proxy_set_header X-Real-IP $remote_addr;
+#  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#  proxy_set_header Host $http_host;
+#  proxy_http_version 1.1;
+#  proxy_set_header X-NginX-Proxy true;
+#  proxy_set_header Upgrade $http_upgrade;
+#  proxy_set_header Connection "upgrade";
+#  proxy_cache_bypass $http_upgrade;
+#  proxy_redirect off;
+#  proxy_set_header X-Forwarded-Proto $scheme;
+# }
+#}
+
+#server {
+# listen 80;
+# server_name www.modernamedia.no # <-- modify here
+# return 301 https://$server_name$request_uri?;
+#}
+
+
+
+#################
+
+
+server {
+    listen 80;
+    server_name modernamedia.no;
+    location / {
+        proxy_pass http://localhost:4000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+Referanser:
+Hidayat Arghandabi “Ubuntu Servers and ASP.net Core Project Deployment using Nginx” lest 01.03.2021 https://medium.com/faun/ubuntu-servers-and-asp-net-core-project-deployment-using-nginx-d9a3a1f6ac82
+NanoDano “Deploy Angular Apps with Nginx” lest 01.03.2021 https://www.devdungeon.com/content/deploy-angular-apps-nginx

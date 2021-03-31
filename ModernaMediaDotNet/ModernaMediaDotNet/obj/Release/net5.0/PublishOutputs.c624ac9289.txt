@@ -1,0 +1,11 @@
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\ModernaMediaDotNet.exe
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\appsettings.json
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\ModernaMediaDotNet.dll
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\ModernaMediaDotNet.deps.json
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\ModernaMediaDotNet.runtimeconfig.json
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\ModernaMediaDotNet.pdb
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\stian\Documents\ENK Stian Håve\Moderna Media\Nettside SSR\ModernaMediaDotNet\ModernaMediaDotNet\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
