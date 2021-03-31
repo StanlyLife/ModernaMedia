@@ -34,7 +34,7 @@ jobs:
         working-directory: /home/runner/work/Platform/ModernaMediaAngular
         run: |
           npm i
-          npm run build:ssr
+          npm run build
       - name: Deploy to prod
         uses: garygrossgarten/github-action-scp@release
         with:
