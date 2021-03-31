@@ -35,10 +35,10 @@ jobs:
         run: |
           npm i
           ng build --prod
-      - name: Deploy to dev-server
+      - name: Deploy to prod
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: /home/runner/work/Platform/Platform/CyberRange/CyberRangeAngular/dist/
+          local: /home/runner/work/Platform/ModernaMediaAngular/dist/
           remote: /var/www/ModernaMedia/Angular
           host: ${{ secrets.HOST }}
           username: ${{ secrets.HOST_NAME }}
