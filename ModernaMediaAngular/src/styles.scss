@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/variables.scss";
+
+*, body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html, body, main { 
+    // height: 100%;
+    width: 100vw;
+    max-width: 100%;
+}
+body { 
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.btn {
+    font-family: montserrat;
+    font-weight: 700;
+    border-radius: 10px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@font-face {
+    font-family: "Lobster";
+    src: local("Lobster") url(./assets/fonts/Lobster-Regular.ttf) format("truetype");
+}
+//Montserrat
+@font-face {
+    font-family: "Montserrat";
+    src: local("Montserrat") url(./assets/fonts/Montserrat-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "MontserratBlack";
+    src: local("Montserrat-black") url(./assets/fonts/Montserrat-Black.ttf) format("truetype");
+}
+//Montserrat alt
+@font-face {
+    font-family: "MontserratAlt";
+    src: local("Montserrat") url(./assets/fonts/MontserratAlternates-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "MontserratAltBlack";
+    src: local("Montserrat") url(./assets/fonts/MontserratAlternates-Black.ttf) format("truetype");
+}
+
+h1 {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    &:active {
+        color: inherit;
+    }
+
+    &:hover {
+        color: $blue;
+    }
+}
