@@ -12,10 +12,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ModernaMediaDotNet {
-
-	public class Startup {
-
+namespace ModernaMediaDotNet
+{
+	public class Startup
+	{
 		public Startup(IConfiguration configuration) {
 			Configuration = configuration;
 		}
@@ -34,6 +34,7 @@ namespace ModernaMediaDotNet {
 		.AllowAnyHeader()
 		.AllowAnyMethod())
 );
+			services.AddSingleton<Models.Test>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

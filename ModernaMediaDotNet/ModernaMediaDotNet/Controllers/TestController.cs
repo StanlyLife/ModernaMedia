@@ -1,34 +1,35 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ModernaMediaDotNet.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ModernaMediaDotNet.Controllers {
-
+namespace ModernaMediaDotNet.Controllers
+{
 	[EnableCors("DefaultCorsPolicy")]
 	[ApiController]
 	[Route("api/[controller]/[action]")]
-	public class Testcontroller : ControllerBase {
-
-		private static readonly string[] Summaries = new[]
-		{
-			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-		};
-
+	public class Testcontroller : ControllerBase
+	{
 		private readonly ILogger<WeatherForecastController> _logger;
+		private readonly Test t;
 
-		public Testcontroller(ILogger<WeatherForecastController> logger) {
+		public Testcontroller(
+			ILogger<WeatherForecastController> logger,
+			Test t
+			) {
 			_logger = logger;
+			this.t = t;
 		}
 
 		[HttpGet]
-		public IEnumerable<string> Get() {
-			List<string> test = new List<string>();
-			test.Add("test");
-			return test;
+		public string Get() {
+			t.IncrementNumber++;
+			return t.IncrementNumber.ToString();
 		}
 	}
 }

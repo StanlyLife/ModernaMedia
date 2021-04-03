@@ -9,30 +9,32 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent implements OnInit {
   title = 'ModernaMediaAngular';
-  text:string = "test"
+  test:string;
+  text:string;
 
   weather$: Observable<any>;
   SampleMessage="Example of Angular Async Pipe";    
   
   constructor(private as: AppService, ) {}
 
-  async ngOnInit() {
-    await this.getWeatherAsyncPipe();
+   ngOnInit() {
+    // await this.getWeatherAsyncPipe();
     //non async
-    this.as.getWeather().subscribe( res =>
+    var t = this.as.getTest();
+    t.subscribe(res => {
+      this.test = res;
+      console.log(this.test);
+    });
+
+    var x = this.as.getWeather();
+    x.subscribe( res =>
       {
+        // this.weather$ = res;
         this.text = res[0].date;
-        console.log("got resolution");
-        console.log(res);
         console.log(this.text);
       }
     );
 
 
-  }
-  public async getWeatherAsyncPipe() {    
-        this.SampleMessage="Example of Angular Async Pipe";    
-        this.weather$ = await this.as.getWeatherAsync();    
-        console.log(this.weather$);
-      }    
+  }  
 }

@@ -1,28 +1,39 @@
+import { TransferState, makeStateKey } from '@angular/platform-browser';
 import { environment } from './../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppService {
-  public waeatherUrl = environment.url + '/api/weatherForecast/get'
-  constructor(private http: HttpClient) { }
+  public waeatherUrl = environment.url + '/api/weatherForecast/get';
+  public testUrl = environment.url + '/api/test/get';
 
-  getWeather() : Observable<object> {
-    const headers = new HttpHeaders(
-      {'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin' : 'http://localhost:4200'
-    }
-      );
-    var x = this.http.get(this.waeatherUrl, {headers: headers}).pipe();
+  constructor(
+    private http: HttpClient,
+    ) { }
+  private headers = new HttpHeaders(
+    {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin' : 'http://localhost:4200'
+    });
+
+  getWeather() : Observable<any> {
+    var x = this.http.get(this.waeatherUrl, {headers: this.headers}).pipe();
+    console.info("GET WEATHER");
     return x;
   }
 
   public getWeatherAsync():Observable<any> {
     return this.http.get<any[]>(this.waeatherUrl);    
+  }
+
+  public getTest():Observable<any> {
+    return this.http.get<any[]>(this.testUrl);    
   }
 
   private handleError(err) {  
