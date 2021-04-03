@@ -1,0 +1,115 @@
+@import "src/variables.scss";
+
+.head {
+    position: relative;
+    height: calc(100vh - 50px);
+    width: 100%;
+    display: flex;
+}
+// #header-bg {
+//     overflow: hidden;
+//     position: absolute;
+//     height: 100vh;
+//     right: -100px;
+//     top: -50px;
+//     z-index: -1;
+// }
+.right {
+    width: 65%;
+    height: 100%;
+    background-image: url(../assets/Images/Landingpage/Bedrift_nettside@2x.jpg);
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    .head-video {
+        width: 50%;
+        height: 75%;
+        margin-left: auto;
+        margin-right: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        iframe {
+            border-radius: 25px;
+            background: #e0e0e0;
+            box-shadow: 
+            0px 0px 50px 18px  rgba(255,119,77,.12),
+            0px 0px 50px 18px rgba(82,77,255,.12);
+        }
+    }
+}
+
+.left {
+    text-align: center;
+    font-size: 5rem;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75%;
+    overflow: visible;
+    .text-container {
+        width: auto;
+    }
+    .main-text {
+        display: flex;
+        flex-direction: column-reverse;
+        font-family: Lobster;
+        h1,h2 {
+            font-size: 9rem;
+            font-family: Montserrat;
+        }
+
+        h1 {
+            font-weight: 900;
+            background: linear-gradient(229deg, rgba(255,119,77,1) 0%, rgba(82,77,255,1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-weight: 200;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 15px;
+        }
+
+    }
+    article {
+        font-size: $font-md;
+        font-weight: 300;
+        width: 75%;
+        margin: 0 auto;
+    }
+    .actions {
+        a, button {
+            font-size: 15px;
+            border-radius: 10px;
+            padding: 1rem 2rem;
+            border: none;
+            color: #fff;
+            margin: 0 1rem;
+            font-family: montserrat;
+            font-weight: 700;
+        }
+        button {
+            background: #EEEEEE;
+            background: linear-gradient(229deg, rgba(34,206,228,1) 0%, rgba(82,77,255,1) 100%);
+        }
+        a {
+            color: #333;
+            background: #EEEEEE;
+        }
+    }
+}
+
+
+.utvikling {
+    svg {
+        position: absolute;
+        transform: rotate(180deg);
+        margin-top: -5px
+    }
+}
