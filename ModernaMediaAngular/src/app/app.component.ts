@@ -29,21 +29,21 @@ export class AppComponent implements OnInit {
        {name: "description", content: "ModernaMedia er et digital byrå med ekstremt høy kompetanse innenfor web, seo og design!"},
        {name: 'robots', content: 'index, follow'}
      ]);
-    //non async
-    var t = this.as.getTest();
-    t.subscribe(res => {
-      this.test = res;
-      console.log(this.test);
-    });
+    // //non async
+    // var t = this.as.getTest();
+    // t.subscribe(res => {
+    //   this.test = res;
+    //   console.log(this.test);
+    // });
 
-    var x = this.as.getWeather();
-    x.subscribe( res =>
-      {
-        // this.weather$ = res;
-        this.text = res[0].date;
-        console.log(this.text);
-      }
-    );
+    // var x = this.as.getWeather();
+    // x.subscribe( res =>
+    //   {
+    //     // this.weather$ = res;
+    //     this.text = res[0].date;
+    //     console.log(this.text);
+    //   }
+    // );
 
 
   }  
