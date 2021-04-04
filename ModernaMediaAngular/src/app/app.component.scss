@@ -97,15 +97,13 @@
 }
 
 
-
-
-.utvikling {
+.content-container {
     overflow: hidden;
-    .utvikling-head {
+    min-height: 100vh;
+    .content-head {
         position: relative;
         img {
             margin-top: -5px;
-            z-index: -2;
             width: 100%;
         }
         .content-header {
@@ -131,7 +129,7 @@
             overflow: visible;
         }
     }
-    .utvikling-content {
+    .ladningpage-section {
         display: flex;
         flex-wrap: nowrap;
         justify-content: center;
@@ -144,7 +142,7 @@
             height: 100%;
             width: 50vw;
         }
-        .utvikling-header-text {
+        .ladningpage-section-content-header-text {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -161,26 +159,10 @@
                 font-size: 3vw;
             }
         }
-        .utvikling-content-text {
+        .ladningpage-section-content-text {
             font-size: $font-md;
             width: 90%;
             margin: 25px auto;
-        }
-        .utvikling-actions {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            .btn {
-                border: none;
-                padding: .75rem 1.5rem;
-                background: #EEEEEE;
-                background: linear-gradient(229deg, #275C8B 0%, #4D77FF 100%);
-                color: $light;
-            }
-            a.btn {
-                background: $light;
-                color: #333;
-            }
         }
     }
     .left {
@@ -188,15 +170,7 @@
             display: flex;
             justify-content: space-evenly;
             width: 100%;
-            pointer-events: none;
             .folder{
-                position: relative;
-                width: calc(50vw/4);
-                z-index: 15;
-                overflow: visible;
-                &:hover {
-                    transform: skew(-14deg, -5deg);
-                }
 
                 img {
                     width: calc(50vw/4);
@@ -229,11 +203,153 @@
     }
 }
 
+
+.design {
+    .design-head {
+        img {
+            transform: scaleX(-1);
+        }
+        #content-header-design {
+            background-image: linear-gradient(229deg, $purple-primary 0%, $purple-secondary 100%);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            right: 0;
+        }
+    }
+    
+    }
+    .design-content {
+        flex-direction: row-reverse;
+        .left, .right {
+        }
+    }
+//Buttons
+
+.section-actions {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: visible;
+    //
+    transition: 2s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    .btn {
+        border: none;
+        padding: .75rem 1.5rem;
+        background: #EEEEEE;
+        color: $light;
+        &:hover{
+            animation-name: gradient;
+        }
+    }
+    a.btn {
+        background: $light;
+        color: #333;
+    }
+     
+    
+}
+
+.folder {
+    border: 2px solid reD;
+
+    position: relative;
+    width: calc(50vw/4);
+    overflow: visible;
+
+        &:hover {
+            transform: skew(-14deg, -5deg);
+        }
+}
+
+#section-action-seo {
+    transition: 2s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-image: linear-gradient(to right, $lilac-primary 0%, $lilac-secondary 100%);
+    background-size: 200% auto;
+}
+
+#section-action-design {
+    transition: 2s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-image: linear-gradient(to right, $purple-primary 0%, $purple-secondary 100%);
+    background-size: 200% auto;
+}
+#section-action-utvikling {
+    transition: 2s;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    background-image: linear-gradient(to right, $blue-primary 0%, $blue-secondary 100%);
+    background-size: 200% auto;
+}
+
+
+//HEADERS
+#content-header-design {
+    background: linear-gradient(229deg, $purple-primary 0%, $purple-secondary 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+#content-header-seo {
+    background: linear-gradient(229deg, $lilac-primary 0%, $lilac-secondary 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+//under headers
+#design-h1, #design-h2 {
+    color: $purple-secondary;
+    font-size: 4vw;
+}
+#design-h2 {
+    color: $purple-primary;
+}
+
+#seo-h1, #seo-h2 {
+    color: $lilac-secondary;
+}
+#seo-h2 {
+    color: $lilac-primary;
+}
+
+
+
+
 .section-image {
-    height: 100vh;
-    width: auto;
     position: absolute;
-    top: -5vw;
-    left: -5vw;
-    z-index: -5;
+}
+
+
+
+#utvikling-image {
+    width: 60vw;
+    height: auto;
+    top: auto;
+    left: 1vw;
+}
+#design-image {
+    width: 60vw;
+    height: auto;
+    top: 0px;
+    right: auto;
+}
+
+#seo-image {
+    height: auto;
+    width: 60vw;
+    top: -25%;
+    bottom: auto;
+    left: 3vw;
+}
+
+@keyframes gradient {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:200% auto}
 }
