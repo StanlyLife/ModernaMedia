@@ -5,111 +5,235 @@
     height: calc(100vh - 50px);
     width: 100%;
     display: flex;
-}
-// #header-bg {
-//     overflow: hidden;
-//     position: absolute;
-//     height: 100vh;
-//     right: -100px;
-//     top: -50px;
-//     z-index: -1;
-// }
-.right {
-    width: 65%;
-    height: 100%;
-    background-image: url(../assets/Images/Landingpage/Bedrift_nettside@2x.jpg);
-    background-size: cover;
-    position: absolute;
-    right: 0;
-    z-index: -1;
-    .head-video {
-        width: 50%;
-        height: 75%;
-        margin-left: auto;
-        margin-right: 150px;
+    .right {
+        width: 65%;
+        height: 100%;
+        background-image: url(../assets/Images/Landingpage/Bedrift_nettside@2x.jpg);
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        z-index: -1;
+        .head-video {
+            width: 50%;
+            height: 75%;
+            margin-left: auto;
+            margin-right: 3vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            iframe {
+                border-radius: 25px;
+                background: #e0e0e0;
+                box-shadow: 
+                0px 0px 50px 18px  rgba(255,119,77,.12),
+                0px 0px 50px 18px rgba(82,77,255,.12);
+            }
+        }
+    }
+    .left {
+        text-align: center;
+        font-size: 5rem;
+        width: 60%;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        iframe {
-            border-radius: 25px;
-            background: #e0e0e0;
-            box-shadow: 
-            0px 0px 50px 18px  rgba(255,119,77,.12),
-            0px 0px 50px 18px rgba(82,77,255,.12);
+        justify-content: center;
+        height: 75%;
+        overflow: visible;
+        .text-container {
+            width: auto;
+        }
+        .main-text {
+            display: flex;
+            flex-direction: column-reverse;
+            font-family: Lobster;
+            h1,h2 {
+                font-size: 9rem;
+                font-family: Montserrat;
+            }
+    
+            h1 {
+                font-weight: 900;
+                background: linear-gradient(229deg, rgba(255,119,77,1) 0%, rgba(82,77,255,1) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+    
+            h2 {
+                font-weight: 200;
+                font-size: 2rem;
+                text-transform: uppercase;
+                letter-spacing: 15px;
+            }
+    
+        }
+        article {
+            font-size: $font-md;
+            font-weight: 300;
+            width: 75%;
+            margin: 0 auto;
+        }
+        .actions {
+            a, button {
+                font-size: 15px;
+                border-radius: 10px;
+                padding: 1rem 2rem;
+                border: none;
+                color: #fff;
+                margin: 0 1rem;
+                font-family: montserrat;
+                font-weight: 700;
+            }
+            button {
+                background: #EEEEEE;
+                background: linear-gradient(229deg, rgba(34,206,228,1) 0%, rgba(82,77,255,1) 100%);
+            }
+            a {
+                color: #333;
+                background: #EEEEEE;
+            }
         }
     }
 }
 
-.left {
-    text-align: center;
-    font-size: 5rem;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 75%;
-    overflow: visible;
-    .text-container {
-        width: auto;
-    }
-    .main-text {
-        display: flex;
-        flex-direction: column-reverse;
-        font-family: Lobster;
-        h1,h2 {
-            font-size: 9rem;
-            font-family: Montserrat;
-        }
 
-        h1 {
-            font-weight: 900;
-            background: linear-gradient(229deg, rgba(255,119,77,1) 0%, rgba(82,77,255,1) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h2 {
-            font-weight: 200;
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 15px;
-        }
-
-    }
-    article {
-        font-size: $font-md;
-        font-weight: 300;
-        width: 75%;
-        margin: 0 auto;
-    }
-    .actions {
-        a, button {
-            font-size: 15px;
-            border-radius: 10px;
-            padding: 1rem 2rem;
-            border: none;
-            color: #fff;
-            margin: 0 1rem;
-            font-family: montserrat;
-            font-weight: 700;
-        }
-        button {
-            background: #EEEEEE;
-            background: linear-gradient(229deg, rgba(34,206,228,1) 0%, rgba(82,77,255,1) 100%);
-        }
-        a {
-            color: #333;
-            background: #EEEEEE;
-        }
-    }
-}
 
 
 .utvikling {
-    svg {
-        position: absolute;
-        transform: rotate(180deg);
-        margin-top: -5px
+    overflow: hidden;
+    .utvikling-head {
+        position: relative;
+        img {
+            margin-top: -5px;
+            z-index: -2;
+            width: 100%;
+        }
+        .content-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            width: 50%;
+            font-size: 5.5vw;
+            text-align: center;
+            height: 75%;
+            top:0;
+        
+            font-weight: 900;
+            font-family: Montserrat;
+            color: $blue;
+        
+        
+            background: linear-gradient(229deg, rgba(34,206,228,1) 0%, rgba(82,77,255,1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        
+            overflow: visible;
+        }
     }
+    .utvikling-content {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        height: 75vh;
+        overflow: visible;
+        .right, .left {
+            height: 100%;
+            width: 50vw;
+        }
+        .utvikling-header-text {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column-reverse;
+            height: 250px;
+            h1,h2 {
+                font-size: 4vw;
+                font-family: montserrat;
+                font-weight: 900;
+                color: $blue-secondary;
+            }
+            h2 {
+                color: $blue-primary;
+                font-size: 3vw;
+            }
+        }
+        .utvikling-content-text {
+            font-size: $font-md;
+            width: 90%;
+            margin: 25px auto;
+        }
+        .utvikling-actions {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            .btn {
+                border: none;
+                padding: .75rem 1.5rem;
+                background: #EEEEEE;
+                background: linear-gradient(229deg, #275C8B 0%, #4D77FF 100%);
+                color: $light;
+            }
+            a.btn {
+                background: $light;
+                color: #333;
+            }
+        }
+    }
+    .left {
+        .folders {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            pointer-events: none;
+            .folder{
+                position: relative;
+                width: calc(50vw/4);
+                z-index: 15;
+                overflow: visible;
+                &:hover {
+                    transform: skew(-14deg, -5deg);
+                }
+
+                img {
+                    width: calc(50vw/4);
+                }
+                .faicon, h3 {
+                    position: absolute;
+                }
+                .faicon{
+                    bottom: 15%;
+                    width: 100%;
+                    text-align: center;
+                    color: $light;
+                    font-size: 6vw;
+                    opacity: .5;
+                }
+                h3 {
+                    color: $light;
+                    font-size: 1.5vw;
+                    top: 6%;
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+    .right {
+        position: relative;
+        overflow: visible;
+    }
+}
+
+.section-image {
+    height: 100vh;
+    width: auto;
+    position: absolute;
+    top: -5vw;
+    left: -5vw;
+    z-index: -5;
 }
