@@ -27,6 +27,24 @@ body {
     }
 }
 
+.btn.gradient-blue {
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    background-image: linear-gradient(to right, $orange-gradient 0%, $blue-gradient 100%);
+    background-size: 200% auto;
+    animation-name: gradient_btn;
+    &:hover {
+    }
+}
+
+@keyframes gradient_btn {
+    0%{background-position:0% 0%}
+    33%{background-position:50% 0%}
+    66%{background-position:100% 100%}
+    100%{background-position:0% 0%}
+    // 100%{background-position:200% auto}
+}
+
 @font-face {
     font-family: "Lobster";
     src: local("Lobster") url(./assets/fonts/Lobster-Regular.ttf) format("truetype");

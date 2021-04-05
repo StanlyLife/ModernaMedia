@@ -1,22 +1,18 @@
 @import "src/variables.scss";
 
-@keyframes background_in {
-    from   { right: -100vw; }
-    to { right: 0; }
-  }
+
 .head {
     position: relative;
     height: calc(100vh - 50px);
     width: 100%;
     display: flex;
     .right {
-        animation: background_in 1s forwards;
         width: 65%;
         height: 100%;
         background-image: url(../assets/Images/Landingpage/Bedrift_nettside@2x.jpg);
         background-size: cover;
         position: absolute;
-        right: -100vw;
+        right: 0vw;
         z-index: -1;
         .head-video {
             width: 50%;
@@ -58,7 +54,7 @@
     
             h1 {
                 font-weight: 900;
-                background: linear-gradient(229deg, rgba(255,119,77,1) 0%, rgba(82,77,255,1) 100%);
+                background: linear-gradient(229deg, $orange-gradient 0%, $blue-gradient 100%);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
@@ -89,10 +85,10 @@
                 font-family: montserrat;
                 font-weight: 700;
             }
-            button {
-                background: #EEEEEE;
-                background: linear-gradient(229deg, rgba(34,206,228,1) 0%, rgba(82,77,255,1) 100%);
-            }
+            // button {
+            //     background: #EEEEEE;
+            //     background: linear-gradient(229deg, rgba(34,206,228,1) 0%, rgba(82,77,255,1) 100%);
+            // }
             a {
                 color: #333;
                 background: #EEEEEE;
@@ -262,7 +258,7 @@
             // opacity: .5;
             animation: folder .2s forwards;
             .faicon {
-                animation: iconanim .2s forwards;
+                animation: iconanim 1s forwards;
             }
         }
 
@@ -290,8 +286,6 @@
         }
     }
 }
-//wave
-
 //BUTTONS
 #section-action-seo {
     transition: 2s;
