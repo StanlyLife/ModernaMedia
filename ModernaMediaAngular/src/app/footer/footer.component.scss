@@ -1,0 +1,15 @@
+footer {
+    // background: url("../../assets/Images/Landingpage/Footer_png.png");
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    overflow: hidden;
+    position: relative;
+    height: 73vw;
+    background: none;
+    img {
+        position:absolute;
+        height: auto;
+        width: 100vw;
+        margin-bottom: -1vw;
+    }
+}
