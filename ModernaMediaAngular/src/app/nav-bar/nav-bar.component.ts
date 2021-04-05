@@ -7,9 +7,18 @@ import { Component, Injector, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private injector: Injector) {}
+
+  constructor(
+    private injector: Injector
+    ) {}
 
   ngOnInit(): void {
+  }
+
+  public ToggleNav(event) {
+    var target = event.target || event.srcElement || event.currentTarget;
+    console.log(target);
+    target.classList.toggle("change");
   }
 
 }

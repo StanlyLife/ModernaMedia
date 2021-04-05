@@ -3,8 +3,8 @@
     <img id="logo" src="../../assets/Images/ModernaMedia_Logo_2.jpg" alt="" />
     <p>ModernaMedia</p>
   </div>
-  <nav>
-    <ul>
+  <nav role="navigation">
+    <ul id="menu">
       <li><a href="index.html">Web</a></li>
       <li><a href="/about/">design</a></li>
       <li><a href="/blog/">markedsføring</a></li>
@@ -14,5 +14,10 @@
   </nav>
   <div class="kontakt">
     <a class="btn contact-btn" href="#">Kontakt</a>
+    <button (click)="ToggleNav($event)" class="nav-btn" href="#">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </button>
   </div>
 </header>
