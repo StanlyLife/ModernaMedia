@@ -1,17 +1,22 @@
 @import "src/variables.scss";
 
+@keyframes background_in {
+    from   { right: -100vw; }
+    to { right: 0; }
+  }
 .head {
     position: relative;
     height: calc(100vh - 50px);
     width: 100%;
     display: flex;
     .right {
+        animation: background_in .2s forwards;
         width: 65%;
         height: 100%;
         background-image: url(../assets/Images/Landingpage/Bedrift_nettside@2x.jpg);
         background-size: cover;
         position: absolute;
-        right: 0;
+        right: -100vw;
         z-index: -1;
         .head-video {
             width: 50%;
@@ -319,16 +324,11 @@
 #seo-h2 {
     color: $lilac-primary;
 }
-
-
-
 //section images
 .section-image {
     position: absolute;
     z-index: -1;
 }
-
-
 
 #utvikling-image {
     width: 60vw;
