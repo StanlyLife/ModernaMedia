@@ -59,6 +59,7 @@
             h1 {
                 font-weight: 900;
                 background: linear-gradient(229deg, rgba(255,119,77,1) 0%, rgba(82,77,255,1) 100%);
+                background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
@@ -132,6 +133,7 @@
         
         
             background: linear-gradient(229deg, rgba(34,206,228,1) 0%, rgba(82,77,255,1) 100%);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         
@@ -197,8 +199,6 @@
     }
     .design-content {
         flex-direction: row-reverse;
-        .left, .right {
-        }
     }
 //Buttons
 
@@ -227,8 +227,6 @@
     
 }
 
-.left, .right{
-}
 
 .folders {
     display: flex;
@@ -268,8 +266,7 @@
     }
 }
 //wave
-.content-head img {
-}
+
 //BUTTONS
 #section-action-seo {
     transition: 2s;
@@ -298,6 +295,7 @@
 //HEADERS
 #content-header-design {
     background: linear-gradient(229deg, $purple-primary 0%, $purple-secondary 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -305,6 +303,7 @@
 
 #content-header-seo {
     background: linear-gradient(229deg, $lilac-primary 0%, $lilac-secondary 100%);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
