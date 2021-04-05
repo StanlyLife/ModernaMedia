@@ -39,7 +39,6 @@
         align-items: center;
         justify-content: center;
         height: 75%;
-        overflow: visible;
         .text-container {
             width: auto;
         }
@@ -98,13 +97,18 @@
 
 
 .content-container {
-    overflow: hidden;
     min-height: 100vh;
+    &:not(.seo){
+        overflow: hidden;
+    }
+    &.seo {
+        overflow-y: visible;
+    }
     .content-head {
         position: relative;
         img {
             margin-top: -5px;
-            width: 100%;
+            width: 100vw;
         }
         .content-header {
             display: flex;
@@ -126,7 +130,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         
-            overflow: visible;
         }
     }
     .ladningpage-section {
@@ -137,7 +140,6 @@
         width: 90%;
         margin: 0 auto;
         height: 75vh;
-        overflow: visible;
         .right, .left {
             height: 100%;
             width: 50vw;
@@ -169,7 +171,6 @@
     }
     .right {
         position: relative;
-        overflow: visible;
     }
 }
 
@@ -200,7 +201,6 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    overflow: visible;
     //
     transition: 2s;
     animation-duration: 2s;
@@ -223,19 +223,16 @@
 }
 
 .left, .right{
-    overflow: visible;
 }
 
 .folders {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    overflow: visible;
     .folder{
 
         position: relative;
         width: calc(50vw/4);
-        overflow: visible;
     
         &:hover {
             transform: skew(-14deg, -5deg);
@@ -265,7 +262,10 @@
         }
     }
 }
-
+//wave
+.content-head img {
+}
+//BUTTONS
 #section-action-seo {
     transition: 2s;
     animation-duration: 2s;
@@ -322,9 +322,10 @@
 
 
 
-
+//section images
 .section-image {
     position: absolute;
+    z-index: -1;
 }
 
 

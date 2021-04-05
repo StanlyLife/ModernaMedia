@@ -1,7 +1,7 @@
 import { AppService } from './app.service';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Meta } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { faAppleAlt, faCog, faGlobe, faMobile, faProcedures, faStore } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,7 +10,6 @@ import { faAppleAlt, faCog, faGlobe, faMobile, faProcedures, faStore } from '@fo
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'ModernaMediaAngular';
   test:string;
   text:string;
   faglobe = faGlobe;
@@ -21,8 +20,11 @@ export class AppComponent implements OnInit {
   
   constructor(
     private as: AppService,
-    private meta: Meta
-    ) {}
+    private meta: Meta,
+    private title: Title
+    ) {
+      title.setTitle("ModernaMedia Digitalbyrå for bedrifter. Bedrift nettsider, grafisk design og seo i Norge");
+    }
 
    ngOnInit() {
      this.meta.addTags([
