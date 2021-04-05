@@ -12,13 +12,16 @@
           est ultricies integer quis. Iaculis
         </article>
         <div class="actions">
-          <a href="#" class="btn">Løsninger</a>
+          <button (click)="scrollToElement(content)" class="btn second">
+            Løsninger
+          </button>
           <button class="btn gradient-blue">Book et uforpliktet møte</button>
         </div>
       </div>
     </div>
     <div class="right">
-      <div class="head-video">
+      <div class="bg-image"></div>
+      <div class="head-video disableBlur">
         <!-- <iframe
           width="560"
           height="315"
@@ -39,7 +42,7 @@
       </div>
     </div>
   </div>
-  <div class="content">
+  <div class="content" #content>
     <div class="content-container utvikling">
       <div class="content-head utvikling-head">
         <img src="../assets/Images/Landingpage/wave_2.svg" alt="" />
@@ -181,14 +184,14 @@
     <div class="content-container seo">
       <div class="content-head utvikling-head">
         <img src="../assets/Images/Landingpage/wave_2.svg" alt="" />
-        <h1 class="content-header" id="content-header-seo">Utvikling</h1>
+        <h1 class="content-header" id="content-header-seo">SEO</h1>
       </div>
 
       <div class="ladningpage-section seo">
         <div class="left">
           <div class="ladningpage-section-content-header-text seo-header-text">
-            <h1 id="seo-h1">Enkle løsninger</h1>
-            <h2 id="seo-h2">Vanskelige problemer</h2>
+            <h1 id="seo-h1">Enkelelt å kjøpe</h1>
+            <h2 id="seo-h2">Enkel å finne</h2>
           </div>
           <div class="folders">
             <div class="folder">

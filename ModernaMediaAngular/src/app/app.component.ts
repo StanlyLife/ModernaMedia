@@ -10,13 +10,9 @@ import { faAppleAlt, faCog, faGlobe, faMobile, faProcedures, faStore } from '@fo
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  test:string;
-  text:string;
   faglobe = faGlobe;
   faapp = faMobile;
   fasoftware = faCog;
-  weather$: Observable<any>;
-  SampleMessage="Example of Angular Async Pipe";    
   
   constructor(
     private as: AppService,
@@ -31,22 +27,9 @@ export class AppComponent implements OnInit {
        {name: "description", content: "ModernaMedia er et digital byrå med ekstremt høy kompetanse innenfor web, seo og design!"},
        {name: 'robots', content: 'index, follow'}
      ]);
-    // //non async
-    // var t = this.as.getTest();
-    // t.subscribe(res => {
-    //   this.test = res;
-    //   console.log(this.test);
-    // });
-
-    // var x = this.as.getWeather();
-    // x.subscribe( res =>
-    //   {
-    //     // this.weather$ = res;
-    //     this.text = res[0].date;
-    //     console.log(this.text);
-    //   }
-    // );
-
-
   }  
+  scrollToElement($element): void {
+    console.log($element);
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }
