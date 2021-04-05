@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -24,7 +25,11 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule.forRoot([
+      {path: 'home', component: AppComponent},
+      {path: "**",redirectTo:"404"}
+    ])
   ],
   bootstrap: [
     AppComponent,

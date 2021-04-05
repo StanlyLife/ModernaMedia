@@ -103,7 +103,8 @@
 
 
 .content-container {
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 920px;
     &:not(.seo){
         overflow: hidden;
     }
@@ -226,7 +227,26 @@
      
     
 }
-
+@keyframes folder {
+    from {
+        transform: skew(0deg, 0deg);
+        opacity: 1;
+    }
+    to {
+        transform: skew(-14deg, -5deg);
+        opacity: .5;
+    }
+}
+@keyframes iconanim {
+    from {
+        opacity: .5;
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
 
 .folders {
     display: flex;
@@ -238,7 +258,12 @@
         width: calc(50vw/4);
     
         &:hover {
-            transform: skew(-14deg, -5deg);
+            // transform: skew(-14deg, -5deg);
+            // opacity: .5;
+            animation: folder .2s forwards;
+            .faicon {
+                animation: iconanim .2s forwards;
+            }
         }
 
         img {
@@ -355,3 +380,35 @@
     50%{background-position:100% 50%}
     100%{background-position:200% auto}
 }
+
+//larger than 1800px
+@media only screen and (min-width: 1800px) {
+    .content-container {
+        min-height: 50vw;
+    }
+
+    .folder{
+        width: 217px !important;
+        height: 222px;
+        img {
+            height: 222px;
+            width: 217px !important;
+        }
+    }
+    .faicon{
+        bottom: 15%;
+        width: 100%;
+        font-size: 6rem !important;
+    }
+    h3 {
+        font-size: 1.5rem !important;
+        top: 7.5%;
+    }
+    #seo-image {
+        height: auto;
+        width: 60vw;
+        top: -40%;
+        bottom: auto;
+        left: 3vw;
+    }
+  }
