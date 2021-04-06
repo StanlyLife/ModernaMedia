@@ -28,7 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     FontAwesomeModule,
     RouterModule.forRoot([
       {path: 'home', component: AppComponent},
-      {path: "**",redirectTo:"404"}
+      // {path: "**",redirectTo:"404"}
     ])
   ],
   bootstrap: [
