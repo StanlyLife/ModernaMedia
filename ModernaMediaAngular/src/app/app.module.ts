@@ -1,3 +1,4 @@
+import { NotFoundComponent } from './error/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -11,12 +12,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -27,7 +30,13 @@ import { FooterComponent } from './footer/footer.component';
     BrowserAnimationsModule,
     FontAwesomeModule,
     RouterModule.forRoot([
-      {path: 'home', component: AppComponent},
+      {
+        path: '',
+        pathMatch:'full',
+        redirectTo: '/home'
+      },
+      {path: 'home', component: HomeComponent},
+      {path: 'error', component: NotFoundComponent},
       // {path: "**",redirectTo:"404"}
     ])
   ],
