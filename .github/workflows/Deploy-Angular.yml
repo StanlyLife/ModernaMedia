@@ -30,6 +30,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Npm clean cache
+        working-directory: /home/runner/work/ModernaMedia/ModernaMedia/ModernaMediaAngular
+        run: |
+          npm cache clean --force
+          rm -rf node_modules/
+          rm package-lock.json
       - name: npm install and npm run build:ssr
         working-directory: /home/runner/work/ModernaMedia/ModernaMedia/ModernaMediaAngular
         run: |
