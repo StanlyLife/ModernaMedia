@@ -104,7 +104,7 @@
 
 
 .content-container {
-    height: 100vh;
+    height: 125vh;
     min-height: 920px;
     &:not(.seo){
         overflow: hidden;
@@ -257,7 +257,6 @@
 
         position: relative;
         width: calc(50vw/4);
-    
         &:hover {
             // transform: skew(-14deg, -5deg);
             // opacity: .5;
@@ -340,7 +339,7 @@
     color: $purple-secondary;
 }
 #design-h2 {
-    font-size: 3.25rem;
+    font-size: 3.25vw;
     color: $purple-primary;
 }
 
@@ -417,7 +416,6 @@
     }
   }
 
-  //larger than 1800px
 @media only screen and (max-width: 1200px) {
     .head {
         height: 100vh;
