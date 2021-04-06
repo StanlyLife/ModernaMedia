@@ -1,5 +1,5 @@
 <main>
-  <div class="head">
+  <section class="head">
     <div class="left">
       <div class="text-container">
         <div class="main-text">
@@ -15,35 +15,57 @@
           <button (click)="scrollToElement(content)" class="btn second">
             Løsninger
           </button>
-          <button class="btn gradient-blue">Book et uforpliktet møte</button>
+          <button class="btn gradient dynamic">Book et uforpliktet møte</button>
         </div>
       </div>
     </div>
     <div class="right">
       <div class="bg-image"></div>
       <div class="head-video disableBlur">
-        <!-- <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/LzN3WPeIhtY"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe> -->
         <iframe
+          title="Modernamedia digitalisering byrå for nettsider, design og seo forklaring video"
           width="560"
           height="315"
           src="https://www.youtube-nocookie.com/embed/LzN3WPeIhtY"
+          srcdoc="
+          <style>
+            *{
+              padding:0;
+              margin:0;
+              overflow:hidden
+            }
+            html,body{
+              height:100%
+            }
+            img,span{
+              position:absolute;
+              width:100%;
+              top:0;
+              bottom:0;
+              margin:auto
+            }
+            span{
+              height:1.5em;
+              text-align:center;
+              font:48px/1.5 sans-serif;
+              color:white;
+              text-shadow:0 0 0.5em black
+            }
+          </style>
+          <a href=https://www.youtube-nocookie.com/embed/LzN3WPeIhtY?autoplay=1>
+            <img src=./assets/Images/Landingpage/thumbnail.jpg
+            alt='Video The Dark Knight Rises: What Went Wrong? – Wisecrack Edition'>
+            <span>▶</span>
+          </a>"
           frameborder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       </div>
     </div>
-  </div>
+  </section>
   <div class="content" #content>
-    <div class="content-container utvikling">
+    <section class="content-container utvikling">
       <div class="content-head utvikling-head">
         <img src="../assets/Images/Landingpage/wave_2.svg" alt="" />
         <h1 class="content-header">Utvikling</h1>
@@ -97,7 +119,7 @@
             est ultricies integer quis. Iaculis
           </article>
           <div class="section-actions utvikling-actions">
-            <button class="btn" id="section-action-utvikling">
+            <button class="btn gradient blue" id="section-action-utvikling">
               book et uforpliktet møte
             </button>
             <a href="#" class="btn">Utforsk utvikling</a>
@@ -112,18 +134,18 @@
           />
         </div>
       </div>
-    </div>
+    </section>
     <div class="content-container design">
       <div class="content-head">
         <img src="../assets/Images/Landingpage/wave_2.svg" alt="" />
         <h1 class="content-header" id="content-header-design">Design</h1>
       </div>
 
-      <div class="ladningpage-section seo">
+      <section class="ladningpage-section seo">
         <div class="left">
           <div class="ladningpage-section-content-header-text seo-header-text">
-            <h1 id="design-h1">Økt omsettning</h1>
-            <h2 id="design-h2">Bedre synlighet</h2>
+            <h1 id="design-h1">Bedre konvertering</h1>
+            <h2 id="design-h2">Bedre Brukervennlighet</h2>
           </div>
           <div class="folders">
             <div class="folder">
@@ -165,7 +187,7 @@
             est ultricies integer quis. Iaculis
           </article>
           <div class="section-actions design-actions">
-            <button class="btn" id="section-action-design">
+            <button class="btn gradient orange" id="section-action-design">
               book et uforpliktet møte
             </button>
             <a href="#" class="btn">Utforsk utvikling</a>
@@ -179,7 +201,7 @@
             alt=""
           />
         </div>
-      </div>
+      </section>
     </div>
     <div class="content-container seo">
       <div class="content-head utvikling-head">
@@ -187,11 +209,11 @@
         <h1 class="content-header" id="content-header-seo">SEO</h1>
       </div>
 
-      <div class="ladningpage-section seo">
+      <section class="ladningpage-section seo">
         <div class="left">
           <div class="ladningpage-section-content-header-text seo-header-text">
-            <h1 id="seo-h1">Enkelelt å kjøpe</h1>
-            <h2 id="seo-h2">Enkel å finne</h2>
+            <h1 id="seo-h1">Økt omsetning</h1>
+            <h2 id="seo-h2">Bedre synlighet</h2>
           </div>
           <div class="folders">
             <div class="folder">
@@ -199,7 +221,7 @@
                 <h3>Nettsider</h3>
                 <fa-icon [icon]="faglobe" class="faicon"></fa-icon>
                 <img
-                  src="../assets/Images/Landingpage/Pocket_lilac.jpg"
+                  src="../assets/Images/Landingpage/Pocket_orange.jpg"
                   alt=""
                 />
               </a>
@@ -209,7 +231,7 @@
                 <h3>Apper</h3>
                 <fa-icon [icon]="faapp" class="faicon"></fa-icon>
                 <img
-                  src="../assets/Images/Landingpage/Pocket_lilac.jpg"
+                  src="../assets/Images/Landingpage/Pocket_orange.jpg"
                   alt=""
                 />
               </a>
@@ -219,7 +241,7 @@
                 <h3>Programvare</h3>
                 <fa-icon [icon]="fasoftware" class="faicon"></fa-icon>
                 <img
-                  src="../assets/Images/Landingpage/Pocket_lilac.jpg"
+                  src="../assets/Images/Landingpage/Pocket_orange.jpg"
                   alt=""
                 />
               </a>
@@ -232,8 +254,8 @@
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum
             est ultricies integer quis. Iaculis
           </article>
-          <div class="section-actions utvikling-actions">
-            <button class="btn" id="section-action-seo">
+          <div class="section-actions seo-actions">
+            <button class="btn btn gradient purple" id="section-action-seo">
               book et uforpliktet møte
             </button>
             <a href="#" class="btn">Utforsk utvikling</a>
@@ -247,7 +269,7 @@
             alt=""
           />
         </div>
-      </div>
+      </section>
     </div>
   </div>
 </main>
