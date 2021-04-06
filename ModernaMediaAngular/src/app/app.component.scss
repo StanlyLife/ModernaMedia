@@ -16,7 +16,6 @@
             display: none;
         }
         right: 0vw;
-        z-index: -1;
         .head-video {
             width: 50%;
             height: 75%;
@@ -26,8 +25,10 @@
             justify-content: center;
             align-items: center;
             iframe {
+                z-index: 2;
                 border-radius: 25px;
                 background: #e0e0e0;
+                position: relative;
                 box-shadow: 
                 0px 0px 50px 18px  rgba(255,119,77,.12),
                 0px 0px 50px 18px rgba(82,77,255,.12);
@@ -37,6 +38,7 @@
         }
     }
     .left {
+        z-index: 1;
         text-align: center;
         font-size: 5rem;
         width: 60%;
@@ -51,14 +53,13 @@
         .main-text {
             display: flex;
             flex-direction: column-reverse;
-            font-family: Lobster;
             h1,h2 {
                 font-size: 9rem;
-                font-family: Montserrat;
+                font-family:$ff-primary;
             }
     
             h1 {
-                font-weight: 900;
+                font-weight: 700;
                 background: linear-gradient(229deg, $orange-gradient 0%, $blue-gradient 100%);
                 background-clip: text;
                 -webkit-background-clip: text;
@@ -81,19 +82,12 @@
         }
         .actions {
             button {
-                font-size: 15px;
                 border-radius: 10px;
                 padding: 1rem 2rem;
                 border: none;
                 color: #fff;
                 margin: 0 1rem;
-                font-family: montserrat;
-                font-weight: 700;
             }
-            // button {
-            //     background: #EEEEEE;
-            //     background: linear-gradient(229deg, rgba(34,206,228,1) 0%, rgba(82,77,255,1) 100%);
-            // }
             .second {
                 color: #333;
                 background: #EEEEEE;
@@ -136,7 +130,7 @@
             top:0;
         
             font-weight: 900;
-            font-family: Montserrat;
+            font-family: $ff-primary;
             color: $blue;
         
         
@@ -167,7 +161,7 @@
             height: 250px;
             h1,h2 {
                 font-size: 4vw;
-                font-family: montserrat;
+                font-family: $ff-primary;
                 font-weight: 900;
                 color: $blue-secondary;
             }
@@ -302,7 +296,7 @@
     transition: 2s;
     animation-duration: 2s;
     animation-iteration-count: infinite;
-    background-image: linear-gradient(to right, $lilac-primary 0%, $lilac-secondary 100%);
+    background-image: linear-gradient(to right, $orange-primary 0%, $orange-secondary 100%);
     background-size: 200% auto;
 }
 
@@ -332,26 +326,31 @@
 }
 
 #content-header-seo {
-    background: linear-gradient(229deg, $lilac-primary 0%, $lilac-secondary 100%);
+    background: linear-gradient(229deg, $orange-primary 0%, $orange-secondary 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
 }
 //under headers
+.ladningpage-section-content-header-text {
+    text-transform: capitalize;
+}
 #design-h1, #design-h2 {
     color: $purple-secondary;
-    font-size: 4vw;
 }
 #design-h2 {
+    font-size: 3.25rem;
     color: $purple-primary;
 }
 
 #seo-h1, #seo-h2 {
-    color: $lilac-secondary;
+    color: $orange-secondary;
+    font-size: 4.25vw;
 }
 #seo-h2 {
-    color: $lilac-primary;
+    font-size: 4vw;
+    color: $orange-primary;
 }
 //section images
 .section-image {
@@ -517,9 +516,9 @@
     }
 }
 
-@media only screen and (max-width: 927px) {
+@media only screen and (max-width: 1000px) {
     .head .left .text-container {
-        margin-top: 75px;
+        margin-top: 150px;
     }
 
     .head .right .head-video {
