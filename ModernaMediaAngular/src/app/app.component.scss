@@ -421,13 +421,11 @@
   //larger than 1800px
 @media only screen and (max-width: 1200px) {
     .head {
-        border: 2px solid lime;
         height: 100vh;
         min-height: 815px;
         .left {
             width: 100vw;
             height: 50%;
-            bordeR: 2px solid cyan;
             .secondary-text {
             }
         }
@@ -441,14 +439,12 @@
                 position: absolute;
                 filter: blur(5px);
                 display: block;
-                border: 2px solid orange;
             }
             .disableBlur {
                 filter: blur(0);
               }
             top: -50px;
             width: 100%;
-            border: 2px solid red;
             .head-video {
                 width: 100%;
                 min-height: 815px;
@@ -521,9 +517,27 @@
     }
 }
 
+@media only screen and (max-width: 927px) {
+    .head .left .text-container {
+        margin-top: 75px;
+    }
+
+    .head .right .head-video {
+        width: 90%;
+        min-height: 815px;
+        height: 90vh;
+        align-items: flex-end;
+        iframe{
+            margin: 0 auto;
+            width: 407.2px;
+            height: 228.8px;
+        }
+    }
+ }
+
 @media only screen and (max-width: 801px) {
    .head .left .text-container .main-text h1 {
-        font-size: 7rem;
+        font-size: 6.5rem;
     }
 }
 

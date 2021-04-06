@@ -119,11 +119,30 @@ header {
 .nav-btn{
     display: none;
 }
-@media (max-width: 801px) {
+
+@media only screen 
+    and (max-device-width: 450px) 
+    and (max-device-height: 930px) 
+    and (-webkit-device-pixel-ratio: 3) {
+        nav {
+            background-color: red;
+        }
+     }
+
+
+@media only screen and (max-width: 850px) {
     header {
         overflow: visible;
         .contact-btn {
             display: none;
+        }
+    }
+    nav.display {
+        // clip-path: circle(100%);
+        clip-path: ellipse(150% 150% at 100% 0%);
+        #menu li a {
+            opacity: 1;
+            font-size: 2rem;
         }
     }
     nav {
@@ -132,13 +151,19 @@ header {
         width: 100vw;
         background: #EEEEEE;
         z-index: 100;
+        // clip-path: circle(0%);
+        clip-path: ellipse(0% 0% at 100% 0%);
+        transition: .5s;
         ul {
-            flex-direction: column;            
+            flex-direction: column;
+            li a {
+                opacity: 0;
+                transition: 1s;
+            }       
         }
     }
     .nav-btn {
         z-index: 100;
-        background-color: #ffffff;
         border-radius: 500px;
         display: inline-block;
         cursor: pointer;
@@ -147,8 +172,8 @@ header {
         transition: 1s;
         border: none;
         outline: none;
-
-          .bar1, .bar2, .bar3 {
+        background-color: transparent;
+        .bar1, .bar2, .bar3 {
             width: 35px;
             height: 5px;
             background-color: #333;
@@ -156,13 +181,17 @@ header {
             transition: 0.4s;
             pointer-events: none;
             border-radius: 500px;
-          }
-          
+        }
+        
     }
 }
 
 .change {
+    background-color: #333;
     transform: rotate(180deg);
+    .bar1, .bar2, .bar3 {
+        background-color: #EEEEEE;
+    }
     /* Rotate first bar */
     .bar1 {
         -webkit-transform: rotate(-45deg) translate(-9px, 9px) ;
