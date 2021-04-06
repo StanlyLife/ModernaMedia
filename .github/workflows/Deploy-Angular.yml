@@ -35,6 +35,7 @@ jobs:
         run: |
           npm cache clean --force
           rm -rf node_modules/
+          rm package-lock.json
       - name: npm install and npm run build:ssr
         working-directory: /home/runner/work/ModernaMedia/ModernaMedia/ModernaMediaAngular
         run: |
