@@ -13,7 +13,7 @@ export function app() {
   const server = express();
   const distFolder = join(process.cwd(), 'dist/ModernaMediaAngular/browser');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
-
+  const robotsTxt = 
   // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
   server.engine('html', ngExpressEngine({
     bootstrap: AppServerModule,
@@ -33,6 +33,10 @@ export function app() {
   server.get('*', (req, res) => {
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
   });
+  
+  // server.get('/robots.txt', (req, res) => {
+  //   res.render("test", { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] });
+  // });
 
   return server;
 }
