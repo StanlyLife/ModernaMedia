@@ -33,11 +33,14 @@ import { HomeComponent } from './home/home.component';
       {
         path: '',
         pathMatch:'full',
-        redirectTo: '/home'
+        component: HomeComponent
       },
-      {path: 'home', component: HomeComponent},
+      // {
+      //   path: '',
+      //   component: HomeComponent
+      // },
+      {path: "**",redirectTo:"error"},
       {path: 'error', component: NotFoundComponent},
-      // {path: "**",redirectTo:"404"}
     ])
   ],
   bootstrap: [
