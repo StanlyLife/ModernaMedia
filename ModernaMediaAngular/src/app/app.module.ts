@@ -1,3 +1,4 @@
+import { UtviklingModule } from './utvikling/utvikling.module';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
@@ -25,24 +26,27 @@ import { HomeComponent } from './home/home.component';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     TransferHttpCacheModule,
     BrowserTransferStateModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
     FontAwesomeModule,
+    UtviklingModule,
     RouterModule.forRoot([
       {
         path: '',
         pathMatch:'full',
-        component: HomeComponent
+        component: HomeComponent,
+        data: {animation: "HomePage"}
       },
       // {
       //   path: '',
       //   component: HomeComponent
       // },
       {path: "**",redirectTo:"error"},
-      {path: 'error', component: NotFoundComponent},
+      {path: 'error', component: NotFoundComponent,data: {animation: "AboutPage"}},
     ])
   ],
+  exports: [RouterModule],
   bootstrap: [
     AppComponent,
     NavBarComponent,
