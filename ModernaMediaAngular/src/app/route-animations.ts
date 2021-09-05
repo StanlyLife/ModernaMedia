@@ -30,14 +30,13 @@ trigger('routeAnimations', [
             right: 0,
             width: '100%',
             background: '#fff',
-            zIndex: 99,
-            transform: 'sacle(0) translateY(100%)'
+            transform: 'opacity(0)'
         }),
         ], {optional: true}),
         query(':enter',[
             animate('300ms ease'),
             style({
-                transform: 'scale(1) translateY(0)'
+                transform: 'opacity(1)'
                 })
             ], 
             {optional: true}),
