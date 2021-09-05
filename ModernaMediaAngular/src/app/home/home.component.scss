@@ -582,3 +582,16 @@
         padding: 1rem 0;
     }
 }
+
+.information-wraper {
+    .information-container-one {
+        background-color: limegreen;
+        width: 100%;
+        height: 50vh;
+    }
+    .information-container-two {
+        width: 100%;
+        height: 50vh;
+        background-color: orange;
+    }
+}
