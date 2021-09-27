@@ -1,36 +1,48 @@
 @import "../../variables.scss";
 
+
+
+//Mobile
+
 header {
     height: 50px;
     width: 100%;
-    background-color: $blue;
+    position: absolute;
+    z-index: 1;
 }
 
 .wrapper {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background: red;
     height: 100%;
+    position: relative;
     nav {
         height: 100%;
-        background-color: $dark;
         color: $light;
-        width: 75%;
+        width: 60%;
         margin: 0 auto;
-        
-        display: flex;
         justify-content: space-between;
         align-items: center;
-
+        padding: 0 25px;
         display: none;
+        a {
+            color: $light;
+        }
     }
     button.btn.contact {
-        width: 25%;
+        border: 2px solid $light;
+        background: $dark-transparent;
+        color: $light;
+
+        position: absolute;
+        right: 2.5%;
         display: none;
     }
     button.btn.menu {
         margin-right: 2.5%;
         border: 2px solid $light;
+        background: $dark-transparent;
+        color: $light;
     }
 }

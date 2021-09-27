@@ -4,7 +4,7 @@ import { Component, ElementRef, Injector, OnInit } from '@angular/core';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+  styleUrls: ['./nav-bar.component.scss', './nav-bar.desktop.component.scss']
 })
 export class NavBarComponent implements OnInit {
 

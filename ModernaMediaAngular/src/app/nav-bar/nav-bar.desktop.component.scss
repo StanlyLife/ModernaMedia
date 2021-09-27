@@ -1,0 +1,21 @@
+@import "../../variables.scss";
+
+
+
+//Desktop
+@media screen and (min-width: 700px) {
+
+    button.btn.menu {
+        display: none;
+    }
+    .wrapper {
+        button.btn.contact {
+            display: block;
+        }
+        
+        nav {
+            display: flex;
+        }
+    }
+
+}
