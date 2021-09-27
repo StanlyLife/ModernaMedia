@@ -10,17 +10,6 @@ import { faAppleAlt, faAtlas, faBook, faCog, faCogs, faCrop, faCropAlt, faDeskto
 })
 export class HomeComponent implements OnInit {
 
-  faglobe = faGlobe;
-  faapp = faMobile;
-  fasoftware = faCog;
-
-  falogo = faTrademark;
-  fawebdesign = faCropAlt;
-  fannet = faGlobeAmericas;
-  
-  facontent = faBook;
-  faonpage = faFileCode;
-  faoffpage = faFileArchive;
 
   constructor(
     private meta: Meta,
@@ -46,8 +35,7 @@ export class HomeComponent implements OnInit {
       });
   }  
   scrollToElement($element): void {
-    console.log($element);
-    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+
   }
 
 }

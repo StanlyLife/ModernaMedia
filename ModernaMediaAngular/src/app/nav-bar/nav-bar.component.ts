@@ -21,12 +21,8 @@ public nav;
   ngAfterViewInit() {
      this.nav = this.elem.nativeElement.querySelector('#navbar');
   }
-
-  public ToggleNav(event) {
-    var target = event.target || event.srcElement || event.currentTarget;
-    console.log(target);
-    this.nav.classList.toggle("display");
-    target.classList.toggle("change");
+  ContactUs(event) {
+    alert("test");
   }
 
 }

@@ -1,25 +1,13 @@
 <header>
-  <div class="logo">
-    <a routerLink="/">
-      <img id="logo" src="../../assets/Images/ModernaMedia_Logo_3.jpg" alt="" />
-      <p>ModernaMedia</p>
-    </a>
-  </div>
-  <nav role="navigation" id="navbar">
-    <ul id="menu">
-      <li><a routerLink="/utvikling" routerLinkActive="true">Web</a></li>
-      <li><a href="/about/">design</a></li>
-      <li><a href="/blog/">markedsføring</a></li>
-      <li><a href="/blog/">Om oss</a></li>
-      <li><a href="/blog/">Blogg</a></li>
-    </ul>
-  </nav>
-  <div class="kontakt">
-    <a class="btn contact-btn" href="#">Kontakt</a>
-    <button (click)="ToggleNav($event)" class="nav-btn" href="#">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </button>
+  <div class="wrapper">
+    <nav role="navigation" id="navbar">
+      <a class="nav-link" routerLink="">Hjem</a>
+      <a class="nav-link" routerLink="utvikling">Utvikling</a>
+      <a class="nav-link" routerLink="utvikling">Design</a>
+      <a class="nav-link" routerLink="utvikling">Om oss</a>
+      <a class="nav-link" routerLink="utvikling">Blogg</a>
+    </nav>
+    <button class="btn contact" (click)="ContactUs($event)">Kontakt oss</button>
+    <button class="btn menu" (click)="ContactUs($event)">Meny</button>
   </div>
 </header>
