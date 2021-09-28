@@ -1,0 +1,46 @@
+@import "./src/variables.scss";
+.btn {
+    padding: 5px 10px;
+    font-weight: regular;
+    &:hover {
+        cursor: pointer;
+    }
+    border: 2px solid $light;
+}
+
+.gradient {
+    animation-duration: 5s;
+    animation-name: gradient_btn;
+    animation-iteration-count: infinite;
+    background-size: 200% auto;
+    &:hover {
+        animation-duration: .2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-name: gradient_btn_hover;
+    }
+    &:active {
+        animation-duration: .2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        animation-name: gradient_btn_active;
+    }
+}
+.dynamic {
+    background-image: linear-gradient(to right, $orange-gradient 0%, $blue-gradient 100%);
+}
+.blue {
+    background-color: $blue;
+    color: $light;
+}
+.white {
+    background-color: $light;
+    color: $dark;
+    border: 2px solid $dark;
+}
+.purple {
+    background-image: linear-gradient(to right, $purple-primary 0%, $purple-secondary 100%);
+}
+.orange {
+    background-image: linear-gradient(to right, $orange-primary 0%, $orange-secondary 100%);
+}

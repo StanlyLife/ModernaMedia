@@ -12,55 +12,16 @@ html {
 }
 
 html, body, main { 
-    // height: 100%;
     width: 100vw;
     max-width: 100%;
 }
 body { 
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
+    font-family: $ff-primary;
+    font-weight: 100;
     overflow-x: hidden;
 }
-
-.btn {
-    border-radius: 10px;
-    &:hover {
-        cursor: pointer;
-    }
-    text-transform: capitalize;
-}
-
-.gradient {
-    animation-duration: 5s;
-    animation-name: gradient_btn;
-    animation-iteration-count: infinite;
-    background-size: 200% auto;
-    &:hover {
-        animation-duration: .2s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        animation-name: gradient_btn_hover;
-    }
-    &:active {
-        animation-duration: .2s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        animation-name: gradient_btn_active;
-    }
-}
-.dynamic {
-    background-image: linear-gradient(to right, $orange-gradient 0%, $blue-gradient 100%);
-}
-.blue {
-    background-image: linear-gradient(to right, $blue-primary 0%, $blue-secondary 100%);
-}
-.purple {
-    background-image: linear-gradient(to right, $purple-primary 0%, $purple-secondary 100%);
-}
-.orange {
-    background-image: linear-gradient(to right, $orange-primary 0%, $orange-secondary 100%);
-}
-
 
 @keyframes gradient_btn {
     0%{background-position:0% 0%}
@@ -94,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 a, button {
     font-family: $ff-primary;
-    font-weight: 700;
+    font-weight: 100;
     font-size: $font-btn;
 }
 article, p {
@@ -125,15 +86,15 @@ a {
     height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(229deg, $blue-primary 0%, $blue-secondary 100%);
+    background: linear-gradient(229deg, $blue 0%, $blue-secondary 100%);
     border-radius: 50px;
     transition: 1s;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(229deg, $blue-gradient 0%, $orange-gradient 100%);
+    background: linear-gradient(229deg, $dark 0%, $dark-second 100%);
 }
 ::-webkit-scrollbar-thumb:active {
-    background: linear-gradient(229deg, $blue-secondary 0%, $blue-primary 100%);
+    background: linear-gradient(229deg, $dark 0%, $dark-second 100%);
 }
 ::-webkit-scrollbar-track {
     background: #666666;
