@@ -14,13 +14,21 @@ import { NavBarComponent } from './nav-bar/nav-bar.component'
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { LandingpageComponent } from './home/landingpage/landingpage.component';
+import { TjenesterComponent } from './home/tjenester/tjenester.component';
+import { MinibloggComponent } from './home/miniblogg/miniblogg.component';
+import { OmossComponent } from './home/omoss/omoss.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    LandingpageComponent,
+    TjenesterComponent,
+    MinibloggComponent,
+    OmossComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
