@@ -1,0 +1,65 @@
+@import "src/variables.scss";
+
+.moderna-media-home {
+    height: 100vh;
+    .background-image {
+        height: 100%;
+        background: $dark;
+        position: absolute;
+        z-index: -5;
+        img {
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        .radial-gradient{
+            background: radial-gradient(circle, rgba(51, 51, 51, 0.822) 0%, rgba(255, 255, 255, 0) 100%);
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            position:absolute;
+            top: 0;
+        }
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 85%;
+        width: 100%;
+
+        color: $light;
+
+        .logo {
+            img {
+                margin-top: -5%;
+                height: 500px;
+                width: auto;
+                filter: invert(100%);
+            }
+        }
+        .info {
+            margin-top: -125px;
+            h1,h2 {
+                text-transform: uppercase;
+                font-weight: 100;
+                font-size: 2rem;
+                text-align: center;
+                letter-spacing: 15px;
+                padding: 5px 0;
+            }
+            .info-text {
+                padding: 10px 25px;
+                text-align: center;
+            }
+            .cta-buttons {
+                padding: 10px 25px;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+    }
+}
