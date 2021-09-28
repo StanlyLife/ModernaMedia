@@ -18,6 +18,7 @@ import { LandingpageComponent } from './home/landingpage/landingpage.component';
 import { TjenesterComponent } from './home/tjenester/tjenester.component';
 import { MinibloggComponent } from './home/miniblogg/miniblogg.component';
 import { OmossComponent } from './home/omoss/omoss.component';
+import { TjenesterTjenesteComponent } from './home/tjenester/tjenester-tjeneste/tjenester-tjeneste.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { OmossComponent } from './home/omoss/omoss.component';
     LandingpageComponent,
     TjenesterComponent,
     MinibloggComponent,
-    OmossComponent
+    OmossComponent,
+    TjenesterTjenesteComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
