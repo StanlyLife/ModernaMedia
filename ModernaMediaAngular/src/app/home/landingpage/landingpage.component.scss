@@ -2,11 +2,13 @@
 
 .moderna-media-home {
     height: 100vh;
+    position: relative;
     .background-image {
         height: 100%;
+        width: 100%;
         background: $dark;
         position: absolute;
-        z-index: -5;
+        z-index: -1;
         img {
             object-fit: cover;
             height: 100%;
@@ -21,7 +23,6 @@
             top: 0;
         }
     }
-
     .content {
         display: flex;
         justify-content: center;
