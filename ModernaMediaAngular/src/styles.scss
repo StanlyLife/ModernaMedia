@@ -1,44 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
 @import "src/variables.scss";
+// Required Core Stylesheet
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-*, body, html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html, body, main { 
-    width: 100vw;
-    max-width: 100%;
+html,
+body,
+main {
+  width: 100vw;
+  max-width: 100%;
 }
-body { 
-    margin: 0;
-    font-family: Helvetica, Arial, sans-serif;
-    font-family: $ff-primary;
-    font-weight: 100;
-    overflow-x: hidden;
+body {
+  margin: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-family: $ff-primary;
+  font-weight: 100;
+  overflow-x: hidden;
 }
 
 @keyframes gradient_btn {
-    0%{background-position:0% 0%}
-    33%{background-position:50% 0%}
-    66%{background-position:100% 100%}
-    100%{background-position:0% 0%}
+  0% {
+    background-position: 0% 0%;
+  }
+  33% {
+    background-position: 50% 0%;
+  }
+  66% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 @keyframes gradient_btn_hover {
-    0%{background-position:0% 0%}
-    100%{background-position:100% 100%}
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
 }
 
 @keyframes gradient_btn_active {
-    0%{background-position:100% 100%}
-    100%{background-position: 0% 100%}
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
-
 
 // //Montserrat alt
 // @font-face {
@@ -50,28 +70,35 @@ body {
 //     src: local("Montserrat") url(./assets/fonts/MontserratAlternates-Black.ttf) format("truetype");
 // }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $ff-primary;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $ff-primary;
 }
-a, button {
-    font-family: $ff-primary;
-    font-weight: 100;
-    font-size: $font-btn;
+a,
+button {
+  font-family: $ff-primary;
+  font-weight: 100;
+  font-size: $font-btn;
 }
-article, p {
-    font-family: $ff-article;
-    font-weight: 400;
+article,
+p {
+  font-family: $ff-article;
+  font-weight: 400;
 }
 a {
+  color: inherit;
+  text-decoration: none;
+  &:active {
     color: inherit;
-    text-decoration: none;
-    &:active {
-        color: inherit;
-    }
+  }
 
-    &:hover {
-        color: $blue;
-    }
+  &:hover {
+    color: $blue;
+  }
 }
 
 //Scrollbar
@@ -82,27 +109,27 @@ a {
   background: transparent;
 }
 ::-webkit-scrollbar-button {
-    width: 0px;
-    height: 0px;
+  width: 0px;
+  height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(229deg, $blue 0%, $blue-secondary 100%);
-    border-radius: 50px;
-    transition: 1s;
+  background: linear-gradient(229deg, $blue 0%, $blue-secondary 100%);
+  border-radius: 50px;
+  transition: 1s;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(229deg, $dark 0%, $dark-second 100%);
+  background: linear-gradient(229deg, $dark 0%, $dark-second 100%);
 }
 ::-webkit-scrollbar-thumb:active {
-    background: linear-gradient(229deg, $dark 0%, $dark-second 100%);
+  background: linear-gradient(229deg, $dark 0%, $dark-second 100%);
 }
 ::-webkit-scrollbar-track {
-    background: #666666;
-    background: transparent;
+  background: #666666;
+  background: transparent;
   border-radius: 50px;
 }
 ::-webkit-scrollbar-track:hover {
-    background: #e7e7e7;
+  background: #e7e7e7;
 }
 ::-webkit-scrollbar-track:active {
   background: #c4c4c4;
