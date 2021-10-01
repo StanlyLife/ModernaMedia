@@ -1,0 +1,76 @@
+@import "../../../variables.scss";
+
+@media screen and (min-width: $desktop) {
+  app-tjenester-tjeneste {
+    position: absolute;
+    &.tjeneste-1 {
+      left: 0;
+    }
+    &.tjeneste-2 {
+    }
+    &.tjeneste-3 {
+      right: 0;
+    }
+    &.tjeneste-4 {
+      display: none;
+    }
+    &.active {
+      z-index: 10;
+      transform: scale(1.25);
+    }
+  }
+  div.tjenester {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 55vh;
+    border-top: 5px solid $light;
+    border-bottom: 5px solid $light;
+    background-color: $dark-transparent-80;
+    padding: $padding-section-top 0;
+    .controls {
+      position: absolute;
+      width: 100%;
+      border: 2px solid lime;
+      z-index: 5;
+      height: 375px;
+      .sliders {
+        img {
+          height: 50px;
+          width: 50px;
+          filter: invert(1);
+        }
+        button {
+          border: none;
+          background-color: transparent;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          height: 100%;
+          background: linear-gradient(
+            45deg,
+            rgba(51, 51, 51, 0.6169819978772759) 0%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          &:hover {
+            background: linear-gradient(
+              90deg,
+              rgba(51, 51, 51, 0.6169819978772759) 0%,
+              rgba(255, 255, 255, 0) 100%
+            );
+          }
+        }
+        .left {
+          transform: rotate(180deg);
+          padding-left: 1.5%;
+          left: 0;
+        }
+        .right {
+          padding-right: 1.5%;
+          right: 0;
+        }
+      }
+    }
+  }
+}
