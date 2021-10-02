@@ -1,0 +1,28 @@
+@import "../../../../variables.scss";
+
+@media screen and (min-width: $desktop) {
+  .moderna-media-tjeneste.card {
+    display: block;
+    .bg-img {
+      width: 50vw;
+      .card-img {
+      }
+    }
+    .info {
+      .title {
+        img {
+        }
+        h2 {
+        }
+      }
+      .description {
+      }
+      .les-mer {
+        p {
+        }
+        img {
+        }
+      }
+    }
+  }
+}

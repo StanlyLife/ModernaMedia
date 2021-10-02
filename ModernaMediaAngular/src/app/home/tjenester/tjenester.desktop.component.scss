@@ -1,22 +1,100 @@
 @import "../../../variables.scss";
 
+// @keyframes activeAnimation {
+//   from {
+//     transform: scale(1);
+//     transform: translate(0%);
+//   }
+//   to {
+//     transform: translate(50%);
+//     transform: scale(1.25);
+//   }
+// }
+// @keyframes moveRightLeft {
+//   from {
+//     transform: translate(100%);
+//   }
+//   to {
+//     transform: translate(0%);
+//   }
+// }
+// @keyframes moveRightRight {
+//   from {
+//     transform: scale(1.25);
+//     transform: translate(50%);
+//   }
+//   to {
+//     transform: translate(0%);
+//     transform: scale(1);
+//   }
+// }
+@keyframes activeAnimation {
+  0% {
+    z-index: 1;
+    transform: translateX(0%);
+    transform: scale(1);
+  }
+  50% {
+    z-index: 10;
+  }
+  100% {
+    transform: translateX(500%);
+    transform: scale(1.25);
+  }
+}
+@keyframes moveRightLeft {
+  0% {
+    z-index: 1;
+    transform: translateX(100%);
+  }
+  100% {
+    z-index: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes moveRightRight {
+  0% {
+    z-index: 10;
+    transform: translateX(50%);
+    transform: scale(1.25);
+  }
+  99% {
+    z-index: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    transform: scale(1);
+  }
+}
+
 @media screen and (min-width: $desktop) {
   app-tjenester-tjeneste {
     position: absolute;
-    &.tjeneste-1 {
-      left: 0;
+    &.left {
+      animation-name: moveRightLeft;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+      transform: translateX(0%);
     }
-    &.tjeneste-2 {
-    }
-    &.tjeneste-3 {
-      right: 0;
-    }
-    &.tjeneste-4 {
-      display: none;
+    &.right {
+      transform: translateX(100%);
+      animation-name: moveRightRight;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      transform: translateX(100%);
     }
     &.active {
       z-index: 10;
-      transform: scale(1.25);
+      animation-name: activeAnimation;
+      animation-duration: 3s;
+      animation-fill-mode: forwards;
+    }
+    &.moveRight {
+    }
+    &.moveLeft {
+    }
+    &.tjeneste-4 {
+      display: none;
     }
   }
   div.tjenester {
