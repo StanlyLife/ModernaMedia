@@ -9,7 +9,7 @@
   <div class="tjenester">
     <div class="controls">
       <div class="sliders">
-        <button class="left">
+        <button class="left" (click)="left($event)">
           <img src="../../../assets/Images/Icons/right-chevron.svg" alt="" />
         </button>
         <button class="right" (click)="right($event)">
@@ -20,33 +20,36 @@
     </div>
     <app-tjenester-tjeneste
       #design
-      class="tjeneste-0 moveLeft left"
+      class="tjeneste-0 moveLeft r-left"
       src="../../../assets/Images/Landingpage/Tjenester/moderne design teknologi.jpg"
       title="Design"
       content="Tidløst design som konverterer interesse til kunder"
       href="vg.no"
       icon="../../../assets/Images/Icons/sketch.svg"
       alt="test"
+      name="design"
     ></app-tjenester-tjeneste>
     <app-tjenester-tjeneste
       #utvikling
-      class="tjeneste-1 active"
+      class="tjeneste-1 r-active"
       src="../../../assets/Images/Landingpage/Tjenester/moderne teknologi design.jpg"
       title="Web Utvikling"
       content="Tidløst design som konverterer interesse til kunder"
       href="vg.no"
       icon="../../../assets/Images/Icons/sketch.svg"
       alt="test"
+      name="utvikling"
     ></app-tjenester-tjeneste>
     <app-tjenester-tjeneste
-      #markedsforing
-      class="tjeneste-2 moveRight right"
+      #seo
+      class="tjeneste-2 moveRight r-right"
       src="../../../assets/Images/Landingpage/Tjenester/seo tjenester for bedrift.jpg"
-      title="Markedsplan"
+      title="SEO"
       content="Tidløst design som konverterer interesse til kunder"
       href="vg.no"
       icon="../../../assets/Images/Icons/sketch.svg"
       alt="test"
+      name="seo"
     ></app-tjenester-tjeneste>
     <!-- <app-tjenester-tjeneste
       #seo
@@ -58,5 +61,10 @@
       icon="../../../assets/Images/Icons/sketch.svg"
       alt="test"
     ></app-tjenester-tjeneste> -->
+  </div>
+  <div class="tjenester-buttons">
+    <a href="vg.no" class="btn tjenester contact design">Design</a>
+    <a href="vg.no" class="btn tjenester contact utvikling active">Utvikling</a>
+    <a href="vg.no" class="btn tjenester contact seo">SEO</a>
   </div>
 </section>
