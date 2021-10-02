@@ -3,7 +3,7 @@
 
 
 //Desktop
-@media screen and (min-width: 700px) {
+@media screen and (min-width: $desktop) {
 
     button.btn.menu {
         display: none;
