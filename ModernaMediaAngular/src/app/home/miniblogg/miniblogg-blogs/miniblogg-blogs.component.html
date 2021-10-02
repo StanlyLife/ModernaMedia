@@ -1,8 +1,22 @@
-<article class="blogg">
+<article class="blogg" *ngIf="href == ''">
   <div class="image-container">
     <img src="{{ src }}" alt="{{ alt }}" />
   </div>
-  <h2>{{ title }}</h2>
-  <p>{{ content }}</p>
-  <a *ngIf="href != ''" href="{{ href }}"> les mer </a>
+  <div class="content">
+    <h2>{{ title }}</h2>
+    <p>{{ content }}</p>
+  </div>
+</article>
+
+<article class="blogg" *ngIf="href != ''">
+  <a *ngIf="href != ''" href="{{ href }}" title="les mer om {{ title }}">
+    <div class="image-container">
+      <img src="{{ src }}" alt="{{ alt }}" />
+    </div>
+    <div class="content">
+      <h2>{{ title }}</h2>
+      <p>{{ content }}</p>
+      <p class="les-mer">les mer</p>
+    </div>
+  </a>
 </article>

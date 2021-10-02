@@ -1,0 +1,52 @@
+@import "../../../../variables.scss";
+
+$imgWidth: 100%;
+
+.blogg {
+  a:hover {
+    .les-mer {
+      font-size: 14px;
+      letter-spacing: 1px;
+      color: $lilac-primary;
+    }
+  }
+  margin: 0 auto;
+  padding: 25px 10px;
+  width: 100%;
+  max-width: $desktop;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .image-container {
+    width: $imgWidth;
+    height: 250px;
+    position: relative;
+    border: 3.5px solid $light;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+    }
+  }
+  .content {
+    color: $light;
+    width: $imgWidth;
+    h2 {
+      text-transform: uppercase;
+      padding: 10px 0 5px;
+      letter-spacing: 10px;
+      font-family: $ff-article;
+      font-weight: lighter;
+    }
+    .les-mer {
+      color: $blue;
+      padding: 15px 0;
+      transition: 0.25s;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 12px;
+    }
+  }
+}
