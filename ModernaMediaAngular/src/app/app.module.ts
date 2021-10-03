@@ -20,6 +20,7 @@ import { MinibloggComponent } from './home/miniblogg/miniblogg.component';
 import { OmossComponent } from './home/omoss/omoss.component';
 import { TjenesterTjenesteComponent } from './home/tjenester/tjenester-tjeneste/tjenester-tjeneste.component';
 import { MinibloggBlogsComponent } from './home/miniblogg/miniblogg-blogs/miniblogg-blogs.component';
+import { KontaktComponent } from './home/kontakt/kontakt.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { MinibloggBlogsComponent } from './home/miniblogg/miniblogg-blogs/minibl
     OmossComponent,
     TjenesterTjenesteComponent,
     MinibloggBlogsComponent,
+    KontaktComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
