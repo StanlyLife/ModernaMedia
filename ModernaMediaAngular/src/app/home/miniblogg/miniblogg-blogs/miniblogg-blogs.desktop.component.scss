@@ -1,0 +1,27 @@
+@import "../../../../variables.scss";
+
+$imgWidth: 100%;
+
+@media screen and (min-width: 1200px) {
+  article.blogg {
+    max-width: 450px;
+  }
+}
+@media screen and (min-width: $desktop) {
+  .blogg {
+    min-width: 50%;
+    max-width: 100%;
+    width: auto;
+    overflow: hidden;
+    .image-container {
+      img {
+      }
+    }
+    .content {
+      h2 {
+      }
+      .les-mer {
+      }
+    }
+  }
+}

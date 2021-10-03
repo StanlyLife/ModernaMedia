@@ -1,0 +1,28 @@
+@import "../../../variables.scss";
+
+.moderna-media-mini-blogs {
+  min-height: 100vh;
+  background-color: $dark;
+  .right {
+    .image-container {
+      img {
+        display: none;
+        padding: 0 10px;
+        width: 100%;
+      }
+    }
+    .buttons {
+      padding: 25px 0;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+      a {
+        margin: 10px auto;
+        width: 200px;
+        text-align: center;
+        background: $light;
+      }
+    }
+  }
+}
