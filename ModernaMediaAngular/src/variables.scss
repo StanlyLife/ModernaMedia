@@ -4,24 +4,24 @@ $header-height: 50px;
 $orange-gradient: #ff774d;
 $blue-gradient: #534dff;
 
-$blue:  #4D8EFF;
-$blue-primary:  #4D77FF;
-$blue-secondary:#275C88;
+$blue: #4d8eff;
+$blue-primary: #4d77ff;
+$blue-secondary: #275c88;
 
-$purple-primary:  #C637B9;
-$purple-secondary:#350B6D;
+$purple-primary: #c637b9;
+$purple-secondary: #350b6d;
 
-$lilac-primary:  #75a2d1;
-$lilac-secondary:#453C9E;
+$lilac-primary: #75a2d1;
+$lilac-secondary: #453c9e;
 
-$orange-primary:  #F87045;
-$orange-secondary:#970000;
+$orange-primary: #f87045;
+$orange-secondary: #970000;
 
 $dark: #333;
 $dark-transparent: rgba(51, 51, 51, 0.333);
-$dark-transparent-80: rgba(51, 51, 51, 0.80);
+$dark-transparent-80: rgba(51, 51, 51, 0.8);
 $dark-second: #777;
-$light: #EEEEEE;
+$light: #eeeeee;
 
 $font-sm: 12px;
 $font-btn: 16px;
@@ -29,148 +29,133 @@ $font-md: 24px;
 $font-lg: 48px;
 
 $desktop: 700px;
+$max-width: 1920px;
 
 $padding-component-side: 10px;
 $padding-component-top: 25px;
 $padding-section-top: 50px;
 $padding-section-sides: 25px;
 
-
 @font-face {
-    font-family: "Lobster";
-    src: local("Lobster") url('/assets/fonts/Lobster-Regular.ttf') format("truetype");
+  font-family: "Lobster";
+  src: local("Lobster") url("/assets/fonts/Lobster-Regular.ttf")
+    format("truetype");
 }
 @font-face {
-    font-family: "Mosk";
-    font-weight: 100;
-    src: 
-     url('/assets/fonts/Mosk100.ttf') format("woff2"),
-     url('/assets/fonts/Mosk100.ttf') format("woff"),
-     url('/assets/fonts/Mosk100.ttf') format("truetype"),
-     url('/assets/fonts/Mosk100.ttf') format("svg");
+  font-family: "Mosk";
+  font-weight: 100;
+  src: url("/assets/fonts/Mosk100.ttf") format("woff2"),
+    url("/assets/fonts/Mosk100.ttf") format("woff"),
+    url("/assets/fonts/Mosk100.ttf") format("truetype"),
+    url("/assets/fonts/Mosk100.ttf") format("svg");
 }
 @font-face {
-    font-family: "Mosk";
-    font-weight: 200;
-    src: 
-     url('/assets/fonts/Mosk200.ttf') format("woff2"),
-     url('/assets/fonts/Mosk200.ttf') format("woff"),
-     url('/assets/fonts/Mosk200.ttf') format("truetype"),
-     url('/assets/fonts/Mosk200.ttf') format("svg");
+  font-family: "Mosk";
+  font-weight: 200;
+  src: url("/assets/fonts/Mosk200.ttf") format("woff2"),
+    url("/assets/fonts/Mosk200.ttf") format("woff"),
+    url("/assets/fonts/Mosk200.ttf") format("truetype"),
+    url("/assets/fonts/Mosk200.ttf") format("svg");
 }
 @font-face {
-    font-family: "Mosk";
-    src: 
-     url('/assets/fonts/Mosk300.ttf') format("woff2"),
-     url('/assets/fonts/Mosk300.ttf') format("woff"),
-     url('/assets/fonts/Mosk300.ttf') format("truetype"),
-     url('/assets/fonts/Mosk300.ttf') format("svg");
-     font-weight: 300;
+  font-family: "Mosk";
+  src: url("/assets/fonts/Mosk300.ttf") format("woff2"),
+    url("/assets/fonts/Mosk300.ttf") format("woff"),
+    url("/assets/fonts/Mosk300.ttf") format("truetype"),
+    url("/assets/fonts/Mosk300.ttf") format("svg");
+  font-weight: 300;
 }
 @font-face {
-    font-family: "Mosk";
-    font-weight: 400;
-    src: 
-     url('/assets/fonts/Mosk400.ttf') format("woff2"),
-     url('/assets/fonts/Mosk400.ttf') format("woff"),
-     url('/assets/fonts/Mosk400.ttf') format("truetype"),
-     url('/assets/fonts/Mosk400.ttf') format("svg");
+  font-family: "Mosk";
+  font-weight: 400;
+  src: url("/assets/fonts/Mosk400.ttf") format("woff2"),
+    url("/assets/fonts/Mosk400.ttf") format("woff"),
+    url("/assets/fonts/Mosk400.ttf") format("truetype"),
+    url("/assets/fonts/Mosk400.ttf") format("svg");
 }
 @font-face {
-    font-family: "Mosk";
-    font-weight: 500;
-    src: 
-     url('/assets/fonts/Mosk500.ttf') format("woff2"),
-     url('/assets/fonts/Mosk500.ttf') format("woff"),
-     url('/assets/fonts/Mosk500.ttf') format("truetype"),
-     url('/assets/fonts/Mosk500.ttf') format("svg");
+  font-family: "Mosk";
+  font-weight: 500;
+  src: url("/assets/fonts/Mosk500.ttf") format("woff2"),
+    url("/assets/fonts/Mosk500.ttf") format("woff"),
+    url("/assets/fonts/Mosk500.ttf") format("truetype"),
+    url("/assets/fonts/Mosk500.ttf") format("svg");
 }
 @font-face {
-    font-family: "Mosk";
-    font-weight: 600;
-    src: 
-     url('/assets/fonts/Mosk600.ttf') format("woff2"),
-     url('/assets/fonts/Mosk600.ttf') format("woff"),
-     url('/assets/fonts/Mosk600.ttf') format("truetype"),
-     url('/assets/fonts/Mosk600.ttf') format("svg");
+  font-family: "Mosk";
+  font-weight: 600;
+  src: url("/assets/fonts/Mosk600.ttf") format("woff2"),
+    url("/assets/fonts/Mosk600.ttf") format("woff"),
+    url("/assets/fonts/Mosk600.ttf") format("truetype"),
+    url("/assets/fonts/Mosk600.ttf") format("svg");
 }
 @font-face {
-    font-family: "Mosk";
-    font-weight: 700;
-    src: 
-     url('/assets/fonts/Mosk700.ttf') format("woff2"),
-     url('/assets/fonts/Mosk700.ttf') format("woff"),
-     url('/assets/fonts/Mosk700.ttf') format("truetype"),
-     url('/assets/fonts/Mosk700.ttf') format("svg");
+  font-family: "Mosk";
+  font-weight: 700;
+  src: url("/assets/fonts/Mosk700.ttf") format("woff2"),
+    url("/assets/fonts/Mosk700.ttf") format("woff"),
+    url("/assets/fonts/Mosk700.ttf") format("truetype"),
+    url("/assets/fonts/Mosk700.ttf") format("svg");
 }
 @font-face {
-    font-family: "Mosk";
-    font-weight: 800;
-    src: 
-     url('/assets/fonts/Mosk800.ttf') format("woff2"),
-     url('/assets/fonts/Mosk800.ttf') format("woff"),
-     url('/assets/fonts/Mosk800.ttf') format("truetype"),
-     url('/assets/fonts/Mosk800.ttf') format("svg");
+  font-family: "Mosk";
+  font-weight: 800;
+  src: url("/assets/fonts/Mosk800.ttf") format("woff2"),
+    url("/assets/fonts/Mosk800.ttf") format("woff"),
+    url("/assets/fonts/Mosk800.ttf") format("truetype"),
+    url("/assets/fonts/Mosk800.ttf") format("svg");
 }
 @font-face {
-    font-family: "Mosk";
-    font-weight: 900;
-    src: 
-     url('/assets/fonts/Mosk900.ttf') format("woff2"),
-     url('/assets/fonts/Mosk900.ttf') format("woff"),
-     url('/assets/fonts/Mosk900.ttf') format("truetype"),
-     url('/assets/fonts/Mosk900.ttf') format("svg");
+  font-family: "Mosk";
+  font-weight: 900;
+  src: url("/assets/fonts/Mosk900.ttf") format("woff2"),
+    url("/assets/fonts/Mosk900.ttf") format("woff"),
+    url("/assets/fonts/Mosk900.ttf") format("truetype"),
+    url("/assets/fonts/Mosk900.ttf") format("svg");
 }
 
-
 @font-face {
-    font-family: "Pier";
-    font-weight: 400;
-    src: 
-     url('/assets/fonts/PierSans-Light.otf') format("woff2"),
-     url('/assets/fonts/PierSans-Light.otf') format("woff"),
-     url('/assets/fonts/PierSans-Light.otf') format("truetype"),
-     url('/assets/fonts/PierSans-Light.otf') format("svg");
+  font-family: "Pier";
+  font-weight: 400;
+  src: url("/assets/fonts/PierSans-Light.otf") format("woff2"),
+    url("/assets/fonts/PierSans-Light.otf") format("woff"),
+    url("/assets/fonts/PierSans-Light.otf") format("truetype"),
+    url("/assets/fonts/PierSans-Light.otf") format("svg");
 }
 @font-face {
-    font-family: "Pier";
-    font-weight: 500;
-    src: 
-     url('/assets/fonts/PierSans-regular.otf') format("woff2"),
-     url('/assets/fonts/PierSans-regular.otf') format("woff"),
-     url('/assets/fonts/PierSans-regular.otf') format("truetype"),
-     url('/assets/fonts/PierSans-regular.otf') format("svg");
+  font-family: "Pier";
+  font-weight: 500;
+  src: url("/assets/fonts/PierSans-regular.otf") format("woff2"),
+    url("/assets/fonts/PierSans-regular.otf") format("woff"),
+    url("/assets/fonts/PierSans-regular.otf") format("truetype"),
+    url("/assets/fonts/PierSans-regular.otf") format("svg");
 }
 @font-face {
-    font-family: "Pier";
-    font-weight: 600;
-    src: 
-     url('/assets/fonts/PierSans-Medium.otf') format("woff2"),
-     url('/assets/fonts/PierSans-Medium.otf') format("woff"),
-     url('/assets/fonts/PierSans-Medium.otf') format("truetype"),
-     url('/assets/fonts/PierSans-Medium.otf') format("svg");
+  font-family: "Pier";
+  font-weight: 600;
+  src: url("/assets/fonts/PierSans-Medium.otf") format("woff2"),
+    url("/assets/fonts/PierSans-Medium.otf") format("woff"),
+    url("/assets/fonts/PierSans-Medium.otf") format("truetype"),
+    url("/assets/fonts/PierSans-Medium.otf") format("svg");
 }
 @font-face {
-    font-family: "Pier";
-    font-weight: 700;
-    src: 
-     url('/assets/fonts/PierSans-Bold.otf') format("woff2"),
-     url('/assets/fonts/PierSans-Bold.otf') format("woff"),
-     url('/assets/fonts/PierSans-Bold.otf') format("truetype"),
-     url('/assets/fonts/PierSans-Bold.otf') format("svg");
+  font-family: "Pier";
+  font-weight: 700;
+  src: url("/assets/fonts/PierSans-Bold.otf") format("woff2"),
+    url("/assets/fonts/PierSans-Bold.otf") format("woff"),
+    url("/assets/fonts/PierSans-Bold.otf") format("truetype"),
+    url("/assets/fonts/PierSans-Bold.otf") format("svg");
 }
 @font-face {
-    font-family: "Pier";
-    font-weight: 900;
-    src: 
-     url('/assets/fonts/PierSans-Black.otf') format("woff2"),
-     url('/assets/fonts/PierSans-Black.otf') format("woff"),
-     url('/assets/fonts/PierSans-Black.otf') format("truetype"),
-     url('/assets/fonts/PierSans-Black.otf') format("svg");
+  font-family: "Pier";
+  font-weight: 900;
+  src: url("/assets/fonts/PierSans-Black.otf") format("woff2"),
+    url("/assets/fonts/PierSans-Black.otf") format("woff"),
+    url("/assets/fonts/PierSans-Black.otf") format("truetype"),
+    url("/assets/fonts/PierSans-Black.otf") format("svg");
 }
 
-
-
-
-$ff-article: "Pier", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
-$ff-primary: "Mosk", "Pier", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+$ff-article: "Pier", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$ff-primary: "Mosk", "Pier", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; ;
