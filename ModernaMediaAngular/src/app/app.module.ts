@@ -38,9 +38,6 @@ import { InfoAndImageComponent } from './components/info-and-image/info-and-imag
     TjenesterTjenesteComponent,
     MinibloggBlogsComponent,
     KontaktComponent,
-    BannerComponent,
-    ImageAndTextComponent,
-    InfoAndImageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
