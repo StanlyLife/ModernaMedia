@@ -21,6 +21,9 @@ import { OmossComponent } from './home/omoss/omoss.component';
 import { TjenesterTjenesteComponent } from './home/tjenester/tjenester-tjeneste/tjenester-tjeneste.component';
 import { MinibloggBlogsComponent } from './home/miniblogg/miniblogg-blogs/miniblogg-blogs.component';
 import { KontaktComponent } from './home/kontakt/kontakt.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { ImageAndTextComponent } from './components/image-and-text/image-and-text.component';
+import { InfoAndImageComponent } from './components/info-and-image/info-and-image.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +38,9 @@ import { KontaktComponent } from './home/kontakt/kontakt.component';
     TjenesterTjenesteComponent,
     MinibloggBlogsComponent,
     KontaktComponent,
+    BannerComponent,
+    ImageAndTextComponent,
+    InfoAndImageComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
