@@ -40,7 +40,8 @@ export class BannerComponent implements OnInit {
     
   ];
 
-  @Input() sectionClass:string;
+  @Input() sectionStyle:string = 'dark';
+  @Input() IsVertical:boolean;
 
 
   constructor() { }
