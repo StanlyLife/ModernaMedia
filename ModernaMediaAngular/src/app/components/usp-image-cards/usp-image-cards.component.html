@@ -1,1 +1,17 @@
-<p>usp-image-cards works!</p>
+<section class="moderna-media-usp-image-cards light">
+  <h2 class="title" [innerHTML]="Title"></h2>
+  <div class="usp-wrapper">
+    <div class="usp" *ngFor="let item of UspCard">
+      <div class="usp-inner">
+        <div class="bg-img">
+          <div class="shadow-overlay"></div>
+          <img src="{{ item['imageSrc'] }}" alt="{{ item['imageAlt'] }}" />
+        </div>
+        <div class="content">
+          <h6>{{ item["title"] }}</h6>
+          <p>{{ item["content"] }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
