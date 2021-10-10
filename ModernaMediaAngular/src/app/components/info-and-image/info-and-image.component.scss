@@ -1,0 +1,34 @@
+@import "../../../variables.scss";
+section {
+  &.white {
+    color: $dark;
+  }
+  &.light {
+    color: $dark;
+    background-color: $light;
+  }
+  &.dark {
+    background-color: $dark;
+    color: $light;
+  }
+  min-height: 100vh;
+  padding: $padding-section-top $padding-section-sides;
+  .image {
+    max-width: 100%;
+    padding-bottom: $padding-component-top;
+    img {
+      box-shadow: 1px 1px 15px 0px rgba(0, 0, 0, 0.75);
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .content {
+    h2 {
+      padding-bottom: $padding-component-top;
+    }
+    span {
+      color: $blue;
+    }
+  }
+}

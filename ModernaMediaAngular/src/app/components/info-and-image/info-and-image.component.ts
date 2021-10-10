@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-info-and-image',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class InfoAndImageComponent implements OnInit {
 
   constructor() { }
-
+  @Input() sectionStyle:string = 'light';
   ngOnInit(): void {
   }
 
