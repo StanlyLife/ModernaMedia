@@ -17,7 +17,8 @@ import { CommonModule } from '@angular/common';
   ],
   exports: [
     BannerComponent,
-    
+    ImageAndTextComponent,
+    InfoAndImageComponent
   ]
 })
 export class ComponentsModule { }
