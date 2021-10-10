@@ -3,6 +3,7 @@ import { ImageAndTextComponent } from './image-and-text/image-and-text.component
 import { BannerComponent } from './banner/banner.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UspImageCardsComponent } from './usp-image-cards/usp-image-cards.component';
 
 
 
@@ -10,7 +11,8 @@ import { CommonModule } from '@angular/common';
   declarations: [
     BannerComponent,
     ImageAndTextComponent,
-    InfoAndImageComponent
+    InfoAndImageComponent,
+    UspImageCardsComponent
   ],
   imports: [
     CommonModule
