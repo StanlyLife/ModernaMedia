@@ -4,6 +4,7 @@ import { BannerComponent } from './banner/banner.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UspImageCardsComponent } from './usp-image-cards/usp-image-cards.component';
+import { ImagePriceInfoComponent } from './image-price-info/image-price-info.component';
 
 
 
@@ -12,7 +13,8 @@ import { UspImageCardsComponent } from './usp-image-cards/usp-image-cards.compon
     BannerComponent,
     ImageAndTextComponent,
     InfoAndImageComponent,
-    UspImageCardsComponent
+    UspImageCardsComponent,
+    ImagePriceInfoComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,9 @@ import { UspImageCardsComponent } from './usp-image-cards/usp-image-cards.compon
   exports: [
     BannerComponent,
     ImageAndTextComponent,
-    InfoAndImageComponent
+    InfoAndImageComponent,
+    UspImageCardsComponent,
+    ImagePriceInfoComponent
   ]
 })
 export class ComponentsModule { }
