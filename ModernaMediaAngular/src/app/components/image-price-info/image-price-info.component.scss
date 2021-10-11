@@ -1,0 +1,149 @@
+@import "../../../variables.scss";
+
+section.moderna-media-product {
+  position: relative;
+  height: 1250px;
+
+  .arrows {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $padding-component-side;
+    position: absolute;
+    bottom: 25px;
+    z-index: 2;
+    width: 100%;
+    button {
+      background-color: transparent;
+      border: none;
+      transition: 0.25s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      p {
+        color: $light;
+        padding: 0 5px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: 100;
+        font-size: 0.5rem;
+      }
+      &:hover {
+        cursor: pointer;
+        opacity: 0.5;
+      }
+    }
+    img {
+      width: 30px;
+      height: auto;
+      filter: invert(1);
+    }
+    .left {
+      transform: rotate(180deg);
+    }
+  }
+
+  &.light {
+    color: $light;
+    .bg-img {
+      background-color: $dark;
+    }
+  }
+  section.product-section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    .bg-img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      h1.title {
+        text-transform: uppercase;
+        position: absolute;
+        font-weight: 900;
+        text-shadow: $text-shadow;
+        font-size: 7rem;
+        letter-spacing: 30px;
+        word-wrap: break-word;
+        word-break: break-all;
+        z-index: 1;
+      }
+      .bg-shadow {
+        background: linear-gradient(
+          0deg,
+          rgb(51, 51, 51, 1) 0%,
+          rgba(51, 51, 51, 0.5) 75%,
+          rgba(51, 51, 51, 0) 100%
+        );
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        position: absolute;
+        pointer-events: none;
+      }
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+section.moderna-media-product {
+  section.product-section .content {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    padding: $padding-component-top $padding-component-side;
+    .subtitle {
+      padding: $padding-component-top $padding-component-side;
+      ::ng-deep span {
+        color: $blue;
+      }
+    }
+    .icons {
+      padding: 0 $padding-component-side;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-direction: row;
+      .icon {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        &:nth-child(n + 3) {
+          display: none;
+        }
+        img {
+          height: 64px;
+          padding-right: 5px;
+          filter: invert(1);
+        }
+        .icon-text {
+          height: 64px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: baseline;
+          flex-direction: column;
+          h6 {
+            font-size: 1rem;
+          }
+          p {
+            font-size: 0.7rem;
+            font-weight: 100;
+          }
+        }
+      }
+    }
+    .content-text {
+      padding: $padding-component-top $padding-component-side;
+    }
+    .cta-btn {
+      padding: $padding-component-top $padding-component-side;
+    }
+  }
+}

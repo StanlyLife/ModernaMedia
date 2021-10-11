@@ -1,1 +1,54 @@
-<p>image-price-info works!</p>
+<section class="moderna-media-product light">
+  <div class="arrows">
+    <button>
+      <img
+        class="left"
+        src="../../../assets/Images/Icons/right-arrow.svg"
+        alt=""
+      />
+      <p>forrige</p>
+    </button>
+    <button>
+      <p>neste</p>
+      <img
+        class="right"
+        src="../../../assets/Images/Icons/right-arrow.svg"
+        alt=""
+      />
+    </button>
+  </div>
+  <section class="product-section">
+    <div class="product-wrapper">
+      <div class="bg-img">
+        <h1 class="title">{{ Product[0]["Title"] }}</h1>
+        <div class="bg-shadow"></div>
+        <img
+          src="../../../assets/Images/Components/Image-products-info/Barista.jpg"
+          alt=""
+        />
+      </div>
+      <div class="content">
+        <div class="subtitle">
+          <h2 [innerHTML]="Product[0]['Subtitle']"></h2>
+        </div>
+        <div class="icons">
+          <div class="icon" *ngFor="let ico of Product[0]['Icons']">
+            <img src="{{ ico['IconSrc'] }}" alt="" />
+            <div class="icon-text">
+              <h6>{{ ico["IconTitle"] }}</h6>
+              <p *ngFor="let iconContent of ico['IconContent']">
+                {{ iconContent }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="content-text">
+          <p [innerHTML]="Product[0]['Content']"></p>
+        </div>
+        <div class="cta-btn">
+          <button class="btn cta">Book et møte</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
