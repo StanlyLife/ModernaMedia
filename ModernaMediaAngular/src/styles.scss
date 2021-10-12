@@ -28,38 +28,6 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes gradient_btn {
-  0% {
-    background-position: 0% 0%;
-  }
-  33% {
-    background-position: 50% 0%;
-  }
-  66% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
-}
-@keyframes gradient_btn_hover {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
-}
-
-@keyframes gradient_btn_active {
-  0% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 100%;
-  }
-}
-
 // //Montserrat alt
 // @font-face {
 //     font-family: "MontserratAlt";
