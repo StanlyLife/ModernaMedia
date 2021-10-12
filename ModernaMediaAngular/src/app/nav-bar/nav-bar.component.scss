@@ -1,48 +1,45 @@
 @import "../../variables.scss";
 
-
-
 //Mobile
 
 header {
-    height: 50px;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
+  margin-top: 10px;
+  height: 50px;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
 .wrapper {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  padding: 0 25px;
+  nav {
+    max-width: 1280px;
     height: 100%;
-    position: relative;
-    nav {
-        height: 100%;
-        color: $light;
-        width: 60%;
-        margin: 0 auto;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 25px;
-        display: none;
-        a {
-            color: $light;
-        }
+    color: $light;
+    width: 60%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    display: none;
+  }
+  .logo {
+    height: 100%;
+    position: absolute;
+    left: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      opacity: 0.5;
     }
-    button.btn.contact {
-        border: 2px solid $light;
-        background: $dark-transparent;
-        color: $light;
-
-        position: absolute;
-        right: 2.5%;
-        display: none;
-    }
-    button.btn.menu {
-        margin-right: 2.5%;
-        border: 2px solid $light;
-        background: $dark-transparent;
-        color: $light;
-    }
+  }
+  .contact {
+    display: none;
+  }
 }
