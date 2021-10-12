@@ -5,7 +5,9 @@ nuget.g.props
 CyberrangeProject.assets.cache
 *.cache
 *.txt
-
+*.mp4
+*.jpg
+*.png
 
 # Logs
 logs
