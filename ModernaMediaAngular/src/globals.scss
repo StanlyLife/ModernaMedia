@@ -1,46 +1,179 @@
 @import "./variables.scss";
 .btn {
-    padding: 5px 10px;
-    font-weight: regular;
-    &:hover {
-        cursor: pointer;
-    }
-    border: 2px solid $light;
+  padding: 10px 25px;
+  font-weight: normal;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn.shadow {
+  box-shadow: $box-shadow-btn;
+}
+
+.btn.transparent-white {
+  border: 2px solid $light;
+  color: $light;
+  background-color: $dark-transparent-30;
+}
+.btn.transparent-dark {
+  border: 2px solid $dark;
+  color: $dark;
+  background-color: transparent;
 }
 
 .gradient {
-    animation-duration: 5s;
-    animation-name: gradient_btn;
-    animation-iteration-count: infinite;
-    background-size: 200% auto;
-    &:hover {
-        animation-duration: .2s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        animation-name: gradient_btn_hover;
-    }
-    &:active {
-        animation-duration: .2s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-        animation-name: gradient_btn_active;
-    }
+  animation-duration: 5s;
+  animation-name: gradient_btn;
+  animation-iteration-count: infinite;
+  background-size: 200% auto;
+  &:hover {
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-name: gradient_btn_hover;
+  }
+  &:active {
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-name: gradient_btn_active;
+  }
 }
-.dynamic {
-    background-image: linear-gradient(to right, $orange-gradient 0%, $blue-gradient 100%);
+.btn.cta {
+  background-color: transparent;
+  border: none;
+  color: $light;
+  background-image: linear-gradient(
+    to right,
+    $orange-gradient 0%,
+    $blue-gradient 100%
+  );
 }
+
+.btn.light {
+  border: 2px solid $dark;
+}
+.btn.dark {
+  border: 2px solid $light;
+}
+
+.dark {
+  background-color: $dark;
+  color: $light;
+}
+
 .blue {
-    background-color: $blue;
-    color: $light;
+  background-color: $blue;
+  color: $light;
+}
+.light {
+  background-color: $light;
+  color: $dark;
 }
 .white {
-    background-color: $light;
-    color: $dark;
-    border: 2px solid $dark;
+  background-color: $light;
+  color: $dark;
 }
-.purple {
-    background-image: linear-gradient(to right, $purple-primary 0%, $purple-secondary 100%);
+.g-purple {
+  background-color: transparent;
+  border: none;
+  color: $light;
+  background-image: linear-gradient(
+    to right,
+    $purple-primary 0%,
+    $purple-secondary 100%
+  );
 }
-.orange {
-    background-image: linear-gradient(to right, $orange-primary 0%, $orange-secondary 100%);
+.g-orange {
+  background-color: transparent;
+  border: none;
+  color: $light;
+  background-image: linear-gradient(
+    to right,
+    $orange-primary 0%,
+    $orange-secondary 100%
+  );
+}
+.g-blue {
+  background-color: transparent;
+  border: none;
+  color: $light;
+  background-image: linear-gradient(
+    to right,
+    $blue-primary 0%,
+    $blue-secondary 100%
+  );
+}
+
+.nav-link {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  margin: 20px 20px 20px 20px;
+  color: $light;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  a {
+    position: relative;
+    transition: all 0.35s ease-Out;
+  }
+  .slide {
+    width: 100%;
+    height: 2px;
+    left: -200px;
+    background: $light;
+    position: absolute;
+    transition: all 0.35s ease-Out;
+    bottom: 0;
+  }
+  &:hover {
+    a {
+      color: $light;
+    }
+
+    .slide {
+      left: 0;
+    }
+  }
+}
+
+@keyframes gradient_btn {
+  0% {
+    background-position: 0% 0%;
+  }
+  33% {
+    background-position: 50% 0%;
+  }
+  66% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes gradient_btn_hover {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes gradient_btn_active {
+  0% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }
