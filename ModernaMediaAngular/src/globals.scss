@@ -15,13 +15,60 @@
   border: 2px solid $light;
   color: $light;
   background-color: $dark-transparent-30;
+  transition: background-color 0.25s;
+  &:hover {
+    background-color: $dark;
+  }
+  &:active {
+    background-color: $dark-second;
+  }
 }
 .btn.transparent-dark {
   border: 2px solid $dark;
   color: $dark;
   background-color: transparent;
+  &:hover {
+  }
 }
 
+.btn.borderless {
+  border: none !important;
+}
+
+.btn.blue {
+  border: 2px solid $light;
+  color: $light;
+  background-color: $blue;
+  transition: background-color 0.25s;
+  &:hover {
+    background-color: $blue-primary;
+  }
+  &:active {
+    background-color: $blue-secondary;
+  }
+}
+
+.btn.light {
+  border: 2px solid $dark;
+  &:hover {
+  }
+}
+.btn.dark {
+  border: 2px solid $light;
+  &:hover {
+  }
+}
+
+.btn.cta {
+  background-color: transparent;
+  border: none;
+  color: $light;
+  background-image: linear-gradient(
+    to right,
+    $orange-gradient 0%,
+    $blue-gradient 100%
+  );
+}
 .gradient {
   animation-duration: 5s;
   animation-name: gradient_btn;
@@ -39,23 +86,6 @@
     animation-fill-mode: forwards;
     animation-name: gradient_btn_active;
   }
-}
-.btn.cta {
-  background-color: transparent;
-  border: none;
-  color: $light;
-  background-image: linear-gradient(
-    to right,
-    $orange-gradient 0%,
-    $blue-gradient 100%
-  );
-}
-
-.btn.light {
-  border: 2px solid $dark;
-}
-.btn.dark {
-  border: 2px solid $light;
 }
 
 .dark {
