@@ -3,6 +3,30 @@
 .moderna-media-mini-blogs {
   min-height: 100vh;
   background-color: $dark;
+  &.light {
+    background-color: $light;
+    color: $dark;
+  }
+  &.dark {
+    background-color: $dark;
+    color: $light;
+  }
+  &.white {
+    background-color: #fff;
+    color: $dark;
+  }
+
+  .title {
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 3rem;
+    text-shadow: $text-shadow;
+    font-weight: 900;
+    max-width: $max-width;
+    margin: 0 auto;
+  }
   .right {
     .image-container {
       img {
@@ -16,13 +40,7 @@
       display: flex;
       justify-content: space-evenly;
       align-items: center;
-      flex-direction: column;
-      a {
-        margin: 10px auto;
-        width: 200px;
-        text-align: center;
-        background: $light;
-      }
+      flex-direction: row;
     }
   }
 }
