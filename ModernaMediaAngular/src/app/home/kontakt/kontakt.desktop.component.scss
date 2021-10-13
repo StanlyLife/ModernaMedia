@@ -10,9 +10,13 @@
     .info-wrapper {
       height: 100%;
       padding: 0;
+      background-color: $light;
       .info {
         height: 100%;
       }
+    }
+    .kontakt {
+      box-shadow: $box-shadow;
     }
   }
 }
