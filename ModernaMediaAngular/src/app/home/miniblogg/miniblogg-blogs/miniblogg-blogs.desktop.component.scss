@@ -2,15 +2,10 @@
 
 $imgWidth: 100%;
 
-@media screen and (min-width: 1200px) {
-  article.blogg {
-    max-width: 450px;
-  }
-}
 @media screen and (min-width: $desktop) {
   .blogg {
     min-width: 50%;
-    max-width: 100%;
+    max-width: 525px;
     width: auto;
     overflow: hidden;
     .image-container {
@@ -23,5 +18,12 @@ $imgWidth: 100%;
       .les-mer {
       }
     }
+  }
+}
+@media screen and (min-width: 1200px) {
+}
+@media screen and (min-width: $max-width) {
+  .blogg {
+    min-width: 100%;
   }
 }

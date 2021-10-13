@@ -3,10 +3,37 @@
 $imgWidth: 100%;
 
 .blogg {
+  color: $light;
+  &.light {
+    &,
+    .content {
+      color: $light;
+    }
+    .image-container {
+      background-color: $dark;
+    }
+  }
+
+  &.dark {
+    &,
+    .content {
+      color: $dark;
+    }
+    background-color: transparent;
+    .image-container {
+      background-color: $light;
+    }
+    .image-container {
+      border: 3.5px solid $dark;
+    }
+  }
   a:hover {
     .les-mer {
       letter-spacing: 1px;
       color: $lilac-primary;
+    }
+    p {
+      color: inherit;
     }
   }
   margin: 0 auto;
@@ -30,13 +57,12 @@ $imgWidth: 100%;
     }
   }
   .content {
-    color: $light;
     width: $imgWidth;
     h2 {
       text-transform: uppercase;
       padding: 10px 0 5px;
-      letter-spacing: 10px;
-      font-family: $ff-article;
+      letter-spacing: 5px;
+      font-family: $ff-primary;
       font-weight: lighter;
     }
     .les-mer {

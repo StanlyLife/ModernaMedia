@@ -12,6 +12,7 @@ export class MinibloggBlogsComponent implements OnInit {
   @Input() content;
   @Input() href = '';
   @Input() alt;
+  @Input() theme;
 
   constructor() { }
 

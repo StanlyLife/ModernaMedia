@@ -1,4 +1,4 @@
-<article class="blogg" *ngIf="href == ''">
+<article class="blogg" *ngIf="href == ''" [class]="theme">
   <div class="image-container">
     <img src="{{ src }}" alt="{{ alt }}" />
   </div>
@@ -8,7 +8,7 @@
   </div>
 </article>
 
-<article class="blogg" *ngIf="href != ''">
+<article class="blogg" *ngIf="href != ''" [class]="theme">
   <a *ngIf="href != ''" href="{{ href }}" title="les mer om {{ title }}">
     <div class="image-container">
       <img src="{{ src }}" alt="{{ alt }}" />
