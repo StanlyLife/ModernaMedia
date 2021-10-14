@@ -1,0 +1,59 @@
+@import "../../../variables.scss";
+section {
+    min-height: 100vh;
+    position: relative;
+    .bg-img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -2;
+        }
+        .shadow {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: linear-gradient(
+            270deg,
+            rgb(51, 51, 51, 1) 0%,
+            rgba(51, 51, 51, 0.5) 50%,
+            rgba(51, 51, 51, 0) 100%
+            );
+            z-index: -1;
+        }
+    }
+    .wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        padding: $padding-section-top $padding-section-sides;
+        height: 100%;
+        position: absolute;
+        .right, .left {
+        }
+        .right {
+            color: $light;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-direction: column;
+            .title {
+                font-size: 2.5rem;
+                text-transform: uppercase;
+                text-shadow: $text-shadow;
+                font-weight: 900;
+                ::ng-deep span {
+                    color: $red;
+                }
+            }
+            p {
+                padding-top: 50px;
+            }
+        }
+    }
+}
