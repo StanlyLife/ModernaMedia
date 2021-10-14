@@ -17,8 +17,10 @@ $lilac-secondary: #453c9e;
 $orange-primary: #f87045;
 $orange-secondary: #970000;
 
+$red: rgb(255, 52, 52);
+
 $dark: #333;
-$dark-transparent: rgba(51, 51, 51, 0.333);
+$dark-transparent-30: rgba(51, 51, 51, 0.333);
 $dark-transparent-80: rgba(51, 51, 51, 0.8);
 $dark-second: #777;
 $light: #eeeeee;
@@ -38,6 +40,9 @@ $padding-component-side: 10px;
 $padding-component-top: 25px;
 $padding-section-top: 50px;
 $padding-section-sides: 25px;
+
+$box-shadow: 1px 1px 28px 0px rgba(0, 0, 0, 0.75);
+$box-shadow-btn: 0px 0px 20px 6px rgb(0 0 0 / 25%);
 
 $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
   0px -5px 35px rgba(255, 255, 255, 0.3);

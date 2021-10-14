@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 *,
@@ -69,12 +70,21 @@ a {
   }
 }
 
+img {
+  pointer-events: none;
+}
+
+//Select color
+::selection {
+  color: $light;
+  background: $orange-gradient;
+}
+
 //Scrollbar
 
 ::-webkit-scrollbar {
   width: 12px;
   height: 12px;
-  background: transparent;
 }
 ::-webkit-scrollbar-button {
   width: 0px;
@@ -84,6 +94,7 @@ a {
   background: linear-gradient(229deg, $blue 0%, $blue-secondary 100%);
   border-radius: 50px;
   transition: 1s;
+  width: 12px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(229deg, $dark 0%, $dark-second 100%);

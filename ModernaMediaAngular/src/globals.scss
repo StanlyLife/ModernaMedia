@@ -50,12 +50,69 @@
 
 .btn.light {
   border: 2px solid $dark;
+  background-color: $light;
+  color: $dark;
   &:hover {
   }
 }
 .btn.dark {
   border: 2px solid $light;
+  background-color: $dark;
+  color: $light;
   &:hover {
+  }
+}
+
+.transition-bottom {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  &.transition-light {
+    background: linear-gradient(
+      0deg,
+      rgba(51, 51, 51, 1) 0%,
+      rgba(51, 51, 51, 0.25) 10%,
+      rgba(51, 51, 51, 0) 100%
+    );
+  }
+  &.transition-light {
+    background: linear-gradient(
+      0deg,
+      rgba(238, 238, 238, 1) 0%,
+      rgba(238, 238, 238, 0.25) 10%,
+      rgba(238, 238, 238, 0) 100%
+    );
+  }
+}
+
+.transition-top {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  &.transition-light {
+    background: linear-gradient(
+      180deg,
+      rgba(51, 51, 51, 1) 0%,
+      rgba(51, 51, 51, 0.25) 10%,
+      rgba(51, 51, 51, 0) 100%
+    );
+  }
+  &.transition-light {
+    background: linear-gradient(
+      180deg,
+      rgba(238, 238, 238, 1) 0%,
+      rgba(238, 238, 238, 0.25) 10%,
+      rgba(238, 238, 238, 0) 100%
+    );
   }
 }
 
@@ -104,6 +161,10 @@
 .white {
   background-color: $light;
   color: $dark;
+}
+.no-bg {
+  background-color: transparent;
+  background: none;
 }
 .g-purple {
   background-color: transparent;
