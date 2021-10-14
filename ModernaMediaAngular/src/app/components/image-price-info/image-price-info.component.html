@@ -1,4 +1,4 @@
-<section class="moderna-media-product light">
+<section class="moderna-media-product">
   <div class="arrows">
     <button>
       <img
@@ -20,14 +20,14 @@
   <section class="product-section">
     <div class="product-wrapper">
       <div class="bg-img">
-        <h1 class="title">{{ Product[0]["Title"] }}</h1>
+        <h1 class="title {{componentTheme}} no-bg">{{ Product[0]["Title"] }}</h1>
         <div class="bg-shadow"></div>
         <img
           src="../../../assets/Images/Components/Image-products-info/Barista.jpg"
           alt=""
         />
       </div>
-      <div class="content">
+      <div class="content {{componentTheme}} no-bg">
         <div class="subtitle">
           <h2 [innerHTML]="Product[0]['Subtitle']"></h2>
         </div>
@@ -46,7 +46,7 @@
           <p [innerHTML]="Product[0]['Content']"></p>
         </div>
         <div class="cta-btn">
-          <button class="btn cta">Book et møte</button>
+          <button class="btn dark shadow section-cta">Book et møte</button>
         </div>
       </div>
     </div>

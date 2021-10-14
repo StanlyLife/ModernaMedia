@@ -63,15 +63,15 @@ section .content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  background-color: $dark;
-  color: $light;
+  background-color: $light;
+  color: $dark;
   .usp-container-mobile {
     display: flex;
     flex-wrap: wrap;
     width: 42.5%;
     margin: 10px 0;
     padding: 5px 5px;
-    background-color: $dark;
+    background-color: $light;
     box-shadow: 1px 1px 28px 0px rgba(0, 0, 0, 0.75);
     border-bottom: 2px solid $blue;
     .usp-inner-container-mobile {
@@ -81,11 +81,11 @@ section .content {
       justify-content: space-between;
       img {
         padding-right: 5px;
-        filter: invert(1);
         height: 64px;
       }
       h6 {
         font-size: 1rem;
+        color: $blue;
       }
       p {
         font-size: 0.8rem;

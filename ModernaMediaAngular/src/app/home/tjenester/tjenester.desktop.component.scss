@@ -16,7 +16,7 @@
       margin: 0 10vw;
       text-align: center;
       color: $light;
-      background: $dark-transparent;
+      background: $dark-transparent-30;
       transition: 0.5s;
       &.active {
         background: $blue;
@@ -82,8 +82,10 @@
     min-height: 55vh;
     border-top: 5px solid $light;
     border-bottom: 5px solid $light;
-    background-color: $dark-transparent-80;
+    background-color: $dark-transparent-30;
+    box-shadow: $box-shadow;
     padding: $padding-section-top 0;
+    overflow: hidden;
     .controls {
       height: 100%;
       position: absolute;

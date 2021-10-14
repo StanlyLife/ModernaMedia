@@ -4,6 +4,7 @@ section.moderna-media-product {
   position: relative;
   height: 1250px;
 
+
   .arrows {
     display: flex;
     justify-content: space-between;
@@ -145,5 +146,13 @@ section.moderna-media-product {
     .cta-btn {
       padding: $padding-component-top $padding-component-side;
     }
+  }
+}
+
+
+button.section-cta {
+  transition: all .25s;
+  &:hover {
+    background: $blue;
   }
 }
