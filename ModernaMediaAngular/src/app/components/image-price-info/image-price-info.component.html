@@ -1,6 +1,6 @@
 <section class="moderna-media-product">
   <div class="arrows">
-    <button>
+    <button (click)="movePrevious()">
       <img
         class="left"
         src="../../../assets/Images/Icons/right-arrow.svg"
@@ -8,7 +8,7 @@
       />
       <p>forrige</p>
     </button>
-    <button>
+    <button (click)="moveNext()">
       <p>neste</p>
       <img
         class="right"
@@ -17,22 +17,22 @@
       />
     </button>
   </div>
-  <section class="product-section">
+  <section class="product-section front one" #one>
     <div class="product-wrapper">
       <div class="bg-img">
-        <h1 class="title {{componentTheme}} no-bg">{{ Product[0]["Title"] }}</h1>
+        <h1 class="title {{componentTheme}} no-bg">{{ ContentOne["Title"] }}</h1>
         <div class="bg-shadow"></div>
         <img
-          src="../../../assets/Images/Components/Image-products-info/Barista.jpg"
+          src="{{ ContentOneImageSrc }}"
           alt=""
         />
       </div>
       <div class="content {{componentTheme}} no-bg">
         <div class="subtitle">
-          <h2 [innerHTML]="Product[0]['Subtitle']"></h2>
+          <h2 [innerHTML]="ContentOne['Subtitle']"></h2>
         </div>
         <div class="icons">
-          <div class="icon" *ngFor="let ico of Product[0]['Icons']">
+          <div class="icon" *ngFor="let ico of ContentOne['Icons']">
             <img src="{{ ico['IconSrc'] }}" alt="" />
             <div class="icon-text">
               <h6>{{ ico["IconTitle"] }}</h6>
@@ -43,7 +43,41 @@
           </div>
         </div>
         <div class="content-text">
-          <p [innerHTML]="Product[0]['Content']"></p>
+          <p [innerHTML]="ContentOne['Content']"></p>
+        </div>
+        <div class="cta-btn">
+          <button class="btn dark shadow section-cta">Book et møte</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="product-section back two" #two>
+    <div class="product-wrapper">
+      <div class="bg-img">
+        <h1 class="title {{componentTheme}} no-bg">{{ ContentTwo["Title"] }}</h1>
+        <div class="bg-shadow"></div>
+        <img
+          src="{{ ContentTwoImageSrc }}"
+          alt=""
+        />
+      </div>
+      <div class="content {{componentTheme}} no-bg">
+        <div class="subtitle">
+          <h2 [innerHTML]="ContentTwo['Subtitle']"></h2>
+        </div>
+        <div class="icons">
+          <div class="icon" *ngFor="let ico of ContentTwo['Icons']">
+            <img src="{{ ico['IconSrc'] }}" alt="" />
+            <div class="icon-text">
+              <h6>{{ ico["IconTitle"] }}</h6>
+              <p *ngFor="let iconContent of ico['IconContent']">
+                {{ iconContent }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="content-text">
+          <p [innerHTML]="ContentTwo['Content']"></p>
         </div>
         <div class="cta-btn">
           <button class="btn dark shadow section-cta">Book et møte</button>
