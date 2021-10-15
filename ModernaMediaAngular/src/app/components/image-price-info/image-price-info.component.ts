@@ -159,9 +159,24 @@ export class ImagePriceInfoComponent implements OnInit {
     }
   }
   movePrevious() {
-    const nextIndex = (this.indexOne - 1) % this.Product.length;
-    // this.index = (this.index - 1) % this.Product.length;
+    const nextIndex = (this.activeIndex - 1) % this.Product.length;
     this.updateFrontAndBackElement();
+    this.RemoveTransitionClasses();
+    this.front.classList.add("move-back");
+    this.front.classList.add("back");
+    this.back.classList.add("move-front");
+    this.back.classList.add("front");
+    if (this.front.classList.contains("one")) {
+      this.indexTwo, this.activeIndex = nextIndex;
+      this.ContentTwo = this.Product[this.activeIndex]
+      this.ContentTwoImageSrc = this.ContentTwo['imageSrc'];
+    } else if (this.front.classList.contains("two")) {
+      this.indexOne, this.activeIndex = nextIndex;
+      this.ContentOne = this.Product[this.activeIndex]
+      this.ContentOneImageSrc = this.ContentOne['imageSrc'];
+    } else {
+      alert("error");
+    }
   }
 
 }
