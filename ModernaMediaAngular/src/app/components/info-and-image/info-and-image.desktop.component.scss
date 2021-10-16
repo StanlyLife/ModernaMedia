@@ -1,0 +1,43 @@
+@import "../../../variables.scss";
+@media screen and (min-width: $desktop) {
+  section {
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: row-reverse;
+      max-width: $max-width;
+      margin: 0 auto;
+    }
+    .image {
+      flex: 1;
+      max-width: 100%;
+      padding-bottom: $padding-component-top;
+      img {
+        height: auto;
+        max-height: 500px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .content {
+      padding-right: $padding-section-sides;
+      flex: 1;
+      h2 {
+        font-size: 2rem;
+      }
+      span {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  section .wrapper .content {
+    padding-right: $padding-section-sides;
+    flex: 1;
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+}
