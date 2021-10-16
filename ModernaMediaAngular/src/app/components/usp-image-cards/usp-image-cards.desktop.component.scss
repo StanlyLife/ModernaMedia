@@ -1,0 +1,71 @@
+@import "../../../variables.scss";
+@media screen and (min-width: $desktop) {
+  section {
+    h2.title {
+    }
+    .usp-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    .usp {
+      max-width: 50%;
+      min-height: 250px;
+      .usp-inner {
+      }
+    }
+    .bg-img {
+      .shadow-overlay {
+        background: radial-gradient(
+          circle,
+          rgba(51, 51, 51, 0.7510382059800664) 0%,
+          rgba(51, 51, 51, 0.5) 30%,
+          rgba(51, 51, 51, 0) 100%
+        );
+      }
+      img {
+      }
+    }
+    .content {
+      h6 {
+        font-size: 2rem;
+      }
+      p {
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  section {
+    .usp {
+      min-height: 500px;
+      height: 50vh;
+      .usp-inner {
+        // min-height: 500px;
+        height: 100%;
+        border: none;
+      }
+    }
+    .content {
+      h6 {
+        font-size: 4rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $max-width) {
+  section {
+    .content {
+      p {
+        font-size: 2rem;
+      }
+    }
+  }
+}
