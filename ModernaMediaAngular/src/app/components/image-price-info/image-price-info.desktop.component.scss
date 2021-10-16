@@ -1,0 +1,153 @@
+@import "../../../variables.scss";
+
+@media screen and (min-width: 1000px) {
+  section.moderna-media-product {
+    min-height: 100vh;
+    height: 1000px;
+    .arrows {
+      max-width: 50%;
+      button {
+        p {
+          color: $light;
+          padding: 0 5px;
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          font-weight: 100;
+          font-size: 0.5rem;
+        }
+        &:hover {
+        }
+      }
+      img {
+      }
+      .left {
+        transform: rotate(180deg);
+      }
+    }
+
+    section.product-section {
+      .bg-img {
+        h1.title {
+          max-width: 50%;
+          @include vaAbs;
+          right: 0;
+          // max-width: 50%;
+          // left: 0;
+        }
+        .bg-shadow {
+          // background: linear-gradient(
+          //   90deg,
+          //   rgb(51, 51, 51, 0.9) 0%,
+          //   rgba(51, 51, 51, 0.5) 50%,
+          //   rgba(51, 51, 51, 0) 100%
+          // );
+          background: $dark;
+          max-width: 50%;
+        }
+        img {
+          max-width: 50%;
+          position: absolute;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  section.moderna-media-product {
+    section.product-section .content {
+      max-width: 50%;
+      // @include vaAbs;
+      top: 0;
+      .subtitle {
+        h2 {
+          font-size: 2.5rem;
+        }
+      }
+      .icons {
+        .icon {
+          img {
+          }
+          .icon-text {
+            h6 {
+            }
+            p {
+            }
+          }
+        }
+      }
+      .content-text {
+        p {
+          font-size: 1.25rem;
+        }
+      }
+      .cta-btn {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  button.section-cta {
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  section.moderna-media-product .arrows {
+    max-width: 675px;
+  }
+  section.moderna-media-product section.product-section {
+    .product-wrapper .content {
+      max-width: 675px;
+      left: 0;
+      right: 50vw;
+    }
+  }
+  section.moderna-media-product section.product-section .bg-img {
+    .bg-shadow {
+      background: linear-gradient(
+        90deg,
+        rgb(51, 51, 51, 0.9) 0%,
+        rgba(51, 51, 51, 0.75) 50%,
+        rgba(51, 51, 51, 0) 100%
+      );
+      max-width: 100%;
+    }
+    img {
+      max-width: 100%;
+      position: unset;
+    }
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  section.moderna-media-product .arrows {
+    max-width: 750px;
+  }
+  section.moderna-media-product section.product-section {
+    .product-wrapper .content {
+      max-width: 750px;
+    }
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  section.moderna-media-product .arrows {
+    max-width: 750px;
+  }
+  section.moderna-media-product section.product-section {
+    .product-wrapper .content {
+      max-width: 750px;
+    }
+  }
+  section.moderna-media-product section.product-section .bg-img {
+    .bg-shadow {
+      background: linear-gradient(
+        90deg,
+        rgb(51, 51, 51, 0.9) 0%,
+        rgba(51, 51, 51, 0.75) 40%,
+        rgba(51, 51, 51, 0) 50%
+      );
+      max-width: 100%;
+    }
+  }
+}
