@@ -13,9 +13,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private meta: Meta,
-    private title: Title
+    private title: Title,
     ) {
-      title.setTitle("ModernaMedia Digitalbyrå for bedrifter. Bedrift nettsider, grafisk design og seo i Norge");
+      title.setTitle("Moderna Media Digitalbyrå | Bedrift nettsider, grafisk design og seo i Norge");
     }
 
    ngOnInit() {
@@ -27,12 +27,12 @@ export class HomeComponent implements OnInit {
       name: 'angular.ModernaMedia',
       content: 'ModernaMedia'
     });
-    this.meta.updateTag(
-      {
-        name: 'description',
-        content: 'Cette application a été développée avec Angular version 11.0.0 et bootstrap 4.5.3' +
-          ' Elle applique le Routing, le Lazy loading, le Server side rendering et les Progressive Web App (PWA)'
-      });
+    // this.meta.updateTag(
+    //   {
+    //     name: 'description',
+    //     content: 'Cette application a été développée avec Angular version 11.0.0 et bootstrap 4.5.3' +
+    //       ' Elle applique le Routing, le Lazy loading, le Server side rendering et les Progressive Web App (PWA)'
+    //   });
   }  
   scrollToElement($element): void {
 
