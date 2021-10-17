@@ -29,7 +29,9 @@
         </h1>
         <div class="bg-shadow"></div>
         <img
-          src="{{ imageCdn == '' ? '' : imageCdn }}{{ ContentOneImageSrc }}"
+          src="{{ imageCdn == '' ? '' : imageCdn }}{{
+            ContentOneImageSrc
+          }}?width={{ vw }}"
           alt=""
         />
       </div>
@@ -68,7 +70,9 @@
         </h1>
         <div class="bg-shadow"></div>
         <img
-          src="{{ imageCdn == '' ? '' : imageCdn }}{{ ContentTwoImageSrc }}"
+          src="{{ imageCdn == '' ? '' : imageCdn }}{{
+            ContentTwoImageSrc
+          }}?width={{ vw }}"
           alt=""
         />
       </div>

@@ -6,7 +6,9 @@
         <div class="bg-img">
           <div class="shadow-overlay"></div>
           <img
-            src="{{ imageCdn == '' ? '' : imageCdn }}{{ item['imageSrc'] }}"
+            src="{{ imageCdn == '' ? '' : imageCdn }}{{
+              item['imageSrc']
+            }}?width=1000"
             alt="{{ item['imageAlt'] }}"
           />
         </div>

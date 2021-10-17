@@ -1,13 +1,16 @@
 <section class="moderna-media-large-usp">
-    <div class="bg-img">
-        <div class="shadow"></div>
-        <img src="{{ src }}" alt=" {{alt}} ">
+  <div class="bg-img">
+    <div class="shadow"></div>
+    <img
+      src="{{ imageCdn == '' ? '' : imageCdn }}{{ src }}?width={{ vw }}"
+      alt=" {{ alt }} "
+    />
+  </div>
+  <div class="wrapper">
+    <div class="left"></div>
+    <div class="right">
+      <h2 class="title" [innerHTML]="title"></h2>
+      <p>{{ content }}</p>
     </div>
-    <div class="wrapper">
-        <div class="left"></div>
-        <div class="right">
-            <h2 class="title" [innerHTML]="title"></h2>
-            <p>{{ content }}</p>
-        </div>
-    </div>
+  </div>
 </section>

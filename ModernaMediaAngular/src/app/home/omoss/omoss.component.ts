@@ -11,7 +11,9 @@ export class OmossComponent implements OnInit {
   constructor() { }
   imageCdn = environment.img;
 
-  ngOnInit(): void {
+  public vw: any = 500;
+  ngOnInit() {
+      this.vw = window.innerWidth;
   }
 
 }

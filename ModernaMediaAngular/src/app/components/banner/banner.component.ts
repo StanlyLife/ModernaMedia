@@ -50,7 +50,9 @@ export class BannerComponent implements OnInit {
   constructor() { }
 
 
-  ngOnInit(): void {
+  public vw: any = 500;
+  ngOnInit() {
+      this.vw = window.innerWidth;
   }
 
 }

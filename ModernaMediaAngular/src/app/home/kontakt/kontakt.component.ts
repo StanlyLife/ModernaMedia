@@ -10,7 +10,9 @@ export class KontaktComponent implements OnInit {
 imageCdn = environment.img;
   constructor() { }
 
-  ngOnInit(): void {
+  public vw: any = 500;
+  ngOnInit() {
+      this.vw = window.innerWidth;
   }
 
 }

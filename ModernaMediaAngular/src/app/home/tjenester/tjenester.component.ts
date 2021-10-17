@@ -19,7 +19,9 @@ imageCdn = environment.img;
   @ViewChild('design') design; 
   @ViewChild('markedsforing') markedsforing; 
 
-  ngOnInit(): void {
+  public vw: any = 500;
+  ngOnInit() {
+      this.vw = window.innerWidth;
   }
 
   modulo(n) : number {

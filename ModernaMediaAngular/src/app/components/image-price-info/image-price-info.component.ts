@@ -112,7 +112,9 @@ export class ImagePriceInfoComponent implements OnInit {
 
   constructor(private elref: ElementRef) { }
 
+  public vw: any = 500;
   ngOnInit(): void {
+    this.vw = window.innerWidth;
     this.ContentOne = this.Product[this.indexOne]
     this.ContentOneImageSrc = this.ContentOne['imageSrc'];
 
