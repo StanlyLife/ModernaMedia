@@ -12,7 +12,7 @@ imageCdn = environment.img;
 
   public vw: any = 500;
   ngOnInit() {
-      this.vw = window.innerWidth;
+      this.vw = window.innerWidth < window.innerHeight ? window.innerHeight : window.innerWidth;
   }
 
 }
