@@ -50,9 +50,9 @@ export class BannerComponent implements OnInit {
   constructor() { }
 
 
-  public vw: any = 500;
+  public vw: any = 1000;
   ngOnInit() {
-      this.vw = window.innerWidth;
+      this.vw = window.innerWidth < window.innerHeight ? window.innerHeight : window.innerWidth;
   }
 
 }

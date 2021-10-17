@@ -17,7 +17,7 @@ export class ImageAndTextComponent implements OnInit {
   @Input() title: string = "Hvordan vi tilbyr en <span>100% risikofri</span> prosess";
   public vw: any = 500;
   ngOnInit() {
-      this.vw = window.innerWidth;
+      this.vw = window.innerWidth < window.innerHeight ? window.innerHeight : window.innerWidth;
   }
 
 }
