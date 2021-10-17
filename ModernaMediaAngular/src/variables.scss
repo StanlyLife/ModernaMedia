@@ -62,11 +62,13 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Lobster";
   src: local("Lobster") url("/assets/fonts/Lobster-Regular.ttf")
     format("truetype");
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   font-weight: 100;
   src: url("/assets/fonts/Mosk100.ttf") format("woff2"),
@@ -75,6 +77,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/Mosk100.ttf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   font-weight: 200;
   src: url("/assets/fonts/Mosk200.ttf") format("woff2"),
@@ -83,6 +86,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/Mosk200.ttf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   src: url("/assets/fonts/Mosk300.ttf") format("woff2"),
     url("/assets/fonts/Mosk300.ttf") format("woff"),
@@ -91,6 +95,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
   font-weight: 300;
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   font-weight: 400;
   src: url("/assets/fonts/Mosk400.ttf") format("woff2"),
@@ -99,6 +104,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/Mosk400.ttf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   font-weight: 500;
   src: url("/assets/fonts/Mosk500.ttf") format("woff2"),
@@ -107,6 +113,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/Mosk500.ttf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   font-weight: 600;
   src: url("/assets/fonts/Mosk600.ttf") format("woff2"),
@@ -115,6 +122,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/Mosk600.ttf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   font-weight: 700;
   src: url("/assets/fonts/Mosk700.ttf") format("woff2"),
@@ -123,6 +131,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/Mosk700.ttf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   font-weight: 800;
   src: url("/assets/fonts/Mosk800.ttf") format("woff2"),
@@ -131,6 +140,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/Mosk800.ttf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Mosk";
   font-weight: 900;
   src: url("/assets/fonts/Mosk900.ttf") format("woff2"),
@@ -140,6 +150,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 }
 
 @font-face {
+  font-display: swap;
   font-family: "Pier";
   font-weight: 400;
   src: url("/assets/fonts/PierSans-Light.otf") format("woff2"),
@@ -148,6 +159,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/PierSans-Light.otf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Pier";
   font-weight: 500;
   src: url("/assets/fonts/PierSans-regular.otf") format("woff2"),
@@ -156,6 +168,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/PierSans-regular.otf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Pier";
   font-weight: 600;
   src: url("/assets/fonts/PierSans-Medium.otf") format("woff2"),
@@ -164,6 +177,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/PierSans-Medium.otf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Pier";
   font-weight: 700;
   src: url("/assets/fonts/PierSans-Bold.otf") format("woff2"),
@@ -172,6 +186,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     url("/assets/fonts/PierSans-Bold.otf") format("svg");
 }
 @font-face {
+  font-display: swap;
   font-family: "Pier";
   font-weight: 900;
   src: url("/assets/fonts/PierSans-Black.otf") format("woff2"),
