@@ -1,7 +1,8 @@
 @import "../../../variables.scss";
 
 section {
-  min-height: 100vh;
+  min-height: 800px;
+  height: 100vh;
   position: relative;
   .bg-img {
     position: absolute;
