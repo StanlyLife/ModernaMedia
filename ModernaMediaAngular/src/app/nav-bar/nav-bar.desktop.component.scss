@@ -1,21 +1,42 @@
 @import "../../variables.scss";
 
-
-
 //Desktop
 @media screen and (min-width: $desktop) {
-
-    button.btn.menu {
-        display: none;
-    }
-    .wrapper {
-        button.btn.contact {
-            display: block;
+  button.btn.menu {
+    display: none;
+  }
+  .wrapper {
+    nav {
+      min-width: 550px;
+      .nav-link {
+        padding: 20px 5px;
+        margin: 20px 5px;
+        a {
+          font-size: 0.8rem;
         }
-        
-        nav {
-            display: flex;
-        }
+      }
+    }
+    button.btn.contact {
+      display: block;
     }
 
+    nav {
+      display: flex;
+    }
+  }
+}
+@media screen and (min-width: 850px) {
+  button.btn.menu {
+    display: none;
+  }
+  .wrapper {
+    nav {
+      min-width: 650px;
+      .nav-link {
+        a {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
 }
