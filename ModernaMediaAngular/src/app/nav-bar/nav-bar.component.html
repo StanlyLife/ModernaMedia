@@ -2,7 +2,12 @@
   <div class="wrapper">
     <a class="logo-anchor" href="" title="Hjemmeside" aria-label="Hjemmeside">
       <div class="logo">
-        <img src="../../assets/Images/Logo/SVG/LOGO LIGHT.svg" alt="" />
+        <img
+          src="{{
+            imageCdn == '' ? '' : imageCdn
+          }}../../assets/Images/Logo/SVG/LOGO LIGHT.svg"
+          alt=""
+        />
       </div>
     </a>
     <nav role="navigation" id="navbar">

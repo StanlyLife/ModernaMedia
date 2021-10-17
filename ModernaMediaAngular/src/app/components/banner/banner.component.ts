@@ -1,4 +1,6 @@
+import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-banner',
@@ -6,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./banner.component.scss', './banner.desktop.component.scss']
 })
 export class BannerComponent implements OnInit {
+  imageCdn = environment.img;
   public UniqueSellingPoints = [
     {
       'icon' : "../../../assets/Images/Icons/rocket-9959.svg",
@@ -45,6 +48,7 @@ export class BannerComponent implements OnInit {
 
 
   constructor() { }
+
 
   ngOnInit(): void {
   }

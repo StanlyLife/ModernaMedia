@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./miniblogg.component.scss','./miniblogg.desktop.component.scss']
 })
 export class MinibloggComponent implements OnInit {
-
+  imageCdn = environment.img;
   constructor() { }
 
   ngOnInit(): void {

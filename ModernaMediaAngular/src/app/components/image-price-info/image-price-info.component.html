@@ -3,7 +3,9 @@
     <button (click)="movePrevious()">
       <img
         class="left"
-        src="../../../assets/Images/Icons/right-arrow.svg"
+        src="{{
+          imageCdn == '' ? '' : imageCdn
+        }}../../../assets/Images/Icons/right-arrow.svg"
         alt=""
       />
       <p>forrige</p>
@@ -12,7 +14,9 @@
       <p>neste</p>
       <img
         class="right"
-        src="../../../assets/Images/Icons/right-arrow.svg"
+        src="{{
+          imageCdn == '' ? '' : imageCdn
+        }}../../../assets/Images/Icons/right-arrow.svg"
         alt=""
       />
     </button>
@@ -20,20 +24,25 @@
   <section class="product-section front one" #one>
     <div class="product-wrapper">
       <div class="bg-img">
-        <h1 class="title {{componentTheme}} no-bg">{{ ContentOne["Title"] }}</h1>
+        <h1 class="title {{ componentTheme }} no-bg">
+          {{ ContentOne["Title"] }}
+        </h1>
         <div class="bg-shadow"></div>
         <img
-          src="{{ ContentOneImageSrc }}"
+          src="{{ imageCdn == '' ? '' : imageCdn }}{{ ContentOneImageSrc }}"
           alt=""
         />
       </div>
-      <div class="content {{componentTheme}} no-bg">
+      <div class="content {{ componentTheme }} no-bg">
         <div class="subtitle">
           <h2 [innerHTML]="ContentOne['Subtitle']"></h2>
         </div>
         <div class="icons">
           <div class="icon" *ngFor="let ico of ContentOne['Icons']">
-            <img src="{{ ico['IconSrc'] }}" alt="" />
+            <img
+              src="{{ imageCdn == '' ? '' : imageCdn }}{{ ico['IconSrc'] }}"
+              alt=""
+            />
             <div class="icon-text">
               <h6>{{ ico["IconTitle"] }}</h6>
               <p *ngFor="let iconContent of ico['IconContent']">
@@ -54,20 +63,25 @@
   <section class="product-section back two" #two>
     <div class="product-wrapper">
       <div class="bg-img">
-        <h1 class="title {{componentTheme}} no-bg">{{ ContentTwo["Title"] }}</h1>
+        <h1 class="title {{ componentTheme }} no-bg">
+          {{ ContentTwo["Title"] }}
+        </h1>
         <div class="bg-shadow"></div>
         <img
-          src="{{ ContentTwoImageSrc }}"
+          src="{{ imageCdn == '' ? '' : imageCdn }}{{ ContentTwoImageSrc }}"
           alt=""
         />
       </div>
-      <div class="content {{componentTheme}} no-bg">
+      <div class="content {{ componentTheme }} no-bg">
         <div class="subtitle">
           <h2 [innerHTML]="ContentTwo['Subtitle']"></h2>
         </div>
         <div class="icons">
           <div class="icon" *ngFor="let ico of ContentTwo['Icons']">
-            <img src="{{ ico['IconSrc'] }}" alt="" />
+            <img
+              src="{{ imageCdn == '' ? '' : imageCdn }}{{ ico['IconSrc'] }}"
+              alt=""
+            />
             <div class="icon-text">
               <h6>{{ ico["IconTitle"] }}</h6>
               <p *ngFor="let iconContent of ico['IconContent']">

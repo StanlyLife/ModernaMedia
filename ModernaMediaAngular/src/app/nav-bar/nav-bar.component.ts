@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { throwError } from 'rxjs';
 import { Component, ElementRef, Injector, OnInit } from '@angular/core';
 
@@ -9,7 +10,7 @@ import { Component, ElementRef, Injector, OnInit } from '@angular/core';
 export class NavBarComponent implements OnInit {
 
 public nav;
-
+  imageCdn = environment.img;
   constructor(
     private injector: Injector,
     private elem: ElementRef

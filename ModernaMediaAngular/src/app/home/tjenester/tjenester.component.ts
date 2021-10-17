@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
@@ -12,7 +13,7 @@ export class TjenesterComponent implements OnInit {
   tjeneste4;
   activeTjeneste;
   constructor(private elref:ElementRef) { }
-
+imageCdn = environment.img;
   @ViewChild('utvikling') utvikling; 
   @ViewChild('seo') seo; 
   @ViewChild('design') design; 

@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class InfoAndImageComponent implements OnInit {
 
+  imageCdn = environment.img;
   constructor() { }
   @Input() sectionStyle:string = 'light';
   ngOnInit(): void {

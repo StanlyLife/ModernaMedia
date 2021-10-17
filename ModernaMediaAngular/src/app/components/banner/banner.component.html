@@ -2,7 +2,9 @@
   <div class="bg-img">
     <div class="shadow-overlay"></div>
     <img
-      src="../../../assets/Images/Utvikling/Utvikling/Web utvikling oslo.jpg"
+      src="{{
+        imageCdn == '' ? '' : imageCdn
+      }}../../../assets/Images/Utvikling/Utvikling/Web utvikling oslo.jpg"
       alt=""
     />
   </div>
@@ -17,7 +19,10 @@
     <div class="usp-wrapper">
       <div *ngFor="let usp of UniqueSellingPoints" class="usp-container">
         <div class="usp-inner-container">
-          <img src="{{ usp['icon'] }}" alt="" />
+          <img
+            src="{{ imageCdn == '' ? '' : imageCdn }}{{ usp['icon'] }}"
+            alt=""
+          />
           <div class="usp">
             <h6>{{ usp["title"] }}</h6>
             <p>{{ usp["content"] }}</p>
@@ -30,7 +35,7 @@
 <div class="usp-wrapper-mobile">
   <div *ngFor="let usp of UniqueSellingPoints" class="usp-container-mobile">
     <div class="usp-inner-container-mobile">
-      <img src="{{ usp['icon'] }}" alt="" />
+      <img src="{{ imageCdn == '' ? '' : imageCdn }}{{ usp['icon'] }}" alt="" />
       <div class="usp">
         <h6>{{ usp["title"] }}</h6>
         <p>{{ usp["content"] }}</p>

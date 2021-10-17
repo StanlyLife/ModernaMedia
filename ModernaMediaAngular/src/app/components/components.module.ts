@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment.prod';
 import { InfoAndImageComponent } from './info-and-image/info-and-image.component';
 import { ImageAndTextComponent } from './image-and-text/image-and-text.component';
 import { BannerComponent } from './banner/banner.component';
@@ -24,7 +25,9 @@ import { ImagePriceInfoComponent } from './image-price-info/image-price-info.com
     ImageAndTextComponent,
     InfoAndImageComponent,
     UspImageCardsComponent,
-    ImagePriceInfoComponent
+    ImagePriceInfoComponent,
   ]
 })
-export class ComponentsModule { }
+export class ComponentsModule { 
+  public imageCdn = environment.img;
+}

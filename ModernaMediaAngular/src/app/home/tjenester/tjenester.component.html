@@ -2,16 +2,31 @@
   <h1 class="section-title tjenester">Tjenester</h1>
   <div class="background-img">
     <!-- <div class="transition-bottom transition-light"></div> -->
-    <img src="../../../assets/Images/Landingpage/Landing/Barcode3.jpg" alt="" />
+    <img
+      src="{{
+        imageCdn == '' ? '' : imageCdn
+      }}../../../assets/Images/Landingpage/Landing/Barcode3.jpg"
+      alt=""
+    />
   </div>
   <div class="tjenester">
     <div class="controls">
       <div class="sliders">
         <button class="left" (click)="left($event)">
-          <img src="../../../assets/Images/Icons/right-chevron.svg" alt="" />
+          <img
+            src="{{
+              imageCdn == '' ? '' : imageCdn
+            }}../../../assets/Images/Icons/right-chevron.svg"
+            alt=""
+          />
         </button>
         <button class="right" (click)="right($event)">
-          <img src="../../../assets/Images/Icons/right-chevron.svg" alt="" />
+          <img
+            src="{{
+              imageCdn == '' ? '' : imageCdn
+            }}../../../assets/Images/Icons/right-chevron.svg"
+            alt=""
+          />
         </button>
       </div>
       <div class="counter"></div>
@@ -19,7 +34,9 @@
     <app-tjenester-tjeneste
       #design
       class="tjeneste-0 moveLeft r-left"
-      src="../../../assets/Images/Landingpage/Tjenester/moderne design teknologi.jpg"
+      src="{{
+        imageCdn == '' ? '' : imageCdn
+      }}../../../assets/Images/Landingpage/Tjenester/moderne design teknologi.jpg"
       title="Design"
       content="Tidløst design som konverterer interesse til kunder"
       href="vg.no"
@@ -30,7 +47,9 @@
     <app-tjenester-tjeneste
       #utvikling
       class="tjeneste-1 r-active"
-      src="../../../assets/Images/Landingpage/Tjenester/moderne teknologi design.jpg"
+      src="{{
+        imageCdn == '' ? '' : imageCdn
+      }}../../../assets/Images/Landingpage/Tjenester/moderne teknologi design.jpg"
       title="Web Utvikling"
       content="Moderne løsninger for digitalisering av bedriften"
       href="vg.no"
@@ -41,7 +60,9 @@
     <app-tjenester-tjeneste
       #seo
       class="tjeneste-2 moveRight r-right"
-      src="../../../assets/Images/Landingpage/Tjenester/seo tjenester for bedrift.jpg"
+      src="{{
+        imageCdn == '' ? '' : imageCdn
+      }}../../../assets/Images/Landingpage/Tjenester/seo tjenester for bedrift.jpg"
       title="SEO"
       content="Oppnå økt omsetning og trafikk med vår søkemotoroptimalisering"
       href="vg.no"

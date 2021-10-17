@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class UspImageCardsComponent implements OnInit {
 
+  imageCdn = environment.img;
   @Input() Title ="Enda flere grunner for å <span>Digitalisere</span> med ModernaMedia";
 
   public UspCard = [

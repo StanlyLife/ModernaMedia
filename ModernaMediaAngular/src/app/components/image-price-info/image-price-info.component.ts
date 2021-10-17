@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { ImageAndTextComponent } from './../image-and-text/image-and-text.component';
 import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 
@@ -8,7 +9,7 @@ import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 })
 export class ImagePriceInfoComponent implements OnInit {
   @Input() componentTheme = 'dark';
-
+  imageCdn = environment.img;
   indexOne = 1;
   indexTwo = 2;
   activeIndex = this.indexOne;

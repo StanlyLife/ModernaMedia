@@ -4,7 +4,9 @@
     <div class="left">
       <div class="blogs">
         <app-miniblogg-blogs
-          src="../../../assets/Images/Landingpage/miniblogg/blogg/Kommunikasjon og support nar dere trenger det.jpg"
+          src="{{
+            imageCdn == '' ? '' : imageCdn
+          }}../../../assets/Images/Landingpage/miniblogg/blogg/Kommunikasjon og support nar dere trenger det.jpg"
           title="Kommunikasjon hele veien"
           href="vg.no"
           alt="bilde av gress"
@@ -13,7 +15,9 @@
         "
         ></app-miniblogg-blogs>
         <app-miniblogg-blogs
-          src="../../../assets/Images/Landingpage/miniblogg/blogg/Kommunikasjon og support nar du trenger det.jpg"
+          src="{{
+            imageCdn == '' ? '' : imageCdn
+          }}../../../assets/Images/Landingpage/miniblogg/blogg/Kommunikasjon og support nar du trenger det.jpg"
           title="100% Egendefinert"
           href="vg.no"
           alt="bilde av gress"
@@ -25,7 +29,9 @@
         "
         ></app-miniblogg-blogs>
         <app-miniblogg-blogs
-          src="../../../assets/Images/Landingpage/miniblogg/blogg/Helt Fornoyd garanti.jpg"
+          src="{{
+            imageCdn == '' ? '' : imageCdn
+          }}../../../assets/Images/Landingpage/miniblogg/blogg/Helt Fornoyd garanti.jpg"
           title="Helt fornøyd, eller helt gratis"
           alt="bilde av gress"
           theme="dark"
@@ -34,7 +40,9 @@
         "
         ></app-miniblogg-blogs>
         <app-miniblogg-blogs
-          src="../../../assets/Images/Landingpage/miniblogg/blogg/Fornoyd garanti.jpg"
+          src="{{
+            imageCdn == '' ? '' : imageCdn
+          }}../../../assets/Images/Landingpage/miniblogg/blogg/Fornoyd garanti.jpg"
           title="Enklest mulig for deg"
           alt="bilde av gress"
           theme="dark"
@@ -47,7 +55,9 @@
     <div class="right">
       <div class="image-container">
         <img
-          src="../../../assets/Images/Landingpage/miniblogg/Modern man.png"
+          src="{{
+            imageCdn == '' ? '' : imageCdn
+          }}../../../assets/Images/Landingpage/miniblogg/Modern man.png"
           alt=""
         />
       </div>

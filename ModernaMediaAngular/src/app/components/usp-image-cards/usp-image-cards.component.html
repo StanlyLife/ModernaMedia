@@ -5,7 +5,10 @@
       <div class="usp-inner">
         <div class="bg-img">
           <div class="shadow-overlay"></div>
-          <img src="{{ item['imageSrc'] }}" alt="{{ item['imageAlt'] }}" />
+          <img
+            src="{{ imageCdn == '' ? '' : imageCdn }}{{ item['imageSrc'] }}"
+            alt="{{ item['imageAlt'] }}"
+          />
         </div>
         <div class="content">
           <h6>{{ item["title"] }}</h6>

@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment.prod';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tjenester-tjeneste.component.scss','./tjenester-tjeneste.desktop.component.scss']
 })
 export class TjenesterTjenesteComponent implements OnInit {
-
+imageCdn = environment.img;
   @Input() src;
   @Input() title;
   @Input() content;

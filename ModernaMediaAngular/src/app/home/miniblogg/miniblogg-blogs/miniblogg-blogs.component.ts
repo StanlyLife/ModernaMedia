@@ -1,3 +1,4 @@
+import { environment } from './../../../../environments/environment.prod';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
@@ -13,6 +14,8 @@ export class MinibloggBlogsComponent implements OnInit {
   @Input() href = '';
   @Input() alt;
   @Input() theme;
+
+  imageCdn = environment.img;
 
   constructor() { }
 
