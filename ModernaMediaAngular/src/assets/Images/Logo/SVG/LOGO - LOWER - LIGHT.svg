@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="739.885" height="189.497" viewBox="0 0 739.885 189.497">
-  <g id="Group_4538" data-name="Group 4538" transform="translate(-170.055 -718.746)">
-    <path id="Path_11351" data-name="Path 11351" d="M701.654,1616.962l30.4,60.231H610.93l30.39-60.231v-81.5h60.334Z" transform="translate(-440.875 -816.715)" fill="#fff"/>
-    <path id="Path_11352" data-name="Path 11352" d="M1657.35,1616.962l-30.39,60.231h121.114l-30.384-60.231v-81.5h-60.34Z" transform="translate(-838.134 -816.715)" fill="#fff"/>
-    <path id="Path_11355" data-name="Path 11355" d="M1365.612,1669.491l-38.753,55.466h154.134l-38.744-55.466V1535.46h-76.638Z" transform="translate(-720.797 -816.715)" fill="#fff"/>
-    <path id="Path_11356" data-name="Path 11356" d="M972.2,1669.491l38.745,55.466H856.81l38.751-55.466V1535.46H972.2Z" transform="translate(-537.012 -816.715)" fill="#fff"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="739.885" height="189.497" fill="#fff" xmlns:v="https://vecta.io/nano"><path d="M90.724 81.501l30.4 60.231H0l30.39-60.231V.001h60.334zm558.437 0l-30.39 60.231h121.114l-30.384-60.231V.001h-60.34zM474.76 134.03l-38.753 55.466h154.134l-38.744-55.466V-.001h-76.638zm-209.627 0l38.745 55.466H149.743l38.751-55.466V-.001h76.639z"/></svg>
