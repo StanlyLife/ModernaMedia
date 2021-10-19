@@ -17,16 +17,16 @@ export class ImagePriceInfoComponent implements OnInit {
   @ViewChild('two') elemTwo: ElementRef;
 
   public ContentOne = {};
-  public ContentOneImageSrc = "../../../assets/Images/Components/usp-image-cards/Rammeverk for design.jpg";
+  public ContentOneImageSrc = "../../../assets/Images/Components/usp-image-cards/Rammeverk for design.webp";
   public ContentTwo = {};
-  public ContentTwoImageSrc = "../../../assets/Images/Components/usp-image-cards/Rammeverk for design.jpg";
+  public ContentTwoImageSrc = "../../../assets/Images/Components/usp-image-cards/Rammeverk for design.webp";
 
   //ContentTwo['imageSrc']
 
   public Product = [
     {
       'Title': "LITEN BEDRIFT",
-      'imageSrc': "../../../assets/Images/Components/usp-image-cards/Farge kombinasjoner for design.jpg",
+      'imageSrc': "../../../assets/Images/Components/usp-image-cards/Farge kombinasjoner for design.webp",
       'imageAlt': "Alt tekst",
       'Subtitle': "Vi tar ikke betalt før produktet er ferdig, på denne måten er du helt <span>fornøyd</span>, helt <span>risikofritt</span>",
       "Content": "Vi utvikler nettsider og systemer for bedrifter av alle størrelser. En mindre bedrift har like stort behov for en nettside som en stor bedrift, men har ikke behov for en nettside av samme størrelse som en større bedrift",
@@ -53,7 +53,7 @@ export class ImagePriceInfoComponent implements OnInit {
     },
     {
       'Title': "MEDIUM BEDRIFT",
-      'imageSrc': "../../../assets/Images/Components/Image-products-info/Barista.jpg",
+      'imageSrc': "../../../assets/Images/Components/Image-products-info/Barista.webp",
       'imageAlt': "Alt tekst",
       'Subtitle': "Vi tar ikke betalt før produktet er ferdig, på denne måten er du helt <span>fornøyd</span>, helt <span>risikofritt</span>",
       "Content": "transmitting quantify navigating the card won't do anything, we need to transmit the optical PCI sensor! calculate The HDD driver is down, back up the cross-platform interface so we can override the RSS system! Use the mobile XML microchip, then you can copy the back-end program! You can't connect the sensor without backing up the bluetooth HTTP hard drive! transmitting the system won't do anything, we need to input the 1080p THX program! Try to navigate the PNG port, maybe it will input the online program! I'll hack the 1080p CSS firewall, that should transmitter the PCI monitor! backing up You can't input the program without synthesizing the bluetooth FTP capacitor! ",
@@ -80,7 +80,7 @@ export class ImagePriceInfoComponent implements OnInit {
     },
     {
       'Title': "STOR BEDRIFT",
-      'imageSrc': "../../../assets/Images/Components/usp-image-cards/Rammeverk for design.jpg",
+      'imageSrc': "../../../assets/Images/Components/usp-image-cards/Rammeverk for design.webp",
       'imageAlt': "Alt tekst",
       'Subtitle': "Vi tar ikke betalt før produktet er ferdig, på denne måten er du helt <span>fornøyd</span>, helt <span>risikofritt</span>",
       "Content": "transmitting quantify navigating the card won't do anything, we need to transmit the optical PCI sensor! calculate The HDD driver is down, back up the cross-platform interface so we can override the RSS system! Use the mobile XML microchip, then you can copy the back-end program! You can't connect the sensor without backing up the bluetooth HTTP hard drive! transmitting the system won't do anything, we need to input the 1080p THX program! Try to navigate the PNG port, maybe it will input the online program! I'll hack the 1080p CSS firewall, that should transmitter the PCI monitor! backing up You can't input the program without synthesizing the bluetooth FTP capacitor! ",
