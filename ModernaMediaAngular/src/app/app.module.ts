@@ -11,7 +11,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarComponent } from './nav-bar/nav-bar.component'
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LandingpageComponent } from './home/landingpage/landingpage.component';
@@ -46,7 +45,6 @@ import { InfoAndImageComponent } from './components/info-and-image/info-and-imag
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    FontAwesomeModule,
     UtviklingModule,
     RouterModule.forRoot([
       {
