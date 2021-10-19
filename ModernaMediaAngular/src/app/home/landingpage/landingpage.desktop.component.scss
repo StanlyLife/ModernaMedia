@@ -1,0 +1,15 @@
+@import "../../../variables.scss";
+@media screen and (min-width: 760px) {
+  .moderna-media-home .content {
+    .logo {
+      img {
+        &.top {
+          height: 449px;
+        }
+        &.bottom {
+          height: 192.8px;
+        }
+      }
+    }
+  }
+}
