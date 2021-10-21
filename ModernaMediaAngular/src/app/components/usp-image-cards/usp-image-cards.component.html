@@ -14,8 +14,8 @@
           />
         </div>
         <div class="content">
-          <h6>{{ item["title"] }}</h6>
-          <p>{{ item["content"] }}</p>
+          <h6 [innerHTML]="item['title']"></h6>
+          <p [innerHTML]="item['content']"></p>
         </div>
       </div>
     </div>

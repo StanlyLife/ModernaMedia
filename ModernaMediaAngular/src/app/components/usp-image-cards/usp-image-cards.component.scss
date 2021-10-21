@@ -9,9 +9,6 @@ section {
     text-shadow: $text-shadow;
     text-transform: uppercase;
     letter-spacing: 5px;
-    ::ng-deep span {
-      color: $blue;
-    }
   }
   .usp-wrapper {
     display: flex;

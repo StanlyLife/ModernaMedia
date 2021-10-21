@@ -9,43 +9,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UspImageCardsComponent implements OnInit {
 
   imageCdn = environment.img;
-  @Input() Title ="Enda flere grunner for å <span>Digitalisere</span> med ModernaMedia";
+  @Input() Title ="Ingen tekst satt";
 
-  public UspCard = [
-    {
-      'icon' : "../../../assets/Images/Icons/rocket-9959.svg",
-      'imageSrc' : "../../../assets/Images/Components/usp-image-cards/Farge kombinasjoner for design.webp",
-      'imageAlt' : "Alt tekst",
-      'content' : "Alle våre nettsider bygges fra bunn, noe som vil si at vi kan lage ALT du vil ha innenfor teknologien og fysikkens lover",
-      "title" : "Raske løsninger for raske briller"
-    },
-    {
-      'icon' : "../../../assets/Images/Icons/rocket-9959.svg",
-      'imageSrc' : "../../../assets/Images/Components/usp-image-cards/Norsk design for bedrift.webp",
-      'imageAlt' : "Alt tekst",
-      'content' : "Alle våre nettsider bygges fra bunn, noe som vil si at vi kan lage ALT du vil ha innenfor teknologien og fysikkens lover",
-      "title" : "Raske løsninger for raske briller"
-    },
-    {
-      'icon' : "../../../assets/Images/Icons/rocket-9959.svg",
-      'imageSrc' : "../../../assets/Images/Components/usp-image-cards/Rammeverk for design.webp",
-      'imageAlt' : "Alt tekst",
-      'content' : "Alle våre nettsider bygges fra bunn, noe som vil si at vi kan lage ALT du vil ha innenfor teknologien og fysikkens lover",
-      "title" : "Raske løsninger for raske briller"
-    },
-    {
-      'icon' : "../../../assets/Images/Icons/rocket-9959.svg",
-      'imageSrc' : "../../../assets/Images/Components/usp-image-cards/Samlet arbeid.webp",
-      'imageAlt' : "Alt tekst",
-      'title' : "4Rakkett løsning",
-      "content" : "Raske løsninger for raske briller"
-    }
-  ];
+  @Input() UspCard;
 
 
   constructor() { }
 
   ngOnInit(): void {
+    this.UspCard = JSON.parse(this.UspCard);
   }
 
 }
