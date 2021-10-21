@@ -1,3 +1,5 @@
+import { DesignModule } from './design/design.module';
+import { SeoModule } from './seo/seo.module';
 import { UtviklingModule } from './utvikling/utvikling.module';
 import { NotFoundComponent } from './error/not-found/not-found.component';
 import { RouterModule } from '@angular/router';
@@ -46,6 +48,8 @@ import { InfoAndImageComponent } from './components/info-and-image/info-and-imag
     AppRoutingModule,
     HttpClientModule,
     UtviklingModule,
+    SeoModule,
+    DesignModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -53,10 +57,6 @@ import { InfoAndImageComponent } from './components/info-and-image/info-and-imag
         component: HomeComponent,
         data: {animation: "HomePage"}
       },
-      // {
-      //   path: '',
-      //   component: HomeComponent
-      // },
       {path: "**",redirectTo:"error"},
       {path: 'error', component: NotFoundComponent,data: {animation: "AboutPage"}},
     ])
