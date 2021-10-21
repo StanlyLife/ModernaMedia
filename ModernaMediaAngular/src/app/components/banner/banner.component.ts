@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BannerComponent implements OnInit {
   imageCdn = environment.img;
-  @Input() Title = "<span>Nettsider</span><span>for</span><span class='blue-text'>bedrifter</span>"
+  @Input() Titlee = "<span>Nettsider</span><span>for</span><span class='blue-text'>bedrifter</span>"
   @Input() UniqueSellingPoints;
   // = [
   //   {

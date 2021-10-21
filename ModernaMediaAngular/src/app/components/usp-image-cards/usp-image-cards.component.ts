@@ -9,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UspImageCardsComponent implements OnInit {
 
   imageCdn = environment.img;
-  @Input() Title ="Ingen tekst satt";
+  @Input() Titlee ="Ingen tekst satt";
 
   @Input() UspCard;
 

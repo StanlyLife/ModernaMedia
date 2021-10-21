@@ -1,10 +1,8 @@
 @import "../../../variables.scss";
 
-
 section.moderna-media-product {
   position: relative;
   height: 1250px;
-
 
   .arrows {
     display: flex;
@@ -66,13 +64,13 @@ section.moderna-media-product {
 
     &.move-front {
       animation-name: moveFront;
-      animation-duration: .5s;
+      animation-duration: 0.5s;
       animation-fill-mode: forwards;
     }
 
     &.move-back {
       animation-name: moveBack;
-      animation-duration: .5s;
+      animation-duration: 0.5s;
       animation-fill-mode: forwards;
     }
 
@@ -122,9 +120,6 @@ section.moderna-media-product {
     padding: $padding-component-top $padding-component-side;
     .subtitle {
       padding: $padding-component-top $padding-component-side;
-      ::ng-deep span {
-        color: $blue;
-      }
     }
     .icons {
       padding: 0 $padding-component-side;
@@ -170,9 +165,8 @@ section.moderna-media-product {
   }
 }
 
-
 button.section-cta {
-  transition: all .25s;
+  transition: all 0.25s;
   &:hover {
     background: $blue;
   }
@@ -185,7 +179,6 @@ button.section-cta {
 
   98% {
     z-index: 0;
-
   }
   99% {
     z-index: 1;

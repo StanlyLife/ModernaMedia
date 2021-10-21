@@ -1,5 +1,4 @@
 import { animate, animateChild, group, query, style, transition, trigger } from '@angular/animations';
-import { Optional } from '@angular/core';
 
 
 //:enter is new page
@@ -24,19 +23,13 @@ trigger('routeAnimations', [
     // }),
         query(':enter, :leave', [
         style({
-            position: 'Absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            width: '100%',
-            background: '#fff',
-            transform: 'opacity(0)'
+            opacity: 0
         }),
         ], {optional: true}),
         query(':enter',[
             animate('300ms ease'),
             style({
-                transform: 'opacity(1)'
+                opacity: 1
                 })
             ], 
             {optional: true}),

@@ -11,6 +11,10 @@ export class InfoAndImageComponent implements OnInit {
   imageCdn = environment.img;
   constructor() { }
   @Input() sectionStyle:string = 'light';
+  @Input() content:string;
+  @Input() Titlee:string;
+  @Input() src:string;
+  @Input() alt:string;
   ngOnInit(): void {
   }
 

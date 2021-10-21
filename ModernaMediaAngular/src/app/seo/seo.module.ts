@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { ComponentsModule } from './../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +10,10 @@ import { SeoComponent } from './seo/seo.component';
   declarations: [SeoComponent],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    RouterModule.forRoot([
+      {path: 'seo', component: SeoComponent,data: {animation: "seoPage"}},
+    ])
   ]
 })
 export class SeoModule { }
