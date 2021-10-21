@@ -50,6 +50,7 @@ export class BannerComponent implements OnInit {
   @Input() ImageSrc: string = "../../../assets/Images/Utvikling/Utvikling/Web utvikling oslo.webp"
   @Input() uspColor: string;
   @Input() ComponentTheme: string;
+  @Input() altText: string;
 
 
   constructor() { }
