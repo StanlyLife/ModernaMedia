@@ -1,16 +1,19 @@
+import { RouterModule } from '@angular/router';
 import { ComponentsModule } from './../components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SeoComponent } from './seo/seo.component';
 import { DesignComponent } from './design/design.component';
 
 
 
 @NgModule({
-  declarations: [SeoComponent, DesignComponent],
+  declarations: [DesignComponent],
   imports: [
     CommonModule,
-    ComponentsModule
+    ComponentsModule,
+    RouterModule.forRoot([
+      {path: 'design', component: DesignComponent,data: {animation: "designPage"}},
+    ])
   ]
 })
 export class DesignModule { }
