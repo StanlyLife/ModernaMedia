@@ -43,6 +43,12 @@
     }
     .usp-container {
       color: $light;
+      &.dark-usp {
+        color: $dark;
+        img {
+          filter: invert(0.1);
+        }
+      }
       padding: 5px 10px;
       &:nth-child(n + 30) {
         display: none;
