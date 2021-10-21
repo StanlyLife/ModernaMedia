@@ -11,7 +11,8 @@
     "dev:ssr": "ng run ModernaMediaAngular:serve-ssr",
     "serve:ssr": "node dist/ModernaMediaAngular/server/main.js",
     "build:ssr": "ng build --prod && ng run ModernaMediaAngular:server:production",
-    "prerender": "ng run ModernaMediaAngular:prerender"
+    "prerender": "ng run ModernaMediaAngular:prerender",
+    "postbuild": "gulp compress"
   },
   "private": true,
   "dependencies": {
@@ -47,6 +48,8 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "gulp": "^4.0.2",
+    "gulp-gzip": "^1.4.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~5.0.0",
