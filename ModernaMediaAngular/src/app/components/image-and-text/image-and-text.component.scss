@@ -49,9 +49,6 @@ section {
         text-transform: uppercase;
         text-shadow: $text-shadow;
         font-weight: 900;
-        ::ng-deep span {
-          color: $red;
-        }
       }
       p {
         padding-top: 50px;
