@@ -1,21 +1,17 @@
-<section class="moderna-media-banner">
+<section class="moderna-media-banner {{ ComponentTheme }}">
   <div class="bg-img">
     <div class="shadow-overlay"></div>
-    <img
-      src="../../../assets/Images/Utvikling/Utvikling/Web utvikling oslo.webp"
-      alt=""
-    />
+    <img src="{{ imageCdn == '' ? '' : imageCdn }}{{ ImageSrc }}" alt="" />
   </div>
   <div class="content">
     <div class="header-text">
-      <h1>
-        <span>Nettsider</span>
-        <span>for</span>
-        <span>bedrifter</span>
-      </h1>
+      <h1 [innerHTML]="Title"></h1>
     </div>
     <div class="usp-wrapper">
-      <div *ngFor="let usp of UniqueSellingPoints" class="usp-container">
+      <div
+        *ngFor="let usp of UniqueSellingPoints"
+        class="usp-container {{ uspColor }}"
+      >
         <div class="usp-inner-container">
           <img
             src="{{ imageCdn == '' ? '' : imageCdn }}{{ usp['icon'] }}"
@@ -30,7 +26,7 @@
     </div>
   </div>
 </section>
-<div class="usp-wrapper-mobile">
+<div class="usp-wrapper-mobile {{ ComponentTheme }}">
   <div *ngFor="let usp of UniqueSellingPoints" class="usp-container-mobile">
     <div class="usp-inner-container-mobile">
       <img src="{{ imageCdn == '' ? '' : imageCdn }}{{ usp['icon'] }}" alt="" />
