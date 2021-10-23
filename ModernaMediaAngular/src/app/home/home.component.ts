@@ -1,3 +1,4 @@
+import { SeoService } from './../services/seo.service';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 
@@ -12,11 +13,13 @@ export class HomeComponent implements OnInit {
   constructor(
     private meta: Meta,
     private title: Title,
+    private seo: SeoService
     ) {
       title.setTitle("Moderna Media Digitalbyrå | Bedrift nettsider, grafisk design og seo i Norge");
     }
 
    ngOnInit() {
+    this.seo.createLinkForCanonicalURL();
      this.meta.addTags([
        {name: "description", content: "ModernaMedia er et digital byrå med ekstremt høy kompetanse innenfor web, seo og design!"},
        {name: 'robots', content: 'index, follow'}
