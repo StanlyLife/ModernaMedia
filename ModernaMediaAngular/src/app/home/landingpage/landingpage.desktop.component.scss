@@ -1,13 +1,207 @@
 @import "../../../variables.scss";
-@media screen and (min-width: 760px) {
-  .moderna-media-home .content {
-    .logo {
-      img {
-        &.top {
-          height: 449px;
+@media screen and (min-width: $desktop) {
+  section.moderna-media-home {
+    margin-top: 70px; //header height
+    .banner {
+      img.banner-img {
+      }
+      .title {
+        font-size: 7rem;
+      }
+    }
+  }
+
+  section.moderna-media-home {
+    .contents {
+      .info {
+        padding: $padding-section-top $padding-section-sides;
+        .page-title {
+          span {
+          }
         }
-        &.bottom {
-          height: 192.8px;
+        .content,
+        .buttons {
+        }
+        .buttons {
+          justify-content: flex-start;
+          a:nth-child(2) {
+            margin-left: $padding-section-sides;
+          }
+        }
+      }
+    }
+    .contents {
+      .services {
+        .service {
+          a {
+          }
+          .bg {
+          }
+          img {
+          }
+          p {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  section.moderna-media-home {
+    .banner {
+      img.banner-img {
+      }
+      .title {
+        font-size: 6rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  section.moderna-media-home {
+    min-height: 100vh;
+    .contents {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      .info,
+      .services {
+        flex: 1;
+      }
+      .info {
+        padding: $padding-section-top $padding-section-sides;
+        .page-title {
+          span {
+          }
+        }
+        .content,
+        .buttons {
+        }
+        .buttons {
+          justify-content: flex-start;
+          a:nth-child(2) {
+            margin-left: $padding-section-sides;
+          }
+        }
+      }
+    }
+    .contents {
+      .services {
+        padding-top: $padding-section-top;
+        padding-right: $padding-section-sides;
+        .service {
+          margin: 0 0;
+          a {
+          }
+          .bg {
+          }
+          img {
+          }
+          p {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  section.moderna-media-home {
+    min-height: 100vh;
+    .contents {
+      .services {
+        flex: 3;
+      }
+      .info {
+        flex: 2;
+        padding: $padding-section-top $padding-section-sides;
+        .page-title {
+          span {
+          }
+        }
+        .content,
+        .buttons {
+        }
+        .buttons {
+          justify-content: flex-start;
+          a:nth-child(2) {
+            margin-left: $padding-section-sides;
+          }
+        }
+      }
+    }
+    .contents {
+      .services {
+        padding-top: $padding-section-top;
+        padding-right: $padding-section-sides;
+        flex-direction: row;
+        display: flex;
+        .service {
+          margin: 0 $padding-component-side;
+          height: 400px;
+          a {
+            height: 400px;
+          }
+          .bg {
+            height: 400px;
+          }
+          img {
+            height: 400px;
+          }
+          p {
+            font-size: 1.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  section.moderna-media-home {
+    .contents {
+      max-width: 1250px;
+      margin: 0 auto;
+      .services {
+        flex: 1;
+      }
+      .info {
+        flex: 1;
+      }
+      .buttons {
+        justify-content: flex-start;
+        a:nth-child(2) {
+          margin-left: $padding-section-sides;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  section.moderna-media-home {
+    .contents {
+      max-width: 1500px;
+      margin: 0 auto;
+      .services {
+        flex: 3;
+      }
+      .info {
+        flex: 2;
+      }
+      .buttons {
+        justify-content: flex-start;
+        a:nth-child(2) {
+          margin-left: $padding-section-sides;
+        }
+      }
+
+      .services {
+        .service {
+          p {
+            font-size: 2.5rem;
+          }
         }
       }
     }
