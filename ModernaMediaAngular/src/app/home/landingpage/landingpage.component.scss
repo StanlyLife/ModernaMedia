@@ -1,90 +1,103 @@
 @import "src/variables.scss";
 
-.moderna-media-home {
-  min-height: 100vh;
+section.moderna-media-home {
   position: relative;
-  .background-image {
-    height: 100%;
-    width: 100%;
-    background: $dark;
-    position: absolute;
-    z-index: -1;
-    img,
-    video {
-      object-fit: cover;
+  min-height: 100vh;
+  height: auto;
+  .banner {
+    position: relative;
+    height: 400px;
+    img.banner-img {
       height: 100%;
       width: 100%;
+      object-fit: cover;
     }
-    .radial-gradient {
-      background: radial-gradient(
-        circle,
-        rgba(51, 51, 51, 0.5) 0%,
-        rgba(51, 51, 51, 0) 100%
-      );
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
+    .title {
       position: absolute;
-      top: 0;
+      @include aAbs;
+      color: $light;
+      text-transform: uppercase;
+      font-weight: 900;
+      font-size: 4.1rem;
+      opacity: 0.5;
     }
   }
-  .content {
-    padding: 50px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
+}
 
-    color: $light;
-
-    .logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      img {
-        height: auto;
-        width: 100%;
-        max-width: 750px;
-        mix-blend-mode: overlay;
-      }
-    }
+section.moderna-media-home {
+  .contents {
     .info {
-      h1,
-      h2 {
-        border-top: 4px solid $light;
-        border-bottom: 4px solid $light;
+      padding: $padding-component-top $padding-component-side;
+      .page-title {
         text-transform: uppercase;
-        font-weight: 300;
-        font-size: 2rem;
-        text-shadow: $text-shadow;
-        text-align: center;
-        letter-spacing: 15px;
-        padding: 5px 0;
-
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      .info-text {
-        padding: 10px 25px;
-        text-align: center;
-        max-width: 750px;
-        p {
-          text-shadow: $text-shadow;
-          font-size: 1.5rem;
-          font-weight: 100;
-          font-family: $ff-primary;
+        font-weight: 900;
+        font-family: $ff-article;
+        color: $dark;
+        span {
+          color: $blue;
         }
       }
-      .cta-buttons {
-        padding: 10px 25px;
+      .content,
+      .buttons {
+        padding: $padding-component-top 0;
+      }
+      .buttons {
+        height: 50px;
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        a {
+          height: 40px;
+        }
+      }
+    }
+  }
+  .contents {
+    .services {
+      padding-bottom: $padding-section-top;
+      .service {
+        margin-bottom: $padding-component-top;
+        height: 100px;
+        width: 100%;
+        position: relative;
+        a {
+          position: absolute;
+          height: 100px;
+          width: 100%;
+          overflow: hidden;
+          &:hover {
+            img {
+              transform: scale(1.25);
+            }
+          }
+        }
+        .bg {
+          height: 100px;
+          width: 100%;
+          background-color: rgb(198, 195, 185);
+          position: absolute;
+          pointer-events: none;
+        }
+        img {
+          transition: all 0.2s;
+          pointer-events: none;
+          height: 100px;
+          width: 100%;
+          object-fit: cover;
+          position: absolute;
+          z-index: 1;
+          mix-blend-mode: multiply;
+        }
+        p {
+          position: absolute;
+          z-index: 2;
+          @include aAbs;
+          text-transform: uppercase;
+          font-size: 3rem;
+          color: $light;
+          text-shadow: $text-shadow;
+          font-weight: 900;
+        }
       }
     }
   }
