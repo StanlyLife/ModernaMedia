@@ -1,4 +1,4 @@
-import { animate, animateChild, group, query, style, transition, trigger } from '@angular/animations';
+import { animate, query, style, transition, trigger } from '@angular/animations';
 
 
 //:enter is new page

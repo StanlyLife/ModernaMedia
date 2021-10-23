@@ -1,9 +1,7 @@
-import { ComponentsModule } from './../components/components.module';
-import { BannerComponent } from './../components/banner/banner.component';
-import { AppModule } from './../app.module';
-import { RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { ComponentsModule } from './../components/components.module';
 import { UtviklingComponent } from './utvikling/utvikling.component';
 
 

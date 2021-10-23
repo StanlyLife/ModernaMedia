@@ -1,6 +1,5 @@
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { environment } from './../../../environments/environment.prod';
-import { ImageAndTextComponent } from './../image-and-text/image-and-text.component';
-import { Component, Input, OnInit, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-image-price-info',

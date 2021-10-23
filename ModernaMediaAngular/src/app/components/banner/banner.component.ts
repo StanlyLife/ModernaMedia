@@ -1,5 +1,5 @@
+import { Component, Input, OnInit } from '@angular/core';
 import { environment } from './../../../environments/environment.prod';
-import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({

@@ -1,6 +1,6 @@
-import { SeoService } from './../../services/seo.service';
-import { Meta, Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from './../../services/seo.service';
 
 @Component({
   selector: 'app-seo',

@@ -1,9 +1,7 @@
-import { TransferState, makeStateKey } from '@angular/platform-browser';
-import { environment } from './../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, throwError, of } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { environment } from './../environments/environment';
 
 
 @Injectable({

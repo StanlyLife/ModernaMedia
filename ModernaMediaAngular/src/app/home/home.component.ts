@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({

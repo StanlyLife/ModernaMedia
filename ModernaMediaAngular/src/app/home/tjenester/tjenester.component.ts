@@ -1,5 +1,5 @@
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { environment } from './../../../environments/environment.prod';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-tjenester',
