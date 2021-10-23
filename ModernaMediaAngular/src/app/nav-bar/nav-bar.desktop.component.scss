@@ -11,6 +11,11 @@
       .nav-link {
         padding: 20px 5px;
         margin: 20px 5px;
+        &.dark-text {
+          a {
+            color: $dark;
+          }
+        }
         a {
           font-size: 0.8rem;
         }

@@ -1,6 +1,6 @@
+import { Location } from '@angular/common';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { environment } from './../../environments/environment.prod';
-import { throwError } from 'rxjs';
-import { Component, ElementRef, Injector, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -11,12 +11,18 @@ export class NavBarComponent implements OnInit {
 
 public nav;
   imageCdn = environment.img;
+  textClass = "";
   constructor(
-    private injector: Injector,
-    private elem: ElementRef
+    private elem: ElementRef,
+    private location: Location
     ) {}
 
+
   ngOnInit(): void {
+    console.log(this.location.path());
+    if(this.location.path() === ''){
+      this.textClass = "dark-text";
+    }
   }
 
   ngAfterViewInit() {

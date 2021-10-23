@@ -3,31 +3,40 @@
     <a class="logo-anchor" href="" title="Hjemmeside" aria-label="Hjemmeside">
       <div class="logo">
         <img
+          *ngIf="textClass == 'dark-text'; else whiteLogo"
           src="{{
             imageCdn == '' ? '' : imageCdn
-          }}../../assets/Images/Logo/SVG/LOGO LIGHT.svg"
+          }}../../assets/Images/Logo/SVG/LOGO 333.svg"
           alt=""
         />
+        <ng-template #whiteLogo>
+          <img
+            src="{{
+              imageCdn == '' ? '' : imageCdn
+            }}../../assets/Images/Logo/SVG/LOGO LIGHT.svg"
+            alt=""
+          />
+        </ng-template>
       </div>
     </a>
     <nav role="navigation" id="navbar">
-      <div class="nav-link">
+      <div class="nav-link {{ textClass }}">
         <div class="slide"></div>
         <a href="/utvikling">utvikling</a>
       </div>
-      <div class="nav-link">
+      <div class="nav-link {{ textClass }}">
         <div class="slide"></div>
         <a href="/design">Design</a>
       </div>
-      <div class="nav-link">
+      <div class="nav-link {{ textClass }}">
         <div class="slide"></div>
         <a href="/seo">SEO</a>
       </div>
-      <div class="nav-link">
+      <div class="nav-link {{ textClass }}">
         <div class="slide"></div>
         <a href="/about">Om oss</a>
       </div>
-      <div class="nav-link">
+      <div class="nav-link {{ textClass }}">
         <div class="slide"></div>
         <a href="/blogg">blogg</a>
       </div>
