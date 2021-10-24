@@ -15,9 +15,7 @@ import { slideInAnimation } from './route-animations';
 })
 export class AppComponent implements OnInit {
   constructor(
-    private title: Title
     ) {
-      title.setTitle("ModernaMedia Digitalbyrå for bedrifter. Bedrift nettsider, grafisk design og seo i Norge");
     }
 
    ngOnInit() {
