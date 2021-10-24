@@ -15,13 +15,13 @@ export class HomeComponent implements OnInit {
     private title: Title,
     private seo: SeoService
     ) {
-      title.setTitle("Moderna Media Digitalbyrå | Bedrift nettsider, grafisk design og seo i Norge");
+      title.setTitle("Moderna Media Digitalbyrå | Bedrift nettsider, systemer, webdesign og seo");
     }
 
    ngOnInit() {
     this.seo.createLinkForCanonicalURL();
      this.meta.addTags([
-       {name: "description", content: "ModernaMedia er et digital byrå med ekstremt høy kompetanse innenfor web, seo og design!"},
+       {name: "description", content: "Moderna Media utvikler nettsider og system for bedrifter som ønsker et eget nettsted, system eller app. Vi er også eksperter på SEO, Google analytics, google search og ikke minst design og web design. Et digitalbyrå med alt på et sted!"},
        {name: 'robots', content: 'index, follow'}
      ]);
      this.meta.addTag({

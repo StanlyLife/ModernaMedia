@@ -14,13 +14,13 @@ export class UtviklingComponent implements OnInit {
     private title: Title,
     private seo: SeoService
     ) {
-      title.setTitle("Moderna Media Utvikling av nettsider og system for bedrifter");
+      title.setTitle("Utvikling av nettsider og system for bedrifter");
     }
 
    ngOnInit() {
      this.seo.createLinkForCanonicalURL();
      this.meta.addTags([
-       {name: "description", content: "Moderna Media utvikler nettsider og system for bedrifter som ønsker et eget nettsted, system eller app"},
+       {name: "description", content: "Moderna Media utvikler nettsider og system for bedrifter som ønsker et eget nettsted, et tilpasset system eller en egen app"},
        {name: 'robots', content: 'index, follow'}
      ]);
      this.meta.addTag({

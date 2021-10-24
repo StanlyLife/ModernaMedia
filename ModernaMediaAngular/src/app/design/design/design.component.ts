@@ -13,13 +13,13 @@ export class DesignComponent implements OnInit {
     private title: Title,
     private seo: SeoService
     ) {
-      title.setTitle("Moderna Media Utvikling av nettsider og system for bedrifter");
+      title.setTitle("Design, grafisk design og webdesign for bedrifter");
     }
 
    ngOnInit() {
      this.seo.createLinkForCanonicalURL();
      this.meta.addTags([
-       {name: "description", content: "Moderna Media utvikler nettsider og system for bedrifter som ønsker et eget nettsted, system eller app"},
+       {name: "description", content: "Moderna media digitalbyrå med eksperter innenfor grafisk design, web design, og logo design. Alt på ett sted for din bedrift"},
        {name: 'robots', content: 'index, follow'}
      ]);
      this.meta.addTag({
