@@ -13,7 +13,12 @@
   <div class="tjenester">
     <div class="controls">
       <div class="sliders">
-        <button class="left" (click)="left($event)">
+        <button
+          class="left"
+          (click)="left($event)"
+          aria-label="forrige tjeneste"
+          name="forrige tjeneste"
+        >
           <img
             src="{{
               imageCdn == '' ? '' : imageCdn
@@ -22,7 +27,12 @@
             loading="lazy"
           />
         </button>
-        <button class="right" (click)="right($event)">
+        <button
+          class="right"
+          (click)="right($event)"
+          aria-label="neste tjeneste"
+          name="neste tjeneste"
+        >
           <img
             src="{{
               imageCdn == '' ? '' : imageCdn

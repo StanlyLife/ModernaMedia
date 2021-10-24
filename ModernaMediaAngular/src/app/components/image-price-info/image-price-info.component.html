@@ -1,6 +1,6 @@
 <section class="moderna-media-product">
   <div class="arrows">
-    <button (click)="movePrevious()">
+    <button (click)="movePrevious()" name="forrige tjeneste">
       <img
         class="left"
         src="{{
@@ -11,7 +11,7 @@
       />
       <p>forrige</p>
     </button>
-    <button (click)="moveNext()">
+    <button (click)="moveNext()" name="neste tjeneste">
       <p>neste</p>
       <img
         class="right"
@@ -61,7 +61,9 @@
           <p [innerHTML]="ContentOne['Content']"></p>
         </div>
         <div class="cta-btn">
-          <button class="btn dark shadow section-cta">Book et møte</button>
+          <button class="btn dark shadow section-cta" name="book møte">
+            Book et møte
+          </button>
         </div>
       </div>
     </div>
@@ -104,7 +106,9 @@
           <p [innerHTML]="ContentTwo['Content']"></p>
         </div>
         <div class="cta-btn">
-          <button class="btn dark shadow section-cta">Book et møte</button>
+          <button class="btn dark shadow section-cta" name="book et møte">
+            Book et møte
+          </button>
         </div>
       </div>
     </div>
