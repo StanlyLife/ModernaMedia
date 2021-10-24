@@ -97,6 +97,7 @@ section.moderna-media-home {
           color: $light;
           text-shadow: $text-shadow;
           font-weight: 900;
+          pointer-events: none;
         }
       }
     }
