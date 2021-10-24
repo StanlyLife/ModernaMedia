@@ -10,8 +10,10 @@ import { environment } from './../../environments/environment.prod';
 export class NavBarComponent implements OnInit {
 
 public nav;
+public header;
   imageCdn = environment.img;
   textClass = "";
+  mobileOpen = false;
   constructor(
     private elem: ElementRef,
     private location: Location
@@ -24,12 +26,21 @@ public nav;
       this.textClass = "dark-text";
     }
   }
-
+  
   ngAfterViewInit() {
-     this.nav = this.elem.nativeElement.querySelector('#navbar');
+    this.nav = this.elem.nativeElement.querySelector('#navbar');
+    this.header = this.elem.nativeElement.querySelector('header');
   }
   ContactUs(event) {
     alert("test");
+  }
+  Menu(event) {
+    this.header.classList.toggle("mobile-open");
+    if(this.header.clasList.contains("mobile-open")){
+      this.mobileOpen = true;
+    }else {
+      this.mobileOpen = false;
+    }
   }
 
 }

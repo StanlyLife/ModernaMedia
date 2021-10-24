@@ -11,6 +11,7 @@
         />
         <ng-template #whiteLogo>
           <img
+            class="white-logo"
             src="{{
               imageCdn == '' ? '' : imageCdn
             }}../../assets/Images/Logo/SVG/LOGO LIGHT.svg"
@@ -50,7 +51,7 @@
     <button class="btn contact dark" (click)="ContactUs($event)">
       Kontakt oss
     </button>
-    <button class="btn menu transparent-white" (click)="ContactUs($event)">
+    <button class="btn menu transparent-white" (click)="Menu($event)">
       Meny
     </button>
   </div>

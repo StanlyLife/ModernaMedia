@@ -9,6 +9,62 @@ header {
   width: 100%;
   position: absolute;
   z-index: 1;
+  transition: all 0.5s;
+  &.mobile-open {
+    background: $light;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    right: 0;
+    padding: 0;
+    margin: 0;
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      overflow-y: scroll;
+      .logo-anchor {
+        position: unset;
+        height: 75px;
+        .logo {
+          @include haAbs;
+          position: unset;
+          &:hover {
+            img {
+              opacity: 0.5;
+            }
+          }
+          img {
+            transition: opacity 0.2s;
+            opacity: 1;
+          }
+          .white-logo {
+            filter: invert(0.9);
+          }
+        }
+      }
+      nav {
+        height: auto;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        .nav-link {
+          a {
+            color: $dark;
+          }
+        }
+      }
+    }
+  }
+}
+.btn.menu {
+  position: fixed;
+  top: 5px;
+  right: 5px;
 }
 
 .wrapper {
