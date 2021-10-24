@@ -92,7 +92,7 @@ export class UtviklingComponent implements OnInit {
       "content" : "Raske Design for raske briller"
     }
   ];
-  textColor = "yellow-text";
+  textColor = "blue-text";
   Product = [
     {
       'Title': "LITEN BEDRIFT",
