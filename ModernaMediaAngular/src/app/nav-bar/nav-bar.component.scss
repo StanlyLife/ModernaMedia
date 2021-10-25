@@ -10,6 +10,10 @@ header {
   position: absolute;
   z-index: 1;
   transition: all 0.5s;
+  a:hover {
+    color: inherit;
+    opacity: 0.5;
+  }
   &.mobile-open {
     background: $light;
     height: 100vh;
@@ -53,7 +57,8 @@ header {
         justify-content: space-evenly;
         flex-direction: column;
         .nav-link {
-          a {
+          a,
+          p {
             color: $dark;
           }
         }

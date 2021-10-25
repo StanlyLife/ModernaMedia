@@ -12,7 +12,8 @@
         padding: 20px 5px;
         margin: 20px 5px;
         &.dark-text {
-          a {
+          a,
+          p {
             color: $dark;
           }
         }
