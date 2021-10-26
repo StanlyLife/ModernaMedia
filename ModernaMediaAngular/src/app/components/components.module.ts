@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UspImageCardsComponent } from './usp-image-cards/usp-image-cards.component';
 import { ImagePriceInfoComponent } from './image-price-info/image-price-info.component';
+import { BloggThumbnailComponent } from './blogg-thumbnail/blogg-thumbnail.component';
 
 
 
@@ -15,7 +16,8 @@ import { ImagePriceInfoComponent } from './image-price-info/image-price-info.com
     ImageAndTextComponent,
     InfoAndImageComponent,
     UspImageCardsComponent,
-    ImagePriceInfoComponent
+    ImagePriceInfoComponent,
+    BloggThumbnailComponent
   ],
   imports: [
     CommonModule
@@ -26,6 +28,7 @@ import { ImagePriceInfoComponent } from './image-price-info/image-price-info.com
     InfoAndImageComponent,
     UspImageCardsComponent,
     ImagePriceInfoComponent,
+    BloggThumbnailComponent,
   ]
 })
 export class ComponentsModule { 
