@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AboutComponent } from './about/about.component';
@@ -7,7 +8,10 @@ import { AboutComponent } from './about/about.component';
 @NgModule({
   declarations: [AboutComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot([
+      {path: 'info', component: AboutComponent,data: {animation: "AboutPage"}},
+    ])
   ]
 })
 export class AboutModule { }
