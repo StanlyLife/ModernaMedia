@@ -1,3 +1,5 @@
+import { AboutModule } from './about/about.module';
+import { BloggModule } from './blogg/blogg.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
@@ -47,6 +49,8 @@ import { UtviklingModule } from './utvikling/utvikling.module';
     UtviklingModule,
     SeoModule,
     DesignModule,
+    BloggModule,
+    AboutModule,
     RouterModule.forRoot([
       {
         path: '',
