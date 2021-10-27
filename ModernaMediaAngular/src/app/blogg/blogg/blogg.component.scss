@@ -1,0 +1,96 @@
+@import "../../../variables.scss";
+
+section.Moderna-media-blogg {
+  .hero {
+    position: relative;
+    height: 50vh;
+    min-height: 300px;
+    background-color: #bcc8c7;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      mix-blend-mode: multiply;
+    }
+    strong {
+      position: absolute;
+      font-size: 7rem;
+      @include aAbs;
+      color: $light;
+      font-weight: 900;
+      text-shadow: $text-shadow;
+      text-transform: uppercase;
+    }
+  }
+  .blogs {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: $padding-component-top $padding-component-side;
+    .blog-content-list {
+      max-width: 700px;
+      margin: 0 auto;
+      .title {
+        padding: $padding-component-top 0;
+        border-bottom: 2px solid $dark;
+        h1 {
+          color: $dark;
+        }
+        p {
+          padding-top: $padding-component-top;
+        }
+      }
+      app-blogg-thumbnail {
+        ::ng-deep article {
+          padding: $padding-component-top 0;
+        }
+      }
+    }
+    .blog-links-list {
+      text-align: center;
+      .title strong {
+        font-size: 1.5rem;
+        color: $dark;
+        text-shadow: $text-shadow;
+        text-transform: uppercase;
+        font-weight: 900;
+      }
+      p,
+      strong {
+        font-size: 1.25rem;
+      }
+      p {
+        width: 100%;
+        color: $dark;
+        padding: $padding-component-top 0;
+      }
+      li {
+        padding: 5px 0;
+      }
+      ol {
+        list-style: none;
+        li::before {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1240px) {
+  .blogs {
+    position: relative;
+  }
+  .blog-links-list {
+    max-width: 250px;
+    padding: $padding-component-top $padding-component-side;
+    p,
+    li,
+    a,
+    strong {
+      text-align: left;
+    }
+    left: 0;
+    top: 0;
+    position: absolute;
+  }
+}
