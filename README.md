@@ -1,6 +1,6 @@
 # ModernaMedia
 
-Repository for ModernaMedia.no
+Repository for ModernaMedia.no [Digitalbyrå for nettsider, seo & design](https://modernamedia.no)
 
 using: .NET 5, Angular & Angular Universal (SSR)
 
