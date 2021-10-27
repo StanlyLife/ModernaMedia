@@ -1,6 +1,7 @@
 import { SeoService } from './../../services/seo.service';
 import { Meta, Title } from '@angular/platform-browser';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-blogg',
@@ -17,7 +18,12 @@ export class BloggComponent implements OnInit {
       title.setTitle("Moderna media blogg, informasjon og kunnskap - Moderniser bedriften");
     }
 
-   ngOnInit() {
+  
+    public vw: any = 500;
+    imageCdn = environment.img;
+    
+    ngOnInit() {
+     this.vw = window.innerWidth < window.innerHeight ? window.innerHeight : window.innerWidth;
      this.seo.createLinkForCanonicalURL();
      this.meta.addTags([
        {name: "description", content: "Moderna Media ønsker å dele kunnskap og informasjon om hvordan du kan digitalisere bedriften. her kan du lese om alt fra 'google analytics', 'google min bedrift' og 'søkemotoroptomalisering' til 'hvordan lage hjemmeside for bedrift'.  "},
