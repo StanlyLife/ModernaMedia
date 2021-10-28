@@ -37,11 +37,7 @@ header {
         .logo {
           @include haAbs;
           position: unset;
-          &:hover {
-            img {
-              opacity: 0.5;
-            }
-          }
+          pointer-events: none;
           img {
             transition: opacity 0.2s;
             opacity: 1;
@@ -101,11 +97,6 @@ header {
     height: 100%;
     width: 75px;
     left: 10px;
-    &:hover {
-      .logo img {
-        opacity: 1;
-      }
-    }
     .logo {
       height: 100%;
       position: absolute;
