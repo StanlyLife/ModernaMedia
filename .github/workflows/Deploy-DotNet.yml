@@ -1,0 +1,53 @@
+name: DotNet-Deploy
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      
+#    - name: edit connection string
+#      uses: benday-inc/edit-dbconnstr-in-appsettings@main
+#      with:
+#        pathtosettingsfile: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMediaDotNet/ModernaMediaDotNet/appsettings.json'
+#        name: "DefaultConnection"
+#        connectionstring: ${{ secrets.DEFAULTCONNECTION }}
+#    - name: Setup .NET Core SDK
+#      uses: actions/setup-dotnet@v1
+#      with:
+#        dotnet-version: '5.0.x'
+        
+    - name: App Settings Variable Substitution
+      uses: microsoft/variable-substitution@v1
+      with:
+        files: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMediaDotNet/ModernaMediaDotNet/appsettings.json'
+      env:
+        ConnectionStrings.Default: ${{ secrets.DEFAULTCONNECTION }}
+#       App.ServerRootAddress: ${{ env.SERVER_ROOT_ADDRESS }}
+  
+    - name: Dotnet publish
+      run: dotnet publish CyberRange/CyberRange.sln -c Release -o build
+      
+    - name: Deploy to dev-server
+      uses: garygrossgarten/github-action-scp@release
+      with:
+        local: /home/runner/work/Platform/Platform/build/
+        remote: /var/www/Cyberrange/DotNet
+        #remote: ${{ secrets.REMOTE_TARGET }} 
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.HOST_NAME }}
+        password: ${{ secrets.HOST_PASSWORD }}
+
+    - name: Restart web-dev service
+      uses: garygrossgarten/github-action-ssh@v0.5.0
+      with:
+        command: echo ${{ secrets.PRODPASS }} | sudo -S service kestrel-Cyberrange-test restart
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.HOST_NAME }}
+        password: ${{ secrets.HOST_PASSWORD }}
