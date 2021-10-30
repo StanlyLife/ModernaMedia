@@ -29,6 +29,8 @@ footer {
       max-width: 75%;
       margin: 0 auto;
       filter: invert(1);
+      object-fit: contain;
+      padding: 3rem 3rem;
     }
   }
 }
