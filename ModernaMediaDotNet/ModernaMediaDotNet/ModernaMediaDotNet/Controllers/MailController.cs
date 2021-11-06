@@ -15,7 +15,7 @@ namespace ModernaMediaDotNet.Controllers
         {
             this.mailService = mailService;
         }
-        [HttpPost("send")]
+        [HttpPost]
         public async Task<IActionResult> SendMail([FromForm] MailRequest request)
         {
             try
@@ -25,7 +25,7 @@ namespace ModernaMediaDotNet.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
         }
