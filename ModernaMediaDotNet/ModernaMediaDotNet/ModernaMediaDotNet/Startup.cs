@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
 using ModernaMediaDotNet.Models.Mail;
+using ModernaMediaDotNet.Models.Settings;
 using ModernaMediaDotNet.Services.Contract;
 using ModernaMediaDotNet.Services.Service;
 using System;
@@ -35,12 +36,14 @@ namespace ModernaMediaDotNet
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
             services.Configure<MailSettings>(Configuration.GetSection("MailSettings"));
+            services.Configure<TwillioSettings>(Configuration.GetSection("TwillioSettings"));
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ModernaMediaDotNet", Version = "v1" });
             });
             services.AddTransient<IMailService, MailService>();
+            services.AddScoped<ITwillioService, TwillioService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
