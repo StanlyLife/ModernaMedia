@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { UspImageCardsComponent } from './usp-image-cards/usp-image-cards.component';
 import { ImagePriceInfoComponent } from './image-price-info/image-price-info.component';
 import { BloggThumbnailComponent } from './blogg-thumbnail/blogg-thumbnail.component';
+import { BookAMeetingModalComponent } from './book-ameeting-modal/book-ameeting-modal.component';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,10 +19,11 @@ import { BloggThumbnailComponent } from './blogg-thumbnail/blogg-thumbnail.compo
     InfoAndImageComponent,
     UspImageCardsComponent,
     ImagePriceInfoComponent,
-    BloggThumbnailComponent
+    BloggThumbnailComponent,
+    BookAMeetingModalComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, ReactiveFormsModule
   ],
   exports: [
     BannerComponent,
@@ -29,6 +32,7 @@ import { BloggThumbnailComponent } from './blogg-thumbnail/blogg-thumbnail.compo
     UspImageCardsComponent,
     ImagePriceInfoComponent,
     BloggThumbnailComponent,
+    BookAMeetingModalComponent
   ]
 })
 export class ComponentsModule { 
