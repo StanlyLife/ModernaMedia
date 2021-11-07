@@ -1,0 +1,86 @@
+<section class="Moderna-Media-book-a-meeting" [hidden]="!IsVisible">
+  <div class="bg" (click)="ExitModal()"></div>
+  <form
+    class="container"
+    [formGroup]="contactForm"
+    (ngSubmit)="SubmitMeetingRequest()"
+  >
+    <button class="exit" type="button" (click)="ExitModal()">&#x2716;</button>
+    <div class="title">
+      <h2>
+        Ta ditt
+        <span> første steg </span>
+        mot
+        <span> digitalisering </span>
+      </h2>
+      <p>Vi kontaker deg snarest mulig!</p>
+    </div>
+    <div class="form-inputs">
+      <label for="book-a-meeting-email">E-postadresse</label>
+      <input
+        type="email"
+        id="book-a-meeting-email"
+        formControlName="email"
+        maxlength="50"
+        ngClass="{{
+          (contactFormControl.email.touched || submitted) &&
+          contactFormControl.email.errors?.required
+            ? 'error'
+            : ''
+        }}"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          (contactFormControl.email.touched || submitted) &&
+          contactFormControl.email.errors?.required
+        "
+      >
+        Epost addresse er påkrevd
+      </span>
+    </div>
+
+    <div class="form-inputs">
+      <label for="book-a-meeting-phone">Telefonnummer</label>
+      <input
+        type="tel"
+        id="book-a-meeting-phone"
+        formControlName="phone"
+        maxlength="50"
+        ngClass="{{
+          (contactFormControl.phone.touched || submitted) &&
+          contactFormControl.phone.errors?.maxlength
+            ? 'error'
+            : ''
+        }}"
+      />
+    </div>
+
+    <div class="form-inputs">
+      <label for="book-a-meeting-body">Melding</label>
+      <textarea
+        type="text"
+        id="book-a-meeting-body"
+        formControlName="content"
+        maxlength="250"
+      ></textarea>
+      <span
+        class="text-danger"
+        *ngIf="
+          (contactFormControl.content.touched || submitted) &&
+          contactFormControl.content.errors?.maxlength
+        "
+      >
+        Melding kan ikke være lengre enn 250 bokstaver
+      </span>
+    </div>
+    <div class="form-inputs">
+      <button
+        class="btn cta borderless gradient"
+        [disabled]="!contactForm.valid"
+      >
+        Send
+      </button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,104 @@
+@import "../../../variables.scss";
+.Moderna-Media-book-a-meeting {
+  .bg {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.75);
+    position: absolute;
+  }
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  form.container {
+    min-width: 300px;
+    max-width: 400px;
+    padding: 15px 50px;
+    width: 50%;
+    background-color: $light;
+    position: absolute;
+    @include aAbs;
+    z-index: 101;
+    position: relative;
+  }
+  .exit {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border: none;
+    background: none;
+    transition: color 0.25s ease;
+    color: $dark;
+    font-weight: 900;
+    &:hover {
+      color: $red;
+      cursor: pointer;
+      text-shadow: $text-shadow;
+    }
+  }
+  .title {
+    padding: 15px 0;
+  }
+  h2 {
+    padding: 10px 0;
+    color: $dark;
+    span {
+      color: $blue;
+    }
+    text-shadow: $text-shadow;
+  }
+  .form-inputs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: column;
+    padding: 5px 0;
+    .text-danger {
+      color: $red;
+      padding: 10px 0;
+
+      &::before {
+        content: "•";
+      }
+    }
+    textarea {
+      width: 100%;
+      height: 75px;
+    }
+    input,
+    textarea {
+      border: none;
+      border-bottom: 2px solid $dark;
+      min-height: 32px;
+      background: none;
+      width: 100%;
+      max-width: 100%;
+      max-height: 300px;
+      &.error {
+        border-bottom: 2px solid $red;
+        &:focus,
+        &:hover {
+          border-bottom: 2px solid $red;
+        }
+      }
+      &:focus {
+        box-shadow: $box-shadow;
+      }
+      &:focus,
+      &:hover {
+        border-bottom: 2px solid $blue;
+      }
+      padding: 5px 0px;
+      font-size: 16px;
+    }
+  }
+  .btn {
+    width: 100%;
+  }
+  .btn:disabled,
+  .btn[disabled] {
+    background-color: rgb(143, 143, 143);
+    background-image: none;
+  }
+}
