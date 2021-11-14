@@ -21,7 +21,7 @@ export class BookAMeetingModalComponent implements OnInit {
   }
   //Properties
   contactForm: FormGroup;
-  IsVisible: boolean = true;
+  IsVisible: boolean = false;
   submitted: boolean = false;
   //NgOnInit
   ngOnInit(): void {}
