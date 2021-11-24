@@ -1,9 +1,13 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ComponentsModule } from './components/components.module';
 import { AboutModule } from './about/about.module';
 import { BloggModule } from './blogg/blogg.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {
+  BrowserModule,
+  BrowserTransferStateModule,
+} from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,8 +26,6 @@ import { TjenesterComponent } from './home/tjenester/tjenester.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { SeoModule } from './seo/seo.module';
 import { UtviklingModule } from './utvikling/utvikling.module';
-
-
 
 @NgModule({
   declarations: [
@@ -51,22 +53,23 @@ import { UtviklingModule } from './utvikling/utvikling.module';
     DesignModule,
     BloggModule,
     AboutModule,
+    ComponentsModule,
     RouterModule.forRoot([
       {
         path: '',
-        pathMatch:'full',
+        pathMatch: 'full',
         component: HomeComponent,
-        data: {animation: "HomePage"}
+        data: { animation: 'HomePage' },
       },
-      {path: "**",redirectTo:"error"},
-      {path: 'error', component: NotFoundComponent,data: {animation: "AboutPage"}},
-    ])
+      { path: '**', redirectTo: 'error' },
+      {
+        path: 'error',
+        component: NotFoundComponent,
+        data: { animation: 'AboutPage' },
+      },
+    ]),
   ],
   exports: [RouterModule],
-  bootstrap: [
-    AppComponent,
-    NavBarComponent,
-    FooterComponent
-  ],
+  bootstrap: [AppComponent, NavBarComponent, FooterComponent],
 })
 export class AppModule {}
