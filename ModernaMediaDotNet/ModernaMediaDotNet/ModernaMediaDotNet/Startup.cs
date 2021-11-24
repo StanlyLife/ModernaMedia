@@ -30,7 +30,13 @@ namespace ModernaMediaDotNet
 
         public IConfiguration Configuration { get; }
 
+        private bool AllowLocalhost(string origin)
+        {
+            var uri = new Uri(origin);
+            return (uri.Host == "localhost");
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -44,6 +50,28 @@ namespace ModernaMediaDotNet
             });
             services.AddTransient<IMailService, MailService>();
             services.AddScoped<ITwillioService, TwillioService>();
+
+
+            services.AddCors(options =>
+            {
+                string urls = 
+                "https://modernamedia.no/," +
+                "http://localhost:4200," +
+                "http://localhost:4200/*," +
+                "https://*.modernamedia.no/*," +
+                "http://modernamedia.no/,";
+
+                string[] corsList = urls.Split(",");
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder
+                    .WithOrigins(corsList.ToArray())
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .SetIsOriginAllowedToAllowWildcardSubdomains()
+                    .SetIsOriginAllowed(origin => AllowLocalhost(origin)); // disallows calls from myapp.myintra.net since it doesn't uri.Host match "localhost"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,15 +82,16 @@ namespace ModernaMediaDotNet
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ModernaMediaDotNet v1"));
+
             }
 
+            app.UseCors("CorsPolicy");
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
