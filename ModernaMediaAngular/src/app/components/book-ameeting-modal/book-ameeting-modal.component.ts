@@ -1,3 +1,4 @@
+import { CTA } from './../../Models/CTA/CTA.model';
 import { CTAMeetingService } from './../../services/ctameeting.service';
 import { Component, OnInit } from '@angular/core';
 import {
@@ -34,6 +35,11 @@ export class BookAMeetingModalComponent implements OnInit {
   public SubmitMeetingRequest() {
     this.submitted = true;
     console.log(this.contactForm.value);
+    let body = new CTA();
+    body.Body = this.contactForm.value.content;
+    body.Email = this.contactForm.value.email;
+    body.Phonenumber = this.contactForm.value.phone;
+    this.ctaService.SendCTAMessage(body);
     this.ExitModal();
   }
   public ExitModal() {
