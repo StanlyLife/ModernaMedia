@@ -1,3 +1,4 @@
+import { CTAMeetingService } from './../../services/ctameeting.service';
 import { Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
@@ -12,7 +13,7 @@ import {
   styleUrls: ['./book-ameeting-modal.component.scss'],
 })
 export class BookAMeetingModalComponent implements OnInit {
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private ctaService: CTAMeetingService) {
     this.contactForm = this.fb.group({
       email: ['', [Validators.required, Validators.maxLength(50)]],
       phone: ['', Validators.maxLength(50)],
@@ -24,16 +25,22 @@ export class BookAMeetingModalComponent implements OnInit {
   IsVisible: boolean = false;
   submitted: boolean = false;
   //NgOnInit
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ctaService.ModalOpen.subscribe((arg) => {
+      this.IsVisible = arg;
+    });
+  }
   //MEthods
   public SubmitMeetingRequest() {
     this.submitted = true;
+    console.log(this.contactForm.value);
+    this.ExitModal();
   }
   public ExitModal() {
     this.ToggleVisible();
   }
   public ToggleVisible() {
-    this.IsVisible = !this.IsVisible;
+    this.ctaService.ToggleModal();
   }
   //Getters
   get contactFormControl() {
