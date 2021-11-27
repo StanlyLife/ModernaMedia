@@ -1,0 +1,18 @@
+<div class="toast-container">
+  <div
+    class="toast-wrapper wobble-animation"
+    *ngFor="let t of toasts"
+    (click)="DestroyToast(t, $event)"
+  >
+    <div class="toast default">
+      <div class="notification-count" *ngIf="t.Count > 1"></div>
+      <div class="content-container">
+        <p class="title">{{ t.Title }}</p>
+        <p class="content">{{ t.Content }}</p>
+      </div>
+      <span class="progress">
+        <span class="real-progress"></span>
+      </span>
+    </div>
+  </div>
+</div>

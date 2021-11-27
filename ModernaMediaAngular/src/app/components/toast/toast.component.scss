@@ -1,0 +1,108 @@
+@import "../../../variables.scss";
+
+.toast-container {
+  position: fixed;
+  top: 10px;
+  right: 25px;
+  z-index: 101;
+}
+
+.toast {
+  background-color: $toastSuccess;
+  color: $light;
+  margin-top: 15px;
+  position: relative;
+  &.default {
+    background-color: $toastDefault;
+    color: $dark;
+  }
+  height: 60px;
+  width: 250px;
+
+  padding: 10px 25px;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  transition: background-color 0.2s ease;
+  &:hover {
+    cursor: pointer;
+    background-color: $toastSuccessHover;
+    &.default {
+      background-color: $toastDefaultHover;
+    }
+  }
+  .notification-count {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+  }
+  .progress {
+    pointer-events: none;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    background-color: $dark-transparent-30;
+    height: 5px;
+    width: 100%;
+    left: 0;
+    .real-progress {
+      border-radius: 5px;
+      width: 50%;
+      height: 100%;
+      display: block;
+      background-color: $toastProgress;
+    }
+  }
+  .title {
+    font-weight: 600;
+  }
+  .content-container {
+    pointer-events: none;
+  }
+}
+
+.slide-out-animation {
+  animation: slideOut 1s ease 0s 1 normal forwards;
+}
+.wobble-animation {
+  animation: wobble 1s ease 0s 1 normal forwards;
+}
+
+@keyframes slideOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+
+  15% {
+    transform: translateX(-30px) rotate(-1deg);
+  }
+
+  30% {
+    transform: translateX(15px) rotate(4deg);
+  }
+
+  45% {
+    transform: translateX(-15px) rotate(-2.6deg);
+  }
+
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
