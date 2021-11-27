@@ -5,6 +5,9 @@ export class toast {
 
   Title: string;
   Content: string;
-  Count: string;
-  Timer: string;
+  Count: number;
+  Timer: number;
+  TimeLeft: number;
+  Style: string;
+  PercentageCompleted: number;
 }
