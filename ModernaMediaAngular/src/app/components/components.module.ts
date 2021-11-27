@@ -8,9 +8,8 @@ import { UspImageCardsComponent } from './usp-image-cards/usp-image-cards.compon
 import { ImagePriceInfoComponent } from './image-price-info/image-price-info.component';
 import { BloggThumbnailComponent } from './blogg-thumbnail/blogg-thumbnail.component';
 import { BookAMeetingModalComponent } from './book-ameeting-modal/book-ameeting-modal.component';
-import {  ReactiveFormsModule } from '@angular/forms';
-
-
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToastComponent } from './toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +19,10 @@ import {  ReactiveFormsModule } from '@angular/forms';
     UspImageCardsComponent,
     ImagePriceInfoComponent,
     BloggThumbnailComponent,
-    BookAMeetingModalComponent
+    BookAMeetingModalComponent,
+    ToastComponent,
   ],
-  imports: [
-    CommonModule, ReactiveFormsModule
-  ],
+  imports: [CommonModule, ReactiveFormsModule],
   exports: [
     BannerComponent,
     ImageAndTextComponent,
@@ -32,9 +30,10 @@ import {  ReactiveFormsModule } from '@angular/forms';
     UspImageCardsComponent,
     ImagePriceInfoComponent,
     BloggThumbnailComponent,
-    BookAMeetingModalComponent
-  ]
+    BookAMeetingModalComponent,
+    ToastComponent,
+  ],
 })
-export class ComponentsModule { 
+export class ComponentsModule {
   public imageCdn = environment.img;
 }
