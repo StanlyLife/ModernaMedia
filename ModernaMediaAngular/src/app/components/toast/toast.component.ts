@@ -1,5 +1,6 @@
+import { ToastService } from './../../services/toast.service';
 import { toast } from './toast.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,29 +9,26 @@ import { Observable } from 'rxjs';
   styleUrls: ['./toast.component.scss'],
 })
 export class ToastComponent implements OnInit {
-  constructor() {}
+  constructor(private toast: ToastService, protected elementRef: ElementRef) {}
 
-  toasts = [
-    {
-      Title: 'Title 1',
-      Content: 'Thios is content',
-      Count: '1',
-      Timer: '500',
-    },
-    {
-      Title: 'Title 2',
-      Content: 'Thios is content',
-      Count: '1',
-      Timer: '500',
-    },
-  ];
-
-  ngOnInit(): void {}
+  toasts = this.toast.Toasts;
+  ngOnInit(): void {
+    this.toast.Toasts.subscribe((args) => {
+      this.UpdateToasts();
+    });
+  }
+  ngOnDestroy() {
+    this.toasts.unsubscribe();
+  }
   DestroyToast(element, event): void {
     event.target.classList.remove('wobble-animation');
     event.target.classList.add('slide-out-animation');
     event.target.addEventListener('animationend', () => {
-      this.toasts.splice(this.toasts.indexOf(element), 1);
+      this.toasts.value.splice(this.toasts.value.indexOf(element), 1);
     });
+  }
+  UpdateToasts() {
+    let toastElements = document.querySelectorAll('.toast');
+    console.log(toastElements);
   }
 }
