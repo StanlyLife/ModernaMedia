@@ -46,7 +46,6 @@
     left: 0;
     .real-progress {
       border-radius: 5px;
-      width: 50%;
       height: 100%;
       display: block;
       background-color: $toastProgress;
@@ -76,6 +75,7 @@
   100% {
     opacity: 0;
     transform: translateX(250px);
+    display: none;
   }
 }
 
