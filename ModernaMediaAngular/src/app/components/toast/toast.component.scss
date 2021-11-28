@@ -16,8 +16,12 @@
     background-color: $toastDefault;
     color: $dark;
   }
-  height: 60px;
-  width: 250px;
+  &.error {
+    background-color: $toastError;
+    color: $light;
+  }
+  min-height: 60px;
+  width: 300px;
 
   padding: 10px 25px;
   border-radius: 5px;
@@ -28,6 +32,9 @@
     background-color: $toastSuccessHover;
     &.default {
       background-color: $toastDefaultHover;
+    }
+    &.error {
+      background-color: $toastErrorHover;
     }
   }
   .notification-count {
