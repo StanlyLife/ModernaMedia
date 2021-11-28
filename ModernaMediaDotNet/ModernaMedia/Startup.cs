@@ -62,9 +62,11 @@ namespace ModernaMediaDotNet
             {
                 string urls = 
                 "https://modernamedia.no/," +
+                "*modernamedia.*," +
                 "http://localhost:4200," +
                 "http://localhost:4200/*," +
                 "https://*.modernamedia.no/*," +
+                "https://modernamedia.no*," +
                 "http://modernamedia.no/,";
 
                 string[] corsList = urls.Split(",");
