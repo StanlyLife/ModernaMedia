@@ -15,7 +15,7 @@ jobs:
 #    - name: edit connection string
 #      uses: benday-inc/edit-dbconnstr-in-appsettings@main
 #      with:
-#        pathtosettingsfile: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMediaDotNet/ModernaMediaDotNet/appsettings.json'
+#        pathtosettingsfile: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMedia/appsettings.json'
 #        name: "DefaultConnection"
 #        connectionstring: ${{ secrets.DEFAULTCONNECTION }}
 #    - name: Setup .NET Core SDK
@@ -25,12 +25,12 @@ jobs:
 
 ###################### NOT WORKING #################
 
-#    - name: App Settings Variable Substitution
-#      uses: microsoft/variable-substitution@v1
-#      with:
-#        files: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMedia/appsettings.json'
-#      env:
-#        ConnectionStrings.Default: ${{ secrets.DEFAULTCONNECTION }}
+    - name: App Settings Variable Substitution
+      uses: microsoft/variable-substitution@v1
+      with:
+        files: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMedia/appsettings.json'
+      env:
+        ConnectionStrings.DefaultConnection: ${{ secrets.DEFAULTCONNECTION }}
   
     - name: Dotnet publish
       run: dotnet publish ModernaMediaDotNet/ModernaMediaDotNet.sln -c Release -o build
