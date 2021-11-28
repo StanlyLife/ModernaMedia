@@ -27,8 +27,8 @@ export class ToastComponent implements OnInit {
       this.toasts.value.splice(this.toasts.value.indexOf(element), 1);
     });
   }
-  UpdateToasts() {
-    let toastElements = document.querySelectorAll('.toast');
-    console.log(toastElements);
+  SlideOutAnimationEnd(element, toastObj): void {
+    this.toasts.value.splice(this.toasts.value.indexOf(toastObj), 1);
   }
+  UpdateToasts() {}
 }
