@@ -23,8 +23,13 @@ namespace ModernaMediaDotNet
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IWebHostEnvironment env)
         {
+            var builder = new ConfigurationBuilder()
+            .SetBasePath(env.ContentRootPath)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
+            .AddEnvironmentVariables();
             Configuration = configuration;
         }
 
@@ -51,6 +56,7 @@ namespace ModernaMediaDotNet
             services.AddTransient<IMailService, MailService>();
             services.AddScoped<ITwillioService, TwillioService>();
 
+            services.Configure<TwillioSettings>(Configuration.GetSection("TwillioSettings"));
 
             services.AddCors(options =>
             {

@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  url: "http://localhost:51666",
-  img: "https://modernamedia.b-cdn.net/",
+  url: 'https://localhost:5001',
+  img: 'https://modernamedia.b-cdn.net/',
 };
 
 /*
