@@ -3,10 +3,12 @@
     class="toast-wrapper wobble-animation"
     *ngFor="let t of toasts.value"
     (click)="DestroyToast(t, $event)"
+    #toastEl
   >
     <div
-      class="toast default"
+      class="toast {{ t.Style }}"
       [ngClass]="{ 'slide-out-animation': t.TimeLeft < 1 }"
+      (animationend)="SlideOutAnimationEnd(toastEl, t)"
     >
       <div class="notification-count" *ngIf="t.Count > 1">
         {{ t.Count }}
