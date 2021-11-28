@@ -30,7 +30,7 @@ jobs:
       with:
         files: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMedia/appsettings.json'
       env:
-        ConnectionStrings.Default: 'test'
+        ConnectionStrings.DefaultConnection: ${{ secrets.DEFAULTCONNECTION }}
   
     - name: Dotnet publish
       run: dotnet publish ModernaMediaDotNet/ModernaMediaDotNet.sln -c Release -o build
