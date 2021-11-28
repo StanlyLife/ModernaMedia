@@ -26,7 +26,7 @@ jobs:
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
       with:
-        files: '*/appsettings.json'
+        files: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMedia/appsettings.json'
       env:
         ConnectionStrings.Default: ${{ secrets.DEFAULTCONNECTION }}
   
