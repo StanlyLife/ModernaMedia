@@ -11,19 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      
-#    - name: edit connection string
-#      uses: benday-inc/edit-dbconnstr-in-appsettings@main
-#      with:
-#        pathtosettingsfile: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMedia/appsettings.json'
-#        name: "DefaultConnection"
-#        connectionstring: ${{ secrets.DEFAULTCONNECTION }}
-#    - name: Setup .NET Core SDK
-#      uses: actions/setup-dotnet@v1
-#      with:
-#        dotnet-version: '5.0.x'
-
-###################### NOT WORKING #################
 
     - name: App Settings Variable Substitution
       uses: microsoft/variable-substitution@v1
@@ -31,7 +18,11 @@ jobs:
         files: '${{ github.workspace }}/ModernaMediaDotNet/ModernaMedia/appsettings.json'
       env:
         ConnectionStrings.DefaultConnection: ${{ secrets.DEFAULTCONNECTION }}
-  
+        TwillioSettings.phonenumber: ${{ secrets.TWILLIOPHONENUMBER }}
+        TwillioSettings.accountSid: ${{ secrets.TWILLIOACCOUNTSID }}
+        TwillioSettings.authToken: ${{ secrets.TWILLIOAUTHTOKEN }}
+        TwillioSettings.MessagingServiceSid: ${{ secrets.TWILLIOMESSAGINJGSERVICESID }}
+        
     - name: Dotnet publish
       run: dotnet publish ModernaMediaDotNet/ModernaMediaDotNet.sln -c Release -o build
       
