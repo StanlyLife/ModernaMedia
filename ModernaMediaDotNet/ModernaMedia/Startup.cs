@@ -83,6 +83,7 @@ namespace ModernaMediaDotNet
                     .WithOrigins(corsList.ToArray())
                     .AllowAnyHeader()
                     .AllowAnyMethod()
+                    .AllowAnyOrigin();
                     .SetIsOriginAllowedToAllowWildcardSubdomains();
                 });
             });
