@@ -10,6 +10,7 @@ import { BloggThumbnailComponent } from './blogg-thumbnail/blogg-thumbnail.compo
 import { BookAMeetingModalComponent } from './book-ameeting-modal/book-ameeting-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastComponent } from './toast/toast.component';
+import { TjenesterListeComponent } from './tjenester-liste/tjenester-liste.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ToastComponent } from './toast/toast.component';
     BloggThumbnailComponent,
     BookAMeetingModalComponent,
     ToastComponent,
+    TjenesterListeComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule],
   exports: [
