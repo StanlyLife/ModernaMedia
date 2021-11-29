@@ -42,7 +42,7 @@ namespace ModernaMediaDotNet
         }
         // This method gets called by the runtime. Use this method to add services to the container.
 
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services, IWebHostEnvironment env)
         {
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
@@ -60,23 +60,29 @@ namespace ModernaMediaDotNet
 
             services.AddCors(options =>
             {
+
                 string urls = 
                 "https://modernamedia.no/," +
                 "*modernamedia.*," +
-                "http://localhost:4200," +
-                "http://localhost:4200/*," +
                 "https://*.modernamedia.no/*," +
                 "https://modernamedia.no*," +
                 "http://modernamedia.no/,";
+                if (env.IsDevelopment())
+                {
+                    urls += "http://localhost:4200," +
+                    "http://localhost:4200/*,";
+                }
+
 
                 string[] corsList = urls.Split(",");
                 options.AddPolicy("CorsPolicy", builder =>
                 {
                     builder
                     .WithOrigins(corsList.ToArray())
+                    .
                     .AllowAnyHeader()
                     .AllowAnyMethod()
-                    .SetIsOriginAllowedToAllowWildcardSubdomains()
+                    .SetIsOriginAllowedToAllowWildcardSubdomains(corsList)
                     .SetIsOriginAllowed(origin => AllowLocalhost(origin)); // disallows calls from myapp.myintra.net since it doesn't uri.Host match "localhost"
                 });
             });
