@@ -84,7 +84,7 @@ namespace ModernaMediaDotNet
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .SetIsOriginAllowedToAllowWildcardSubdomains()
-                    .SetIsOriginAllowed(true); // disallows calls from myapp.myintra.net since it doesn't uri.Host match "localhost"
+                    .SetIsOriginAllowed(x => true); // disallows calls from myapp.myintra.net since it doesn't uri.Host match "localhost"
                 });
             });
         }
