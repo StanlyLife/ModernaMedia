@@ -84,7 +84,7 @@ namespace ModernaMediaDotNet
                     .AllowAnyHeader()
                     .AllowAnyMethod()
                     .AllowAnyOrigin();
-                    .SetIsOriginAllowedToAllowWildcardSubdomains();
+                    //.SetIsOriginAllowedToAllowWildcardSubdomains();
                 });
             });
         }
