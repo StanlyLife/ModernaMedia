@@ -1,3 +1,4 @@
+import { ToolsModule } from './tools/tools.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
 import { AboutModule } from './about/about.module';
@@ -54,6 +55,7 @@ import { UtviklingModule } from './utvikling/utvikling.module';
     BloggModule,
     AboutModule,
     ComponentsModule,
+    ToolsModule,
     RouterModule.forRoot([
       {
         path: '',
