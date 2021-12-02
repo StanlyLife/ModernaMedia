@@ -1,1 +1,226 @@
-<p>developer-salaray-charts works!</p>
+<section>
+  <div class="buttons">
+    <button class="btn dark borderless">charts only</button>
+    <button class="btn dark borderless">Lønn</button>
+    <button class="btn dark borderless">Svar</button>
+  </div>
+
+  <div class="chart">
+    <h1>Developer salary with bonus vs without bonus, including age</h1>
+    <ngx-charts-bar-vertical-2d
+      [view]="[1200, 675]"
+      [scheme]="colorScheme"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="false"
+      [schemeType]="schemeType"
+      [results]="DeveloperSalaryByBonusByAge"
+      [legendPosition]="legendPosition"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-vertical-2d>
+  </div>
+
+  <div class="chart">
+    <h1>Developer salaray by bonus</h1>
+    <ngx-charts-bar-vertical
+      *ngIf="DeveloperSalaryReady"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="DeveloperSalaryByBonus"
+      [gradient]="'true'"
+      [barPadding]="150"
+      [showDataLabel]="'true'"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="'false'"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="'År med erfaring'"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  <div class="chart">
+    <h1>Developer salaray by what you work most with</h1>
+    <ngx-charts-bar-horizontal
+      *ngIf="DeveloperSalaryReady"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="DeveloperSalaryByType"
+      [gradient]="'true'"
+      [barPadding]="5"
+      [showDataLabel]="'true'"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="'false'"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="'År med erfaring'"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-horizontal>
+  </div>
+  <div class="chart">
+    <h1>Developer salaray by title</h1>
+    <ngx-charts-bar-horizontal
+      *ngIf="DeveloperSalaryReady"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="DeveloperSalartByTitle"
+      [gradient]="'true'"
+      [barPadding]="5"
+      [showDataLabel]="'true'"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="'false'"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="'År med erfaring'"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-horizontal>
+  </div>
+
+  <div class="chart">
+    <h1>Developer salaray</h1>
+    <ngx-charts-bar-vertical
+      *ngIf="DeveloperSalaryReady"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="DeveloperSalaryByAge"
+      [gradient]="'true'"
+      [barPadding]="25"
+      [showDataLabel]="'true'"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="'false'"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  <div class="chart">
+    <h1>Developer salaray by yoe</h1>
+    <ngx-charts-bar-horizontal
+      *ngIf="DeveloperSalaryReady"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="DeveloperSalaryByYoe"
+      [gradient]="'true'"
+      [barPadding]="5"
+      [showDataLabel]="'true'"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="'false'"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="'År med erfaring'"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-horizontal>
+  </div>
+  <div class="chart">
+    <h1>DeveloperResponseByAge</h1>
+    <ngx-charts-bar-vertical
+      *ngIf="DeveloperSalaryReady"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="DeveloperResponseByAge"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  <div class="chart">
+    <h1>Developer response by location</h1>
+    <ngx-charts-bar-vertical
+      *ngIf="DeveloperSalaryReady"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="DevloperResponseByLocation"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  <div class="chart">
+    <h1>Developer salary by location</h1>
+    <ngx-charts-bar-vertical
+      *ngIf="DeveloperSalaryReady"
+      [view]="view"
+      [scheme]="colorScheme"
+      [results]="DeveloperSalaryByLocation"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="showLegend"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-vertical>
+  </div>
+  <div class="chart">
+    <h1>Developer salary by age with location</h1>
+    <ngx-charts-bar-horizontal-2d
+      [view]="[1200, 675]"
+      [scheme]="colorScheme"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="false"
+      [schemeType]="schemeType"
+      [results]="DeveloperSalaryByAgeWithLocation"
+      [legendPosition]="legendPosition"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-horizontal-2d>
+  </div>
+  <div class="chart">
+    <h1>Developer response by age with location</h1>
+    <ngx-charts-bar-horizontal-2d
+      [view]="[1200, 675]"
+      [scheme]="colorScheme"
+      [gradient]="gradient"
+      [xAxis]="showXAxis"
+      [yAxis]="showYAxis"
+      [legend]="false"
+      [schemeType]="schemeType"
+      [results]="DevloperResponseByAgeByLocation"
+      [legendPosition]="legendPosition"
+      [showXAxisLabel]="showXAxisLabel"
+      [showYAxisLabel]="showYAxisLabel"
+      [xAxisLabel]="xAxisLabel"
+      [yAxisLabel]="yAxisLabel"
+    >
+    </ngx-charts-bar-horizontal-2d>
+  </div>
+</section>
