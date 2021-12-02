@@ -29,6 +29,7 @@
     "@angular/router": "~9.1.11",
     "@fortawesome/fontawesome": "^1.1.8",
     "@nguniversal/express-engine": "^9.1.1",
+    "@swimlane/ngx-charts": "^19.1.0",
     "document-register-element": "^1.7.2",
     "express": "^4.15.2",
     "font-awesome": "^4.7.0",
