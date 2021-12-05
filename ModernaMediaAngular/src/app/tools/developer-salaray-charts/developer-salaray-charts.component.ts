@@ -182,6 +182,8 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   RespondantsYoeByAge: any[];
   RespondantsSalaryIncreaseByJobChange: any[];
   ValueSalaryByCounty: any[];
+  RespondantsAgeByTitle: any[];
+  RespondantsYoeByTitle: any[];
   constructor() {
     Object.assign(this, { DeveloperSalary });
   }
@@ -354,6 +356,28 @@ export class DeveloperSalarayChartsComponent implements OnInit {
         this.GetListOfAnswersFor('askSalary'),
         'askSalary'
       );
+    this.RespondantsAgeByTitle = this.GetResponsesBasedOnTypeByGroup(
+      'age',
+      'title',
+      this.GetListOfAnswersFor('title'),
+      'title'
+    );
+    this.RespondantsAgeByTitle = this.RespondantsAgeByTitle.filter(function (
+      obj
+    ) {
+      return obj.name !== 'nei';
+    });
+    this.RespondantsYoeByTitle = this.GetResponsesBasedOnTypeByGroup(
+      'yoe',
+      'title',
+      this.GetListOfAnswersFor('title'),
+      'title'
+    );
+    this.RespondantsYoeByTitle = this.RespondantsYoeByTitle.filter(function (
+      obj
+    ) {
+      return obj.name !== 'nei';
+    });
     this.RespondantsYoeByAge = this.RemoveLowRespondants(
       this.GetResponsesBasedOnTypeByGroup(
         'yoe',
@@ -431,7 +455,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     this.DF = arr;
     console.log(`Antall respondanter ${this.DF.length}`);
   }
-
   private UpdateKeys() {
     this.DF = this.DeveloperSalary.map(
       ({
