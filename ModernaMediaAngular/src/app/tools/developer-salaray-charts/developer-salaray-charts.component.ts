@@ -2,7 +2,7 @@ import { DeveloperSalary } from './../../../assets/data/DeveloperSalary';
 import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { gridLayout, NgxChartsModule } from '@swimlane/ngx-charts';
 import * as e from 'express';
 
 @Component({
@@ -52,7 +52,136 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   RespondantsByAge: any[];
   RespondantsByLocation: any[];
   RespondantsByAgeByLocation: any[];
-
+  ValueSalaryByAge: any[];
+  ValueSalaryByWork: any[];
+  //#region ValueSalary21vs20
+  //#region ValueSalaryIncrease
+  ValueSalaryIncrease: any[] = [
+    { name: '20-24 år', value: '33882' },
+    { name: '25-29 år', value: '17839' },
+    { name: '30-34 år', value: '31538' },
+    { name: '35-39 år', value: '44819' },
+    { name: '40-44 år', value: '40437' },
+  ];
+  ValueSalaryIncreasePercent: any[] = [
+    { name: '20-24 år', value: '6.5' },
+    { name: '25-29 år', value: '2.9' },
+    { name: '30-34 år', value: '4.6' },
+    { name: '35-39 år', value: '5.9' },
+    { name: '40-44 år', value: '5.0' },
+  ];
+  //#endregion
+  //#region ValueSalary21vs20
+  ValueSalary21vs20: any[] = [
+    {
+      name: '20-24 år',
+      series: [
+        {
+          name: '2020',
+          value: '517833',
+        },
+        {
+          name: '2021',
+          value: '551715',
+        },
+      ],
+    },
+    {
+      name: '25-29 år',
+      series: [
+        {
+          name: '2020',
+          value: '612874',
+        },
+        {
+          name: '2021',
+          value: '630713',
+        },
+      ],
+    },
+    {
+      name: '30-34 år',
+      series: [
+        {
+          name: '2020',
+          value: '688137',
+        },
+        {
+          name: '2021',
+          value: '719675',
+        },
+      ],
+    },
+    {
+      name: '35-39 år',
+      series: [
+        {
+          name: '2020',
+          value: '764020',
+        },
+        {
+          name: '2021',
+          value: '808839',
+        },
+      ],
+    },
+    {
+      name: '40-44 år',
+      series: [
+        {
+          name: '2020',
+          value: '812278',
+        },
+        {
+          name: '2021',
+          value: '852715',
+        },
+      ],
+    },
+    {
+      name: '45-50 år',
+      series: [
+        {
+          name: '2020',
+          value: '926323',
+        },
+        {
+          name: '2021',
+          value: '858629',
+        },
+      ],
+    },
+    {
+      name: '50+ år',
+      series: [
+        {
+          name: '2021',
+          value: '892928',
+        },
+      ],
+    },
+  ];
+  //#endregion
+  RespondantsByAgeByBonus: any[];
+  RespondantsBySectorByBonus: any[];
+  RespondantsBySector: any[];
+  RespondantsByType: any[];
+  RespondantsByWork: any[];
+  ValueSalaryByBonusByAge: any[];
+  RespondantsBySkillImportance: any[];
+  RespondantsByAgeImportance: any[];
+  RespondantsByTitleImportance: any[];
+  ValueSalaryByYoe: any[];
+  ValueSalaryByYoeAge: any[];
+  RespondantsShareSalary: any[];
+  RespondantsAskSalary: any[];
+  RespondantsOpenSalary: any[];
+  RespondantsAskSalaryByShareSalary: any[];
+  RespondantsSalaryHappy: any[];
+  RespondantsGoods: any[];
+  RespondantsYoeByAge: any[];
+  RespondantsSalaryIncreaseByJobChange: any[];
+  ValueSalaryByCounty: any[];
   constructor() {
     Object.assign(this, { DeveloperSalary });
   }
@@ -67,11 +196,52 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   xAxisLabel = 'alder';
   showYAxisLabel = true;
   yAxisLabel = 'grunnlønn';
-  schemeType: string = 'linear';
+  schemeType: string = 'ordinal';
   legendPosition: string = 'below';
   colorScheme = {
-    domain: ['#E6BB82', '#D8A235', '#E17A0D', '#872715', '#360D0A'],
+    domain: [
+      '#349ad9',
+      '#4296e1',
+      '#5790e7',
+      '#7089e9',
+      '#8a80e8',
+      '#a375e2',
+      '#bc67d9',
+      '#d257ca',
+      '#e643b8',
+      '#f62aa2',
+      '#ff0089',
+      '#ff006d',
+      '#ff0050',
+      '#ff0031',
+      '#ff2600',
+    ],
   };
+  colorSchemeSmall = {
+    domain: ['#349ad9', '#7d84e9', '#d257ca', '#ff007b', '#ff2600'],
+  };
+  // colorScheme = {
+  //   domain: [
+  //     '#ff774d',
+  //     '#ff6a54',
+  //     '#ff5d5c',
+  //     '#ff4f66',
+  //     '#ff4071',
+  //     '#ff307d',
+  //     '#ff1f8a',
+  //     '#fc0c99',
+  //     '#f200a8',
+  //     '#e604b7',
+  //     '#d617c6',
+  //     '#c227d6',
+  //     '#a835e5',
+  //     '#8742f3',
+  //     '#534dff',
+  //   ],
+  // };
+  // colorScheme = {
+  //   domain: ['#E6BB82', '#D8A235', '#E17A0D', '#872715', '#360D0A'],
+  // };
   ngOnInit(): void {
     console.log(this.DeveloperSalary[0]);
     this.FormatData();
@@ -86,11 +256,8 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     this.GetAverageNumberValueBasedOnType('age', 'salary', true, null);
 
     this.RespondantsByAge = this.GetResponsesBasedOnType('age', '', null, null);
-    this.RespondantsByLocation = this.GetResponsesBasedOnType(
-      'county',
-      '',
-      null,
-      null
+    this.RespondantsByLocation = this.SortByValue(
+      this.GetResponsesBasedOnType('county', '', null, null)
     );
     this.RespondantsByAgeByLocation = this.GetResponsesBasedOnTypeByGroup(
       'age',
@@ -98,62 +265,156 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       this.GetListOfAnswersFor('county'),
       'county'
     );
-    // console.log('bonus salary');
-    // console.log(
-    //   this.GetAverageNumberValueBasedOnType('bonus', 'salary', null, null)
-    // );
-    // console.log('mean bonus salary');
-    // console.log(
-    //   this.GetMeanNumberValueBasedOnType('bonus', 'salary', null, null)
-    // );
-    // console.log('Responses bonus');
-    // console.log(this.GetResponsesBasedOnType('bonus', '', null, null));
-    // console.log('Responses developers earn most');
-    // console.log(
-    //   this.GetResponsesBasedOnType('developersEarnMost', '', null, null)
-    // );
-    // console.log('Responses happy salary');
-    // console.log(this.GetResponsesBasedOnType('salaryhappy', '', null, null));
-    // console.log('county salary');
-    // console.log(
-    //   this.GetAverageNumberValueBasedOnType('county', 'salary', null, null)
-    // );
-    // console.log('type salary');
-    // console.log(
-    //   this.GetAverageNumberValueBasedOnType('type', 'salary', null, null)
-    // );
-    // console.log('sector salary');
-    // console.log(
-    //   this.GetAverageNumberValueBasedOnType('sector', 'salary', null, null)
-    // );
 
-    /* 
-age, gender, gender, gender
-1: Gender answer: enig/uenig
-  2: Age groups: 
-    3: Amount that has answer 1
-*/
-    // this.GetResponsesBasedOnTypeByGroup(
-    //   'shareSalary',
-    //   'openSalary',
-    //   this.GetListOfAnswersFor('openSalary'),
-    //   'openSalary'
-    // );
+    this.ValueSalaryByAge = this.GetAverageNumberValueBasedOnType(
+      'age',
+      'salary',
+      null,
+      null
+    );
+    this.RespondantsByAgeByBonus = this.RespondantsByAgeByLocation =
+      this.GetResponsesBasedOnTypeByGroup(
+        'bonus',
+        'age',
+        this.GetListOfAnswersFor('age'),
+        'age'
+      );
+    this.RespondantsBySectorByBonus = this.RespondantsByAgeByLocation =
+      this.GetResponsesBasedOnTypeByGroup(
+        'bonus',
+        'sector',
+        this.GetListOfAnswersFor('sector'),
+        'sector'
+      );
+    this.RespondantsBySector = this.SortByValue(
+      this.GetResponsesBasedOnType('sector', '', null, null)
+    );
+    this.RespondantsByType = this.SortByValue(
+      this.GetResponsesBasedOnType('type', '', null, null)
+    );
+    this.RespondantsByWork = this.SortByValue(
+      this.GetResponsesBasedOnType('work', '', null, null)
+    );
+    this.ValueSalaryByWork = this.SortByValue(
+      this.GetAverageNumberValueBasedOnType('work', 'salary', null, null)
+    );
+    this.ValueSalaryByBonusByAge =
+      this.GetAverageNumberValueBasedOnTypeByGroupWithResponses(
+        'bonus',
+        'salary',
+        this.GetListOfAnswersFor('age'),
+        'age'
+      );
+
+    this.RespondantsBySkillImportance = this.GetResponsesBasedOnType(
+      'skillImportance',
+      '',
+      null,
+      null
+    );
+    this.RespondantsByAgeImportance = this.GetResponsesBasedOnType(
+      'ageImportance',
+      '',
+      null,
+      null
+    );
+    this.RespondantsByTitleImportance = this.GetResponsesBasedOnType(
+      'titleImportance',
+      '',
+      null,
+      null
+    );
+    this.ValueSalaryByYoe = this.GetAverageNumberValueBasedOnType(
+      'yoe',
+      'salary',
+      true,
+      null
+    );
+
     console.log('@@@@@@@@@@');
-    // this.GetAverageNumberValueBasedOnTypeByGroupWithResponses(
-    //   'age',
-    //   'salary',
-    //   this.GetListOfAnswersFor('county'),
-    //   'county'
-    // );
-    // this.GetMeanValueBasedOnTypeByGroupWithResponses(
-    //   'age',
-    //   'salary',
-    //   this.GetListOfAnswersFor('county'),
-    //   'county'
-    // );
-
+    this.RespondantsShareSalary = this.SortByValue(
+      this.GetResponsesBasedOnType('shareSalary', '', null, null)
+    );
+    this.RespondantsAskSalary = this.GetResponsesBasedOnType(
+      'askSalary',
+      '',
+      null,
+      null
+    );
+    this.RespondantsOpenSalary = this.GetResponsesBasedOnType(
+      'openSalary',
+      '',
+      null,
+      null
+    );
+    this.RespondantsAskSalaryByShareSalary =
+      this.GetResponsesBasedOnTypeByGroup(
+        'shareSalary',
+        'askSalary',
+        this.GetListOfAnswersFor('askSalary'),
+        'askSalary'
+      );
+    this.RespondantsYoeByAge = this.RemoveLowRespondants(
+      this.GetResponsesBasedOnTypeByGroup(
+        'yoe',
+        'age',
+        this.GetListOfAnswersFor('age'),
+        'age'
+      ),
+      3,
+      'value'
+    );
+    console.log('this.RespondantsYoeByAge');
+    console.log(this.RespondantsYoeByAge);
+    this.RespondantsSalaryHappy = this.GetResponsesBasedOnType(
+      'salaryhappy',
+      '',
+      null,
+      null
+    );
+    this.RespondantsSalaryIncreaseByJobChange = this.GetResponsesBasedOnType(
+      'salaryIncreaseByJobChange',
+      '',
+      null,
+      null
+    );
+    this.RespondantsGoods = this.GetResponsesBasedOnTypeSplit(
+      'goods',
+      '',
+      null,
+      null
+    );
+    this.ValueSalaryByYoeAge = this.RemoveLowRespondants(
+      this.GetAverageNumberValueBasedOnTypeByGroupWithResponses(
+        'yoe',
+        'salary',
+        this.GetListOfAnswersFor('age'),
+        'age'
+      ),
+      3,
+      'response'
+    );
+    this.ValueSalaryByCounty = this.SortByValue(
+      this.GetAverageNumberValueBasedOnType('county', 'salary', true, null)
+    );
     this.DeveloperSalaryReady = true;
+  }
+  private SortByValue(arr) {
+    return arr.sort((a, b) =>
+      a.value < b.value ? 1 : b.value < a.value ? -1 : 0
+    );
+  }
+  private RemoveLowRespondants(arr, responses, val) {
+    var newArr = [];
+    arr = arr.forEach((obj) => {
+      console.log(obj.series);
+      obj.series = obj.series.filter(function (obj) {
+        return obj[val] > responses;
+      });
+      var newObj = { name: obj.name, series: obj.series };
+      newArr.push(newObj);
+    });
+    return newArr;
   }
 
   //#region functions
@@ -254,6 +515,36 @@ age, gender, gender, gender
       obj.salary = parseInt(obj.salary);
     });
   }
+  private GetResponsesBasedOnTypeSplit(name, value, response, arr) {
+    var dataArray = arr || this.DF;
+
+    var results = [];
+    dataArray.forEach((obj) => {
+      let valg = obj[name].split(',');
+      var path = valg.map((x) => x.trim());
+      path.forEach((v) => {
+        var found = false;
+        for (var i = 0; i < results.length; i++) {
+          if (results[i].name == v) {
+            results[i].value++;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          var o = { name: v, value: 1 };
+          results.push(o);
+        }
+      });
+    });
+    results = results.filter(function (obj) {
+      return obj.value > 5;
+    });
+    results.sort((a, b) =>
+      a.value > b.value ? 1 : b.value > a.value ? -1 : 0
+    );
+    return results;
+  }
   private GetResponsesBasedOnType(name, value, response, arr) {
     var dataArray = arr || this.DF;
     const reduced = dataArray.reduce(function (m, d) {
@@ -267,7 +558,7 @@ age, gender, gender, gender
     }, {});
 
     // Create new array from grouped data and compute the average
-    const result = Object.keys(reduced).map(function (k) {
+    let result = Object.keys(reduced).map(function (k) {
       const item = reduced[k];
       return {
         name: item[name],
@@ -307,7 +598,7 @@ age, gender, gender, gender
       return m;
     }, {});
     // Create new array from grouped data and compute the average
-    const result = Object.keys(reduced).map(function (k) {
+    let result = Object.keys(reduced).map(function (k) {
       const item = reduced[k];
       if (responses) {
         return {
@@ -416,7 +707,6 @@ age, gender, gender, gender
       };
       series.push(input);
     });
-    console.log(series);
     return series;
   }
   private GetAverageNumberValueBasedOnTypeByGroupWithResponses(
@@ -438,6 +728,7 @@ age, gender, gender, gender
         name: g + ` (${groupedResponses.length})`,
         series: serie,
       };
+
       series.push(input);
     });
     console.log(series);
@@ -460,7 +751,6 @@ age, gender, gender, gender
       };
       series.push(input);
     });
-    console.log(series);
     return series;
   }
   //#endregion
