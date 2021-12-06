@@ -60,6 +60,12 @@ $box-shadow-btn: 0px 0px 20px 6px rgb(0 0 0 / 25%);
 $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
   0px -5px 35px rgba(255, 255, 255, 0.3);
 
+$blogg-font-size-mobile: 16px;
+$blogg-line-height-mobile: 26px;
+
+$blogg-font-size: 18px;
+$blogg-line-height: 29px;
+
 @mixin vaAbs {
   top: 50%;
   transform: translateY(-50%);
@@ -230,7 +236,26 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 @font-face {
   font-display: swap;
   font-family: "Plex";
-  font-weight: 700;
+  font-weight: 800;
+  src: url("/assets/fonts/Plex/IBMPlexSans-SemiBold.ttf") format("woff2"),
+    url("/assets/fonts/Plex/IBMPlexSans-SemiBold.ttf") format("woff"),
+    url("/assets/fonts/Plex/IBMPlexSans-SemiBold.ttf") format("truetype"),
+    url("/assets/fonts/Plex/IBMPlexSans-SemiBold.ttf") format("svg");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Plex";
+  font-weight: 800;
+  font-style: italic;
+  src: url("/assets/fonts/Plex/IBMPlexSans-SemiBoldItalic.ttf") format("woff2"),
+    url("/assets/fonts/Plex/IBMPlexSans-SemiBoldItalic.ttf") format("woff"),
+    url("/assets/fonts/Plex/IBMPlexSans-SemiBoldItalic.ttf") format("truetype"),
+    url("/assets/fonts/Plex/IBMPlexSans-SemiBoldItalic.ttf") format("svg");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Plex";
+  font-weight: 600;
   src: url("/assets/fonts/Plex/IBMPlexSans-Medium.ttf") format("woff2"),
     url("/assets/fonts/Plex/IBMPlexSans-Medium.ttf") format("woff"),
     url("/assets/fonts/Plex/IBMPlexSans-Medium.ttf") format("truetype"),
@@ -239,7 +264,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 @font-face {
   font-display: swap;
   font-family: "Plex";
-  font-weight: 700;
+  font-weight: 600;
   font-style: italic;
   src: url("/assets/fonts/Plex/IBMPlexSans-MediumItalic.ttf") format("woff2"),
     url("/assets/fonts/Plex/IBMPlexSans-MediumItalic.ttf") format("woff"),
@@ -258,16 +283,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 @font-face {
   font-display: swap;
   font-family: "Plex";
-  font-weight: 400;
-  src: url("/assets/fonts/Plex/IBMPlexSans-Thin.ttf") format("woff2"),
-    url("/assets/fonts/Plex/IBMPlexSans-Thin.ttf") format("woff"),
-    url("/assets/fonts/Plex/IBMPlexSans-Thin.ttf") format("truetype"),
-    url("/assets/fonts/Plex/IBMPlexSans-Thin.ttf") format("svg");
-}
-@font-face {
-  font-display: swap;
-  font-family: "Plex";
-  font-weight: 400;
+  font-weight: 100;
   font-style: italic;
   src: url("/assets/fonts/Plex/IBMPlexSans-ThinItalic.ttf") format("woff2"),
     url("/assets/fonts/Plex/IBMPlexSans-ThinItalic.ttf") format("woff"),
@@ -277,7 +293,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 @font-face {
   font-display: swap;
   font-family: "Plex";
-  font-weight: 300;
+  font-weight: 100;
   src: url("/assets/fonts/Plex/IBMPlexSans-Thin.ttf") format("woff2"),
     url("/assets/fonts/Plex/IBMPlexSans-Thin.ttf") format("woff"),
     url("/assets/fonts/Plex/IBMPlexSans-Thin.ttf") format("truetype"),
@@ -286,7 +302,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 @font-face {
   font-display: swap;
   font-family: "Plex";
-  font-weight: 200;
+  font-weight: 300;
   src: url("/assets/fonts/Plex/IBMPlexSans-Light.ttf") format("woff2"),
     url("/assets/fonts/Plex/IBMPlexSans-Light.ttf") format("woff"),
     url("/assets/fonts/Plex/IBMPlexSans-Light.ttf") format("truetype"),
@@ -295,7 +311,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 @font-face {
   font-display: swap;
   font-family: "Plex";
-  font-weight: 200;
+  font-weight: 300;
   font-style: italic;
   src: url("/assets/fonts/Plex/IBMPlexSans-LightItalic.ttf") format("woff2"),
     url("/assets/fonts/Plex/IBMPlexSans-LightItalic.ttf") format("woff"),
@@ -306,7 +322,7 @@ $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
 @font-face {
   font-display: swap;
   font-family: "Plex";
-  font-weight: 100;
+  font-weight: 200;
   src: url("/assets/fonts/Plex/IBMPlexSans-ExtraLight.ttf") format("woff2"),
     url("/assets/fonts/Plex/IBMPlexSans-ExtraLight.ttf") format("woff"),
     url("/assets/fonts/Plex/IBMPlexSans-ExtraLight.ttf") format("truetype"),
