@@ -1,226 +1,1214 @@
-<section>
-  <div class="buttons">
-    <button class="btn dark borderless">charts only</button>
-    <button class="btn dark borderless">Lønn</button>
-    <button class="btn dark borderless">Svar</button>
-  </div>
+<div class="wrapper">
+  <article (window:resize)="onResize($event)">
+    <div class="h1-wrapper">
+      <h1 class="title">Hva tjenete utviklere i 2021</h1>
+    </div>
+    <p class="super">
+      <span class="super">732.711kr</span>
+      <span class="top">I gjennomsnitt</span>
+    </p>
+    <section>
+      <div class="h2-wrapper">
+        <h2>Innholdsfortegnelse</h2>
+      </div>
+      <ul class="top">
+        <li class="top-level">
+          <a href=""> Forrord </a>
+          <ul class="second">
+            <li class="second-level">
+              <a href="">Kode</a>
+            </li>
+            <li class="second-level">
+              <a href="">årets spørsmål</a>
+            </li>
+          </ul>
+        </li>
+        <li class="top-level">
+          <a href="">Den gjennomsnittlige utvikleren</a>
+          <ul class="second">
+            <li class="second-level">
+              <a href="">utvikleren</a>
+            </li>
+          </ul>
+        </li>
+        <li class="top-level">
+          <a href="">Utvikler lønn i 2021</a>
+          <ul class="second">
+            <li class="second-level">
+              <a href="">Økning fra 2020</a>
+            </li>
+            <li class="second-level">
+              <a href="">Hvilke utviklere tjener best</a>
+            </li>
+            <li class="second-level">
+              <a href="">Start lønn for utviklere</a>
+            </li>
+            <li class="second-level">
+              <a href="">Lønn basert på fylke</a>
+            </li>
+            <li class="second-level">
+              <a href="">Lønn basert på bonus</a>
+            </li>
+          </ul>
+        </li>
+        <li class="top-level">
+          <a href="">Utvikleres karriere progressjon</a>
+        </li>
+        <li class="top-level">
+          <a href="">Åpenhet om lønn</a>
+        </li>
+        <li class="top-level">
+          <a href="">Utvikleres lønn og arbeidsplass</a>
+        </li>
+        <li class="top-level">
+          <a href="">Konklusjon</a>
+        </li>
+        <li class="top-level">
+          <a href="">Tidligere lønns undersøkelser fra kode24</a>
+        </li>
+      </ul>
+    </section>
+    <section class="forrord">
+      <div class="h2-wrapper">
+        <h2>forrord</h2>
+      </div>
+      <p>
+        Da kode24 delte svarene på sin lønnsundersøkelse for 2021
+        <a
+          rel="dofollow"
+          href="https://www.kode24.no/artikkel/vi-deler-ut-lonna-til-1542-utviklere---lag-noe-goy/74748854"
+        >
+          "Vi deler ut lønna til 1.542 utviklere - lag noe gøy!"
+        </a>
+        bestemte jeg meg for å ta en “deep dive” i dataen.
+      </p>
+      <p>
+        Dataen er noe bearbeidet for å unngå skeivfordeling på grunn av 1 svar.
+        Før noe data ble bearbeidet hadde jeg 1541 tilgjengelige svar. Jeg
+        bestemte meg deretter for å fjerne alle svar hvor lønna var over 2
+        millioner kroner i året, og alle svar hvor lønna var under 300 000
+        kroner. Som resultat av dette fjernet jeg besvarelser med oppgitte
+        lønninger på:
+      </p>
+      <p>
+        2 200 000kr, 2 900 000kr, 7 600 000kr, 0kr, 7 900 000kr, 2 486 250kr,
+        0kr, 0kr, 145 098kr, 0kr, 3 000 000kr og 0kr.
+      </p>
+      <p>
+        Dette ført til at vi gikk fra 1541 svar til 1529 svar, som er en økning
+        på hele 130% fra fjorårets 661 respondenter.
+      </p>
+      <section>
+        <div class="h3-wrapper">
+          <h3>kode</h3>
+        </div>
+        <p>
+          Jeg har valgt å legge ut resultatene på
+          <a href="modernamedia.no" rel="dofollow">modernamedia</a> ettersom jeg
+          allerede har en deploy pipeline og et domene tilgjengelig på dette
+          prosjektet. Modernamedia.no er bygget på Angular universal og det ble
+          da naturlig å bruke typescript for å kalkulere dataen til grafene. For
+          å vise grafene bruker jeg
+          <a rel="nofollow" href="https://swimlane.gitbook.io/ngx-charts/"
+            >ngx-charts</a
+          >
+          noe som i ettertid har vist seg å være noe begrenset.
+        </p>
+        <p>
+          Dersom du ønsker å se på koden har ModernaMedia.no åpen kildekode:
+          <a href="https://github.com/StanlyLife/ModernaMedia" rel="nofollow">
+            GitHub
+          </a>
+          , men for å gjøre det enkelt har jeg også laget et eget prosjekt med
+          html og JavaScript, som dere selv kan laste ned her
+          <a
+            rel="nofollow"
+            ref="https://github.com/StanlyLife/DeveloperSalaryCalculator"
+          >
+            GitHub
+          </a>
+        </p>
+        <p class="italic">
+          Dersom du liker noen av prosjektene så gjerne følg meg på github
+          <a rel="nofollow" ref="https://github.com/StanlyLife">github</a>
+        </p>
+      </section>
+      <section>
+        <div class="h3-wrapper">
+          <h3>Spørsmål fra undersøkelsen</h3>
+        </div>
+        <pre>
+"Hva er din alder?"
+"I hvilket fylke ligger jobben din?"
+"Hva beskriver best din arbeidssituasjon?"
+"Er du ansatt i det offentlige eller private næringsliv?"
+"Hvor mange års relevant, formell utdannelse har du?"
+"Hvor mange års relevant arbeidserfaring har du?"
+"Hva jobber du mest med?"
+"Har du en av disse begrepene i stillingstittelen din?"
+"Hva er din grunnlønn? (årslønn før skatt, uten eventuelle bonuser eller overtidsbetaling)"
+"Er du organisert? (Altså medlem av en forening som Tekna, El&it, Nito osv)"
+"Pleier du å få mer utbetalt enn grunnlønn på grunn av overtidsbetaling?"
+"Har du en bonusordning hos din nåværende arbeidsgiver?"
+"Sist du gikk opp i lønn, hvordan skjedde det? (altså en helt ny lønn eller en lønnsjustering utover indeksregulering, sentrale oppgjør osv.)"
+"Om du skal bytte jobb, hvilke goder kan være like viktig som lønn?"
+"Skal jeg bytte jobb, skal jeg også opp i lønn.
+"Hvor mye man tjener avhenger av hvor flink man er i jobben sin."
+"Hvor mye man tjener avhenger av hvilken tittel man har."
+"Hvor mye man tjener avhenger av hvor gammel man er" (Altså uavhengig av erfaring og fartstid i selskapet)"
+"Utviklere er blant de som tjener mest på arbeidsplassen min."
+"Jeg tror jeg hadde tjent mer nå om det ikke hadde vært for korona.\" (for eksempel på grunn av manglende lønnsjustering, mindre aktuelt å bytte jobb, osv)"
+"Jeg synes man bør tjene mer om man jobber hjemmefra."
+"Jeg synes man bør tjene mindre om man jobber hjemmefra."
+"Jeg tror kjønn i seg selv spiller inn i hvor mye man tjener."
+"Om noen spør, synes jeg det er greit å fortelle kolleger hva jeg tjener."
+"Jeg synes det er greit å spørre kolleger hva de tjener."
+"Vi burde ha mer åpenhet på en arbeidsplass om hva vi tjener."
+      </pre
+        >
+      </section>
+    </section>
+    <section>
+      <div class="h2-wrapper">
+        <h2>Den gjennomsnittlige Norske utvikleren</h2>
+      </div>
+      <img
+        class="summary"
+        src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnittlig-utvikler-_1_.webp"
+        alt="Gjennomsnitts lønn for norske utviklere"
+      />
+      <section>
+        <div class="h3-wrapper">
+          <h3>utvikleren</h3>
+        </div>
+        <p>
+          Det blir kanskje feil å kalle det for den gjennomsnittlige utvikleren
+          da det er 1541 respondenter på undersøkelsen og alle respondentene
+          leser kode24.
+        </p>
+        <p class="italic center">
+          Denne seleksjonsbiasen kan påvirke resultatene noe.
+        </p>
+        <p>
+          Dataen sett i oppsummeringen ovenfor er basert på grafene og er
+          beregnet individuelt noe som kan skape en vrangforestilling. Som sett
+          så er gjennomsnittsalderen 25-29 år og tittelen er senior, men
+          realiteten er at de fleste seniorene i Norge er mellom 30 og 34 år.
+        </p>
+        <p>
+          Som man kan se av 1529 svar på undersøkelsen så er de fleste svarene
+          fra utviklere i aldersgruppen: 25-29 år.
+        </p>
+        <div class="chart RespondantsByAge">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [showGridLines]="false"
+            [results]="RespondantsByAge"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'alder'"
+            [yAxisLabel]="'respondenter'"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">Antall respondenter per aldersgruppe</p>
+        </div>
+        <p>53% av respondentene svarte at de jobbet i Oslo.</p>
+        <div class="chart RespondantsByLocation">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="schemeType"
+            [results]="RespondantsByLocation"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="'fylke'"
+            [showYAxisLabel]="'respondenter'"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">
+            Antall respondenter basert på hvilket fylke jobben ligger
+          </p>
+        </div>
+        <p>
+          Slik daten blir presentert viser det seg at den gjennomsnittlige
+          utvikleren er mellom 25 og 29 år og bor i Oslo. Dette kan vi
+          dobbeltsjekke ved å legge grafene sammen.
+        </p>
+        <div class="chart RespondantsByAgeByLocation">
+          <ngx-charts-bar-vertical-2d
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [results]="RespondantsByAgeByLocation"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'fylke'"
+            [yAxisLabel]="'respondenter'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical-2d>
+          <p class="subtext">
+            Antall respondenter basert på hvilket fylke jobben ligger, gruppert
+            i alder
+          </p>
+        </div>
+        <p>
+          Grafen viser at teorien stemmer ettersom 273 av respondentene er både
+          mellom 25 - 29 år og samtidig bor i Oslo. Denne gruppen utgjør nesten
+          18% av alle respondenter på undersøkelsen.
+        </p>
+        <p>
+          Den gjennomsnittlige utvikleren jobber også med fullstack-utvikling,
+          etterfulgt av backend og frontend.
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="schemeType"
+            [results]="RespondantsByWork"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'jobber med'"
+            [yAxisLabel]="'respondenter'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">Antall respondenter basert hva de jobber med</p>
+        </div>
+        <p>
+          utviklerne fikk spørsmålet
+          <span class="italic">“Hva beskriver best din arbeidssituasjon?“</span>
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorSchemeSmall"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="schemeType"
+            [results]="RespondantsByType"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'arbeidssituasjon'"
+            [yAxisLabel]="'respondenter'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">
+            Antall respondenter basert på beskrivelse av arbeidssituasjon
+          </p>
+        </div>
+      </section>
+    </section>
+    <section>
+      <div class="h2-wrapper">
+        <h2>Utviklerlønn i 2021</h2>
+      </div>
+      <p>
+        Median lønnen til norske utviklere var i 2021, 690 000kr.
+        Gjennomsnittlønnen til norske utviklere var i 2021, 723.771kr. Dataen
+        viser også at den gjennomsnittlige startlønnen til en utvikler er
+        533.346kr.
+      </p>
+      <img
+        class="summary"
+        src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnitt-lønn-for-utvikler-_1_.webp"
+        alt="Gjennomsnitts lønn for norske utviklere"
+      />
+      <section>
+        <div class="h3-wrapper">
+          <h3>Lønnsøkning i 2021 fra 2020</h3>
+        </div>
+        <p>
+          Årets data viser en økning på nesten 30.000kr i gjennomsnittslønn fra
+          undersøkelsen kode24 hadde i 2020. Dette gir en økning på 4.14% fra
+          fjoråret, altså en reel vekst på 0.614% hvis man justerer for
+          <a
+            href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen"
+            rel="nofollow"
+          >
+            konsumprisindeksen.
+          </a>
+          Disse tallene er noe vanskelig å sammenligne ettersom det kan være en
+          større andel 24-29 åringer som svarte i år i motsetning til 2020.
+          Heldigvis kan vi presentere gjennomsnittslønn basert på aldersgrupper
+          mellom årene.
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="schemeType"
+            [results]="ValueSalaryByAge"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'alder'"
+            [yAxisLabel]="'lønn'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">Lønn basert på alder - 2021</p>
+        </div>
+        <p>
+          Vi kan også sammenligne dataen fra
+          <a
+            href="https://www.kode24.no/kodelokka/utvikleres-lonn---disse-tjener-mest-og-minst-i-norge/72061058"
+            rel="dofollow"
+          >
+            2020
+          </a>
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-vertical-2d
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [results]="ValueSalary21vs20"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'alder'"
+            [yAxisLabel]="'lønn'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical-2d>
+          <p class="subtext">Lønn basert på alder - 2020 mot 2021</p>
+        </div>
+        <p>
+          Ut i fra grafen kan det se ut som det er noe feil i de to siset
+          gruppene. Dette er grunnet grupperingene av alder. I 2020 gikk
+          gruppene opp til 45+, i motsettning til i år hvor vi har gruppene
+          45-50 og 50+. Generelt kan vi se at det har vært en lønnsøkning i
+          løpet av 2021.
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorSchemeSmall"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [results]="ValueSalaryIncrease"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'alder'"
+            [yAxisLabel]="'økning i kroner'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">
+            Lønnsøkning i kr fra 2020 gruppert i aldersgrupper
+          </p>
+        </div>
+        <p>
+          på toppen kommer aldersgruppen 35-39 år ut med en lønnsøkning fra
+          fjoråret på hele 44 819kr. Men når vi ser på prosentøkningen så blir
+          historien en helt annen.
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorSchemeSmall"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [results]="ValueSalaryIncreasePercent"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'alder'"
+            [yAxisLabel]="'økning i prosent'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">
+            Lønnsøkning i prosent fra 2020 gruppert i aldersgrupper
+          </p>
+        </div>
+        <p>
+          Utviklere i aldersgruppen 20-24 år kommer ut på topp med en økning på
+          6.5% fra fjoråret.
+        </p>
+      </section>
+      <section>
+        <div class="h3-wrapper">
+          <h3>Utvikleres lønn etter fag</h3>
+        </div>
+        <p>
+          I årets undersøkelse ble utviklere spurt
+          <span class="italic">"Hva jobber du mest med?"</span>. Hvis vi
+          sorterer lønn basert på fag får vi denne grafen
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-horizontal
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [results]="ValueSalaryByWork"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'lønn'"
+            [yAxisLabel]="'fag'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-horizontal>
+          <p class="subtext">
+            Gjennomsnittslønn basert på "hva utvikleren jobber mest med"
+          </p>
+        </div>
+        <div class="summary-box">
+          <p class="no_padding title">
+            De 3 fagområdene med "dårligst" gjennomsnittslønn:
+          </p>
+          <ul class="list-decoration-disc">
+            <li>
+              <p>UX / Design - 660.229kr</p>
+            </li>
+            <li>
+              <p>Front-end - 669.706kr</p>
+            </li>
+            <li>
+              <p>Sikkerhet - 675.265kr</p>
+            </li>
+          </ul>
+        </div>
+        <div class="summary-box title">
+          <p class="no_padding title">
+            De 3 fagområdene med "best" gjennomsnittslønn:
+          </p>
+          <ul class="list-decoration-disc">
+            <li>
+              <p>Arkitekt - 960.500kr</p>
+            </li>
+            <li>
+              <p>Ledelse/Administrativt - 901.004kr</p>
+            </li>
+            <li>
+              <p>Databaser - 839.722kr</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section>
+        <div class="h3-wrapper">
+          <h3>Startlønn for utviklere i 2021</h3>
+        </div>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [results]="ValueSalaryByYoe"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            [xAxisLabel]="'år med erfaring'"
+            [yAxisLabel]="'lønn'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">lønn basert på antall år med erfaring</p>
+          <p class="subtext">respondenter i parantes</p>
+        </div>
+        <p>
+          Fra denne grafen finner vi at gjennomsnittslønnen til 82 respondenter
+          med 0 års erfaring er 533.346kr! Man finner også at de med 1 års
+          erfaring har gjennomsnittlig i overkant av 20.000kr mer i lønn enn de
+          uten erfaring.
+        </p>
+        <p>
+          Grafen viser tydelig at lønnen stiger høyt når man har 29 års
+          erfaring.. neida. Det er viktig å holde antall respondenter i bakhodet
+          på flere av grafene hvor grupperingene bir veldig spesifikke
+        </p>
+      </section>
+      <section>
+        <div class="h3-wrapper">
+          <h3>Utviklere i viken tjener best</h3>
+        </div>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="schemeType"
+            [results]="ValueSalaryByCounty"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'arbeidssted'"
+            [yAxisLabel]="'lønn'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">lønn basert arbeidssted</p>
+          <p class="subtext">respondenter i parantes</p>
+        </div>
+        <p>
+          Overraskende nok kommer Viken på topp med gjennomsnitt lønn på 757
+          813kr og Oslo på andreplass med en gjennomsnittslønn på 748 469kr.
+        </p>
+      </section>
+      <section>
+        <div class="h3-wrapper">
+          <h3>Hva påvirker utvikleres lønn</h3>
+        </div>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorSchemeSmall"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="schemeType"
+            [results]="RespondantsByTitleImportance"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'svar'"
+            [yAxisLabel]="'respondenter'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">
+            respons basert på meninger om tittel påvirker lønn
+          </p>
+        </div>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorSchemeSmall"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="schemeType"
+            [results]="RespondantsByAgeImportance"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'respondenter'"
+            [yAxisLabel]="'svar'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">
+            respondenter basert på om de mener alder påvirker lønn
+          </p>
+        </div>
+        <p>
+          De fleste mener at alder ikke påvirker lønn, noe som motbevises
+          tidligere i statistikken hvor de laveste aldersgruppene har minst
+          lønn. Eller har de bare lavest lønn fordi de minst erfaring og kortest
+          fartstid?
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-vertical-2d
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [results]="ValueSalaryByYoeAge"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'aldersgruppe'"
+            [yAxisLabel]="'Gjennomsnittslønn'"
+            [showGridLines]="false"
+            [groupPadding]="0"
+            [barPadding]="0"
+          >
+          </ngx-charts-bar-vertical-2d>
+          <p class="subtext">
+            lønn basert på antall år med erfaring, gruppert i aldersgrupper
+          </p>
+          <p class="subtext">respondenter i parantes</p>
+        </div>
+        <p>
+          Her blir dataen presentert i gjennomsnittslønn basert på alder
+          gruppert i år med erfaring. For at grafen ikke skulle ha alt for store
+          avvik ble gruppene med under 3 respondenter fjernet. Vi kan også
+          fjerne lønn fra grupperingen og se hvilken aldersgruppe som har mest
+          og minst erfaring.
+        </p>
 
-  <div class="chart">
-    <h1>Developer salary with bonus vs without bonus, including age</h1>
-    <ngx-charts-bar-vertical-2d
-      [view]="[1200, 675]"
-      [scheme]="colorScheme"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="false"
-      [schemeType]="schemeType"
-      [results]="DeveloperSalaryByBonusByAge"
-      [legendPosition]="legendPosition"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-vertical-2d>
-  </div>
+        <div class="chart">
+          <ngx-charts-bar-vertical-2d
+            [view]="view"
+            [scheme]="colorScheme"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="'linear'"
+            [results]="RespondantsYoeByAge"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'respondenter'"
+            [yAxisLabel]="'aldersgruppe'"
+            [showGridLines]="false"
+            [groupPadding]="0"
+          >
+          </ngx-charts-bar-vertical-2d>
+          <p class="subtext">
+            respondenter basert på antall år med erfaring, gruppert i
+            aldersgrupper
+          </p>
+        </div>
+        <p>
+          I aldersgruppen 20-24 år så har de fleste 1 års erfaring. I
+          alderskruppen 45-50 år er det størst forekomst av respondenter med 23
+          års erfaring. Dette kan indikere at alder henger sammen med antall år
+          med erfaring som igjen kan peke på ferdighetsnivå.
+        </p>
+        <div class="chart">
+          <ngx-charts-bar-vertical
+            [view]="view"
+            [scheme]="colorSchemeSmall"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="false"
+            [schemeType]="schemeType"
+            [results]="RespondantsBySkillImportance"
+            [legendPosition]="legendPosition"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="'respondenter'"
+            [yAxisLabel]="'svar'"
+            [showGridLines]="false"
+          >
+          </ngx-charts-bar-vertical>
+          <p class="subtext">
+            respondenter basert på om de mener ferdighetsnivå påvirker lønn
+          </p>
+        </div>
+      </section>
+    </section>
+    <section>
+      <div class="h2-wrapper">
+        <h2>Utvikleres karriere og progressjon</h2>
+      </div>
+      <p>
+        En utvikler starter gjerne sin yrkeskarriere med "junior" tittelen.
+        Dette kan vi se ut i fra grafen nedenfor hvor de aller fleste mellom 0-2
+        års erfaring har junior i tittelen. Deretter vil en utvikler vanligvis
+        gå videre til en såkalt “mid-level utvikler” som gjerne er kalt bare
+        “utvikler“. Dessverre kommer ikke dette godt nok frem i undersøkelsen og
+        det kan være vanskelig å finne ut av ettersom flere arbeidsgivere,
+        spesielt konsulentvirksomheter går bort fra juniortittelen og rett på
+        “utvikler“. Neste steg i karrierestigen er normalt tittelen
+        "senior-utvikler" hvor det forekommer flest respondenter med 5 års
+        erfaring. Her holder grafen seg stødig til og med 15 års erfaring før
+        den begynner å falle nedover og utviklerne fordeles andre tittler. Som
+        vist tidligere har arkitektene best betalt. Dessverre blir dataen
+        vanskeligere å analysere ettersom grupperingen vanner ut respondentene,
+        men vi kan finne arkitekter med alt fra 1 års erfaring til og med 23 års
+        erfaring.
+      </p>
 
-  <div class="chart">
-    <h1>Developer salaray by bonus</h1>
-    <ngx-charts-bar-vertical
-      *ngIf="DeveloperSalaryReady"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="DeveloperSalaryByBonus"
-      [gradient]="'true'"
-      [barPadding]="150"
-      [showDataLabel]="'true'"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="'false'"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="'År med erfaring'"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-vertical>
-  </div>
-  <div class="chart">
-    <h1>Developer salaray by what you work most with</h1>
-    <ngx-charts-bar-horizontal
-      *ngIf="DeveloperSalaryReady"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="DeveloperSalaryByType"
-      [gradient]="'true'"
-      [barPadding]="5"
-      [showDataLabel]="'true'"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="'false'"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="'År med erfaring'"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-horizontal>
-  </div>
-  <div class="chart">
-    <h1>Developer salaray by title</h1>
-    <ngx-charts-bar-horizontal
-      *ngIf="DeveloperSalaryReady"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="DeveloperSalartByTitle"
-      [gradient]="'true'"
-      [barPadding]="5"
-      [showDataLabel]="'true'"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="'false'"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="'År med erfaring'"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-horizontal>
-  </div>
-
-  <div class="chart">
-    <h1>Developer salaray</h1>
-    <ngx-charts-bar-vertical
-      *ngIf="DeveloperSalaryReady"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="DeveloperSalaryByAge"
-      [gradient]="'true'"
-      [barPadding]="25"
-      [showDataLabel]="'true'"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="'false'"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-vertical>
-  </div>
-  <div class="chart">
-    <h1>Developer salaray by yoe</h1>
-    <ngx-charts-bar-horizontal
-      *ngIf="DeveloperSalaryReady"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="DeveloperSalaryByYoe"
-      [gradient]="'true'"
-      [barPadding]="5"
-      [showDataLabel]="'true'"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="'false'"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="'År med erfaring'"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-horizontal>
-  </div>
-  <div class="chart">
-    <h1>DeveloperResponseByAge</h1>
-    <ngx-charts-bar-vertical
-      *ngIf="DeveloperSalaryReady"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="DeveloperResponseByAge"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-vertical>
-  </div>
-  <div class="chart">
-    <h1>Developer response by location</h1>
-    <ngx-charts-bar-vertical
-      *ngIf="DeveloperSalaryReady"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="DevloperResponseByLocation"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-vertical>
-  </div>
-  <div class="chart">
-    <h1>Developer salary by location</h1>
-    <ngx-charts-bar-vertical
-      *ngIf="DeveloperSalaryReady"
-      [view]="view"
-      [scheme]="colorScheme"
-      [results]="DeveloperSalaryByLocation"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="showLegend"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-vertical>
-  </div>
-  <div class="chart">
-    <h1>Developer salary by age with location</h1>
-    <ngx-charts-bar-horizontal-2d
-      [view]="[1200, 675]"
-      [scheme]="colorScheme"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="false"
-      [schemeType]="schemeType"
-      [results]="DeveloperSalaryByAgeWithLocation"
-      [legendPosition]="legendPosition"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-horizontal-2d>
-  </div>
-  <div class="chart">
-    <h1>Developer response by age with location</h1>
-    <ngx-charts-bar-horizontal-2d
-      [view]="[1200, 675]"
-      [scheme]="colorScheme"
-      [gradient]="gradient"
-      [xAxis]="showXAxis"
-      [yAxis]="showYAxis"
-      [legend]="false"
-      [schemeType]="schemeType"
-      [results]="DevloperResponseByAgeByLocation"
-      [legendPosition]="legendPosition"
-      [showXAxisLabel]="showXAxisLabel"
-      [showYAxisLabel]="showYAxisLabel"
-      [xAxisLabel]="xAxisLabel"
-      [yAxisLabel]="yAxisLabel"
-    >
-    </ngx-charts-bar-horizontal-2d>
-  </div>
-</section>
+      <div class="chart">
+        <ngx-charts-bar-vertical-2d
+          [view]="view"
+          [scheme]="colorScheme"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="'linear'"
+          [results]="RespondantsYoeByTitle"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'respondenter'"
+          [yAxisLabel]="'tittel'"
+          [showGridLines]="false"
+          [groupPadding]="1"
+        >
+        </ngx-charts-bar-vertical-2d>
+        <p class="subtext">
+          respondenter basert på antall år med erfaring gruppert i tittler.
+        </p>
+      </div>
+      <p>
+        Grafen for alder etter tittel er noe mer ryddig ettersom aldersspennene
+        er grupperte. For junior-utviklere ligger gjennomsnittsalderen mellom 25
+        og 29 år, noe som kanskje ikke er så overraskende. Junior-utviklere har
+        også høyest forekomst av aldersgruppen 20-24 år. I aldersgruppen 20-24
+        år finner vi et fåtall av senior utviklere, men i aldersgruppen 25-29 år
+        er det hele 72 respondenter. Senior utviklerne topper ut og vi finner at
+        gjennomsnittsalderen til en senior utvikler er mellom 30 og 34 år.
+        Tidligere ble det nevnt at dataen for arkitekter var vanskelig å tolke
+        da den var gruppert etter år med erfaring. Denne dataen kommer
+        tydeligere frem når det er gruppert etter alder. Det er kanskje ikke
+        overraskende at vi ser en høyest forekomst av aldersgruppen 40 - 50 år
+        hos arkitektene. Det er heller ingen respondenter under 30 år med
+        tittelen "arkitekt" i denne undersøkelsen.
+      </p>
+      <div class="chart">
+        <ngx-charts-bar-vertical-2d
+          [view]="view"
+          [scheme]="colorScheme"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="'linear'"
+          [results]="RespondantsAgeByTitle"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'tittel'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+          [groupPadding]="1"
+        >
+        </ngx-charts-bar-vertical-2d>
+        <p class="subtext">respondenter basert på alder gruppert i tittler.</p>
+      </div>
+    </section>
+    <section>
+      <div class="h2-wrapper">
+        <h2>Bonusordning og lønn</h2>
+      </div>
+      <p>
+        I denne undersøkelsen ble spørsmålet om lønn formulert slik:
+        <span class="italic">
+          “Hva er din grunnlønn? (årslønn før skatt, uten eventuelle bonuser
+          eller overtidsbetaling)“
+        </span>
+        , altså uten bonus. Men hvor mange har egentlig bonus?
+      </p>
+      <div class="chart">
+        <ngx-charts-bar-vertical-2d
+          [view]="view"
+          [scheme]="colorScheme"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="'linear'"
+          [results]="RespondantsByAgeByBonus"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'alder'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+          [groupPadding]="1"
+        >
+        </ngx-charts-bar-vertical-2d>
+        <p class="subtext">
+          respondenter basert på om de har bonus gruppert i aldersgrupper.
+        </p>
+      </div>
+      <p>
+        Nesten 50% av respondentene i aldersgruppen 25-29 år har en
+        bonusordning, men i aldersgruppen 30-34 år er det helt klart flest uten
+        bonus.
+      </p>
+      <p>Vi kan også se hvilken sektor de med bonus jobber i.</p>
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorSchemeSmall"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="schemeType"
+          [results]="RespondantsBySector"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'sektor'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+        >
+        </ngx-charts-bar-vertical>
+        <p class="subtext">respondenter basert på hvilken sektor de jobber.</p>
+      </div>
+      <p>
+        Kanskje ikke overraskende at de med bonus ikke jobber i det offentlige?
+      </p>
+      <p>Men hvordan er lønnsforskjellen med og uten bonus?</p>
+      <div class="chart">
+        <ngx-charts-bar-horizontal-2d
+          [view]="view"
+          [scheme]="colorScheme"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="'linear'"
+          [results]="ValueSalaryByBonusByAge"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'gjennomsnittslønn'"
+          [yAxisLabel]="'alder'"
+          [showGridLines]="false"
+          [groupPadding]="1"
+        >
+        </ngx-charts-bar-horizontal-2d>
+        <p class="subtext">
+          gjennomsnittslønn basert på om de har bonus gruppert i aldersgrupper
+        </p>
+      </div>
+      <p>
+        Overraskende nok så har flere aldersgrupper med bonus også mest i lønn!
+      </p>
+    </section>
+    <section>
+      <div class="h2-wrapper">
+        <h2>Åpenhet om lønn på arbeidsplassen</h2>
+      </div>
+      <p>
+        Det var også enkelte spørsmål i undersøkelsen angående åpenhet rundt
+        lønn:
+      </p>
+      <ul>
+        <li>
+          <p>
+            Om noen spør, synes jeg det er greit å fortelle kolleger hva jeg
+            tjener.
+          </p>
+        </li>
+        <li><p>Jeg synes det er greit å spørre kolleger hva de tjener.</p></li>
+        <li>
+          <p>Vi burde ha mer åpenhet på en arbeidsplass om hva vi tjener.</p>
+        </li>
+      </ul>
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorSchemeSmall"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="schemeType"
+          [results]="RespondantsShareSalary"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'svar'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+        >
+        </ngx-charts-bar-vertical>
+        <p class="subtext">
+          Respondenter basert på "Om noen spør, synes jeg det er greit å
+          fortelle kolleger hva jeg tjener"
+        </p>
+      </div>
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorSchemeSmall"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="schemeType"
+          [results]="RespondantsAskSalary"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'svar'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+        >
+        </ngx-charts-bar-vertical>
+        <p class="subtext">
+          Respondenter basert på "Jeg synes det er greit å spørre kolleger hva
+          de tjener"
+        </p>
+      </div>
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorSchemeSmall"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="schemeType"
+          [results]="RespondantsOpenSalary"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'svar'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+        >
+        </ngx-charts-bar-vertical>
+        <p class="subtext">
+          Respondenter basert på "Vi burde ha mer åpenhet på en arbeidsplass om
+          hva vi tjener"
+        </p>
+      </div>
+      <p>
+        Med denne dataen kan vi også se på utviklere som gjerne spør om lønn,
+        men ikke ønsker å dele.
+      </p>
+      <div class="chart">
+        <ngx-charts-bar-vertical-2d
+          [view]="view"
+          [scheme]="colorScheme"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="'linear'"
+          [results]="RespondantsAskSalaryByShareSalary"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'svar'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+          [groupPadding]="1"
+        >
+        </ngx-charts-bar-vertical-2d>
+        <p class="subtext">
+          Respondenter basert på om de gjerne spør om lønn, gruppert basert på
+          om de ønsker å dele lønn dersom de blir spurt.
+        </p>
+      </div>
+      <p>
+        Her kan vi se grupperinger basert på om det er greit å spørre om lønnen
+        til andre kollegaer. Deretter blir det delt inn i grupperinger om det er
+        greit å svare på spørsmål om lønn. Her kan vi finne 4 personer som
+        gjerne spør om lønn, men ikke ønsker å dele lønnen sin med kollegaer.
+        Over halvparten av respondentene som ikke ønsker å spørre om lønn er
+        fremdeles villig til å dele lønnen sin.
+      </p>
+    </section>
+    <section>
+      <div class="h2-wrapper">
+        <h2>Utviklerlønn, arbeidsplass og rekruttere</h2>
+      </div>
+      <p>
+        Nå vet vi at i 2021 har det vært et “hot“ marked for utviklere verden
+        over og innboksen blir fylt opp av rekruttere på LinkedIn. Dersom du er
+        en rekrutter eller bare en nysgjerrig utvikler er denne seksjonen for
+        deg.
+      </p>
+      <p>Er utviklere stort sett fornøyd med lønnen sin?</p>
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorSchemeSmall"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="schemeType"
+          [results]="RespondantsSalaryHappy"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'svar'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+        >
+        </ngx-charts-bar-vertical>
+        <p class="subtext">
+          Respondenter basert på svar fra "Alt i alt - er du fornøyd med din
+          egen lønn?"
+        </p>
+      </div>
+      <p>
+        Stort sett så er utviklere fornøyd med lønnen sin. Samtidig svarer 32%
+        at de ikke er det. Kanskje er det et tips til rekruttere å inkludere
+        lønnen for stillingsutlysningen når de kontakter utviklere på LinkedIn?
+      </p>
+      <p>
+        De fleste er fornøyd med lønnen sin, men ønsker likevel å gå opp i lønn
+        dersom de skal bytte arbeidsplass.
+      </p>
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorScheme"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="schemeType"
+          [results]="RespondantsSalaryIncreaseByJobChange"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'svar'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+        >
+        </ngx-charts-bar-vertical>
+        <p class="subtext">
+          Respondenter basert på om svar fra "Skal jeg bytte jobb, skal jeg også
+          opp i lønn"
+        </p>
+      </div>
+      <p>
+        Norske utviklere har svart på "Om du skal bytte jobb, hvilke goder kan
+        være like viktig som lønn?"
+      </p>
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorScheme"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="schemeType"
+          [results]="RespondantsGoods"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'svar'"
+          [yAxisLabel]="'respondenter'"
+          [showGridLines]="false"
+        >
+        </ngx-charts-bar-vertical>
+        <p class="subtext">
+          Respondenter basert på om svar fra "Om du skal bytte jobb, hvilke
+          goder kan være like viktig som lønn?"
+        </p>
+      </div>
+      <p>
+        Grafen viser ønsker om sosiale sammenkomster, frynsegods, fagilig
+        utvikling, men grafen topper ut med fleksible arbeidstimer og
+        hjemmekontor.
+      </p>
+      <p>
+        Enkelte har også nevnt andre goder som kan være viktig i fritekstfeltet
+        i undersøkelsen. blant annet ble det nevnt: “Øh(1)“, “Impact!(1)“ og
+        “Som google(1)“.
+      </p>
+      <p>
+        Dessverre kommer ikke all data frem i grafen da det var mulig å skrive
+        hva man ønsket i fritekst. Samtidig har jeg har fjernet besvarelser med
+        under 5 respondenter. Likevel finnes det enkelte gjengangere med
+        forskjellige skrivemåter:
+      </p>
+      <ul class="list-decoration-disc">
+        <li><p>Jobb med mening</p></li>
+        <li><p>Dyktige kollegaer / flinke folk</p></li>
+        <li><p>Mulighet for egenlæring</p></li>
+        <li><p>Aksjer / medeierskap</p></li>
+        <li><p>Godt miljø</p></li>
+        <li><p>Forsikring</p></li>
+        <li><p>Pensjon</p></li>
+        <li><p>Mobil / internett</p></li>
+      </ul>
+    </section>
+    <section>
+      <div class="h2-wrapper">
+        <h2>konklusjon</h2>
+      </div>
+      <p>
+        Gjennom flere grafer og “store“ mengder data har vi sett at utviklere
+        tjener generelt godt i Norge, spesielt arkitektene!
+      </p>
+      <p>
+        Dersom det er enkelte grafer du savner kan du laste ned git repository
+        som ble lenket lengre opp i artikkelen eller sende meg en mail på
+        stianhave@hotmail.com
+      </p>
+      <p>
+        Forhåpentligvis vil kode24 gi ut neste års data slik at vi får
+        muligheten til å grave litt dypere der det er behov. Det har vært en del
+        snakk om mangfold det siste året og det hadde vært interessant å sett
+        kjønn og etnisitet som en del av datagrunnlaget.
+      </p>
+    </section>
+    <section>
+      <div class="h2-wrapper">
+        <h2>Tidliger artikkler om lønn fra kode24</h2>
+      </div>
+      <ul>
+        <li>
+          <a
+            href="https://www.kode24.no/kodelokka/disse-utviklerne-tjener-best-i-norge/70934046"
+            >2019</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.kode24.no/kodelokka/utvikleres-lonn---disse-tjener-mest-og-minst-i-norge/72061058"
+            >2020</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://www.kode24.no/artikkel/vi-deler-ut-lonna-til-1542-utviklere---lag-noe-goy/74748854"
+            >2021</a
+          >
+        </li>
+      </ul>
+    </section>
+  </article>
+</div>
