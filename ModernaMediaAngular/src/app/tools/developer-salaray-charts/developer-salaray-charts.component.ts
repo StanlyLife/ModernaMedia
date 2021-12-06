@@ -1,9 +1,5 @@
 import { DeveloperSalary } from './../../../assets/data/DeveloperSalary';
 import { Component, OnInit } from '@angular/core';
-import { NgModule } from '@angular/core';
-import { BrowserModule, Title } from '@angular/platform-browser';
-import { gridLayout, NgxChartsModule } from '@swimlane/ngx-charts';
-import * as e from 'express';
 
 @Component({
   selector: 'app-developer-salaray-charts',
@@ -20,7 +16,43 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   RespondantsByAge: any[];
   RespondantsByLocation: any[];
   RespondantsByAgeByLocation: any[];
-  ValueSalaryByAge: any[];
+  ValueSalaryByAge: any[] = [
+    {
+      name: '20-24 år',
+      value: '551715',
+      response: 124,
+    },
+    {
+      name: '25-29 år',
+      value: '630713',
+      response: 443,
+    },
+    {
+      name: '30-34 år',
+      value: '719675',
+      response: 393,
+    },
+    {
+      name: '35-39 år',
+      value: '808839',
+      response: 262,
+    },
+    {
+      name: '40-44 år',
+      value: '852715',
+      response: 168,
+    },
+    {
+      name: '45-50 år',
+      value: '858629',
+      response: 96,
+    },
+    {
+      name: '50+ år',
+      value: '892928',
+      response: 43,
+    },
+  ];
   ValueSalaryByWork: any[];
   //#region ValueSalary21vs20
   //#region ValueSalaryIncrease
@@ -152,12 +184,8 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   ValueSalaryByCounty: any[];
   RespondantsAgeByTitle: any[];
   RespondantsYoeByTitle: any[];
-  constructor() {
-    Object.assign(this, { DeveloperSalary });
-  }
   MinResponses = 5;
   MaxSalary = 2000000;
-  view: any[] = [700, 400];
   showXAxis = true;
   showYAxis = true;
   gradient = false;
@@ -190,8 +218,25 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   colorSchemeSmall = {
     domain: ['#349ad9', '#7d84e9', '#d257ca', '#ff007b', '#ff2600'],
   };
+  vw;
+  view: any[] = [700, 400];
+  constructor() {
+    Object.assign(this, { DeveloperSalary });
+
+    var width = window.innerWidth / 1.1;
+    this.vw = width > 700 ? 700 : window.innerWidth / 1.1;
+    var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
+    this.view = [this.vw, height];
+  }
+
+  onResize(event) {
+    var width = window.innerWidth / 1.1;
+    this.vw = width > 700 ? 700 : window.innerWidth / 1.1;
+    var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
+    this.view = [this.vw, height];
+  }
+
   ngOnInit(): void {
-    console.log(this.DeveloperSalary[0]);
     this.FormatData();
   }
 
@@ -200,7 +245,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     this.UpdateValues();
     this.FixSalaries();
 
-    console.log('age salary');
     this.GetAverageNumberValueBasedOnType('age', 'salary', true, null);
 
     this.RespondantsByAge = this.GetResponsesBasedOnType('age', '', null, null);
@@ -214,26 +258,24 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       'county'
     );
 
-    this.ValueSalaryByAge = this.GetAverageNumberValueBasedOnType(
+    // this.ValueSalaryByAge = this.GetAverageNumberValueBasedOnType(
+    //   'age',
+    //   'salary',
+    //   null,
+    //   null
+    // );
+    this.RespondantsByAgeByBonus = this.GetResponsesBasedOnTypeByGroup(
+      'bonus',
       'age',
-      'salary',
-      null,
-      null
+      this.GetListOfAnswersFor('age'),
+      'age'
     );
-    this.RespondantsByAgeByBonus = this.RespondantsByAgeByLocation =
-      this.GetResponsesBasedOnTypeByGroup(
-        'bonus',
-        'age',
-        this.GetListOfAnswersFor('age'),
-        'age'
-      );
-    this.RespondantsBySectorByBonus = this.RespondantsByAgeByLocation =
-      this.GetResponsesBasedOnTypeByGroup(
-        'bonus',
-        'sector',
-        this.GetListOfAnswersFor('sector'),
-        'sector'
-      );
+    this.RespondantsBySectorByBonus = this.GetResponsesBasedOnTypeByGroup(
+      'bonus',
+      'sector',
+      this.GetListOfAnswersFor('sector'),
+      'sector'
+    );
     this.RespondantsBySector = this.SortByValue(
       this.GetResponsesBasedOnType('sector', '', null, null)
     );
@@ -279,7 +321,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       null
     );
 
-    console.log('@@@@@@@@@@');
     this.RespondantsShareSalary = this.SortByValue(
       this.GetResponsesBasedOnType('shareSalary', '', null, null)
     );
@@ -334,8 +375,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       3,
       'value'
     );
-    console.log('this.RespondantsYoeByAge');
-    console.log(this.RespondantsYoeByAge);
     this.RespondantsSalaryHappy = this.GetResponsesBasedOnType(
       'salaryhappy',
       '',
@@ -369,6 +408,7 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     );
     this.DeveloperSalaryReady = true;
   }
+
   private SortByValue(arr) {
     return arr.sort((a, b) =>
       a.value < b.value ? 1 : b.value < a.value ? -1 : 0
@@ -377,7 +417,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   private RemoveLowRespondants(arr, responses, val) {
     var newArr = [];
     arr = arr.forEach((obj) => {
-      console.log(obj.series);
       obj.series = obj.series.filter(function (obj) {
         return obj[val] > responses;
       });
@@ -399,7 +438,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       a.salary > b.salary ? 1 : b.salary > a.salary ? -1 : 0
     );
     this.DF = arr;
-    console.log(`Antall respondanter ${this.DF.length}`);
   }
   private UpdateKeys() {
     this.DF = this.DeveloperSalary.map(
@@ -637,7 +675,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       };
       series.push(input);
     });
-    console.log(series);
     return series;
   }
   private GetMeanValueBasedOnTypeByGroup(name, value, group) {
@@ -650,7 +687,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       };
       series.push(input);
     });
-    console.log(series);
     return series;
   }
   //#endregion
@@ -700,7 +736,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
 
       series.push(input);
     });
-    console.log(series);
     return series;
   }
   //#endregion
