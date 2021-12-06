@@ -83,8 +83,7 @@ namespace ModernaMediaDotNet
                     .WithOrigins(corsList.ToArray())
                     .AllowAnyHeader()
                     .AllowAnyMethod()
-                    .AllowAnyOrigin();
-                    //.SetIsOriginAllowedToAllowWildcardSubdomains();
+                    .SetIsOriginAllowedToAllowWildcardSubdomains();
                 });
             });
         }
@@ -100,7 +99,12 @@ namespace ModernaMediaDotNet
 
             }
 
-            app.UseCors("CorsPolicy");
+            //app.UseCors("CorsPolicy");
+            app.UseCors(builder => builder
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+            
             app.UseHttpsRedirection();
 
             app.UseRouting();
