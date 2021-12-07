@@ -30,6 +30,7 @@ article {
   h5,
   h6,
   span.super {
+    pointer-events: none;
     background: linear-gradient(to right, #30cfd0, #c43ad6);
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -38,7 +39,11 @@ article {
     font-family: "Mosk";
     font-weight: 500;
   }
-  a {
+  a,
+  .innholdsfortegnelse button {
+    color: $blue-secondary;
+    border: none;
+    background: none;
     display: inline;
     text-decoration: underline;
     text-decoration-color: $blue;
@@ -46,6 +51,7 @@ article {
     font-weight: 400;
     text-underline-offset: 2px;
     &:hover {
+      color: $orange-primary;
       text-decoration-color: $orange-primary;
       cursor: pointer;
     }
