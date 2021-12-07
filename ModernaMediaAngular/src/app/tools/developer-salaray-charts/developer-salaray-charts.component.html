@@ -7,70 +7,103 @@
       <span class="super">732.711kr</span>
       <span class="top">I gjennomsnitt</span>
     </p>
-    <section>
-      <!-- <div class="h2-wrapper">
-        <h2>Innholdsfortegnelse</h2>
-      </div> -->
+    <section class="innholdsfortegnelse">
       <ul class="top">
         <li class="top-level">
-          <a href="#forrord"> Forrord </a>
+          <button (click)="scrollToElement(forrord)">Forrord</button>
           <ul class="second">
             <li class="second-level">
-              <a href="">Kode</a>
+              <button (click)="scrollToElement(kode)">Kode</button>
             </li>
             <li class="second-level">
-              <a href="">årets spørsmål</a>
+              <button (click)="scrollToElement(Sporsmalfraundersokelsen)">
+                Spørsmål fra undersøkelsen
+              </button>
             </li>
           </ul>
         </li>
         <li class="top-level">
-          <a href="">Den gjennomsnittlige utvikleren</a>
+          <button
+            (click)="scrollToElement(DengjennomsnittligeNorskeutvikleren)"
+          >
+            Den gjennomsnittlige utvikleren
+          </button>
           <ul class="second">
             <li class="second-level">
-              <a href="">utvikleren</a>
+              <button (click)="scrollToElement(utvikleren)">utvikleren</button>
             </li>
           </ul>
         </li>
         <li class="top-level">
-          <a href="">Utvikler lønn i 2021</a>
+          <button (click)="scrollToElement(Utviklerlonni2021)">
+            Utvikler lønn i 2021
+          </button>
           <ul class="second">
             <li class="second-level">
-              <a href="">Økning fra 2020</a>
+              <button (click)="scrollToElement(Lonnsokningi2021fra2020)">
+                Lønnsøkning i 2021 fra 2020
+              </button>
             </li>
             <li class="second-level">
-              <a href="">Hvilke utviklere tjener best</a>
+              <button (click)="scrollToElement(Utviklereslonnetterfag)">
+                Hvilke utviklere tjener best
+              </button>
             </li>
             <li class="second-level">
-              <a href="">Start lønn for utviklere</a>
+              <button (click)="scrollToElement(Startlonnforutviklerei2021)">
+                Startlønn for utviklere i 2021
+              </button>
             </li>
             <li class="second-level">
-              <a href="">Lønn basert på fylke</a>
+              <button (click)="scrollToElement(Utviklereivikentjenerbest)">
+                Utviklere i Viken tjener best
+              </button>
             </li>
             <li class="second-level">
-              <a href="">Lønn basert på bonus</a>
+              <button (click)="scrollToElement(Hvapavirkerutviklereslonn)">
+                Hva påvirker utvikleres lønn
+              </button>
             </li>
           </ul>
         </li>
         <li class="top-level">
-          <a href="">Utvikleres karriere progressjon</a>
+          <button (click)="scrollToElement(Utviklereskarriereogprogressjon)">
+            Utvikleres karriere og progressjon
+          </button>
         </li>
         <li class="top-level">
-          <a href="">Åpenhet om lønn</a>
+          <button (click)="scrollToElement(Bonusordningoglonn)">
+            Bonusordning og lønn
+          </button>
         </li>
         <li class="top-level">
-          <a href="">Utvikleres lønn og arbeidsplass</a>
+          <button (click)="scrollToElement(apenhetomlonnpaarbeidsplassen)">
+            Åpenhet om lønn på arbeidsplassen
+          </button>
         </li>
         <li class="top-level">
-          <a href="">Konklusjon</a>
+          <button
+            (click)="scrollToElement(Utviklerlonnarbeidsplassogrekruttere)"
+          >
+            Utviklerlønn, arbeidsplass og rekruttere
+          </button>
         </li>
         <li class="top-level">
-          <a href="">Tidligere lønns undersøkelser fra kode24</a>
+          <button (click)="scrollToElement(konklusjon)">konklusjon</button>
+        </li>
+        <li class="top-level">
+          <button (click)="scrollToElement(kode)">Kode</button>
+        </li>
+        <li class="top-level">
+          <button (click)="scrollToElement(Tidligerartikkleromlonnfrakode24)">
+            Tidliger artikkler om lønn fra kode24
+          </button>
         </li>
       </ul>
     </section>
-    <section class="forrord" id="forrord">
+    <section class="forrord" id="forrord" #forrord>
       <div class="h2-wrapper">
-        <h2>forrord</h2>
+        <h2>Forrord</h2>
       </div>
       <p>
         Da kode24 delte svarene på sin lønnsundersøkelse for 2021
@@ -98,42 +131,7 @@
         Dette ført til at vi gikk fra 1541 svar til 1529 svar, som er en økning
         på hele 130% fra fjorårets 661 respondenter.
       </p>
-      <section>
-        <div class="h3-wrapper">
-          <h3>kode</h3>
-        </div>
-        <p>
-          Jeg har valgt å legge ut resultatene på
-          <a href="modernamedia.no" rel="dofollow">modernamedia</a> ettersom jeg
-          allerede har en deploy pipeline og et domene tilgjengelig på dette
-          prosjektet. Modernamedia.no er bygget på Angular universal og det ble
-          da naturlig å bruke typescript for å kalkulere dataen til grafene. For
-          å vise grafene bruker jeg
-          <a rel="nofollow" href="https://swimlane.gitbook.io/ngx-charts/"
-            >ngx-charts</a
-          >
-          noe som i ettertid har vist seg å være noe begrenset.
-        </p>
-        <p>
-          Dersom du ønsker å se på koden har ModernaMedia.no åpen kildekode:
-          <a href="https://github.com/StanlyLife/ModernaMedia" rel="nofollow">
-            GitHub
-          </a>
-          , men for å gjøre det enkelt har jeg også laget et eget prosjekt med
-          html og JavaScript, som dere selv kan laste ned her
-          <a
-            rel="nofollow"
-            ref="https://github.com/StanlyLife/DeveloperSalaryCalculator"
-          >
-            GitHub
-          </a>
-        </p>
-        <p class="italic">
-          Dersom du liker noen av prosjektene så gjerne følg meg på github
-          <a rel="nofollow" ref="https://github.com/StanlyLife">github</a>
-        </p>
-      </section>
-      <section>
+      <section #Sporsmalfraundersokelsen>
         <div class="h3-wrapper">
           <h3>Spørsmål fra undersøkelsen</h3>
         </div>
@@ -168,18 +166,18 @@
         >
       </section>
     </section>
-    <section>
+    <section #DengjennomsnittligeNorskeutvikleren>
       <div class="h2-wrapper">
-        <h2>Den gjennomsnittlige Norske utvikleren</h2>
+        <h2>Den gjennomsnittlige utvikleren</h2>
       </div>
       <img
         class="summary"
         src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnittlig-utvikler-_1_.webp"
         alt="Gjennomsnitts lønn for norske utviklere"
       />
-      <section>
+      <section #utvikleren>
         <div class="h3-wrapper">
-          <h3>utvikleren</h3>
+          <h3>Utvikleren</h3>
         </div>
         <p>
           Det blir kanskje feil å kalle det for den gjennomsnittlige utvikleren
@@ -327,7 +325,7 @@
         </div>
       </section>
     </section>
-    <section>
+    <section #Utviklerlonni2021>
       <div class="h2-wrapper">
         <h2>Utviklerlønn i 2021</h2>
       </div>
@@ -342,7 +340,7 @@
         src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnitt-lønn-for-utvikler-_1_.webp"
         alt="Gjennomsnitts lønn for norske utviklere"
       />
-      <section>
+      <section #Lonnsokningi2021fra2020>
         <div class="h3-wrapper">
           <h3>Lønnsøkning i 2021 fra 2020</h3>
         </div>
@@ -471,9 +469,9 @@
           6.5% fra fjoråret.
         </p>
       </section>
-      <section>
+      <section #Utviklereslonnetterfag>
         <div class="h3-wrapper">
-          <h3>Utvikleres lønn etter fag</h3>
+          <h3>Hvilke utviklere tjener best</h3>
         </div>
         <p>
           I årets undersøkelse ble utviklere spurt
@@ -535,7 +533,7 @@
           </ul>
         </div>
       </section>
-      <section>
+      <section #Startlonnforutviklerei2021>
         <div class="h3-wrapper">
           <h3>Startlønn for utviklere i 2021</h3>
         </div>
@@ -574,9 +572,9 @@
           på flere av grafene hvor grupperingene bir veldig spesifikke
         </p>
       </section>
-      <section>
+      <section #Utviklereivikentjenerbest>
         <div class="h3-wrapper">
-          <h3>Utviklere i viken tjener best</h3>
+          <h3>Utviklere i Viken tjener best</h3>
         </div>
         <div class="chart">
           <ngx-charts-bar-vertical
@@ -604,7 +602,7 @@
           813kr og Oslo på andreplass med en gjennomsnittslønn på 748 469kr.
         </p>
       </section>
-      <section>
+      <section #Hvapavirkerutviklereslonn>
         <div class="h3-wrapper">
           <h3>Hva påvirker utvikleres lønn</h3>
         </div>
@@ -746,7 +744,7 @@
         </div>
       </section>
     </section>
-    <section>
+    <section #Utviklereskarriereogprogressjon>
       <div class="h2-wrapper">
         <h2>Utvikleres karriere og progressjon</h2>
       </div>
@@ -826,7 +824,7 @@
         <p class="subtext">respondenter basert på alder gruppert i tittler.</p>
       </div>
     </section>
-    <section>
+    <section #Bonusordningoglonn>
       <div class="h2-wrapper">
         <h2>Bonusordning og lønn</h2>
       </div>
@@ -920,7 +918,7 @@
         samtidig har høyest gjennomsnitslønn.
       </p>
     </section>
-    <section>
+    <section #apenhetomlonnpaarbeidsplassen>
       <div class="h2-wrapper">
         <h2>Åpenhet om lønn på arbeidsplassen</h2>
       </div>
@@ -1046,7 +1044,7 @@
         fremdeles villig til å dele lønnen sin.
       </p>
     </section>
-    <section>
+    <section #Utviklerlonnarbeidsplassogrekruttere>
       <div class="h2-wrapper">
         <h2>Utviklerlønn, arbeidsplass og rekruttere</h2>
       </div>
@@ -1166,7 +1164,7 @@
         <li><p>Mobil / internett</p></li>
       </ul>
     </section>
-    <section>
+    <section #konklusjon>
       <div class="h2-wrapper">
         <h2>konklusjon</h2>
       </div>
@@ -1186,30 +1184,67 @@
         kjønn og etnisitet som en del av datagrunnlaget.
       </p>
     </section>
-    <section>
+    <section #kode>
+      <div class="h2-wrapper">
+        <h2>Kode</h2>
+      </div>
+      <p>
+        Jeg har valgt å legge ut resultatene på
+        <a href="modernamedia.no" rel="dofollow">modernamedia</a> ettersom jeg
+        allerede har en deploy pipeline og et domene tilgjengelig på dette
+        prosjektet. Modernamedia.no er bygget på Angular universal og det ble da
+        naturlig å bruke typescript for å kalkulere dataen til grafene. For å
+        vise grafene bruker jeg
+        <a rel="nofollow" href="https://swimlane.gitbook.io/ngx-charts/"
+          >ngx-charts</a
+        >
+        noe som i ettertid har vist seg å være noe begrenset.
+      </p>
+      <p>
+        Dersom du ønsker å se på koden har ModernaMedia.no åpen kildekode:
+        <a href="https://github.com/StanlyLife/ModernaMedia" rel="nofollow">
+          GitHub
+        </a>
+        , men for å gjøre det enkelt har jeg også laget et eget prosjekt med
+        html og JavaScript, som dere selv kan laste ned her
+        <a
+          rel="nofollow"
+          ref="https://github.com/StanlyLife/DeveloperSalaryCalculator"
+        >
+          GitHub
+        </a>
+      </p>
+      <p class="italic">
+        Dersom du liker noen av prosjektene så gjerne følg meg på github
+        <a rel="nofollow" ref="https://github.com/StanlyLife">github</a>
+      </p>
+    </section>
+    <section #Tidligerartikkleromlonnfrakode24>
       <div class="h2-wrapper">
         <h2>Tidliger artikkler om lønn fra kode24</h2>
       </div>
-      <ul>
-        <li>
-          <a
-            href="https://www.kode24.no/kodelokka/disse-utviklerne-tjener-best-i-norge/70934046"
-            >2019</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.kode24.no/kodelokka/utvikleres-lonn---disse-tjener-mest-og-minst-i-norge/72061058"
-            >2020</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.kode24.no/artikkel/vi-deler-ut-lonna-til-1542-utviklere---lag-noe-goy/74748854"
-            >2021</a
-          >
-        </li>
-      </ul>
+      <div class="summary-box title">
+        <ul class="list-decoration-disc">
+          <li>
+            <a
+              href="https://www.kode24.no/kodelokka/disse-utviklerne-tjener-best-i-norge/70934046"
+              >2019 - Disse utviklerne tjener best i Norge</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.kode24.no/kodelokka/utvikleres-lonn---disse-tjener-mest-og-minst-i-norge/72061058"
+              >2020 - Utvikleres lønn - disse tjener mest og minst i Norge</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.kode24.no/artikkel/vi-deler-ut-lonna-til-1542-utviklere---lag-noe-goy/74748854"
+              >2021 - Vi deler ut lønna til 1.542 utviklere - lag noe gøy!</a
+            >
+          </li>
+        </ul>
+      </div>
     </section>
   </article>
 </div>
