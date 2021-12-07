@@ -240,6 +240,14 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     this.FormatData();
   }
 
+  scrollToElement($element): void {
+    $element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+  }
+
   FormatData() {
     this.UpdateKeys();
     this.UpdateValues();
