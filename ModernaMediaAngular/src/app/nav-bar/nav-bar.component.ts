@@ -5,42 +5,39 @@ import { environment } from './../../environments/environment.prod';
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss', './nav-bar.desktop.component.scss']
+  styleUrls: ['./nav-bar.component.scss', './nav-bar.desktop.component.scss'],
 })
 export class NavBarComponent implements OnInit {
-
-public nav;
-public header;
+  public nav;
+  public header;
   imageCdn = environment.img;
-  textClass = "";
+  textClass = '';
   mobileOpen = false;
-  constructor(
-    private elem: ElementRef,
-    private location: Location
-    ) {}
-
+  hidden = false;
+  constructor(private elem: ElementRef, private location: Location) {}
 
   ngOnInit(): void {
-    console.log(this.location.path());
-    if(this.location.path() === ''){
-      this.textClass = "dark-text";
+    if (this.location.path() === '/artikkel/utviklerlonn') {
+      this.hidden = true;
+    }
+    if (this.location.path() === '') {
+      this.textClass = 'dark-text';
     }
   }
-  
+
   ngAfterViewInit() {
     this.nav = this.elem.nativeElement.querySelector('#navbar');
     this.header = this.elem.nativeElement.querySelector('header');
   }
   ContactUs(event) {
-    alert("test");
+    alert('test');
   }
   Menu(event) {
-    this.header.classList.toggle("mobile-open");
-    if(this.header.clasList.contains("mobile-open")){
+    this.header.classList.toggle('mobile-open');
+    if (this.header.clasList.contains('mobile-open')) {
       this.mobileOpen = true;
-    }else {
+    } else {
       this.mobileOpen = false;
     }
   }
-
 }
