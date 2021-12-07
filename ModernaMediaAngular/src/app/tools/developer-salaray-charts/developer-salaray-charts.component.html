@@ -8,12 +8,12 @@
       <span class="top">I gjennomsnitt</span>
     </p>
     <section>
-      <div class="h2-wrapper">
+      <!-- <div class="h2-wrapper">
         <h2>Innholdsfortegnelse</h2>
-      </div>
+      </div> -->
       <ul class="top">
         <li class="top-level">
-          <a href=""> Forrord </a>
+          <a href="#forrord"> Forrord </a>
           <ul class="second">
             <li class="second-level">
               <a href="">Kode</a>
@@ -68,7 +68,7 @@
         </li>
       </ul>
     </section>
-    <section class="forrord">
+    <section class="forrord" id="forrord">
       <div class="h2-wrapper">
         <h2>forrord</h2>
       </div>
@@ -244,8 +244,8 @@
         </div>
         <p>
           Slik daten blir presentert viser det seg at den gjennomsnittlige
-          utvikleren er mellom 25 og 29 år og bor i Oslo. Dette kan vi
-          dobbeltsjekke ved å legge grafene sammen.
+          utvikleren er mellom 25 og 29 år og bor i Oslo. Dette kan presenteres
+          ved å legge grafene sammen.
         </p>
         <div class="chart RespondantsByAgeByLocation">
           <ngx-charts-bar-vertical-2d
@@ -502,25 +502,9 @@
             Gjennomsnittslønn basert på "hva utvikleren jobber mest med"
           </p>
         </div>
-        <div class="summary-box">
-          <p class="no_padding title">
-            De 3 fagområdene med "dårligst" gjennomsnittslønn:
-          </p>
-          <ul class="list-decoration-disc">
-            <li>
-              <p>UX / Design - 660.229kr</p>
-            </li>
-            <li>
-              <p>Front-end - 669.706kr</p>
-            </li>
-            <li>
-              <p>Sikkerhet - 675.265kr</p>
-            </li>
-          </ul>
-        </div>
         <div class="summary-box title">
           <p class="no_padding title">
-            De 3 fagområdene med "best" gjennomsnittslønn:
+            De 3 fagområdene med høyest gjennomsnittslønn:
           </p>
           <ul class="list-decoration-disc">
             <li>
@@ -531,6 +515,22 @@
             </li>
             <li>
               <p>Databaser - 839.722kr</p>
+            </li>
+          </ul>
+        </div>
+        <div class="summary-box">
+          <p class="no_padding title">
+            De 3 fagområdene med lavest gjennomsnittslønn:
+          </p>
+          <ul class="list-decoration-disc">
+            <li>
+              <p>UX / Design - 660.229kr</p>
+            </li>
+            <li>
+              <p>Front-end - 669.706kr</p>
+            </li>
+            <li>
+              <p>Sikkerhet - 675.265kr</p>
             </li>
           </ul>
         </div>
@@ -627,7 +627,8 @@
           >
           </ngx-charts-bar-vertical>
           <p class="subtext">
-            respons basert på meninger om tittel påvirker lønn
+            respondenter basert på spørsmålet "Hvor mye man tjener avhenger av
+            hvilken tittel man har"
           </p>
         </div>
         <div class="chart">
@@ -653,10 +654,10 @@
           </p>
         </div>
         <p>
-          De fleste mener at alder ikke påvirker lønn, noe som motbevises
-          tidligere i statistikken hvor de laveste aldersgruppene har minst
-          lønn. Eller har de bare lavest lønn fordi de minst erfaring og kortest
-          fartstid?
+          De fleste respondentene i undersøkelsen mener at alder ikke påvirker
+          lønn, noe som motbevises tidligere i statistikken hvor de laveste
+          aldersgruppene har minst lønn. Eller har de bare lavest lønn fordi de
+          minst erfaring og kortest fartstid?
         </p>
         <div class="chart">
           <ngx-charts-bar-vertical-2d
@@ -686,9 +687,9 @@
         <p>
           Her blir dataen presentert i gjennomsnittslønn basert på alder
           gruppert i år med erfaring. For at grafen ikke skulle ha alt for store
-          avvik ble gruppene med under 3 respondenter fjernet. Vi kan også
-          fjerne lønn fra grupperingen og se hvilken aldersgruppe som har mest
-          og minst erfaring.
+          avvik ble gruppene med under 3 respondenter fjernet. Dataen kan også
+          presenteres slik at lønn blir byttet ut med respondenter for å finne
+          gjennomsnittlig erfaring basert på alder.
         </p>
 
         <div class="chart">
@@ -750,21 +751,20 @@
         <h2>Utvikleres karriere og progressjon</h2>
       </div>
       <p>
-        En utvikler starter gjerne sin yrkeskarriere med "junior" tittelen.
-        Dette kan vi se ut i fra grafen nedenfor hvor de aller fleste mellom 0-2
-        års erfaring har junior i tittelen. Deretter vil en utvikler vanligvis
-        gå videre til en såkalt “mid-level utvikler” som gjerne er kalt bare
+        En utvikler starter ofte yrkeskarrieren med "junior"-tittelen. Dette kan
+        vi se ut i fra grafen nedenfor hvor de aller fleste mellom 0-2 års
+        erfaring har junior i tittelen. Deretter vil en utvikler vanligvis gå
+        videre til en såkalt “mid-level utvikler” som også går under tittelen
         “utvikler“. Dessverre kommer ikke dette godt nok frem i undersøkelsen og
         det kan være vanskelig å finne ut av ettersom flere arbeidsgivere,
         spesielt konsulentvirksomheter går bort fra juniortittelen og rett på
         “utvikler“. Neste steg i karrierestigen er normalt tittelen
         "senior-utvikler" hvor det forekommer flest respondenter med 5 års
         erfaring. Her holder grafen seg stødig til og med 15 års erfaring før
-        den begynner å falle nedover og utviklerne fordeles andre tittler. Som
-        vist tidligere har arkitektene best betalt. Dessverre blir dataen
-        vanskeligere å analysere ettersom grupperingen vanner ut respondentene,
-        men vi kan finne arkitekter med alt fra 1 års erfaring til og med 23 års
-        erfaring.
+        den avtar og utviklerne fordeles blant andre tittler. Som vist tidligere
+        har arkitektene best betalt. Dessverre blir dataen mer komplisert å
+        analysere ettersom grupperingen fortynner ut respondentene, men vi kan
+        finne arkitekter med alt fra 1 års erfaring til og med 23 års erfaring.
       </p>
 
       <div class="chart">
@@ -793,17 +793,16 @@
       <p>
         Grafen for alder etter tittel er noe mer ryddig ettersom aldersspennene
         er grupperte. For junior-utviklere ligger gjennomsnittsalderen mellom 25
-        og 29 år, noe som kanskje ikke er så overraskende. Junior-utviklere har
-        også høyest forekomst av aldersgruppen 20-24 år. I aldersgruppen 20-24
-        år finner vi et fåtall av senior utviklere, men i aldersgruppen 25-29 år
-        er det hele 72 respondenter. Senior utviklerne topper ut og vi finner at
-        gjennomsnittsalderen til en senior utvikler er mellom 30 og 34 år.
-        Tidligere ble det nevnt at dataen for arkitekter var vanskelig å tolke
-        da den var gruppert etter år med erfaring. Denne dataen kommer
-        tydeligere frem når det er gruppert etter alder. Det er kanskje ikke
-        overraskende at vi ser en høyest forekomst av aldersgruppen 40 - 50 år
-        hos arkitektene. Det er heller ingen respondenter under 30 år med
-        tittelen "arkitekt" i denne undersøkelsen.
+        og 29 år. Junior-utviklere har høyest forekomst av aldersgruppen 20-24
+        år. I aldersgruppen 20-24 år finner vi et fåtall av senior utviklere,
+        men i aldersgruppen 25-29 år er det hele 72 respondenter. Senior
+        utviklerne topper ut og vi finner at gjennomsnittsalderen til en senior
+        utvikler er mellom 30 og 34 år. Tidligere ble det nevnt at dataen for
+        arkitekter var vanskelig å tolke da den var gruppert etter år med
+        erfaring. Denne dataen kommer tydeligere frem når det er gruppert etter
+        alder. Det er kanskje ikke overraskende at vi ser en høyest forekomst av
+        aldersgruppen 40 - 50 år hos arkitektene. Det er heller ingen
+        respondenter under 30 år med tittelen "arkitekt" i denne undersøkelsen.
       </p>
       <div class="chart">
         <ngx-charts-bar-vertical-2d
@@ -837,7 +836,7 @@
           “Hva er din grunnlønn? (årslønn før skatt, uten eventuelle bonuser
           eller overtidsbetaling)“
         </span>
-        , altså uten bonus. Men hvor mange har egentlig bonus?
+        , altså uten bonus.
       </p>
       <div class="chart">
         <ngx-charts-bar-vertical-2d
@@ -888,10 +887,11 @@
         </ngx-charts-bar-vertical>
         <p class="subtext">respondenter basert på hvilken sektor de jobber.</p>
       </div>
+      <p>de med bonus jobber oftest i privat og ikke i offentlig sektor.</p>
       <p>
-        Kanskje ikke overraskende at de med bonus ikke jobber i det offentlige?
+        Nå som data om bonus etter sektor har blitt presentert kan vi se videre
+        på lønn etter bonus
       </p>
-      <p>Men hvordan er lønnsforskjellen med og uten bonus?</p>
       <div class="chart">
         <ngx-charts-bar-horizontal-2d
           [view]="view"
@@ -916,7 +916,8 @@
         </p>
       </div>
       <p>
-        Overraskende nok så har flere aldersgrupper med bonus også mest i lønn!
+        Dataen viser tydelig at det er flere aldersgrupper med bonusordning som
+        samtidig har høyest gjennomsnitslønn.
       </p>
     </section>
     <section>
@@ -1081,8 +1082,8 @@
       </div>
       <p>
         Stort sett så er utviklere fornøyd med lønnen sin. Samtidig svarer 32%
-        at de ikke er det. Kanskje er det et tips til rekruttere å inkludere
-        lønnen for stillingsutlysningen når de kontakter utviklere på LinkedIn?
+        at de ikke er det. et tips til rekruttere kan være å inkludere lønnen
+        for stillingsutlysningen når de kontakter utviklere på LinkedIn.
       </p>
       <p>
         De fleste er fornøyd med lønnen sin, men ønsker likevel å gå opp i lønn
@@ -1150,9 +1151,9 @@
       </p>
       <p>
         Dessverre kommer ikke all data frem i grafen da det var mulig å skrive
-        hva man ønsket i fritekst. Samtidig har jeg har fjernet besvarelser med
-        under 5 respondenter. Likevel finnes det enkelte gjengangere med
-        forskjellige skrivemåter:
+        hva man ønsket i fritekst. Det er også fjernet besvarelser med under 5
+        respondenter. Likevel finnes det enkelte gjengangere med forskjellige
+        skrivemåter:
       </p>
       <ul class="list-decoration-disc">
         <li><p>Jobb med mening</p></li>
@@ -1170,7 +1171,7 @@
         <h2>konklusjon</h2>
       </div>
       <p>
-        Gjennom flere grafer og “store“ mengder data har vi sett at utviklere
+        Gjennom flere grafer og 40.092 datapunkter har vi sett at utviklere
         tjener generelt godt i Norge, spesielt arkitektene!
       </p>
       <p>
