@@ -133,12 +133,12 @@ ul.list-decoration-disc li {
 }
 
 .summary-box {
-  background-color: $dark;
+  background-color: $light;
   box-shadow: $box-shadow-btn;
   padding: 1rem 1.5rem;
   border-radius: 5px;
-  margin: 2.5px auto;
-  color: $light;
+  margin: 15px auto;
+  color: $dark;
   .title {
     font-weight: 500;
     background: linear-gradient(to right, #30cfd0, #c43ad6);
@@ -151,7 +151,13 @@ ul.list-decoration-disc li {
     padding-bottom: 10px;
   }
   ul {
-    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin: 0 auto;
+    li::before {
+      content: "";
+    }
   }
 }
