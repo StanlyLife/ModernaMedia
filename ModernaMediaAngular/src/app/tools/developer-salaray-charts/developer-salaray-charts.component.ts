@@ -234,21 +234,25 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
     this.view = [this.vw, height];
 
-    title.setTitle(
-      'Moderna Media Digitalbyrå | Bedrift nettsider, systemer, webdesign og seo'
-    );
+    title.setTitle('Alt om utvikleres lønn og karriere i 2021');
 
     this.seo.createLinkForCanonicalURL();
     this.meta.addTags([
       {
         name: 'description',
         content:
-          'Moderna Media utvikler nettsider og system for bedrifter som ønsker et eget nettsted, et tilpasset system eller en egen app',
+          'Hva tjente utviklerne i 2021 og har det vært en generell økning fra 2020 og hvordan har corona pandemien påvirket dette?',
+      },
+      {
+        name: 'og:description',
+        content:
+          'Hva tjente utviklerne i 2021 og har det vært en generell økning fra 2020 og hvordan har corona pandemien påvirket dette?',
       },
       { name: 'robots', content: 'index, follow' },
       {
         name: 'og:image',
-        content: '../../../assets/Images/Blogg/UtviklerLønn/Utvikler-lonn',
+        content:
+          'https://modernamedia.no/assets/Images/Blogg/UtviklerL%C3%B8nn/Utvikler-lonn.png',
       },
       { name: 'og:image:type', content: 'image/png' },
       { name: 'og:image:width', content: '828' },
