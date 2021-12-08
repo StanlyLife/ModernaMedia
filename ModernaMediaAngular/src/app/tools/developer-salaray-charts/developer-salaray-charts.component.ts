@@ -1,5 +1,7 @@
 import { DeveloperSalary } from './../../../assets/data/DeveloperSalary';
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from 'src/app/services/seo.service';
 
 @Component({
   selector: 'app-developer-salaray-charts',
@@ -220,13 +222,38 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   };
   vw;
   view: any[] = [700, 400];
-  constructor() {
+  constructor(
+    private meta: Meta,
+    private title: Title,
+    private seo: SeoService
+  ) {
     Object.assign(this, { DeveloperSalary });
 
     var width = window.innerWidth / 1.1;
     this.vw = width > 700 ? 700 : window.innerWidth / 1.1;
     var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
     this.view = [this.vw, height];
+
+    title.setTitle(
+      'Moderna Media Digitalbyrå | Bedrift nettsider, systemer, webdesign og seo'
+    );
+
+    this.seo.createLinkForCanonicalURL();
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Moderna Media utvikler nettsider og system for bedrifter som ønsker et eget nettsted, et tilpasset system eller en egen app',
+      },
+      { name: 'robots', content: 'index, follow' },
+      {
+        name: 'og:image',
+        content: '../../../assets/Images/Blogg/UtviklerLønn/Utvikler-lonn',
+      },
+      { name: 'og:image:type', content: 'image/png' },
+      { name: 'og:image:width', content: '828' },
+      { name: 'og:image:height', content: '470' },
+    ]);
   }
 
   onResize(event) {
