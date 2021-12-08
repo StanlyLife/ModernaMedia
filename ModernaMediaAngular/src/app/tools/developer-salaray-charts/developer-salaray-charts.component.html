@@ -116,19 +116,17 @@
         bestemte jeg meg for å ta en “deep dive” i dataen.
       </p>
       <p>
-        Dataen er noe bearbeidet for å unngå skeivfordeling på grunn av 1 svar.
         Før noe data ble bearbeidet hadde jeg 1541 tilgjengelige svar. Jeg
-        bestemte meg deretter for å fjerne alle svar hvor lønna var over 2
-        millioner kroner i året, og alle svar hvor lønna var under 300 000
-        kroner. Som resultat av dette fjernet jeg besvarelser med oppgitte
-        lønninger på:
+        bestemte meg deretter for å fjerne alle svar hvor oppgitt årslønn lønn
+        var over 2 millioner kroner og under 300 000 kroner. Som resultat av
+        dette fjernet jeg besvarelser med oppgitte lønninger på:
       </p>
       <p>
         2 200 000kr, 2 900 000kr, 7 600 000kr, 0kr, 7 900 000kr, 2 486 250kr,
         0kr, 0kr, 145 098kr, 0kr, 3 000 000kr og 0kr.
       </p>
       <p>
-        Dette ført til at vi gikk fra 1541 svar til 1529 svar, som er en økning
+        Dette førte til at vi gikk fra 1541 svar til 1529 svar, som er en økning
         på hele 130% fra fjorårets 661 respondenter.
       </p>
       <section #Sporsmalfraundersokelsen>
@@ -180,18 +178,12 @@
           <h3>Utvikleren</h3>
         </div>
         <p>
-          Det blir kanskje feil å kalle det for den gjennomsnittlige utvikleren
-          da det er 1541 respondenter på undersøkelsen og alle respondentene
-          leser kode24.
-        </p>
-        <p class="italic center">
-          Denne seleksjonsbiasen kan påvirke resultatene noe.
-        </p>
-        <p>
-          Dataen sett i oppsummeringen ovenfor er basert på grafene og er
-          beregnet individuelt noe som kan skape en vrangforestilling. Som sett
-          så er gjennomsnittsalderen 25-29 år og tittelen er senior, men
-          realiteten er at de fleste seniorene i Norge er mellom 30 og 34 år.
+          Dataen sett i oppsummeringen ovenfor er basert på dataen presentert og
+          er beregnet individuelt uten noen form for gruppering noe som kan
+          skape en vrangforestilling. Som vist så har aldersgruppen 25-29 år
+          flest respondenter, likevel er det flest respondenter med tittelen
+          senior. Realiteten er at de fleste seniorene i Norge er mellom 30 og
+          34 år.
         </p>
         <p>
           Som man kan se av 1529 svar på undersøkelsen så er de fleste svarene
@@ -237,14 +229,11 @@
           >
           </ngx-charts-bar-vertical>
           <p class="subtext">
-            Antall respondenter basert på hvilket fylke jobben ligger
+            Antall respondenter basert på svar fra "I hvilket fylke ligger
+            jobben din?"
           </p>
         </div>
-        <p>
-          Slik daten blir presentert viser det seg at den gjennomsnittlige
-          utvikleren er mellom 25 og 29 år og bor i Oslo. Dette kan presenteres
-          ved å legge grafene sammen.
-        </p>
+        <hr />
         <div class="chart RespondantsByAgeByLocation">
           <ngx-charts-bar-vertical-2d
             [view]="view"
@@ -264,18 +253,18 @@
           >
           </ngx-charts-bar-vertical-2d>
           <p class="subtext">
-            Antall respondenter basert på hvilket fylke jobben ligger, gruppert
-            i alder
+            Antall respondenter basert på svar fra "I hvilket fylke ligger
+            jobben din?" gruppert i aldersgrupper
           </p>
         </div>
         <p>
-          Grafen viser at teorien stemmer ettersom 273 av respondentene er både
-          mellom 25 - 29 år og samtidig bor i Oslo. Denne gruppen utgjør nesten
-          18% av alle respondenter på undersøkelsen.
+          273 av respondentene er i aldersgruppen 25-29 år og bor i Oslo. Denne
+          gruppen utgjør nesten 18% av alle respondenter på undersøkelsen.
         </p>
         <p>
-          Den gjennomsnittlige utvikleren jobber også med fullstack-utvikling,
-          etterfulgt av backend og frontend.
+          Fra grafen nedenfor kan man se de mest fagene med flest respondenter.
+          De fleste utvikleren jobber med fullstack-utvikling, etterfulgt av
+          backend og frontend.
         </p>
         <div class="chart">
           <ngx-charts-bar-vertical
@@ -297,10 +286,7 @@
           </ngx-charts-bar-vertical>
           <p class="subtext">Antall respondenter basert hva de jobber med</p>
         </div>
-        <p>
-          utviklerne fikk spørsmålet
-          <span class="italic">“Hva beskriver best din arbeidssituasjon?“</span>
-        </p>
+        <!-- <hr />
         <div class="chart">
           <ngx-charts-bar-vertical
             [view]="view"
@@ -322,71 +308,70 @@
           <p class="subtext">
             Antall respondenter basert på beskrivelse av arbeidssituasjon
           </p>
-        </div>
+        </div> -->
       </section>
     </section>
     <section #Utviklerlonni2021>
       <div class="h2-wrapper">
         <h2>Utviklerlønn i 2021</h2>
       </div>
+      <img
+        class="summary"
+        src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnitt-lønn-for-utvikler-_1_.webp"
+        alt="Gjennomsnitts lønn for norske utviklere"
+      />
       <p>
         Median lønnen til norske utviklere var i 2021, 690 000kr.
         Gjennomsnittlønnen til norske utviklere var i 2021, 723.771kr. Dataen
         viser også at den gjennomsnittlige startlønnen til en utvikler er
         533.346kr.
       </p>
-      <img
-        class="summary"
-        src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnitt-lønn-for-utvikler-_1_.webp"
-        alt="Gjennomsnitts lønn for norske utviklere"
-      />
+      <div class="chart">
+        <ngx-charts-bar-vertical
+          [view]="view"
+          [scheme]="colorScheme"
+          [gradient]="gradient"
+          [xAxis]="showXAxis"
+          [yAxis]="showYAxis"
+          [legend]="false"
+          [schemeType]="schemeType"
+          [results]="ValueSalaryByAge"
+          [legendPosition]="legendPosition"
+          [showXAxisLabel]="showXAxisLabel"
+          [showYAxisLabel]="showYAxisLabel"
+          [xAxisLabel]="'alder'"
+          [yAxisLabel]="'lønn'"
+          [showGridLines]="false"
+        >
+        </ngx-charts-bar-vertical>
+        <p class="subtext">Lønn basert på alder - 2021</p>
+      </div>
       <section #Lonnsokningi2021fra2020>
         <div class="h3-wrapper">
           <h3>Lønnsøkning i 2021 fra 2020</h3>
         </div>
         <p>
-          Årets data viser en økning på nesten 30.000kr i gjennomsnittslønn fra
-          undersøkelsen kode24 hadde i 2020. Dette gir en økning på 4.14% fra
-          fjoråret, altså en reel vekst på 0.614% hvis man justerer for
+          Årets data viser at utviklere hadde en økning i gjennomsnittslønn på
+          nesten 30.000kr fra
+          <a
+            href="https://www.kode24.no/kodelokka/utvikleres-lonn---disse-tjener-mest-og-minst-i-norge/72061058"
+            rel="dofollow"
+          >
+            2020 </a
+          >. Dette gir en økning på 4.14% fra fjoråret, altså en reel vekst på
+          0.614% hvis man justerer for
           <a
             href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen"
             rel="nofollow"
           >
             konsumprisindeksen.
           </a>
-          Disse tallene er noe vanskelig å sammenligne ettersom det kan være en
-          større andel 24-29 åringer som svarte i år i motsetning til 2020.
-          Heldigvis kan vi presentere gjennomsnittslønn basert på aldersgrupper
-          mellom årene.
         </p>
-        <div class="chart">
-          <ngx-charts-bar-vertical
-            [view]="view"
-            [scheme]="colorScheme"
-            [gradient]="gradient"
-            [xAxis]="showXAxis"
-            [yAxis]="showYAxis"
-            [legend]="false"
-            [schemeType]="schemeType"
-            [results]="ValueSalaryByAge"
-            [legendPosition]="legendPosition"
-            [showXAxisLabel]="showXAxisLabel"
-            [showYAxisLabel]="showYAxisLabel"
-            [xAxisLabel]="'alder'"
-            [yAxisLabel]="'lønn'"
-            [showGridLines]="false"
-          >
-          </ngx-charts-bar-vertical>
-          <p class="subtext">Lønn basert på alder - 2021</p>
-        </div>
         <p>
-          Vi kan også sammenligne dataen fra
-          <a
-            href="https://www.kode24.no/kodelokka/utvikleres-lonn---disse-tjener-mest-og-minst-i-norge/72061058"
-            rel="dofollow"
-          >
-            2020
-          </a>
+          Generell gjennomsnittslønn mellom årene kan være vanskelig sammenligne
+          ettersom det kan ha vært en større andel av aldersgruppen 24-29 år som
+          svarte i år i motsetning til 2020. Heldigvis kan vi presentere
+          gjennomsnittslønn basert på aldersgrupper mellom årene.
         </p>
         <div class="chart">
           <ngx-charts-bar-vertical-2d
@@ -411,9 +396,9 @@
         <p>
           Ut i fra grafen kan det se ut som det er noe feil i de to siset
           gruppene. Dette er grunnet grupperingene av alder. I 2020 gikk
-          gruppene opp til 45+, i motsettning til i år hvor vi har gruppene
-          45-50 og 50+. Generelt kan vi se at det har vært en lønnsøkning i
-          løpet av 2021.
+          aldersgruppene opp til og med 45+, i motsettning til i år hvor vi har
+          gruppene 45-50 og 50+. Generelt kan vi se at det har vært en
+          lønnsøkning i løpet av 2021.
         </p>
         <div class="chart">
           <ngx-charts-bar-vertical
@@ -439,7 +424,7 @@
         </div>
         <p>
           på toppen kommer aldersgruppen 35-39 år ut med en lønnsøkning fra
-          fjoråret på hele 44 819kr. Men når vi ser på prosentøkningen så blir
+          fjoråret på hele 44 819kr. Men når vi ser på prosentøkningen blir
           historien en helt annen.
         </p>
         <div class="chart">
@@ -567,9 +552,10 @@
           uten erfaring.
         </p>
         <p>
-          Grafen viser tydelig at lønnen stiger høyt når man har 29 års
-          erfaring.. neida. Det er viktig å holde antall respondenter i bakhodet
-          på flere av grafene hvor grupperingene bir veldig spesifikke
+          På grafen kan det se ut som man får betraktelig mer lønn det året man
+          treffer 29 år med erfaring. Men realiteten er mest sannsynlig at de 2
+          respondentene er et avvik fra normalen. Av denne grunnen er det lagt
+          til antall respondenter i parantes.
         </p>
       </section>
       <section #Utviklereivikentjenerbest>
@@ -599,7 +585,8 @@
         </div>
         <p>
           Overraskende nok kommer Viken på topp med gjennomsnitt lønn på 757
-          813kr og Oslo på andreplass med en gjennomsnittslønn på 748 469kr.
+          813kr over Oslo som kommer på andreplass med en gjennomsnittslønn på
+          748 469kr.
         </p>
       </section>
       <section #Hvapavirkerutviklereslonn>
@@ -629,6 +616,7 @@
             hvilken tittel man har"
           </p>
         </div>
+        <hr />
         <div class="chart">
           <ngx-charts-bar-vertical
             [view]="view"
@@ -652,10 +640,10 @@
           </p>
         </div>
         <p>
-          De fleste respondentene i undersøkelsen mener at alder ikke påvirker
-          lønn, noe som motbevises tidligere i statistikken hvor de laveste
-          aldersgruppene har minst lønn. Eller har de bare lavest lønn fordi de
-          minst erfaring og kortest fartstid?
+          Majoriteten av respondentene i undersøkelsen mener at alder ikke
+          påvirker lønn, noe som motbevises tidligere i statistikken hvor de
+          laveste aldersgruppene har minst lønn. Eller har de bare lavest lønn
+          fordi de har minst erfaring og kortest fartstid?
         </p>
         <div class="chart">
           <ngx-charts-bar-vertical-2d
@@ -684,7 +672,7 @@
         </div>
         <p>
           Her blir dataen presentert i gjennomsnittslønn basert på alder
-          gruppert i år med erfaring. For at grafen ikke skulle ha alt for store
+          gruppert i år med erfaring. For at grafen ikke skulle ha for store
           avvik ble gruppene med under 3 respondenter fjernet. Dataen kan også
           presenteres slik at lønn blir byttet ut med respondenter for å finne
           gjennomsnittlig erfaring basert på alder.
@@ -718,7 +706,7 @@
           I aldersgruppen 20-24 år så har de fleste 1 års erfaring. I
           alderskruppen 45-50 år er det størst forekomst av respondenter med 23
           års erfaring. Dette kan indikere at alder henger sammen med antall år
-          med erfaring som igjen kan peke på ferdighetsnivå.
+          erfaring, noe som igjen kan peke på ferdighetsnivå.
         </p>
         <div class="chart">
           <ngx-charts-bar-vertical
@@ -754,7 +742,7 @@
         erfaring har junior i tittelen. Deretter vil en utvikler vanligvis gå
         videre til en såkalt “mid-level utvikler” som også går under tittelen
         “utvikler“. Dessverre kommer ikke dette godt nok frem i undersøkelsen og
-        det kan være vanskelig å finne ut av ettersom flere arbeidsgivere,
+        det kan være vanskelig å finne svar på ettersom flere arbeidsgivere,
         spesielt konsulentvirksomheter går bort fra juniortittelen og rett på
         “utvikler“. Neste steg i karrierestigen er normalt tittelen
         "senior-utvikler" hvor det forekommer flest respondenter med 5 års
@@ -832,9 +820,8 @@
         I denne undersøkelsen ble spørsmålet om lønn formulert slik:
         <span class="italic">
           “Hva er din grunnlønn? (årslønn før skatt, uten eventuelle bonuser
-          eller overtidsbetaling)“
-        </span>
-        , altså uten bonus.
+          eller overtidsbetaling)“ </span
+        >, altså uten bonus.
       </p>
       <div class="chart">
         <ngx-charts-bar-vertical-2d
@@ -852,7 +839,7 @@
           [xAxisLabel]="'alder'"
           [yAxisLabel]="'respondenter'"
           [showGridLines]="false"
-          [groupPadding]="1"
+          [groupPadding]="15"
         >
         </ngx-charts-bar-vertical-2d>
         <p class="subtext">
@@ -881,11 +868,12 @@
           [xAxisLabel]="'sektor'"
           [yAxisLabel]="'respondenter'"
           [showGridLines]="false"
+          [barPadding]="1"
         >
         </ngx-charts-bar-vertical>
         <p class="subtext">respondenter basert på hvilken sektor de jobber.</p>
       </div>
-      <p>de med bonus jobber oftest i privat og ikke i offentlig sektor.</p>
+      <hr />
       <p>
         Nå som data om bonus etter sektor har blitt presentert kan vi se videre
         på lønn etter bonus
@@ -926,7 +914,7 @@
         Det var også enkelte spørsmål i undersøkelsen angående åpenhet rundt
         lønn:
       </p>
-      <ul>
+      <ul class="list-decoration-disc">
         <li>
           <p>
             Om noen spør, synes jeg det er greit å fortelle kolleger hva jeg
@@ -961,6 +949,7 @@
           fortelle kolleger hva jeg tjener"
         </p>
       </div>
+      <hr />
       <div class="chart">
         <ngx-charts-bar-vertical
           [view]="view"
@@ -984,6 +973,7 @@
           de tjener"
         </p>
       </div>
+      <hr />
       <div class="chart">
         <ngx-charts-bar-vertical
           [view]="view"
@@ -1007,6 +997,7 @@
           hva vi tjener"
         </p>
       </div>
+      <hr />
       <p>
         Med denne dataen kan vi også se på utviklere som gjerne spør om lønn,
         men ikke ønsker å dele.
@@ -1049,10 +1040,16 @@
         <h2>Utviklerlønn, arbeidsplass og rekruttere</h2>
       </div>
       <p>
-        Nå vet vi at i 2021 har det vært et “hot“ marked for utviklere verden
-        over og innboksen blir fylt opp av rekruttere på LinkedIn. Dersom du er
-        en rekrutter eller bare en nysgjerrig utvikler er denne seksjonen for
-        deg.
+        Nå som 2021 nærmer seg over vet vi at
+        <a
+          href="https://www.latimes.com/business/story/2021-07-31/employers-bow-down-to-tech-workers-in-hottest-job-market"
+          rel="nofollow"
+        >
+          markededet har vært "hot"
+        </a>
+        for utviklere verden over og innboksen blir fylt opp av rekruttere på
+        LinkedIn. Dersom du er en rekrutter eller bare en nysgjerrig utvikler er
+        denne seksjonen for deg.
       </p>
       <p>Er utviklere stort sett fornøyd med lønnen sin?</p>
       <div class="chart">
@@ -1079,9 +1076,9 @@
         </p>
       </div>
       <p>
-        Stort sett så er utviklere fornøyd med lønnen sin. Samtidig svarer 32%
-        at de ikke er det. et tips til rekruttere kan være å inkludere lønnen
-        for stillingsutlysningen når de kontakter utviklere på LinkedIn.
+        Stort sett er utviklere fornøyd med lønnen sin. Samtidig svarer 32% at
+        de ikke er det. et tips til rekruttere kan være å inkludere lønnen for
+        stillingsutlysningen når de kontakter utviklere på LinkedIn.
       </p>
       <p>
         De fleste er fornøyd med lønnen sin, men ønsker likevel å gå opp i lønn
@@ -1110,6 +1107,7 @@
           opp i lønn"
         </p>
       </div>
+      <hr />
       <p>
         Norske utviklere har svart på "Om du skal bytte jobb, hvilke goder kan
         være like viktig som lønn?"
@@ -1144,14 +1142,14 @@
       </p>
       <p>
         Enkelte har også nevnt andre goder som kan være viktig i fritekstfeltet
-        i undersøkelsen. blant annet ble det nevnt: “Øh(1)“, “Impact!(1)“ og
+        på undersøkelsen. blant annet ble det nevnt: “Øh(1)“, “Impact!(1)“ og
         “Som google(1)“.
       </p>
       <p>
         Dessverre kommer ikke all data frem i grafen da det var mulig å skrive
         hva man ønsket i fritekst. Det er også fjernet besvarelser med under 5
-        respondenter. Likevel finnes det enkelte gjengangere med forskjellige
-        skrivemåter:
+        respondenter fra grafen. Likevel finnes det enkelte gjengangere med
+        forskjellige skrivemåter:
       </p>
       <ul class="list-decoration-disc">
         <li><p>Jobb med mening</p></li>
@@ -1178,10 +1176,10 @@
         stianhave@hotmail.com
       </p>
       <p>
-        Forhåpentligvis vil kode24 gi ut neste års data slik at vi får
-        muligheten til å grave litt dypere der det er behov. Det har vært en del
-        snakk om mangfold det siste året og det hadde vært interessant å sett
-        kjønn og etnisitet som en del av datagrunnlaget.
+        Forhåpentligvis vil kode24 også gi ut neste års data slik at vi får
+        muligheten til å grave litt dypere hvor det er behov. Det har vært en
+        del snakk om mangfold det siste året og det hadde vært interessant å
+        sett kjønn og etnisitet som en del av datagrunnlaget.
       </p>
     </section>
     <section #kode>
