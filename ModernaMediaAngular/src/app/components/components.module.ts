@@ -11,6 +11,7 @@ import { BookAMeetingModalComponent } from './book-ameeting-modal/book-ameeting-
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToastComponent } from './toast/toast.component';
 import { TjenesterListeComponent } from './tjenester-liste/tjenester-liste.component';
+import { AuthorComponent } from './author/author.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TjenesterListeComponent } from './tjenester-liste/tjenester-liste.compo
     BookAMeetingModalComponent,
     ToastComponent,
     TjenesterListeComponent,
+    AuthorComponent,
   ],
   imports: [CommonModule, ReactiveFormsModule],
   exports: [
@@ -34,6 +36,7 @@ import { TjenesterListeComponent } from './tjenester-liste/tjenester-liste.compo
     BloggThumbnailComponent,
     BookAMeetingModalComponent,
     ToastComponent,
+    AuthorComponent,
   ],
 })
 export class ComponentsModule {
