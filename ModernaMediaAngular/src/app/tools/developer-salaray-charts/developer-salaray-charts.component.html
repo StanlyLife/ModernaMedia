@@ -1,7 +1,9 @@
-<div class="wrapper">
+<div class="wrapper" itemscope itemtype="https://schema.org/Report">
   <article (window:resize)="onResize($event)">
     <div class="h1-wrapper">
-      <h1 class="title">Hva tjenete utviklere i 2021</h1>
+      <h1 class="title" itemprop="name" itemprop="about">
+        Hva tjente utviklere i 2021
+      </h1>
     </div>
     <p class="super">
       <span class="super">732.711kr</span>
@@ -101,7 +103,7 @@
         </li>
       </ul>
     </section>
-    <section class="forrord" id="forrord" #forrord>
+    <section class="forrord" id="forrord" #forrord itemprop="backstory">
       <div class="h2-wrapper">
         <h2>Forord</h2>
       </div>
@@ -126,8 +128,8 @@
         0kr, 0kr, 145 098kr, 0kr, 3 000 000kr og 0kr.
       </p>
       <p>
-        Dette førte til at vi gikk fra 1541 svar til 1529 svar, som er en økning
-        på hele 130% fra fjorårets 661 respondenter.
+        Dette førte til at vi gikk fra 1541 svar til 1529 svar. Dette er
+        fremdeles en økning på hele 130% fra fjorårets 661 respondenter.
       </p>
       <section #Sporsmalfraundersokelsen>
         <div class="h3-wrapper">
@@ -170,20 +172,21 @@
       </div>
       <img
         class="summary"
-        src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnittlig-utvikler-_1_.webp"
-        alt="Gjennomsnitts lønn for norske utviklere"
+        src="../../../assets/Images/Blogg/UtviklerLønn/Den gjennomsnittlige utvikleren i norge.jpg"
+        alt="Nøkkel tall om norsk utviklere basert på statistikk og grafer"
       />
       <section #utvikleren>
         <div class="h3-wrapper">
           <h3>Utvikleren</h3>
         </div>
         <p>
-          Dataen sett i oppsummeringen ovenfor er basert på dataen presentert og
-          er beregnet individuelt uten noen form for gruppering noe som kan
-          skape en vrangforestilling. Som vist så har aldersgruppen 25-29 år
-          flest respondenter, likevel er det flest respondenter med tittelen
-          senior. Realiteten er at de fleste seniorene i Norge er mellom 30 og
-          34 år.
+          Dataen sett i oppsummeringen/bildet ovenfor er basert på dataen
+          presentert i artikkelen og er beregnet individuelt uten noen form for
+          gruppering. Som vist har aldersgruppen 25-29 år flest respondenter,
+          likevel er det flest respondenter med tittelen senior. Dette betyr
+          ikke at gjennomsnittsalderen til seniorutviklere er mellom 25-29 år. I
+          realiteten er det størst forekomst av seniorer i aldersgruppen 30-34
+          år.
         </p>
         <p>
           Som man kan se av 1529 svar på undersøkelsen så er de fleste svarene
@@ -262,9 +265,9 @@
           gruppen utgjør nesten 18% av alle respondenter på undersøkelsen.
         </p>
         <p>
-          Fra grafen nedenfor kan man se de mest fagene med flest respondenter.
-          De fleste utvikleren jobber med fullstack-utvikling, etterfulgt av
-          backend og frontend.
+          Fra grafen nedenfor kan man se de ulike fagene med rangert etter
+          antall respondenter. De fleste utvikleren jobber med
+          fullstack-utvikling, etterfulgt av backend og frontend.
         </p>
         <div class="chart">
           <ngx-charts-bar-vertical
@@ -317,7 +320,7 @@
       </div>
       <img
         class="summary"
-        src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnitt-lønn-for-utvikler-_1_.webp"
+        src="../../../assets/Images/Blogg/UtviklerLønn/Gjennomsnitt-lønn-for-norsk-utvikler.jpg"
         alt="Gjennomsnitts lønn for norske utviklere"
       />
       <p>
@@ -359,12 +362,12 @@
           >
             2020 </a
           >. Dette gir en økning på 4.14% fra fjoråret, altså en reel vekst på
-          0.614% hvis man justerer for
+          -0.96% hvis man justerer for
           <a
             href="https://www.ssb.no/priser-og-prisindekser/konsumpriser/statistikk/konsumprisindeksen"
             rel="nofollow"
           >
-            konsumprisindeksen.
+            konsumprisindeksen (november 2021).
           </a>
         </p>
         <p>
@@ -580,13 +583,13 @@
             [showGridLines]="false"
           >
           </ngx-charts-bar-vertical>
-          <p class="subtext">lønn basert arbeidssted</p>
+          <p class="subtext">lønn basert på fylke man jobber i</p>
           <p class="subtext">respondenter i parantes</p>
         </div>
         <p>
-          Overraskende nok kommer Viken på topp med gjennomsnitt lønn på 757
-          813kr over Oslo som kommer på andreplass med en gjennomsnittslønn på
-          748 469kr.
+          Overraskende nok kommer Viken på topp med gjennomsnittslønn på
+          757.813kr over Oslo som kommer på andreplass med en gjennomsnittslønn
+          på 748.469kr.
         </p>
       </section>
       <section #Hvapavirkerutviklereslonn>
@@ -706,7 +709,7 @@
           I aldersgruppen 20-24 år så har de fleste 1 års erfaring. I
           alderskruppen 45-50 år er det størst forekomst av respondenter med 23
           års erfaring. Dette kan indikere at alder henger sammen med antall år
-          erfaring, noe som igjen kan peke på ferdighetsnivå.
+          erfaring, noe som igjen kan peke på ferdighetsnivå og lønn.
         </p>
         <div class="chart">
           <ngx-charts-bar-vertical
@@ -749,8 +752,9 @@
         erfaring. Her holder grafen seg stødig til og med 15 års erfaring før
         den avtar og utviklerne fordeles blant andre tittler. Som vist tidligere
         har arkitektene best betalt. Dessverre blir dataen mer komplisert å
-        analysere ettersom grupperingen fortynner ut respondentene, men vi kan
-        finne arkitekter med alt fra 1 års erfaring til og med 23 års erfaring.
+        analysere ettersom grupperingen tynner ut respondentene i gruppene, men
+        vi kan finne arkitekter med alt fra 1 års erfaring til og med 23 års
+        erfaring.
       </p>
 
       <div class="chart">
@@ -1078,7 +1082,7 @@
       <p>
         Stort sett er utviklere fornøyd med lønnen sin. Samtidig svarer 32% at
         de ikke er det. et tips til rekruttere kan være å inkludere lønnen for
-        stillingsutlysningen når de kontakter utviklere på LinkedIn.
+        stillingsutlysningen når de kontakter utviklere med ledige stillinger.
       </p>
       <p>
         De fleste er fornøyd med lønnen sin, men ønsker likevel å gå opp i lønn
@@ -1164,7 +1168,7 @@
     </section>
     <section #konklusjon>
       <div class="h2-wrapper">
-        <h2>konklusjon</h2>
+        <h2>Konklusjon</h2>
       </div>
       <p>
         Gjennom flere grafer og 40.092 datapunkter har vi sett at utviklere
@@ -1188,11 +1192,11 @@
       </div>
       <p>
         Jeg har valgt å legge ut resultatene på
-        <a href="modernamedia.no" rel="dofollow">modernamedia</a> ettersom jeg
-        allerede har en deploy pipeline og et domene tilgjengelig på dette
+        <a href="modernamedia.no" rel="dofollow">modernamedia</a> (WIP) ettersom
+        jeg allerede har en deploy pipeline og et domene tilgjengelig på dette
         prosjektet. Modernamedia.no er bygget på Angular universal og det ble da
         naturlig å bruke typescript for å kalkulere dataen til grafene. For å
-        vise grafene bruker jeg
+        vise grafene brukte jeg
         <a rel="nofollow" href="https://swimlane.gitbook.io/ngx-charts/"
           >ngx-charts</a
         >
@@ -1243,11 +1247,8 @@
           </li>
         </ul>
       </div>
+      <hr />
     </section>
   </article>
+  <app-author></app-author>
 </div>
-<img
-  src="../../../assets/Images/Blogg/UtviklerLønn/Utvikler-lonn.png"
-  alt="Utvikler lønn graf"
-  class="hidden"
-/>

@@ -241,18 +241,21 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       {
         name: 'description',
         content:
-          'Hva tjente utviklerne i 2021 og har det vært en generell økning fra 2020 og hvordan har corona pandemien påvirket dette?',
+          'Hva tjente utviklerne i 2021 og har det vært en generell økning fra 2020? hvorfor har de med bonus også mest lønn? Gjennom artikkelen vil vi se på data samlet fra 1529 utviklere i norge. Vi finner også hvilke fagområder som er best og dårligst betalt samtidig som vi ser på gjennomsnittslønnen til utviklere etter år med erfaring, alder og tittel',
+      },
+      {
+        name: 'author',
+        content: 'Stian Håve',
       },
       {
         name: 'og:description',
         content:
-          'Hva tjente utviklerne i 2021 og har det vært en generell økning fra 2020 og hvordan har corona pandemien påvirket dette?',
+          'Hva tjente utviklerne i 2021 og har det vært en generell økning fra 2020? hvorfor har de med bonus også mest lønn? Gjennom artikkelen vil vi se på data samlet fra 1529 utviklere i norge. Vi finner også hvilke fagområder som er best og dårligst betalt samtidig som vi ser på gjennomsnittslønnen til utviklere etter år med erfaring, alder og tittel',
       },
       { name: 'robots', content: 'index, follow' },
       {
         name: 'og:image',
-        content:
-          'https://modernamedia.no/assets/Images/Blogg/UtviklerL%C3%B8nn/Utvikler-lonn.png',
+        content: 'https://s10.gifyu.com/images/Utvikler-lonn.png',
       },
       { name: 'og:image:type', content: 'image/png' },
       { name: 'og:image:width', content: '828' },

@@ -167,3 +167,10 @@ ul.list-decoration-disc li {
     }
   }
 }
+
+hr {
+  border: none;
+  height: 2px;
+  border-radius: 500px;
+  background-color: $dark-transparent-30;
+}
