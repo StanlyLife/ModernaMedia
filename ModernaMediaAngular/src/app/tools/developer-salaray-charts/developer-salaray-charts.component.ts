@@ -233,8 +233,17 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     this.vw = width > 700 ? 700 : window.innerWidth / 1.1;
     var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
     this.view = [this.vw, height];
+  }
 
-    title.setTitle('Alt om utvikleres lønn og karriere i 2021');
+  onResize(event) {
+    var width = window.innerWidth / 1.1;
+    this.vw = width > 700 ? 700 : window.innerWidth / 1.1;
+    var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
+    this.view = [this.vw, height];
+  }
+
+  ngOnInit(): void {
+    this.title.setTitle('Alt om utvikleres lønn og karriere i 2021');
 
     this.seo.createLinkForCanonicalURL();
     this.meta.addTags([
@@ -261,16 +270,6 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       { name: 'og:image:width', content: '828' },
       { name: 'og:image:height', content: '470' },
     ]);
-  }
-
-  onResize(event) {
-    var width = window.innerWidth / 1.1;
-    this.vw = width > 700 ? 700 : window.innerWidth / 1.1;
-    var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
-    this.view = [this.vw, height];
-  }
-
-  ngOnInit(): void {
     this.FormatData();
   }
 
