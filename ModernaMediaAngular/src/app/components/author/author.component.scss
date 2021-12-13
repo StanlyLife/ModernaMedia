@@ -1,0 +1,40 @@
+@import "../../../variables.scss";
+.author {
+  width: 350px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  height: 100px;
+  padding: 5px 10px;
+  margin: 0 auto;
+
+  background-color: $dark;
+  background-color: $light;
+  box-shadow: $box-shadow-btn;
+  padding: 1rem 1.5rem;
+  font-family: mosk;
+  font-weight: 700;
+  border-radius: 5px;
+  margin: 7.5px auto;
+
+  .name {
+    font-family: "Mosk";
+    font-weight: 700;
+  }
+  .title,
+  .contact {
+    font-family: "plex";
+    font-weight: 400;
+  }
+
+  .img {
+    height: 100%;
+    img {
+      border-radius: 500px;
+      object-fit: contain;
+      width: auto;
+      height: 100%;
+    }
+  }
+}
