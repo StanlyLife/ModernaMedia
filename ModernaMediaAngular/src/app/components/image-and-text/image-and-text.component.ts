@@ -24,9 +24,6 @@ export class ImageAndTextComponent implements OnInit {
     'Hvordan vi tilbyr en <span>100% risikofri</span> prosess';
   public vw: any = 500;
   ngOnInit() {
-    this.vw =
-      this.wf.nativeWindow.innerWidth < this.wf.nativeWindow.innerHeight
-        ? this.wf.nativeWindow.innerHeight
-        : this.wf.nativeWindow.innerWidth;
+    this.vw = this.wf.width < this.wf.height ? this.wf.height : this.wf.width;
   }
 }

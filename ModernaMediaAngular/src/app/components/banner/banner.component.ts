@@ -58,10 +58,7 @@ export class BannerComponent implements OnInit {
 
   public vw: any = 1000;
   ngOnInit() {
-    this.vw =
-      this.wf.nativeWindow.innerWidth < this.wf.nativeWindow.innerHeight
-        ? this.wf.nativeWindow.innerHeight
-        : this.wf.nativeWindow.innerWidth;
+    this.vw = this.wf.width < this.wf.height ? this.wf.height : this.wf.width;
     this.UniqueSellingPoints = JSON.parse(this.UniqueSellingPoints);
     console.log(this.UniqueSellingPoints);
   }

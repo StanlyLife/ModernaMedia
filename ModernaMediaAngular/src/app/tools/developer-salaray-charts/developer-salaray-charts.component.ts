@@ -231,15 +231,15 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   ) {
     Object.assign(this, { DeveloperSalary });
 
-    var width = this.wf.nativeWindow.innerWidth / 1.1;
-    this.vw = width > 700 ? 700 : this.wf.nativeWindow.innerWidth / 1.1;
+    var width = this.wf.width / 1.1;
+    this.vw = width > 700 ? 700 : this.wf.width / 1.1;
     var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
     this.view = [this.vw, height];
   }
 
   onResize(event) {
-    var width = this.wf.nativeWindow.innerWidth / 1.1;
-    this.vw = width > 700 ? 700 : this.wf.nativeWindow.innerWidth / 1.1;
+    var width = this.wf.width / 1.1;
+    this.vw = width > 700 ? 700 : this.wf.width / 1.1;
     var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
     this.view = [this.vw, height];
   }

@@ -35,10 +35,7 @@ export class ImagePriceInfoComponent implements OnInit {
   public vw: any = 500;
   ngOnInit(): void {
     this.Product = JSON.parse(this.Product);
-    this.vw =
-      this.wf.nativeWindow.innerWidth < this.wf.nativeWindow.innerHeight
-        ? this.wf.nativeWindow.innerHeight
-        : this.wf.nativeWindow.innerWidth;
+    this.vw = this.wf.width < this.wf.height ? this.wf.height : this.wf.width;
     this.ContentOne = this.Product[this.indexOne];
     this.ContentOneImageSrc = this.ContentOne['imageSrc'];
 
