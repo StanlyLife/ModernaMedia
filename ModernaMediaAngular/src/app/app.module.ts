@@ -61,13 +61,11 @@ import { UtviklingModule } from './utvikling/utvikling.module';
         path: '',
         pathMatch: 'full',
         component: HomeComponent,
-        data: { animation: 'HomePage' },
       },
       { path: '**', redirectTo: 'error' },
       {
         path: 'error',
         component: NotFoundComponent,
-        data: { animation: 'AboutPage' },
       },
     ]),
   ],

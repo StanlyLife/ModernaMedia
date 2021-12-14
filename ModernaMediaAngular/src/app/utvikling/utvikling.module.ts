@@ -4,18 +4,14 @@ import { RouterModule } from '@angular/router';
 import { ComponentsModule } from './../components/components.module';
 import { UtviklingComponent } from './utvikling/utvikling.component';
 
-
-
 @NgModule({
-  declarations: [
-    UtviklingComponent,
-  ],
+  declarations: [UtviklingComponent],
   imports: [
     CommonModule,
     ComponentsModule,
     RouterModule.forRoot([
-      {path: 'utvikling', component: UtviklingComponent,data: {animation: "UtviklingPage"}},
-    ])
-  ]
+      { path: 'utvikling', component: UtviklingComponent },
+    ]),
+  ],
 })
-export class UtviklingModule { }
+export class UtviklingModule {}

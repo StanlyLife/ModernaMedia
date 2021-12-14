@@ -19,7 +19,4 @@ export class FooterComponent implements OnInit {
       inline: 'nearest',
     });
   }
-  scrollToTop(): void {
-    this.wf.nativeWindow.scrollTo({ top: 0, behavior: 'smooth' });
-  }
 }

@@ -15,7 +15,6 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
       {
         path: 'artikkel/utviklerlonn',
         component: DeveloperSalarayChartsComponent,
-        data: { animation: 'UtviklingPage' },
       },
     ]),
   ],
