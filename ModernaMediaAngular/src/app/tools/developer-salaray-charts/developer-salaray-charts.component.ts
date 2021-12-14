@@ -1,3 +1,4 @@
+import { WindowRefService } from './../../services/window-ref.service';
 import { DeveloperSalary } from './../../../assets/data/DeveloperSalary';
 import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
@@ -225,19 +226,20 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   constructor(
     private meta: Meta,
     private title: Title,
-    private seo: SeoService
+    private seo: SeoService,
+    private wf: WindowRefService
   ) {
     Object.assign(this, { DeveloperSalary });
 
-    var width = window.innerWidth / 1.1;
-    this.vw = width > 700 ? 700 : window.innerWidth / 1.1;
+    var width = this.wf.nativeWindow.innerWidth / 1.1;
+    this.vw = width > 700 ? 700 : this.wf.nativeWindow.innerWidth / 1.1;
     var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
     this.view = [this.vw, height];
   }
 
   onResize(event) {
-    var width = window.innerWidth / 1.1;
-    this.vw = width > 700 ? 700 : window.innerWidth / 1.1;
+    var width = this.wf.nativeWindow.innerWidth / 1.1;
+    this.vw = width > 700 ? 700 : this.wf.nativeWindow.innerWidth / 1.1;
     var height = this.vw / 0.75 > 400 ? 400 : this.vw / 0.75;
     this.view = [this.vw, height];
   }

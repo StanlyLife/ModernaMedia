@@ -1,4 +1,4 @@
-import { ToastService } from './../../services/toast.service';
+import { WindowRefService } from './../../services/window-ref.service';
 import { CTAMeetingService } from './../../services/ctameeting.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from './../../../environments/environment.prod';
@@ -13,7 +13,10 @@ import { environment } from './../../../environments/environment.prod';
 })
 export class LandingpageComponent implements OnInit {
   imageCdn = environment.img;
-  constructor(private ctaService: CTAMeetingService) {}
+  constructor(
+    private ctaService: CTAMeetingService,
+    private wf: WindowRefService
+  ) {}
 
   public vw: any = 500;
 
@@ -23,8 +26,8 @@ export class LandingpageComponent implements OnInit {
 
   ngOnInit() {
     this.vw =
-      window.innerWidth < window.innerHeight
-        ? window.innerHeight
-        : window.innerWidth;
+      this.wf.nativeWindow.innerWidth < this.wf.nativeWindow.innerHeight
+        ? this.wf.nativeWindow.innerHeight
+        : this.wf.nativeWindow.innerWidth;
   }
 }

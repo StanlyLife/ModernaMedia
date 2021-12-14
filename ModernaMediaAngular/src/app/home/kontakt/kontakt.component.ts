@@ -1,18 +1,21 @@
+import { WindowRefService } from './../../services/window-ref.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from './../../../environments/environment.prod';
 
 @Component({
   selector: 'app-kontakt',
   templateUrl: './kontakt.component.html',
-  styleUrls: ['./kontakt.component.scss', './kontakt.desktop.component.scss']
+  styleUrls: ['./kontakt.component.scss', './kontakt.desktop.component.scss'],
 })
 export class KontaktComponent implements OnInit {
-imageCdn = environment.img;
-  constructor() { }
+  imageCdn = environment.img;
+  constructor(private wf: WindowRefService) {}
 
   public vw: any = 500;
   ngOnInit() {
-      this.vw = window.innerWidth < window.innerHeight ? window.innerHeight : window.innerWidth;
+    this.vw =
+      this.wf.nativeWindow.innerWidth < this.wf.nativeWindow.innerHeight
+        ? this.wf.nativeWindow.innerHeight
+        : this.wf.nativeWindow.innerWidth;
   }
-
 }
