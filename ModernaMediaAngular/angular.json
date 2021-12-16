@@ -130,6 +130,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
+            "optimization": true,
             "outputPath": "dist/ModernaMediaAngular/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
