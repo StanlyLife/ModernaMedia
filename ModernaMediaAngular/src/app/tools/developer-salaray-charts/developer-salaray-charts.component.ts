@@ -2742,566 +2742,566 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     });
   }
 
-  FormatData() {
-    this.UpdateKeys();
-    this.UpdateValues();
-    this.FixSalaries();
+  // FormatData() {
+  //   this.UpdateKeys();
+  //   this.UpdateValues();
+  //   this.FixSalaries();
 
-    this.GetAverageNumberValueBasedOnType('age', 'salary', true, null);
+  //   this.GetAverageNumberValueBasedOnType('age', 'salary', true, null);
 
-    this.RespondantsByAge = this.GetResponsesBasedOnType('age', '', null, null);
-    // this.RespondantsByLocation = this.SortByValue(
-    //   this.GetResponsesBasedOnType('county', '', null, null)
-    // );
-    // console.log(this.RespondantsByLocation);
-    // this.RespondantsByAgeByLocation = this.GetResponsesBasedOnTypeByGroup(
-    //   'age',
-    //   'county',
-    //   this.GetListOfAnswersFor('county'),
-    //   'county'
-    // );
-    // console.log(this.RespondantsByAgeByLocation);
-    // this.ValueSalaryByAge = this.GetAverageNumberValueBasedOnType(
-    //   'age',
-    //   'salary',
-    //   null,
-    //   null
-    // );
-    // this.RespondantsByAgeByBonus = this.GetResponsesBasedOnTypeByGroup(
-    //   'bonus',
-    //   'age',
-    //   this.GetListOfAnswersFor('age'),
-    //   'age'
-    // );
-    // console.log(this.RespondantsByAgeByBonus);
-    // this.RespondantsBySectorByBonus = this.GetResponsesBasedOnTypeByGroup(
-    //   'bonus',
-    //   'sector',
-    //   this.GetListOfAnswersFor('sector'),
-    //   'sector'
-    // );
-    // console.log(this.RespondantsBySectorByBonus);
-    // this.RespondantsBySector = this.SortByValue(
-    //   this.GetResponsesBasedOnType('sector', '', null, null)
-    // );
-    // console.log(this.RespondantsBySector);
-    // this.RespondantsByType = this.SortByValue(
-    //   this.GetResponsesBasedOnType('type', '', null, null)
-    // );
-    // console.log(this.RespondantsByType);
-    // this.RespondantsByWork = this.SortByValue(
-    //   this.GetResponsesBasedOnType('work', '', null, null)
-    // );
-    // console.log('this.RespondantsByWork');
-    // console.log(this.RespondantsByWork);
-    // this.ValueSalaryByWork = this.SortByValue(
-    //   this.GetAverageNumberValueBasedOnType('work', 'salary', null, null)
-    // );
-    // console.log('this.ValueSalaryByWork');
-    // console.log(this.ValueSalaryByWork);
-    // this.ValueSalaryByBonusByAge =
-    //   this.GetAverageNumberValueBasedOnTypeByGroupWithResponses(
-    //     'bonus',
-    //     'salary',
-    //     this.GetListOfAnswersFor('age'),
-    //     'age'
-    //   );
-    // console.log('this.ValueSalaryByBonusByAge');
-    // console.log(this.ValueSalaryByBonusByAge);
-    // this.RespondantsBySkillImportance = this.GetResponsesBasedOnType(
-    //   'skillImportance',
-    //   '',
-    //   null,
-    //   null
-    // );
-    // console.log('this.RespondantsBySkillImportance');
-    // console.log(this.RespondantsBySkillImportance);
-    // this.RespondantsByAgeImportance = this.GetResponsesBasedOnType(
-    //   'ageImportance',
-    //   '',
-    //   null,
-    //   null
-    // );
-    // console.log('this.RespondantsByAgeImportance');
-    // console.log(this.RespondantsByAgeImportance);
-    // this.RespondantsByTitleImportance = this.GetResponsesBasedOnType(
-    //   'titleImportance',
-    //   '',
-    //   null,
-    //   null
-    // );
-    // console.log('this.RespondantsByTitleImportance');
-    // console.log(this.RespondantsByTitleImportance);
-    // this.ValueSalaryByYoe = this.GetAverageNumberValueBasedOnType(
-    //   'yoe',
-    //   'salary',
-    //   true,
-    //   null
-    // );
-    // console.log('this.ValueSalaryByYoe');
-    // console.log(this.ValueSalaryByYoe);
-    // this.RespondantsShareSalary = this.SortByValue(
-    //   this.GetResponsesBasedOnType('shareSalary', '', null, null)
-    // );
-    // console.log('this.RespondantsShareSalary');
-    // console.log(this.RespondantsShareSalary);
-    // this.RespondantsAskSalary = this.GetResponsesBasedOnType(
-    //   'askSalary',
-    //   '',
-    //   null,
-    //   null
-    // );
-    // console.log('this.RespondantsAskSalary');
-    // console.log(this.RespondantsAskSalary);
-    // this.RespondantsOpenSalary = this.GetResponsesBasedOnType(
-    //   'openSalary',
-    //   '',
-    //   null,
-    //   null
-    // );
-    // console.log('this.RespondantsOpenSalary');
-    // console.log(this.RespondantsOpenSalary);
-    // this.RespondantsAskSalaryByShareSalary =
-    //   this.GetResponsesBasedOnTypeByGroup(
-    //     'shareSalary',
-    //     'askSalary',
-    //     this.GetListOfAnswersFor('askSalary'),
-    //     'askSalary'
-    //   );
-    // console.log('this.RespondantsAskSalaryByShareSalary');
-    // console.log(this.RespondantsAskSalaryByShareSalary);
-    // this.RespondantsAgeByTitle = this.GetResponsesBasedOnTypeByGroup(
-    //   'age',
-    //   'title',
-    //   this.GetListOfAnswersFor('title'),
-    //   'title'
-    // );
-    // console.log('this.RespondantsAgeByTitle');
-    // console.log(this.RespondantsAgeByTitle);
-    // this.RespondantsAgeByTitle = this.RespondantsAgeByTitle.filter(function (
-    //   obj
-    // ) {
-    //   return obj.name !== 'nei';
-    // });
-    // console.log('this.RespondantsAgeByTitle');
-    // console.log(this.RespondantsAgeByTitle);
-    // this.RespondantsYoeByTitle = this.GetResponsesBasedOnTypeByGroup(
-    //   'yoe',
-    //   'title',
-    //   this.GetListOfAnswersFor('title'),
-    //   'title'
-    // );
-    // this.RespondantsYoeByTitle = this.RespondantsYoeByTitle.filter(function (
-    //   obj
-    // ) {
-    //   return obj.name !== 'nei';
-    // });
-    // console.log('this.RespondantsYoeByTitle');
-    // console.log(this.RespondantsYoeByTitle);
-    // this.RespondantsYoeByAge = this.RemoveLowRespondants(
-    //   this.GetResponsesBasedOnTypeByGroup(
-    //     'yoe',
-    //     'age',
-    //     this.GetListOfAnswersFor('age'),
-    //     'age'
-    //   ),
-    //   3,
-    //   'value'
-    // );
-    // console.log('this.RespondantsYoeByAge');
-    // console.log(this.RespondantsYoeByAge);
-    // this.RespondantsSalaryHappy = this.GetResponsesBasedOnType(
-    //   'salaryhappy',
-    //   '',
-    //   null,
-    //   null
-    // );
-    // console.log('this.RespondantsSalaryHappy');
-    // console.log(this.RespondantsSalaryHappy);
-    // this.RespondantsSalaryIncreaseByJobChange = this.GetResponsesBasedOnType(
-    //   'salaryIncreaseByJobChange',
-    //   '',
-    //   null,
-    //   null
-    // );
-    // console.log('this.RespondantsSalaryIncreaseByJobChange');
-    // console.log(this.RespondantsSalaryIncreaseByJobChange);
-    this.RespondantsGoods = this.GetResponsesBasedOnTypeSplit(
-      'goods',
-      '',
-      null,
-      null
-    );
-    console.log('this.RespondantsGoods');
-    console.log(this.RespondantsGoods);
-    this.ValueSalaryByYoeAge = this.RemoveLowRespondants(
-      this.GetAverageNumberValueBasedOnTypeByGroupWithResponses(
-        'yoe',
-        'salary',
-        this.GetListOfAnswersFor('age'),
-        'age'
-      ),
-      3,
-      'response'
-    );
-    console.log('this.ValueSalaryByYoeAge');
-    console.log(this.ValueSalaryByYoeAge);
-    this.ValueSalaryByCounty = this.SortByValue(
-      this.GetAverageNumberValueBasedOnType('county', 'salary', true, null)
-    );
-    console.log('this.ValueSalaryByCounty');
-    console.log(this.ValueSalaryByCounty);
+  //   this.RespondantsByAge = this.GetResponsesBasedOnType('age', '', null, null);
+  //   // this.RespondantsByLocation = this.SortByValue(
+  //   //   this.GetResponsesBasedOnType('county', '', null, null)
+  //   // );
+  //   // console.log(this.RespondantsByLocation);
+  //   // this.RespondantsByAgeByLocation = this.GetResponsesBasedOnTypeByGroup(
+  //   //   'age',
+  //   //   'county',
+  //   //   this.GetListOfAnswersFor('county'),
+  //   //   'county'
+  //   // );
+  //   // console.log(this.RespondantsByAgeByLocation);
+  //   // this.ValueSalaryByAge = this.GetAverageNumberValueBasedOnType(
+  //   //   'age',
+  //   //   'salary',
+  //   //   null,
+  //   //   null
+  //   // );
+  //   // this.RespondantsByAgeByBonus = this.GetResponsesBasedOnTypeByGroup(
+  //   //   'bonus',
+  //   //   'age',
+  //   //   this.GetListOfAnswersFor('age'),
+  //   //   'age'
+  //   // );
+  //   // console.log(this.RespondantsByAgeByBonus);
+  //   // this.RespondantsBySectorByBonus = this.GetResponsesBasedOnTypeByGroup(
+  //   //   'bonus',
+  //   //   'sector',
+  //   //   this.GetListOfAnswersFor('sector'),
+  //   //   'sector'
+  //   // );
+  //   // console.log(this.RespondantsBySectorByBonus);
+  //   // this.RespondantsBySector = this.SortByValue(
+  //   //   this.GetResponsesBasedOnType('sector', '', null, null)
+  //   // );
+  //   // console.log(this.RespondantsBySector);
+  //   // this.RespondantsByType = this.SortByValue(
+  //   //   this.GetResponsesBasedOnType('type', '', null, null)
+  //   // );
+  //   // console.log(this.RespondantsByType);
+  //   // this.RespondantsByWork = this.SortByValue(
+  //   //   this.GetResponsesBasedOnType('work', '', null, null)
+  //   // );
+  //   // console.log('this.RespondantsByWork');
+  //   // console.log(this.RespondantsByWork);
+  //   // this.ValueSalaryByWork = this.SortByValue(
+  //   //   this.GetAverageNumberValueBasedOnType('work', 'salary', null, null)
+  //   // );
+  //   // console.log('this.ValueSalaryByWork');
+  //   // console.log(this.ValueSalaryByWork);
+  //   // this.ValueSalaryByBonusByAge =
+  //   //   this.GetAverageNumberValueBasedOnTypeByGroupWithResponses(
+  //   //     'bonus',
+  //   //     'salary',
+  //   //     this.GetListOfAnswersFor('age'),
+  //   //     'age'
+  //   //   );
+  //   // console.log('this.ValueSalaryByBonusByAge');
+  //   // console.log(this.ValueSalaryByBonusByAge);
+  //   // this.RespondantsBySkillImportance = this.GetResponsesBasedOnType(
+  //   //   'skillImportance',
+  //   //   '',
+  //   //   null,
+  //   //   null
+  //   // );
+  //   // console.log('this.RespondantsBySkillImportance');
+  //   // console.log(this.RespondantsBySkillImportance);
+  //   // this.RespondantsByAgeImportance = this.GetResponsesBasedOnType(
+  //   //   'ageImportance',
+  //   //   '',
+  //   //   null,
+  //   //   null
+  //   // );
+  //   // console.log('this.RespondantsByAgeImportance');
+  //   // console.log(this.RespondantsByAgeImportance);
+  //   // this.RespondantsByTitleImportance = this.GetResponsesBasedOnType(
+  //   //   'titleImportance',
+  //   //   '',
+  //   //   null,
+  //   //   null
+  //   // );
+  //   // console.log('this.RespondantsByTitleImportance');
+  //   // console.log(this.RespondantsByTitleImportance);
+  //   // this.ValueSalaryByYoe = this.GetAverageNumberValueBasedOnType(
+  //   //   'yoe',
+  //   //   'salary',
+  //   //   true,
+  //   //   null
+  //   // );
+  //   // console.log('this.ValueSalaryByYoe');
+  //   // console.log(this.ValueSalaryByYoe);
+  //   // this.RespondantsShareSalary = this.SortByValue(
+  //   //   this.GetResponsesBasedOnType('shareSalary', '', null, null)
+  //   // );
+  //   // console.log('this.RespondantsShareSalary');
+  //   // console.log(this.RespondantsShareSalary);
+  //   // this.RespondantsAskSalary = this.GetResponsesBasedOnType(
+  //   //   'askSalary',
+  //   //   '',
+  //   //   null,
+  //   //   null
+  //   // );
+  //   // console.log('this.RespondantsAskSalary');
+  //   // console.log(this.RespondantsAskSalary);
+  //   // this.RespondantsOpenSalary = this.GetResponsesBasedOnType(
+  //   //   'openSalary',
+  //   //   '',
+  //   //   null,
+  //   //   null
+  //   // );
+  //   // console.log('this.RespondantsOpenSalary');
+  //   // console.log(this.RespondantsOpenSalary);
+  //   // this.RespondantsAskSalaryByShareSalary =
+  //   //   this.GetResponsesBasedOnTypeByGroup(
+  //   //     'shareSalary',
+  //   //     'askSalary',
+  //   //     this.GetListOfAnswersFor('askSalary'),
+  //   //     'askSalary'
+  //   //   );
+  //   // console.log('this.RespondantsAskSalaryByShareSalary');
+  //   // console.log(this.RespondantsAskSalaryByShareSalary);
+  //   // this.RespondantsAgeByTitle = this.GetResponsesBasedOnTypeByGroup(
+  //   //   'age',
+  //   //   'title',
+  //   //   this.GetListOfAnswersFor('title'),
+  //   //   'title'
+  //   // );
+  //   // console.log('this.RespondantsAgeByTitle');
+  //   // console.log(this.RespondantsAgeByTitle);
+  //   // this.RespondantsAgeByTitle = this.RespondantsAgeByTitle.filter(function (
+  //   //   obj
+  //   // ) {
+  //   //   return obj.name !== 'nei';
+  //   // });
+  //   // console.log('this.RespondantsAgeByTitle');
+  //   // console.log(this.RespondantsAgeByTitle);
+  //   // this.RespondantsYoeByTitle = this.GetResponsesBasedOnTypeByGroup(
+  //   //   'yoe',
+  //   //   'title',
+  //   //   this.GetListOfAnswersFor('title'),
+  //   //   'title'
+  //   // );
+  //   // this.RespondantsYoeByTitle = this.RespondantsYoeByTitle.filter(function (
+  //   //   obj
+  //   // ) {
+  //   //   return obj.name !== 'nei';
+  //   // });
+  //   // console.log('this.RespondantsYoeByTitle');
+  //   // console.log(this.RespondantsYoeByTitle);
+  //   // this.RespondantsYoeByAge = this.RemoveLowRespondants(
+  //   //   this.GetResponsesBasedOnTypeByGroup(
+  //   //     'yoe',
+  //   //     'age',
+  //   //     this.GetListOfAnswersFor('age'),
+  //   //     'age'
+  //   //   ),
+  //   //   3,
+  //   //   'value'
+  //   // );
+  //   // console.log('this.RespondantsYoeByAge');
+  //   // console.log(this.RespondantsYoeByAge);
+  //   // this.RespondantsSalaryHappy = this.GetResponsesBasedOnType(
+  //   //   'salaryhappy',
+  //   //   '',
+  //   //   null,
+  //   //   null
+  //   // );
+  //   // console.log('this.RespondantsSalaryHappy');
+  //   // console.log(this.RespondantsSalaryHappy);
+  //   // this.RespondantsSalaryIncreaseByJobChange = this.GetResponsesBasedOnType(
+  //   //   'salaryIncreaseByJobChange',
+  //   //   '',
+  //   //   null,
+  //   //   null
+  //   // );
+  //   // console.log('this.RespondantsSalaryIncreaseByJobChange');
+  //   // console.log(this.RespondantsSalaryIncreaseByJobChange);
+  //   this.RespondantsGoods = this.GetResponsesBasedOnTypeSplit(
+  //     'goods',
+  //     '',
+  //     null,
+  //     null
+  //   );
+  //   console.log('this.RespondantsGoods');
+  //   console.log(this.RespondantsGoods);
+  //   this.ValueSalaryByYoeAge = this.RemoveLowRespondants(
+  //     this.GetAverageNumberValueBasedOnTypeByGroupWithResponses(
+  //       'yoe',
+  //       'salary',
+  //       this.GetListOfAnswersFor('age'),
+  //       'age'
+  //     ),
+  //     3,
+  //     'response'
+  //   );
+  //   console.log('this.ValueSalaryByYoeAge');
+  //   console.log(this.ValueSalaryByYoeAge);
+  //   this.ValueSalaryByCounty = this.SortByValue(
+  //     this.GetAverageNumberValueBasedOnType('county', 'salary', true, null)
+  //   );
+  //   console.log('this.ValueSalaryByCounty');
+  //   console.log(this.ValueSalaryByCounty);
 
-    this.DeveloperSalaryReady = true;
-  }
+  //   this.DeveloperSalaryReady = true;
+  // }
 
-  private SortByValue(arr) {
-    return arr.sort((a, b) =>
-      a.value < b.value ? 1 : b.value < a.value ? -1 : 0
-    );
-  }
-  private RemoveLowRespondants(arr, responses, val) {
-    var newArr = [];
-    arr = arr.forEach((obj) => {
-      obj.series = obj.series.filter(function (obj) {
-        return obj[val] > responses;
-      });
-      var newObj = { name: obj.name, series: obj.series };
-      newArr.push(newObj);
-    });
-    return newArr;
-  }
+  // private SortByValue(arr) {
+  //   return arr.sort((a, b) =>
+  //     a.value < b.value ? 1 : b.value < a.value ? -1 : 0
+  //   );
+  // }
+  // private RemoveLowRespondants(arr, responses, val) {
+  //   var newArr = [];
+  //   arr = arr.forEach((obj) => {
+  //     obj.series = obj.series.filter(function (obj) {
+  //       return obj[val] > responses;
+  //     });
+  //     var newObj = { name: obj.name, series: obj.series };
+  //     newArr.push(newObj);
+  //   });
+  //   return newArr;
+  // }
 
-  //#region functions
-  private FixSalaries() {
-    var arr = [];
-    this.DF.forEach((obj) => {
-      if (obj.salary < 2000000 && obj.salary > 300000) {
-        arr.push({ ...obj });
-      }
-    });
-    arr.sort((a, b) =>
-      a.salary > b.salary ? 1 : b.salary > a.salary ? -1 : 0
-    );
-    this.DF = arr;
-  }
-  private UpdateKeys() {
-    this.DF = this.DeveloperSalary.map(
-      ({
-        'Hva er din alder?': age,
-        'I hvilket fylke ligger jobben din?': county,
-        'Hva beskriver best din arbeidssituasjon?': type,
-        'Er du ansatt i det offentlige eller private næringsliv?': sector,
-        'Hvor mange års relevant, formell utdannelse har du?': education,
-        'Hvor mange års relevant arbeidserfaring har du?': yoe,
-        'Hva jobber du mest med?': work,
-        'Har du en av disse begrepene i stillingstittelen din?': title,
-        'Hva er din grunnlønn? (årslønn før skatt, uten eventuelle bonuser eller overtidsbetaling)':
-          salary,
-        'Er du organisert? (Altså medlem av en forening som Tekna, El&it, Nito osv)':
-          union,
-        'Pleier du å få mer utbetalt enn grunnlønn på grunn av overtidsbetaling?':
-          overtime,
-        'Har du en bonusordning hos din nåværende arbeidsgiver?': bonus,
-        'Sist du gikk opp i lønn, hvordan skjedde det? (altså en helt ny lønn eller en lønnsjustering utover indeksregulering, sentrale oppgjør osv.)':
-          raise,
-        'Alt i alt - er du fornøyd med din egen lønn?': salaryhappy,
-        'Om du skal bytte jobb, hvilke goder kan være like viktig som lønn?':
-          goods,
-        'Skal jeg bytte jobb, skal jeg også opp i lønn.':
-          salaryIncreaseByJobChange,
-        'Hvor mye man tjener avhenger av hvor flink man er i jobben sin.':
-          skillImportance,
-        'Hvor mye man tjener avhenger av hvilken tittel man har.':
-          titleImportance,
-        'Hvor mye man tjener avhenger av hvor gammel man er." (Altså uavhengig av erfaring og fartstid i selskapet)':
-          ageImportance,
-        'Utviklere er blant de som tjener mest på arbeidsplassen min.':
-          developersEarnMost,
-        'Jeg tror jeg hadde tjent mer nå om det ikke hadde vært for korona." (for eksempel på grunn av manglende lønnsjustering, mindre aktuelt å bytte jobb, osv)':
-          salaryCorona,
-        'Jeg synes man bør tjene mer om man jobber hjemmefra.': wfhMore,
-        'Jeg synes man bør tjene mindre om man jobber hjemmefra.': wfhLess,
-        'Jeg tror kjønn i seg selv spiller inn i hvor mye man tjener.': gender,
-        'Om noen spør, synes jeg det er greit å fortelle kolleger hva jeg tjener.':
-          shareSalary,
-        'Jeg synes det er greit å spørre kolleger hva de tjener.': askSalary,
-        'Vi burde ha mer åpenhet på en arbeidsplass om hva vi tjener.':
-          openSalary,
-        ...rest
-      }) => ({
-        age,
-        county,
-        type,
-        sector,
-        education,
-        yoe,
-        work,
-        title,
-        salary,
-        union,
-        overtime,
-        bonus,
-        raise,
-        salaryhappy,
-        goods,
-        salaryIncreaseByJobChange,
-        skillImportance,
-        titleImportance,
-        ageImportance,
-        developersEarnMost,
-        salaryCorona,
-        wfhMore,
-        wfhLess,
-        gender,
-        shareSalary,
-        askSalary,
-        openSalary,
-        ...rest,
-      })
-    );
-  }
-  private UpdateValues() {
-    this.DF.forEach((obj) => {
-      obj.salary = obj.salary.replace(',00 kr', '');
-      obj.salary = obj.salary.replace(/\s/g, '');
-      obj.salary = parseInt(obj.salary);
-    });
-  }
-  private GetResponsesBasedOnTypeSplit(name, value, response, arr) {
-    var dataArray = arr || this.DF;
+  // //#region functions
+  // private FixSalaries() {
+  //   var arr = [];
+  //   this.DF.forEach((obj) => {
+  //     if (obj.salary < 2000000 && obj.salary > 300000) {
+  //       arr.push({ ...obj });
+  //     }
+  //   });
+  //   arr.sort((a, b) =>
+  //     a.salary > b.salary ? 1 : b.salary > a.salary ? -1 : 0
+  //   );
+  //   this.DF = arr;
+  // }
+  // private UpdateKeys() {
+  //   this.DF = this.DeveloperSalary.map(
+  //     ({
+  //       'Hva er din alder?': age,
+  //       'I hvilket fylke ligger jobben din?': county,
+  //       'Hva beskriver best din arbeidssituasjon?': type,
+  //       'Er du ansatt i det offentlige eller private næringsliv?': sector,
+  //       'Hvor mange års relevant, formell utdannelse har du?': education,
+  //       'Hvor mange års relevant arbeidserfaring har du?': yoe,
+  //       'Hva jobber du mest med?': work,
+  //       'Har du en av disse begrepene i stillingstittelen din?': title,
+  //       'Hva er din grunnlønn? (årslønn før skatt, uten eventuelle bonuser eller overtidsbetaling)':
+  //         salary,
+  //       'Er du organisert? (Altså medlem av en forening som Tekna, El&it, Nito osv)':
+  //         union,
+  //       'Pleier du å få mer utbetalt enn grunnlønn på grunn av overtidsbetaling?':
+  //         overtime,
+  //       'Har du en bonusordning hos din nåværende arbeidsgiver?': bonus,
+  //       'Sist du gikk opp i lønn, hvordan skjedde det? (altså en helt ny lønn eller en lønnsjustering utover indeksregulering, sentrale oppgjør osv.)':
+  //         raise,
+  //       'Alt i alt - er du fornøyd med din egen lønn?': salaryhappy,
+  //       'Om du skal bytte jobb, hvilke goder kan være like viktig som lønn?':
+  //         goods,
+  //       'Skal jeg bytte jobb, skal jeg også opp i lønn.':
+  //         salaryIncreaseByJobChange,
+  //       'Hvor mye man tjener avhenger av hvor flink man er i jobben sin.':
+  //         skillImportance,
+  //       'Hvor mye man tjener avhenger av hvilken tittel man har.':
+  //         titleImportance,
+  //       'Hvor mye man tjener avhenger av hvor gammel man er." (Altså uavhengig av erfaring og fartstid i selskapet)':
+  //         ageImportance,
+  //       'Utviklere er blant de som tjener mest på arbeidsplassen min.':
+  //         developersEarnMost,
+  //       'Jeg tror jeg hadde tjent mer nå om det ikke hadde vært for korona." (for eksempel på grunn av manglende lønnsjustering, mindre aktuelt å bytte jobb, osv)':
+  //         salaryCorona,
+  //       'Jeg synes man bør tjene mer om man jobber hjemmefra.': wfhMore,
+  //       'Jeg synes man bør tjene mindre om man jobber hjemmefra.': wfhLess,
+  //       'Jeg tror kjønn i seg selv spiller inn i hvor mye man tjener.': gender,
+  //       'Om noen spør, synes jeg det er greit å fortelle kolleger hva jeg tjener.':
+  //         shareSalary,
+  //       'Jeg synes det er greit å spørre kolleger hva de tjener.': askSalary,
+  //       'Vi burde ha mer åpenhet på en arbeidsplass om hva vi tjener.':
+  //         openSalary,
+  //       ...rest
+  //     }) => ({
+  //       age,
+  //       county,
+  //       type,
+  //       sector,
+  //       education,
+  //       yoe,
+  //       work,
+  //       title,
+  //       salary,
+  //       union,
+  //       overtime,
+  //       bonus,
+  //       raise,
+  //       salaryhappy,
+  //       goods,
+  //       salaryIncreaseByJobChange,
+  //       skillImportance,
+  //       titleImportance,
+  //       ageImportance,
+  //       developersEarnMost,
+  //       salaryCorona,
+  //       wfhMore,
+  //       wfhLess,
+  //       gender,
+  //       shareSalary,
+  //       askSalary,
+  //       openSalary,
+  //       ...rest,
+  //     })
+  //   );
+  // }
+  // private UpdateValues() {
+  //   this.DF.forEach((obj) => {
+  //     obj.salary = obj.salary.replace(',00 kr', '');
+  //     obj.salary = obj.salary.replace(/\s/g, '');
+  //     obj.salary = parseInt(obj.salary);
+  //   });
+  // }
+  // private GetResponsesBasedOnTypeSplit(name, value, response, arr) {
+  //   var dataArray = arr || this.DF;
 
-    var results = [];
-    dataArray.forEach((obj) => {
-      let valg = obj[name].split(',');
-      var path = valg.map((x) => x.trim());
-      path.forEach((v) => {
-        var found = false;
-        for (var i = 0; i < results.length; i++) {
-          if (results[i].name == v) {
-            results[i].value++;
-            found = true;
-            break;
-          }
-        }
-        if (!found) {
-          var o = { name: v, value: 1 };
-          results.push(o);
-        }
-      });
-    });
-    results = results.filter(function (obj) {
-      return obj.value > 5;
-    });
-    results.sort((a, b) =>
-      a.value > b.value ? 1 : b.value > a.value ? -1 : 0
-    );
-    return results;
-  }
-  private GetResponsesBasedOnType(name, value, response, arr) {
-    var dataArray = arr || this.DF;
-    const reduced = dataArray.reduce(function (m, d) {
-      if (!m[d[name]]) {
-        m[d[name]] = { ...d, count: 1 };
-        return m;
-      }
-      m[d[name]][value] += d[value];
-      m[d[name]].count += 1;
-      return m;
-    }, {});
+  //   var results = [];
+  //   dataArray.forEach((obj) => {
+  //     let valg = obj[name].split(',');
+  //     var path = valg.map((x) => x.trim());
+  //     path.forEach((v) => {
+  //       var found = false;
+  //       for (var i = 0; i < results.length; i++) {
+  //         if (results[i].name == v) {
+  //           results[i].value++;
+  //           found = true;
+  //           break;
+  //         }
+  //       }
+  //       if (!found) {
+  //         var o = { name: v, value: 1 };
+  //         results.push(o);
+  //       }
+  //     });
+  //   });
+  //   results = results.filter(function (obj) {
+  //     return obj.value > 5;
+  //   });
+  //   results.sort((a, b) =>
+  //     a.value > b.value ? 1 : b.value > a.value ? -1 : 0
+  //   );
+  //   return results;
+  // }
+  // private GetResponsesBasedOnType(name, value, response, arr) {
+  //   var dataArray = arr || this.DF;
+  //   const reduced = dataArray.reduce(function (m, d) {
+  //     if (!m[d[name]]) {
+  //       m[d[name]] = { ...d, count: 1 };
+  //       return m;
+  //     }
+  //     m[d[name]][value] += d[value];
+  //     m[d[name]].count += 1;
+  //     return m;
+  //   }, {});
 
-    // Create new array from grouped data and compute the average
-    let result = Object.keys(reduced).map(function (k) {
-      const item = reduced[k];
-      return {
-        name: item[name],
-        value: item.count,
-      };
-    });
-    return result;
-  }
-  private GetListOfAnswersFor(key) {
-    const unique = [...new Set(this.DF.map((item) => item[key]))];
-    let unqiqueObjects = [];
-    unique.forEach((u) => {
-      var o = { name: key, value: u };
-      unqiqueObjects.push(o);
-    });
-    return unique;
-  }
-  private GetListOfAnswersWhereKeyIs(key, value) {
-    let ListOfAnswers = [];
-    this.DF.forEach((u) => {
-      if (u[key] == value) {
-        ListOfAnswers.push(u);
-      }
-    });
-    return ListOfAnswers;
-  }
-  //#region ValueBasedOnType
-  private GetAverageNumberValueBasedOnType(name, value, responses, arr) {
-    var dataArray = arr || this.DF;
-    let reduced = dataArray.reduce(function (m, d) {
-      if (!m[d[name]]) {
-        m[d[name]] = { ...d, count: 1 };
-        return m;
-      }
-      m[d[name]][value] += d[value];
-      m[d[name]].count += 1;
-      return m;
-    }, {});
-    // Create new array from grouped data and compute the average
-    let result = Object.keys(reduced).map(function (k) {
-      const item = reduced[k];
-      if (responses) {
-        return {
-          name: item[name] + ` (${item.count})`,
-          value: (item[value] / item.count).toFixed(),
-          response: item.count,
-        };
-      }
-      return {
-        name: item[name],
-        value: (item[value] / item.count).toFixed(),
-        response: item.count,
-      };
-    });
-    return result;
-  }
+  //   // Create new array from grouped data and compute the average
+  //   let result = Object.keys(reduced).map(function (k) {
+  //     const item = reduced[k];
+  //     return {
+  //       name: item[name],
+  //       value: item.count,
+  //     };
+  //   });
+  //   return result;
+  // }
+  // private GetListOfAnswersFor(key) {
+  //   const unique = [...new Set(this.DF.map((item) => item[key]))];
+  //   let unqiqueObjects = [];
+  //   unique.forEach((u) => {
+  //     var o = { name: key, value: u };
+  //     unqiqueObjects.push(o);
+  //   });
+  //   return unique;
+  // }
+  // private GetListOfAnswersWhereKeyIs(key, value) {
+  //   let ListOfAnswers = [];
+  //   this.DF.forEach((u) => {
+  //     if (u[key] == value) {
+  //       ListOfAnswers.push(u);
+  //     }
+  //   });
+  //   return ListOfAnswers;
+  // }
+  // //#region ValueBasedOnType
+  // private GetAverageNumberValueBasedOnType(name, value, responses, arr) {
+  //   var dataArray = arr || this.DF;
+  //   let reduced = dataArray.reduce(function (m, d) {
+  //     if (!m[d[name]]) {
+  //       m[d[name]] = { ...d, count: 1 };
+  //       return m;
+  //     }
+  //     m[d[name]][value] += d[value];
+  //     m[d[name]].count += 1;
+  //     return m;
+  //   }, {});
+  //   // Create new array from grouped data and compute the average
+  //   let result = Object.keys(reduced).map(function (k) {
+  //     const item = reduced[k];
+  //     if (responses) {
+  //       return {
+  //         name: item[name] + ` (${item.count})`,
+  //         value: (item[value] / item.count).toFixed(),
+  //         response: item.count,
+  //       };
+  //     }
+  //     return {
+  //       name: item[name],
+  //       value: (item[value] / item.count).toFixed(),
+  //       response: item.count,
+  //     };
+  //   });
+  //   return result;
+  // }
 
-  private GetMeanNumberValueBasedOnType(name, value, responses, arr) {
-    var dataArray = arr || this.DF;
-    const reduced = dataArray.reduce(function (m, d) {
-      if (!m[d[name]]) {
-        m[d[name]] = { ...d, count: 1 };
-        m[d[name]]['arr'] = [];
-        return m;
-      }
-      m[d[name]][value] += d[value];
-      m[d[name]]['arr'].push(d[value]);
-      m[d[name]].count += 1;
-      return m;
-    }, {});
-    const result = Object.keys(reduced).map(function (k) {
-      const item = reduced[k];
-      if (!item['arr']) {
-        return;
-      }
-      var sortedItemArray = item['arr'].sort();
-      var medianValue = sortedItemArray[(sortedItemArray.length / 2).toFixed()];
-      if (responses) {
-        return {
-          name: item[name] + ` (${item.count})`,
-          value: medianValue,
-          response: item.count,
-        };
-      }
-      return {
-        name: item[name],
-        value: medianValue,
-        response: item.count,
-      };
-    });
-    return result;
-  }
-  //#endregion
-  //#region ValueBasedOnTypeByGroup
-  private GetAverageNumberValueBasedOnTypeByGroup(name, value, group) {
-    var series = [];
-    group.forEach((g) => {
-      var serie = this.GetAverageNumberValueBasedOnType(
-        name,
-        value,
-        null,
-        null
-      );
-      var input = {
-        name: g,
-        series: serie,
-      };
-      series.push(input);
-    });
-    return series;
-  }
-  private GetMeanValueBasedOnTypeByGroup(name, value, group) {
-    var series = [];
-    group.forEach((g) => {
-      var serie = this.GetMeanNumberValueBasedOnType(name, value, null, null);
-      var input = {
-        name: g,
-        series: serie,
-      };
-      series.push(input);
-    });
-    return series;
-  }
-  //#endregion
-  //#region BasedOnTypeByGroupWithResponses
-  private GetMeanValueBasedOnTypeByGroupWithResponses(
-    name,
-    value,
-    group,
-    groupName
-  ) {
-    var series = [];
-    group.forEach((g) => {
-      var groupedResponses = this.GetListOfAnswersWhereKeyIs(groupName, g);
-      var serie = this.GetMeanNumberValueBasedOnType(
-        name,
-        value,
-        true,
-        groupedResponses
-      );
-      var input = {
-        name: g + ` (${groupedResponses.length})`,
-        series: serie,
-      };
-      series.push(input);
-    });
-    return series;
-  }
-  private GetAverageNumberValueBasedOnTypeByGroupWithResponses(
-    name,
-    value,
-    group,
-    groupName
-  ) {
-    var series = [];
-    group.forEach((g) => {
-      var groupedResponses = this.GetListOfAnswersWhereKeyIs(groupName, g);
-      var serie = this.GetAverageNumberValueBasedOnType(
-        name,
-        value,
-        true,
-        groupedResponses
-      );
-      var input = {
-        name: g + ` (${groupedResponses.length})`,
-        series: serie,
-      };
+  // private GetMeanNumberValueBasedOnType(name, value, responses, arr) {
+  //   var dataArray = arr || this.DF;
+  //   const reduced = dataArray.reduce(function (m, d) {
+  //     if (!m[d[name]]) {
+  //       m[d[name]] = { ...d, count: 1 };
+  //       m[d[name]]['arr'] = [];
+  //       return m;
+  //     }
+  //     m[d[name]][value] += d[value];
+  //     m[d[name]]['arr'].push(d[value]);
+  //     m[d[name]].count += 1;
+  //     return m;
+  //   }, {});
+  //   const result = Object.keys(reduced).map(function (k) {
+  //     const item = reduced[k];
+  //     if (!item['arr']) {
+  //       return;
+  //     }
+  //     var sortedItemArray = item['arr'].sort();
+  //     var medianValue = sortedItemArray[(sortedItemArray.length / 2).toFixed()];
+  //     if (responses) {
+  //       return {
+  //         name: item[name] + ` (${item.count})`,
+  //         value: medianValue,
+  //         response: item.count,
+  //       };
+  //     }
+  //     return {
+  //       name: item[name],
+  //       value: medianValue,
+  //       response: item.count,
+  //     };
+  //   });
+  //   return result;
+  // }
+  // //#endregion
+  // //#region ValueBasedOnTypeByGroup
+  // private GetAverageNumberValueBasedOnTypeByGroup(name, value, group) {
+  //   var series = [];
+  //   group.forEach((g) => {
+  //     var serie = this.GetAverageNumberValueBasedOnType(
+  //       name,
+  //       value,
+  //       null,
+  //       null
+  //     );
+  //     var input = {
+  //       name: g,
+  //       series: serie,
+  //     };
+  //     series.push(input);
+  //   });
+  //   return series;
+  // }
+  // private GetMeanValueBasedOnTypeByGroup(name, value, group) {
+  //   var series = [];
+  //   group.forEach((g) => {
+  //     var serie = this.GetMeanNumberValueBasedOnType(name, value, null, null);
+  //     var input = {
+  //       name: g,
+  //       series: serie,
+  //     };
+  //     series.push(input);
+  //   });
+  //   return series;
+  // }
+  // //#endregion
+  // //#region BasedOnTypeByGroupWithResponses
+  // private GetMeanValueBasedOnTypeByGroupWithResponses(
+  //   name,
+  //   value,
+  //   group,
+  //   groupName
+  // ) {
+  //   var series = [];
+  //   group.forEach((g) => {
+  //     var groupedResponses = this.GetListOfAnswersWhereKeyIs(groupName, g);
+  //     var serie = this.GetMeanNumberValueBasedOnType(
+  //       name,
+  //       value,
+  //       true,
+  //       groupedResponses
+  //     );
+  //     var input = {
+  //       name: g + ` (${groupedResponses.length})`,
+  //       series: serie,
+  //     };
+  //     series.push(input);
+  //   });
+  //   return series;
+  // }
+  // private GetAverageNumberValueBasedOnTypeByGroupWithResponses(
+  //   name,
+  //   value,
+  //   group,
+  //   groupName
+  // ) {
+  //   var series = [];
+  //   group.forEach((g) => {
+  //     var groupedResponses = this.GetListOfAnswersWhereKeyIs(groupName, g);
+  //     var serie = this.GetAverageNumberValueBasedOnType(
+  //       name,
+  //       value,
+  //       true,
+  //       groupedResponses
+  //     );
+  //     var input = {
+  //       name: g + ` (${groupedResponses.length})`,
+  //       series: serie,
+  //     };
 
-      series.push(input);
-    });
-    return series;
-  }
-  //#endregion
-  private GetResponsesBasedOnTypeByGroup(name, value, group, groupName) {
-    var series = [];
-    group.forEach((g) => {
-      var groupedResponses = this.GetListOfAnswersWhereKeyIs(groupName, g);
-      var serie = this.GetResponsesBasedOnType(
-        name,
-        value,
-        false,
-        groupedResponses
-      );
-      var input = {
-        name: g,
-        series: serie,
-      };
-      series.push(input);
-    });
-    return series;
-  }
-  //#endregion
+  //     series.push(input);
+  //   });
+  //   return series;
+  // }
+  // //#endregion
+  // private GetResponsesBasedOnTypeByGroup(name, value, group, groupName) {
+  //   var series = [];
+  //   group.forEach((g) => {
+  //     var groupedResponses = this.GetListOfAnswersWhereKeyIs(groupName, g);
+  //     var serie = this.GetResponsesBasedOnType(
+  //       name,
+  //       value,
+  //       false,
+  //       groupedResponses
+  //     );
+  //     var input = {
+  //       name: g,
+  //       series: serie,
+  //     };
+  //     series.push(input);
+  //   });
+  //   return series;
+  // }
+  // //#endregion
 }
