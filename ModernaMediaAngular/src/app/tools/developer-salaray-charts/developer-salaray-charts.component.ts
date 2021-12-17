@@ -1,7 +1,8 @@
 import { WindowRefService } from './../../services/window-ref.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from 'src/app/services/seo.service';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-developer-salaray-charts',
@@ -9,7 +10,7 @@ import { SeoService } from 'src/app/services/seo.service';
   styleUrls: ['./developer-salaray-charts.component.scss'],
 })
 export class DeveloperSalarayChartsComponent implements OnInit {
-  DeveloperSalaryReady = true;
+  DeveloperSalaryReady = false;
   DeveloperSalary: any[];
   DeveloperSalaryFormatted: any[];
   DF: any[]; //DataFormatted
@@ -2687,7 +2688,8 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     private meta: Meta,
     private title: Title,
     private seo: SeoService,
-    private wf: WindowRefService
+    private wf: WindowRefService,
+    @Inject(PLATFORM_ID) private platformId: string
   ) {
     // Object.assign(this, { DeveloperSalary });
 
@@ -2706,7 +2708,10 @@ export class DeveloperSalarayChartsComponent implements OnInit {
 
   ngOnInit(): void {
     this.title.setTitle('Alt om utvikleres lønn og karriere i 2021');
-
+    if (isPlatformBrowser(this.platformId)) {
+      //your setTimeout here
+      this.DeveloperSalaryReady = true;
+    }
     this.seo.createLinkForCanonicalURL();
     this.meta.addTags([
       {
