@@ -12,6 +12,7 @@
     "serve:ssr": "node dist/ModernaMediaAngular/server/main.js",
     "build:ssr": "ng build --prod && ng run ModernaMediaAngular:server:production",
     "prerender": "ng run ModernaMediaAngular:prerender",
+    "analyze": "webpack-bundle-analyzer dist/ModernaMediaAngular/browser/stats-es2015.json",
     "postbuild": "gulp compress"
   },
   "private": true,
@@ -59,6 +60,7 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }
