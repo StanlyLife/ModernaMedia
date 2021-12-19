@@ -13,7 +13,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     NgxChartsModule,
     RouterModule.forRoot([
       {
-        path: 'artikkel/utviklerlonn',
+        path: 'blogg/utviklerlønn',
         component: DeveloperSalarayChartsComponent,
       },
     ]),
