@@ -17,7 +17,8 @@ export class NavBarComponent implements OnInit {
   constructor(private elem: ElementRef, private location: Location) {}
 
   ngOnInit(): void {
-    if (this.location.path() === '/artikkel/utviklerlonn') {
+    console.log(this.location.path());
+    if (this.location.path() === '/blogg/utviklerl%C3%B8nn') {
       this.hidden = true;
     }
     if (this.location.path() === '') {
