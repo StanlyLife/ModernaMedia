@@ -13,7 +13,7 @@ export class FooterComponent implements OnInit {
   imageCdn = environment.img;
   hidden = false;
   ngOnInit(): void {
-    if (this.location.path() === '/blogg/utviklerl%C3%B8nn') {
+    if (this.location.path() === '/blogg/utviklerlonn') {
       this.hidden = true;
     }
   }
