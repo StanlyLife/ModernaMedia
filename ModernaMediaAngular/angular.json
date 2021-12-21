@@ -132,12 +132,7 @@
             "optimization": true,
             "outputPath": "dist/ModernaMediaAngular/server",
             "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/robots.txt",
-              "src/sitemap.xml"
-            ]
+            "tsConfig": "tsconfig.server.json"
           },
           "configurations": {
             "production": {
