@@ -1171,7 +1171,7 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   ];
   ValueSalaryByYoeAge: any[] = [
     {
-        "name": "20-24 år (126)",
+        "name": "20-24 år (124)",
         "series": [
             {
                 "name": "0 (31)",
@@ -1179,9 +1179,9 @@ export class DeveloperSalarayChartsComponent implements OnInit {
                 "response": 31
             },
             {
-                "name": "1 (41)",
-                "value": "532568",
-                "response": 41
+                "name": "1 (40)",
+                "value": "540383",
+                "response": 40
             },
             {
                 "name": "2 (25)",
@@ -1189,9 +1189,9 @@ export class DeveloperSalarayChartsComponent implements OnInit {
                 "response": 25
             },
             {
-                "name": "3 (15)",
-                "value": "550933",
-                "response": 15
+                "name": "3 (14)",
+                "value": "569571",
+                "response": 14
             },
             {
                 "name": "4 (8)",
@@ -1211,7 +1211,7 @@ export class DeveloperSalarayChartsComponent implements OnInit {
         ]
     },
     {
-        "name": "25-29 år (444)",
+        "name": "25-29 år (443)",
         "series": [
             {
                 "name": "0 (41)",
@@ -1234,9 +1234,9 @@ export class DeveloperSalarayChartsComponent implements OnInit {
                 "response": 97
             },
             {
-                "name": "4 (64)",
-                "value": "815162",
-                "response": 64
+                "name": "4 (63)",
+                "value": "707467",
+                "response": 63
             },
             {
                 "name": "5 (41)",
@@ -1286,7 +1286,7 @@ export class DeveloperSalarayChartsComponent implements OnInit {
         ]
     },
     {
-        "name": "30-34 år (396)",
+        "name": "30-34 år (393)",
         "series": [
             {
                 "name": "0 (10)",
@@ -1319,9 +1319,9 @@ export class DeveloperSalarayChartsComponent implements OnInit {
                 "response": 60
             },
             {
-                "name": "6 (44)",
-                "value": "925421",
-                "response": 44
+                "name": "6 (43)",
+                "value": "763221",
+                "response": 43
             },
             {
                 "name": "7 (28)",
@@ -1334,9 +1334,9 @@ export class DeveloperSalarayChartsComponent implements OnInit {
                 "response": 29
             },
             {
-                "name": "9 (32)",
-                "value": "799809",
-                "response": 32
+                "name": "9 (31)",
+                "value": "825610",
+                "response": 31
             },
             {
                 "name": "10 (42)",
@@ -1374,9 +1374,9 @@ export class DeveloperSalarayChartsComponent implements OnInit {
                 "response": 1
             },
             {
-                "name": "18 (2)",
-                "value": "1693125",
-                "response": 2
+                "name": "18 (1)",
+                "value": "900000",
+                "response": 1
             },
             {
                 "name": "20 (1)",
@@ -1386,122 +1386,7 @@ export class DeveloperSalarayChartsComponent implements OnInit {
         ]
     },
     {
-        "name": "35-39 år (267)",
-        "series": [
-            {
-                "name": "0 (1)",
-                "value": "0",
-                "response": 1
-            },
-            {
-                "name": "1 (8)",
-                "value": "564250",
-                "response": 8
-            },
-            {
-                "name": "2 (6)",
-                "value": "624750",
-                "response": 6
-            },
-            {
-                "name": "3 (10)",
-                "value": "636770",
-                "response": 10
-            },
-            {
-                "name": "4 (9)",
-                "value": "675778",
-                "response": 9
-            },
-            {
-                "name": "5 (14)",
-                "value": "676143",
-                "response": 14
-            },
-            {
-                "name": "6 (3)",
-                "value": "667333",
-                "response": 3
-            },
-            {
-                "name": "7 (4)",
-                "value": "729025",
-                "response": 4
-            },
-            {
-                "name": "8 (15)",
-                "value": "739334",
-                "response": 15
-            },
-            {
-                "name": "9 (9)",
-                "value": "790832",
-                "response": 9
-            },
-            {
-                "name": "10 (29)",
-                "value": "783814",
-                "response": 29
-            },
-            {
-                "name": "11 (21)",
-                "value": "828190",
-                "response": 21
-            },
-            {
-                "name": "12 (29)",
-                "value": "863608",
-                "response": 29
-            },
-            {
-                "name": "13 (34)",
-                "value": "852303",
-                "response": 34
-            },
-            {
-                "name": "14 (24)",
-                "value": "896175",
-                "response": 24
-            },
-            {
-                "name": "15 (31)",
-                "value": "879624",
-                "response": 31
-            },
-            {
-                "name": "16 (6)",
-                "value": "900167",
-                "response": 6
-            },
-            {
-                "name": "17 (1)",
-                "value": "630000",
-                "response": 1
-            },
-            {
-                "name": "18 (3)",
-                "value": "945000",
-                "response": 3
-            },
-            {
-                "name": "20 (7)",
-                "value": "791143",
-                "response": 7
-            },
-            {
-                "name": "21 (2)",
-                "value": "540000",
-                "response": 2
-            },
-            {
-                "name": "24 (1)",
-                "value": "651000",
-                "response": 1
-            }
-        ]
-    },
-    {
-        "name": "40-44 år (169)",
+        "name": "40-44 år (168)",
         "series": [
             {
                 "name": "2 (1)",
@@ -1554,9 +1439,9 @@ export class DeveloperSalarayChartsComponent implements OnInit {
                 "response": 1
             },
             {
-                "name": "12 (10)",
-                "value": "673100",
-                "response": 10
+                "name": "12 (9)",
+                "value": "747889",
+                "response": 9
             },
             {
                 "name": "13 (6)",
@@ -1621,6 +1506,116 @@ export class DeveloperSalarayChartsComponent implements OnInit {
             {
                 "name": "25 (1)",
                 "value": "1200000",
+                "response": 1
+            }
+        ]
+    },
+    {
+        "name": "35-39 år (262)",
+        "series": [
+            {
+                "name": "1 (8)",
+                "value": "564250",
+                "response": 8
+            },
+            {
+                "name": "2 (6)",
+                "value": "624750",
+                "response": 6
+            },
+            {
+                "name": "3 (10)",
+                "value": "636770",
+                "response": 10
+            },
+            {
+                "name": "4 (9)",
+                "value": "675778",
+                "response": 9
+            },
+            {
+                "name": "5 (14)",
+                "value": "676143",
+                "response": 14
+            },
+            {
+                "name": "6 (3)",
+                "value": "667333",
+                "response": 3
+            },
+            {
+                "name": "7 (4)",
+                "value": "729025",
+                "response": 4
+            },
+            {
+                "name": "8 (15)",
+                "value": "739334",
+                "response": 15
+            },
+            {
+                "name": "9 (9)",
+                "value": "790832",
+                "response": 9
+            },
+            {
+                "name": "10 (29)",
+                "value": "783814",
+                "response": 29
+            },
+            {
+                "name": "11 (21)",
+                "value": "828190",
+                "response": 21
+            },
+            {
+                "name": "12 (29)",
+                "value": "863608",
+                "response": 29
+            },
+            {
+                "name": "13 (33)",
+                "value": "878130",
+                "response": 33
+            },
+            {
+                "name": "14 (24)",
+                "value": "896175",
+                "response": 24
+            },
+            {
+                "name": "15 (29)",
+                "value": "935284",
+                "response": 29
+            },
+            {
+                "name": "16 (6)",
+                "value": "900167",
+                "response": 6
+            },
+            {
+                "name": "17 (1)",
+                "value": "630000",
+                "response": 1
+            },
+            {
+                "name": "18 (3)",
+                "value": "945000",
+                "response": 3
+            },
+            {
+                "name": "20 (7)",
+                "value": "791143",
+                "response": 7
+            },
+            {
+                "name": "21 (1)",
+                "value": "780000",
+                "response": 1
+            },
+            {
+                "name": "24 (1)",
+                "value": "651000",
                 "response": 1
             }
         ]
@@ -2293,34 +2288,19 @@ export class DeveloperSalarayChartsComponent implements OnInit {
   ];
   ValueSalaryByCounty: any[] = [
     {
-        "name": "Vestland",
-        "value": "761136",
-        "response": 151
-    },
-    {
-        "name": "Oslo",
-        "value": "754489",
-        "response": 815
-    },
-    {
         "name": "annet",
-        "value": "642256",
-        "response": 81
-    },
-    {
-        "name": "Agder",
-        "value": "660723",
-        "response": 52
-    },
-    {
-        "name": "Viken",
-        "value": "756966",
-        "response": 118
+        "value": "652060",
+        "response": 79
     },
     {
         "name": "Trøndelag",
-        "value": "682129",
-        "response": 135
+        "value": "687219",
+        "response": 134
+    },
+    {
+        "name": "Oslo",
+        "value": "748469",
+        "response": 811
     },
     {
         "name": "Vestfold og Telemark",
@@ -2328,9 +2308,24 @@ export class DeveloperSalarayChartsComponent implements OnInit {
         "response": 66
     },
     {
+        "name": "Vestland",
+        "value": "715544",
+        "response": 150
+    },
+    {
+        "name": "Agder",
+        "value": "660723",
+        "response": 52
+    },
+    {
         "name": "Rogaland",
         "value": "694778",
         "response": 88
+    },
+    {
+        "name": "Viken",
+        "value": "757813",
+        "response": 114
     },
     {
         "name": "Møre og Romsdal",
