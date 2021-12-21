@@ -5,7 +5,7 @@ nuget.g.props
 CyberrangeProject.assets.cache
 *.cache
 *.txt
-
+!robots.txt
 # Logs
 logs
 *.log
