@@ -1,66 +1,7 @@
 @import "./variables.scss";
-.btn {
-  padding: 10px 25px;
-  font-weight: normal;
-  &:hover {
-    cursor: pointer;
-  }
-}
 
 .btn.shadow {
   box-shadow: $box-shadow-btn;
-}
-
-.btn.transparent-white {
-  border: 2px solid $light;
-  color: $light;
-  background-color: $dark-transparent-30;
-  transition: background-color 0.25s;
-  &:hover {
-    background-color: $dark;
-  }
-  &:active {
-    background-color: $dark-second;
-  }
-}
-.btn.transparent-dark {
-  border: 2px solid $dark;
-  color: $dark;
-  background-color: transparent;
-  &:hover {
-  }
-}
-
-.btn.borderless {
-  border: none !important;
-}
-
-.btn.blue {
-  border: 2px solid $light;
-  color: $light;
-  background-color: $blue;
-  transition: background-color 0.25s;
-  &:hover {
-    background-color: $blue-primary;
-  }
-  &:active {
-    background-color: $blue-secondary;
-  }
-}
-
-.btn.light {
-  border: 2px solid $dark;
-  background-color: $light;
-  color: $dark;
-  &:hover {
-  }
-}
-.btn.dark {
-  border: 2px solid $light;
-  background-color: $dark;
-  color: $light;
-  &:hover {
-  }
 }
 
 .hidden {
@@ -120,15 +61,73 @@
   }
 }
 
-.btn.cta {
-  background-color: transparent;
+.btn {
+  background: $light;
+  transition: all 0.25s ease;
+  border-radius: 10px;
   border: none;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 100%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.btn.cta {
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    @include ctaButtonText;
+  }
+  &:hover {
+    background-color: $light-third;
+  }
+}
+
+.btn.cta-2 {
+  position: relative;
+  box-sizing: border-box;
+  $border: 2px;
   color: $light;
-  background-image: linear-gradient(
-    to right,
-    $orange-gradient 0%,
-    $blue-gradient 100%
-  );
+  background: #0d0e21;
+  background-clip: padding-box;
+  border: solid $border transparent;
+  p {
+    width: 100%;
+    text-align: center;
+  }
+  &:hover {
+    background: #121435;
+    background-clip: padding-box;
+    border: solid $border transparent;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(
+      to right,
+      #d06b30 0%,
+      #c43ad6 50%,
+      #30cfd0 100%
+    );
+  }
 }
 .gradient {
   animation-duration: 5s;
