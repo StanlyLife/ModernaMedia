@@ -33,6 +33,7 @@ import { AboutComponent } from './home/homev2/about/about.component';
 import { ContactComponent } from './home/homev2/contact/contact.component';
 import { UspComponent } from './home/homev2/usp/usp.component';
 import { PricesComponent } from './home/homev2/prices/prices.component';
+import { BlogShowcaseComponent } from './home/homev2/blog-showcase/blog-showcase.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { PricesComponent } from './home/homev2/prices/prices.component';
     ContactComponent,
     UspComponent,
     PricesComponent,
+    BlogShowcaseComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
