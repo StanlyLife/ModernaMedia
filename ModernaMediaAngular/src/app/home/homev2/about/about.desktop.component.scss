@@ -1,0 +1,40 @@
+@import "../../../../variables.scss";
+
+@media screen and (min-width: $tablet) {
+  .about {
+    .wrapper {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 0 2rem;
+      max-width: 1280px;
+      .image {
+        height: 75%;
+        img {
+        }
+      }
+      .content {
+        padding-left: 2rem;
+        .titles {
+          padding-top: 0;
+          .innhold {
+            padding-top: 1rem;
+            font-weight: 100;
+          }
+        }
+        .liste {
+          .point {
+            margin-top: 3rem;
+            .number {
+              margin-right: 1rem;
+            }
+            .point-content {
+              .point-text {
+                padding-top: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
