@@ -37,6 +37,8 @@ $dark-transparent-30: rgba(51, 51, 51, 0.333);
 $dark-transparent-80: rgba(51, 51, 51, 0.8);
 $dark-second: #777;
 $light: #eeeeee;
+$light-second: #f5f5f5;
+$light-third: #e0dddd;
 $light-80: #eeeeeebb;
 $light-20: #eeeeee2f;
 
@@ -46,6 +48,7 @@ $font-md: 24px;
 $font-lg: 48px;
 
 $desktop: 700px;
+$tablet: 1000px;
 $max-width: 1920px;
 $input-height: 45px;
 
@@ -55,6 +58,7 @@ $padding-section-top: 50px;
 $padding-section-sides: 25px;
 
 $box-shadow: 1px 1px 28px 0px rgba(0, 0, 0, 0.75);
+$box-shadow-small: 1px 1px 28px 0px rgba(0, 0, 0, 0.25);
 $box-shadow-btn: 0px 0px 20px 6px rgb(0 0 0 / 25%);
 
 $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
@@ -66,6 +70,50 @@ $blogg-line-height-mobile: 26px;
 $blogg-font-size: 18px;
 $blogg-line-height: 29px;
 
+.gradient-line {
+  background: linear-gradient(to right, #d06b30 0%, #c43ad6 50%, #30cfd0 100%);
+}
+
+@mixin gradientTitle {
+  background: #d06b30;
+  background: -webkit-linear-gradient(
+    to right,
+    #d06b30 0%,
+    #c43ad6 50%,
+    #30cfd0 100%
+  );
+  background: -moz-linear-gradient(
+    to right,
+    #d06b30 0%,
+    #c43ad6 50%,
+    #30cfd0 100%
+  );
+  background: linear-gradient(to right, #d06b30 0%, #c43ad6 50%, #30cfd0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin ctaText {
+  background: #b631a7;
+  background: -webkit-linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
+  background: -moz-linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
+  background: linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@mixin ctaButtonText {
+  background: #b631a7;
+  background: -webkit-linear-gradient(to right, #b631a7 0%, #0186da 100%);
+  background: -moz-linear-gradient(to right, #b631a7 0%, #0186da 100%);
+  background: linear-gradient(to right, #b631a7 0%, #0186da 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@mixin backgroundShade {
+  background-color: #2a2a2a;
+  opacity: 0.5;
+}
 @mixin vaAbs {
   top: 50%;
   transform: translateY(-50%);
