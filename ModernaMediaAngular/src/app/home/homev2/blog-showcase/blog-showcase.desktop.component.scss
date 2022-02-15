@@ -1,0 +1,9 @@
+@import "../../../../variables.scss";
+@media screen and (min-width: 1280px) {
+  .blog-showcase {
+    .blogs {
+      flex-wrap: nowrap;
+      padding: 0 2rem;
+    }
+  }
+}
