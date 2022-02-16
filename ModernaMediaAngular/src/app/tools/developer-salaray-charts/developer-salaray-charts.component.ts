@@ -1169,7 +1169,653 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       response: 1,
     },
   ];
-  ValueSalaryByYoeAge: any[];
+  ValueSalaryByYoeAge: any[] = [
+    {
+        "name": "20-24 år (124)",
+        "series": [
+            {
+                "name": "0 (31)",
+                "value": "536110",
+                "response": 31
+            },
+            {
+                "name": "1 (40)",
+                "value": "540383",
+                "response": 40
+            },
+            {
+                "name": "2 (25)",
+                "value": "556960",
+                "response": 25
+            },
+            {
+                "name": "3 (14)",
+                "value": "569571",
+                "response": 14
+            },
+            {
+                "name": "4 (8)",
+                "value": "673000",
+                "response": 8
+            },
+            {
+                "name": "5 (4)",
+                "value": "479000",
+                "response": 4
+            },
+            {
+                "name": "7 (2)",
+                "value": "490000",
+                "response": 2
+            }
+        ]
+    },
+    {
+        "name": "25-29 år (443)",
+        "series": [
+            {
+                "name": "0 (41)",
+                "value": "532537",
+                "response": 41
+            },
+            {
+                "name": "1 (70)",
+                "value": "562634",
+                "response": 70
+            },
+            {
+                "name": "2 (84)",
+                "value": "577238",
+                "response": 84
+            },
+            {
+                "name": "3 (97)",
+                "value": "655009",
+                "response": 97
+            },
+            {
+                "name": "4 (63)",
+                "value": "707467",
+                "response": 63
+            },
+            {
+                "name": "5 (41)",
+                "value": "698890",
+                "response": 41
+            },
+            {
+                "name": "6 (19)",
+                "value": "683421",
+                "response": 19
+            },
+            {
+                "name": "7 (8)",
+                "value": "724900",
+                "response": 8
+            },
+            {
+                "name": "8 (10)",
+                "value": "762400",
+                "response": 10
+            },
+            {
+                "name": "9 (3)",
+                "value": "745000",
+                "response": 3
+            },
+            {
+                "name": "10 (4)",
+                "value": "650000",
+                "response": 4
+            },
+            {
+                "name": "13 (1)",
+                "value": "560000",
+                "response": 1
+            },
+            {
+                "name": "14 (1)",
+                "value": "535600",
+                "response": 1
+            },
+            {
+                "name": "27 (1)",
+                "value": "600000",
+                "response": 1
+            }
+        ]
+    },
+    {
+        "name": "30-34 år (393)",
+        "series": [
+            {
+                "name": "0 (10)",
+                "value": "528100",
+                "response": 10
+            },
+            {
+                "name": "1 (17)",
+                "value": "547317",
+                "response": 17
+            },
+            {
+                "name": "2 (36)",
+                "value": "575017",
+                "response": 36
+            },
+            {
+                "name": "3 (33)",
+                "value": "587888",
+                "response": 33
+            },
+            {
+                "name": "4 (34)",
+                "value": "652347",
+                "response": 34
+            },
+            {
+                "name": "5 (60)",
+                "value": "727209",
+                "response": 60
+            },
+            {
+                "name": "6 (43)",
+                "value": "763221",
+                "response": 43
+            },
+            {
+                "name": "7 (28)",
+                "value": "847918",
+                "response": 28
+            },
+            {
+                "name": "8 (29)",
+                "value": "799600",
+                "response": 29
+            },
+            {
+                "name": "9 (31)",
+                "value": "825610",
+                "response": 31
+            },
+            {
+                "name": "10 (42)",
+                "value": "803448",
+                "response": 42
+            },
+            {
+                "name": "11 (8)",
+                "value": "806370",
+                "response": 8
+            },
+            {
+                "name": "12 (10)",
+                "value": "741540",
+                "response": 10
+            },
+            {
+                "name": "13 (4)",
+                "value": "805000",
+                "response": 4
+            },
+            {
+                "name": "14 (3)",
+                "value": "703333",
+                "response": 3
+            },
+            {
+                "name": "15 (2)",
+                "value": "800000",
+                "response": 2
+            },
+            {
+                "name": "16 (1)",
+                "value": "750000",
+                "response": 1
+            },
+            {
+                "name": "18 (1)",
+                "value": "900000",
+                "response": 1
+            },
+            {
+                "name": "20 (1)",
+                "value": "800000",
+                "response": 1
+            }
+        ]
+    },
+    {
+        "name": "40-44 år (168)",
+        "series": [
+            {
+                "name": "2 (1)",
+                "value": "562000",
+                "response": 1
+            },
+            {
+                "name": "3 (1)",
+                "value": "430500",
+                "response": 1
+            },
+            {
+                "name": "4 (2)",
+                "value": "697000",
+                "response": 2
+            },
+            {
+                "name": "5 (2)",
+                "value": "662500",
+                "response": 2
+            },
+            {
+                "name": "6 (1)",
+                "value": "712000",
+                "response": 1
+            },
+            {
+                "name": "7 (2)",
+                "value": "711000",
+                "response": 2
+            },
+            {
+                "name": "8 (2)",
+                "value": "770000",
+                "response": 2
+            },
+            {
+                "name": "9 (1)",
+                "value": "530000",
+                "response": 1
+            },
+            {
+                "name": "10 (10)",
+                "value": "743990",
+                "response": 10
+            },
+            {
+                "name": "11 (1)",
+                "value": "647500",
+                "response": 1
+            },
+            {
+                "name": "12 (9)",
+                "value": "747889",
+                "response": 9
+            },
+            {
+                "name": "13 (6)",
+                "value": "772333",
+                "response": 6
+            },
+            {
+                "name": "14 (20)",
+                "value": "898000",
+                "response": 20
+            },
+            {
+                "name": "15 (32)",
+                "value": "864204",
+                "response": 32
+            },
+            {
+                "name": "16 (19)",
+                "value": "879896",
+                "response": 19
+            },
+            {
+                "name": "17 (16)",
+                "value": "898821",
+                "response": 16
+            },
+            {
+                "name": "18 (8)",
+                "value": "928375",
+                "response": 8
+            },
+            {
+                "name": "19 (3)",
+                "value": "811667",
+                "response": 3
+            },
+            {
+                "name": "20 (15)",
+                "value": "926353",
+                "response": 15
+            },
+            {
+                "name": "21 (4)",
+                "value": "907500",
+                "response": 4
+            },
+            {
+                "name": "22 (8)",
+                "value": "850512",
+                "response": 8
+            },
+            {
+                "name": "23 (3)",
+                "value": "986833",
+                "response": 3
+            },
+            {
+                "name": "24 (1)",
+                "value": "822646",
+                "response": 1
+            },
+            {
+                "name": "25 (1)",
+                "value": "1200000",
+                "response": 1
+            }
+        ]
+    },
+    {
+        "name": "35-39 år (262)",
+        "series": [
+            {
+                "name": "1 (8)",
+                "value": "564250",
+                "response": 8
+            },
+            {
+                "name": "2 (6)",
+                "value": "624750",
+                "response": 6
+            },
+            {
+                "name": "3 (10)",
+                "value": "636770",
+                "response": 10
+            },
+            {
+                "name": "4 (9)",
+                "value": "675778",
+                "response": 9
+            },
+            {
+                "name": "5 (14)",
+                "value": "676143",
+                "response": 14
+            },
+            {
+                "name": "6 (3)",
+                "value": "667333",
+                "response": 3
+            },
+            {
+                "name": "7 (4)",
+                "value": "729025",
+                "response": 4
+            },
+            {
+                "name": "8 (15)",
+                "value": "739334",
+                "response": 15
+            },
+            {
+                "name": "9 (9)",
+                "value": "790832",
+                "response": 9
+            },
+            {
+                "name": "10 (29)",
+                "value": "783814",
+                "response": 29
+            },
+            {
+                "name": "11 (21)",
+                "value": "828190",
+                "response": 21
+            },
+            {
+                "name": "12 (29)",
+                "value": "863608",
+                "response": 29
+            },
+            {
+                "name": "13 (33)",
+                "value": "878130",
+                "response": 33
+            },
+            {
+                "name": "14 (24)",
+                "value": "896175",
+                "response": 24
+            },
+            {
+                "name": "15 (29)",
+                "value": "935284",
+                "response": 29
+            },
+            {
+                "name": "16 (6)",
+                "value": "900167",
+                "response": 6
+            },
+            {
+                "name": "17 (1)",
+                "value": "630000",
+                "response": 1
+            },
+            {
+                "name": "18 (3)",
+                "value": "945000",
+                "response": 3
+            },
+            {
+                "name": "20 (7)",
+                "value": "791143",
+                "response": 7
+            },
+            {
+                "name": "21 (1)",
+                "value": "780000",
+                "response": 1
+            },
+            {
+                "name": "24 (1)",
+                "value": "651000",
+                "response": 1
+            }
+        ]
+    },
+    {
+        "name": "45-50 år (96)",
+        "series": [
+            {
+                "name": "1 (1)",
+                "value": "650000",
+                "response": 1
+            },
+            {
+                "name": "5 (1)",
+                "value": "531000",
+                "response": 1
+            },
+            {
+                "name": "6 (1)",
+                "value": "670000",
+                "response": 1
+            },
+            {
+                "name": "10 (2)",
+                "value": "802500",
+                "response": 2
+            },
+            {
+                "name": "12 (1)",
+                "value": "950000",
+                "response": 1
+            },
+            {
+                "name": "13 (2)",
+                "value": "1025000",
+                "response": 2
+            },
+            {
+                "name": "15 (4)",
+                "value": "650000",
+                "response": 4
+            },
+            {
+                "name": "16 (4)",
+                "value": "773368",
+                "response": 4
+            },
+            {
+                "name": "17 (1)",
+                "value": "870000",
+                "response": 1
+            },
+            {
+                "name": "18 (1)",
+                "value": "798000",
+                "response": 1
+            },
+            {
+                "name": "19 (2)",
+                "value": "698500",
+                "response": 2
+            },
+            {
+                "name": "20 (23)",
+                "value": "835739",
+                "response": 23
+            },
+            {
+                "name": "21 (9)",
+                "value": "816889",
+                "response": 9
+            },
+            {
+                "name": "22 (12)",
+                "value": "936083",
+                "response": 12
+            },
+            {
+                "name": "23 (6)",
+                "value": "873767",
+                "response": 6
+            },
+            {
+                "name": "24 (9)",
+                "value": "902919",
+                "response": 9
+            },
+            {
+                "name": "25 (13)",
+                "value": "912923",
+                "response": 13
+            },
+            {
+                "name": "26 (2)",
+                "value": "875000",
+                "response": 2
+            },
+            {
+                "name": "27 (1)",
+                "value": "620000",
+                "response": 1
+            },
+            {
+                "name": "29 (1)",
+                "value": "1800000",
+                "response": 1
+            }
+        ]
+    },
+    {
+        "name": "50+ år (43)",
+        "series": [
+            {
+                "name": "7 (1)",
+                "value": "610000",
+                "response": 1
+            },
+            {
+                "name": "20 (2)",
+                "value": "715000",
+                "response": 2
+            },
+            {
+                "name": "21 (1)",
+                "value": "717000",
+                "response": 1
+            },
+            {
+                "name": "22 (2)",
+                "value": "755000",
+                "response": 2
+            },
+            {
+                "name": "23 (2)",
+                "value": "1008000",
+                "response": 2
+            },
+            {
+                "name": "24 (2)",
+                "value": "1022500",
+                "response": 2
+            },
+            {
+                "name": "25 (8)",
+                "value": "983000",
+                "response": 8
+            },
+            {
+                "name": "26 (6)",
+                "value": "972500",
+                "response": 6
+            },
+            {
+                "name": "27 (2)",
+                "value": "845000",
+                "response": 2
+            },
+            {
+                "name": "28 (3)",
+                "value": "641000",
+                "response": 3
+            },
+            {
+                "name": "29 (1)",
+                "value": "560000",
+                "response": 1
+            },
+            {
+                "name": "30 (5)",
+                "value": "1013480",
+                "response": 5
+            },
+            {
+                "name": "32 (2)",
+                "value": "860000",
+                "response": 2
+            },
+            {
+                "name": "33 (1)",
+                "value": "970000",
+                "response": 1
+            },
+            {
+                "name": "34 (1)",
+                "value": "792500",
+                "response": 1
+            },
+            {
+                "name": "35 (3)",
+                "value": "938667",
+                "response": 3
+            },
+            {
+                "name": "36 (1)",
+                "value": "830000",
+                "response": 1
+            }
+        ]
+    }
+];
   RespondantsShareSalary: any[] = [
     {
       name: 'enig',
@@ -1275,7 +1921,48 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       value: 1039,
     },
   ];
-  RespondantsGoods: any[];
+  RespondantsGoods: any[] = [
+    {
+        "name": "annet",
+        "value": 27
+    },
+    {
+        "name": "firmabil",
+        "value": 52
+    },
+    {
+        "name": "ingen spesielle",
+        "value": 58
+    },
+    {
+        "name": "firmahytter/ferieboliger",
+        "value": 139
+    },
+    {
+        "name": "sosiale aktiviteter turer, fester, arrangementer osv.",
+        "value": 543
+    },
+    {
+        "name": "gode ordninger for gratis teknisk utstyr",
+        "value": 664
+    },
+    {
+        "name": "mer fritid (for eksempel flere feriedager)",
+        "value": 828
+    },
+    {
+        "name": "faglige aktiviteter (konferanser kurs fagdager osv.)",
+        "value": 837
+    },
+    {
+        "name": "mulighet å jobbe hjemmefra/remote",
+        "value": 1029
+    },
+    {
+        "name": "fleksible arbeidstider",
+        "value": 1177
+    }
+];
   RespondantsYoeByAge: any[] = [
     {
       name: '20-24 år',
@@ -1599,7 +2286,53 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       value: 218,
     },
   ];
-  ValueSalaryByCounty: any[];
+  ValueSalaryByCounty: any[] = [
+    {
+        "name": "annet",
+        "value": "652060",
+        "response": 79
+    },
+    {
+        "name": "Trøndelag",
+        "value": "687219",
+        "response": 134
+    },
+    {
+        "name": "Oslo",
+        "value": "748469",
+        "response": 811
+    },
+    {
+        "name": "Vestfold og Telemark",
+        "value": "667428",
+        "response": 66
+    },
+    {
+        "name": "Vestland",
+        "value": "715544",
+        "response": 150
+    },
+    {
+        "name": "Agder",
+        "value": "660723",
+        "response": 52
+    },
+    {
+        "name": "Rogaland",
+        "value": "694778",
+        "response": 88
+    },
+    {
+        "name": "Viken",
+        "value": "757813",
+        "response": 114
+    },
+    {
+        "name": "Møre og Romsdal",
+        "value": "650523",
+        "response": 35
+    }
+];
   RespondantsAgeByTitle: any[] = [
     {
       name: '...junior...',
