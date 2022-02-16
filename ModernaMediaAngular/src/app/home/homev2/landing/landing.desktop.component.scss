@@ -1,0 +1,44 @@
+@import "../../../../variables.scss";
+
+@media screen and (min-width: $tablet) {
+  .landing {
+    width: 97.5%;
+    box-shadow: $box-shadow;
+    max-width: $max-width;
+    margin: 100px auto;
+    overflow: hidden;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .buttons {
+      max-width: 475px;
+    }
+    .wrapper {
+      height: 75vh;
+      min-height: 750px;
+      width: 100%;
+    }
+    .bg {
+      .bg-shade,
+      .landing-image {
+        min-width: 100%;
+      }
+      .bg-shade {
+      }
+    }
+    .content {
+      left: 156px;
+      right: auto;
+      transform: translate(0, -50%);
+      .titles {
+        .title {
+          font-size: 3.825rem;
+          text-shadow: none;
+        }
+        .sub-title {
+        }
+      }
+    }
+  }
+}
