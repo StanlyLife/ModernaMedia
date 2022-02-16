@@ -33,6 +33,7 @@ article {
     pointer-events: none;
     background: linear-gradient(to right, #30cfd0, #c43ad6);
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     width: auto;
     text-align: center;
@@ -148,6 +149,7 @@ ul.list-decoration-disc li {
     font-weight: 500;
     background: linear-gradient(to right, #30cfd0, #c43ad6);
     background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     width: auto;
     text-align: center;
