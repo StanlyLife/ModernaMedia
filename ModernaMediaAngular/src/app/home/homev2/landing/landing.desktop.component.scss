@@ -5,7 +5,7 @@
     width: 97.5%;
     box-shadow: $box-shadow;
     max-width: $max-width;
-    margin: 100px auto;
+    margin: 1rem auto;
     overflow: hidden;
     border-radius: 25px;
     display: flex;
@@ -15,7 +15,6 @@
       max-width: 475px;
     }
     .wrapper {
-      height: 75vh;
       min-height: 750px;
       width: 100%;
     }
