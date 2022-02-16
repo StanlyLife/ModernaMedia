@@ -1,0 +1,40 @@
+@import "/src/variables.scss";
+.about-your-next-project {
+  position: relative;
+  .bg {
+    width: 100%;
+    height: 100%;
+    background: $light;
+    position: absolute;
+    z-index: -2;
+  }
+  .wrapper {
+    padding: 2rem;
+  }
+  .text {
+    text-transform: uppercase;
+    p {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      font-size: 0.75rem;
+      font-weight: 100;
+      padding: 0.5rem 0;
+    }
+    .scream {
+      font-size: 2.5rem;
+      font-weight: 900;
+      &.last {
+        color: $light;
+        background: linear-gradient(
+          to right,
+          #d06b30 0%,
+          #c43ad6 50%,
+          #30cfd0 100%
+        );
+      }
+    }
+  }
+  .get-in-touch {
+    padding: 1rem 0;
+  }
+}

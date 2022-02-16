@@ -1,0 +1,26 @@
+@import "/src/variables.scss";
+
+@media screen and (min-width: $desktop) {
+  .about-your-next-project {
+    .wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 3rem;
+    }
+    .get-in-touch {
+      padding: 0 0;
+      margin-top: 2rem;
+      margin-right: 2rem;
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  .about-your-next-project .get-in-touch {
+    margin: 0 0;
+  }
+}
