@@ -1,0 +1,107 @@
+@import "/src/variables.scss";
+
+section.contact {
+  .wrapper {
+    padding: 2rem;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .info,
+    .img {
+      flex: 1;
+      width: 100%;
+    }
+    .info {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      .titles {
+        .title {
+          padding: 1rem 0;
+          @include ctaText;
+          font-size: 2.5rem;
+        }
+        .subtitle {
+          text-transform: uppercase;
+          letter-spacing: 5px;
+          font-size: 0.75rem;
+          font-weight: 100;
+        }
+      }
+      > div,
+      > form {
+        width: 100%;
+      }
+    }
+    form {
+      .form-group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        img {
+          max-height: 18px;
+          width: 18px;
+          width: auto;
+          position: absolute;
+          z-index: 1;
+          left: 8px;
+          @include vaAbs;
+        }
+
+        input,
+        textarea {
+          height: 48px;
+          border-radius: 5px;
+          padding: 4px 8px;
+          width: 100%;
+          border: 2px solid rgb(196, 196, 196);
+          box-shadow: $box-shadow-input;
+          margin: 0.5rem 0;
+          transition: all 0.25s ease;
+          max-height: 300px;
+          max-width: 100%;
+          min-width: 100%;
+          &:hover,
+          &:active,
+          &:focus {
+            box-shadow: $box-shadow-input-hover;
+            outline: none;
+          }
+          &:focus {
+            border: 2px solid $base-color;
+          }
+        }
+        input {
+          padding-left: 38px;
+        }
+        textarea {
+          height: 100px;
+          min-height: 100px;
+        }
+        label {
+          display: none;
+        }
+      }
+    }
+  }
+  .img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 350px;
+    img {
+      border-radius: 25px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

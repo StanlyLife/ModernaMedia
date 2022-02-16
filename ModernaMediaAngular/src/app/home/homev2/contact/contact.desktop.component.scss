@@ -1,0 +1,22 @@
+@import "/src/variables.scss";
+
+@media screen and (min-width: $desktop) {
+  section.contact {
+    .wrapper {
+      flex-direction: row-reverse;
+      flex-wrap: nowrap;
+      justify-content: center;
+      .info,
+      .img {
+        flex: 2;
+      }
+      .info {
+        flex: 3;
+        margin-right: 2rem;
+      }
+    }
+    .img {
+      min-height: 600px;
+    }
+  }
+}
