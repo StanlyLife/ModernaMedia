@@ -60,134 +60,91 @@
     );
   }
 }
+.btn.cta {
+}
 
 .btn {
-  background: $light;
+  padding: 0.5rem 2rem;
   transition: all 0.25s ease;
   border-radius: 10px;
   border: none;
-  height: 38px;
+  border-radius: 10px;
+  font-size: 1rem;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1rem;
-    font-weight: 400;
-    height: 100%;
+  color: $light;
+  &:hover {
+    cursor: pointer;
   }
+  &.cta {
+    font-weight: 400;
+    background: $light;
+    p {
+      font-size: 1rem;
+      font-weight: 400;
+      @include ctaButtonText;
+    }
+    &:hover {
+      background-color: $light-third;
+    }
+  }
+  &.cta-2 {
+    position: relative;
+    box-sizing: border-box;
+    background: #0d0e21;
+    background-clip: padding-box;
+    $border: 2px;
+    border: solid $border transparent;
+    color: $light;
+    p {
+      color: $light;
+      width: 100%;
+      text-align: center;
+    }
+    &:hover {
+      background: #121435;
+      background-clip: padding-box;
+      border: solid $border transparent;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      margin: -$border;
+      border-radius: inherit;
+      background: linear-gradient(
+        to right,
+        #d06b30 0%,
+        #c43ad6 50%,
+        #30cfd0 100%
+      );
+    }
+  }
+  &.gradient {
+    background-image: linear-gradient(
+      to right,
+      rgb(1 134 218),
+      rgb(182 49 167)
+    );
+    border: 0;
+    color: rgba(var(--text-color));
+    color: $light;
+    p {
+      color: $light;
+    }
+  }
+  // states
   &:hover {
     cursor: pointer;
   }
 }
-.btn.cta {
-  p {
-    font-size: 1rem;
-    font-weight: 400;
-    @include ctaButtonText;
-  }
-  &:hover {
-    background-color: $light-third;
-  }
-}
 
-.btn.cta-2 {
-  position: relative;
-  box-sizing: border-box;
-  $border: 2px;
-  color: $light;
-  background: #0d0e21;
-  background-clip: padding-box;
-  border: solid $border transparent;
-  p {
-    width: 100%;
-    text-align: center;
-  }
-  &:hover {
-    background: #121435;
-    background-clip: padding-box;
-    border: solid $border transparent;
-  }
-  &:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    margin: -$border;
-    border-radius: inherit;
-    background: linear-gradient(
-      to right,
-      #d06b30 0%,
-      #c43ad6 50%,
-      #30cfd0 100%
-    );
-  }
-}
-.gradient {
-  animation-duration: 5s;
-  animation-name: gradient_btn;
-  animation-iteration-count: infinite;
-  background-size: 200% auto;
-  &:hover {
-    animation-duration: 0.2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-name: gradient_btn_hover;
-  }
-  &:active {
-    animation-duration: 0.2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-    animation-name: gradient_btn_active;
-  }
-}
-
-.blue-text {
-  color: $blue;
-}
-.dark-text {
-  color: $dark;
-}
-.light-text {
-  color: $light;
-}
-.red-text {
-  color: $red;
-}
-.green-text {
-  color: $green;
-}
-.yellow-text {
-  color: $yellow;
-}
-
-.dark {
-  background-color: $dark;
-  color: $light;
-}
-
-.blue {
-  background-color: $blue;
-  color: $light;
-}
-.light {
-  background-color: $light;
-  color: $dark;
-}
-.white {
-  background-color: $light;
-  color: $dark;
-}
-.no-bg {
-  background-color: transparent;
-  background: none;
-}
 .g-purple {
   background-color: transparent;
   border: none;
@@ -217,51 +174,6 @@
     $blue-primary 0%,
     $blue-secondary 100%
   );
-}
-
-.nav-link {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  display: inline-flex;
-  height: 40px;
-  width: 150px;
-  margin: 20px 20px 20px 20px;
-  color: $light;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-size: 0.8em;
-  letter-spacing: 1.5px;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  &.dark-text {
-    .slide {
-      background: $dark;
-    }
-  }
-  a {
-    position: relative;
-    transition: all 0.35s ease-Out;
-  }
-  .slide {
-    width: 100%;
-    height: 2px;
-    left: -200px;
-    background: $light;
-    position: absolute;
-    transition: all 0.35s ease-Out;
-    bottom: 0;
-  }
-  &:hover {
-    a {
-      color: $light;
-    }
-
-    .slide {
-      left: 0;
-    }
-  }
 }
 
 @keyframes gradient_btn {
