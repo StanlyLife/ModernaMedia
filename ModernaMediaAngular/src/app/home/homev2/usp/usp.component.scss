@@ -1,0 +1,64 @@
+@import "../../../../variables.scss";
+section.usp {
+  position: relative;
+
+  .wrapper {
+    padding: 2rem;
+    position: relative;
+    max-width: $max-width;
+    .titles {
+      text-align: center;
+      padding: 2rem;
+      .subtitle {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 0.75rem;
+        font-weight: 100;
+        padding: 1rem 0;
+      }
+      .title {
+        font-size: 2rem;
+        @include ctaText;
+      }
+    }
+    .content {
+      .usp-card {
+        box-shadow: $box-shadow-small;
+        background-color: $light-second;
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        align-items: center;
+        flex-direction: column;
+        height: 33%;
+        min-height: 350px;
+        min-width: 350px;
+        max-width: 500px;
+        margin: 1rem auto;
+        &:nth-child(1) {
+          background-color: whitesmoke;
+        }
+        img,
+        p {
+          padding: 0.5rem 1rem;
+          text-align: left;
+        }
+        .usp-title {
+          text-align: center;
+          padding: 0.5rem 0;
+        }
+        img {
+          height: 75px;
+        }
+      }
+    }
+  }
+  .line {
+    position: absolute;
+    bottom: 1rem;
+    width: 60%;
+    right: 0;
+    height: 3px;
+    border-radius: 5px 0 0 5px;
+  }
+}
