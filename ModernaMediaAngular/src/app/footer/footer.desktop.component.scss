@@ -2,62 +2,100 @@
 
 @media screen and (min-width: $desktop) {
   footer {
-    background-color: $light;
-    padding: $padding-section-top $padding-section-sides;
-    color: $dark;
-    .footer-wrapper {
+    .wrapper {
+      position: relative;
       display: flex;
-      justify-content: space-evenly;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: flex-start;
       margin: 0 auto;
+      padding-bottom: 6rem;
+      flex-wrap: wrap;
     }
-    .footer-content-container {
-      flex: 5;
+
+    .logo-copyright-container {
       display: flex;
-      justify-content: space-evenly;
-      align-items: baseline;
-      .content {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column;
-        h6 {
-          font-size: 1rem;
-        }
-        a {
-          padding: 5px 0;
-        }
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 4rem;
+      img {
+        max-width: 100px;
+      }
+      .copyright {
+        max-width: 400px;
+        min-width: 300px;
+        padding: 0 2rem;
       }
     }
-    .logo {
-      flex: 1;
-      text-align: center;
-      img {
-        max-width: 200px;
-        max-height: 200px;
-        margin: 0 auto;
-        margin-top: -28px;
-        filter: invert(0.1);
+
+    .links-contact-container {
+      padding: 0 2rem;
+      padding-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      width: 100%;
+      > div {
+        padding: 1rem 2rem;
       }
-      p {
-        font-size: 0.5rem;
-        width: 100%;
+      .contact {
+        padding-top: 1rem;
+      }
+    }
+    .some {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      padding: 2rem 6rem;
+      .some-links {
       }
     }
   }
 }
 
-@media screen and (min-width: 1260px) {
-  footer {
-    .footer-wrapper {
-      max-width: 1260px;
+@media screen and (min-width: 900px) {
+  footer .links-contact-container .link-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    .child {
+      padding: 0 2rem;
+      &:first-child {
+        padding-left: 0;
+      }
     }
-    .logo {
-      img {
-        margin-top: -53px;
-      }
-      p {
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  footer .wrapper {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    padding-bottom: 4rem;
+    .logo-copyright-container {
+      flex-direction: column;
+      width: 400px;
+      .copyright {
+        padding: 1rem;
         font-size: 0.75rem;
+        text-align: center;
+        margin-top: -2rem;
       }
+      img {
+        max-width: 400px;
+      }
+    }
+    .links-contact-container {
+      justify-content: space-evenly;
+    }
+    .find-us {
+      visibility: hidden;
+      display: none;
     }
   }
 }

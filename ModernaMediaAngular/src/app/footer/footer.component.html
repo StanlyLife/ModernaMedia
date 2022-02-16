@@ -1,52 +1,59 @@
 <footer *ngIf="!hidden">
-  <div class="footer-wrapper">
-    <div class="footer-content-container">
-      <div class="content">
-        <strong>Sosiale medier</strong>
-        <a
-          href="https://www.instagram.com/moderna_media/"
-          rel="nofollow external"
-          hreflang="en"
-          >Instagram</a
-        >
-        <a
-          href="https://www.facebook.com/Moderna-Media-103029925509332"
-          rel="nofollow external"
-          hreflang="en"
-          >Facebook</a
-        >
-        <a
-          href="https://www.linkedin.com/company/80401575"
-          rel="nofollow external"
-          hreflang="en"
-          >Linkedin</a
-        >
+  <div class="wrapper">
+    <div class="logo-copyright-container">
+      <div class="logo">
+        <img src="../../assets/Images/LogoV2/modernamedia-name.svg" alt="" />
       </div>
-      <div class="content">
-        <strong>Firma</strong>
-        <a href="" hreflang="no-nb">Kontakt</a>
-        <!-- <a href="" hreflang="no-nb">Support</a> -->
-        <!-- <a href="" hreflang="no-nb">Personværn</a> -->
-      </div>
-      <div class="content">
-        <strong>Tjenester</strong>
-        <a href="/utvikling" hreflang="no-nb">Utvikling</a>
-        <a href="/design" hreflang="no-nb">Design</a>
-        <a href="/seo" hreflang="no-nb">SEO</a>
-        <a href="/blogg" hreflang="no-nb">Blogg</a>
-        <a href="/info" hreflang="no-nb">Info</a>
+      <div class="copyright">
+        Copyright © 2022 Moderna Media orgnr. 926 670 018. All Rights Reserved.
+        Designet og bygget i norge.
       </div>
     </div>
-    <div class="logo">
-      <img
-        src="{{
-          imageCdn == '' ? '' : imageCdn
-        }}../../assets/Images/Logo/SVG/LOGO 333.svg"
-        alt="Moderna media logo"
-        loading="lazy"
-      />
-      <p>Copyright 2021 @ Moderna Media</p>
-      <p>orgnr: 926 670 018</p>
+    <div class="links-contact-container">
+      <div class="links">
+        <p class="strong">Lenker.</p>
+        <div class="link-container">
+          <div class="utvikling child">
+            <a href="" class="top-level-link">Utvikling</a>
+            <a href="">Nettsider</a>
+            <a href="">System</a>
+          </div>
+          <div class="design child">
+            <a href="" class="top-level-link">Design</a>
+            <a href="">Logo</a>
+            <a href="">Webdesign</a>
+          </div>
+          <div class="seo child"><a href="" class="top-level-link">SEO</a></div>
+        </div>
+      </div>
+      <div class="contact">
+        <p class="strong">Kontakt oss.</p>
+        <div class="phone">
+          <img src="../../assets/Images/Icons/inputs/call.svg" alt="" />
+          <p>Telefon: <a href="tel:90265326">902 65 326</a></p>
+        </div>
+        <div class="phone">
+          <img src="../../assets/Images/Icons/inputs/email.svg" alt="" />
+          <p>
+            E-post:
+            <a href="mailto:stianhave@hotmail.com">stianhave@hotmail.com</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="some">
+      <p class="strong find-us">Finn oss.</p>
+      <div class="some-links">
+        <a href="">
+          <img src="../../assets/Images/Icons/footer/facebook.svg" alt="" />
+        </a>
+        <a href="">
+          <img src="../../assets/Images/Icons/footer/instagram.svg" alt="" />
+        </a>
+        <a href="">
+          <img src="../../assets/Images/Icons/footer/linkedin.svg" alt="" />
+        </a>
+      </div>
     </div>
   </div>
 </footer>

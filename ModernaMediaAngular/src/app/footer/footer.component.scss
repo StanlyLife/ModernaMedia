@@ -1,36 +1,88 @@
 @import "src/variables.scss";
 
 footer {
-  padding: $padding-section-top $padding-section-sides;
-  background-color: $dark;
+  background: $black;
   color: $light;
-  .footer-content-container {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-    .content {
+  .wrapper {
+    max-width: 1280px;
+    padding: 2rem;
+  }
+  a {
+    color: $light;
+  }
+  .logo {
+    max-width: 250px;
+  }
+  .contact {
+    img {
+      height: 18px;
+    }
+
+    > div {
       display: flex;
       justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-      h6 {
-        font-size: 1rem;
-      }
-      a {
-        padding: 5px 0;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      margin: 0.5rem 0;
+      p {
+        color: $light;
+        padding-left: 8px;
       }
     }
   }
-  .logo {
-    text-align: center;
+  .some {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: nowrap;
 
-    img {
-      margin-top: -5%;
-      max-width: 75%;
-      margin: 0 auto;
-      filter: invert(1);
-      object-fit: contain;
-      padding: 3rem 3rem;
+    .some-links {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      a {
+        margin-top: 1rem;
+        transition: all 0.5s ease;
+      }
+      a:hover {
+        opacity: 0.5;
+      }
     }
+    img {
+      height: 25px;
+    }
+  }
+  .copyright {
+    color: $light;
+  }
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem 0;
+    .link-container .child {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .top-level-link {
+      font-weight: 500;
+    }
+    a {
+      margin: 0.5rem 0;
+    }
+  }
+  .strong {
+    color: $light;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 0.5rem 0;
+    @include ctaText;
   }
 }

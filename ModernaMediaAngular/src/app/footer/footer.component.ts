@@ -17,12 +17,4 @@ export class FooterComponent implements OnInit {
       this.hidden = true;
     }
   }
-
-  scrollToElement($element): void {
-    $element.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-      inline: 'nearest',
-    });
-  }
 }
