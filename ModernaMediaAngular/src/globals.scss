@@ -89,6 +89,9 @@
     &:hover {
       background-color: $light-third;
     }
+    &:disabled {
+      cursor: no-drop;
+    }
   }
   &.cta-2 {
     position: relative;
@@ -102,6 +105,10 @@
       color: $light;
       width: 100%;
       text-align: center;
+    }
+    &:disabled {
+      border: $border solid $toastError;
+      cursor: no-drop;
     }
     &:hover {
       background: #121435;
