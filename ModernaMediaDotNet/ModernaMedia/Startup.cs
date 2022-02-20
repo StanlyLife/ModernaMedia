@@ -60,32 +60,34 @@ namespace ModernaMediaDotNet
 
             services.Configure<TwillioSettings>(Configuration.GetSection("TwillioSettings"));
 
-            services.AddCors(options =>
-            {
+            //services.AddCors(options =>
+            //{
 
-                string urls = 
-                "https://modernamedia.no/," +
-                "*modernamedia.*," +
-                "https://*.modernamedia.no/*," +
-                "https://modernamedia.no*," +
-                "http://modernamedia.no/,";
-                if (CurrentEnvironment.IsDevelopment())
-                {
-                    urls += "http://localhost:4200," +
-                    "http://localhost:4200/*,";
-                }
+            //    string urls = 
+            //    "https://modernamedia.no/," +
+            //    "*modernamedia.*," +
+            //    "https://*.modernamedia.no/*," +
+            //    "https://modernamedia.no*," +
+            //    "http://modernamedia.no/,";
+            //    if (CurrentEnvironment.IsDevelopment())
+            //    {
+            //        urls += "http://localhost:4200," +
+            //        "http://localhost:4200/*,";
+            //    }
 
 
-                string[] corsList = urls.Split(",");
-                options.AddPolicy("CorsPolicy", builder =>
-                {
-                    builder
-                    .WithOrigins(corsList.ToArray())
-                    .AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .SetIsOriginAllowedToAllowWildcardSubdomains();
-                });
-            });
+            //    string[] corsList = urls.Split(",");
+            //    options.AddPolicy("CorsPolicy", builder =>
+            //    {
+            //        builder
+            //        .WithOrigins(corsList.ToArray())
+            //        .AllowAnyHeader()
+            //        .AllowAnyMethod()
+            //        .SetIsOriginAllowedToAllowWildcardSubdomains();
+            //    });
+            //});
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -104,7 +106,14 @@ namespace ModernaMediaDotNet
             .AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader());
-            
+
+            app.UseCors(x => x
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .SetIsOriginAllowed(origin => true) // allow any origin
+                                                        //.WithOrigins("https://localhost:44351")); // Allow only this origin can also have multiple origins separated with comma
+                    .AllowCredentials()); // allow credentials
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
