@@ -71,7 +71,7 @@
 @media screen and (min-width: 1280px) {
   section.prices .wrapper .prices-wrapper {
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     flex-direction: row;
     flex-wrap: nowrap;
     .price-component {
