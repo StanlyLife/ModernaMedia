@@ -59,7 +59,7 @@
     align-items: stretch;
     flex-direction: row;
     flex-wrap: nowrap;
-    button {
+    .btn {
       width: 100%;
       flex: 3;
       &:nth-child(2) {
