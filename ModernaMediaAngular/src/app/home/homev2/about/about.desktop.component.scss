@@ -9,11 +9,13 @@
       max-width: 1280px;
       .image {
         height: 75%;
+        min-width: 300px;
         img {
         }
       }
       .content {
         padding-left: 2rem;
+        max-width: 750px;
         .titles {
           padding-top: 0;
           .innhold {
