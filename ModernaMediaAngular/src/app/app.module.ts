@@ -5,6 +5,7 @@ import { AboutModule } from './about/about.module';
 import { BloggModule } from './blogg/blogg.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   BrowserModule,
   BrowserTransferStateModule,
@@ -70,6 +71,8 @@ import { BlogShowcaseComponent } from './home/homev2/blog-showcase/blog-showcase
     AboutModule,
     ComponentsModule,
     ToolsModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       {
         path: '',
