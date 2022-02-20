@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-prices',
   templateUrl: './prices.component.html',
@@ -7,6 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PricesComponent implements OnInit {
   constructor() {}
-
+  imageCdn = environment.img;
   ngOnInit(): void {}
 }
