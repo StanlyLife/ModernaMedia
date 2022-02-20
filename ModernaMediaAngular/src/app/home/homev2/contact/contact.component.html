@@ -21,25 +21,69 @@
           Kontakt epost:
           <a href="mailto:stianhave@hotmail.com">stianhave@hotmail.com</a>
         </p>
+        <p
+          class="form-info"
+          [ngClass]="{ invalid: !contactForm.valid, sent: result }"
+        >
+          {{
+            contactForm.valid
+              ? "Klar til å sende!"
+              : result
+              ? "E-post sendt! Vi kontakter deg snarest."
+              : "(*) påkrevd"
+          }}
+        </p>
       </div>
-      <form action="post" class="kontakt-form">
+      <form
+        action="post"
+        class="kontakt-form"
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()"
+      >
         <div class="form-group">
           <label for="name-input">Navn</label>
           <img
             src="../../../../assets/Images/Icons/inputs/profile.svg"
             alt=""
           />
-          <input id="name-input" type="text" placeholder="For- og etternavn" />
+          <input
+            id="name-input"
+            type="text"
+            placeholder="For- og etternavn"
+            formControlName="name"
+            [ngClass]="{
+              sent: result
+            }"
+          />
         </div>
         <div class="form-group">
           <label for="email-input">Din E-post*</label>
           <img src="../../../../assets/Images/Icons/inputs/email.svg" alt="" />
-          <input id="email-input" type="email" placeholder="E-post adresse" />
+          <input
+            id="email-input"
+            type="email"
+            placeholder="E-post adresse  (*)"
+            [ngClass]="{
+              invalid:
+                !contactForm.controls['email'].valid &&
+                contactForm.controls['email'].touched,
+              sent: result
+            }"
+            formControlName="email"
+          />
         </div>
         <div class="form-group">
           <label for="email-input">Ditt telefon nummer*</label>
           <img src="../../../../assets/Images/Icons/inputs/call.svg" alt="" />
-          <input id="phone-input" type="phone" placeholder="Telefonnummer" />
+          <input
+            id="phone-input"
+            type="phone"
+            placeholder="Telefonnummer"
+            formControlName="phone"
+            [ngClass]="{
+              sent: result
+            }"
+          />
         </div>
         <div class="form-group">
           <label for="business-input">Bedrift</label>
@@ -51,12 +95,27 @@
             id="business-input"
             type="text"
             placeholder="Tilhørende bedrift"
+            formControlName="business"
+            [ngClass]="{
+              sent: result
+            }"
           />
         </div>
         <div class="form-group">
           <label for="title-input" id="">Tittel</label>
           <img src="../../../../assets/Images/Icons/inputs/tag.svg" alt="" />
-          <input id="title-input" type="text" placeholder="E-post tittel" />
+          <input
+            id="title-input"
+            type="text"
+            placeholder="E-post tittel (*)"
+            formControlName="title"
+            [ngClass]="{
+              invalid:
+                !contactForm.controls['title'].valid &&
+                contactForm.controls['title'].touched,
+              sent: result
+            }"
+          />
         </div>
         <div class="form-group">
           <label for="content-input">Innhold</label>
@@ -64,11 +123,24 @@
             rows="10"
             id="content-input"
             type="text"
-            placeholder="E-post melding"
+            placeholder="E-post melding  (*)"
+            formControlName="body"
+            [ngClass]="{
+              invalid:
+                !contactForm.controls['body'].valid &&
+                contactForm.controls['body'].touched,
+              sent: result
+            }"
           ></textarea>
         </div>
         <div class="form-group button">
-          <button class="btn cta-2" name="send epost"><p>Send</p></button>
+          <button
+            class="btn cta-2"
+            name="send epost"
+            [disabled]="!contactForm.valid"
+          >
+            <p>Send</p>
+          </button>
         </div>
       </form>
     </div>

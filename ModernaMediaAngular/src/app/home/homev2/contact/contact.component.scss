@@ -61,7 +61,13 @@ section.contact {
           border-radius: 5px;
           padding: 4px 8px;
           width: 100%;
-          border: 2px solid rgb(196, 196, 196);
+          border: 2px solid #e6e6e6;
+          &.invalid {
+            border: 2px solid $toastError;
+          }
+          &.sent {
+            background: #dbf7db;
+          }
           box-shadow: $box-shadow-input;
           margin: 0.5rem 0;
           transition: all 0.25s ease;
@@ -103,6 +109,21 @@ section.contact {
       height: 100%;
       object-fit: cover;
       box-shadow: $box-shadow;
+    }
+  }
+  .form-info {
+    padding: 0.25rem 0;
+    color: $toastSuccess;
+    font-style: italic;
+    transition: all 0.25s ease-in-out;
+    font-size: 1rem;
+    &.invalid {
+      padding: 0.5rem 0;
+      font-size: 0.75rem;
+      color: $toastError;
+    }
+    &.sent {
+      color: $toastSuccessHover;
     }
   }
 }
