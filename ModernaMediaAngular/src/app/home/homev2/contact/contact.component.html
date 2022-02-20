@@ -2,10 +2,12 @@
   <div class="wrapper">
     <div class="img">
       <img
-        src="  {{
-          imageCdn == '' ? '' : imageCdn
-        }}../../../../assets/Images/Home/support/1280/Moderna-media-ansatt-som-snakker-med-bedrift-om-valg-av-digitalbyrå.webp"
         alt="Moderna media ansatt som snakker med bedrift om digitalbyrå valg for bedriftsystemer"
+        [src]="
+          sanitizeImageUrl(
+            '../../../../assets/Images/Home/support/1280/Moderna-media-ansatt-som-snakker-med-bedrift-om-valg-av-digitalbyrå.webp'
+          )
+        "
       />
     </div>
     <div class="info">

@@ -11,8 +11,12 @@
       <a href="" class="service utvikling">
         <div class="content-wrapper">
           <img
-            src="../../../../assets/Images/Icons/home/development.svg"
-            alt=""
+            [src]="
+              sanitizeImageUrl(
+                '../../../../assets/Images/Icons/home/development.svg'
+              )
+            "
+            alt="Utvikling av bedriftnettsider ikon"
             class="icon"
           />
           <h3>Utvikling</h3>
@@ -22,8 +26,12 @@
       <a href="" class="service design">
         <div class="content-wrapper">
           <img
-            src="../../../../assets/Images/Icons/home/design.svg"
-            alt=""
+            [src]="
+              sanitizeImageUrl(
+                '../../../../assets/Images/Icons/home/design.svg'
+              )
+            "
+            alt="Grafisk design og logo design for bedrift ikon"
             class="icon"
           />
           <h3>Design</h3>
@@ -33,8 +41,10 @@
       <a href="" class="service seo">
         <div class="content-wrapper">
           <img
-            src="../../../../assets/Images/Icons/home/seo.svg"
-            alt=""
+            [src]="
+              sanitizeImageUrl('../../../../assets/Images/Icons/home/seo.svg')
+            "
+            alt="søkemotor optimalisering ikon"
             class="icon"
           />
           <h3>Seo</h3>

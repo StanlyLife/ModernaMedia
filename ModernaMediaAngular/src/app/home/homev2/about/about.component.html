@@ -2,9 +2,11 @@
   <div class="wrapper">
     <div class="image">
       <img
-        src="  {{
-          imageCdn == '' ? '' : imageCdn
-        }}../../../../assets/Images/Home/about/1280/Moderna media digital byrå i oslo 1.webp"
+        [src]="
+          sanitizeImageUrl(
+            '../../../../assets/Images/Home/about/1280/Moderna media digital byrå i oslo 1.webp'
+          )
+        "
         alt="Digitalbyrå som jobber med bedrift nettsider og design"
       />
     </div>

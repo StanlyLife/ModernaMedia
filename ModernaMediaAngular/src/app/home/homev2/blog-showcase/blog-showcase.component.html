@@ -8,9 +8,11 @@
       <div class="blog-wrapper">
         <a href="" class="blog">
           <img
-            src="  {{
-              imageCdn == '' ? '' : imageCdn
-            }}../../../../assets/Images/Home/blog/400/Utviklere-som-lager-bedrift-system-og-nettsider.webp"
+            [src]="
+              sanitizeImageUrl(
+                '../../../../assets/Images/Home/blog/400/Utviklere-som-lager-bedrift-system-og-nettsider.webp'
+              )
+            "
             alt="Grafer av utvikler lønn for front-end, back-end arkitekter og startlønn til dataingeniør"
           />
           <div class="bg"></div>

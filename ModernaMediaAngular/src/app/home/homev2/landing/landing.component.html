@@ -2,9 +2,11 @@
   <div class="wrapper">
     <div class="bg">
       <img
-        src="  {{
-          imageCdn == '' ? '' : imageCdn
-        }}../../../../assets/Images/Home/Landing/1280/Nettside for bedrifter og bedriftnettsider fra digitalbyrå Moderna Media.webp"
+        [src]="
+          sanitizeImageUrl(
+            '../../../../assets/Images/Home/Landing/1280/Nettside for bedrifter og bedriftnettsider fra digitalbyrå Moderna Media.webp'
+          )
+        "
         alt="Moderna media digitalbyrå for bedriftens nettsider, bedriftsystemer, grafisk design og logo design"
         class="landing-image"
       />

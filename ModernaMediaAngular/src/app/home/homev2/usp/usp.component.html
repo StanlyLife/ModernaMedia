@@ -9,7 +9,9 @@
     <div class="content">
       <div class="usp-card">
         <img
-          src="../../../../assets/Images/Icons/home/refund.svg"
+          [src]="
+            sanitizeImageUrl('../../../../assets/Images/Icons/home/refund.svg')
+          "
           alt="fornøyd garanti på utvikler tjenester ikon"
         />
         <h3 class="usp-title">100% fornøyd garanti</h3>
@@ -27,7 +29,9 @@
       </div>
       <div class="usp-card">
         <img
-          src="../../../../assets/Images/Icons/home/expert.svg"
+          [src]="
+            sanitizeImageUrl('../../../../assets/Images/Icons/home/expert.svg')
+          "
           alt="systemer for bedrifter ikon"
         />
         <h3 class="usp-title">Vår prioritet</h3>
@@ -41,7 +45,12 @@
         </p>
       </div>
       <div class="usp-card">
-        <img src="../../../../assets/Images/Icons/home/quality.svg" alt="" />
+        <img
+          [src]="
+            sanitizeImageUrl('../../../../assets/Images/Icons/home/quality.svg')
+          "
+          alt="Kvalitet systemer for bedrifter ikon"
+        />
         <h3 class="usp-title">Kvalitet over kvantitet</h3>
         <p class="usp-content">
           Vi fokuserer på kvalitative og skreddersydde metoder for å gi deg best
