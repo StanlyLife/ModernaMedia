@@ -1,0 +1,94 @@
+@import "/src/variables.scss";
+.not-found {
+  //   background: linear-gradient(45deg, #d06b30 0%, #c43ad6e3 50%, #30cfd0 100%);
+  background: linear-gradient(
+    45deg,
+    whitesmoke 0%,
+    rgb(226, 222, 222) 50%,
+    rgb(189, 189, 207) 100%
+  );
+  .img-wrapper {
+    position: absolute;
+    z-index: 1;
+    width: 97.5%;
+    height: 97.5vh;
+    @include aAbs;
+    border-radius: 25px;
+    border: 2px solid $light;
+    box-shadow: $box-shadow-small;
+    overflow: hidden;
+  }
+  img,
+  .bg {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .bg {
+    background: #00000059;
+
+    background: linear-gradient(
+      -45deg,
+      rgba(238, 119, 82, 0.12),
+      rgba(231, 60, 126, 0.12),
+      rgba(35, 165, 213, 0.12),
+      rgba(35, 213, 171, 0.12)
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 100vh;
+  }
+  //   background: #141414;
+  height: 100vh;
+  min-height: 400px;
+  position: relative;
+  .wrapper {
+    @include aAbs;
+    position: absolute;
+    width: 90%;
+    max-width: 575px;
+    z-index: 10;
+    h1 {
+      font-weight: 900;
+      font-size: 14rem;
+      color: $light;
+      @include ctaText;
+    }
+    .scream {
+      color: $light;
+      font-size: 3rem;
+      font-weight: 900;
+      padding: 2rem;
+      text-transform: uppercase;
+      background: linear-gradient(
+        to right,
+        #d06b30 0%,
+        #c43ad6 50%,
+        #30cfd0 100%
+      );
+    }
+    a {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .not-found .wrapper h1 {
+    font-size: 18rem;
+    opacity: 0.75;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
