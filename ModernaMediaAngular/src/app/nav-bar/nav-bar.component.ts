@@ -30,15 +30,9 @@ export class NavBarComponent implements OnInit {
     this.nav = this.elem.nativeElement.querySelector('#navbar');
     this.header = this.elem.nativeElement.querySelector('header');
   }
-  ContactUs(event) {
-    alert('test');
-  }
+  ContactUs(event) {}
   Menu(event) {
     this.header.classList.toggle('mobile-open');
-    if (this.header.clasList.contains('mobile-open')) {
-      this.mobileOpen = true;
-    } else {
-      this.mobileOpen = false;
-    }
+    this.mobileOpen = !this.mobileOpen;
   }
 }
