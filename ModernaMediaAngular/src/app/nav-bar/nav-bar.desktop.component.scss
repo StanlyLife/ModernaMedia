@@ -2,47 +2,95 @@
 
 //Desktop
 @media screen and (min-width: $desktop) {
-  button.btn.menu {
-    display: none;
-  }
-  .wrapper {
+  header {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    z-index: 10;
+    width: 100%;
+    padding: 0 2rem;
+    .wrapper {
+      margin: 0 auto;
+      max-width: 1280px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      max-height: 50px;
+    }
     nav {
-      min-width: 550px;
-      .nav-link {
-        padding: 20px 5px;
-        margin: 20px 5px;
-        &.dark-text {
-          a,
-          p {
-            color: $dark;
-          }
-        }
-        a {
-          font-size: 0.8rem;
-        }
+      height: auto;
+      width: auto;
+      transition: none;
+      background: none;
+      transform: translate(0vw);
+      min-height: auto;
+      position: unset;
+      flex-direction: row;
+      justify-content: space-evenly;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: row;
+      flex: 4;
+      visibility: visible;
+      a {
+        padding: 1rem 0.5rem;
+      }
+      a:hover p {
+        padding: 0;
+        background: none;
+      }
+      a:nth-child(even):hover p {
+        color: $orange-primary;
+      }
+      a:nth-child(odd):hover p {
+        color: $base-color;
+      }
+      p {
+        transition: all 0.25s ease;
+        color: $light;
+        font-size: 1rem;
+        font-weight: 500;
       }
     }
-    button.btn.contact {
-      display: block;
-    }
-
-    nav {
+    .logo-anchor,
+    .buttons {
+      flex: 1;
+      height: 50px;
       display: flex;
+      justify-content: flex-start;
+      align-items: center;
     }
+    .buttons {
+      justify-content: flex-end;
+    }
+    .logo-anchor img {
+      transition: all 0.5s ease;
+      padding: 0.5rem;
+      height: 35px;
+    }
+    .logo-anchor:hover {
+      img {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .contact {
+    display: block;
+    visibility: visible;
+  }
+  .menu {
+    display: none;
+    visibility: hidden;
+  }
+}
+@media screen and (min-width: $tablet) {
+  header {
+    top: 2rem;
   }
 }
 @media screen and (min-width: 850px) {
-  button.btn.menu {
-    display: none;
-  }
-  .wrapper {
-    nav {
-      min-width: 650px;
-      .nav-link {
-        a {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
 }

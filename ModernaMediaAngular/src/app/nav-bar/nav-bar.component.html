@@ -9,27 +9,17 @@
     >
       <div class="logo">
         <img
-          *ngIf="textClass == 'dark-text'; else whiteLogo"
           src="{{
             imageCdn == '' ? '' : imageCdn
-          }}../../assets/Images/Logo/SVG/LOGO 333.svg"
+          }}../../assets/Images/LogoV2/modernamedia-small-small.png"
           alt="Moderna media logo"
         />
-        <ng-template #whiteLogo>
-          <img
-            class="white-logo"
-            src="{{
-              imageCdn == '' ? '' : imageCdn
-            }}../../assets/Images/Logo/SVG/LOGO LIGHT.svg"
-            alt="Moderna media logo"
-          />
-        </ng-template>
       </div>
     </a>
     <nav role="navigation" id="navbar">
       <a href="/utvikling" hreflang="no-nb" class="nav-link {{ textClass }}">
         <div class="slide"></div>
-        <p>utvikling</p>
+        <p>Utvikling</p>
       </a>
       <a href="/design" hreflang="no-nb" class="nav-link {{ textClass }}">
         <div class="slide"></div>
@@ -47,18 +37,17 @@
         <div class="slide"></div>
         <p>blogg</p>
       </a>
-
-      <!-- <a class="nav-link" routerLink="">Hjem</a>
-      <a class="nav-link" routerLink="utvikling">Utvikling</a>
-      <a class="nav-link" routerLink="utvikling">Design</a>
-      <a class="nav-link" routerLink="utvikling">Om oss</a>
-      <a class="nav-link" routerLink="utvikling">Blogg</a> -->
     </nav>
-    <button class="btn contact dark" (click)="ContactUs($event)">
-      Kontakt oss
-    </button>
-    <button class="btn menu transparent-white" (click)="Menu($event)">
-      Meny
-    </button>
+    <div class="buttons">
+      <a
+        class="btn cta contact"
+        (click)="ContactUs($event)"
+        href="#contact"
+        title="skroll til kontakt monderna media"
+      >
+        <p>Kontakt</p>
+      </a>
+      <button class="btn cta-2 menu" (click)="Menu($event)"><p>Meny</p></button>
+    </div>
   </div>
 </header>

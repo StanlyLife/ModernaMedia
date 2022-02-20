@@ -3,114 +3,116 @@
 //Mobile
 
 header {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  height: 50px;
-  width: 100%;
   position: absolute;
-  z-index: 1;
-  transition: all 0.5s;
-  a:hover {
-    color: inherit;
-    opacity: 0.5;
+  top: 0;
+  height: 50px;
+  z-index: 10;
+  width: 100%;
+  padding: 0 2rem;
+  .wrapper {
+    margin: 0 auto;
+    max-width: 1280px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-height: 50px;
+  }
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex: 4;
+    a {
+      padding: 1rem 1rem;
+    }
+    // a:nth-child(even):hover p {
+    //   color: $orange-primary;
+    // }
+    // a:nth-child(odd):hover p {
+    //   color: $base-color;
+    // }
+    p {
+      transition: all 0.25s ease;
+      color: $light;
+    }
+  }
+  .logo-anchor,
+  .buttons {
+    flex: 1;
+    height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .buttons {
+    justify-content: flex-end;
+  }
+  .logo-anchor img {
+    transition: all 0.5s ease;
+    padding: 0.5rem;
+    height: 35px;
+  }
+  .logo-anchor:hover {
+    img {
+      opacity: 0.5;
+    }
+  }
+}
+
+.contact {
+  display: none;
+  visibility: hidden;
+}
+
+header {
+  position: fixed;
+  nav {
+    height: 0px;
+    width: 100%;
+    transition: transform 0.5s ease;
+    background: linear-gradient(45deg, #d06b30 0%, #c43ad6e3 50%, #30cfd0 100%);
+    transform: translateX(100vw);
+    min-height: 500px;
+    height: 100vh;
+    display: block;
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    a {
+      width: 100%;
+      padding: 2rem;
+      &:hover {
+        p {
+          padding: 2rem;
+          color: $light;
+          background: linear-gradient(
+            to right,
+            #d06b30 0%,
+            #c43ad6 50%,
+            #30cfd0 100%
+          );
+        }
+      }
+    }
+    p {
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      background: transparent;
+    }
   }
   &.mobile-open {
-    background: $light;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    right: 0;
-    padding: 0;
-    margin: 0;
-    .wrapper {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      overflow-y: scroll;
-      .logo-anchor {
-        position: unset;
-        height: 75px;
-        .logo {
-          @include haAbs;
-          position: unset;
-          pointer-events: none;
-          img {
-            transition: opacity 0.2s;
-            opacity: 1;
-          }
-          .white-logo {
-            filter: invert(0.9);
-          }
-        }
-      }
-      nav {
-        height: auto;
-        display: flex;
-        justify-content: space-evenly;
-        flex-direction: column;
-        .nav-link {
-          a,
-          p {
-            color: $dark;
-          }
-        }
-      }
+    nav {
+      transform: translateX(0vw);
     }
-  }
-}
-.btn.menu {
-  position: fixed;
-  top: 5px;
-  right: 5px;
-}
-
-.wrapper {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 100%;
-  position: relative;
-  padding: 0 25px;
-
-  nav {
-    max-width: 1280px;
-    height: 100%;
-    color: $light;
-    width: 60%;
-    margin: 0 auto;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
-    display: none;
-    .nav-link {
-      a {
-        text-shadow: $text-shadow;
-      }
-    }
-  }
-  .logo-anchor {
-    position: absolute;
-    height: 100%;
-    width: 75px;
-    left: 10px;
-    .logo {
-      height: 100%;
-      position: absolute;
-      left: 10px;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        opacity: 0.5;
-        transition: all 0.05s;
-      }
-    }
-  }
-  .contact {
-    display: none;
   }
 }
