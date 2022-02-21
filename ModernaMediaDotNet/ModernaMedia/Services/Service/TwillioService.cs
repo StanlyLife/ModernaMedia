@@ -28,7 +28,8 @@ namespace ModernaMediaDotNet.Services.Service
                 new PhoneNumber(config.Value.phonenumber));
             messageOptions.MessagingServiceSid = config.Value.MessagingServiceSid;
             messageOptions.Body = body;
-            messageOptions.From = "Moderna Media";
+            messageOptions.From = "M Media";
+            
 
             var message = MessageResource.Create(messageOptions);
             Console.WriteLine(message);
