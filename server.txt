@@ -192,7 +192,9 @@ server {
 
 
 
-
+PM2
+-----------------------------------------
+pm2 start "node dist/ModernaMediaAngular/server/main.js" --name "ModernaMedia"
 
 
 
