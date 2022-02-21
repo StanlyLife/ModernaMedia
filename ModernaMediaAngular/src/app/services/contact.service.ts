@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ToastService } from './toast.service';
-import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
