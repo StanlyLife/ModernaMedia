@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     private seo: SeoService
   ) {
     title.setTitle(
-      'Moderna Media Digitalbyrå | Bedrift nettsider, systemer, webdesign og seo'
+      'Moderna Media - Digitalbyrå for bedriftens hjemmeside, design og seo'
     );
   }
 
