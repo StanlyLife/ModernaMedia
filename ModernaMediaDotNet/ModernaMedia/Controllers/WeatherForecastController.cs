@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace ModernaMediaDotNet.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
