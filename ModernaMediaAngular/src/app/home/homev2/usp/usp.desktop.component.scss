@@ -1,4 +1,9 @@
 @import "../../../../variables.scss";
+@media screen and (min-width: 500px) {
+  section.usp .wrapper .content {
+    min-width: 350px;
+  }
+}
 @media screen and (min-width: 900px) {
   section.usp {
     .wrapper {

@@ -7,10 +7,13 @@
       flex-wrap: nowrap;
       padding: 0 2rem;
       max-width: 1280px;
+      align-items: stretch;
       .image {
-        height: 75%;
         min-width: 300px;
+        position: relative;
+        height: auto;
         img {
+          position: absolute;
         }
       }
       .content {

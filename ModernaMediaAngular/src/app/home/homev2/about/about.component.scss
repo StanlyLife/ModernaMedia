@@ -1,9 +1,7 @@
 @import "../../../../variables.scss";
 
 .about {
-  height: 100vh;
   min-height: 800px;
-  max-height: 1800px;
   background-color: $light-second;
   padding: 2rem;
   .wrapper {
@@ -13,7 +11,6 @@
     flex-direction: column;
     height: 100%;
     width: 100%;
-    max-width: $max-width;
     margin: 0 auto;
     .image {
       position: relative;
