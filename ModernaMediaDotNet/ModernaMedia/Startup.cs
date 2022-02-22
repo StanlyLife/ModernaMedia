@@ -114,7 +114,7 @@ namespace ModernaMediaDotNet
                                                         //.WithOrigins("https://localhost:44351")); // Allow only this origin can also have multiple origins separated with comma
                     .AllowCredentials()); // allow credentials
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
 
             app.UseRouting();
 

@@ -37,7 +37,6 @@ export class ContactComponent implements OnInit {
     if (this.result) {
       return;
     }
-    console.log(this.contactForm.value);
     var request = this.cs.SendContactRequest(this.contactForm.value);
     this.cs.SendContactRequestResult.subscribe((arg) => {
       this.result = arg;

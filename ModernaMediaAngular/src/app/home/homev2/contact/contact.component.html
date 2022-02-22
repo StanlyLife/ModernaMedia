@@ -138,6 +138,9 @@
             class="btn cta-2"
             name="send epost"
             [disabled]="!contactForm.valid"
+            [ngClass]="{
+              disabled: !contactForm.valid
+            }"
           >
             <p>Send</p>
           </button>

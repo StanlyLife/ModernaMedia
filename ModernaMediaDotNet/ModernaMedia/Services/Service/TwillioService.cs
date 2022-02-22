@@ -20,6 +20,8 @@ namespace ModernaMediaDotNet.Services.Service
 
         public bool SendMessage(string body)
         {
+            try
+            {
             var accountSid = config.Value.accountSid;
             var authToken = config.Value.authToken;
             TwilioClient.Init(accountSid, authToken);
@@ -34,6 +36,13 @@ namespace ModernaMediaDotNet.Services.Service
             var message = MessageResource.Create(messageOptions);
             Console.WriteLine(message);
             return message != null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e);
+                throw e;
+            }
         }
     }
 }
