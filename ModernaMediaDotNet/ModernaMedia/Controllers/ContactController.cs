@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ModernaMediaDotNet.Models.contact;
+using ModernaMediaDotNet.Services;
 using ModernaMediaDotNet.Services.Contract;
 
 namespace ModernaMediaDotNet.Controllers
@@ -10,14 +11,16 @@ namespace ModernaMediaDotNet.Controllers
     {
 
         private ITwillioService twillioService;
+        private readonly ILoggerManager logger;
 
-        public ContactController(ITwillioService twillioService)
+        public ContactController(ITwillioService twillioService, ILoggerManager logger)
         {
             this.twillioService = twillioService;
+            this.logger = logger;
         }
 
         [HttpPost]
-        public bool Contact(ContactModel model)
+        public IActionResult Contact(ContactModel model)
         {
             string body = $"Melding fra MODERNA MEDIA: \n" +
                 $"navn: {model.name} \n" +
@@ -26,8 +29,18 @@ namespace ModernaMediaDotNet.Controllers
                 $"bedrift: {model.business} \n" +
                 $"tittel: {model.title} \n" +
                 $"innhold: {model.body}";
+            logger.LogInfo("Initializing message");
+            logger.LogInfo(body);
+            try
+            {
             var result = twillioService.SendMessage(body);
-            return result;
+                return Ok(result);
+            }
+            catch (System.Exception e)
+            {
+                logger.LogError($"Something went wrong: {e}");
+                return StatusCode(500, $"Internal server error: {e}");
+            }
         }
     }
 }

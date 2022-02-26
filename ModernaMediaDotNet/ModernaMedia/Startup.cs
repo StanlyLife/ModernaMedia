@@ -10,12 +10,17 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
+using ModernaMediaDotNet.Extensions;
 using ModernaMediaDotNet.Models.Mail;
 using ModernaMediaDotNet.Models.Settings;
+using ModernaMediaDotNet.Services;
 using ModernaMediaDotNet.Services.Contract;
+using ModernaMediaDotNet.Services.LoggerService;
 using ModernaMediaDotNet.Services.Service;
+using NLog;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -30,6 +35,7 @@ namespace ModernaMediaDotNet
             .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
             .AddEnvironmentVariables();
+            LogManager.LoadConfiguration(String.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
             Configuration = configuration;
             CurrentEnvironment = env;
         }
@@ -59,7 +65,7 @@ namespace ModernaMediaDotNet
             services.AddScoped<ITwillioService, TwillioService>();
 
             services.Configure<TwillioSettings>(Configuration.GetSection("TwillioSettings"));
-
+            services.AddSingleton<ILoggerManager, LoggerManager>();
             //services.AddCors(options =>
             //{
 
@@ -88,10 +94,11 @@ namespace ModernaMediaDotNet
             //});
 
             services.AddCors();
+            services.ConfigureLoggerService();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerManager logger)
         {
             if (env.IsDevelopment())
             {
@@ -100,7 +107,7 @@ namespace ModernaMediaDotNet
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ModernaMediaDotNet v1"));
 
             }
-
+            app.ConfigureExceptionHandler(logger);
             //app.UseCors("CorsPolicy");
             app.UseCors(builder => builder
             .AllowAnyOrigin()
