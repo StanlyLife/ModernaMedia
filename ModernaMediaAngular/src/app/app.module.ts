@@ -28,6 +28,9 @@ import { UspComponent } from './home/homev2/usp/usp.component';
 import { PricesComponent } from './home/homev2/prices/prices.component';
 import { BlogShowcaseComponent } from './home/homev2/blog-showcase/blog-showcase.component';
 
+//Modules
+import { MiscModule } from './misc/misc.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,7 +56,6 @@ import { BlogShowcaseComponent } from './home/homev2/blog-showcase/blog-showcase
     AppRoutingModule,
     HttpClientModule,
     ComponentsModule,
-    ToolsModule,
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
@@ -68,6 +70,8 @@ import { BlogShowcaseComponent } from './home/homev2/blog-showcase/blog-showcase
         component: NotFoundComponent,
       },
     ]),
+    MiscModule,
+    ToolsModule,
   ],
   exports: [RouterModule],
   bootstrap: [AppComponent, NavBarComponent, FooterComponent],

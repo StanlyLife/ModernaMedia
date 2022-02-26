@@ -1,0 +1,24 @@
+@import "/src/variables.scss";
+.design-system {
+  .container {
+    background: wheat;
+    width: 90%;
+    max-width: 1800px;
+    min-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    @include flexC;
+    justify-content: flex-start;
+    > * {
+      margin: 1rem 0;
+    }
+  }
+  .wrapper {
+    .buttons {
+      @include flexR;
+      button {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}

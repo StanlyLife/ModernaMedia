@@ -23,9 +23,11 @@
     .lets-talk {
       padding: 0;
     }
-    .scream {
+    .scream,
+    .om-ditt {
       font-size: 2.5rem;
       font-weight: 900;
+      font-family: $ff-primary;
       &.last {
         color: $light;
         background: linear-gradient(
