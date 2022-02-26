@@ -65,7 +65,9 @@ $box-shadow: 1px 1px 28px 0px rgba(0, 0, 0, 0.75);
 $box-shadow-input: 1px 1px 6px 0px rgb(0 0 0 / 25%);
 $box-shadow-input-hover: 0px 0px 6px 2px rgb(0 0 0 / 30%);
 $box-shadow-small: 1px 1px 28px 0px rgba(0, 0, 0, 0.25);
-$box-shadow-btn: 0px 0px 20px 6px rgb(0 0 0 / 25%);
+$box-shadow-btn: 0px 0px 7px 0px rgba(0, 0, 0, 0.302);
+$box-shadow-btn-inset: inset 0px 0px 20px 6px rgb(0 0 0 / 25%);
+$box-shadow-btn-inset-active: inset 0px 0px 20px 6px rgb(0 0 0 / 50%);
 
 $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
   0px -5px 35px rgba(255, 255, 255, 0.3);
@@ -100,6 +102,7 @@ $blogg-line-height: 29px;
 }
 
 @mixin ctaText {
+  transition: all 0.5s ease;
   background: #b631a7;
   background: -webkit-linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
   background: -moz-linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
@@ -107,6 +110,7 @@ $blogg-line-height: 29px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 @mixin ctaButtonText {
   background: #b631a7;
   background: -webkit-linear-gradient(to right, #b631a7 0%, #0186da 100%);
@@ -132,6 +136,18 @@ $blogg-line-height: 29px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@mixin flexC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@mixin flexR {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
 }
 
 @font-face {
@@ -383,7 +399,13 @@ $blogg-line-height: 29px;
     url("/assets/fonts/Plex/IBMPlexSans-ExtraLight.ttf") format("svg");
 }
 
-$ff-article: "Pier", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+// $ff-article: "Pier", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+//   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$ff-mosk: "Mosk", "Pier", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$ff-pier: "Pier", "Plex", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$ff-article: "Plex", "Pier", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 $ff-primary: "Mosk", "Pier", -apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; ;

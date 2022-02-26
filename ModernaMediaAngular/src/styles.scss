@@ -27,8 +27,7 @@ main {
 body {
   margin: 0;
   font-family: Helvetica, Arial, sans-serif;
-  font-family: $ff-primary;
-  font-weight: 100;
+  font-family: $ff-article;
   overflow-x: hidden;
 }
 
@@ -47,17 +46,18 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+.title {
   font-family: $ff-primary;
 }
 a,
 button {
   font-family: $ff-primary;
-  font-weight: 100;
-  font-size: $font-btn;
 }
 article,
-p {
+p,
+input,
+textarea {
   font-family: $ff-article;
   font-weight: 400;
 }

@@ -1,188 +1,15 @@
 @import "./variables.scss";
-
-.btn.shadow {
-  box-shadow: $box-shadow-btn;
-}
-
-.hidden {
-  display: none;
-}
-
-.transition-bottom {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  &.transition-light {
-    background: linear-gradient(
-      0deg,
-      rgba(51, 51, 51, 1) 0%,
-      rgba(51, 51, 51, 0.25) 10%,
-      rgba(51, 51, 51, 0) 100%
-    );
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  &.transition-light {
-    background: linear-gradient(
-      0deg,
-      rgba(238, 238, 238, 1) 0%,
-      rgba(238, 238, 238, 0.25) 10%,
-      rgba(238, 238, 238, 0) 100%
-    );
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
-
-.transition-top {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  &.transition-light {
-    background: linear-gradient(
-      180deg,
-      rgba(51, 51, 51, 1) 0%,
-      rgba(51, 51, 51, 0.25) 10%,
-      rgba(51, 51, 51, 0) 100%
-    );
-  }
-  &.transition-light {
-    background: linear-gradient(
-      180deg,
-      rgba(238, 238, 238, 1) 0%,
-      rgba(238, 238, 238, 0.25) 10%,
-      rgba(238, 238, 238, 0) 100%
-    );
-  }
-}
-.btn.cta {
-}
-
-.btn {
-  padding: 0.5rem 2rem;
-  transition: all 0.25s ease;
-  border-radius: 10px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: $light;
-  &:hover {
-    cursor: pointer;
-  }
-  &.cta {
-    font-weight: 400;
-    background: $light;
-    p {
-      font-size: 1rem;
-      font-weight: 400;
-      @include ctaButtonText;
-    }
-    &:hover {
-      background-color: $light-third;
-    }
-    &:disabled {
-      cursor: no-drop;
-    }
-  }
-  &.cta-2 {
-    position: relative;
-    box-sizing: border-box;
-    background: #0d0e21;
-    background-clip: padding-box;
-    $border: 2px;
-    border: solid $border transparent;
-    color: $light;
-    p {
-      color: $light;
-      width: 100%;
-      text-align: center;
-    }
-    &:disabled {
-      border: $border solid $toastError;
-      cursor: no-drop;
-    }
-    &:hover {
-      background: #121435;
-      background-clip: padding-box;
-      border: solid $border transparent;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      z-index: -1;
-      margin: -$border;
-      border-radius: inherit;
-      background: linear-gradient(
-        to right,
-        #d06b30 0%,
-        #c43ad6 50%,
-        #30cfd0 100%
-      );
-    }
-  }
-  &.gradient {
-    background-image: linear-gradient(
-      to right,
-      rgb(1 134 218),
-      rgb(182 49 167)
-    );
-    border: 0;
-    color: rgba(var(--text-color));
-    color: $light;
-    p {
-      color: $light;
-    }
-  }
-  // states
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.g-purple {
-  background-color: transparent;
-  border: none;
-  color: $light;
-  background-image: linear-gradient(
-    to right,
-    $purple-primary 0%,
-    $purple-secondary 100%
-  );
-}
-.g-orange {
-  background-color: transparent;
-  border: none;
-  color: $light;
-  background-image: linear-gradient(
-    to right,
-    $orange-primary 0%,
-    $orange-secondary 100%
-  );
-}
-.g-blue {
-  background-color: transparent;
-  border: none;
-  color: $light;
-  background-image: linear-gradient(
-    to right,
-    $blue-primary 0%,
-    $blue-secondary 100%
-  );
-}
-
 @keyframes gradient_btn {
   0% {
     background-position: 0% 0%;
@@ -212,5 +39,187 @@
   }
   100% {
     background-position: 0% 100%;
+  }
+}
+
+.btn.shadow {
+  box-shadow: $box-shadow-btn;
+}
+
+.hidden {
+  display: none;
+}
+
+.super-title {
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  @include gradientTitle;
+  font-family: $ff-primary;
+}
+.title {
+  max-width: 1000px;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+  background: #b631a7;
+  background: linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #0000;
+  font-size: 2.5rem;
+}
+.scream {
+  color: #eee;
+  background: linear-gradient(to right, #d06b30 0%, #c43ad6 50%, #30cfd0 100%);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 900;
+}
+.subtitle {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 0.75rem;
+  font-weight: 100;
+  font-family: $ff-pier;
+  &.large {
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 500;
+    font-family: $ff-primary;
+    font-size: 1.25rem;
+    color: $light;
+  }
+}
+
+.btn {
+  padding: 0.5rem 2rem;
+  transition: all 0.25s linear;
+  border-radius: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $light;
+  p {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  &:hover,
+  &.hover {
+    cursor: pointer;
+  }
+  &:disabled,
+  &.disabled {
+    cursor: no-drop;
+  }
+  &.shadow {
+    box-shadow: $box-shadow-btn;
+  }
+  &.cta {
+    font-weight: 400;
+    background: $light;
+    p {
+      font-size: 1rem;
+      @include ctaButtonText;
+    }
+    &:hover,
+    &.hover {
+      box-shadow: $box-shadow-btn-inset;
+    }
+    &:active,
+    &.active {
+      background-color: $light-third;
+      box-shadow: $box-shadow-btn-inset;
+    }
+  }
+  &.cta-2 {
+    color: $light;
+    box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+    border: solid 2px transparent;
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0)
+      ),
+      linear-gradient(101deg, #d06b30 0%, #c43ad6 50%, #30cfd0 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    box-shadow: 2px 1000px 1px #0d0e21 inset;
+    color: $light;
+    p {
+      color: $light;
+    }
+    // p {
+    //   color: $light;
+    //   width: 100%;
+    //   text-align: center;
+    // }
+    // &:disabled {
+    //   border: $border solid $toastError;
+    //   cursor: no-drop;
+    // }
+    &:hover,
+    &.hover {
+      box-shadow: 2px 1000px 1px hsl(237, 43%, 25%) inset;
+    }
+    &:active,
+    &.active {
+      box-shadow: 2px 1000px 1px hsl(237, 43%, 15%) inset;
+    }
+    &:disabled,
+    &.disabled {
+      box-shadow: 2px 1000px 1px #0d0e21 inset;
+      background-image: linear-gradient(
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0)
+        ),
+        linear-gradient(101deg, $toastError 0%, $toastErrorHover 100%);
+    }
+  }
+
+  &.gradient {
+    background-image: linear-gradient(
+      to right,
+      rgb(1 134 218),
+      rgb(182 49 167)
+    );
+    border: 0;
+    color: rgba(var(--text-color));
+    color: $light;
+    transition: all 0.25s ease;
+    p {
+      color: $light;
+    }
+    &.purple {
+      background: linear-gradient(
+        to right,
+        $purple-primary 0%,
+        $purple-secondary 100%
+      );
+    }
+    &.orange {
+      background: linear-gradient(
+        45deg,
+        $orange-primary 0%,
+        $orange-secondary 100%
+      );
+    }
+    &.blue {
+      background: linear-gradient(
+        to right,
+        $blue-primary 0%,
+        $blue-secondary 100%
+      );
+    }
+    &:hover,
+    &.hover {
+      opacity: 0.9;
+      box-shadow: $box-shadow-btn-inset;
+    }
+    &:active,
+    &.active {
+      box-shadow: $box-shadow-btn-inset-active;
+    }
   }
 }
