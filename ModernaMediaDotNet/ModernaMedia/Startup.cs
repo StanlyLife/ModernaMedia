@@ -66,32 +66,7 @@ namespace ModernaMediaDotNet
 
             services.Configure<TwillioSettings>(Configuration.GetSection("TwillioSettings"));
             services.AddSingleton<ILoggerManager, LoggerManager>();
-            //services.AddCors(options =>
-            //{
 
-            //    string urls = 
-            //    "https://modernamedia.no/," +
-            //    "*modernamedia.*," +
-            //    "https://*.modernamedia.no/*," +
-            //    "https://modernamedia.no*," +
-            //    "http://modernamedia.no/,";
-            //    if (CurrentEnvironment.IsDevelopment())
-            //    {
-            //        urls += "http://localhost:4200," +
-            //        "http://localhost:4200/*,";
-            //    }
-
-
-            //    string[] corsList = urls.Split(",");
-            //    options.AddPolicy("CorsPolicy", builder =>
-            //    {
-            //        builder
-            //        .WithOrigins(corsList.ToArray())
-            //        .AllowAnyHeader()
-            //        .AllowAnyMethod()
-            //        .SetIsOriginAllowedToAllowWildcardSubdomains();
-            //    });
-            //});
 
             services.AddCors();
             services.ConfigureLoggerService();
@@ -105,24 +80,15 @@ namespace ModernaMediaDotNet
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ModernaMediaDotNet v1"));
-
             }
             app.ConfigureExceptionHandler(logger);
-            //app.UseCors("CorsPolicy");
-            app.UseCors(builder => builder
-            .AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader());
-
             app.UseCors(x => x
                     .AllowAnyMethod()
                     .AllowAnyHeader()
                     .SetIsOriginAllowed(origin => true) // allow any origin
-                                                        //.WithOrigins("https://localhost:44351")); // Allow only this origin can also have multiple origins separated with comma
                     .AllowCredentials()); // allow credentials
 
             //app.UseHttpsRedirection();
-
             app.UseRouting();
 
             app.UseAuthentication();
