@@ -1,3 +1,4 @@
+import { TjenesterModule } from './Tjenester/tjenester.module';
 import { ToolsModule } from './tools/tools.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
@@ -58,6 +59,7 @@ import { MiscModule } from './misc/misc.module';
     ComponentsModule,
     FormsModule,
     ReactiveFormsModule,
+    TjenesterModule,
     RouterModule.forRoot([
       {
         path: '',
