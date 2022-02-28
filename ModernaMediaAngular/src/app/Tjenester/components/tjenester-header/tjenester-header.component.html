@@ -1,1 +1,32 @@
-<p>tjenester-header works!</p>
+<section class="landing">
+  <div class="wrapper">
+    <div class="bg">
+      <img
+        [src]="sanitizeImageUrl(data.background.src)"
+        alt="{{ data.background.alt }}"
+        class="landing-image"
+      />
+      <div class="bg-shade"></div>
+    </div>
+    <div class="content">
+      <div class="image">
+        <img
+          class="icon"
+          [src]="sanitizeImageUrl(data.icon.src)"
+          alt="{{ data.icon.alt }}"
+        />
+      </div>
+      <div class="titles">
+        <p class="text-glow">{{ data.title }}</p>
+        <h1 class="subtitle large">
+          {{ data.subtitle }}
+        </h1>
+      </div>
+      <ul class="links">
+        <li class="link-container" *ngFor="let i of data.links">
+          <a class="header-link" href="{{ i.url }}">{{ i.title }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,26 @@
+@import "../../../../variables.scss";
+
+@media screen and (min-width: $tablet) {
+  .landing {
+    width: 97.5%;
+    box-shadow: $box-shadow;
+    max-width: $max-width;
+    margin: 1rem auto;
+    overflow: hidden;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+      height: 650px;
+      min-height: auto;
+      width: 100%;
+    }
+    .bg {
+      .bg-shade,
+      .landing-image {
+        min-width: 100%;
+      }
+    }
+  }
+}

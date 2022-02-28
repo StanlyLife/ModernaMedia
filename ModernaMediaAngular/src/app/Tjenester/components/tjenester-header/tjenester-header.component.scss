@@ -1,0 +1,88 @@
+@import "../../../../variables.scss";
+
+.landing .bg {
+  position: absolute;
+  width: 100%;
+  height: calc(90vh - 2rem);
+  min-height: 670px;
+  .bg-shade,
+  .landing-image {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .bg-shade {
+    @include backgroundShade;
+  }
+}
+
+.landing {
+  width: 100%;
+  position: relative;
+  .wrapper {
+    height: calc(90vh - 2rem);
+    min-height: 670px;
+  }
+  .content {
+    position: absolute;
+    @include aAbs;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: $desktop;
+  }
+  .titles {
+    text-align: center;
+    .text-glow {
+      color: $light;
+      font-size: 5rem;
+      font-weight: 600;
+    }
+    .subtitle {
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img.icon {
+      height: 150px;
+      margin: 0 auto;
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    position: absolute;
+    bottom: 2rem;
+    width: 95%;
+    max-width: 400px;
+    .link-container {
+      color: $light;
+    }
+    a {
+      color: $light;
+      font-weight: 500;
+      &:hover {
+        color: $orange-gradient;
+      }
+      &::before {
+        content: "\2022";
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 465px) {
+}
