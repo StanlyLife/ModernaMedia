@@ -78,6 +78,17 @@ $blogg-line-height-mobile: 26px;
 $blogg-font-size: 18px;
 $blogg-line-height: 29px;
 
+$elevation-1: 0px 1px 1px rgba(18, 18, 18, 0.14),
+  0px 2px 1px rgba(18, 18, 18, 0.12), 0px 1px 3px rgba(18, 18, 18, 0.2);
+$elevation-2: 0px 4px 5px rgba(18, 18, 18, 0.14),
+  0px 1px 10px rgba(18, 18, 18, 0.12), 0px 2px 4px rgba(18, 18, 18, 0.2);
+$elevation-3: 0px 8px 10px rgba(18, 18, 18, 0.14),
+  0px 3px 14px rgba(18, 18, 18, 0.12), 0px 5px 5px rgba(18, 18, 18, 0.2);
+$elevation-4: 0px 16px 24px rgba(18, 18, 18, 0.14),
+  0px 6px 30px rgba(18, 18, 18, 0.12), 0px 8px 10px rgba(18, 18, 18, 0.2);
+$elevation-5: 0px 24px 38px rgba(18, 18, 18, 0.14),
+  0px 9px 46px rgba(18, 18, 18, 0.12), 0px 11px 15px rgba(18, 18, 18, 0.2);
+
 .gradient-line {
   background: linear-gradient(to right, #d06b30 0%, #c43ad6 50%, #30cfd0 100%);
 }
