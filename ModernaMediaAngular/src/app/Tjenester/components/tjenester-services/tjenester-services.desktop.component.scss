@@ -1,0 +1,43 @@
+@import "/src/variables.scss";
+@media screen and (min-width: $tablet) {
+  .tjenester {
+    .tjenester-container {
+      .header {
+        .header-subtitle {
+        }
+        .header-content {
+        }
+      }
+      .service-wrapper {
+        @include flexR;
+        max-width: 1280px;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        padding: 0 2rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .service-container {
+        margin: 0 auto;
+      }
+      .service {
+        width: 95%;
+        max-width: 400px;
+        height: 375px;
+        background: $light;
+        margin: 1rem auto;
+        @include flexC;
+        &:hover,
+        &.hover {
+        }
+        &:active,
+        &.active {
+        }
+        .subtitle-gradient {
+        }
+        .icon {
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,27 @@
-<p>tjenester-services works!</p>
+<section class="tjenester">
+  <div class="tjenester-container">
+    <div class="header">
+      <p class="subtitle-gradient blue header-subtitle">
+        {{ data.subtitle }}
+      </p>
+      <h2 class="title-bold">{{ data.title }}</h2>
+      <p class="header-content">
+        {{ data.headerText }}
+      </p>
+    </div>
+    <div class="service-wrapper">
+      <div class="service-container" *ngFor="let service of data.services">
+        <a href="{{ service.link }}" class="service">
+          <img
+            class="icon"
+            [src]="sanitizeImageUrl(service.icon.src)"
+            alt="{{ service.icon.alt }}"
+          />
+          <p class="subtitle-gradient">{{ service.title }}</p>
+          <p>{{ service.text }}</p>
+          <p class="read-more">Les mer</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

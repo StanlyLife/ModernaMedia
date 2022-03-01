@@ -1,0 +1,55 @@
+@import "/src/variables.scss";
+.tjenester {
+  background: $clean-white;
+  .tjenester-container {
+    .header {
+      margin: 2rem auto;
+      max-width: $desktop;
+      text-align: center;
+      .header-subtitle {
+        font-size: 1.25rem;
+      }
+      .header-content {
+        margin-top: 0.5rem;
+      }
+    }
+    .service-wrapper {
+      @include flexC;
+      flex-wrap: wrap;
+    }
+    .service {
+      width: 95%;
+      max-width: 400px;
+      height: 375px;
+      background: $light;
+      margin: 1rem auto;
+      @include flexC;
+      padding: 2rem;
+      transition: all 0.5s ease;
+      position: relative;
+      .read-more {
+        position: absolute;
+        bottom: 2rem;
+        transition: all 0.25s ease;
+        color: $blue;
+      }
+      &:hover,
+      &.hover {
+        box-shadow: $elevation-4;
+        .read-more {
+          color: $orange-primary;
+        }
+      }
+      &:active,
+      &.active {
+        box-shadow: $elevation-2;
+      }
+      .subtitle-gradient {
+        margin: 1rem;
+      }
+      .icon {
+        height: 75px;
+      }
+    }
+  }
+}
