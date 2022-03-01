@@ -1,7 +1,9 @@
 @import "/src/variables.scss";
 .design-system {
   .container {
-    background: wheat;
+    background: $light;
+    box-shadow: $box-shadow;
+    border-radius: 25px;
     width: 90%;
     max-width: 1800px;
     min-width: 400px;
@@ -9,8 +11,9 @@
     padding: 2rem;
     @include flexC;
     justify-content: flex-start;
+    align-items: flex-start;
     > * {
-      margin: 1rem 0;
+      margin: 0.5rem 0;
     }
   }
   .wrapper {
