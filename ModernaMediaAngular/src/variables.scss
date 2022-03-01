@@ -110,6 +110,15 @@ $blogg-line-height: 29px;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@mixin ctaText-blue {
+  transition: all 0.5s ease;
+  background: #b631a7;
+  background: -webkit-linear-gradient(to right, #0186da 0%, #30cfd0 100%);
+  background: -moz-linear-gradient(to right, #0186da 0%, #30cfd0 100%);
+  background: linear-gradient(to right, #0186da 0%, #30cfd0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 @mixin ctaButtonText {
   background: #b631a7;

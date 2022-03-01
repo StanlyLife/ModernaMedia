@@ -68,6 +68,11 @@
   -webkit-text-fill-color: #0000;
   font-size: 2.5rem;
 }
+.title-bold {
+  color: $dark;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
 .scream {
   color: #eee;
   background: linear-gradient(to right, #d06b30 0%, #c43ad6 50%, #30cfd0 100%);
@@ -90,9 +95,18 @@
     color: $light;
   }
 }
+.subtitle-gradient {
+  @include ctaText;
+  font-weight: 800;
+  font-size: 1.5rem;
+  &.blue {
+    @include ctaText-blue;
+  }
+}
 .text-glow {
   text-shadow: 0 0 80px rgb(192 219 255 / 75%), 0 0 32px rgb(65 120 255 / 24%);
 }
+
 .text-gradient {
   background: linear-gradient(to right, #30cfd0, #c43ad6);
   -webkit-background-clip: text;
