@@ -35,7 +35,7 @@ export class DesignComponent implements OnInit {
   dataHeader: any = {
     background: {
       alt: '',
-      src: '../../../../assets/Images/Tjenester/header/design (1).jpg',
+      src: '../../../../assets/Images/Tjenester/header/Design for bedrifter.jpg',
     },
     icon: {
       alt: '',
@@ -90,7 +90,7 @@ export class DesignComponent implements OnInit {
   dataInfoSection = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/design (2).jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/design/grafisk_design.jpg',
       alt: '',
     },
     position: 'right',
@@ -100,15 +100,16 @@ export class DesignComponent implements OnInit {
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
     text: [
-      '1IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
-      '2IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
-      '3IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
+      'Grafisk design er kunsten å presentere visuelt innhold som kommuniserer en melding eller et innhold. Grafisk design kan være mye, blant annet en reklame i avis eller magasin, det kan være en plakat for en film eller et bedriftskort. For å gjøre det enkelt så kan du finne grafisk design overalt, blant annet på cola-flasken i kjøleskapet eller potetgullposen i sofaen.',
+      'Vi mener at design skal være rimelig, men at det er en investering. Faktisk mener vi i Moderna Media at alle våre tjenester og produkter er en investering. Dersom bedriften bruker flere tusen kroner på å annonsere i VG er det veldig dumt å bruke et grafisk design som ble tegnet i paint på fem minutter. På samme måte er det dumt å bruke et design du har betalt 500kr for.',
+      'Et godt grafisk design bruker statistikk og faktabasert informasjon for å oppnå størst og best mulig konvertering. Et eksempel på dette er da google byttet farge på lenkene i søket, faktisk byttet de bare mellom ulike blåfarger. Det ble testet omtrent 50 forskjellige blåfarger og resultatet var en ekstra omsetning på 200 millioner dollar.',
+      'Hos Moderna Media tar vi alt i betraktning for å gi bedriften din det beste grafiske designet slik at du ikke legger penger igjen på bordet!',
     ],
   };
   dataInfoSection2 = {
     color: 'grey',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/web_design_oslo.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/design/web_design_oslo.jpg',
       alt: '',
     },
     position: 'left',
@@ -126,7 +127,7 @@ export class DesignComponent implements OnInit {
   dataInfoSection3 = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/logo designer i oslo som holder en iphone.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/design/logo design.jpg',
       alt: '',
     },
     position: 'right',
