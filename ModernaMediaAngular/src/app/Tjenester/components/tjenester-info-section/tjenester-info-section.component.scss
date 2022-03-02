@@ -1,0 +1,45 @@
+@import "/src/variables.scss";
+@media screen and (min-width: $tablet) {
+  .info {
+    min-height: 900px;
+    &.white {
+      background: $clean-white;
+    }
+    background: $light;
+    .info-container {
+      @include flexR;
+      flex-wrap: nowrap;
+      max-width: 1280px;
+      margin: 2rem auto;
+      gap: 2rem;
+      width: 100%;
+      .image-container {
+        flex: 1 0 0px;
+        height: 700px;
+        width: auto;
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+      .text-container {
+        flex: 1 0 0px;
+        .header {
+        }
+        .text-section {
+          margin: 1rem 0;
+        }
+        .buttons {
+          justify-content: flex-start;
+          gap: 0.5rem 2rem;
+          .btn {
+            margin: 0;
+          }
+        }
+      }
+      &.right {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}

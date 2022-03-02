@@ -1,0 +1,43 @@
+@import "/src/variables.scss";
+.info {
+  min-height: 900px;
+  &.white {
+    background: $clean-white;
+  }
+  background: $light;
+  @include flexC;
+}
+.info-container {
+  @include flexC;
+  padding: 2rem;
+  .image-container {
+    width: 100%;
+    height: 300px;
+    border-radius: 25px;
+    box-shadow: $elevation-4;
+    margin: 2rem auto;
+    overflow: hidden;
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .text-container {
+    .header {
+    }
+    .text-section {
+      margin: 1rem 0;
+    }
+    .buttons {
+      @include flexR;
+      flex-wrap: wrap;
+      .btn {
+        max-width: 300px;
+        margin: 0.5rem auto;
+      }
+    }
+  }
+  &.left {
+  }
+}
