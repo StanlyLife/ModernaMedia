@@ -14,6 +14,11 @@ export class TjenesterInfoSectionComponent implements OnInit {
   imageCdn = environment.img;
   ngOnInit(): void {}
   @Input() data = {
+    color: 'grey',
+    img: {
+      url: '../../../../assets/Images/Tjenester/header/design (1).jpg',
+      alt: '',
+    },
     position: 'right',
     header: {
       subtitle: 'Øk bedriftens omsettning',
