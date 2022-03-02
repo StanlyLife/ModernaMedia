@@ -1,14 +1,7 @@
-<section class="info">
+<section class="info {{ data.color }}">
   <div class="info-container {{ data.position }}">
     <div class="image-container">
-      <img
-        [src]="
-          sanitizeImageUrl(
-            '../../../../assets/Images/Tjenester/info-section/hjemmeside for liten bedrift.jpg'
-          )
-        "
-        alt=""
-      />
+      <img [src]="sanitizeImageUrl(data.img.url)" alt="{{ data.img.alt }}" />
     </div>
     <div class="text-container">
       <div class="header">
