@@ -34,6 +34,7 @@
     align-items: center;
     flex-direction: column;
     max-width: $desktop;
+    width: 95%;
   }
   .titles {
     text-align: center;
@@ -70,11 +71,17 @@
     .link-container {
       color: $light;
     }
-    a {
+    button {
+      background: none;
+      border: none;
       color: $light;
       font-weight: 500;
+      font-size: 1rem;
+      margin: 0 0.5rem;
+      transition: all 0.25s ease;
       &:hover {
         color: $orange-gradient;
+        cursor: pointer;
       }
       &::before {
         content: "\2022";

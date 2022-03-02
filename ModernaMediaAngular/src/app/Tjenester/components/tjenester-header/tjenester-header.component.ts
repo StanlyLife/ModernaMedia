@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-tjenester-header',
   templateUrl: './tjenester-header.component.html',
@@ -10,7 +11,10 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
   ],
 })
 export class TjenesterHeaderComponent implements OnInit {
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    private scroller: ViewportScroller
+  ) {}
   imageCdn = environment.img;
   ngOnInit(): void {}
   @Input() data: any = {
@@ -25,12 +29,15 @@ export class TjenesterHeaderComponent implements OnInit {
     title: 'Utvikling',
     subtitle: 'Vi skaper nettsider og system som øker omsetningen din',
     links: [
-      { title: 'Tjenester', url: '/#services' },
-      { title: 'Prosess', url: '/#process' },
-      { title: 'System', url: '/#system' },
-      { title: 'Hjemmesider', url: '/#website' },
+      { title: 'Tjenester', url: 'services' },
+      { title: 'Prosess', url: 'process' },
+      { title: 'System', url: 'system' },
+      { title: 'Hjemmesider', url: 'website' },
     ],
   };
+  scrollToId(id) {
+    this.scroller.scrollToAnchor(id);
+  }
   sanitizeImageUrl(imageUrl: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }

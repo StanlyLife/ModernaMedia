@@ -24,7 +24,9 @@
       </div>
       <ul class="links">
         <li class="link-container" *ngFor="let i of data.links">
-          <a class="header-link" href="{{ i.url }}">{{ i.title }}</a>
+          <button class="header-link" (click)="scrollToId(i.url)">
+            {{ i.title }}
+          </button>
         </li>
       </ul>
     </div>
