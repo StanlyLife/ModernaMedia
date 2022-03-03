@@ -4,13 +4,15 @@
       <img [src]="sanitizeImageUrl(data.img.url)" alt="{{ data.img.alt }}" />
     </div>
     <div class="text-container">
-      <div class="header">
-        <p class="subtitle-gradient blue">{{ data.header.subtitle }}</p>
-        <h2 class="title-bold">{{ data.header.title }}</h2>
-      </div>
-      <p class="text-section" *ngFor="let text of data.text">
-        {{ text }}
-      </p>
+      <article>
+        <div class="header">
+          <p class="subtitle-gradient blue">{{ data.header.subtitle }}</p>
+          <h2 class="title-bold">{{ data.header.title }}</h2>
+        </div>
+        <p class="text-section" *ngFor="let text of data.text">
+          {{ text }}
+        </p>
+      </article>
       <div class="buttons">
         <a href="#kontakt" class="btn cta shadow"
           ><p>Book et uforpliktet møte</p></a
