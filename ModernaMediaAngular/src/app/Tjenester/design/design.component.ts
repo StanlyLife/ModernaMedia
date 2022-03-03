@@ -98,7 +98,10 @@ export class DesignComponent implements OnInit {
       subtitle: 'Uttrykk deres verider med',
       title: 'Grafisk design',
     },
-    button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
+    button: {
+      text: 'Se vår grafisk design tjeneste',
+      url: '/tjenester/bedrift/design/grafiskdesign',
+    },
     text: [
       'Grafisk design er kunsten å presentere visuelt innhold som kommuniserer en melding eller et innhold. Grafisk design kan være mye, blant annet en reklame i avis eller magasin, det kan være en plakat for en film eller et bedriftskort. For å gjøre det enkelt så kan du finne grafisk design overalt, blant annet på cola-flasken i kjøleskapet eller potetgullposen i sofaen.',
       'Vi mener at design skal være rimelig, men at det er en investering. Faktisk mener vi i Moderna Media at alle våre tjenester og produkter er en investering. Dersom bedriften bruker flere tusen kroner på å annonsere i VG er det veldig dumt å bruke et grafisk design som ble tegnet i paint på fem minutter. På samme måte er det dumt å bruke et design du har betalt 500kr for.',
@@ -117,7 +120,10 @@ export class DesignComponent implements OnInit {
       subtitle: 'Voks organisk med god',
       title: 'Web design',
     },
-    button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
+    button: {
+      text: 'Se vår web design tjeneste',
+      url: '/tjenester/bedrift/design/webdesign',
+    },
     text: [
       'Web design er resultatet av prosessen som vanligvis tar sted før utviklingen av en nettside. Web design refererer til designet på hjemmesiden som vises på nett. Denne designkategorien består ofte av tungt arbeid innenfor UI også kjent som user interface, altså designet, og UX også kjent som user experience som hovedsakelig omfatter brukeropplevelse.',
       'Viste du at 2 av 3 brukere bruker mobil til å surfe på nett og besøke din nettside? Eller at 7 av 10 kunder finner bedrifter gjennom blogger. Eller at den gjennomsnittlige-bruker skaper et førsteinntrykk av bedriften og hjemmesiden på 0.5 sekunder.',
@@ -136,7 +142,10 @@ export class DesignComponent implements OnInit {
       subtitle: 'Bygg en sterk merkevare med',
       title: 'Logo for bedriften',
     },
-    button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
+    button: {
+      text: 'Se vår logo design tjeneste',
+      url: '/tjenester/bedrift/design/logodesign',
+    },
     text: [
       'En logo er ikke varemerket ditt, men den representerer varemerket. En logo portretterer bedriftens personlighet, tillit og verdier. Ved hjelp av fargeteori, kurvatur og fonter kan vi fortelle brukerens underbevissthet en historie og fortelle hvem vi er.',
       'Moderna Media sin logo bruker en kombinasjon av blå og lilla, ved første øyeblikk kan det virke tilfeldig, men sannheten er at alle valg gjort i alle våre design er nøye gjennomtenkt. Ifølge fargeteori representerer fargen blå tillit, stabilitet og seriøsitet, noe vi ønsker å assosiere oss med. Samtidig er blå en nøytral farge og den mest populære favoritt fargen. Vi har også valgt lilla da det er en farge som sjeldent finnes i naturen og ofte assosieres med noe ikke-naturlig, blant annet teknologi. Lilla assosieres også med selvstendighet og ambisjon noe vi mener reflekterer Moderna Media og forhåpentligvis våre kunder.',
