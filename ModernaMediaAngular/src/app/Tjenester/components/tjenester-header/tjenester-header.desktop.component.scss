@@ -15,6 +15,13 @@
       height: 650px;
       min-height: auto;
       width: 100%;
+      .content {
+        width: 95%;
+        max-width: 750px;
+        .links {
+          max-width: 700px;
+        }
+      }
     }
     .bg {
       .bg-shade,
