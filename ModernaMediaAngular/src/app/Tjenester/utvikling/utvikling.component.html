@@ -1,4 +1,13 @@
-<app-tjenester-header></app-tjenester-header>
-<app-tjenester-services id="services"></app-tjenester-services>
-<app-tjenester-info-section id="nettside"></app-tjenester-info-section>
-<app-tjenester-info-section id="system"></app-tjenester-info-section>
+<app-tjenester-header [data]="dataHeader"></app-tjenester-header>
+<app-tjenester-services
+  [data]="dataServices"
+  id="services"
+></app-tjenester-services>
+<app-tjenester-info-section
+  [data]="dataInfoSection"
+  id="webutvikling"
+></app-tjenester-info-section>
+<app-tjenester-info-section
+  [data]="dataInfoSection2"
+  id="systemutvikling"
+></app-tjenester-info-section>
