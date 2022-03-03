@@ -13,7 +13,7 @@ export class UtviklingComponent implements OnInit {
     private seo: SeoService
   ) {
     title.setTitle(
-      'Moderna Media - Digitalbyrå for bedriftens hjemmeside, design og seo'
+      'Utvikling | Hjemmesider | System | applikasjoner | for bedrifter - Moderna Media digitalbyrå'
     );
   }
 
@@ -23,7 +23,7 @@ export class UtviklingComponent implements OnInit {
       {
         name: 'description',
         content:
-          'I Moderna Media mener vi at godt design kommer av innovasjon tilpasset brukere, men et godt design bør også være tidløs og i tråd med bedriftens designsystem. Et godt design skal være så mangt, men det kan også være rimelig.',
+          'Skreddersydde hjemmesider, system og applikasjoner for bedrifter av top kvalitet kan du få hos Moderna Media digitalbyrå',
       },
       { name: 'robots', content: 'index, follow' },
     ]);
@@ -36,39 +36,30 @@ export class UtviklingComponent implements OnInit {
   dataHeader: any = {
     background: {
       alt: '',
-      src: '../../../../assets/Images/Tjenester/header/design (1).jpg',
+      src: '../../../../assets/Images/Tjenester/header/mac.jpg',
     },
     icon: {
       alt: '',
-      src: '../../../../assets/Images/Icons/tjenester/grafisk_design.svg',
+      src: '../../../../assets/Images/Icons/tjenester/developer.svg',
     },
-    title: 'Design',
-    subtitle: 'Vi skaper vakre design med kunden i fokus',
+    title: 'Nettsider & System',
+    subtitle:
+      'Skreddersydde hjemmesider, system og applikasjoner for bedrifter',
     links: [
-      { title: 'Tjenester', url: 'services' },
-      { title: 'Grafisk design', url: 'grafisk_design' },
-      { title: 'Web design', url: 'web_design' },
-      { title: 'Logo design', url: 'logo_design' },
+      { title: 'services', url: 'services' },
+      { title: 'webutvikling', url: 'web utvikling' },
+      { title: 'systemutvikling', url: 'system utvikling' },
     ],
   };
   dataServices: any = {
-    title: 'Web Design | Logo Design | Grafisk Design',
-    subtitle: 'Våre designtjenester for bedrifter.',
+    title: 'Web utvikling | System utvikling',
+    subtitle: 'Våre utviklingstjenester for bedrifter.',
     headerText:
       'Våre systemer og hjemmesider er bygget helt fra bunn med banebrytende teknologi som SPA rammeverk og full cloud-service',
     services: [
       {
-        title: 'Logo design',
-        text: 'virtual innovate interfaces front-end iterate networksfront-end unleash communities',
-        icon: {
-          src: '../../../../assets/Images/Icons/tjenester/services/logo_design.svg',
-          alt: '',
-        },
-        link: '',
-      },
-      {
-        title: 'Web design',
-        text: 'virtual innovate interfaces front-end iterate networksfront-end unleash communities',
+        title: 'Hjemmeside for bedrift',
+        text: 'Invester i en nettside for bedriften av topp kvalitet',
         icon: {
           src: '../../../../assets/Images/Icons/tjenester/services/hjemmeside-bedrift.svg',
           alt: '',
@@ -76,10 +67,10 @@ export class UtviklingComponent implements OnInit {
         link: '',
       },
       {
-        title: 'Grafisk design',
-        text: 'virtual innovate interfaces front-end iterate networksfront-end unleash communities',
+        title: 'Sytemer for bedrifter',
+        text: 'Automatiser daglige gjøremål eller gjør livet enklere for kundene med våre skreddersydde system.',
         icon: {
-          src: '../../../../assets/Images/Icons/tjenester/services/grafisk_design.svg',
+          src: '../../../../assets/Images/Icons/tjenester/services/system-bedrift.svg',
           alt: '',
         },
         link: '',
@@ -98,11 +89,7 @@ export class UtviklingComponent implements OnInit {
       title: 'Grafisk design',
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
-    text: [
-      '1IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
-      '2IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
-      '3IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
-    ],
+    text: ['', '', ''],
   };
   dataInfoSection2 = {
     color: 'grey',
@@ -114,24 +101,6 @@ export class UtviklingComponent implements OnInit {
     header: {
       subtitle: 'Voks organisk med god',
       title: 'Web design',
-    },
-    button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
-    text: [
-      '1IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
-      '2IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
-      '3IPhone A/B testing research & development buzz leverage disruptive virality startup. Termsheet graphical user interface iPad funding long tail customer startup buyer beta. Gamification infrastructure bandwidth creative customer holy grail strategy channels value proposition iPad graphical user interface disruptive business plan niche market. Investor success bootstrapping scrum project twitter bandwidth mass market.',
-    ],
-  };
-  dataInfoSection3 = {
-    color: 'gray',
-    img: {
-      url: '../../../../assets/Images/Tjenester/info-section/logo designer i oslo som holder en iphone.jpg',
-      alt: '',
-    },
-    position: 'right',
-    header: {
-      subtitle: 'Bygg en sterk merkevare med',
-      title: 'Logo for bedriften',
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
     text: [
