@@ -13,7 +13,7 @@ export class DesignComponent implements OnInit {
     private seo: SeoService
   ) {
     title.setTitle(
-      'Design - | Logo design | Webdesign | Grafisk design | Moderna Media'
+      'Design | Logo design | Webdesign | Grafisk design | Moderna Media'
     );
   }
 
