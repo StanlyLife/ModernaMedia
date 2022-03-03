@@ -34,7 +34,6 @@
     "@types/compression": "^1.7.2",
     "document-register-element": "^1.7.2",
     "express": "^4.17.2",
-    "font-awesome": "^4.7.0",
     "memory-cache": "^0.2.0",
     "rxjs": "^7.5.4",
     "sass-migrator": "^1.5.3",
@@ -61,7 +60,7 @@
     "protractor": "^7.0.0",
     "ts-node": "^10.4.0",
     "tslint": "^6.1.0",
-    "typescript": "^4.5.4",
+    "typescript": "4.5.5",
     "webpack-bundle-analyzer": "^4.5.0"
   }
 }
