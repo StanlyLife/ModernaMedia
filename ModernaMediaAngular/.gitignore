@@ -50,3 +50,5 @@ testem.log
 Thumbs.db
 
 server.txt
+
+yarn.lock
