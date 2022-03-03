@@ -35,7 +35,7 @@ export class DesignComponent implements OnInit {
   dataHeader: any = {
     background: {
       alt: '',
-      src: '../../../../assets/Images/Tjenester/header/Design for bedrifter.jpg',
+      src: '../../../../assets/Images/Tjenester/header/design/1920/Bedrift design - grafisk design.webp',
     },
     icon: {
       alt: '',
@@ -90,7 +90,7 @@ export class DesignComponent implements OnInit {
   dataInfoSection = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/design/grafisk_design.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/design/1280/grafisk design for bedrift oslo.webp',
       alt: '',
     },
     position: 'right',
@@ -112,7 +112,7 @@ export class DesignComponent implements OnInit {
   dataInfoSection2 = {
     color: 'grey',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/design/web_design_oslo.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/design/1280/web design for bedrift oslo.webp',
       alt: '',
     },
     position: 'left',
@@ -134,7 +134,7 @@ export class DesignComponent implements OnInit {
   dataInfoSection3 = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/design/logo design.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/design/1280/logo design for bedrift.webp',
       alt: '',
     },
     position: 'right',
