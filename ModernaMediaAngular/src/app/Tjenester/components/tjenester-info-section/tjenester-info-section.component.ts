@@ -62,7 +62,7 @@ export class TjenesterInfoSectionComponent implements OnInit {
     },
     position: 'right',
     header: {
-      subtitle: 'Øk bedriftens omsettning',
+      subtitle: 'Øk bedriftens omsetning',
       title: 'Med nettside for bedriften',
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },

@@ -78,7 +78,7 @@ export class DesignComponent implements OnInit {
       },
       {
         title: 'Grafisk design',
-        text: 'Et godt grafisk design bruker statistikk til å øke omsettning ved hjelp av ulike metoder.',
+        text: 'Et godt grafisk design bruker statistikk til å øke omsetning ved hjelp av ulike metoder.',
         icon: {
           src: '../../../../assets/Images/Icons/tjenester/services/grafisk_design.svg',
           alt: '',

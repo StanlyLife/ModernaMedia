@@ -36,7 +36,7 @@ export class UtviklingComponent implements OnInit {
   dataHeader: any = {
     background: {
       alt: '',
-      src: '../../../../assets/Images/Tjenester/header/mac.jpg',
+      src: '../../../../assets/Images/Tjenester/header/utvikling/mac.webp',
     },
     icon: {
       alt: '',
@@ -80,13 +80,13 @@ export class UtviklingComponent implements OnInit {
   dataInfoSection = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/design (2).jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/utvikling/utvikling.jpg',
       alt: '',
     },
     position: 'right',
     header: {
-      subtitle: 'Uttrykk deres verider med',
-      title: 'Grafisk design',
+      subtitle: 'Øk online tilstedeværelsen med',
+      title: 'Hjemmeside for bedriften',
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
     text: ['', '', ''],
@@ -94,13 +94,13 @@ export class UtviklingComponent implements OnInit {
   dataInfoSection2 = {
     color: 'grey',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/web_design_oslo.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/utvikling/system.jpg',
       alt: '',
     },
     position: 'left',
     header: {
-      subtitle: 'Voks organisk med god',
-      title: 'Web design',
+      subtitle: 'Spar kostnader med',
+      title: 'System for bedriften',
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
     text: [
