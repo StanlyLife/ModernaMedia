@@ -13,8 +13,8 @@ import { CtaCardComponent } from './components/cta-card/cta-card.component';
 const routes: Routes = [
   { path: 'tjenester/bedrift/design', component: DesignComponent },
   {
-    path: 'tjenester/bedrift/sokemotoroptimalisering/seo',
-    component: SeoService,
+    path: 'tjenester/bedrift/seo/søkemotoroptimalisering',
+    component: SEOComponent,
   },
   { path: 'tjenester/bedrift/utvikling', component: UtviklingComponent },
 ];
