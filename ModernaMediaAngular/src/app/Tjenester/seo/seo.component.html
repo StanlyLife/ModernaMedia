@@ -1,4 +1,17 @@
-<app-tjenester-header></app-tjenester-header>
-<app-tjenester-services id="services"></app-tjenester-services>
-<app-tjenester-info-section id="nettside"></app-tjenester-info-section>
-<app-tjenester-info-section id="system"></app-tjenester-info-section>
+<app-tjenester-header [data]="dataHeader"></app-tjenester-header>
+<app-tjenester-services
+  [data]="dataServices"
+  id="services"
+></app-tjenester-services>
+<app-tjenester-info-section
+  [data]="dataInfoSection"
+  id="tekniskseo"
+></app-tjenester-info-section>
+<app-tjenester-info-section
+  [data]="dataInfoSection2"
+  id="offpageseo"
+></app-tjenester-info-section>
+<app-tjenester-info-section
+  [data]="dataInfoSection3"
+  id="innholdsproduksjon"
+></app-tjenester-info-section>
