@@ -13,7 +13,7 @@ export class UtviklingComponent implements OnInit {
     private seo: SeoService
   ) {
     title.setTitle(
-      'Utvikling | Hjemmesider | System | applikasjoner | for bedrifter - Moderna Media digitalbyrå'
+      'Hjemmesider | Datasystem | applikasjoner | for bedrifter - Moderna Media Digitalbyrå'
     );
   }
 
@@ -23,7 +23,7 @@ export class UtviklingComponent implements OnInit {
       {
         name: 'description',
         content:
-          'Skreddersydde hjemmesider, system og applikasjoner for bedrifter av top kvalitet kan du få hos Moderna Media digitalbyrå',
+          'Skreddersydde hjemmesider, system og applikasjoner for bedrifter av top kvalitet kan du få hos Moderna Media digitalbyrå. Vi bygger alt fra bunn med neste-generasjons teknologi som spa-rammeverk og utnytter fulle cloud løsninger!',
       },
       { name: 'robots', content: 'index, follow' },
     ]);
