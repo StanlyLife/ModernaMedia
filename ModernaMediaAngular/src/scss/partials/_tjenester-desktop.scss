@@ -1,7 +1,11 @@
 @import "../../variables.scss";
 
+/*LANDING COMPONENT*/
+/*LANDING COMPONENT*/
+/*LANDING COMPONENT*/
+
 @media screen and (min-width: $desktop) {
-  .landing {
+  section.landing {
     .content {
       .titles {
         min-height: 150px;
@@ -24,7 +28,7 @@
   }
 }
 @media screen and (min-width: $tablet) {
-  .landing {
+  section.landing {
     width: 97.5%;
     box-shadow: $box-shadow;
     max-width: $max-width;
@@ -69,7 +73,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .landing {
+  section.landing {
     .content {
       max-width: 800px;
       .titles {
@@ -87,6 +91,57 @@
           .subtitle.large {
           }
         }
+      }
+    }
+  }
+}
+
+/*LANDING COMPONENT END*/
+/*LANDING COMPONENT END*/
+/*LANDING COMPONENT END*/
+
+/*INFO COMPONENT*/
+/*INFO COMPONENT*/
+/*INFO COMPONENT*/
+@media screen and (min-width: $tablet) {
+  section.info {
+    min-height: 900px;
+    &.white {
+      background: $clean-white;
+    }
+    background: $light;
+    .info-container {
+      @include flexR;
+      flex-wrap: nowrap;
+      max-width: 1280px;
+      margin: 2rem auto;
+      gap: 2rem;
+      width: 100%;
+      .image-container {
+        flex: 1 0 0px;
+        height: 700px;
+        width: auto;
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+      .text-container {
+        flex: 1 0 0px;
+        .text-section {
+          margin: 1rem 0;
+        }
+        .buttons {
+          justify-content: flex-start;
+          gap: 0.5rem 2rem;
+          .btn {
+            white-space: nowrap;
+            flex: 1;
+          }
+        }
+      }
+      &.right {
+        flex-direction: row-reverse;
       }
     }
   }

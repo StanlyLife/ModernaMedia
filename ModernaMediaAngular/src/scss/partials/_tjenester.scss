@@ -1,6 +1,10 @@
 @import "../../variables.scss";
 
-.landing {
+/*LANDING COMPONENT*/
+/*LANDING COMPONENT*/
+/*LANDING COMPONENT*/
+
+section.landing {
   width: 100%;
   position: relative;
   .wrapper {
@@ -50,7 +54,7 @@
         }
 
         .super-title {
-          font-size: 2.75rem;
+          font-size: 3.75rem;
           text-transform: uppercase;
           font-weight: 900;
           font-family: "Mosk", Arial, Helvetica, sans-serif;
@@ -92,7 +96,7 @@
     justify-content: center;
     align-items: stretch;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     .btn {
       width: 100%;
       flex: 3;
@@ -112,6 +116,63 @@
     flex-direction: column;
     .btn {
       margin: 0.25rem 0 !important;
+    }
+  }
+}
+
+/*LANDING COMPONENT END*/
+/*LANDING COMPONENT END*/
+/*LANDING COMPONENT END*/
+
+/*INFO COMPONENT*/
+/*INFO COMPONENT*/
+/*INFO COMPONENT*/
+
+section.info {
+  &.white {
+    background: $clean-white;
+  }
+  min-height: 900px;
+  background: $light;
+  @include flexC;
+  .info-container {
+    @include flexC;
+    padding: 2rem;
+    .image-container {
+      width: 100%;
+      height: 300px;
+      border-radius: 25px;
+      box-shadow: $elevation-4;
+      margin: 2rem auto;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+    .text-container {
+      .header {
+      }
+      .text-section {
+        margin: 1rem 0;
+      }
+      .buttons {
+        @include flexR;
+        flex-wrap: wrap;
+        .btn {
+          flex: 1;
+          white-space: nowrap;
+          max-width: 300px;
+          margin: 0.5rem auto;
+        }
+      }
+    }
+    .list ul {
+      padding-left: 18px;
+      padding-bottom: 1rem;
+    }
+    &.left {
     }
   }
 }
