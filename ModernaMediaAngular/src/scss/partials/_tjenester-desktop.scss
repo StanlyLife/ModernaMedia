@@ -146,3 +146,122 @@
     }
   }
 }
+
+/*USP-CARDS COMPONENT*/
+/*USP-CARDS COMPONENT*/
+/*USP-CARDS COMPONENT*/
+@media screen and (min-width: 1150px) {
+  section.usp-cards {
+    background: $light-second;
+    padding: 2rem 0;
+    .usp-cards-wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 2rem;
+      .titles {
+        text-align: center;
+      }
+      .cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: stretch;
+        .card {
+          margin: 1rem 0.5rem;
+          .image {
+            height: 185px;
+            width: 100%;
+            overflow: hidden;
+            img {
+              object-fit: cover;
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*USP-CARDS COMPONENT END*/
+/*USP-CARDS COMPONENT END*/
+/*USP-CARDS COMPONENT END*/
+
+/*USP-INFO COMPONENT*/
+/*USP-INFO COMPONENT*/
+/*USP-INFO COMPONENT*/
+@media screen and (min-width: $tablet) {
+  section.process {
+    .wrapper {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      padding: 0 2rem;
+      max-width: 1280px;
+      align-items: stretch;
+      .image {
+        min-width: 40%;
+        position: relative;
+        height: auto;
+        img {
+          position: absolute;
+        }
+      }
+      .content {
+        padding-left: 2rem;
+        max-width: 750px;
+        .titles {
+          padding-top: 0;
+          .innhold {
+            padding-top: 1rem;
+          }
+        }
+        .liste {
+          .point {
+            margin-top: 3rem;
+            .number {
+              margin-right: 1rem;
+            }
+            .point-content {
+              .point-text {
+                padding-top: 1rem;
+              }
+            }
+          }
+        }
+      }
+      .image,
+      .conent {
+        flex: 1 0 0px;
+      }
+    }
+  }
+}
+
+/*USP-INFO COMPONENT END*/
+/*USP-INFO COMPONENT END*/
+/*USP-INFO COMPONENT END*/
+
+/*USP-CARD-LIST COMPONENT*/
+/*USP-CARD-LIST COMPONENT*/
+/*USP-CARD-LIST COMPONENT*/
+
+@media screen and (min-width: $desktop) {
+  section.usp-card-list {
+    padding-top: 2rem;
+    margin-top: 0;
+  }
+  section.usp-card-list .usp-list-wrapper .header h2 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  section.usp-card-list .usp-list-wrapper .cards {
+  }
+}
+
+/*USP-CARD-LIST COMPONENT END*/
+/*USP-CARD-LIST COMPONENT END*/
+/*USP-CARD-LIST COMPONENT END*/
