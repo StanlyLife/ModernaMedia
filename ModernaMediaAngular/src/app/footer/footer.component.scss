@@ -9,6 +9,9 @@ footer {
   }
   a {
     color: $light;
+    &:hover {
+      color: $orange-primary;
+    }
   }
   .logo {
     max-width: 250px;
