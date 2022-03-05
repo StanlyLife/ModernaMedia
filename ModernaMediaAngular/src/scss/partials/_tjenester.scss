@@ -1,0 +1,117 @@
+@import "../../variables.scss";
+
+.landing {
+  width: 100%;
+  position: relative;
+  .wrapper {
+    height: calc(90vh - 2rem);
+    min-height: 850px;
+  }
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: calc(90vh - 2rem);
+    min-height: 850px;
+    .bg-shade,
+    .landing-image {
+      object-fit: cover;
+      object-position: center;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+    }
+    .bg-shade {
+      @include backgroundShade;
+    }
+  }
+  .content {
+    max-width: 600px;
+    color: $light;
+    padding: 1rem;
+    width: 100%;
+    position: absolute;
+    @include aAbs;
+    z-index: 2;
+    .titles {
+      position: relative;
+      min-height: 100px;
+      h1.tjenester-title,
+      p.tjenester-title {
+        position: absolute;
+        z-index: 1;
+        text-transform: uppercase;
+
+        &:not(p.tjenester-title) {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          flex-wrap: nowrap;
+        }
+
+        .super-title {
+          font-size: 2.75rem;
+          text-transform: uppercase;
+          font-weight: 900;
+          font-family: "Mosk", Arial, Helvetica, sans-serif;
+          color: $light;
+          &.bg {
+            text-shadow: 0px 0px 14px rgb(0 0 0 / 38%);
+          }
+          &:not(.bg) {
+            @include titleText-tjenester;
+            // @include ctaText;
+            // @include ctaText-blue;
+          }
+        }
+        .subtitle.large {
+          margin-top: -15px;
+          font-size: 2.5rem;
+          text-transform: uppercase;
+          font-weight: 900;
+          text-shadow: 0px 0px 14px rgb(0 0 0 / 38%);
+        }
+        &:not(.background) {
+          z-index: 2;
+        }
+        &.background {
+        }
+      }
+    }
+  }
+  .buttons,
+  .info {
+    margin-top: 10px;
+    color: $light;
+    p {
+      color: $light;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    .btn {
+      width: 100%;
+      flex: 3;
+      &:nth-child(2) {
+        margin-left: 10px;
+        flex: 2;
+      }
+      p {
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 465px) {
+  .landing .buttons {
+    flex-direction: column;
+    .btn {
+      margin: 0.25rem 0 !important;
+    }
+  }
+}

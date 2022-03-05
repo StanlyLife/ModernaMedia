@@ -1,0 +1,93 @@
+@import "../../variables.scss";
+
+@media screen and (min-width: $desktop) {
+  .landing {
+    .content {
+      .titles {
+        min-height: 150px;
+        h1.tjenester-title,
+        p.tjenester-title {
+          top: 0;
+          .super-title,
+          .subtitle.large {
+            font-size: 3.5rem;
+          }
+          .super-title {
+            font-size: 5rem;
+          }
+        }
+      }
+      .info p {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: $tablet) {
+  .landing {
+    width: 97.5%;
+    box-shadow: $box-shadow;
+    max-width: $max-width;
+    margin: 1rem auto;
+    overflow: hidden;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .buttons {
+      max-width: 475px;
+    }
+    .wrapper {
+      min-height: 750px;
+      width: 100%;
+    }
+    .bg {
+      .bg-shade,
+      .landing-image {
+        min-width: 100%;
+      }
+    }
+    .content {
+      .titles {
+        min-height: 170px;
+        h1.tjenester-title,
+        p.tjenester-title {
+          top: 0;
+          .super-title,
+          .subtitle.large {
+            font-size: 4rem;
+          }
+          .super-title {
+            font-size: 5.75rem;
+          }
+          .subtitle.large {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .landing {
+    .content {
+      max-width: 800px;
+      .titles {
+        min-height: 240px;
+        h1.tjenester-title,
+        p.tjenester-title {
+          top: 0;
+          .super-title,
+          .subtitle.large {
+            font-size: 5.5rem;
+          }
+          .super-title {
+            font-size: 8rem;
+          }
+          .subtitle.large {
+          }
+        }
+      }
+    }
+  }
+}
