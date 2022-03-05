@@ -1,15 +1,43 @@
-import { Component, OnInit } from '@angular/core';
-
+import { SeoService } from '../../../services/seo.service';
+import { Meta, Title } from '@angular/platform-browser';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { environment } from 'src/environments/environment.prod';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-seo-off-page',
   templateUrl: './seo-off-page.component.html',
-  styleUrls: ['./seo-off-page.component.scss']
+  styleUrls: ['./seo-off-page.component.scss'],
 })
 export class SeoOffPageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(
+    private meta: Meta,
+    private title: Title,
+    private seo: SeoService,
+    private sanitizer: DomSanitizer,
+    private scroller: ViewportScroller
+  ) {
+    title.setTitle('');
+  }
+  ngOnInit() {
+    this.seo.createLinkForCanonicalURL();
+    this.meta.addTags([
+      {
+        name: 'description',
+        content: '',
+      },
+      { name: 'robots', content: 'index, follow' },
+    ]);
+    this.meta.addTag({
+      name: 'angular.ModernaMedia',
+      content: 'ModernaMedia',
+    });
   }
 
+  scrollToId(id) {
+    this.scroller.scrollToAnchor(id);
+  }
+  sanitizeImageUrl(imageUrl: string): SafeUrl {
+    return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
+  }
 }
