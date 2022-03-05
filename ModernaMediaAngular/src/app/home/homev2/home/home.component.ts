@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     private seo: SeoService
   ) {
     title.setTitle(
-      'Moderna Media - Digitalbyrå for bedriftens hjemmeside, design og seo'
+      'Digitalbyrå - Moderna Media - for bedriftens hjemmeside, design og seo'
     );
   }
 
@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       {
         name: 'description',
         content:
-          'Moderna Media utvikler nettsider og system for bedrifter som ønsker et eget nettsted, system eller app. Vi er også eksperter på SEO, Google analytics, google search og ikke minst design og web design. Et digitalbyrå med alt på et sted!',
+          'Moderna Media utvikler hjemmesider og datasystem for bedrifter som ønsker en egen nettside, system eller app. Vi er også eksperter på SEO, Google analytics, google search og ikke minst design og web design. Et digitalbyrå med alt på et sted!',
       },
       { name: 'robots', content: 'index, follow' },
     ]);
