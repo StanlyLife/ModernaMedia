@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 import { Meta, Title } from '@angular/platform-browser';
 @Component({
-  selector: 'app-SEO',
-  templateUrl: './SEO.component.html',
-  styleUrls: ['./SEO.component.scss'],
+  selector: 'app-seo',
+  templateUrl: './seo.component.html',
+  styleUrls: ['./seo.component.scss'],
 })
-export class SEOComponent implements OnInit {
+export class SeoComponent implements OnInit {
   constructor(
     private meta: Meta,
     private title: Title,
