@@ -130,6 +130,25 @@ $elevation-5: 0px 24px 38px rgba(18, 18, 18, 0.14),
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+@mixin titleText-tjenester {
+  transition: all 0.5s ease;
+  background: #d06b30;
+  background: -webkit-linear-gradient(
+    145deg,
+    #d06b30 0%,
+    #b631a7 40%,
+    #30cfd0 100%
+  );
+  background: -moz-linear-gradient(
+    145deg,
+    #d06b30 0%,
+    #b631a7 40%,
+    #30cfd0 100%
+  );
+  background: linear-gradient(145deg, #d06b30 0%, #b631a7 40%, #30cfd0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 @mixin ctaButtonText {
   background: #b631a7;
