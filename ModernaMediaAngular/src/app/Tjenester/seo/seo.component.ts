@@ -36,7 +36,7 @@ export class SeoComponent implements OnInit {
   dataHeader: any = {
     background: {
       alt: '',
-      src: '../../../../assets/Images/Tjenester/header/seo/seo4.jpg',
+      src: '../../../../assets/Images/Tjenester/header/seo/1920/Søkemotor optimalisering av seo byrå.webp',
     },
     icon: {
       alt: '',
@@ -90,7 +90,7 @@ export class SeoComponent implements OnInit {
   dataInfoSection = {
     color: 'grey',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/utvikling/utvikling.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av datasystem for bedrifter.webp',
       alt: '',
     },
     position: 'right',
@@ -109,7 +109,7 @@ export class SeoComponent implements OnInit {
   dataInfoSection2 = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/seo/backlink søkemotor optimalisering.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/seo/640/backlink søkemotor optimalisering.webp',
       alt: '',
     },
     position: 'left',
@@ -127,7 +127,7 @@ export class SeoComponent implements OnInit {
   dataInfoSection3 = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/seo/innholdsproduksjon for søkemotor optimalisering.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/seo/1280/innholdsproduksjon for søkemotor optimalisering.webp',
       alt: '',
     },
     position: 'right',

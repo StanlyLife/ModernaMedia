@@ -36,7 +36,7 @@ export class UtviklingComponent implements OnInit {
   dataHeader: any = {
     background: {
       alt: '',
-      src: '../../../../assets/Images/Tjenester/header/utvikling/mac.webp',
+      src: '../../../../assets/Images/Tjenester/header/utvikling/1280/Bedrifts nettside og datasytem for bedrifter.webp',
     },
     icon: {
       alt: '',
@@ -80,7 +80,7 @@ export class UtviklingComponent implements OnInit {
   dataInfoSection = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/utvikling/utvikling.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av hjemmeside for bedrifter i oslo.webp',
       alt: '',
     },
     position: 'right',
@@ -100,7 +100,7 @@ export class UtviklingComponent implements OnInit {
   dataInfoSection2 = {
     color: 'grey',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/utvikling/system.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av datasystem for bedrifter.webp',
       alt: '',
     },
     position: 'left',
