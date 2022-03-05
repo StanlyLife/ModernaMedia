@@ -36,7 +36,7 @@ export class SeoComponent implements OnInit {
   dataHeader: any = {
     background: {
       alt: '',
-      src: '../../../../assets/Images/Tjenester/header/SEO/SEO4.jpg',
+      src: '../../../../assets/Images/Tjenester/header/seo/seo4.jpg',
     },
     icon: {
       alt: '',
@@ -47,8 +47,8 @@ export class SeoComponent implements OnInit {
       'Vi øker synlighet, vekst og omsetning gjennom søkemotor optimalisering for bedriften din',
     links: [
       { title: 'tjenester', url: 'services' },
-      { title: 'teknisk SEO', url: 'tekniskSEO' },
-      { title: 'off-page SEO', url: 'offpageSEO' },
+      { title: 'teknisk SEO', url: 'tekniskseo' },
+      { title: 'off-page SEO', url: 'offpageseo' },
       { title: 'innholdsproduksjon', url: 'innholdsproduksjon' },
     ],
   };
@@ -62,7 +62,7 @@ export class SeoComponent implements OnInit {
         title: 'Teknisk SEO',
         text: 'Vi bearbeider nettsiden din og optimaliserer den for rangering.',
         icon: {
-          src: '../../../../assets/Images/Icons/tjenester/services/teknisk SEO.svg',
+          src: '../../../../assets/Images/Icons/tjenester/services/teknisk seo.svg',
           alt: '',
         },
         link: '',
@@ -71,7 +71,7 @@ export class SeoComponent implements OnInit {
         title: 'Innholdsproduksjon',
         text: 'For å rangere på topp så må nettsiden ha innhold. Vi skriver og lager innhold for hjemmesiden deres.',
         icon: {
-          src: '../../../../assets/Images/Icons/tjenester/services/SEO innholdsproduksjon.svg',
+          src: '../../../../assets/Images/Icons/tjenester/services/seo innholdsproduksjon.svg',
           alt: '',
         },
         link: '',
@@ -80,7 +80,7 @@ export class SeoComponent implements OnInit {
         title: 'Off-page SEO',
         text: 'Vi jobber tett med våre partnere for å oppnå den beste søkemotoroptimaliseringen uten å behandle hjemmesiden deres.',
         icon: {
-          src: '../../../../assets/Images/Icons/tjenester/services/off page SEO.svg',
+          src: '../../../../assets/Images/Icons/tjenester/services/off page seo.svg',
           alt: '',
         },
         link: '',
@@ -109,7 +109,7 @@ export class SeoComponent implements OnInit {
   dataInfoSection2 = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/SEO/backlink søkemotor optimalisering.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/seo/backlink søkemotor optimalisering.jpg',
       alt: '',
     },
     position: 'left',
@@ -127,7 +127,7 @@ export class SeoComponent implements OnInit {
   dataInfoSection3 = {
     color: 'gray',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/SEO/innholdsproduksjon for søkemotor optimalisering.jpg',
+      url: '../../../../assets/Images/Tjenester/info-section/seo/innholdsproduksjon for søkemotor optimalisering.jpg',
       alt: '',
     },
     position: 'right',
