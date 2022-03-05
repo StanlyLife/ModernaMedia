@@ -103,6 +103,9 @@
     @include ctaText-blue;
   }
 }
+h2.subtitle-gradient {
+  font-size: 2.5rem;
+}
 .text-glow {
   text-shadow: 0 0 80px rgb(192 219 255 / 75%), 0 0 32px rgb(65 120 255 / 24%);
 }
@@ -245,4 +248,8 @@
       box-shadow: $box-shadow-btn-inset-active;
     }
   }
+}
+
+.ngx-charts-tooltip-content.type-tooltip {
+  background-color: $light !important;
 }
