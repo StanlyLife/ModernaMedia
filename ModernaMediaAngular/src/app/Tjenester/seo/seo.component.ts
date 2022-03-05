@@ -13,7 +13,7 @@ export class SeoComponent implements OnInit {
     private SEO: SeoService
   ) {
     title.setTitle(
-      'Søkemotor optimalisering for bedriften din av Moderna Media SEO byrå'
+      'Søkemotoroptimalisering for bedriften av Moderna Media SEO byrå'
     );
   }
 
@@ -23,7 +23,7 @@ export class SeoComponent implements OnInit {
       {
         name: 'description',
         content:
-          'Moderna Media utvikler nettsider og system for bedrifter som ønsker et eget nettsted, system eller app. Vi er også eksperter på SEO, Google analytics, google search og ikke minst design og web design. Et digitalbyrå med alt på et sted!',
+          'Søkemotoroptimalsiering for bedrifter. Trenger hjemmesiden din innholdsprodusent, eller trenger dere å optimere nettsiden i form av teknisk seo? Les mer om Søkemotor optimalisering fra Moderna Media',
       },
       { name: 'robots', content: 'index, follow' },
     ]);
