@@ -4,6 +4,26 @@
 /*LANDING COMPONENT*/
 /*LANDING COMPONENT*/
 
+@media screen and (min-width: 555px) {
+  section.landing {
+    .links {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: stretch;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 800px;
+      margin: 0 auto;
+      @include haAbs;
+      .link-container {
+        color: $light;
+        flex: auto;
+        min-width: auto;
+        white-space: nowrap;
+      }
+    }
+  }
+}
 @media screen and (min-width: $desktop) {
   section.landing {
     .content {
@@ -24,6 +44,9 @@
       .info p {
         font-size: 1.25rem;
       }
+    }
+    .links .link-container {
+      text-align: center;
     }
   }
 }

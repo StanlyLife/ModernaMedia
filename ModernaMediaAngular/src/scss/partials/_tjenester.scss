@@ -10,6 +10,7 @@ section.landing {
   .wrapper {
     height: calc(90vh - 2rem);
     min-height: 850px;
+    position: relative;
   }
   .bg {
     position: absolute;
@@ -106,6 +107,42 @@ section.landing {
       }
       p {
         white-space: nowrap;
+      }
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    position: absolute;
+    bottom: 2rem;
+    width: 95%;
+    left: 2.5%;
+    .link-container {
+      color: $light;
+      flex: 1 0 0px;
+      min-width: 40%;
+      white-space: nowrap;
+    }
+    button,
+    a {
+      background: none;
+      border: none;
+      color: $light;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0 0.5rem;
+      transition: all 0.25s ease;
+      &:hover {
+        color: $orange-gradient;
+        cursor: pointer;
+      }
+      &::before {
+        content: "\2022";
+        padding-right: 5px;
       }
     }
   }
