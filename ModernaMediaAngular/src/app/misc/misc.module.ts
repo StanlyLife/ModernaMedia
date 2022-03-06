@@ -8,7 +8,10 @@ const routes: Routes = [
 ];
 @NgModule({
   declarations: [DesignsystemComponent],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+  ],
   exports: [],
 })
 export class MiscModule {}

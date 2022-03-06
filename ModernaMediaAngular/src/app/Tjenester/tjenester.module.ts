@@ -78,6 +78,10 @@ const routes: Routes = [
     DesignLogoComponent,
     DesignWebComponent,
   ],
-  imports: [CommonModule, RouterModule.forRoot(routes), ComponentsModule],
+  imports: [
+    CommonModule,
+    RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),
+    ComponentsModule,
+  ],
 })
 export class TjenesterModule {}

@@ -27,8 +27,12 @@
         webdesign foregår på et sted.
       </div>
       <div class="buttons">
-        <a class="btn cta" href="#kontakt"><p>Book et uforpliktet møte</p></a>
-        <a class="btn cta-2" href="#tjenester"><p>Tjenester</p></a>
+        <button class="btn cta" (click)="scrollToId('kontakt')">
+          <p>Book et uforpliktet møte</p>
+        </button>
+        <button class="btn cta-2" (click)="scrollToId('tjenester')">
+          <p>Tjenester</p>
+        </button>
       </div>
     </div>
   </div>

@@ -11,12 +11,15 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     CommonModule,
     ComponentsModule,
     NgxChartsModule,
-    RouterModule.forRoot([
-      {
-        path: 'blogg/utviklerlonn',
-        component: DeveloperSalarayChartsComponent,
-      },
-    ]),
+    RouterModule.forRoot(
+      [
+        {
+          path: 'blogg/utviklerlonn',
+          component: DeveloperSalarayChartsComponent,
+        },
+      ],
+      { scrollPositionRestoration: 'enabled' }
+    ),
   ],
 })
 export class ToolsModule {}

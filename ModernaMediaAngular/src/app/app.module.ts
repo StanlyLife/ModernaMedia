@@ -60,18 +60,21 @@ import { MiscModule } from './misc/misc.module';
     FormsModule,
     ReactiveFormsModule,
     TjenesterModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        pathMatch: 'full',
-        component: HomeComponent,
-      },
-      { path: '**', redirectTo: 'error' },
-      {
-        path: 'error',
-        component: NotFoundComponent,
-      },
-    ]),
+    RouterModule.forRoot(
+      [
+        {
+          path: '',
+          pathMatch: 'full',
+          component: HomeComponent,
+        },
+        { path: '**', redirectTo: 'error' },
+        {
+          path: 'error',
+          component: NotFoundComponent,
+        },
+      ],
+      { scrollPositionRestoration: 'enabled' }
+    ),
     MiscModule,
     ToolsModule,
   ],
