@@ -63,7 +63,7 @@ section.contact {
           width: 100%;
           border: 2px solid #e6e6e6;
           &.invalid {
-            border: 2px solid $toastError;
+            border: 2px solid $orange-primary;
           }
           &.sent {
             background: #dbf7db;
@@ -120,7 +120,7 @@ section.contact {
     &.invalid {
       padding: 0.5rem 0;
       font-size: 0.75rem;
-      color: $toastError;
+      color: $blue-primary;
     }
     &.sent {
       color: $toastSuccessHover;
