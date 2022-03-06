@@ -82,6 +82,7 @@ namespace ModernaMediaDotNet
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ModernaMediaDotNet v1"));
             }
             app.ConfigureExceptionHandler(logger);
+            app.UseRouting();
             app.UseCors(x => x
                     .AllowAnyMethod()
                     .AllowAnyHeader()
@@ -89,7 +90,6 @@ namespace ModernaMediaDotNet
                     .AllowCredentials()); // allow credentials
 
             //app.UseHttpsRedirection();
-            app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
