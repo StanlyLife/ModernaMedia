@@ -1,7 +1,11 @@
 <section class="about-your-next-project">
   <div class="bg">
     <img
-      src="../../../assets/Images/Components/about-your-next-project/1062.jpg"
+      [src]="
+        sanitizeImageUrl(
+          '../../../assets/Images/Components/about-your-next-project/Moderna Media Background pattern.webp'
+        )
+      "
       alt=""
       role="presentation"
     />
