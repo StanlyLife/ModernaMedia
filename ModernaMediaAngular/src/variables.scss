@@ -176,8 +176,10 @@ $elevation-5: 0px 24px 38px rgba(18, 18, 18, 0.14),
   transform: translateY(-50%);
 }
 @mixin haAbs {
-  left: 0;
-  right: 0;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 @mixin aAbs {
   top: 50%;
