@@ -41,12 +41,43 @@
         <a class="btn cta-2" href="#tjenester"><p>Les om hjemmesider</p></a>
       </div>
     </div>
+    <ul class="links">
+      <li class="link-container">
+        <button class="header-link" (click)="scrollToId('hjemmeside')">
+          Våre nettsider
+        </button>
+      </li>
+      <li class="link-container">
+        <button class="header-link" (click)="scrollToId('bedrifthjemmeside')">
+          Hvorfor hjemmeside
+        </button>
+      </li>
+      <li class="link-container">
+        <button class="header-link" (click)="scrollToId('neste-steg')">
+          Dine neste steg
+        </button>
+      </li>
+      <li class="link-container">
+        <button
+          class="header-link"
+          (click)="scrollToId('inkluderte-tjenester')"
+        >
+          inkluderte tjenester
+        </button>
+      </li>
+      <li class="link-container">
+        <button class="header-link" (click)="scrollToId('priser')">
+          priser
+        </button>
+      </li>
+    </ul>
   </div>
 </section>
 
 <section
   class="info white"
   aria-label="Hvorfor din bedrift trenger en hjemmeside"
+  id="hjemmeside"
 >
   <div class="info-container right">
     <div class="image-container">
@@ -60,7 +91,7 @@
       />
     </div>
     <div class="text-container">
-      <article>
+      <article aria-label="den beste hjemmesiden for bedriften">
         <div class="header">
           <p class="subtitle-gradient blue">Våre nettsider</p>
           <h2 class="title-bold">Det beste for bedriften</h2>
@@ -110,7 +141,11 @@
   </div>
 </section>
 
-<section class="usp-cards" aria-labelledby="usp-cards-title">
+<section
+  class="usp-cards"
+  aria-labelledby="usp-cards-title"
+  id="bedrifthjemmeside"
+>
   <div class="usp-cards-wrapper">
     <div class="titles">
       <p class="subtitle">Hvorfor du trenger</p>
@@ -213,7 +248,7 @@
   </div>
 </section>
 
-<section class="process" aria-labelledby="process-title">
+<section class="process" aria-labelledby="process-title" id="neste-steg">
   <div class="wrapper">
     <div class="image">
       <img
@@ -282,7 +317,11 @@
   </div>
 </section>
 
-<section class="usp-card-list" aria-labelledby="usp-list-title">
+<section
+  class="usp-card-list"
+  aria-labelledby="usp-list-title"
+  id="inkluderte-tjenester"
+>
   <div class="usp-list-wrapper">
     <div class="header">
       <p class="subtitle">Våre gratis inkluderte tjenester</p>
@@ -404,11 +443,11 @@
   </div>
 </section>
 
-<section class="prices">
+<section class="prices" aria-labelledby="prices-title" id="priser">
   <div class="wrapper">
     <div class="titles">
       <p class="subtitle">Verdi for pengene</p>
-      <h2 class="subtitle-gradient blue">
+      <h2 class="subtitle-gradient blue" id="prices-title">
         Våre priser på hjemmeside for bedriften.
       </h2>
       <!-- <p class="content">
