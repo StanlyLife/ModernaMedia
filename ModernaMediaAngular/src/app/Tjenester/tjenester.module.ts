@@ -1,5 +1,7 @@
+import { AboutYourNextProjectComponent } from './../components/about-your-next-project/about-your-next-project.component';
+import { ComponentsModule } from './../components/components.module';
 import { Routes, RouterModule } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DesignComponent } from './design/design.component';
 import { UtviklingComponent } from './utvikling/utvikling.component';
@@ -76,6 +78,6 @@ const routes: Routes = [
     DesignLogoComponent,
     DesignWebComponent,
   ],
-  imports: [CommonModule, RouterModule.forRoot(routes)],
+  imports: [CommonModule, RouterModule.forRoot(routes), ComponentsModule],
 })
 export class TjenesterModule {}
