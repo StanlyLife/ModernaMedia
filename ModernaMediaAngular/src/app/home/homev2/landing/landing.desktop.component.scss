@@ -1,6 +1,87 @@
 @import "../../../../variables.scss";
 
+@media screen and (min-width: 570px) {
+  .landing .content .titles {
+    height: 100px;
+    .super-title {
+      font-size: 3.9rem;
+    }
+    .super-title:not(.bg) {
+    }
+    .super-title.bg {
+    }
+    .subtitle {
+      margin-top: 70px;
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  .landing .content .titles {
+    height: 155px;
+    .super-title {
+      font-size: 4.1rem;
+    }
+    .super-title:not(.bg) {
+    }
+    .super-title.bg {
+    }
+    .subtitle {
+      font-size: 2.25rem;
+      margin-top: 70px;
+    }
+  }
+}
 @media screen and (min-width: $tablet) {
+  .landing {
+    width: 97.5%;
+    box-shadow: $box-shadow;
+    max-width: $max-width;
+    margin: 1rem auto;
+    overflow: hidden;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .buttons {
+      max-width: 475px;
+    }
+    .wrapper {
+      min-height: 750px;
+      width: 100%;
+    }
+    .bg {
+      .bg-shade,
+      .landing-image {
+        min-width: 100%;
+      }
+      .bg-shade {
+        opacity: 0.35;
+      }
+    }
+    .content {
+      .titles {
+        height: 145px;
+        .super-title {
+          // font-size: 2.45rem;
+        }
+        .super-title:not(.bg) {
+        }
+        .super-title.bg {
+        }
+        .subtitle {
+          // margin-top: 40px;
+          font-size: 1.75rem;
+        }
+      }
+      .info {
+        margin-top: -5px;
+        font-size: 1.25rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
   .landing {
     width: 97.5%;
     box-shadow: $box-shadow;
@@ -27,17 +108,31 @@
       }
     }
     .content {
-      left: 156px;
-      right: auto;
-      transform: translate(0, -50%);
+      margin-left: -150px;
       .titles {
-        .title {
-          font-size: 3.825rem;
-          text-shadow: none;
+        height: 145px;
+        width: 900px;
+        .super-title {
+          font-size: 6rem;
         }
-        .sub-title {
+        .super-title:not(.bg) {
+        }
+        .super-title.bg {
+        }
+        .subtitle {
+          margin-top: 100px;
+          font-size: 2rem;
+          margin-left: 5px;
         }
       }
+      .info {
+        margin-left: 8px;
+        margin-top: 0px;
+        font-size: 1.25rem;
+      }
+    }
+    .buttons {
+      margin-left: 8px;
     }
   }
 }

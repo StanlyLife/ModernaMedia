@@ -33,15 +33,30 @@
     @include aAbs;
     z-index: 2;
     .titles {
+      position: relative;
+      border: 2px solid transparent;
+      height: 100px;
+      overflow: hidden;
       .super-title {
-        font-size: 3rem;
+        font-size: 2.45rem;
         text-transform: uppercase;
         font-weight: 900;
-        @include gradientTitle;
+        position: absolute;
       }
-      .sub-title {
-        font-size: 1.25rem;
-        color: $light;
+      .super-title:not(.bg) {
+        @include gradientTitle-landing;
+        z-index: 3;
+      }
+      .super-title.bg {
+        z-index: 1;
+        text-shadow: 0px 0px 14px rgb(0 0 0 / 38%);
+        pointer-events: none;
+      }
+      .subtitle {
+        margin-top: 40px;
+        letter-spacing: 0.25px;
+        font-weight: 900;
+        text-shadow: $text-shadow;
       }
     }
   }

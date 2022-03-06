@@ -93,6 +93,14 @@ $elevation-5: 0px 24px 38px rgba(18, 18, 18, 0.14),
   background: linear-gradient(to right, #d06b30 0%, #c43ad6 50%, #30cfd0 100%);
 }
 
+@mixin gradientTitle-landing {
+  background: #d06b30;
+  background: -webkit-linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
+  background: -moz-linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
+  background: linear-gradient(to right, #30cfd0 0%, #c43ad6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 @mixin gradientTitle {
   background: #d06b30;
   background: -webkit-linear-gradient(
