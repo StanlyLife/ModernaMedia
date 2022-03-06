@@ -29,7 +29,7 @@
       flex-direction: column;
       .service {
         margin: 0 auto;
-        box-shadow: $box-shadow-small;
+        box-shadow: $box-shadow-btn;
         background: $light-second;
         height: 350px;
         max-width: 580px;
@@ -43,10 +43,10 @@
         font-weight: 400;
         transition: all 0.25s ease;
         &:hover {
-          box-shadow: $box-shadow-btn;
+          box-shadow: $box-shadow-small;
         }
         &:active {
-          box-shadow: $box-shadow;
+          box-shadow: $elevation-1;
         }
         .icon {
           height: 50px;
