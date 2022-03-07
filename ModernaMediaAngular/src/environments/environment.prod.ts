@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  url: 'http://139.162.201.189:8080',
+  url: 'https://api.modernamedia.no/',
   img: 'https://modernamedia.b-cdn.net/',
 };
