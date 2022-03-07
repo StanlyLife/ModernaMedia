@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  url: 'http://localhost:5000',
+  url: 'http://139.162.201.189:8080',
   img: 'https://modernamedia.b-cdn.net/',
 };
