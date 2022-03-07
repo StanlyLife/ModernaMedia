@@ -10,7 +10,15 @@ import { environment } from 'src/environments/environment.prod';
 export class ContactService {
   constructor(private http: HttpClient, private toast: ToastService) {}
   private SendCTAMessageURL = environment.url + '/API/Contact/Contact';
-  headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  // headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': 'localhost:5000',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers':
+      'Origin, Content-Type, X-Auth-Token, content-type',
+  });
+
   public errorMessage;
   public SendContactRequestResult = new BehaviorSubject<boolean>(false);
   SendContactRequest(model: any) {
