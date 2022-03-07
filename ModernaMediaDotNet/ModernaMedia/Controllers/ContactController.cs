@@ -19,7 +19,7 @@ namespace ModernaMediaDotNet.Controllers
             this.logger = logger;
         }
 
-        [HttpPost("Submit")]
+        [HttpPost]
         public IActionResult Contact(ContactModel model)
         {
             string body = $"Melding fra MODERNA MEDIA: \n" +
