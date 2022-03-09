@@ -85,7 +85,7 @@ export class UtviklingComponent implements OnInit {
     },
     position: 'right',
     header: {
-      subtitle: 'Øk online tilstedeværelsen med',
+      subtitle: 'Øk din tilstedeværelse med',
       title: 'Hjemmeside for bedriften',
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
