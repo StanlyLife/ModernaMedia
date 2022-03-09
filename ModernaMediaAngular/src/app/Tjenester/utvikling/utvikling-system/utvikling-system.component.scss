@@ -24,7 +24,7 @@
       .prices-wrapper {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
         grid-column-gap: auto;
         grid-row-gap: 1rem;
       }
