@@ -27,7 +27,7 @@ export class TjenesterHeaderComponent implements OnInit {
       src: '../../../../assets/Images/Icons/tjenester/developer.svg',
     },
     title: 'Utvikling',
-    subtitle: 'Vi skaper nettsider og system som øker omsetningen din',
+    subtitle: 'Vi skaper nettsider og programvare som øker omsetningen din',
     links: [
       { title: 'Tjenester', url: 'services' },
       { title: 'Prosess', url: 'process' },

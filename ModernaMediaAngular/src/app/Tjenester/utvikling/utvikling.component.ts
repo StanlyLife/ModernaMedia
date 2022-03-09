@@ -44,7 +44,7 @@ export class UtviklingComponent implements OnInit {
     },
     title: 'Nettsider & Programvare',
     subtitle:
-      'Skreddersydde hjemmesider, system og applikasjoner for bedrifter',
+      'Skreddersydde hjemmesider, programvare og applikasjoner for bedrifter',
     links: [
       { title: 'Tjenester', url: 'services' },
       { title: 'Webutvikling', url: 'web utvikling' },
