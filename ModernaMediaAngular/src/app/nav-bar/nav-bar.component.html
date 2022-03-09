@@ -2,10 +2,10 @@
   <div class="wrapper">
     <a
       class="logo-anchor"
-      href="/"
+      routerLink="/"
       title="Hjemmeside"
       aria-label="Hjemmeside"
-      hreflang="no-nb"
+      routerLinklang="no-nb"
     >
       <div class="logo">
         <img
@@ -17,32 +17,57 @@
       </div>
     </a>
     <nav role="navigation" id="navbar">
-      <a href="/utvikling" hreflang="no-nb" class="nav-link {{ textClass }}">
+      <a
+        routerLink="/tjenester/bedrift/utvikling"
+        routerLinklang="no-nb"
+        [routerLinkActive]="[true]"
+        class="nav-link {{ textClass }}"
+      >
         <div class="slide"></div>
         <p>Utvikling</p>
       </a>
-      <a href="/design" hreflang="no-nb" class="nav-link {{ textClass }}">
+      <a
+        routerLink="/tjenester/bedrift/design"
+        routerLinklang="no-nb"
+        [routerLinkActive]="[true]"
+        class="nav-link {{ textClass }}"
+      >
         <div class="slide"></div>
         <p>Design</p>
       </a>
-      <a href="/seo" hreflang="no-nb" class="nav-link {{ textClass }}">
+      <a
+        routerLink="/tjenester/bedrift/seo/søkemotoroptimalisering"
+        routerLinklang="no-nb"
+        [routerLinkActive]="[true]"
+        class="nav-link {{ textClass }}"
+      >
         <div class="slide"></div>
         <p>SEO</p>
       </a>
-      <a href="/info" hreflang="no-nb" class="nav-link {{ textClass }}">
+      <!-- <a
+        routerLink="/info"
+        routerLinklang="no-nb"
+        [routerLinkActive]="[true]"
+        class="nav-link {{ textClass }}"
+      >
         <div class="slide"></div>
         <p>Om oss</p>
       </a>
-      <a href="/blogg" hreflang="no-nb" class="nav-link {{ textClass }}">
+      <a
+        routerLink="/blogg"
+        routerLinklang="no-nb"
+        [routerLinkActive]="[true]"
+        class="nav-link {{ textClass }}"
+      >
         <div class="slide"></div>
         <p>blogg</p>
-      </a>
+      </a> -->
     </nav>
     <div class="buttons">
       <a
         class="btn cta contact"
         (click)="ContactUs($event)"
-        href="#kontakt"
+        routerLink="#kontakt"
         title="skroll til kontakt monderna media"
       >
         <p>Kontakt</p>
