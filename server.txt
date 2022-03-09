@@ -194,6 +194,7 @@ server {
 
 PM2
 -----------------------------------------
+cd /var/www/ModernaMedia/Angular
 pm2 start "node dist/ModernaMediaAngular/server/main.js" --name "ModernaMedia"
 
 
