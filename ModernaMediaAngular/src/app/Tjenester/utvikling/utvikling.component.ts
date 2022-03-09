@@ -13,7 +13,7 @@ export class UtviklingComponent implements OnInit {
     private seo: SeoService
   ) {
     title.setTitle(
-      'Hjemmesider | Datasystem | applikasjoner | for bedrifter - Moderna Media Digitalbyrå'
+      'Hjemmesider | Programvare| applikasjoner | for bedrifter - Moderna Media Digitalbyrå'
     );
   }
 
@@ -23,7 +23,7 @@ export class UtviklingComponent implements OnInit {
       {
         name: 'description',
         content:
-          'Skreddersydde hjemmesider, system og applikasjoner for bedrifter av top kvalitet kan du få hos Moderna Media digitalbyrå. Vi bygger alt fra bunn med neste-generasjons teknologi som spa-rammeverk og utnytter fulle cloud løsninger!',
+          'Skreddersydde hjemmesider, programvare og applikasjoner for bedrifter av top kvalitet kan du få hos Moderna Media digitalbyrå. Vi bygger alt fra bunn med neste-generasjons teknologi som spa-rammeverk og utnytter fulle cloud løsninger!',
       },
       { name: 'robots', content: 'index, follow' },
     ]);
@@ -100,18 +100,18 @@ export class UtviklingComponent implements OnInit {
   dataInfoSection2 = {
     color: 'grey',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av datasystem for bedrifter.webp',
+      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av Programvarefor bedrifter.webp',
       alt: '',
     },
     position: 'left',
     header: {
       subtitle: 'Spar kostnader med',
-      title: 'Datasystem for bedriften',
+      title: 'Programvarefor bedriften',
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
     text: [
-      'Et system kan være mange ting, vi bruker begrepet datasystem om en rekke funksjoner som blir utført sammen i et digitalt kommuniserende økosystem. Når restauranten tar imot en bestilling eller reservasjon på nett og deres interne datamaskiner oppdateres tilstrekkelig så brukes det et datasystem for å synkronisere disse jobbene.',
-      'Vi tilbyr våre kunder skreddersydde datasystem som er ment for å spare bedriften tid og penger. Ved å automatisere daglige gjøremål kan vi effektivt kutte kostandene samtidig som vi reduserer risikoen for menneskelig feil.',
+      'Et system kan være mange ting, vi bruker begrepet Programvareom en rekke funksjoner som blir utført sammen i et digitalt kommuniserende økosystem. Når restauranten tar imot en bestilling eller reservasjon på nett og deres interne datamaskiner oppdateres tilstrekkelig så brukes det et Programvarefor å synkronisere disse jobbene.',
+      'Vi tilbyr våre kunder skreddersydde Programvaresom er ment for å spare bedriften tid og penger. Ved å automatisere daglige gjøremål kan vi effektivt kutte kostandene samtidig som vi reduserer risikoen for menneskelig feil.',
       'Vårt mål er å gjøre hverdagen din og deres kunder enklere. Dersom du skulle ha behov for et bookingsystem, drift- og logistikksystem eller et kundebehandlingssystem. Ta en prat med oss så finner vi den beste løsningen for bedriften din og deres budsjett.',
     ],
   };

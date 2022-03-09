@@ -55,7 +55,7 @@ const routes: Routes = [
     component: UtviklingHjemmesideComponent,
   },
   {
-    path: 'tjenester/bedrift/utvikling/datasystem',
+    path: 'tjenester/bedrift/utvikling/programvare',
     component: UtviklingSystemComponent,
   },
 ];
