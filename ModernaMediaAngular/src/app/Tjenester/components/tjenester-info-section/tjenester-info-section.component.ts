@@ -32,7 +32,7 @@ export class TjenesterInfoSectionComponent implements OnInit {
             "@type": "WebPage",
             "@id": "${this.router.url}"
           },
-          "headline": data.header.title,
+          "headline": ${this.data.header.title},
           "image": "${this.data.img.url}",
           "author": {
             "@type": "Organization",
