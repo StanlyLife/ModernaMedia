@@ -13,7 +13,7 @@ export class UtviklingComponent implements OnInit {
     private seo: SeoService
   ) {
     title.setTitle(
-      'Hjemmesider | Programvare| applikasjoner | for bedrifter - Moderna Media Digitalbyrå'
+      'Hjemmesider | Programvare | applikasjoner | for bedrifter - Moderna Media Digitalbyrå'
     );
   }
 
@@ -42,20 +42,20 @@ export class UtviklingComponent implements OnInit {
       alt: '',
       src: '../../../../assets/Images/Icons/tjenester/developer.svg',
     },
-    title: 'Nettsider & System',
+    title: 'Nettsider & Programvare',
     subtitle:
       'Skreddersydde hjemmesider, system og applikasjoner for bedrifter',
     links: [
       { title: 'Tjenester', url: 'services' },
       { title: 'Webutvikling', url: 'web utvikling' },
-      { title: 'Systemutvikling', url: 'system utvikling' },
+      { title: 'Programvare', url: 'system utvikling' },
     ],
   };
   dataServices: any = {
-    title: 'Web utvikling | System utvikling',
+    title: 'Web utvikling | Programvare utvikling',
     subtitle: 'Våre utviklingstjenester for bedrifter.',
     headerText:
-      'Våre datasystemer og hjemmesider er bygget helt fra bunn med banebrytende teknologi som SPA rammeverk og full cloud-service',
+      'Våre hjemmesider og programvare er bygget helt fra bunn med banebrytende teknologi som SPA rammeverk og full cloud-service',
     services: [
       {
         title: 'Hjemmeside for bedrift',
@@ -68,7 +68,7 @@ export class UtviklingComponent implements OnInit {
       },
       {
         title: 'Sytemer for bedrifter',
-        text: 'Automatiser daglige gjøremål eller gjør livet enklere for kundene med våre skreddersydde system.',
+        text: 'Automatiser daglige gjøremål eller gjør livet enklere for kundene med vår skreddersydde programvare.',
         icon: {
           src: '../../../../assets/Images/Icons/tjenester/services/system-bedrift.svg',
           alt: '',
@@ -100,18 +100,18 @@ export class UtviklingComponent implements OnInit {
   dataInfoSection2 = {
     color: 'grey',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av Programvarefor bedrifter.webp',
+      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av Programvare for bedrifter.webp',
       alt: '',
     },
     position: 'left',
     header: {
       subtitle: 'Spar kostnader med',
-      title: 'Programvarefor bedriften',
+      title: 'Programvare for bedriften',
     },
     button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
     text: [
-      'Et system kan være mange ting, vi bruker begrepet Programvareom en rekke funksjoner som blir utført sammen i et digitalt kommuniserende økosystem. Når restauranten tar imot en bestilling eller reservasjon på nett og deres interne datamaskiner oppdateres tilstrekkelig så brukes det et Programvarefor å synkronisere disse jobbene.',
-      'Vi tilbyr våre kunder skreddersydde Programvaresom er ment for å spare bedriften tid og penger. Ved å automatisere daglige gjøremål kan vi effektivt kutte kostandene samtidig som vi reduserer risikoen for menneskelig feil.',
+      'Programvare kan være mange ting, vi bruker begrepet Programvare om en rekke funksjoner som blir utført sammen i et digitalt kommuniserende økosystem. Når restauranten tar imot en bestilling eller reservasjon på nett og deres interne datamaskiner oppdateres tilstrekkelig så brukes det et Programvare for å synkronisere disse jobbene.',
+      'Vi tilbyr våre kunder skreddersydde programvare som er ment for å spare bedriften tid og penger. Ved å automatisere daglige gjøremål kan vi effektivt kutte kostandene samtidig som vi reduserer risikoen for menneskelig feil.',
       'Vårt mål er å gjøre hverdagen din og deres kunder enklere. Dersom du skulle ha behov for et bookingsystem, drift- og logistikksystem eller et kundebehandlingssystem. Ta en prat med oss så finner vi den beste løsningen for bedriften din og deres budsjett.',
     ],
   };
