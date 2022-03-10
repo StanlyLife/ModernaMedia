@@ -90,7 +90,7 @@ export class SeoComponent implements OnInit {
   dataInfoSection = {
     color: 'grey',
     img: {
-      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av Programvarefor bedrifter.webp',
+      url: '../../../../assets/Images/Tjenester/info-section/utvikling/640/utvikling av hjemmeside for bedrifter i oslo.webp',
       alt: '',
     },
     position: 'right',
