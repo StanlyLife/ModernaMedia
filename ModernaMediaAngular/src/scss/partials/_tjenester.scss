@@ -62,6 +62,9 @@ section.landing {
           color: $light;
           &.bg {
             text-shadow: 0px 0px 14px rgb(0 0 0 / 38%);
+            width: 100vw;
+            height: 100vw;
+            pointer-events: none;
           }
           &:not(.bg) {
             @include titleText-tjenester;
