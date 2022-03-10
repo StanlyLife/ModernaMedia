@@ -1,73 +1,218 @@
 @use "../../../../scss/partials/tjenester";
 @use "../../../../scss/partials/tjenester-desktop";
 @import "../../../../variables.scss";
+/*LANDING COMPONENT*/
+/*LANDING COMPONENT*/
+/*LANDING COMPONENT*/
 
-/*PRICES COMPONENT*/
-/*PRICES COMPONENT*/
-/*PRICES COMPONENT*/
-@media screen and (min-width: $desktop) {
-  section.prices {
-    .wrapper {
-      max-width: 1280px;
-      margin: 0 auto;
-      .titles {
-        text-align: center;
-        padding: 2rem 0;
-        .title {
-          padding: 1rem 0;
-          font-size: 2.5rem;
+section.landing {
+  .content {
+    .titles {
+      min-height: 145px;
+      h1.tjenester-title,
+      p.tjenester-title {
+        position: absolute;
+        z-index: 1;
+        text-transform: uppercase;
+
+        &:not(p.tjenester-title) {
         }
-        .subtitle {
-          font-size: 0.75rem;
+
+        .super-title {
+          font-size: 5rem;
         }
-      }
-      .prices-wrapper {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        grid-column-gap: auto;
-        grid-row-gap: 1rem;
-      }
-      .price-component {
-        width: 100%;
-        margin: 1rem auto;
-        position: relative;
-        padding-bottom: 25px;
-        min-width: 340px;
-        max-width: 450px;
-        flex: 1 0 0px;
-        .content-wrapper {
-          padding: 0.5rem 1rem;
-        }
-        .img-wrapper {
-          height: 200px;
-          .usp-title {
-            font-size: 2.5rem;
-          }
-        }
-        .usp-list .usp {
-          .usp-text {
-            padding-left: 0.5rem;
-          }
-        }
-        .info {
-          padding: 1rem;
-        }
-        .price {
-          @include ctaText;
-          font-size: 1.25rem;
-          padding: 8px 0;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 40px;
-          width: 100%;
+        .subtitle.large {
+          font-size: 3.75rem;
         }
       }
     }
-    ul,
-    li {
-      list-style: none;
+  }
+  .buttons,
+  .info {
+    p {
+    }
+  }
+  .buttons {
+    .btn {
+      &:nth-child(2) {
+      }
+      p {
+      }
+    }
+  }
+  .links {
+    .link-container {
+    }
+    button,
+    a {
+      &:hover {
+      }
+      &::before {
+      }
     }
   }
 }
+
+@media screen and (min-width: 555px) {
+  section.landing {
+    .links {
+      max-width: 800px;
+      @include haAbs;
+      .link-container {
+        flex: auto;
+      }
+    }
+  }
+}
+@media screen and (min-width: $desktop) {
+  section.landing {
+    .content {
+      .titles {
+        min-height: 215px;
+        h1.tjenester-title,
+        p.tjenester-title {
+          top: 0;
+          .super-title,
+          .subtitle.large {
+            font-size: 5rem;
+          }
+          .super-title {
+            font-size: 7rem;
+          }
+        }
+      }
+      .info p {
+        font-size: 1.25rem;
+      }
+    }
+    .links .link-container {
+      text-align: center;
+    }
+  }
+}
+@media screen and (min-width: $tablet) {
+  section.landing {
+    .buttons {
+    }
+    .wrapper {
+      min-height: 750px;
+      width: 100%;
+    }
+    .bg {
+      .bg-shade,
+      .landing-image {
+        min-width: 100%;
+      }
+    }
+    .content {
+      .titles {
+        min-height: 210px;
+        h1.tjenester-title,
+        p.tjenester-title {
+          top: 0;
+          .super-title,
+          .subtitle.large {
+            font-size: 5.75rem;
+          }
+          .super-title {
+            font-size: 7rem;
+          }
+          .subtitle.large {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  section.landing {
+    .content {
+      max-width: 800px;
+      .titles {
+        min-height: 250px;
+        h1.tjenester-title,
+        p.tjenester-title {
+          .super-title,
+          .subtitle.large {
+            font-size: 6.25rem;
+          }
+          .super-title {
+            font-size: 8rem;
+          }
+          .subtitle.large {
+          }
+        }
+      }
+    }
+  }
+}
+// /*PRICES COMPONENT*/
+// /*PRICES COMPONENT*/
+// /*PRICES COMPONENT*/
+// @media screen and (min-width: $desktop) {
+//   section.prices {
+//     .wrapper {
+//       max-width: 1280px;
+//       margin: 0 auto;
+//       .titles {
+//         text-align: center;
+//         padding: 2rem 0;
+//         .title {
+//           padding: 1rem 0;
+//           font-size: 2.5rem;
+//         }
+//         .subtitle {
+//           font-size: 0.75rem;
+//         }
+//       }
+//       .prices-wrapper {
+//         display: grid;
+//         grid-template-columns: repeat(2, 1fr);
+//         grid-template-rows: repeat(2, 1fr);
+//         grid-column-gap: auto;
+//         grid-row-gap: 1rem;
+//       }
+//       .price-component {
+//         width: 100%;
+//         margin: 1rem auto;
+//         position: relative;
+//         padding-bottom: 25px;
+//         min-width: 340px;
+//         max-width: 450px;
+//         flex: 1 0 0px;
+//         .content-wrapper {
+//           padding: 0.5rem 1rem;
+//         }
+//         .img-wrapper {
+//           height: 200px;
+//           .usp-title {
+//             font-size: 2.5rem;
+//           }
+//         }
+//         .usp-list .usp {
+//           .usp-text {
+//             padding-left: 0.5rem;
+//           }
+//         }
+//         .info {
+//           padding: 1rem;
+//         }
+//         .price {
+//           @include ctaText;
+//           font-size: 1.25rem;
+//           padding: 8px 0;
+//           position: absolute;
+//           bottom: 0;
+//           left: 0;
+//           height: 40px;
+//           width: 100%;
+//         }
+//       }
+//     }
+//     ul,
+//     li {
+//       list-style: none;
+//     }
+//   }
+// }
