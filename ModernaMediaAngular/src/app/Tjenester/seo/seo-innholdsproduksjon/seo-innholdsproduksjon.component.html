@@ -1,1 +1,460 @@
-<p>seo-innholdsproduksjon works!</p>
+<section
+  class="landing"
+  aria-labelledby="landing-title"
+  aria-label="Hjemmeside for bedrifter"
+>
+  <div class="wrapper">
+    <div class="bg">
+      <img
+        [src]="
+          sanitizeImageUrl(
+            '../../../../assets/Images/Tjenester/Tjeneste/seo/innholdsproduksjon/seo.jpg'
+          )
+        "
+        alt="Moderna media digitalbyrå for bedriftens nettsider, bedriftsystemer, grafisk design og logo design"
+        class="landing-image"
+      />
+      <div class="bg-shade"></div>
+    </div>
+    <div class="content">
+      <div class="titles">
+        <h1 class="tjenester-title" id="landing-title">
+          <span class="super-title">Innholdsproduksjon</span>
+          <span class="subtitle large">Der du trenger det</span>
+        </h1>
+        <p class="tjenester-title background">
+          <span class="super-title bg">Innholdsproduksjon</span>
+        </p>
+      </div>
+      <div class="info">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa dolores
+          dicta sed laudantium nobis, quod eos similique accusantium tempora
+          exercitationem!
+        </p>
+      </div>
+      <div class="buttons">
+        <a class="btn cta shadow" href="#kontakt"
+          ><p>Book et uforpliktet møte</p></a
+        >
+        <a class="btn cta-2" href="#tjenester"><p>Les om webdesign</p></a>
+      </div>
+    </div>
+    <ul class="links">
+      <li class="link-container">
+        <button class="header-link" (click)="scrollToId('hjemmeside')">
+          Våre nettsider
+        </button>
+      </li>
+      <li class="link-container">
+        <button class="header-link" (click)="scrollToId('bedrifthjemmeside')">
+          Hvorfor hjemmeside
+        </button>
+      </li>
+      <li class="link-container">
+        <button class="header-link" (click)="scrollToId('neste-steg')">
+          Dine neste steg
+        </button>
+      </li>
+      <li class="link-container">
+        <button
+          class="header-link"
+          (click)="scrollToId('inkluderte-tjenester')"
+        >
+          inkluderte tjenester
+        </button>
+      </li>
+      <li class="link-container">
+        <button class="header-link" (click)="scrollToId('priser')">
+          priser
+        </button>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section
+  class="info white"
+  aria-label="Hvorfor din bedrift trenger en hjemmeside"
+  id="hjemmeside"
+>
+  <div class="info-container right">
+    <div class="image-container">
+      <img
+        [src]="
+          sanitizeImageUrl(
+            '../../../../assets/Images/Tjenester/Tjeneste/seo/innholdsproduksjon/seo2.jpg'
+          )
+        "
+        alt=""
+      />
+    </div>
+    <div class="text-container">
+      <article aria-label="den beste hjemmesiden for bedriften">
+        <div class="header">
+          <p class="subtitle-gradient blue">Våre nettsider</p>
+          <h2 class="title-bold">Det beste for bedriften</h2>
+        </div>
+        <p class="text-section">
+          Tekst om hvorfor din bedrift trenger hjemmeside og hvorfor Moderna
+          Media er det beste valget. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eveniet earum dolores expedita molestiae quos
+          voluptas nihil. Quo, fugit! Quo dolor, voluptate necessitatibus
+          tempora labore autem voluptates alias officia sit voluptas cumque,
+          laboriosam, corporis maxime amet. Commodi quas soluta numquam rem non
+          alias est aspernatur culpa perferendis? Beatae id laudantium dicta!
+        </p>
+        <p class="text-section">
+          Tekst om hvorfor din bedrift trenger hjemmeside og hvorfor Moderna
+          Media er det beste valget. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Eveniet earum dolores expedita molestiae quos
+          voluptas nihil. Quo, fugit! Quo dolor, voluptate necessitatibus
+          tempora labore autem voluptates alias officia sit voluptas cumque,
+          laboriosam, corporis maxime amet. Commodi quas soluta numquam rem non
+          alias est aspernatur culpa perferendis? Beatae id laudantium dicta!
+        </p>
+        <p class="text-section">
+          Tekst om hvorfor din bedrift trenger hjemmeside og hvorfor Moderna
+          Media er det beste valget. Lorem ipsum dolor sit amet consectetur
+        </p>
+
+        <div class="list">
+          <h3>Vi bygger hjemmesiden</h3>
+          <ul>
+            <li>Vi bruker neste generasjons teknologi</li>
+            <li>Vi bygger hjemmeside med kunden i tankene</li>
+            <li>Vi designer nettsiden in-house</li>
+            <li>Vi har 100% fornøyd garanti</li>
+          </ul>
+        </div>
+      </article>
+      <div class="buttons">
+        <a href="#kontakt" class="btn cta shadow"
+          ><p>Book et uforpliktet møte</p></a
+        >
+        <a href="#kontakt" class="btn cta-2 shadow"
+          ><p>Be om tilbud på hjemmeside</p></a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="usp-cards"
+  aria-labelledby="usp-cards-title"
+  id="bedrifthjemmeside"
+>
+  <div class="usp-cards-wrapper">
+    <div class="titles">
+      <p class="subtitle">Hvorfor du trenger</p>
+      <h2 class="subtitle-gradient blue" id="usp-cards-title">
+        Hjemmeside for bedriften
+      </h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="image">
+          <img
+            [src]="
+              sanitizeImageUrl(
+                '../../../../assets/Images/Tjenester/Tjeneste/Utvikling/Hjemmeside/Liten bedrift med bakeri som trenger digitale tjenester.jpg'
+              )
+            "
+            alt=""
+          />
+        </div>
+        <div class="content">
+          <h3>Omtrent 71% av små bedrifter har en nettside</h3>
+          <p>
+            I 2021 ble det funnet at 71% av alle små bedrifter har hjemmeside.
+            Dersom du er en av de 29% som ikke har en hjemmeside taper du mye
+            organsik trafikk og potensielle kunder som sliter med å finne
+            bedriften din.
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img
+            [src]="
+              sanitizeImageUrl(
+                '../../../../assets/Images/Tjenester/Tjeneste/Utvikling/Hjemmeside/lokal bedrift eier med som sitter i telefonen.jpg'
+              )
+            "
+            alt=""
+          />
+        </div>
+        <div class="content">
+          <h3>Halvparten av Google søk er for lokale bedrifter</h3>
+          <p>
+            46% av Google søk leter etter lokale bedrifter. Heldigvis inkluderer
+            vi Google My Business for alle hjemmesidene vi lager samtidig som vi
+            bygger opp et godt grunnlag for teknisk SEO. Hva ville skjedd om 50%
+            av kundene dine eller potensielle kunder ikke kunne finne bedriften
+            din på nett?
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img
+            [src]="
+              sanitizeImageUrl(
+                '../../../../assets/Images/Tjenester/Tjeneste/Utvikling/Hjemmeside/Hjemmeside for restaurant.jpg'
+              )
+            "
+            alt=""
+          />
+        </div>
+        <div class="content">
+          <h3>Ca. 70% av all trafikk kommer fra Google</h3>
+          <p>
+            7 av 10 brukere finner nettsider og bedrifter via Google. Og nesten
+            8 av 10 kunder besøker hjemmesiden til en restaurant før de spiser
+            der for første gang. Det er et enormt tap dersom du har en dårlig
+            nettside eller ikke har en hjemmeside.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="usp-info" aria-labelledby="usp-info-title">
+  <div class="usp-info-wrapper">
+    <div class="header">
+      <img
+        src="../../../../assets/Images/Icons/tjenester/services/customer.svg"
+        alt=""
+      />
+      <h2 class="subtitle-gradient" id="usp-info-title">
+        Kundene forventere en hjemmeside
+      </h2>
+    </div>
+    <div class="content">
+      <p>
+        Dersom du vil vise verden at du tar virksomhten på alvor er det på tide
+        å investere i en proffesjonell nettside for bedriften. I en tid hvor
+        flere enn 50% av smarttelefonbrukere oppdager en ny bedrift eller et
+        produkt når de søker på telefoen lønner det seg å ha en hjemmeside.
+        Ifølge en studie dømmer 75% av brukerne en bedrift basert på
+        hjemmesidens design. En kunde er mer sannsynlig til å handle hos en
+        bedrift de føler de kan stole på å ha en nettside er et steg i prosessen
+        mot å bygge et godt forhold mellom bedriften og kunden.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="process" aria-labelledby="process-title" id="neste-steg">
+  <div class="wrapper">
+    <div class="image">
+      <img
+        [src]="
+          sanitizeImageUrl(
+            '../../../../assets/Images/Tjenester/Tjeneste/Utvikling/Hjemmeside/Dine neste steg mot bedrift nettside.jpg'
+          )
+        "
+        alt="Digitalbyrå som jobber med bedrift nettsider og design"
+      />
+    </div>
+    <div class="content">
+      <div class="content-wrapper">
+        <div class="titles">
+          <h2 class="title" id="process-title">
+            Våre neste steg mot hjemmeside for bedriften din
+          </h2>
+          <p class="innhold">
+            For å få en god forståelse av deres krav og behov ønsker vi at dere
+            tar kontakt for et uforpliktet møte. Men det er også mulig å be om
+            et prisforslag. Uavhengig av hvilken kontakt metode du ønsker å
+            bruke så kan vi ta dine neste steg mot en hjemmeside og ha første
+            utkast klar innen 1 uke.
+          </p>
+        </div>
+        <div class="liste">
+          <div class="point">
+            <div class="number">1</div>
+            <div class="point-content">
+              <p class="point-title">Kontakt oss</p>
+              <p class="point-text">
+                Klikker du knappen for et uforpliktet møte vil vi ringe deg opp
+                snarest eller kontakte deg på mail basert på din preferanse.
+                Ønsker du et tilbud må du fylle ut alle feltene slik at vi kan
+                få en god forståelse av dine ønsker og behov.
+              </p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="number">2</div>
+            <div class="point-content">
+              <p class="point-title">Vi kontakter deg</p>
+              <p class="point-text">
+                Etter en gjennomgang av krav tegner vi opp en plan og diskuterer
+                med deg. Deretter gjør vi iterative endringer slik at vi kan
+                låse planen før vi starter utviklingsprossesen.
+              </p>
+            </div>
+          </div>
+          <div class="point">
+            <div class="number">3</div>
+            <div class="point-content">
+              <p class="point-title">Leveranse</p>
+              <p class="point-text">
+                Gjennom utviklingsprossessen vil vi kjøre minimum ukentlige
+                opdateringer slik at du blir inkludert i prosessen. Dersom du
+                under noen steg av prosessen ikke skulle være fornøyd så har vi
+                en 100% fornøyd garanti som sier at du kan kansellere oppdraget
+                når som helst.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="usp-card-list"
+  aria-labelledby="usp-list-title"
+  id="inkluderte-tjenester"
+>
+  <div class="usp-list-wrapper">
+    <div class="header">
+      <p class="subtitle">Våre steg mot et perfekt design</p>
+      <h2 class="subtitle-gradient blue" id="usp-list-title">USP USP USP</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img
+          [src]="
+            sanitizeImageUrl(
+              '../../../../assets/Images/Icons/tjenester/services/utvikling/google analytics.svg'
+            )
+          "
+          alt=""
+          class="icon"
+        />
+        <h3 class="usp-card-title">Google analytics oppsett</h3>
+        <p>
+          Alle våre nettsider kommer inkludert med google analytics oppsett.
+          Helt gratis.
+        </p>
+      </div>
+      <div class="card">
+        <img
+          [src]="
+            sanitizeImageUrl(
+              '../../../../assets/Images/Icons/tjenester/services/utvikling/google my business.svg'
+            )
+          "
+          alt=""
+          class="icon"
+        />
+        <h3 class="usp-card-title">Google my business</h3>
+        <p>
+          Vi setter opp google my business dersom du ikke allerede har det. Helt
+          gratis.
+        </p>
+      </div>
+      <div class="card">
+        <img
+          [src]="
+            sanitizeImageUrl(
+              '../../../../assets/Images/Icons/tjenester/services/utvikling/page-speed.svg'
+            )
+          "
+          alt=""
+          class="icon"
+        />
+        <h3 class="usp-card-title">Optimering</h3>
+        <p>
+          Vi optimerer og komprimerer alle bildene dine for best mulig
+          opplevelse på hjemmesiden til bedriften din. Helt gratis.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prices" aria-labelledby="prices-title" id="priser">
+  <div class="wrapper">
+    <div class="titles">
+      <p class="subtitle">Verdi for pengene</p>
+      <h2 class="subtitle-gradient blue" id="prices-title">
+        Våre priser på hjemmeside for bedriften.
+      </h2>
+      <!-- <p class="content">
+        Vi starter alle prosesser med et budsjettmøte hvor vi blir enige om krav
+        og ønsker.
+      </p> -->
+    </div>
+    <div class="prices-wrapper">
+      <div class="price-component">
+        <div class="img-wrapper">
+          <img
+            [src]="
+              sanitizeImageUrl(
+                '../../../../assets/Images/Tjenester/Tjeneste/Utvikling/Hjemmeside/Ensom barista som selger kaffe.webp'
+              )
+            "
+            alt="Logo for liten bedrift som henger på skilt"
+          />
+          <h3 class="usp-title">En-siders hjemmeside</h3>
+        </div>
+        <div class="content-wrapper">
+          <ul class="usp-list">
+            <li class="usp">
+              <img
+                [src]="
+                  sanitizeImageUrl(
+                    '../../../../assets/Images/Icons/home/check-mark.svg'
+                  )
+                "
+                alt=""
+              />
+              <p class="usp-text">For bedrifter i oppstartsfasen</p>
+            </li>
+            <li class="usp">
+              <img
+                [src]="
+                  sanitizeImageUrl(
+                    '../../../../assets/Images/Icons/home/check-mark.svg'
+                  )
+                "
+                alt=""
+              />
+              <p class="usp-text">Google my business</p>
+            </li>
+            <li class="usp">
+              <img
+                [src]="
+                  sanitizeImageUrl(
+                    '../../../../assets/Images/Icons/home/check-mark.svg'
+                  )
+                "
+                alt=""
+              />
+              <p class="usp-text">Google analytics</p>
+            </li>
+          </ul>
+          <div class="info">
+            <p>
+              En enkel hjemmeside med en side, ingen navigasjon og ingen logisk
+              funksjonalitet starter på 10.000kr. Dette passer for små bedrifter
+              i oppstartsfasen som ønsker synlighet på nett eller et sted hvor
+              kunder kan finne kort informasjon om bedriften din.
+            </p>
+          </div>
+          <div class="price">
+            <p>Fra 10.000kr</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-about-your-next-project></app-about-your-next-project>
