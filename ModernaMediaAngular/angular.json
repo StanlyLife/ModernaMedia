@@ -29,10 +29,7 @@
               "src/robots.txt",
               "src/sitemap.xml"
             ],
-            "styles": [
-              "src/globals.scss",
-              "src/styles.scss"
-            ],
+            "styles": ["src/globals.scss", "src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -59,7 +56,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "10kb",
-                  "maximumError": "25kb"
+                  "maximumError": "30kb"
                 }
               ]
             }
@@ -95,9 +92,7 @@
               "src/robots.txt",
               "src/sitemap.xml"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -109,9 +104,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -166,9 +159,7 @@
           "options": {
             "browserTarget": "ModernaMediaAngular:build:production",
             "serverTarget": "ModernaMediaAngular:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}
