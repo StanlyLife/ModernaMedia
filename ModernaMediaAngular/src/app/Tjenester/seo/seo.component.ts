@@ -98,7 +98,10 @@ export class SeoComponent implements OnInit {
       subtitle: 'Spar kostnader med',
       title: 'Teknisk SEO',
     },
-    button: { text: 'Les mer om teknisk SEO', url: '#tjenester' },
+    button: {
+      text: 'Les mer om teknisk SEO',
+      url: '/tjenester/bedrift/seo/søkemotoroptimalisering',
+    },
     text: [
       'Teknisk SEO referer til nettside- og serveroptimering som i gjengjeld hjelper søkemotor roboter å indeksere og lagre nettsiden din enklere.',
       'I teknisk SEO er det viktig å følge opp TLS sikkerhet for å verifisere tillitten til nettsiden. Det er også ekstremt viktig å passe på at nettsiden er mobilvennlig ettersom 2 av 3 brukere besøker nettsiden din med mobiltelefon.',
@@ -117,7 +120,10 @@ export class SeoComponent implements OnInit {
       subtitle: 'Bygg en sterk merkevare med',
       title: 'Off-page SEO',
     },
-    button: { text: 'Les mer om off-page SEO', url: '#tjenester' },
+    button: {
+      text: 'Les mer om off-page SEO',
+      url: '/tjenester/bedrift/seo/søkemotoroptimalisering',
+    },
     text: [
       'Off-page SEO er det som avgjør relevansen til din nettside sammen med andre faktorer som blant annet innhold. Off-page SEO omhandler i stor grad det som kalles for link-building eller lenke bygging. Det vil si at Google ser på andre nettsider som lenker videre til din nettside, de ser også på kvaliteten til nettsiden og hvor mange nettsider som lenker til dem.',
       'Off-page SEO er en veldig tidkrevende jobb spesielt i Norge ettersom de fleste relevante sidene som burde lenket til din bedrift ofte er konkurrenter. Det finnes mange måter å bygge lenker på, noe av de mer populære strategiene omhandler det som sies å være i grå-sonen hvor man finner flere tilfeldige nettsider og publiserer en lenke til sin hjemmeside.',
@@ -135,7 +141,10 @@ export class SeoComponent implements OnInit {
       subtitle: 'Øk rangeringen med innholdsproduksjon',
       title: 'On-page SEO',
     },
-    button: { text: 'Les mer om innholdsproduksjon', url: '#tjenester' },
+    button: {
+      text: 'Les mer om innholdsproduksjon',
+      url: '/tjenester/bedrift/seo/søkemotoroptimalisering',
+    },
     text: [
       'Har du hørt at content is king? Eller kanskje du har lagt merke til at vi har noen såkalte skrivefeil hvor vi noen ganger skriver søkemotor optimalisering og andre ganger skriver søkemotoroptimalisering. Dette er fordi vi har gjort en undersøkelse som sier at omtrent 1100 nordmenn søker på “søkemotor optimalisering“ hver månde. Samtidig søker 800 nordmenn på “søkemotor optimalisering“.',
       'Når man produserer innhold for brukere og søkemotor optimalisering gjelder det å ha gjort undersøkelse for å finne nøkkelord, setninger og spørsmål som ofte søkes på av potensielle kunder. Deretter må man ta hensyn til at man også skriver innhold ikke bare for bruker, men også Google. Det som står i tykk skrift utgjør mer enn det som står i dette avsnittet, og det som står på toppen av hjemmesiden utgjør mye mer.',

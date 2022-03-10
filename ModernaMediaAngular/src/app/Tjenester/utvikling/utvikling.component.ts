@@ -88,7 +88,10 @@ export class UtviklingComponent implements OnInit {
       subtitle: 'Øk din tilstedeværelse med',
       title: 'Hjemmeside for bedriften',
     },
-    button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
+    button: {
+      text: 'Les mer om hjemmesider',
+      url: '/tjenester/bedrift/utvikling',
+    },
     text: [
       'En bedrifts online tilstedeværelse, uavhengig av industri vil være kritisk for ens suksess. En bedrifts hjemmeside vil alene ikke være med på å skape tillit og vekst, men en attraktiv og komplett nettside vil ta deg en lang vei.',
       'Har du noen gang besøkt en hjemmeside og tenkt “dette her kan ikke stemme?“ eller “Er dette trygt?“. Kanskje har du bestemt deg for å besøke en ny restaurant i Oslo, men du klarer ikke å finne hjemmesiden til bedriften, eller kanskje du finner den, men den inneholder ikke en meny. Hos digitalbyrået Moderna Media følger vi deg opp hele veien og sørger for at du får absolutt mest mulig for pengene.',
@@ -108,7 +111,10 @@ export class UtviklingComponent implements OnInit {
       subtitle: 'Spar kostnader med',
       title: 'Programvare for bedriften',
     },
-    button: { text: 'Les mer om hjemmesider', url: '#tjenester' },
+    button: {
+      text: 'Les mer om programvare',
+      url: '/tjenester/bedrift/utvikling',
+    },
     text: [
       'Programvare kan være mange ting, vi bruker begrepet Programvare om en rekke funksjoner som blir utført sammen i et digitalt kommuniserende økosystem. Når restauranten tar imot en bestilling eller reservasjon på nett og deres interne datamaskiner oppdateres tilstrekkelig så brukes det et Programvare for å synkronisere disse jobbene.',
       'Vi tilbyr våre kunder skreddersydde programvare som er ment for å spare bedriften tid og penger. Ved å automatisere daglige gjøremål kan vi effektivt kutte kostandene samtidig som vi reduserer risikoen for menneskelig feil.',

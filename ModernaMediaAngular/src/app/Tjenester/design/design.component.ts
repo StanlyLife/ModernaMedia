@@ -100,7 +100,7 @@ export class DesignComponent implements OnInit {
     },
     button: {
       text: 'Se vår grafisk design tjeneste',
-      url: '/tjenester/bedrift/design/grafiskdesign',
+      url: '/tjenester/bedrift/design/',
     },
     text: [
       'Grafisk design er kunsten å presentere visuelt innhold som kommuniserer en melding eller et innhold. Grafisk design kan være mye, blant annet en reklame i avis eller magasin, det kan være en plakat for en film eller et bedriftskort. For å gjøre det enkelt så kan du finne grafisk design overalt, blant annet på cola-flasken i kjøleskapet eller potetgullposen i sofaen.',
@@ -122,7 +122,7 @@ export class DesignComponent implements OnInit {
     },
     button: {
       text: 'Se vår web design tjeneste',
-      url: '/tjenester/bedrift/design/webdesign',
+      url: '/tjenester/bedrift/design/',
     },
     text: [
       'Web design er resultatet av prosessen som vanligvis tar sted før utviklingen av en nettside. Web design refererer til designet på hjemmesiden som vises på nett. Denne designkategorien består ofte av tungt arbeid innenfor UI også kjent som user interface, altså designet, og UX også kjent som user experience som hovedsakelig omfatter brukeropplevelse.',
@@ -144,7 +144,7 @@ export class DesignComponent implements OnInit {
     },
     button: {
       text: 'Se vår logo design tjeneste',
-      url: '/tjenester/bedrift/design/logodesign',
+      url: '/tjenester/bedrift/design/',
     },
     text: [
       'En logo er ikke varemerket ditt, men den representerer varemerket. En logo portretterer bedriftens personlighet, tillit og verdier. Ved hjelp av fargeteori, kurvatur og fonter kan vi fortelle brukerens underbevissthet en historie og fortelle hvem vi er.',
