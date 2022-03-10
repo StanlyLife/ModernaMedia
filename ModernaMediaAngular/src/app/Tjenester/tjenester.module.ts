@@ -38,6 +38,10 @@ const routes: Routes = [
     component: SeoComponent,
   },
   {
+    path: 'tjenester/bedrift/seo',
+    component: SeoComponent,
+  },
+  {
     path: 'tjenester/bedrift/seo/teknisk-seo',
     component: SeoTekniskComponent,
   },
