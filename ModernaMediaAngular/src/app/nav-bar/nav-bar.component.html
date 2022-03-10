@@ -5,7 +5,7 @@
       routerLink="/"
       title="Hjemmeside"
       aria-label="Hjemmeside"
-      routerLinklang="no-nb"
+      hreflang="no"
     >
       <div class="logo">
         <img
@@ -19,7 +19,7 @@
     <nav role="navigation" id="navbar">
       <a
         routerLink="/tjenester/bedrift/utvikling"
-        routerLinklang="no-nb"
+        hreflang="no"
         [routerLinkActive]="[true]"
         class="nav-link {{ textClass }}"
       >
@@ -28,7 +28,7 @@
       </a>
       <a
         routerLink="/tjenester/bedrift/design"
-        routerLinklang="no-nb"
+        hreflang="no"
         [routerLinkActive]="[true]"
         class="nav-link {{ textClass }}"
       >
@@ -37,7 +37,7 @@
       </a>
       <a
         routerLink="/tjenester/bedrift/seo/søkemotoroptimalisering"
-        routerLinklang="no-nb"
+        hreflang="no"
         [routerLinkActive]="[true]"
         class="nav-link {{ textClass }}"
       >
@@ -65,9 +65,10 @@
     </nav>
     <div class="buttons">
       <a
-        class="btn cta contact"
+        class="btn cta-2 contact"
         (click)="ContactUs($event)"
-        routerLink="#kontakt"
+        hreflang="no"
+        href="/#kontakt"
         title="skroll til kontakt monderna media"
       >
         <p>Kontakt</p>
