@@ -1,1 +1,108 @@
-<p>contact-form works!</p>
+<section class="contact-form" aria-labelledby="tittell">
+  <div class="wrapper">
+    <div class="bg">
+      <img
+        [src]="sanitizeImageUrl(data.background.src)"
+        alt="{{ data.background.alt }}"
+        class="landing-image"
+      />
+      <div class="bg-shade"></div>
+    </div>
+    <div class="content">
+      <div class="titles">
+        <h1 class="text-glow" id="tittell">{{ data.title }}</h1>
+        <p class="subtitle large">
+          {{ data.subtitle }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="form-section" aria-label="kontakt skjema">
+  <div class="form-container">
+    <h2 class="title">title</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea enim sint
+      itaque? Beatae incidunt perspiciatis sapiente accusantium ipsam. Ab cum
+      asperiores at assumenda, blanditiis rerum.
+    </p>
+    <form
+      action="post"
+      class="kontakt-form"
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/user.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input type="text" placeholder="Fullt navn" />
+      </div>
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/mail.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input type="text" placeholder="E-post adresse" />
+      </div>
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl(
+              '../../../assets/Images/Icons/forms/smartphone.svg'
+            )
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input type="text" placeholder="Telefonnummer" />
+      </div>
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/suitcase.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input type="text" placeholder="Bedrift" />
+      </div>
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/email.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input type="text" placeholder="Meldings tittel" />
+      </div>
+      <div class="form-group">
+        <textarea type="text" placeholder="Melding"></textarea>
+      </div>
+      <button class="btn cta-2">Send melding</button>
+    </form>
+  </div>
+  <div class="img">
+    <img
+      [src]="
+        sanitizeImageUrl(
+          '../../../assets/Images/Home/about/640/Informasjon-om-digitalbyrå-eksperter-Moderna-Media-seo.webp'
+        )
+      "
+      alt=""
+    />
+  </div>
+</section>

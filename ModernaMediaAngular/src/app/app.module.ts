@@ -73,6 +73,10 @@ import { RequestAuditFormComponent } from './forms/request-audit-form/request-au
           pathMatch: 'full',
           component: HomeComponent,
         },
+        {
+          path: 'kontakt',
+          component: ContactFormComponent,
+        },
         { path: '**', redirectTo: 'error' },
         {
           path: 'error',

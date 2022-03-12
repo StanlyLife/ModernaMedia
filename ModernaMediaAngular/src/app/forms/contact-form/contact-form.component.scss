@@ -1,0 +1,146 @@
+@import "../../../variables.scss";
+
+.contact-form .bg {
+  position: absolute;
+  width: 100%;
+  height: calc(90vh - 2rem);
+  min-height: 670px;
+  .bg-shade,
+  .landing-image {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .bg-shade {
+    @include backgroundShade;
+  }
+}
+
+.contact-form {
+  width: 100%;
+  position: relative;
+  .wrapper {
+    height: calc(90vh - 2rem);
+    min-height: 670px;
+  }
+  .content {
+    position: absolute;
+    @include aAbs;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: $desktop;
+    width: 95%;
+  }
+  .titles {
+    text-align: center;
+    .text-glow {
+      color: $light;
+      font-size: 5rem;
+      font-weight: 600;
+    }
+    .subtitle {
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img.icon {
+      height: 150px;
+      margin: 0 auto;
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    position: absolute;
+    bottom: 2rem;
+    width: 95%;
+    .link-container {
+      color: $light;
+    }
+    button {
+      background: none;
+      border: none;
+      color: $light;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0 0.5rem;
+      transition: all 0.25s ease;
+      &:hover {
+        color: $orange-gradient;
+        cursor: pointer;
+      }
+      &::before {
+        content: "\2022";
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 465px) {
+}
+
+.form-section {
+  @include flexC;
+  flex-direction: column-reverse;
+  padding: 2rem;
+  .img {
+    height: 250px;
+    width: 100%;
+    margin-bottom: 2rem;
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      border-radius: 25px;
+      box-shadow: $elevation-4;
+    }
+  }
+  .kontakt-form {
+    padding: 1rem 0;
+    width: 100%;
+    .form-group {
+      position: relative;
+    }
+    input,
+    textarea {
+      margin: 0.5rem auto;
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      max-height: 250px;
+      resize: vertical;
+      height: 38px;
+      border-radius: 7px;
+      padding: 2px 10px;
+      border: 1px solid transparent;
+      box-shadow: $elevation-2;
+    }
+    input {
+      padding-left: 32px;
+    }
+    .icon {
+      height: 18px;
+      position: absolute;
+      @include vaAbs;
+      left: 8px;
+    }
+    textarea {
+      padding-top: 4px;
+      min-height: 75px;
+    }
+  }
+}
