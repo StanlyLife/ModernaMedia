@@ -31,6 +31,9 @@ import { BlogShowcaseComponent } from './home/homev2/blog-showcase/blog-showcase
 
 //Modules
 import { MiscModule } from './misc/misc.module';
+import { ContactFormComponent } from './forms/contact-form/contact-form.component';
+import { RequestPriceFormComponent } from './forms/request-price-form/request-price-form.component';
+import { RequestAuditFormComponent } from './forms/request-audit-form/request-audit-form.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { MiscModule } from './misc/misc.module';
     PricesComponent,
     BlogShowcaseComponent,
     HomeComponent,
+    ContactFormComponent,
+    RequestPriceFormComponent,
+    RequestAuditFormComponent,
     //
   ],
   imports: [
