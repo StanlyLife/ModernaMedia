@@ -49,10 +49,12 @@ export class ContactFormComponent implements OnInit {
     body: ['', Validators.required],
   });
   result = false;
+  sent = false;
   onSubmit(): void {
-    if (this.result) {
+    if (this.result || this.sent) {
       return;
     }
+    this.sent = true;
     var request = this.cs.SendContactRequest(this.contactForm.value);
     this.cs.SendContactRequestResult.subscribe((arg) => {
       this.result = arg;
@@ -61,4 +63,13 @@ export class ContactFormComponent implements OnInit {
       }
     });
   }
+  formError =
+    !this.contactForm.valid &&
+    this.contactForm.touched &&
+    ((!this.contactForm.controls['email'].valid &&
+      this.contactForm.controls['email'].touched) ||
+      (!this.contactForm.controls['title'].valid &&
+        this.contactForm.controls['title'].touched) ||
+      (!this.contactForm.controls['body'].valid &&
+        this.contactForm.controls['body'].touched));
 }
