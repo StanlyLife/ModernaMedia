@@ -20,7 +20,7 @@ namespace ModernaMediaDotNet.Controllers
         public bool BookAMeeting(CTA model)
         {
             string body = $"Melding fra: {model.Email} - {model.Phonenumber} : \n {model.Body}";
-            var result = twillioService.SendMessage(body);
+            var result = twillioService.SendMessageToAdmin(body);
             return result;
         }
     }

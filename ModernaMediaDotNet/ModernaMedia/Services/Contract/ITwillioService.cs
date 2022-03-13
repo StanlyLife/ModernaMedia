@@ -2,6 +2,7 @@
 {
     public interface ITwillioService
     {
-        public bool SendMessage(string body);
+        public bool SendMessageToAdmin(string body);
+        public bool SendMessageTo(string body, string phonenumber);
     }
 }

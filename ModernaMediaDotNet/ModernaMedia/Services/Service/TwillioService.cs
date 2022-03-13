@@ -17,8 +17,33 @@ namespace ModernaMediaDotNet.Services.Service
             this.config = config;
         }
 
+        public bool SendMessageTo(string body,string phonenumber)
+        {
+            try
+            {
+                var accountSid = config.Value.accountSid;
+                var authToken = config.Value.authToken;
+                TwilioClient.Init(accountSid, authToken);
 
-        public bool SendMessage(string body)
+                var messageOptions = new CreateMessageOptions(
+                    new PhoneNumber(phonenumber));
+                messageOptions.MessagingServiceSid = config.Value.MessagingServiceSid;
+                messageOptions.Body = body;
+                messageOptions.From = "M Media";
+
+
+                var message = MessageResource.Create(messageOptions);
+                Console.WriteLine(message);
+                return message != null;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e);
+                throw e;
+            }
+        }
+        public bool SendMessageToAdmin(string body)
         {
             try
             {

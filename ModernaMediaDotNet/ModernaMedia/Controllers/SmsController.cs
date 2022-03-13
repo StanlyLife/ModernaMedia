@@ -19,7 +19,7 @@ namespace ModernaMediaDotNet.Controllers
         [HttpPost]
         public async Task<bool> SendSmsl([FromQuery] string body)
         {
-            return twillioService.SendMessage(body);
+            return twillioService.SendMessageToAdmin(body);
         }
     }
 }
