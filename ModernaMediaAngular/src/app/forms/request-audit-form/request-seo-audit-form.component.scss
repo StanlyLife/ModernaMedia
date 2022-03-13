@@ -109,14 +109,14 @@
       &.error {
         color: $toastError;
       }
+      &.failed {
+        color: $toastErrorHover;
+      }
       &.ready {
         color: $toastSuccess;
       }
       &.sent {
         color: $blue-primary;
-      }
-      &.failed {
-        color: $toastErrorHover;
       }
       img {
         height: 21px;

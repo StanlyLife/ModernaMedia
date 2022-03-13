@@ -10,21 +10,19 @@
     </div>
     <div class="content">
       <div class="titles">
-        <h1 class="text-glow" id="tittell">{{ data.title }}</h1>
-        <p class="subtitle large">
-          {{ data.subtitle }}
-        </p>
+        <h1 class="text-glow" id="tittell">Gratis seo analyse</h1>
+        <p class="subtitle large">100% uforpliktet, 100% gratis!</p>
       </div>
     </div>
   </div>
 </section>
 <section class="form-section" aria-label="kontakt skjema">
   <div class="form-container">
-    <h2 class="title">Vi ser frem til å høre fra deg</h2>
+    <h2 class="title">Vi analyserer synligheten til hjemmesiden din</h2>
     <p>
-      Vi vil svare på meldingen din så fort vi får mulighet. Dersom du skriver
-      inn telefonnummeret ditt vil vi sende deg en bekreftelse på mottatt
-      melding.
+      Vil du ha en gratis seo analyse? Vi analyserer hjemmesiden din og
+      indeksering i søkemotorer, legg igjen e-post adresse, telefonnummer og
+      adressen til hjemmesiden din så analyserer vi og sender deg resulatet.
     </p>
     <div class="kontakt-info">
       <a href="mailto:kontakt@modernamedia.no" class="mail">
@@ -176,11 +174,14 @@
           class="icon"
         />
         <input
-          type="text"
+          type="tel"
           placeholder="Telefonnummer"
           formControlName="phone"
+          max="99999999"
           aria-label="telefonnummer"
           autocomplete="tel"
+          minlength="8"
+          maxlength="8"
           type="tel"
           [ngClass]="{
             invalid:
@@ -202,15 +203,15 @@
         />
         <input
           type="text"
-          placeholder="Tilhørende bedrift"
-          formControlName="business"
-          aria-label="tilhørende bedrift"
+          placeholder="Hjemmeside"
+          formControlName="website"
+          aria-label="tilhørende hjemmeside"
           type="text"
           autocomplete="off"
           [ngClass]="{
             invalid:
-              !contactForm.controls['business'].valid &&
-              contactForm.controls['business'].touched,
+              !contactForm.controls['website'].valid &&
+              contactForm.controls['website'].touched,
             sent: result && sent,
             error: !result && sent
           }"
@@ -275,9 +276,7 @@
   <div class="img">
     <img
       [src]="
-        sanitizeImageUrl(
-          '../../../assets/Images/Home/about/640/Informasjon-om-digitalbyrå-eksperter-Moderna-Media-seo.webp'
-        )
+        sanitizeImageUrl('../../../../assets/Images/forms/seo/seo analyse.jpg')
       "
       alt=""
     />

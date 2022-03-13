@@ -33,7 +33,7 @@ import { BlogShowcaseComponent } from './home/homev2/blog-showcase/blog-showcase
 import { MiscModule } from './misc/misc.module';
 import { ContactFormComponent } from './forms/contact-form/contact-form.component';
 import { RequestPriceFormComponent } from './forms/request-price-form/request-price-form.component';
-import { RequestAuditFormComponent } from './forms/request-audit-form/request-audit-form.component';
+import { RequestSeoAuditFormComponent } from './forms/request-audit-form/request-seo-audit-form.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,7 @@ import { RequestAuditFormComponent } from './forms/request-audit-form/request-au
     HomeComponent,
     ContactFormComponent,
     RequestPriceFormComponent,
-    RequestAuditFormComponent,
+    RequestSeoAuditFormComponent,
     //
   ],
   imports: [
@@ -76,6 +76,10 @@ import { RequestAuditFormComponent } from './forms/request-audit-form/request-au
         {
           path: 'kontakt',
           component: ContactFormComponent,
+        },
+        {
+          path: 'gratis-seo-analyse',
+          component: RequestSeoAuditFormComponent,
         },
         { path: '**', redirectTo: 'error' },
         {
