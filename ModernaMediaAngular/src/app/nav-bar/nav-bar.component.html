@@ -44,31 +44,13 @@
         <div class="slide"></div>
         <p>SEO</p>
       </a>
-      <!-- <a
-        routerLink="/info"
-        routerLinklang="no-nb"
-        [routerLinkActive]="[true]"
-        class="nav-link {{ textClass }}"
-      >
-        <div class="slide"></div>
-        <p>Om oss</p>
-      </a>
-      <a
-        routerLink="/blogg"
-        routerLinklang="no-nb"
-        [routerLinkActive]="[true]"
-        class="nav-link {{ textClass }}"
-      >
-        <div class="slide"></div>
-        <p>blogg</p>
-      </a> -->
     </nav>
     <div class="buttons">
       <a
         class="btn cta-2 contact"
         (click)="ContactUs($event)"
         hreflang="no"
-        href="/#kontakt"
+        routerLink="/kontakt"
         title="skroll til kontakt monderna media"
       >
         <p>Kontakt</p>
