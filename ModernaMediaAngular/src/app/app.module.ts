@@ -34,6 +34,7 @@ import { MiscModule } from './misc/misc.module';
 import { ContactFormComponent } from './forms/contact-form/contact-form.component';
 import { RequestPriceFormComponent } from './forms/request-price-form/request-price-form.component';
 import { RequestSeoAuditFormComponent } from './forms/request-audit-form/request-seo-audit-form.component';
+import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-form/request-website-audit-form.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { RequestSeoAuditFormComponent } from './forms/request-audit-form/request
     ContactFormComponent,
     RequestPriceFormComponent,
     RequestSeoAuditFormComponent,
+    RequestWebsiteAuditFormComponent,
     //
   ],
   imports: [
