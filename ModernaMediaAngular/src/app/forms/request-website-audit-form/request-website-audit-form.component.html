@@ -1,1 +1,287 @@
-<p>request-website-audit-form works!</p>
+<section class="contact-form" aria-labelledby="tittell">
+  <div class="wrapper">
+    <div class="bg">
+      <img
+        [src]="sanitizeImageUrl(data.background.src)"
+        alt="{{ data.background.alt }}"
+        class="landing-image"
+      />
+      <div class="bg-shade"></div>
+    </div>
+    <div class="content">
+      <div class="titles">
+        <h1 class="text-glow" id="tittell">Gratis hjemmeside analyse</h1>
+        <p class="subtitle large">100% uforpliktet, 100% gratis!</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="form-section" aria-label="kontakt skjema">
+  <div class="form-container">
+    <h2 class="title">Vi analyserer hjemmesiden din</h2>
+    <p>
+      Vil du ha en gratis analyse av hjemmesiden din? Vi analyserer hjemmesiden
+      din og ser etter tekniske og ikke-tekniske feil, legg igjen e-post
+      adresse, telefonnummer og adressen til hjemmesiden din så analyserer vi og
+      sender deg resulatet.
+    </p>
+    <div class="kontakt-info">
+      <a href="mailto:kontakt@modernamedia.no" class="mail">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/mail.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        Mail: <span> kontakt@modernamedia.no</span></a
+      >
+      <a href="tel:90265326" class="mail">
+        <img
+          [src]="
+            sanitizeImageUrl(
+              '../../../assets/Images/Icons/forms/smartphone.svg'
+            )
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        Telefon: <span> 902 65 326</span></a
+      >
+    </div>
+    <p class="status-message">
+      Skjema status:
+      <span
+        class="status"
+        [ngClass]="{
+          idle: !contactForm.valid && !contactForm.touched,
+          error: formError,
+          ready: contactForm.valid && contactForm.touched && !sent,
+          sent: sent && result,
+          failed: sent && !result
+        }"
+      >
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/more.svg')
+          "
+          alt=""
+          *ngIf="!contactForm.valid && !formError && !sent && !result"
+        />
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/cancel.svg')
+          "
+          alt=""
+          *ngIf="formError || (sent && !result)"
+        />
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/check.svg')
+          "
+          alt=""
+          *ngIf="
+            (contactForm.valid && contactForm.touched && sent && result) ||
+            (contactForm.valid && contactForm.touched && !sent && !result)
+          "
+        />
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/mail.svg')
+          "
+          alt=""
+          *ngIf="sent && result"
+        />
+        {{
+          formError
+            ? "feil! Fyll ut tekstfelt i rød"
+            : contactForm.valid && contactForm.touched && !sent
+            ? "klar til å sende melding"
+            : sent && result
+            ? "melding sendt!"
+            : sent
+            ? "melding feilet, vennligst send mail til kontakt@modernamedia.no"
+            : "fyll ut tekstfelt markert med (*)"
+        }}
+      </span>
+    </p>
+    <form
+      action="post"
+      class="kontakt-form"
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/user.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input
+          type="text"
+          placeholder="Fullt navn"
+          formControlName="name"
+          aria-label="Fullt navn"
+          type="name"
+          autocomplete="name"
+          [ngClass]="{
+            invalid:
+              !contactForm.controls['name'].valid &&
+              contactForm.controls['name'].touched,
+            sent: result && sent,
+            error: !result && sent
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/mail.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input
+          type="text"
+          placeholder="E-post adresse *"
+          formControlName="email"
+          aria-label="E-post adresse, påkrevd"
+          type="email"
+          autocomplete="email"
+          [ngClass]="{
+            invalid:
+              !contactForm.controls['email'].valid &&
+              contactForm.controls['email'].touched,
+            sent: result && sent,
+            error: !result && sent
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl(
+              '../../../assets/Images/Icons/forms/smartphone.svg'
+            )
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input
+          type="tel"
+          placeholder="Telefonnummer"
+          formControlName="phone"
+          max="99999999"
+          aria-label="telefonnummer"
+          autocomplete="tel"
+          minlength="8"
+          maxlength="8"
+          type="tel"
+          [ngClass]="{
+            invalid:
+              !contactForm.controls['phone'].valid &&
+              contactForm.controls['phone'].touched,
+            sent: result && sent,
+            error: !result && sent
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/suitcase.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input
+          type="text"
+          placeholder="Hjemmeside"
+          formControlName="website"
+          aria-label="tilhørende hjemmeside"
+          type="text"
+          autocomplete="off"
+          [ngClass]="{
+            invalid:
+              !contactForm.controls['website'].valid &&
+              contactForm.controls['website'].touched,
+            sent: result && sent,
+            error: !result && sent
+          }"
+        />
+      </div>
+      <div class="form-group">
+        <img
+          [src]="
+            sanitizeImageUrl('../../../assets/Images/Icons/forms/email.svg')
+          "
+          alt=""
+          role="presentation"
+          class="icon"
+        />
+        <input
+          type="text"
+          placeholder="Meldings tittel *"
+          formControlName="title"
+          aria-label="Tittel på melding, påkrevd"
+          autocomplete="off"
+          [ngClass]="{
+            invalid:
+              !contactForm.controls['title'].valid &&
+              contactForm.controls['title'].touched,
+            sent: result && sent,
+            error: !result && sent
+          }"
+          type="text"
+        />
+      </div>
+      <div class="form-group">
+        <textarea
+          type="text"
+          placeholder="Melding *"
+          aria-label="melding"
+          formControlName="body"
+          aria-label="meldings tekst, påkrevd"
+          type="text"
+          autocomplete="off"
+          [ngClass]="{
+            invalid:
+              !contactForm.controls['body'].valid &&
+              contactForm.controls['body'].touched,
+            sent: result && sent,
+            error: !result && sent
+          }"
+        ></textarea>
+      </div>
+      <button
+        class="btn cta-2"
+        name="send epost"
+        [disabled]="!contactForm.valid"
+        [ngClass]="{
+          disabled: !contactForm.valid,
+          sent: sent
+        }"
+      >
+        Send melding
+      </button>
+    </form>
+  </div>
+  <div class="img">
+    <img
+      [src]="
+        sanitizeImageUrl(
+          '../../../../assets/Images/forms/hjemmeside/sjekker hjemmesiden din for bugs.jpg'
+        )
+      "
+      alt=""
+    />
+  </div>
+</section>
