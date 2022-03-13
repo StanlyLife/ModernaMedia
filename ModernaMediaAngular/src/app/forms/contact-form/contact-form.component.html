@@ -176,11 +176,14 @@
           class="icon"
         />
         <input
-          type="text"
+          type="tel"
           placeholder="Telefonnummer"
           formControlName="phone"
+          max="99999999"
           aria-label="telefonnummer"
           autocomplete="tel"
+          minlength="8"
+          maxlength="8"
           type="tel"
           [ngClass]="{
             invalid:
