@@ -2,6 +2,7 @@ User-Agent: *
 Allow: /
 Disallow: /error
 Disallow: /info
+Disallow: /error
 Disallow: /misc
 Disallow: /misc/*
 Disallow: /misc/designsystem
