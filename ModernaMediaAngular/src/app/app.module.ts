@@ -80,6 +80,10 @@ import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-
           component: ContactFormComponent,
         },
         {
+          path: 'gratis-hjemmeside-analyse',
+          component: RequestWebsiteAuditFormComponent,
+        },
+        {
           path: 'gratis-seo-analyse',
           component: RequestSeoAuditFormComponent,
         },
