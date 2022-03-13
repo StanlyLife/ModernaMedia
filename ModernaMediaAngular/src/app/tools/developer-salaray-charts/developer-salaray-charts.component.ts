@@ -1,8 +1,16 @@
+import { Router } from '@angular/router';
 import { WindowRefService } from './../../services/window-ref.service';
-import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Inject,
+  OnInit,
+  PLATFORM_ID,
+  Renderer2,
+} from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from 'src/app/services/seo.service';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, DOCUMENT } from '@angular/common';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-developer-salaray-charts',
@@ -3442,7 +3450,10 @@ export class DeveloperSalarayChartsComponent implements OnInit {
     private title: Title,
     private seo: SeoService,
     private wf: WindowRefService,
-    @Inject(PLATFORM_ID) private platformId: string
+    @Inject(PLATFORM_ID) private platformId: string,
+    private _renderer2: Renderer2,
+    @Inject(DOCUMENT) private _document: Document,
+    private router: Router
   ) {
     var width = this.wf.width / 1.1;
     this.vw = width > 700 ? 700 : this.wf.width / 1.1;
@@ -3485,6 +3496,9 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       { name: 'og:image:width', content: '828' },
       { name: 'og:image:height', content: '470' },
     ]);
+    this.SchemaGeneratorArticle();
+    this.SchemaGeneratorJuniorUtviklerLonn();
+    this.SchemaGeneratorUtviklerLonn();
   }
   scrollToElement($element): void {
     $element.scrollIntoView({
@@ -3492,5 +3506,80 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       block: 'start',
       inline: 'nearest',
     });
+  }
+
+  SchemaGeneratorUtviklerLonn() {
+    let script = this._renderer2.createElement('script');
+    script.type = `application/ld+json`;
+    script.text = `
+    {
+      "@context": "https://schema.org",
+      "@type": "QAPage",
+      "mainEntity": {
+        "@type": "Question",
+        "name": "Utvikler lønn gjennomsnitt",
+        "text": "hva tjener utviklere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "en utvikler tjente i gjennomsnitt 732.711kr i 2021 i følge en kode24 undersøkelse",
+          },
+      }
+    }
+    `;
+
+    this._renderer2.appendChild(this._document.body, script);
+  }
+  SchemaGeneratorJuniorUtviklerLonn() {
+    let script = this._renderer2.createElement('script');
+    script.type = `application/ld+json`;
+    script.text = `
+    {
+      "@context": "https://schema.org",
+      "@type": "QAPage",
+      "mainEntity": {
+        "@type": "Question",
+        "name": "Junio utvikler lønn gjennomsnitt",
+        "text": "hva tjener junior utviklere?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "en utvikler med 0 års erfaring tjente i gjennomsnitt 533.334kr i 2021 i følge en kode24 undersøkelse",
+          },
+      }
+    }
+    `;
+
+    this._renderer2.appendChild(this._document.body, script);
+  }
+  SchemaGeneratorArticle() {
+    let script = this._renderer2.createElement('script');
+    script.type = `application/ld+json`;
+    script.text = `
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "${this.router.url}"
+          },
+          "headline": "Utvikler lønn",
+          "image": "https://s10.gifyu.com/images/Utvikler-lonn.png",
+          "author": {
+            "@type": "Organization",
+            "name": "Moderna Media"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Moderna Media",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://ModernaMedia.no/assets/Images/LogoV2/modernamedia-mid-large.png"
+            }
+          },
+          "datePublished": "${'2022-03-03'}",
+          "dateModified": "${formatDate(new Date(), 'yyyy-MM-dd', 'en')}"
+        }
+    `;
+
+    this._renderer2.appendChild(this._document.body, script);
   }
 }
