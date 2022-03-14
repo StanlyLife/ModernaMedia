@@ -33,10 +33,11 @@ export class TjenesterInfoSectionComponent implements OnInit {
             "@id": "${this.router.url}"
           },
           "headline": "${this.data.header.title}",
-          "image": "${this.data.img.url}",
+          "image": "https://modernamedia.no/${this.data.img.url}",
           "author": {
             "@type": "Organization",
             "name": "Moderna Media"
+            "url":"https://modernamedia.no/"
           },
           "publisher": {
             "@type": "Organization",

@@ -3518,11 +3518,11 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       "mainEntity": {
         "@type": "Question",
         "name": "Utvikler lønn gjennomsnitt",
-        "text": "hva tjener utviklere?",
+        "text": "hva tjener utvikler?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "en utvikler tjente i gjennomsnitt 732.711kr i 2021 i følge en kode24 undersøkelse",
-          },
+          }
       }
     }
     `;
@@ -3538,12 +3538,12 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       "@type": "QAPage",
       "mainEntity": {
         "@type": "Question",
-        "name": "Junio utvikler lønn gjennomsnitt",
+        "name": "Junior utvikler lønn gjennomsnitt",
         "text": "hva tjener junior utviklere?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "en utvikler med 0 års erfaring tjente i gjennomsnitt 533.334kr i 2021 i følge en kode24 undersøkelse",
-          },
+          }
       }
     }
     `;
