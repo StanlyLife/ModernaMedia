@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { SeoUtils } from 'src/utils/SeoUtils';
+
 @Component({
   selector: 'app-utvikling',
   templateUrl: './utvikling.component.html',
@@ -12,9 +14,7 @@ export class UtviklingComponent implements OnInit {
     private title: Title,
     private seo: SeoService
   ) {
-    title.setTitle(
-      'Hjemmesider | Programvare | applikasjoner | for bedrifter - Moderna Media Digitalbyrå'
-    );
+    title.setTitle(SeoUtils.TjenesterUtvikling.title);
   }
 
   ngOnInit() {
@@ -22,8 +22,7 @@ export class UtviklingComponent implements OnInit {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'Skreddersydde hjemmesider, programvare og applikasjoner for bedrifter av top kvalitet kan du få hos Moderna Media digitalbyrå. Vi bygger alt fra bunn med neste-generasjons teknologi som spa-rammeverk og utnytter fulle cloud løsninger!',
+        content: SeoUtils.TjenesterUtvikling.description,
       },
       { name: 'robots', content: 'index, follow' },
     ]);

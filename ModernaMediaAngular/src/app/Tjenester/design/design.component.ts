@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { SeoUtils } from 'src/utils/SeoUtils';
 @Component({
   selector: 'app-design',
   templateUrl: './design.component.html',
@@ -12,9 +13,7 @@ export class DesignComponent implements OnInit {
     private title: Title,
     private seo: SeoService
   ) {
-    title.setTitle(
-      'Design | Logo design | Webdesign | Grafisk design | Moderna Media'
-    );
+    title.setTitle(SeoUtils.TjenesterDesign.title);
   }
 
   ngOnInit() {
@@ -22,7 +21,7 @@ export class DesignComponent implements OnInit {
     this.meta.addTags([
       {
         name: 'description',
-        content: '',
+        content: SeoUtils.TjenesterDesign.description,
       },
       { name: 'robots', content: 'index, follow' },
     ]);

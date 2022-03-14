@@ -1,8 +1,11 @@
+import { SeoService } from 'src/app/services/seo.service';
 import { ContactService } from '../../services/contact.service';
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl, Meta, Title } from '@angular/platform-browser';
 import { ViewportScroller } from '@angular/common';
+import { SeoUtils } from 'src/utils/SeoUtils';
+
 import {
   FormGroup,
   FormControl,
@@ -22,10 +25,28 @@ export class RequestSeoAuditFormComponent implements OnInit {
     private sanitizer: DomSanitizer,
     private scroller: ViewportScroller,
     private fb: FormBuilder,
-    private cs: ContactService
-  ) {}
+    private cs: ContactService,
+    private meta: Meta,
+    private title: Title,
+    private seo: SeoService
+  ) {
+    title.setTitle(SeoUtils.FormsSeoAudit.title);
+  }
   imageCdn = environment.img;
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.seo.createLinkForCanonicalURL();
+    this.meta.addTags([
+      {
+        name: 'description',
+        content: SeoUtils.FormsSeoAudit.description,
+      },
+      { name: 'robots', content: 'index, follow' },
+    ]);
+    this.meta.addTag({
+      name: 'angular.ModernaMedia',
+      content: 'ModernaMedia',
+    });
+  }
   @Input() data: any = {
     background: {
       alt: '',

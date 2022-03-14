@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SeoService } from '../../services/seo.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { SeoUtils } from 'src/utils/SeoUtils';
 @Component({
   selector: 'app-seo',
   templateUrl: './seo.component.html',
@@ -12,9 +13,7 @@ export class SeoComponent implements OnInit {
     private title: Title,
     private SEO: SeoService
   ) {
-    title.setTitle(
-      'Søkemotoroptimalisering for bedriften av Moderna Media SEO byrå'
-    );
+    title.setTitle(SeoUtils.TjenesterSeo.title);
   }
 
   ngOnInit() {
@@ -22,8 +21,7 @@ export class SeoComponent implements OnInit {
     this.meta.addTags([
       {
         name: 'description',
-        content:
-          'Søkemotoroptimalsiering for bedrifter. Trenger hjemmesiden din innholdsprodusent, eller trenger dere å optimere nettsiden i form av teknisk seo? Les mer om Søkemotor optimalisering fra Moderna Media',
+        content: SeoUtils.TjenesterSeo.description,
       },
       { name: 'robots', content: 'index, follow' },
     ]);
