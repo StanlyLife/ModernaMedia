@@ -2,6 +2,7 @@ import { WindowRefService } from './../services/window-ref.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from './../../environments/environment.prod';
 import { Location } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
