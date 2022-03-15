@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToastComponent } from './toast/toast.component';
 import { AuthorComponent } from './author/author.component';
 import { AboutYourNextProjectComponent } from './about-your-next-project/about-your-next-project.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
