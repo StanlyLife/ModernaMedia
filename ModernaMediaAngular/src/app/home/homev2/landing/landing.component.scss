@@ -36,7 +36,6 @@
       position: relative;
       border: 2px solid transparent;
       height: 100px;
-      overflow: hidden;
       .super-title {
         font-size: 2.45rem;
         text-transform: uppercase;
@@ -53,22 +52,22 @@
         pointer-events: none;
       }
       .subtitle {
-        margin-top: 40px;
-        letter-spacing: 0.25px;
+        margin-top: 45px;
         font-weight: 900;
         text-shadow: $text-shadow;
+        font-size: 1.15rem;
       }
     }
   }
   .buttons,
   .info {
-    margin-top: 10px;
     color: $light;
     p {
       color: $light;
     }
   }
   .buttons {
+    margin-top: 10px;
     display: flex;
     justify-content: center;
     align-items: stretch;
