@@ -144,9 +144,10 @@ h2.subtitle-gradient {
     box-shadow: $box-shadow-btn;
   }
   &.cta {
-    font-weight: 400;
+    font-weight: 600;
     background: $light;
     p {
+      font-weight: 600;
       font-size: 1rem;
       @include ctaButtonText;
     }
