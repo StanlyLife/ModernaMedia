@@ -1,4 +1,8 @@
 export const SeoUtils = {
+  notfound: {
+    title: 'Moderna Media - Siden finnes ikke',
+    description: 'Denne siden finnes ikke lengre',
+  },
   home: {
     title:
       'Digitalbyrå - Moderna Media - for bedriftens hjemmeside, design og seo',
