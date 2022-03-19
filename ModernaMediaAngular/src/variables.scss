@@ -33,6 +33,8 @@ $toastErrorHover: #970000;
 $toastProgress: rgba(0, 0, 0, 0.25);
 
 $dark: #333;
+$dark-hover: #444;
+$dark-active: #666;
 $black: #010001;
 $dark-transparent-30: rgba(51, 51, 51, 0.333);
 $dark-transparent-80: rgba(51, 51, 51, 0.8);
@@ -71,6 +73,8 @@ $box-shadow-btn-inset-active: inset 0px 0px 20px 6px rgb(0 0 0 / 50%);
 
 $text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
   0px -5px 35px rgba(255, 255, 255, 0.3);
+$text-shadow-white: 0 0 80px rgb(192 219 255 / 75%),
+  0 0 32px rgb(65 120 255 / 24%);
 
 $blogg-font-size-mobile: 16px;
 $blogg-line-height-mobile: 26px;
@@ -201,9 +205,12 @@ $elevation-5: 0px 24px 38px rgba(18, 18, 18, 0.14),
 
 @font-face {
   font-display: swap;
-  font-family: "Lobster";
-  src: local("Lobster") url("/assets/fonts/Lobster-Regular.ttf")
-    format("truetype");
+  font-family: "Mosk";
+  font-weight: 900;
+  src: url("/assets/fonts/Mosk900.ttf") format("woff2"),
+    url("/assets/fonts/Mosk900.ttf") format("woff"),
+    url("/assets/fonts/Mosk900.ttf") format("truetype"),
+    url("/assets/fonts/Mosk900.ttf") format("svg");
 }
 @font-face {
   font-display: swap;
@@ -276,15 +283,6 @@ $elevation-5: 0px 24px 38px rgba(18, 18, 18, 0.14),
     url("/assets/fonts/Mosk800.ttf") format("woff"),
     url("/assets/fonts/Mosk800.ttf") format("truetype"),
     url("/assets/fonts/Mosk800.ttf") format("svg");
-}
-@font-face {
-  font-display: swap;
-  font-family: "Mosk";
-  font-weight: 900;
-  src: url("/assets/fonts/Mosk900.ttf") format("woff2"),
-    url("/assets/fonts/Mosk900.ttf") format("woff"),
-    url("/assets/fonts/Mosk900.ttf") format("truetype"),
-    url("/assets/fonts/Mosk900.ttf") format("svg");
 }
 
 @font-face {
