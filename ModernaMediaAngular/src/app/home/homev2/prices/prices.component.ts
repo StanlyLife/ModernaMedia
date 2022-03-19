@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { PriceUtils } from 'src/utils/PriceUtils';
 @Component({
   selector: 'app-prices',
   templateUrl: './prices.component.html',
@@ -12,5 +13,6 @@ export class PricesComponent implements OnInit {
     return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
   imageCdn = environment.img;
+  Prices = PriceUtils;
   ngOnInit(): void {}
 }

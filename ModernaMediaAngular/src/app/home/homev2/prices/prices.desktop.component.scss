@@ -1,81 +1,24 @@
 @import "../../../../variables.scss";
-@media screen and (min-width: 850px) {
-  section.prices {
-    .wrapper {
-      max-width: 1280px;
-      margin: 0 auto;
-      .titles {
-        text-align: center;
-        padding: 2rem 0;
-        .title {
-          padding: 1rem 0;
-          font-size: 2.5rem;
-        }
-        .subtitle {
-          font-size: 0.75rem;
-        }
-      }
-      .prices-wrapper {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      .price-component {
-        width: 100%;
-        margin: 1rem 0.5rem;
-        position: relative;
-        padding-bottom: 40px;
-        min-width: 340px;
-        max-width: 400px;
-        flex: 1 0 0px;
-        .content-wrapper {
-          padding: 0.5rem 1rem;
-        }
-        .img-wrapper {
-          height: 200px;
-          .usp-title {
-            font-size: 2.5rem;
-          }
-        }
-        .usp-list .usp {
-          width: 75%;
-          margin: 1rem auto;
-          .usp-text {
-            padding-left: 0.5rem;
-          }
-        }
-        .info {
-          padding: 1rem;
-        }
-        .price {
-          @include ctaText;
-          font-size: 1.25rem;
-          padding: 8px 0;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 40px;
-          width: 100%;
-        }
-      }
+@media screen and (min-width: $tablet) {
+  section.prices-section {
+    .price-container {
+      margin-top: 30px;
+      @include flexR;
+      flex-wrap: wrap;
+      justify-content: space-between;
     }
-    ul,
-    li {
-      list-style: none;
+    .price-box {
+      margin: 2rem auto;
+      box-shadow: $elevation-3;
+      max-width: 450px;
+      min-width: 325px;
+      min-height: 640px;
     }
   }
 }
 
 @media screen and (min-width: 1280px) {
-  section.prices .wrapper .prices-wrapper {
-    justify-content: space-between;
-    align-items: stretch;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    .price-component {
-      margin: 1rem 1rem;
-    }
+  section.prices-section .price-box {
+    max-width: 515px;
   }
 }

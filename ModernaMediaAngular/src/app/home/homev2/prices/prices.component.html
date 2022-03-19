@@ -1,229 +1,401 @@
-<section class="prices">
+<section
+  class="prices-section"
+  aria-labelledby="prices-section-title"
+  aria-label="Våre priser"
+>
   <div class="wrapper">
-    <div class="titles">
+    <header class="prices-section-header">
       <p class="subtitle">Verdi for pengene</p>
-      <h2 class="title">Våre priser.</h2>
-      <p class="content">
-        Vi starter alle prosesser med et uforpliktet budsjettmøte, hvor vi blir
-        enige om krav og ønsker.
+      <h2 class="title" id="prices-section-title">Våre priser.</h2>
+      <p class="header-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+        laudantium repellat, nobis pariatur obcaecati aliquid commodi vel earum
+        illum magni adipisci hic vitae ipsa officia sunt libero reprehenderit
+        enim perferendis!
       </p>
-    </div>
-    <div class="prices-wrapper">
-      <div class="price-component">
-        <div class="img-wrapper">
-          <img
-            [src]="
-              sanitizeImageUrl(
-                '../../../../assets/Images/Home/prices/design/640/logo design for bedrift.webp'
-              )
-            "
-            alt="Logo for liten bedrift som henger på skilt"
-          />
-          <h3 class="usp-title">Design</h3>
-        </div>
-        <div class="content-wrapper">
-          <ul class="usp-list">
-            <li class="usp">
+    </header>
+    <div class="price-container">
+      <!-- Nettsider -->
+      <a
+        class="price-box-anchor-wrapper"
+        routerLink="/tjenester/bedrift/utvikling/hjemmeside-bedrift"
+        title="Les mer om hjemmesider for bedrift"
+      >
+        <section
+          class="price-box"
+          aria-labelledby="price-box-title-nettside"
+          aria-label="Nettside for bedrifter"
+        >
+          <header>
+            <div class="header-content-container">
+              <h3 class="price-box-title" id="price-box-title-nettside">
+                Nettside
+              </h3>
+              <p class="price-box-content">
+                Den digitale broen mellom deg og kundene dine.
+              </p>
+              <div class="les-mer">
+                <p>Les mer</p>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/right-arrow-white.svg'
+                    )
+                  "
+                  role="presentation"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="bg">
+              <div class="shadow"></div>
               <img
                 [src]="
                   sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
+                    '../../../../assets/Images/Home/prices/price (1).jpg'
                   )
                 "
-                alt=""
+                alt="Billige hjemmesider for bedrift som gjør deg synlig og top of mind uten SEO"
               />
-              <p class="usp-text">Helt egendefinert</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Alle filer inkludert</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Gjennomgang av designprosess</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Følger vitenskapelige prinsipper</p>
-            </li>
-          </ul>
-          <div class="info">
-            <p>
-              Vi leverer en rekke ulike produkter innenfor design. Blant annet
-              web design, logo design og generell markedsføringsmateriell. Alle
-              produkter har ulik pris basert på budsjett og krav.
+            </div>
+          </header>
+          <div class="content">
+            <ul class="usp-list">
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Responsivt design for optimal SEO</p>
+              </li>
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Skreddersydd for din bedrift</p>
+              </li>
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Optimalisert for salg og representasjon</p>
+              </li>
+            </ul>
+            <p class="info">
+              En profesjonell og målrettet nettside tiltrekker oppmerksomhet,
+              fremhever det beste du har å tilby og bygger autentiske relasjoner
+              med kunden dine.
             </p>
+            <div class="price-box-price">
+              <p class="price">
+                Fra {{ Prices.Utvikling.Nettside[1].price }}kr
+              </p>
+            </div>
           </div>
-          <div class="price">
-            <p>Fra 2.500kr</p>
-          </div>
-        </div>
-      </div>
-      <div class="price-component">
-        <div class="img-wrapper">
-          <img
-            [src]="
-              sanitizeImageUrl(
-                '../../../../assets/Images/Home/prices/utvikling/640/utvikling av hjemmeside for bedrifter i oslo.webp'
-              )
-            "
-            alt="Liten bedrift som blant annet restaurant"
-          />
-          <h3 class="usp-title">Hjemmesider og programvare</h3>
-        </div>
-        <div class="content-wrapper">
-          <ul class="usp-list">
-            <li class="usp">
+        </section>
+      </a>
+      <!-- Programvare -->
+      <a
+        class="price-box-anchor-wrapper"
+        routerLink="/tjenester/bedrift/utvikling/programvare"
+        title="Les mer om programvare for bedrift"
+      >
+        <section
+          class="price-box"
+          aria-labelledby="price-box-title-programvare"
+          aria-label="Software for bedrifter"
+        >
+          <header>
+            <div class="header-content-container">
+              <h3 class="price-box-title" id="price-box-title-programvare">
+                Programvare
+              </h3>
+              <p class="price-box-content">
+                Gjør hverdagen enklere for deg og dine kunder gjennom
+                automatisering.
+              </p>
+              <div class="les-mer">
+                <p>Les mer</p>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/right-arrow-white.svg'
+                    )
+                  "
+                  role="presentation"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="bg">
+              <div class="shadow"></div>
               <img
                 [src]="
                   sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
+                    '../../../../assets/Images/Home/prices/price (2).jpg'
                   )
                 "
-                alt=""
+                alt="Billige hjemmesider for bedrift som gjør deg synlig og top of mind uten SEO"
               />
-              <p class="usp-text">TLS sikkerhet</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Bygget inhouse</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Server oppsett & vedlikehold</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Support når du trenger</p>
-            </li>
-          </ul>
-          <div class="info">
-            <p>
-              Vi leverer system og nettsider for små og store bedrifter.
-              Ettersom krav og behov varierer i stor grad er det også vanskelig
-              å prissette disse produktene på forhånd. Derfor starter vi alle
-              prosesserne med et uforpliktet budsjettmøte.
+            </div>
+          </header>
+          <div class="content">
+            <ul class="usp-list">
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Automatiserte jobber</p>
+              </li>
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Synkronisering gjennom API</p>
+              </li>
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Skreddersydd for din bedrift</p>
+              </li>
+            </ul>
+            <p class="info">
+              Et datasystem kan hjelpe deg med alt fra bordreservasjon til
+              logistikkhåndtering. Spar bedriften for unødvendige kostnader,
+              skreddersy din programvare å automatiser dine dagilge gjøremål.
             </p>
+            <div class="price-box-price">
+              <p class="price">
+                Fra {{ Prices.Utvikling.Programvare[1].price }}kr
+              </p>
+            </div>
           </div>
-          <div class="price">
-            <p>Fra 10.000kr</p>
-          </div>
-        </div>
-      </div>
-      <div class="price-component">
-        <div class="img-wrapper">
-          <img
-            [src]="
-              sanitizeImageUrl(
-                '../../../../assets/Images/Home/prices/seo/640/backlink søkemotor optimalisering.webp'
-              )
-            "
-            alt="Søkemotor optimalisering eller SEO for bedrifter"
-          />
-          <h3 class="usp-title">SEO</h3>
-        </div>
-        <div class="content-wrapper">
-          <ul class="usp-list">
-            <li class="usp">
+        </section>
+      </a>
+      <!-- Design -->
+      <a
+        class="price-box-anchor-wrapper"
+        routerLink="/tjenester/bedrift/design"
+        title="Les mer om design tjenester for bedrifter"
+      >
+        <section
+          class="price-box"
+          aria-labelledby="price-box-title-design"
+          aria-label="Design tjenster for bedrifter"
+        >
+          <header>
+            <div class="header-content-container">
+              <h3 class="price-box-title" id="price-box-title-design">
+                Design
+              </h3>
+              <p class="price-box-content">
+                Skill deg ut i markedet gjennom minneverdig design
+              </p>
+              <div class="les-mer">
+                <p>Les mer</p>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/right-arrow-white.svg'
+                    )
+                  "
+                  role="presentation"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="bg">
+              <div class="shadow"></div>
               <img
                 [src]="
                   sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
+                    '../../../../assets/Images/Home/prices/price (3).jpg'
                   )
                 "
-                alt=""
+                alt="Billige hjemmesider for bedrift som gjør deg synlig og top of mind uten SEO"
               />
-              <p class="usp-text">Teknisk SEO</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Content SEO</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Off-page SEO</p>
-            </li>
-            <li class="usp">
-              <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/home/check-mark.svg'
-                  )
-                "
-                alt=""
-              />
-              <p class="usp-text">Sporbare resultater</p>
-            </li>
-          </ul>
-          <div class="info">
-            <p>
-              SEO eller søkemotoroptimalisering har blitt et av de viktigste og
-              kraftigste verktøyene for markedsføring de siste årene. Det finnes
-              flere metoder for å oppnå gratis trafikk. La oss ta en prat å se
-              hva som passer deg best!
+            </div>
+          </header>
+          <div class="content">
+            <ul class="usp-list">
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Logo design</p>
+              </li>
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Web design</p>
+              </li>
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Grafisk design</p>
+              </li>
+            </ul>
+            <p class="info">
+              Ved å skape en profesjonell visuell identitet kan du påvirke
+              hvordan kundene oppfatter merkevaren din og skille deg ut fra
+              konkurrentene dine.
             </p>
+            <div class="price-box-price">
+              <p class="price">Fra {{ Prices.Design.Logo[1].price }}kr</p>
+            </div>
           </div>
-          <div class="price">
-            <p>Fra 3.000kr</p>
+        </section>
+      </a>
+      <!-- SEO -->
+      <a
+        class="price-box-anchor-wrapper"
+        routerLink="/tjenester/bedrift/seo/søkemotoroptimalisering"
+        title="Les mer om Søkemotoroptimalisering for bedriften din"
+      >
+        <section
+          class="price-box"
+          aria-labelledby="price-box-title-seo"
+          aria-label="SEO for bedrifter"
+        >
+          <header>
+            <div class="header-content-container">
+              <h3 class="price-box-title" id="price-box-title-seo">SEO</h3>
+              <p class="price-box-content">
+                Gjør det enkelt for kundene dine å finne deg
+              </p>
+              <div class="les-mer">
+                <p>Les mer</p>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/right-arrow-white.svg'
+                    )
+                  "
+                  role="presentation"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="bg">
+              <div class="shadow"></div>
+              <img
+                [src]="
+                  sanitizeImageUrl(
+                    '../../../../assets/Images/Home/prices/price (4).jpg'
+                  )
+                "
+                alt="Billige hjemmesider for bedrift som gjør deg synlig og top of mind uten SEO"
+              />
+            </div>
+          </header>
+          <div class="content">
+            <ul class="usp-list">
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Teknisk- & Off-page SEO</p>
+              </li>
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Innholdsproduksjon</p>
+              </li>
+              <li>
+                <img
+                  [src]="
+                    sanitizeImageUrl(
+                      '../../../../assets/Images/Icons/home/check-mark.svg'
+                    )
+                  "
+                  alt=""
+                  role="presentation"
+                />
+                <p>Målbare resultater</p>
+              </li>
+            </ul>
+            <p class="info">
+              Ranger høyt i Google, bli funnet først og øk trafikken til
+              nettsiden din. Med fokus på SEO kan du få inn gratis trafikk fra
+              potensielle kunder som søker etter det du har å tilby.
+            </p>
+            <div class="price-box-price">
+              <p class="price">
+                Fra {{ Prices.SEO.Innholdsproduksjon[1].price }}kr
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
+      </a>
     </div>
   </div>
 </section>

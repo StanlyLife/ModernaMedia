@@ -1,92 +1,149 @@
 @import "../../../../variables.scss";
 
-section.prices {
-  .wrapper {
-    padding: 2rem;
-    .titles {
-      text-align: center;
-      padding: 2rem 0;
-      .title {
-        padding: 1rem 0;
-        @include ctaText;
-        font-size: 2.5rem;
-      }
-      .subtitle {
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        font-size: 0.75rem;
-        font-weight: 100;
-      }
+section.prices-section {
+  .prices-section-header {
+    .title {
+      margin: 0;
     }
-    .prices-wrapper {
+    .subtitle {
+      margin-bottom: 15px;
     }
-    .price-component {
-      background-color: $light-second;
-      box-shadow: $box-shadow-small;
-      width: 100%;
-      margin: 1rem auto;
-      position: relative;
-      padding-bottom: 40px;
-      max-width: 400px;
-      .content-wrapper {
-        padding: 0.5rem 1rem;
-      }
-      .img-wrapper {
-        position: relative;
-        height: 200px;
-        background-color: rgba(12, 12, 12, 0.425);
-
-        img {
-          position: absolute;
-          height: 100%;
-          width: 100%;
-          object-fit: cover;
-          mix-blend-mode: multiply;
-        }
-        .usp-title {
-          @include aAbs;
-          position: absolute;
-          color: $light;
-          font-size: 2.5rem;
-        }
-      }
-      .usp-list .usp {
-        display: flex;
-        width: 75%;
-        margin: 1rem auto;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        img {
-          height: 1rem;
-        }
-        .usp-text {
-          padding-left: 0.5rem;
-          text-align: left;
-        }
-      }
-      .info {
-        padding: 1rem;
-        text-align: left;
-      }
-      .price {
-        @include ctaText;
-        font-size: 1.25rem;
-        text-align: center;
-        background-color: $clean-white;
-        padding: 8px 0;
-        box-shadow: 0px -5px 20px 4px hsla(0, 0%, 0%, 0.05);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 40px;
-        width: 100%;
-      }
+    .header-content {
+      margin-top: 15px;
+      width: 75%;
     }
   }
-  ul,
-  li {
-    list-style: none;
+  .wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    padding-top: 60px;
+  }
+  .price-box-anchor-wrapper:hover {
+    .price-box {
+      box-shadow: $elevation-5;
+    }
+    header .header-content-container .les-mer img {
+      margin-left: 20px;
+    }
+    header .bg .shadow {
+      background: rgba(51, 51, 51, 0.25);
+    }
+  }
+  .price-box-anchor-wrapper:active {
+    .price-box {
+      box-shadow: $elevation-1;
+    }
+    header .header-content-container .les-mer img {
+      margin-left: 30px;
+    }
+    header .bg .shadow {
+      background: rgba(51, 51, 51, 0.15);
+    }
+  }
+  .price-container {
+    margin-top: 30px;
+    @include flexR;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .price-box {
+    margin: 1rem auto;
+    box-shadow: $elevation-3;
+    max-width: 515px;
+    min-width: 325px;
+    min-height: 640px;
+    background: $light-second;
+    padding-bottom: 60px;
+    position: relative;
+    transition: box-shadow 0.25s ease;
+    .content {
+      padding: 2rem;
+      .info {
+        margin-top: 30px;
+      }
+    }
+    .usp-list {
+      list-style: none;
+      li {
+        padding: 12px 0;
+        @include flexR;
+        justify-content: flex-start;
+        align-items: center;
+        img {
+          height: 18px;
+          margin-right: 10px;
+        }
+      }
+    }
+    .price-box-price {
+      position: absolute;
+      height: 60px;
+      width: 100%;
+      bottom: 0;
+      background: $clean-white;
+      left: 0;
+      @include flexC;
+      .price {
+        @include ctaText-blue;
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+    }
+    header {
+      height: 285px;
+      width: 100%;
+      position: relative;
+      .header-content-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 2;
+        padding: 1rem 2rem;
+        padding-bottom: 75px;
+        @include flexC;
+        justify-content: space-between;
+        align-items: flex-start;
+        .price-box-title,
+        .price-box-content,
+        .les-mer p {
+          color: $clean-white;
+        }
+        .les-mer {
+          @include flexR;
+          img {
+            margin-left: 10px;
+            height: 18px;
+            transition: all 0.5s ease;
+          }
+        }
+        .price-box-title {
+          font-size: 3rem;
+        }
+        .price-box-content {
+          font-size: 1.5rem;
+          font-weight: 600;
+        }
+      }
+      .bg {
+        pointer-events: none;
+        height: 100%;
+        width: 100%;
+        img,
+        .shadow {
+          pointer-events: none;
+          height: 100%;
+          width: 100%;
+        }
+        .shadow {
+          background: rgba(51, 51, 51, 0.55);
+          transition: background 0.5s ease;
+          position: absolute;
+        }
+        img {
+          object-fit: cover;
+        }
+      }
+    }
   }
 }
