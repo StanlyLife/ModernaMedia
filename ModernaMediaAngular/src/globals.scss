@@ -135,6 +135,12 @@ h2.subtitle-gradient {
   &:hover,
   &.hover {
     cursor: pointer;
+    background: $dark-hover;
+  }
+  &:active,
+  &.active {
+    cursor: pointer;
+    background: $dark-active;
   }
   &:disabled,
   &.disabled {
