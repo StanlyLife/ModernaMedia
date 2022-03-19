@@ -1,91 +1,13 @@
 @import "../../../../variables.scss";
-@media screen and (min-width: 500px) {
-  section.usp .wrapper .content {
-    min-width: 350px;
-  }
-}
-@media screen and (min-width: 900px) {
-  section.usp {
-    .wrapper {
-      padding: 2rem;
-      padding-bottom: 4rem;
-      position: relative;
-      margin: 0 auto;
-      max-width: 1280px;
-      .titles {
-        .title {
-          font-size: 2.5rem;
-        }
-      }
-      .content {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-        align-items: stretch;
-        padding: 2rem 0;
-        .usp-card {
-          flex: 1 0 0px;
-          background-color: $light-second;
-          padding: 0.5rem;
-          min-width: auto;
-          height: auto;
-          max-height: auto !important;
-          max-width: 400px;
-          margin: 1rem;
-          .usp-title {
-          }
-          img,
-          p {
-          }
-          img {
-          }
-        }
-      }
-    }
-    .line {
-      max-width: 1280px;
-    }
-  }
-}
 
-@media screen and (min-width: $tablet) {
-  section.usp {
-    .wrapper {
-      padding: 2rem;
-      padding-bottom: 4rem;
-      position: relative;
-      margin: 0 auto;
-      max-width: 1280px;
-      .titles {
-        margin: 2rem;
-        .title {
-          font-size: 2.5rem;
-        }
-      }
-      .content {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: space-evenly;
-        .usp-card {
-          flex: 1 0 0px;
-          background-color: $light-second;
-          padding: 1rem;
-          min-height: 350px;
-          min-width: auto;
-          max-width: 400px;
-          margin: 1rem;
-        }
+@media screen and (min-width: 1100px) {
+  section.usp-section {
+    .usp-container {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      .usp {
+        margin: 0;
       }
     }
-    .line {
-      max-width: 1280px;
-    }
-  }
-}
-@media screen and (min-width: 1280px) {
-  section.usp .wrapper .content {
-    justify-content: space-between;
   }
 }
