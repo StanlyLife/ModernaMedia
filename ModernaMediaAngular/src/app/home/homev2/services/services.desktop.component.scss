@@ -1,37 +1,35 @@
 @import "../../../../variables.scss";
+$min-height-service: 405px;
 @media screen and (min-width: $desktop) {
-  .services {
-    max-width: $max-width;
-    margin: 0 auto;
-    .wrapper {
-      .titles {
-        .title {
-        }
-        .subtitle {
-        }
-      }
-      .services {
-        align-items: stretch;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        margin: 2rem auto;
-        justify-content: space-between;
-        .service {
-          padding: 2rem 0.5rem;
-          flex: 1 1 0px;
-          flex-shrink: 0;
-          margin: 0 1rem;
-        }
-      }
+  section.services {
+    .service .service-container {
+      min-width: 280px;
+      max-width: 325px;
+      margin: 1rem auto;
     }
   }
 }
 
 @media screen and (min-width: $tablet) {
-  .services {
-    .wrapper .services .service {
-      padding: 2rem;
+  section.services {
+    .service .service-container {
+      min-width: 280px;
+      max-width: 420px;
+      width: auto;
+      margin: 1rem auto;
+    }
+  }
+}
+@media screen and (min-width: 1280px) {
+  section.services {
+    .services {
+      flex-wrap: nowrap;
+    }
+    .service .service-container {
+      min-width: 280px;
+      max-width: 290px;
+      width: auto;
+      margin: 1rem auto;
     }
   }
 }

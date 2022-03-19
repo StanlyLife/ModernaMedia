@@ -1,68 +1,127 @@
-<section class="services" id="tjenester">
+<section
+  class="services"
+  id="tjenester"
+  aria-label="Våre tjenester for bedrifter"
+>
   <div class="wrapper">
     <div class="titles">
       <p class="subtitle">Våre tjenester</p>
-      <h2 class="title">
-        Et digitalbyrå med spesialitet innenfor nettsider, design og seo for
-        bedrifter
-      </h2>
+      <h2 class="title">Invester i vekst med våre beste tjenester</h2>
     </div>
     <div class="services">
+      <!-- Nettsider -->
       <a
-        routerLink="/tjenester/bedrift/utvikling"
-        class="service utvikling"
-        title="utvikling av Programvareog hjemmesider for bedrifter"
+        routerLink="/tjenester/bedrift/utvikling/hjemmeside-bedrift"
+        class="service"
+        hreflang="no"
       >
-        <div class="content-wrapper">
-          <img
-            [src]="
-              sanitizeImageUrl(
-                '../../../../assets/Images/Icons/home/development.svg'
-              )
-            "
-            alt="Utvikling av bedriftnettsider ikon"
-            class="icon"
-          />
-          <h3>Utvikling</h3>
-          <p>Vi lager nettsider og systemer som øker omsetningen din</p>
+        <div class="service-container">
+          <div class="serivice-container-inner">
+            <h3>Nettsider</h3>
+            <div class="bg">
+              <img
+                src="../../../../assets/Images/Tjenester/header/Design for bedrifter.jpg"
+                alt=""
+              />
+              <div class="shadow"></div>
+            </div>
+            <p class="usp-text">Øk din online tilstedeværelse.</p>
+            <p class="service-information">
+              Design og teknisk oppsett av moderne og brukervennlige hjemmesider
+              som trekker oppmerksomhet, bygger tillit og øker din omsetning.
+            </p>
+          </div>
+          <p class="cta-link">Se vår hjemmeside tjeneste</p>
         </div>
       </a>
+      <!-- Nettsider slutt -->
+      <!-- Programvare  -->
       <a
-        routerLink="/tjenester/bedrift/design"
-        class="service design"
-        title="design tjenester for bedrifter"
+        routerLink="/tjenester/bedrift/utvikling/programvare"
+        class="service"
+        hreflang="no"
       >
-        <div class="content-wrapper">
-          <img
-            [src]="
-              sanitizeImageUrl(
-                '../../../../assets/Images/Icons/home/design.svg'
-              )
-            "
-            alt="Grafisk design og logo design for bedrift ikon"
-            class="icon"
-          />
-          <h3>Design</h3>
-          <p>Design som selger</p>
+        <div class="service-container">
+          <div class="serivice-container-inner">
+            <h3>Programvare</h3>
+            <div class="bg">
+              <img
+                src="../../../../assets/Images/Tjenester/info-section/utvikling/utvikling av datasystem for bedrifter.webp"
+                alt=""
+              />
+              <div class="shadow"></div>
+            </div>
+            <p class="usp-text">
+              Systemer som sparer penger og gjør livet ditt enklere.
+            </p>
+            <p class="service-information">
+              Få programvare som automatiserer dine daglige gjøremål å gjør
+              livet ditt enklere, samtidig som du reduserer kostnader.
+            </p>
+          </div>
+          <p class="cta-link">Se vår programvare tjeneste</p>
         </div>
       </a>
+      <!-- Programvare slutt -->
+      <!-- Design -->
+      <a routerLink="/tjenester/bedrift/design" class="service" hreflang="no">
+        <div class="service-container">
+          <div class="serivice-container-inner">
+            <h3>Design</h3>
+            <div class="bg">
+              <img
+                src="../../../../assets/Images/Tjenester/Tjeneste/Design/grafiskdesign/design (2).jpg"
+                alt=""
+              />
+              <div class="shadow"></div>
+            </div>
+            <p class="usp-text">
+              Imponer og engasjer med din visuelle identitet.
+            </p>
+            <p class="service-information">
+              Merkevarebygging, design av logo, visittkort, og generell grafisk
+              design til nettsider, kampanjer eller markedsføringsmateriell.
+            </p>
+          </div>
+          <p class="cta-link">Se våre design tjenester</p>
+        </div>
+      </a>
+      <!-- Design slutt -->
+      <!-- Programvare  -->
       <a
         routerLink="/tjenester/bedrift/seo/søkemotoroptimalisering"
-        class="service seo"
-        title="Søkemotor optimalisering tjenester"
+        class="service"
+        hreflang="no"
       >
-        <div class="content-wrapper">
-          <img
-            [src]="
-              sanitizeImageUrl('../../../../assets/Images/Icons/home/seo.svg')
-            "
-            alt="søkemotor optimalisering ikon"
-            class="icon"
-          />
-          <h3>Seo</h3>
-          <p>Søkemotoroptimalisering som gjør bedriften synlig</p>
+        <div class="service-container">
+          <div class="serivice-container-inner">
+            <h3>SEO</h3>
+            <div class="bg">
+              <img
+                src="../../../../assets/Images/Tjenester/Tjeneste/seo/offpage/seo (1).jpg"
+                alt=""
+              />
+              <div class="shadow"></div>
+            </div>
+            <p class="usp-text">La kundene dine finne deg på nett.</p>
+            <p class="service-information">
+              Søkemotoroptimalisering lar kunde finne deg før de finner dine
+              konkurrenter. Med organisk vekst kan vi hjelpe deg å øke
+              inntektene dine
+            </p>
+          </div>
+          <p class="cta-link">Se våre SEO tjenester</p>
         </div>
       </a>
+      <!-- Programvare slutt -->
     </div>
+    <!-- <div class="buttons">
+      <a routerLink="/" hreflang="no" class="btn shadow section-cta">
+        <p>
+          <img src="../../../../assets/Images/Icons/se_mer.svg" alt="" />
+          Se alle våre tjenester
+        </p>
+      </a>
+    </div> -->
   </div>
 </section>
