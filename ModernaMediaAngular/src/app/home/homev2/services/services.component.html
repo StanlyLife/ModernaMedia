@@ -14,14 +14,19 @@
         routerLink="/tjenester/bedrift/utvikling/hjemmeside-bedrift"
         class="service"
         hreflang="no"
+        title="nettside for bedrift"
       >
         <div class="service-container">
           <div class="serivice-container-inner">
             <h3>Nettsider</h3>
             <div class="bg">
               <img
-                src="../../../../assets/Images/Tjenester/header/Design for bedrifter.jpg"
-                alt=""
+                [src]="
+                  sanitizeImageUrl(
+                    '../../../../assets/Images/Tjenester/header/Design for bedrifter.jpg'
+                  )
+                "
+                alt="En utvikler som lager hjemmeside for bedrift i Oslo når han jobber i et digitalbyrå"
               />
               <div class="shadow"></div>
             </div>
@@ -40,6 +45,7 @@
         routerLink="/tjenester/bedrift/utvikling/programvare"
         class="service"
         hreflang="no"
+        title="programvare utvikling for bedrifter"
       >
         <div class="service-container">
           <div class="serivice-container-inner">
@@ -47,7 +53,7 @@
             <div class="bg">
               <img
                 src="../../../../assets/Images/Tjenester/info-section/utvikling/utvikling av datasystem for bedrifter.webp"
-                alt=""
+                alt="Programvare utvikling for bedrifter gjennom et digitalbyrå"
               />
               <div class="shadow"></div>
             </div>
@@ -64,14 +70,19 @@
       </a>
       <!-- Programvare slutt -->
       <!-- Design -->
-      <a routerLink="/tjenester/bedrift/design" class="service" hreflang="no">
+      <a
+        routerLink="/tjenester/bedrift/design"
+        class="service"
+        hreflang="no"
+        title="Design tjenester for bedrifter"
+      >
         <div class="service-container">
           <div class="serivice-container-inner">
             <h3>Design</h3>
             <div class="bg">
               <img
                 src="../../../../assets/Images/Tjenester/Tjeneste/Design/grafiskdesign/design (2).jpg"
-                alt=""
+                alt="Grafisk design for logo og webdesign"
               />
               <div class="shadow"></div>
             </div>
@@ -92,6 +103,7 @@
         routerLink="/tjenester/bedrift/seo/søkemotoroptimalisering"
         class="service"
         hreflang="no"
+        title="SEO tjenester for bedrifter"
       >
         <div class="service-container">
           <div class="serivice-container-inner">
@@ -99,7 +111,7 @@
             <div class="bg">
               <img
                 src="../../../../assets/Images/Tjenester/Tjeneste/seo/offpage/seo (1).jpg"
-                alt=""
+                alt="Et seo byrå som jobber med søkemotor optimalisering"
               />
               <div class="shadow"></div>
             </div>
