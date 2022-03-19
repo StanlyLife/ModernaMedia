@@ -36,7 +36,7 @@ export class TjenesterInfoSectionComponent implements OnInit {
           "image": "https://modernamedia.no/${this.data.img.url}",
           "author": {
             "@type": "Organization",
-            "name": "Moderna Media"
+            "name": "Moderna Media",
             "url":"https://modernamedia.no/"
           },
           "publisher": {

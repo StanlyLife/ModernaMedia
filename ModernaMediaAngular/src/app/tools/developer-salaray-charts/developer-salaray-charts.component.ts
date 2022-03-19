@@ -3521,12 +3521,11 @@ export class DeveloperSalarayChartsComponent implements OnInit {
         "text": "hva tjener utvikler?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "en utvikler tjente i gjennomsnitt 732.711kr i 2021 i følge en kode24 undersøkelse",
-          }
+          "text": "en utvikler tjente i gjennomsnitt 732.711kr i 2021 i følge en kode24 undersøkelse"
+        }
       }
     }
     `;
-
     this._renderer2.appendChild(this._document.body, script);
   }
   SchemaGeneratorJuniorUtviklerLonn() {
@@ -3542,7 +3541,7 @@ export class DeveloperSalarayChartsComponent implements OnInit {
         "text": "hva tjener junior utviklere?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "en utvikler med 0 års erfaring tjente i gjennomsnitt 533.334kr i 2021 i følge en kode24 undersøkelse",
+          "text": "en utvikler med 0 års erfaring tjente i gjennomsnitt 533.334kr i 2021 i følge en kode24 undersøkelse"
           }
       }
     }
