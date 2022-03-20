@@ -1,6 +1,9 @@
 @import "../../../../variables.scss";
 @media screen and (min-width: $tablet) {
   section.prices-section {
+    .wrapper header.prices-section-header .header-content {
+      width: 60%;
+    }
     .price-container {
       margin-top: 30px;
       @include flexR;
