@@ -1,129 +1,139 @@
-@import "/src/variables.scss";
+@import "../../../../variables.scss";
 
-section.contact {
-  .wrapper {
-    padding: 2rem;
-    max-width: 1280px;
-    margin: 0 auto;
+.form-section {
+  margin-top: 60px;
+  @include flexC;
+  flex-direction: column-reverse;
+  padding: 2rem;
+
+  header {
+    .subtitle {
+      margin-bottom: 15px;
+    }
+    .form-section-content {
+      margin-top: 15px;
+    }
+  }
+
+  .status-message {
+    margin-top: 0.5rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .info,
-    .img {
-      flex: 1;
-      width: 100%;
-    }
-    .info {
-      margin-top: 1rem;
-      display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    .status {
+      display: inline-flex;
       justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-      .titles {
-        .title {
-          padding: 1rem 0;
-          @include ctaText;
-          font-size: 2.5rem;
-        }
-        .subtitle {
-          text-transform: uppercase;
-          letter-spacing: 5px;
-          font-size: 0.75rem;
-          font-weight: 100;
-        }
+      align-items: flex-start;
+      &.error {
+        color: $toastError;
       }
-      > div,
-      > form {
-        width: 100%;
+      &.ready {
+        color: $toastSuccess;
       }
-    }
-    form {
-      .form-group {
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        flex-direction: column;
-        position: relative;
-        img {
-          max-height: 18px;
-          width: 18px;
-          width: auto;
-          position: absolute;
-          z-index: 1;
-          left: 8px;
-          @include vaAbs;
-        }
-
-        input,
-        textarea {
-          height: 48px;
-          border-radius: 5px;
-          padding: 4px 8px;
-          width: 100%;
-          border: 2px solid #e6e6e6;
-          &.invalid {
-            border: 2px solid $orange-primary;
-          }
-          &.sent {
-            background: #dbf7db;
-          }
-          box-shadow: $box-shadow-input;
-          margin: 0.5rem 0;
-          transition: all 0.25s ease;
-          max-height: 300px;
-          max-width: 100%;
-          min-width: 100%;
-          &:hover,
-          &:active,
-          &:focus {
-            box-shadow: $box-shadow-input-hover;
-            outline: none;
-          }
-          &:focus {
-            border: 2px solid $base-color;
-          }
-        }
-        input {
-          padding-left: 38px;
-        }
-        textarea {
-          height: 100px;
-          min-height: 100px;
-        }
-        label {
-          display: none;
-        }
+      &.sent {
+        color: $blue-primary;
+      }
+      &.failed {
+        color: $toastErrorHover;
+      }
+      img {
+        height: 18px;
+        margin: 0 0.25rem;
       }
     }
   }
   .img {
-    position: relative;
+    height: 250px;
     width: 100%;
-    height: 100%;
-    min-height: 350px;
+    margin-bottom: 2rem;
     img {
-      border-radius: 25px;
-      position: absolute;
+      object-fit: cover;
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      box-shadow: $box-shadow;
+      border-radius: 25px;
+      box-shadow: $elevation-4;
     }
   }
-  .form-info {
-    padding: 0.25rem 0;
-    color: $toastSuccess;
-    font-style: italic;
-    transition: all 0.25s ease-in-out;
-    font-size: 1rem;
-    &.invalid {
-      padding: 0.5rem 0;
-      font-size: 0.75rem;
-      color: $blue-primary;
+  .kontakt-info {
+    margin-top: 0.5rem;
+    @include flexC;
+    justify-content: flex-start;
+    align-items: flex-start;
+    a {
+      @include flexR;
+      margin-top: 0.5rem;
+      transition: all 0.25s ease;
+      img {
+        margin-right: 0.5rem;
+        height: 18px;
+      }
+      span {
+        transition: all 0.25s ease;
+        padding-left: 0.25rem;
+      }
+      &:hover {
+        &,
+        span {
+          color: $blue;
+        }
+      }
     }
-    &.sent {
-      color: $toastSuccessHover;
+  }
+  .kontakt-form {
+    padding: 1rem 0;
+    width: 100%;
+    button.sent {
+      &:hover {
+        cursor: no-drop;
+      }
+    }
+    .form-group {
+      position: relative;
+    }
+    input,
+    textarea {
+      margin: 0.5rem auto;
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      max-height: 250px;
+      resize: vertical;
+      height: 38px;
+      border-radius: 7px;
+      padding: 2px 10px;
+      border: 1px solid transparent;
+      box-shadow: $elevation-2;
+      transition: all 0.5s ease;
+      outline: 2px solid transparent;
+      &:focus {
+        outline-color: $blue;
+      }
+      &.error,
+      &.invalid {
+        outline-color: $toastError;
+      }
+      &.sent {
+        outline-color: #a9eff4;
+      }
+      &:active {
+        box-shadow: $elevation-1;
+      }
+      &:hover {
+        box-shadow: $elevation-3;
+      }
+    }
+    input {
+      padding-left: 32px;
+    }
+    .icon {
+      height: 18px;
+      position: absolute;
+      @include vaAbs;
+      left: 8px;
+    }
+    textarea {
+      padding-top: 4px;
+      min-height: 75px;
     }
   }
 }

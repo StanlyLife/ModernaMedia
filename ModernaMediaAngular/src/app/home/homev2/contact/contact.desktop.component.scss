@@ -1,23 +1,16 @@
-@import "/src/variables.scss";
+@import "../../../../variables.scss";
 
-@media screen and (min-width: $desktop) {
-  section.contact {
-    .wrapper {
-      flex-direction: row-reverse;
-      flex-wrap: nowrap;
-      justify-content: center;
-      padding: 3rem;
-      .info,
-      .img {
-        flex: 2;
-      }
-      .info {
-        flex: 3;
-        margin-right: 2rem;
-      }
-    }
+@media screen and (min-width: $tablet) {
+  .form-section {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 1rem;
     .img {
-      min-height: 600px;
+      height: auto;
+      height: 550px;
+      margin-bottom: 0rem;
     }
   }
 }

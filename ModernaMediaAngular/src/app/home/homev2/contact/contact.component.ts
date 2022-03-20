@@ -1,13 +1,11 @@
+import { SeoService } from 'src/app/services/seo.service';
+import { SeoUtils } from 'src/utils/SeoUtils';
 import { ContactService } from './../../../services/contact.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import {
-  FormGroup,
-  FormControl,
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { DomSanitizer, SafeUrl, Meta, Title } from '@angular/platform-browser';
+import { ViewportScroller } from '@angular/common';
+import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -16,10 +14,28 @@ import {
 export class ContactComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
+    private scroller: ViewportScroller,
     private fb: FormBuilder,
-    private cs: ContactService
-  ) {}
+    private cs: ContactService,
+    private meta: Meta,
+    private title: Title,
+    private seo: SeoService
+  ) {
+    title.setTitle(SeoUtils.home.title);
+  }
+  imageCdn = environment.img;
   ngOnInit(): void {}
+  @Input() data: any = {
+    background: {
+      alt: '',
+      src: '../../../../assets/Images/forms/contact/trollstigen i molde eller kristansund.jpg',
+    },
+    title: 'Kontakt oss',
+    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktet!',
+  };
+  scrollToId(id) {
+    this.scroller.scrollToAnchor(id);
+  }
   sanitizeImageUrl(imageUrl: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
@@ -28,13 +44,12 @@ export class ContactComponent implements OnInit {
     email: ['', Validators.required],
     phone: [''],
     business: [''],
-    title: ['', Validators.required],
     body: ['', Validators.required],
   });
   result = false;
-  imageCdn = environment.img;
+  sent = false;
   onSubmit(): void {
-    if (this.result) {
+    if (this.result || this.sent) {
       return;
     }
     var request = this.cs.SendContactRequest(this.contactForm.value);
@@ -43,6 +58,14 @@ export class ContactComponent implements OnInit {
       if (this.result) {
         this.contactForm.reset();
       }
+      this.sent = true;
     });
   }
+  formError =
+    !this.contactForm.valid &&
+    this.contactForm.touched &&
+    ((!this.contactForm.controls['email'].valid &&
+      this.contactForm.controls['email'].touched) ||
+      (!this.contactForm.controls['body'].valid &&
+        this.contactForm.controls['body'].touched));
 }
