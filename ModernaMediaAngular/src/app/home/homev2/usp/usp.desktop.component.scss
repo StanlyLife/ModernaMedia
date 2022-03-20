@@ -2,6 +2,9 @@
 
 @media screen and (min-width: 1100px) {
   section.usp-section {
+    header .section-info {
+      width: 60%;
+    }
     .usp-container {
       justify-content: space-between;
       flex-wrap: nowrap;
