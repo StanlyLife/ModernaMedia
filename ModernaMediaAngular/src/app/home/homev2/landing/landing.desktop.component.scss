@@ -31,6 +31,9 @@
       }
     }
   }
+  .landing .buttons {
+    width: 60%;
+  }
 }
 @media screen and (min-width: $desktop) {
   .landing .content {
@@ -105,13 +108,13 @@
   .landing .content {
     max-width: 690px;
     .titles {
-      height: 317px;
+      height: 250px;
       .super-title {
-        font-size: 6rem;
+        font-size: 5.25rem;
         line-height: 80px;
       }
       .subtitle {
-        margin-top: 240px;
+        margin-top: 170px;
         font-size: 1.75rem;
         margin-left: 8px;
       }
@@ -153,7 +156,7 @@
     }
     .buttons {
       margin-left: 8px;
-      max-width: 350px;
+      width: 260px;
     }
   }
 }
