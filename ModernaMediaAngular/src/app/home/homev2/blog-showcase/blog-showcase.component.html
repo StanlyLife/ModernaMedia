@@ -1,103 +1,34 @@
 <section class="blog-showcase">
   <div class="wrapper">
-    <div class="titles">
+    <header class="titles">
       <p class="subtitle">lær noe nytt</p>
       <h2 class="title">Fra vår blogg.</h2>
-    </div>
+    </header>
     <div class="blogs">
-      <div class="blog-wrapper">
-        <a
-          class="blog"
-          routerLink="/blogg/utviklerlonn"
-          title="Utvikler lønn statistikk for front-end og back-end utviklere i 2022"
-          routerLinkActive="active"
-        >
-          <img
-            [src]="
-              sanitizeImageUrl(
-                '../../../../assets/Images/Home/blog/400/Utviklere-som-lager-bedrift-system-og-nettsider.webp'
-              )
-            "
-            alt="Grafer av utvikler lønn for front-end, back-end arkitekter og startlønn til dataingeniør"
-          />
-          <div class="bg"></div>
-          <div class="content">
-            <div class="date">
-              <p class="day">16</p>
-              <p class="moy">Des 2021</p>
-            </div>
-            <h3 class="blog-title">Utvikler lønn</h3>
-            <div class="content-author-wrapper">
-              <div class="author">
-                <p class="by">AV / <span>Stian håve</span></p>
-                <p class="origin">Moderna Media</p>
-              </div>
-              <p class="text">
-                Hva tjente utviklerne i 2021 og har det vært en generell økning
-                fra 2020? hvorfor har de med bonus også mest lønn? Gjennom
-                artikkelen vil vi se på data samlet fra 1529 utviklere i Norge.
-              </p>
-            </div>
+      <!-- BLOGG -->
+      <a
+        [routerLink]="blogg.url"
+        *ngFor="let blogg of blogs"
+        class="blogg-link"
+      >
+        <section class="blogg" title="{{ blogg.Title }}">
+          <header>
+            <img src="{{ blogg.img }}" alt="{{ blogg.alt }}" />
+          </header>
+          <div class="wrapper">
+            <h3>{{ blogg.Title }}</h3>
+            <p>{{ blogg.Description }}</p>
+            <p class="les-mer">
+              Les mer
+              <img
+                src="../../../../assets/Images/Icons/right-arrow.svg"
+                role="presentation"
+                alt=""
+              />
+            </p>
           </div>
-          <p class="read-more">Les mer</p>
-        </a>
-      </div>
-      <!-- <div class="blog-wrapper">
-        <a href="" class="blog">
-          <img
-            src="../../../../assets/Images/Landingpage/Moderne teknologi bedrift.jpg"
-            alt=""
-          />
-          <div class="bg"></div>
-          <div class="content">
-            <div class="date">
-              <p class="day">16</p>
-              <p class="moy">Des 2021</p>
-            </div>
-            <h3 class="blog-title">Utvikler lønn</h3>
-            <div class="content-author-wrapper">
-              <div class="author">
-                <p class="by">AV / <span>Stian håve</span></p>
-                <p class="origin">Moderna Media</p>
-              </div>
-              <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam odio libero ratione cum itaque vel eligendi quae minus
-                repudiandae velit.
-              </p>
-            </div>
-          </div>
-          <p class="read-more">Les mer</p>
-        </a>
-      </div>
-      <div class="blog-wrapper">
-        <a href="" class="blog">
-          <img
-            src="../../../../assets/Images/Landingpage/Moderne teknologi bedrift.jpg"
-            alt=""
-          />
-          <div class="bg"></div>
-          <div class="content">
-            <div class="date">
-              <p class="day">16</p>
-              <p class="moy">Des 2021</p>
-            </div>
-            <h3 class="blog-title">Utvikler lønn</h3>
-            <div class="content-author-wrapper">
-              <div class="author">
-                <p class="by">AV / <span>Stian håve</span></p>
-                <p class="origin">Moderna Media</p>
-              </div>
-              <p class="text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quisquam odio libero ratione cum itaque vel eligendi quae minus
-                repudiandae velit.
-              </p>
-            </div>
-          </div>
-          <p class="read-more">Les mer</p>
-        </a>
-      </div> -->
+        </section>
+      </a>
     </div>
   </div>
 </section>
