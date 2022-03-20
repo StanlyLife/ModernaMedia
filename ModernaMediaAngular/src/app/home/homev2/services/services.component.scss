@@ -37,7 +37,6 @@ section.services {
     position: relative;
     overflow: hidden;
     box-shadow: $elevation-3;
-    transition: all 0.25s ease;
     .serivice-container-inner {
       padding: 6px 22px 90px 22px;
       @include flexC;
@@ -86,7 +85,6 @@ section.services {
   }
   .service:hover {
     .service-container {
-      box-shadow: $elevation-2;
       .bg .shadow {
         opacity: 0.4;
       }
@@ -113,11 +111,9 @@ section.services {
     .section-cta {
       width: auto;
       max-width: 250px;
-      transition: all 0.25s ease;
       img {
         height: 16px;
         margin-right: 8px;
-        transition: all 0.25s ease;
       }
       p {
         color: $clean-white;
