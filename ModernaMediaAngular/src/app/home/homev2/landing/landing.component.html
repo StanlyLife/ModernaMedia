@@ -1,15 +1,33 @@
 <section class="landing">
   <div class="wrapper">
     <div class="bg">
-      <img
-        [src]="
-          sanitizeImageUrl(
-            '../../../../assets/Images/Home/Landing/1280/Digitalbyrå-i-oslo-Moderna-Media-for-grafisk-design-logo-design-og-web-design-hjemmeside-for-bedrift.webp'
-          )
-        "
-        alt="Moderna media Digitalbyrå for bedriftens nettsider, programvare, grafisk design og søkemotoroptimalisering"
-        class="landing-image"
-      />
+      <picture>
+        <source
+          media="(min-width:800px)"
+          [srcset]="
+            sanitizeImageUrl(
+              '../../../../assets/Images/Home/Landing/1280/Digitalbyrå-i-oslo-Moderna-Media-for-grafisk-design-logo-design-og-web-design-hjemmeside-for-bedrift.webp'
+            )
+          "
+        />
+        <source
+          media="(min-width:0px)"
+          [srcset]="
+            sanitizeImageUrl(
+              '../../../../assets/Images/Home/Landing/640/Digitalbyrå-i-oslo-Moderna-Media-for-grafisk-design-logo-design-og-web-design-hjemmeside-for-bedrift.webp'
+            )
+          "
+        />
+        <img
+          [src]="
+            sanitizeImageUrl(
+              '../../../../assets/Images/Home/Landing/1280/Digitalbyrå-i-oslo-Moderna-Media-for-grafisk-design-logo-design-og-web-design-hjemmeside-for-bedrift.webp'
+            )
+          "
+          alt="Moderna media Digitalbyrå for bedriftens nettsider, programvare, grafisk design og søkemotoroptimalisering"
+          class="landing-image"
+        />
+      </picture>
       <div class="bg-shade"></div>
     </div>
     <div class="content">
