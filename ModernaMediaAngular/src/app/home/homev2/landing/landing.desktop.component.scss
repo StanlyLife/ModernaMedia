@@ -1,43 +1,72 @@
 @import "../../../../variables.scss";
 
+@media screen and (min-width: 360px) {
+  .landing .content {
+    max-width: 356px;
+    .titles {
+      height: 190px;
+      .super-title {
+        font-size: 3rem;
+        line-height: 40px;
+      }
+      .subtitle {
+        margin-top: 120px;
+        font-size: 1.15rem;
+      }
+    }
+  }
+}
 @media screen and (min-width: 570px) {
-  .landing .content .titles {
-    height: 136px;
-    .super-title {
-      font-size: 3.9rem;
-    }
-    .super-title:not(.bg) {
-    }
-    .super-title.bg {
-    }
-    .subtitle {
-      margin-top: 70px;
-      font-size: 1.5rem;
+  .landing .content {
+    max-width: 450px;
+    .titles {
+      height: 200px;
+      .super-title {
+        font-size: 4rem;
+        line-height: 50px;
+      }
+      .subtitle {
+        margin-top: 154px;
+        font-size: 1.15rem;
+      }
     }
   }
 }
 @media screen and (min-width: $desktop) {
-  .landing .content .titles {
-    height: 155px;
-    .super-title {
-      font-size: 4.1rem;
-    }
-    .super-title:not(.bg) {
-    }
-    .super-title.bg {
-    }
-    .subtitle {
-      font-size: 1.9rem;
-      margin-top: 70px;
+  .landing .content {
+    max-width: 675px;
+    .titles {
+      height: 175px;
+      .super-title {
+        font-size: 4rem;
+        line-height: 50px;
+      }
+      .subtitle {
+        margin-top: 102px;
+        font-size: 1.75rem;
+      }
     }
   }
-  .landing .content {
-    .info {
-      font-weight: 600;
-    }
+  // font weight
+  .landing .content .info {
+    font-weight: 600;
   }
 }
 @media screen and (min-width: $tablet) {
+  .landing .content {
+    max-width: 675px;
+    .titles {
+      height: 225px;
+      .super-title {
+        font-size: 5rem;
+        line-height: 70px;
+      }
+      .subtitle {
+        margin-top: 140px;
+        font-size: 1.75rem;
+      }
+    }
+  }
   .landing {
     width: 97.5%;
     box-shadow: $box-shadow;
@@ -49,7 +78,7 @@
     justify-content: center;
     align-items: center;
     .buttons {
-      max-width: 475px;
+      max-width: 275px;
     }
     .wrapper {
       min-height: 750px;
@@ -64,31 +93,31 @@
         opacity: 0.35;
       }
     }
-    .content {
-      .titles {
-        height: 145px;
-        .super-title {
-          // font-size: 2.45rem;
-        }
-        .super-title:not(.bg) {
-        }
-        .super-title.bg {
-        }
-        .subtitle {
-          // margin-top: 40px;
-          font-size: 1.75rem;
-        }
-      }
-      .info {
-        margin-top: -5px;
-        font-size: 1.25rem;
-        text-shadow: $text-shadow;
-      }
+    .content .info {
+      margin-top: -5px;
+      font-size: 1.25rem;
+      text-shadow: $text-shadow;
     }
   }
 }
 
 @media screen and (min-width: 1280px) {
+  .landing .content {
+    max-width: 690px;
+    .titles {
+      height: 317px;
+      .super-title {
+        font-size: 6rem;
+        line-height: 80px;
+      }
+      .subtitle {
+        margin-top: 240px;
+        font-size: 1.75rem;
+        margin-left: 8px;
+      }
+    }
+  }
+
   .landing {
     width: 97.5%;
     box-shadow: $box-shadow;
@@ -116,22 +145,6 @@
     }
     .content {
       margin-left: -150px;
-      .titles {
-        height: 214px;
-        width: 900px;
-        .super-title {
-          font-size: 6.55rem;
-        }
-        .super-title:not(.bg) {
-        }
-        .super-title.bg {
-        }
-        .subtitle {
-          margin-top: 105px;
-          font-size: 2.5rem;
-          margin-left: 5px;
-        }
-      }
       .info {
         margin-left: 8px;
         margin-top: 0px;
@@ -140,6 +153,7 @@
     }
     .buttons {
       margin-left: 8px;
+      max-width: 350px;
     }
   }
 }

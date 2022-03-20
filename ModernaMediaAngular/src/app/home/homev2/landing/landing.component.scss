@@ -35,9 +35,10 @@
     .titles {
       position: relative;
       border: 2px solid transparent;
-      height: 100px;
+      height: 180px;
       .super-title {
-        font-size: 2.45rem;
+        font-size: 2.75rem;
+        line-height: 36px;
         text-transform: uppercase;
         font-weight: 900;
         position: absolute;
@@ -52,7 +53,7 @@
         pointer-events: none;
       }
       .subtitle {
-        margin-top: 45px;
+        margin-top: 110px;
         font-weight: 900;
         text-shadow: $text-shadow;
         font-size: 1.15rem;
