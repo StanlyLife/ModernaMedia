@@ -21,9 +21,13 @@
             <p class="les-mer">
               Les mer
               <img
-                src="../../../../assets/Images/Icons/right-arrow.svg"
+                [src]="
+                  sanitizeImageUrl(
+                    '../../../../assets/Images/Icons/right-arrow.svg'
+                  )
+                "
                 role="presentation"
-                alt=""
+                alt="{{ blogg.alt }}"
               />
             </p>
           </div>
