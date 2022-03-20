@@ -29,7 +29,7 @@ export class ContactService {
       next: (data) => {
         this.toast.Toast(
           'Melding sendt!',
-          'Vi kontakter deg snarest!',
+          'Takk! Vi vil ta kontakt med deg så snart som mulig.',
           'default',
           5000
         );
