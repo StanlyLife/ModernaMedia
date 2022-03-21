@@ -42,21 +42,46 @@
       gtag("config", "G-C4P3665WWC");
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- mailchimp -->
-    <script id="mcjs">
-      !(function (c, h, i, m, p) {
-        (m = c.createElement(h)),
-          (p = c.getElementsByTagName(h)[0]),
-          (m.async = 1),
-          (m.src = i),
-          p.parentNode.insertBefore(m, p);
+
+    <!-- PIXEL -->
+    <!-- Meta Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
       })(
+        window,
         document,
         "script",
-        "https://chimpstatic.com/mcjs-connected/js/users/ddee567db1ae3f139b736e359/552a3d085fe73643086a20a11.js"
+        "https://connect.facebook.net/en_US/fbevents.js"
       );
+      fbq("init", "391525145291863");
+      fbq("track", "PageView");
     </script>
-    <!-- mailchimp -->
+    <noscript
+      ><img
+        height="1"
+        width="1"
+        style="display: none"
+        src="https://www.facebook.com/tr?id=391525145291863&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <!-- PIXEL END -->
+
     <!-- gtagmanager -->
     <script
       async
@@ -151,5 +176,29 @@
   </head>
   <body>
     <app-root></app-root>
+    <script type="application/ld+json">
+      {
+        "@context": "http://www.schema.org",
+        "@type": "ProfessionalService",
+        "name": "Moderna Media",
+        "url": "https://modernamedia.no/",
+        "logo": "https://modernamedia.no/assets/Images/LogoV2/Updated/Moderna%20Media%20-%20Logo%20&%20Text%20-%20Dark.jpg",
+        "image": "https://modernamedia.no/assets/Images/Home/Landing/Digitalbyr%C3%A5%20i%20oslo%20Moderna%20Media%20for%20grafisk%20design%20logo%20design%20og%20web%20design%20-%20hjemmeside%20for%20bedrift.jpg",
+        "description": "Moderna Media utvikler hjemmesider og Programvare for bedrifter som ønsker en egen nettside, system eller app. Vi er også eksperter på SEO, Google analytics, google search og ikke minst design og web design. Et digitalbyrå med alt på et sted!",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Oscars gate 76b",
+          "addressLocality": "OSLO",
+          "addressRegion": "Oslo",
+          "postalCode": "0256",
+          "addressCountry": "Norge"
+        },
+        "openingHours": "Mo, Tu, We, Th, Fr, Sa, Su 08:00-23:00",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "90265326"
+        }
+      }
+    </script>
   </body>
 </html>
