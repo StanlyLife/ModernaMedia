@@ -1,14 +1,48 @@
 <section class="about-your-next-project">
   <div class="bg">
-    <img
-      [src]="
-        sanitizeImageUrl(
-          '../../../assets/Images/Components/about-your-next-project/Moderna Media Background pattern.webp'
-        )
-      "
-      alt=""
-      role="presentation"
-    />
+    <picture>
+      <source
+        media="(min-width:1280px)"
+        [srcset]="
+          sanitizeImageUrl(
+            '../../../assets/Images/Components/about-your-next-project/1920/Moderna Media Digitalybyrå Background pattern.webp'
+          )
+        "
+      />
+      <source
+        media="(min-width:640px)"
+        [srcset]="
+          sanitizeImageUrl(
+            '../../../assets/Images/Components/about-your-next-project/1280/Moderna Media Digitalybyrå Background pattern.webp'
+          )
+        "
+      />
+      <source
+        media="(min-width:400px)"
+        [srcset]="
+          sanitizeImageUrl(
+            '../../../assets/Images/Components/about-your-next-project/640/Moderna Media Digitalybyrå Background pattern.webp'
+          )
+        "
+      />
+      <source
+        media="(min-width:0px)"
+        [srcset]="
+          sanitizeImageUrl(
+            '../../../assets/Images/Components/about-your-next-project/400/Moderna Media Digitalybyrå Background pattern.webp'
+          )
+        "
+      />
+      <img
+        [src]="
+          sanitizeImageUrl(
+            '../../../assets/Images/Components/about-your-next-project/1920/Moderna Media Digitalybyrå Background pattern.webp'
+          )
+        "
+        alt=""
+        role="presentation"
+      />
+    </picture>
   </div>
   <div class="wrapper">
     <div class="text">
