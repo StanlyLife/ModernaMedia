@@ -1,13 +1,14 @@
 export const SeoUtils = {
   notfound: {
     title: 'Moderna Media - Siden finnes ikke',
-    description: 'Denne siden finnes ikke lengre',
+    description:
+      'Denne siden finnes ikke lengre - Moderna Media Digitalbyrå - Invester i vekst',
   },
   home: {
     title:
-      'Digitalbyrå - Moderna Media - for bedriftens hjemmeside, design og seo',
+      'Digitalbyrå - Moderna Media - for bedriftens nettside, design og seo',
     description:
-      'Moderna Media utvikler hjemmesider og Programvare for bedrifter som ønsker en egen nettside, system eller app. Vi er også eksperter på SEO, Google analytics, google search og ikke minst design og web design. Et digitalbyrå med alt på et sted!',
+      'Moderna Media Digitalbyrå - Invester i bedriftens vekst, øk omsetning og kundebase gjennom en ny nettside, ett nytt design og mer søkemotoroptimalisering.',
   },
   TjenesterUtvikling: {
     title:
