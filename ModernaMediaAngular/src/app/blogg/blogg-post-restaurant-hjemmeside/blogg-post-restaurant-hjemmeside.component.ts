@@ -108,9 +108,9 @@ export class BloggPostRestaurantHjemmesideComponent implements OnInit {
 
           Den billigste metoden er å (selvfølgelig) gjøre det selv.  Med litt programvare, en referanseguide eller to, og din dedikasjon, kan en person med grunnleggende dataferdigheter ha et enkelt nettsted opp innen en måned eller mindre.  Du kan også bestemme deg for å bruke en enkelt leverandør som kan handle alt fra domene til server, nettsteddesign, utvikling og vedlikehold.  Husk å spørre dem om de bruker anbefalte fremgangsmåter for søkemotoroptimalisering når de bygger nettstedene sine, og om de vil bidra til å forbedre plasseringen av søkeresultatene på nettstedet ditt når det lanseres.
 
-          Selv om du mest sannsynlig ikke er tilgjengelig 24 timer i døgnet for å svare på spørsmål, er nettstedet ditt, også kjent som din "virtuelle butikkfront", alltid der for å besvare de besøkendes spørsmål.
+          Selv om du mest sannsynlig ikke er tilgjengelig 24 timer i døgnet for å svare på spørsmål, er nettstedet ditt, også kjent som din virtuelle butikkfront, alltid der for å besvare de besøkendes spørsmål.
 
-          Det er en god sjanse for at andre restauranter i ditt område har en nettside for bedriften sin og lokker din potensielle virksomhet fordi de blir enklere oppdaget.  Mange potensielle kunder liker å "sammenligne butikker",  altså undersøke flere restauranter på nettet før de tar en beslutning om hvor de skal spise.
+          Det er en god sjanse for at andre restauranter i ditt område har en nettside for bedriften sin og lokker din potensielle virksomhet fordi de blir enklere oppdaget.  Mange potensielle kunder liker å sammenligne butikker,  altså undersøke flere restauranter på nettet før de tar en beslutning om hvor de skal spise.
 
           Uten en tilstedeværelse på nettet kan det hende at restauranten din ikke lenger regnes som et alternativ for dem.  Du kan også gå glipp av å være oppført i lokale online kataloger hvor konkurrentene dine kan være oppført.
 
