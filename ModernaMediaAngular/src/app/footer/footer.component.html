@@ -2,7 +2,12 @@
   <div class="wrapper">
     <div class="logo-copyright-container">
       <div class="logo">
-        <img src="../../assets/Images/LogoV2/modernamedia-name.svg" alt="" />
+        <img
+          [src]="
+            sanitizeImageUrl('../../assets/Images/LogoV2/modernamedia-name.svg')
+          "
+          alt="Moderna Media digitalbyrå logo"
+        />
       </div>
       <div class="copyright">
         Copyright © 2022 Moderna Media orgnr. 926 670 018. All Rights Reserved.
@@ -34,11 +39,23 @@
       <div class="contact">
         <p class="strong">Kontakt oss.</p>
         <div class="phone">
-          <img src="../../assets/Images/Icons/inputs/call.svg" alt="" />
+          <img
+            [src]="
+              sanitizeImageUrl('../../assets/Images/Icons/inputs/call.svg')
+            "
+            role="presentation"
+            alt=""
+          />
           <p>Telefon: <a href="tel:90265326">902 65 326</a></p>
         </div>
         <div class="phone">
-          <img src="../../assets/Images/Icons/inputs/email.svg" alt="" />
+          <img
+            [src]="
+              sanitizeImageUrl('../../assets/Images/Icons/inputs/email.svg')
+            "
+            role="presentation"
+            alt=""
+          />
           <p>
             E-post:
             <a href="mailto:kontakt@modernamedia.no">kontakt@modernamedia.no</a>
@@ -49,14 +66,46 @@
     <div class="some">
       <p class="strong find-us">Finn oss.</p>
       <div class="some-links">
-        <a href="" title="moderna media facebook">
-          <img src="../../assets/Images/Icons/footer/facebook.svg" alt="" />
+        <a
+          href="https://www.facebook.com/ModernaMedia"
+          rel="nofollow"
+          title="moderna media facebook"
+          title="Moderna Media Digitalbyrå facebook"
+        >
+          <img
+            [src]="
+              sanitizeImageUrl('../../assets/Images/Icons/footer/facebook.svg')
+            "
+            rel="nofollow"
+            role="presentation"
+            alt="facebook logo"
+          />
         </a>
-        <a href="" title="moderna media instagram">
-          <img src="../../assets/Images/Icons/footer/instagram.svg" alt="" />
+        <a
+          href="https://www.instagram.com/moderna_media/"
+          title="moderna media instagram"
+          title="Moderna Media Digitalbyrå instagram"
+        >
+          <img
+            [src]="'../../assets/Images/Icons/footer/instagram.svg'"
+            rel="nofollow"
+            role="presentation"
+            alt="instagram logo"
+          />
         </a>
-        <a href="" title="moderna media linkedin">
-          <img src="../../assets/Images/Icons/footer/linkedin.svg" alt="" />
+        <a
+          href="https://www.linkedin.com/company/moderna-media"
+          title="moderna media linkedin"
+          title="Moderna Media Digitalbyrå linkedin"
+        >
+          <img
+            [src]="
+              sanitizeImageUrl('../../assets/Images/Icons/footer/linkedin.svg')
+            "
+            rel="nofollow"
+            role="presentation"
+            alt="linkedin logo"
+          />
         </a>
       </div>
     </div>
