@@ -41,4 +41,9 @@ export const SeoUtils = {
     title: '',
     description: '',
   },
+  BloggRestaurantHjemmeside: {
+    title: 'Hvorfor trenger en restaurant en nettside?',
+    description:
+      'Ifølge en undersøkelse utført under pandemien, sa 82% av kundene at de er mye mer tilbøyelige for å besøke en restaurant etter å ha sett nettsiden til bedriften.',
+  },
 };
