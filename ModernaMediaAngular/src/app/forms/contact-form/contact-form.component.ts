@@ -29,7 +29,7 @@ export class ContactFormComponent implements OnInit {
     private title: Title,
     private seo: SeoService
   ) {
-    title.setTitle(SeoUtils.home.title);
+    title.setTitle(SeoUtils.FormsKontakt.title);
   }
   imageCdn = environment.img;
   ngOnInit(): void {
