@@ -69,7 +69,7 @@ import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-
     FormsModule,
     ReactiveFormsModule,
     TjenesterModule,
-    BloggModule,
+
     RouterModule.forRoot(
       [
         {
@@ -97,6 +97,7 @@ import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-
       ],
       { scrollPositionRestoration: 'enabled' }
     ),
+    BloggModule,
     MiscModule,
     ToolsModule,
   ],
