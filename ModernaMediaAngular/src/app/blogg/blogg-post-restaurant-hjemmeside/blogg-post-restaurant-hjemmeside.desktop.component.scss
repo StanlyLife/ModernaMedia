@@ -1,0 +1,35 @@
+@import "../../../variables.scss";
+
+@media screen and (min-width: $tablet) {
+  .blogg-post {
+    width: 97.5%;
+    box-shadow: $box-shadow;
+    max-width: $max-width;
+    margin: 1rem auto;
+    overflow: hidden;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .wrapper {
+      min-height: 450px;
+      height: 50vh;
+      min-height: auto;
+      width: 100%;
+      .content {
+        width: 95%;
+        max-width: 750px;
+        .links {
+          max-width: 700px;
+        }
+      }
+    }
+    .bg {
+      height: auto;
+      .bg-shade,
+      .landing-image {
+        min-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+@import "../../../variables.scss";
+
+.blogg-post .bg {
+  position: absolute;
+  width: 100%;
+  height: calc(90vh - 2rem);
+  min-height: 670px;
+  .bg-shade,
+  .landing-image {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+  .bg-shade {
+    @include backgroundShade;
+  }
+}
+
+.blogg-post {
+  width: 100%;
+  position: relative;
+  .wrapper {
+    height: calc(90vh - 2rem);
+    min-height: 670px;
+  }
+  .content {
+    position: absolute;
+    @include aAbs;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: $desktop;
+    width: 95%;
+  }
+  .titles {
+    text-align: center;
+    .text-glow {
+      color: $light;
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    .subtitle {
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img.icon {
+      height: 150px;
+      margin: 0 auto;
+    }
+  }
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style-type: none;
+    position: absolute;
+    bottom: 2rem;
+    width: 95%;
+    .link-container {
+      color: $light;
+    }
+    button {
+      background: none;
+      border: none;
+      color: $light;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0 0.5rem;
+      transition: all 0.25s ease;
+      &:hover {
+        color: $orange-gradient;
+        cursor: pointer;
+      }
+      &::before {
+        content: "\2022";
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+.blogg-article {
+  font-size: $blogg-font-size-mobile;
+  line-height: $blogg-line-height-mobile;
+  font-family: "plex";
+  color: $dark;
+  p {
+    margin-top: 1rem;
+  }
+
+  .blogg-section {
+    max-width: 760px;
+    padding: 1rem;
+    margin: 0 auto;
+    .child-section {
+      padding-top: 1rem;
+    }
+  }
+  .title {
+    line-height: normal;
+    margin: 0;
+    font-size: 2rem;
+  }
+  .subtitle-gradient.blue {
+    font-weight: bold;
+  }
+
+  img {
+    margin: 0.5rem 0;
+    border-radius: 25px;
+    box-shadow: $elevation-3;
+    width: 100%;
+  }
+}
