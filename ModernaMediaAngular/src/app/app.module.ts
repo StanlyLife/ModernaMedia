@@ -1,3 +1,4 @@
+import { BloggModule } from './blogg/blogg.module';
 import { TjenesterModule } from './Tjenester/tjenester.module';
 import { ToolsModule } from './tools/tools.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -68,6 +69,7 @@ import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-
     FormsModule,
     ReactiveFormsModule,
     TjenesterModule,
+    BloggModule,
     RouterModule.forRoot(
       [
         {
