@@ -44,7 +44,7 @@ export class TjenesterInfoSectionComponent implements OnInit {
             "name": "Moderna Media",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://ModernaMedia.no/assets/Images/LogoV2/modernamedia-mid-large.png"
+              "url": "https://modernamedia.no/assets/Images/LogoV2/Updated/Moderna%20Media%20-%20Logo%20&%20Text%20-%20Dark.jpg"
             }
           },
           "datePublished": "${'2022-03-03'}",
