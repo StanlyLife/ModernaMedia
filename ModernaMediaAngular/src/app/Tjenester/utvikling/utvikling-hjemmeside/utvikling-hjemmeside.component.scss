@@ -5,6 +5,16 @@
 /*PRICES COMPONENT*/
 /*PRICES COMPONENT*/
 /*PRICES COMPONENT*/
+
+section.landing {
+  .buttons {
+    justify-content: flex-start;
+  }
+  .buttons .btn {
+    max-width: 250px;
+  }
+}
+
 @media screen and (min-width: $desktop) {
   section.prices {
     .wrapper {
