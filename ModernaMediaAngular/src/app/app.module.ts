@@ -36,6 +36,7 @@ import { ContactFormComponent } from './forms/contact-form/contact-form.componen
 import { RequestPriceFormComponent } from './forms/request-price-form/request-price-form.component';
 import { RequestSeoAuditFormComponent } from './forms/request-audit-form/request-seo-audit-form.component';
 import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-form/request-website-audit-form.component';
+import { CaseStudiesComponent } from './home/homev2/case-studies/case-studies.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-
     RequestPriceFormComponent,
     RequestSeoAuditFormComponent,
     RequestWebsiteAuditFormComponent,
+    CaseStudiesComponent,
     //
   ],
   imports: [
