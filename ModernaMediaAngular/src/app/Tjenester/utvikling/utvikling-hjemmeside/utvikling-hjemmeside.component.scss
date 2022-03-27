@@ -63,6 +63,11 @@ b {
 }
 
 section.prices {
+  .wrapper .prices-wrapper .price-component {
+    .content-wrapper .info p {
+      margin-top: 1rem;
+    }
+  }
   .wrapper .prices-wrapper .price-component .img-wrapper {
     .price-title {
       position: absolute;
