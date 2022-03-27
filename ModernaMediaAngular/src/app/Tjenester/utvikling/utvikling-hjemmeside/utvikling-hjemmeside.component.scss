@@ -21,6 +21,75 @@ section.usp-cards {
   }
 }
 
+section.info .info-container .text-container {
+  .buttons {
+    justify-content: flex-start;
+    a.btn {
+      flex: auto;
+      max-width: 200px;
+      margin: 0.5rem 0;
+    }
+  }
+}
+
+section.usp-card-list {
+  .btn {
+    max-width: 200px;
+    margin: 0.5rem auto;
+  }
+}
+
+section.process {
+  .btn {
+    max-width: 250px;
+    margin: 0.5rem 0;
+    margin-top: 1rem;
+    margin-left: 56px;
+  }
+}
+
+.inline-text-link:not(.clean) {
+  &,
+  b {
+    color: $purple-primary;
+  }
+  &:hover,
+  &:hover b {
+    color: $orange-primary;
+  }
+}
+b {
+  color: $orange-primary;
+}
+
+section.prices {
+  .wrapper .prices-wrapper .price-component .img-wrapper {
+    .price-title {
+      position: absolute;
+      font-size: 2rem;
+      color: $clean-white;
+      top: 1rem;
+      left: 1rem;
+    }
+    .price-subtitle {
+      color: $clean-white;
+      position: absolute;
+      @include vaAbs;
+      left: 0;
+      font-size: 1.5rem;
+      font-weight: 400;
+      width: 100%;
+      padding: 1rem;
+    }
+    .price-header-content {
+      position: absolute;
+      color: $clean-white;
+      padding: 1rem;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
 @media screen and (min-width: $desktop) {
   section.prices {
     .wrapper {
