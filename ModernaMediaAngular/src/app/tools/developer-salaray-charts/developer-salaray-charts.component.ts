@@ -3517,6 +3517,7 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       "@type": "QAPage",
       "mainEntity": {
         "@type": "Question",
+        "answerCount": 1,
         "name": "Utvikler lønn gjennomsnitt",
         "text": "hva tjener utvikler?",
         "acceptedAnswer": {
@@ -3537,6 +3538,7 @@ export class DeveloperSalarayChartsComponent implements OnInit {
       "@type": "QAPage",
       "mainEntity": {
         "@type": "Question",
+        "answerCount": 1,
         "name": "Junior utvikler lønn gjennomsnitt",
         "text": "hva tjener junior utviklere?",
         "acceptedAnswer": {
