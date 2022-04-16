@@ -132,9 +132,19 @@ export class SeoComponent implements OnInit {
       url: '/tjenester/bedrift/seo/søkemotoroptimalisering',
     },
     text: [
-      'Off-page SEO er det som avgjør relevansen til din nettside sammen med andre faktorer som blant annet innhold. Off-page SEO omhandler i stor grad det som kalles for link-building eller lenke bygging. Det vil si at Google ser på andre nettsider som lenker videre til din nettside, de ser også på kvaliteten til nettsiden og hvor mange nettsider som lenker til dem.',
-      'Off-page SEO er en veldig tidkrevende jobb spesielt i Norge ettersom de fleste relevante sidene som burde lenket til din bedrift ofte er konkurrenter. Det finnes mange måter å bygge lenker på, noe av de mer populære strategiene omhandler det som sies å være i grå-sonen hvor man finner flere tilfeldige nettsider og publiserer en lenke til sin hjemmeside.',
-      'Utfordringen med off-page SEO er at dersom det gjøres feil eller på en måte Google anser som uetisk vil dette skade rangeringen din. I Moderna Media har vi eksperter klare til å bistå deg med off-page SEO, kontakt oss i dag for et uforpliktet møte.',
+      'Off-page SEO omhandler alt man kan gjøre utenfor bedriftens nettside for å styrke SERP (search engine results page). Altså hvilke steg man kan ta for å sørge for at nettsiden  rangerer høyt på søkemotor resultatsidene, som Google, Bing og Yahoo. Disse stegene kan innebære alt fra en tilstedeværelse på sosiale medier til reklamer på ulike plattformer. ',
+      'Enkelt sagt, er Off-page SEO en av flere faktorer som avgjør relevansen til nettsiden din i et internettsøk. Off-page SEO omhandler også i stor grad link-building, altså lenke bygging. Det vil si at søkemotorer som Google, identifiserer andre nettsider som lenker til din nettside, og deres relevans. ',
+      'I Norge er Off-page SEO en tidskrevende jobb, ettersom de fleste relevante nettsidene som burde lenket til din bedrift ofte er konkurrentene dine. Det finnes mange måter å bygge lenker på. En av de mest populære strategiene omhandler det å gå inn i grå-sonen, hvor man publiserer en lenke til sin egen hjemmeside på flere tilfeldige nettsider. Utfordringen med off-page SEO er at dersom det gjøres feil eller uetisk vil dette skade rangeringen til nettsiden din. Heldigvis har vi i Moderna Media seo konsulenter klare til å bistå bedriften din med off-page SEO.',
+      'Effektiv Off-page SEO byr på flere verdifulle gevinster, som: ',
+    ],
+    listItems: [
+      'Økt søkemotoroptimalisering',
+      'Styrket søkemotor tilstedeværelse ',
+      'Økt søkemotor resultat rangering',
+      'Styrket merkevare ',
+    ],
+    textSecond: [
+      'Dersom bedriften din søker hjelp med å bygge en sterkere merkevare ved hjelp av off-page seo, ta kontakt med oss for et uforpliktet møte idag.',
     ],
   };
   dataInfoSection3 = {
