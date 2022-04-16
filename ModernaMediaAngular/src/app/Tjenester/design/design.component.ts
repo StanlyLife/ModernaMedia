@@ -149,18 +149,28 @@ export class DesignComponent implements OnInit {
     },
     position: 'right',
     header: {
-      subtitle: 'Bygg en sterk merkevare med',
-      title: 'Logo for bedriften',
+      subtitle: 'Bygg en sterk merkevare med en',
+      title: 'Logo for bedriften din!',
     },
     button: {
       text: 'Se vår logo design tjeneste',
       url: '/tjenester/bedrift/design/',
     },
     text: [
-      'En logo er ikke varemerket ditt, men den representerer varemerket. En logo portretterer bedriftens personlighet, tillit og verdier. Ved hjelp av fargeteori, kurvatur og fonter kan vi fortelle brukerens underbevissthet en historie og fortelle hvem vi er.',
-      'Moderna Media sin logo bruker en kombinasjon av blå og lilla, ved første øyeblikk kan det virke tilfeldig, men sannheten er at alle valg gjort i alle våre design er nøye gjennomtenkt. Ifølge fargeteori representerer fargen blå tillit, stabilitet og seriøsitet, noe vi ønsker å assosiere oss med. Samtidig er blå en nøytral farge og den mest populære favoritt fargen. Vi har også valgt lilla da det er en farge som sjeldent finnes i naturen og ofte assosieres med noe ikke-naturlig, blant annet teknologi. Lilla assosieres også med selvstendighet og ambisjon noe vi mener reflekterer Moderna Media og forhåpentligvis våre kunder.',
-      'Logo design er mye mer enn å tegne et ikon eller en firkant og skrive noe tekst. Logo design handler om å få et innblikk i bedriftens visjon, mål og verdier slik at vi på best mulig måte kan formidle dette videre til kundene deres.',
-      'En logo-designprosess er gjerne iterativ hvor man jobber tett sammen med kunden. Priser på logo kan variere fra noen hundrelapper til flere hundretusener av kroner. I Moderna Media mener vi at noe så viktig som en logo er verdt å investere i, derfor har vi satt en bunnpris for logo design. Vi jobber med klienter med store og små budsjett samtidig som vi sørger for å alltid levere tjenester av høyeste kvalitet. Kontakt oss i dag for et uforpliktet møte angående din nye logo eller en revisjon av logoen dere allerede har.',
+      'En logo er et symbol bygget opp av tekst og grafikk som identifiserer bedriften din. Den skal enkelt kommuniserer bedriftens personlighet, tjenester, og verdier ved hjelp av fargeteori, former og fonter. Enkelt sagt, skal en god logo presentere et tydelig bilde av bedriten din.',
+      'Hos Moderna Media, bruker vi en kombinasjon av blå og lilla i vår logo. Ved første øyekast kan dette virke tilfeldig, men sannheten er at alle valg er nøye gjennomtenkt. Ifølge fargeteori representerer fargen blå tillit, stabilitet og seriøsitet. Noe vi ønsker å assosiere bedriften vår med. Vi har også tatt i bruk fargen lilla, da denne fargen ofte assosieres med noe ikke-naturlig, som teknologi. Lilla assosieres også med selvstendighet og ambisjon, noe vi mener reflekterer Moderna Media og våre kunder. ',
+      'Logo design omhandler mye mer enn å sette sammen former, farger og tekst. Det handler om å kommunisere bedriftens visjon, verdier, tjenester, personlighet og misjon på en effektiv og tydelig måte. ',
+      'En veldesignet logo kommer med flere gevinster, som: ',
+    ],
+    listItems: [
+      'Godt førsteinntrykk av bedriften',
+      'Økt profesjonalitet',
+      'Styrket varemerke og identitet ',
+      'Bedre merkevaregjennkjenning',
+      'Styrket markedsoppmerksomhet ',
+    ],
+    textSecond: [
+      'Hos Moderna Media mener vi at bra logo design er en verdifull investering for enhver bedrift. Derfor har vi satt en bunnpris for våre logo design. Vi designer logoer for klienter med både små og store budsjetter.  Samtidig verdsetter vi å levere tjenester av topp kvalitet. Kontakt oss idag for et uforpliktet møte angående logodesign eller revisjon av din eksisterende logo! ',
     ],
   };
 }
