@@ -93,7 +93,7 @@ export class SeoComponent implements OnInit {
     },
     position: 'right',
     header: {
-      subtitle: 'Spar kostnader med',
+      subtitle: 'Spar kostander med',
       title: 'Teknisk SEO',
     },
     button: {
@@ -101,10 +101,19 @@ export class SeoComponent implements OnInit {
       url: '/tjenester/bedrift/seo/søkemotoroptimalisering',
     },
     text: [
-      'Teknisk SEO referer til nettside- og serveroptimering som i gjengjeld hjelper søkemotor roboter å indeksere og lagre nettsiden din enklere.',
-      'I teknisk SEO er det viktig å følge opp TLS sikkerhet for å verifisere tillitten til nettsiden. Det er også ekstremt viktig å passe på at nettsiden er mobilvennlig ettersom 2 av 3 brukere besøker nettsiden din med mobiltelefon.',
-      'Noe av det mer utfordrende med teknisk søkemotor optimalisering er hastighet. Hastigheten på nettsiden baserer seg på flere faktorer, brukeren, serveren og nettsiden. Her er det flere grep man kan ta for å optimalisere hastighet. På hjemmesiden til Moderna Media har vi tatt i bruk raske servere og bruke SPA-teknologi og noe som heter for server side rendering. Det vil si at når du laster inn Modernamedia.no så bruker serveren vår ressurser på å laste inn siden slik at pcen du sitter på slipper å jobbe så mye. Vi har også optimalisert alle bilder ved hjelp av kompresjon og neste-generasjons bildeformater.',
-      'Dersom bedriften din ønsker en raskere og bedre hjemmeside samtidig som du optimaliserer SEO, ta kontakt med oss for et uforpliktet møte',
+      'Teknisk SEO omhandler å forbedre de tekniske delene av en nettside, som hjelper søkemotorer å enkelt registrere og lagre nettsiden. Kort fortalt er teknisk SEO å forsikre at en nettside møter de tekniske kravene av moderne søkemotorene, som Google, Bing og Yahoo. ',
+      'Igjennom prosessen av teknisk SEO er det viktig å forsikre TLS sikkerhet for verifisering av tilliten til nettsiden. Etterfulgt av mobilvennlighet, ettersom 2 av 3 brukere besøker nettsider med mobiltelefon. Noe av det mer utfordrende med teknisk søkemotor optimalisering er hastighet. Dette er fordi flere faktorer spiller en rolle i hastigheten på en nettside. Kunden, serveren og selve nettsiden er alle brikker i dette puslespillet. ',
+      'Heldigvis vet vi i Moderna Media at alle triksene når det kommer til å optimalisere hastighet. Et godt eksempel på slike triks finnes på hjemmesiden vår. Der har vi tatt i bruk raske servere, SPA-teknologi, og server side rendering. Det vil si at når du laster inn Modernamedia.no så bruker serveren våre ressurser på å laste inn siden, så din pc slipper å jobbe så mye. Vi har også optimalisert alle bilder ved hjelp av kompresjon og neste-generasjons bildeformater. Alt for å gjøre nettsiden vår så teknisk brukervennlig som mulig! ',
+      'Velutbygget teknisk SEO byr på flere verdifulle gevinster, som:',
+    ],
+    listItems: [
+      'Økt søkemotoroptimalisering',
+      'Styrket søkemotor tilstedeværelse',
+      'Økt brukervennlighet ',
+      'Styrket estetisk nettside oppsett',
+    ],
+    textSecond: [
+      'Dersom bedriften din ønsker en raskere og bedre nettside, og bedre søkemotor optimalisering, ta kontakt med oss for et uforpliktet møte idag. ',
     ],
   };
   dataInfoSection2 = {
