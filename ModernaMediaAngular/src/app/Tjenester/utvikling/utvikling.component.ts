@@ -117,16 +117,29 @@ export class UtviklingComponent implements OnInit {
     position: 'left',
     header: {
       subtitle: 'Spar kostnader med',
-      title: 'Programvare for bedriften',
+      title: 'Programvare for bedriften din',
     },
     button: {
       text: 'Les mer om programvare',
       url: '/tjenester/bedrift/utvikling',
     },
     text: [
-      'Programvare kan være mange ting, vi bruker begrepet Programvare om en rekke funksjoner som blir utført sammen i et digitalt kommuniserende økosystem. Når restauranten tar imot en bestilling eller reservasjon på nett og deres interne datamaskiner oppdateres tilstrekkelig så brukes det et Programvare for å synkronisere disse jobbene.',
-      'Vi tilbyr våre kunder skreddersydde programvare som er ment for å spare bedriften tid og penger. Ved å automatisere daglige gjøremål kan vi effektivt kutte kostandene samtidig som vi reduserer risikoen for menneskelig feil.',
-      'Vårt mål er å gjøre hverdagen din og deres kunder enklere. Dersom du skulle ha behov for et bookingsystem, drift- og logistikksystem eller et kundebehandlingssystem. Ta en prat med oss så finner vi den beste løsningen for bedriften din og deres budsjett.',
+      'En programvare er fellesbetegnelse for flere tjenester som sammen betjener en digital plattform. Når en nettside tar imot en bestilling eller reservasjon er det en programvare som synkroniserer disse tjenestene.',
+      'Som de fleste, har du sikkert hatt problemer med å reservere og bestille tjenester på forskjellige nettsider. Kanskje var det en restaurant du ville reservere bord ved. Eller en kjede du ville bestille mat fra, men programvaren feilet. Tok det evigheter før tjenesten fungerte? Det er åpenbart at slike programvarer ikke er ideell for noen. Tid er penger, og det bør være en selvfølge at tiden til både kunder og bedrift blir verdsatt. Hos Moderna Media er vårt fokus nettopp å designe programvarer som verdsetter effektivitet og brukervennlighet. ',
+      'En velbygget programvare kommer med flere verdifulle gevinster, som:',
+    ],
+    listItems: [
+      'Unik og innovativt design',
+      'Økt produktivitet ',
+      'Skreddersydde løsninger ',
+      'Økt beredskap for vekst ',
+      'Skreddersydd kundeopplevelse ',
+      'Økt sikkerhet ',
+      'Konkurransefortrinn ',
+    ],
+    textSecond: [
+      'En programvare skal enkelt sagt fungere som en dirigent for din nettsidens tjenester. Alt dine kunder måtte søke etter skal være lett tilgjengelig og gjennomførbart. Hos digitalbyrået Moderna Media tilbyr vi programvarer skreddersydd for bedrifters behov og budsjett. Igjennom en skreddersydd programvare kan din bedrift effektivt kutte kostnader og menneskelige feil.',
+      'Vårt mål er å gjøre hverdagen enklere for deg og dine kunder. Om du har behov for et bookingsystem, kundebehandlingssystem, eller drift-og logikksystem er vi her for deg! Ta en prat med oss, så finner vi den beste løsningen for bedriften din!',
     ],
   };
 }
