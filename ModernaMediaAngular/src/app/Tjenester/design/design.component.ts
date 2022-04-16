@@ -116,18 +116,29 @@ export class DesignComponent implements OnInit {
     },
     position: 'left',
     header: {
-      subtitle: 'Voks organisk med god',
-      title: 'Web design',
+      subtitle: 'Voks organisk med skreddersydd',
+      title: 'Web design for bedriften din',
     },
     button: {
       text: 'Se vår web design tjeneste',
       url: '/tjenester/bedrift/design/',
     },
     text: [
-      'Web design er resultatet av prosessen som vanligvis tar sted før utviklingen av en nettside. Web design refererer til designet på hjemmesiden som vises på nett. Denne designkategorien består ofte av tungt arbeid innenfor UI også kjent som user interface, altså designet, og UX også kjent som user experience som hovedsakelig omfatter brukeropplevelse.',
-      'Viste du at 2 av 3 brukere bruker mobil til å surfe på nett og besøke din nettside? Eller at 7 av 10 kunder finner bedrifter gjennom blogger. Eller at den gjennomsnittlige-bruker skaper et førsteinntrykk av bedriften og hjemmesiden på 0.5 sekunder.',
-      'Dette vet vi i Moderna Media! Derfor designer og utvikler vi nettsider med mobile-first tilnærmingen for å optimere brukeropplevelsen på mobil. Det er også derfor vi anbefaler alle bedrifter som har tilstrekkelig budsjett å opprette en blogg. Vi sørger alltid for å gi det beste førsteinntrykket gjennom vakkert og moderne design som også gjenspeiler bedriftens visjon og verdier.',
-      'Web design omhandler alt fra hvilke farger, fonter og font-størrelse man skal bruke til hvilke sider og funksjoner som er nødvendige. Web design er en designprosess som skal skapes med brukeren i fokus. Har du noen gang besøkt en nettbutikk som ikke er helt opp til standard, eller prøvd å finne telefonnummeret til kundeservice på banken din sin nettside? Det er to eksempler som skaper frustrasjon og utfordringer for deg som kunde. I verste tilfelle vil et dårlig design skape mistro hos brukeren. Bli med på å designe og bygge en neste-generasjons nettside for bedriften din, ta kontakt med oss i Moderna Media i dag.',
+      'Web design er enkelt sagt prosessen av å utforme en nettside. Denne prosessen utarbeider brukeropplevelsen igjennom designet av nettsidens oppsett, farger, fonter, bilder og lignende. Web design består ofte av tungt arbeid innenfor selve designet, også kjent som UI (user interface), og brukervennlighet UX (user expereince). Bra web design er estetisk tiltalende, brukervennlig, og formidler bedriftens verdier og tjenester tydelig. Kort fortalt er web design en designprosess med brukeren i fokus.',
+      'Som de fleste, har du sikkert besøkt en nettbutikk som var lite brukervennlig. Kanskje oppsøkte du en nettside for å finne telefonnummeret til kundeservice, uten hell. Mest sannsynlig skapte dette en frustrasjon for deg som kunde. Men, i verste fall vil dårlig design skape mistro hos kunder.',
+      'Visste du at den gjennomsnittlige-bruker skaper et førsteinntrykk av bedriften din i løpet av 0.5 sekunder på nettsiden din? Visste du også at 2 av 3 kunder bruker mobil for å besøke din nettside? Eller at 7 av 10 kunder oppdager bedrifter igjennom blogg innlegg?',
+      'Dette vet vi i Moderna Media! Derfor utvikler vi nettsider med effektivt design, og optimal mobile-first brukervennlighet. Videre, anbefaler vi alle bedrifter som har tilstrekkelig budsjett å opprette en blogg. Vi verdsetter brukervennlighet og førsteinntrykk ved å utvikle moderne webdesign som gjenspeiler visjonen og verdiene til bedriften din!',
+      'Bra web design kommer med flere verdifulle gevinster, som:',
+    ],
+    listItems: [
+      'Godt førsteinntrykk av bedriften',
+      'Styrket søkemotoroptimalisering',
+      'Økt tillit fra kundene dine',
+      'Konkurransedyktighet',
+      'Styrket brukervennlighet',
+    ],
+    textSecond: [
+      'Invester i en neste-generasjons nettside for bedriften din! Ta kontakt med oss i Moderna Media idag. ',
     ],
   };
   dataInfoSection3 = {
