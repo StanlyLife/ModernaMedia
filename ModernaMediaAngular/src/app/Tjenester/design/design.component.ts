@@ -86,7 +86,7 @@ export class DesignComponent implements OnInit {
       },
     ],
   };
-  dataInfoSection = {
+  dataInfoSection3 = {
     color: 'gray',
     img: {
       url: '../../../../assets/Images/Tjenester/info-section/design/1280/grafisk design for bedrift oslo.webp',
@@ -108,7 +108,7 @@ export class DesignComponent implements OnInit {
       'Hos Moderna Media tar vi alt i betraktning for å gi bedriften din det beste grafiske designet slik at du ikke legger penger igjen på bordet!',
     ],
   };
-  dataInfoSection2 = {
+  dataInfoSection = {
     color: 'grey',
     img: {
       url: '../../../../assets/Images/Tjenester/info-section/design/1280/web design for bedrift oslo.webp',
@@ -141,7 +141,7 @@ export class DesignComponent implements OnInit {
       'Invester i en neste-generasjons nettside for bedriften din! Ta kontakt med oss i Moderna Media idag. ',
     ],
   };
-  dataInfoSection3 = {
+  dataInfoSection2 = {
     color: 'gray',
     img: {
       url: '../../../../assets/Images/Tjenester/info-section/design/1280/logo design for bedrift.webp',
