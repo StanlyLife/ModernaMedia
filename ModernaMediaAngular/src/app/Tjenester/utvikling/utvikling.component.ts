@@ -84,19 +84,28 @@ export class UtviklingComponent implements OnInit {
     },
     position: 'right',
     header: {
-      subtitle: 'Øk din tilstedeværelse med',
-      title: 'Hjemmeside for bedriften',
+      subtitle: 'Øk din online tilstedeværelse med en',
+      title: 'Hjemmeside for bedriften din',
     },
     button: {
       text: 'Les mer om hjemmesider',
       url: '/tjenester/bedrift/utvikling',
     },
     text: [
-      'En bedrifts online tilstedeværelse, uavhengig av industri vil være kritisk for ens suksess. En bedrifts hjemmeside vil alene ikke være med på å skape tillit og vekst, men en attraktiv og komplett nettside vil ta deg en lang vei.',
-      'Har du noen gang besøkt en hjemmeside og tenkt “dette her kan ikke stemme?“ eller “Er dette trygt?“. Kanskje har du bestemt deg for å besøke en ny restaurant i Oslo, men du klarer ikke å finne hjemmesiden til bedriften, eller kanskje du finner den, men den inneholder ikke en meny. Hos digitalbyrået Moderna Media følger vi deg opp hele veien og sørger for at du får absolutt mest mulig for pengene.',
-      'Vi mener at en nettside har flere fordeler, blant annet vil den være med på å styrke merkevaren din, øke “leads“, skape organisk trafikk ved hjelp av god søkemotoroptimalisering som igjen vil øke din organsike vekst. En nettside kan også bygges på en måte som også sparer tid og penger.',
-      'Dersom nettsiden har “ofte stilte spørsmål og svar” lett tilgjengelig vil kunden kanskje ikke ha behov for å ringe eller sende melding. Dersom åpningstidene eller menyen ligger lett tilgjengelig slipper du å få samme telefon flere ganger daglig.',
-      'Alt i alt så har en bedrift behov for en hjemmeside, men ikke hvilken som helst hjemmeside, men en sikker, enkel, kompetent og attraktiv hjemmeside. En hjemmeside er ikke en kostnad, men en investering!',
+      'Uavhengig av industri, er en bedrifts online tilstedeværelse, altså nettsiden, bærekraften for suksess. En nettside består selvfølgelig av flere organ, men selve hjertet ligger i hjemmesiden. Det er på hjemmesiden du formidler visjonen, målet, spesialiteten, tjenestene, historien og stemmen til bedriften din. Her får kundene dine dannet seg et samlet bilde av profesjonalitet, verdier, arbeidsmetoder og identitet. ',
+      'Som de fleste, har du sikkert besøkt mange nettsider på utkikk etter diverse tjenester. Kanskje var det en restaurant du søkte menyen til, men nettsiden deres manglet den. Eller var det klær du skulle kjøpe, men nettsiden var så dårlig utformet at du ikke turte bestille? ',
+      'En nettside skal enkelt sagt fungere som en presis presentasjon av din bedrift. Alt dine kunder måtte være på jakt etter skal være lett tilgjengelig og inntakelig. Dersom hjemmesiden din er laget slik at viktig informasjon som tjenester, åpningstider, ofte stilte spørsmål og svar er lett tilgjengelig slipper du den samme telefon samtalen flere ganger. Hjemmesiden alene vil selvfølgelig ikke dyrke tillit og vekst, men en profesjonell og komplett nettside vil.',
+      'En velbygget nettside kommer med flere verdifulle gevinster, som: ',
+    ],
+    listItems: [
+      'Styrket merkevare',
+      'Økte leads',
+      'God søkemotoroptimalisering',
+      'Organisk trafikk ',
+      'Økt organisk vekst ',
+    ],
+    textSecond: [
+      'En nettside kan bygges på en måte som sparer tid og penger. Hos digitalbyrået Moderna Media setter vi kundene først, og jobber fortløpende for at du får en nettside skreddersydd til din bedrift og din prisklasse. Alt i alt har en bedrift behov for en sikker, enkel, kompetent og innbydende hjemmeside. Husk, en hjemmeside er ikke en kostand, men en investering!',
     ],
   };
   dataInfoSection2 = {
