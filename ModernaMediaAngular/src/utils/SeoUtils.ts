@@ -11,8 +11,7 @@ export const SeoUtils = {
       'Moderna Media Digitalbyrå - Invester i bedriftens vekst, øk omsetning og kundebase gjennom en ny nettside, ett nytt design og mer søkemotoroptimalisering.',
   },
   TjenesterUtvikling: {
-    title:
-      'Hjemmesider | Programvare | applikasjoner | for bedrifter - Moderna Media Digitalbyrå',
+    title: 'Nettsider og programvare for bedrifter Moderna Media Digitalbyrå',
     description:
       'Skreddersydde hjemmesider, programvare og applikasjoner for bedrifter av top kvalitet kan du få hos Moderna Media digitalbyrå. Vi bygger alt fra bunn med neste-generasjons teknologi som spa-rammeverk og utnytter fulle cloud løsninger!',
   },
