@@ -12,6 +12,12 @@
         <p class="text-section" *ngFor="let text of data.text">
           {{ text }}
         </p>
+        <ul class="usp-list">
+          <li *ngFor="let li of data.listItems">{{ li }}</li>
+        </ul>
+        <p class="text-section" *ngFor="let text of data.textSecond">
+          {{ text }}
+        </p>
       </article>
       <div class="buttons">
         <a href="#kontakt" class="btn cta shadow"

@@ -1,4 +1,7 @@
 @import "/src/variables.scss";
+.usp-list {
+  margin-left: 16px;
+}
 @media screen and (min-width: $tablet) {
   .info {
     min-height: 900px;
