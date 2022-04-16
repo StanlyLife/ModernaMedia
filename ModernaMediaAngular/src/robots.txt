@@ -7,7 +7,6 @@ Disallow: /misc
 Disallow: /misc/*
 Disallow: /misc/designsystem
 Disallow: /tjenester/bedrift/utvikling/programvare
-Disallow: /tjenester/bedrift/utvikling/hjemmeside-bedrift
 Disallow: /tjenester/bedrift/seo/innholdsproduksjon
 Disallow: /tjenester/bedrift/seo/off-page-seo
 Disallow: /tjenester/bedrift/seo/teknisk-seo
