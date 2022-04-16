@@ -26,7 +26,7 @@ export const SeoUtils = {
     description: '',
   },
   FormsKontakt: {
-    title: '',
+    title: 'Kontakt moderna media digitalbyrå',
     description: '',
   },
   FormsSeoAudit: {
