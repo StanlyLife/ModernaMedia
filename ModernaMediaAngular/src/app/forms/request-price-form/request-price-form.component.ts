@@ -72,7 +72,7 @@ export class RequestPriceFormComponent implements OnInit {
       return;
     }
     this.sent = true;
-    var request = this.cs.SendContactRequest(this.contactForm.value);
+    var request = this.cs.SendPriceRequest(this.contactForm.value);
     this.cs.SendContactRequestResult.subscribe((arg) => {
       this.result = arg;
       if (this.result) {
