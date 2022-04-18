@@ -84,6 +84,10 @@ import { CaseStudiesComponent } from './home/homev2/case-studies/case-studies.co
           component: ContactFormComponent,
         },
         {
+          path: 'pris',
+          component: RequestPriceFormComponent,
+        },
+        {
           path: 'gratis-hjemmeside-analyse',
           component: RequestWebsiteAuditFormComponent,
         },
