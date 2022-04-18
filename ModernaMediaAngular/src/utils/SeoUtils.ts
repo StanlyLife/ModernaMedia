@@ -36,9 +36,11 @@ export const SeoUtils = {
     title: '',
     description: '',
   },
-  FormsPriceRequest: {
-    title: '',
-    description: '',
+  FromsPrice: {
+    title:
+      'Få et pristilbud på din nye nettside, programvare, design eller SEO',
+    description:
+      'Vi tilbyr blant de rimeligste prisene i Norge på digitale tjenester som nettsider, programvare og design. Fortell om prosjektet ditt å få et pristilbud.',
   },
   BloggRestaurantHjemmeside: {
     title: 'Hvorfor trenger en restaurant en nettside?',
