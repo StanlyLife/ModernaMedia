@@ -173,7 +173,8 @@
       position: relative;
     }
     input,
-    textarea {
+    textarea,
+    select {
       margin: 0.5rem auto;
       width: 100%;
       max-width: 100%;
@@ -204,7 +205,8 @@
         box-shadow: $elevation-3;
       }
     }
-    input {
+    input,
+    select {
       padding-left: 32px;
     }
     .icon {
