@@ -69,8 +69,37 @@ namespace ModernaMediaDotNet.Controllers
                 if (!string.IsNullOrEmpty(model.phone))
                 {
                     string phoneNumberFormated = model.phone.Substring(model.phone.Length - 8);
-                    string MessageToContactRequester = $"Vi har mottatt din forespørsel om {model.analysis}-analyse for hemmesiden {model.website}. Vi kontakter deg snarest!\n\nDersom dette er en feil, send en epost til kontakt@modernamedia.no. Eller send melding til 902 65 326";
+                    string MessageToContactRequester = $"Vi har mottatt din forespørsel om {model.analysis}-analyse for hjemmesiden {model.website}. Vi kontakter deg snarest!\n\nDersom dette er en feil, send en epost til kontakt@modernamedia.no. Eller send melding til 902 65 326";
                     twillioService.SendMessageTo(MessageToContactRequester, "+47"+ phoneNumberFormated);
+                }
+                return Ok(result);
+            }
+            catch (System.Exception e)
+            {
+                logger.LogError($"Something went wrong: {e}");
+                return StatusCode(500, $"Internal server error: {e}");
+            }
+        }
+        [HttpPost]
+        public IActionResult Price(ContactPriceModel model)
+        {
+            string body = $"Melding fra MODERNA MEDIA - price request: \n" +
+                $"Service type: {model.service} \n" +
+                $"Business name: {model.business} \n" +
+                $"navn: {model.name} \n" +
+                $"epost: {model.email} \n" +
+                $"telefon: {model.phone} \n" +
+                $"innhold: {model.body}";
+            logger.LogInfo("Initializing message");
+            logger.LogInfo(body);
+            try
+            {
+                var result = twillioService.SendMessageToAdmin(body);
+                if (!string.IsNullOrEmpty(model.phone))
+                {
+                    string phoneNumberFormated = model.phone.Substring(model.phone.Length - 8);
+                    string MessageToContactRequester = $"Vi har mottatt din forespørsel om pris for {model.service}. Vi kontakter deg snarest!\n\nDersom dette er en feil, send en epost til kontakt@modernamedia.no. Eller send melding til 902 65 326";
+                    twillioService.SendMessageTo(MessageToContactRequester, "+47" + phoneNumberFormated);
                 }
                 return Ok(result);
             }
