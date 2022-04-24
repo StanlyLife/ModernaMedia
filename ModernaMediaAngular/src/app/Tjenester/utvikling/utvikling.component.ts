@@ -89,7 +89,7 @@ export class UtviklingComponent implements OnInit {
     },
     button: {
       text: 'Les mer om hjemmesider',
-      url: '/tjenester/bedrift/utvikling',
+      url: '/tjenester/bedrift/utvikling/hjemmeside-bedrift',
     },
     text: [
       'Uavhengig av industri, er en bedrifts online tilstedeværelse, altså nettsiden, bærekraften for suksess. En nettside består selvfølgelig av flere organ, men selve hjertet ligger i hjemmesiden. Det er på hjemmesiden du formidler visjonen, målet, spesialiteten, tjenestene, historien og stemmen til bedriften din. Her får kundene dine dannet seg et samlet bilde av profesjonalitet, verdier, arbeidsmetoder og identitet. ',
@@ -121,7 +121,7 @@ export class UtviklingComponent implements OnInit {
     },
     button: {
       text: 'Les mer om programvare',
-      url: '/tjenester/bedrift/utvikling',
+      url: '/tjenester/bedrift/utvikling/programvare',
     },
     text: [
       'En programvare er fellesbetegnelse for flere tjenester som sammen betjener en digital plattform. Når en nettside tar imot en bestilling eller reservasjon er det en programvare som synkroniserer disse tjenestene.',
