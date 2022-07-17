@@ -102,9 +102,7 @@ export class DesignComponent implements OnInit {
       url: '/tjenester/bedrift/design/',
     },
     text: [
-      'Grafisk design er kunsten å presentere visuelt innhold som kommuniserer en melding eller et innhold. Grafisk design kan være mye, blant annet en reklame i avis eller magasin, det kan være en plakat for en film eller et bedriftskort. For å gjøre det enkelt så kan du finne grafisk design overalt, blant annet på cola-flasken i kjøleskapet eller potetgullposen i sofaen.',
-      'Vi mener at design skal være rimelig, men at det er en investering. Faktisk mener vi i Moderna Media at alle våre tjenester og produkter er en investering. Dersom bedriften bruker flere tusen kroner på å annonsere i VG er det veldig dumt å bruke et grafisk design som ble tegnet i paint på fem minutter. På samme måte er det dumt å bruke et design du har betalt 500kr for.',
-      'Et godt grafisk design bruker statistikk og faktabasert informasjon for å oppnå størst og best mulig konvertering. Et eksempel på dette er da google byttet farge på lenkene i søket, faktisk byttet de bare mellom ulike blåfarger. Det ble testet omtrent 50 forskjellige blåfarger og resultatet var en ekstra omsetning på 200 millioner dollar.',
+      'Grafisk design er kunsten å presentere visuelt innhold som kommuniserer en melding eller et innhold. Grafisk design kan være mye, blant annet en reklame i avis eller magasin, det kan være en plakat for en film eller et bedriftskort. For å gjøre det enkelt så kan du finne grafisk design overalt, blant annet på cola-flasken i kjøleskapet eller potetgullposen i sofaen. Et godt grafisk design bruker statistikk og faktabasert informasjon for å oppnå størst og best mulig konvertering. Et eksempel på dette er da google byttet farge på lenkene i søket, faktisk byttet de bare mellom ulike blåfarger. Det ble testet omtrent 50 forskjellige blåfarger og resultatet var en ekstra omsetning på 200 millioner dollar. Dersom bedriften ønsker å ta med seg de konkurransefortrinnene en kan, anbefaler vi på det sterkeste å allokere tid til å finne de optimale løsningene og finne de designene din bedrift trenger for optimale resultater.',
       'Hos Moderna Media tar vi alt i betraktning for å gi bedriften din det beste grafiske designet slik at du ikke legger penger igjen på bordet!',
     ],
   };
@@ -155,17 +153,14 @@ export class DesignComponent implements OnInit {
       url: '/tjenester/bedrift/design/',
     },
     text: [
-      'En logo er et symbol bygget opp av tekst og grafikk som identifiserer bedriften din. Den skal enkelt kommuniserer bedriftens personlighet, tjenester, og verdier ved hjelp av fargeteori, former og fonter. Enkelt sagt, skal en god logo presentere et tydelig bilde av bedriten din.',
-      'Hos Moderna Media, bruker vi en kombinasjon av blå og lilla i vår logo. Ved første øyekast kan dette virke tilfeldig, men sannheten er at alle valg er nøye gjennomtenkt. Ifølge fargeteori representerer fargen blå tillit, stabilitet og seriøsitet. Noe vi ønsker å assosiere bedriften vår med. Vi har også tatt i bruk fargen lilla, da denne fargen ofte assosieres med noe ikke-naturlig, som teknologi. Lilla assosieres også med selvstendighet og ambisjon, noe vi mener reflekterer Moderna Media og våre kunder. ',
-      'Logo design omhandler mye mer enn å sette sammen former, farger og tekst. Det handler om å kommunisere bedriftens visjon, verdier, tjenester, personlighet og misjon på en effektiv og tydelig måte. ',
-      'En veldesignet logo kommer med flere gevinster, som: ',
+      'En logo skal enkelt kommunisere bedriftens personlighet, tjenester, og verdier ved hjelp av fargeteori, former og fonter. En god logo bør presentere et tydelig bilde av bedriften din og hva din bedrift står for',
+      'Logo design omhandler mye mer enn å sette sammen former, farger og tekst. Det handler om å kommunisere bedriftens visjon, verdier, tjenester, personlighet og misjon på en effektiv og tydelig måte.',
+      'En god logo bør:',
     ],
     listItems: [
-      'Godt førsteinntrykk av bedriften',
-      'Økt profesjonalitet',
-      'Styrket varemerke og identitet ',
-      'Bedre merkevaregjennkjenning',
-      'Styrket markedsoppmerksomhet ',
+      'Gi et godt førsteinntrykk av bedriften.',
+      'Si noe om hva bedriften gjør.',
+      'Gi en bedre merkevaregjenkjenning.',
     ],
     textSecond: [
       'Hos Moderna Media mener vi at bra logo design er en verdifull investering for enhver bedrift. Derfor har vi satt en bunnpris for våre logo design. Vi designer logoer for klienter med både små og store budsjetter.  Samtidig verdsetter vi å levere tjenester av topp kvalitet. Kontakt oss idag for et uforpliktet møte angående logodesign eller revisjon av din eksisterende logo! ',
