@@ -25,7 +25,7 @@ namespace ModernaMediaDotNet.Controllers
         public async Task<IActionResult> Get()
         {
             var client = new HttpClient();
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://trondheim-autopark.giantleap.net/public/rest/site/zone/7333/capacity");
+            var request = new HttpRequestMessage(HttpMethod.Get, "https://trondheim-autopark.giantleap.net/public/rest/site/zone/7378/capacity");
             request.Headers.Add("Authorization", "Basic c2l0ZXByb3BlcnR5Onc2cjI4ODI1YXNteDVxNThhcGxp");
             var response = await client.SendAsync(request);
             response.EnsureSuccessStatusCode();
