@@ -37,6 +37,7 @@ import { RequestPriceFormComponent } from './forms/request-price-form/request-pr
 import { RequestSeoAuditFormComponent } from './forms/request-audit-form/request-seo-audit-form.component';
 import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-form/request-website-audit-form.component';
 import { CaseStudiesComponent } from './home/homev2/case-studies/case-studies.component';
+import { TestimonialsComponent } from './home/homev2/testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { CaseStudiesComponent } from './home/homev2/case-studies/case-studies.co
     RequestSeoAuditFormComponent,
     RequestWebsiteAuditFormComponent,
     CaseStudiesComponent,
+    TestimonialsComponent,
     //
   ],
   imports: [
