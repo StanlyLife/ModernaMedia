@@ -78,7 +78,7 @@ export class BloggPostRestaurantHjemmesideComponent implements OnInit {
               "url": "https://modernamedia.no/assets/Images/LogoV2/Updated/Moderna%20Media%20-%20Logo%20&%20Text%20-%20Dark.jpg"
             }
           },
-          "datePublished": "${'2022-03-22'}",
+          "datePublished": "${'2024-01-14'}",
           "dateModified": "${formatDate(new Date(), 'yyyy-MM-dd', 'en')}",
           "description": "Ifølge en undersøkelse utført under pandemien, sa 82% av kundene at de er mye mer tilbøyelige for å besøke en restaurant etter å ha sett nettsiden til bedriften.",
           "articleBody": "
