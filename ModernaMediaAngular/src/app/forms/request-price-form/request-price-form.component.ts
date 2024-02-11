@@ -8,7 +8,7 @@ import { ViewportScroller } from '@angular/common';
 import {
   FormGroup,
   FormControl,
-  FormBuilder,
+  UntypedFormBuilder,
   Validators,
 } from '@angular/forms';
 @Component({
@@ -24,7 +24,7 @@ export class RequestPriceFormComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     private scroller: ViewportScroller,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private cs: ContactService,
     private meta: Meta,
     private title: Title,

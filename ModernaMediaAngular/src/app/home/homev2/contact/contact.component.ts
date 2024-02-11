@@ -5,7 +5,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { DomSanitizer, SafeUrl, Meta, Title } from '@angular/platform-browser';
 import { ViewportScroller } from '@angular/common';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -15,7 +15,7 @@ export class ContactComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
     private scroller: ViewportScroller,
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private cs: ContactService,
     private meta: Meta,
     private title: Title,
