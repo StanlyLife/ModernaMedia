@@ -6,10 +6,7 @@ import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {
-  BrowserModule,
-  BrowserTransferStateModule,
-} from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { AppRoutingModule } from './app-routing.module';
@@ -65,7 +62,6 @@ import { TestimonialsComponent } from './home/homev2/testimonials/testimonials.c
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     TransferHttpCacheModule,
-    BrowserTransferStateModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -73,7 +69,6 @@ import { TestimonialsComponent } from './home/homev2/testimonials/testimonials.c
     FormsModule,
     ReactiveFormsModule,
     TjenesterModule,
-
     RouterModule.forRoot(
       [
         {
