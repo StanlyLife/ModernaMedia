@@ -6,9 +6,11 @@ import { ComponentsModule } from './components/components.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { TransferHttpCacheModule } from '@nguniversal/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 //error
@@ -61,7 +63,6 @@ import { TestimonialsComponent } from './home/homev2/testimonials/testimonials.c
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
-    TransferHttpCacheModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
@@ -104,6 +105,7 @@ import { TestimonialsComponent } from './home/homev2/testimonials/testimonials.c
     MiscModule,
     ToolsModule,
   ],
+  providers: [provideClientHydration()],
   exports: [RouterModule],
   bootstrap: [AppComponent, NavBarComponent, FooterComponent],
 })
