@@ -1,0 +1,55 @@
+name: Angular Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ModernaMediaAngular
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ModernaMediaAngular/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build SSR bundles
+        run: npm run build:ssr
+
+      - name: Deploy to prod
+        uses: garygrossgarten/github-action-scp@release
+        with:
+          local: ${{ github.workspace }}/ModernaMediaAngular/dist/
+          remote: /var/www/ModernaMedia/Angular/dist
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_NAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
+
+      - name: Restart pm2
+        uses: garygrossgarten/github-action-ssh@v0.5.0
+        with:
+          command: pm2 restart moderna-media
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_NAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
+
+      - name: Restart web-dev service
+        uses: garygrossgarten/github-action-ssh@v0.5.0
+        with:
+          command: systemctl restart nginx
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.HOST_NAME }}
+          password: ${{ secrets.HOST_PASSWORD }}
