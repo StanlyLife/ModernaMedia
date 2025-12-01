@@ -6,12 +6,17 @@
     <header>
       <div class="subtitle">Gode grunner til å Modernisere</div>
       <h2 class="title">Derfor bør du velge Moderna Media</h2>
-      <app-testimonials></app-testimonials>
+      <div class="testimonials-grid">
+        <app-testimonials
+          *ngFor="let testimonial of testimonials"
+          [testimonial]="testimonial"
+        ></app-testimonials>
+      </div>
 
       <p class="section-info">
-        Tjenestene vi tilbyr skal være en investering, ikke en kostnad. Digital
-        markedsføring handler om mer enn kun synlighet eller betalt reklamering:
-        Det handler om å skape spesifikke og målbare resultater.
+        <b>Tjenestene vi tilbyr skal være en investering, ikke en kostnad.</b>
+        Digital markedsføring handler om mer enn kun synlighet eller betalt
+        reklamering: Det handler om å skape spesifikke og målbare resultater.
       </p>
     </header>
     <div class="usp-container">

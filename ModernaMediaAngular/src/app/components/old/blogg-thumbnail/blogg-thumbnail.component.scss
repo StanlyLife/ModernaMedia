@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 
 $imgWidth: 100%;
 
@@ -74,3 +74,4 @@ $imgWidth: 100%;
     }
   }
 }
+

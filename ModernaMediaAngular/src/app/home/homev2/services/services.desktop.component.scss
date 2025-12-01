@@ -1,4 +1,4 @@
-@import "../../../../variables.scss";
+﻿@use "src/variables" as *;
 $min-height-service: 405px;
 @media screen and (min-width: $desktop) {
   section.services {
@@ -33,3 +33,4 @@ $min-height-service: 405px;
     }
   }
 }
+

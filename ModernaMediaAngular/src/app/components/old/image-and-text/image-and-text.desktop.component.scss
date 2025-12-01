@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 
 @media screen and (min-width: 900px) {
   section.moderna-media-large-usp {
@@ -26,3 +26,4 @@
     }
   }
 }
+

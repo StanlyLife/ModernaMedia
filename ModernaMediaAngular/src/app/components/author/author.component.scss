@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 .author {
   width: 350px;
   display: flex;
@@ -38,3 +38,4 @@
     }
   }
 }
+

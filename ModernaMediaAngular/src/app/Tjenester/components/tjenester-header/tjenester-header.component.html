@@ -5,7 +5,7 @@
         [src]="sanitizeImageUrl(data.background.src)"
         alt="{{ data.background.alt }}"
         class="landing-image"
-      />
+        />
       <div class="bg-shade"></div>
     </div>
     <div class="content">
@@ -14,7 +14,7 @@
           class="icon"
           [src]="sanitizeImageUrl(data.icon.src)"
           alt="{{ data.icon.alt }}"
-        />
+          />
       </div>
       <div class="titles">
         <p class="text-glow">{{ data.title }}</p>
@@ -23,11 +23,13 @@
         </h1>
       </div>
       <ul class="links">
-        <li class="link-container" *ngFor="let i of data.links">
-          <button class="header-link" (click)="scrollToId(i.url)">
-            {{ i.title }}
-          </button>
-        </li>
+        @for (i of data.links; track i) {
+          <li class="link-container">
+            <button class="header-link" (click)="scrollToId(i.url)">
+              {{ i.title }}
+            </button>
+          </li>
+        }
       </ul>
     </div>
   </div>

@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 
 .contact-form .bg {
   position: absolute;
@@ -221,3 +221,4 @@
     }
   }
 }
+

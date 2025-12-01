@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { Component } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-about-your-next-project',
@@ -10,12 +10,13 @@ import { RouterModule } from '@angular/router';
     './about-your-next-project.component.scss',
     './about-your-next-project.desktop.component.scss',
   ],
+  standalone: true,
+  imports: [CommonModule],
 })
-export class AboutYourNextProjectComponent implements OnInit {
+export class AboutYourNextProjectComponent {
   constructor(private sanitizer: DomSanitizer) {}
   sanitizeImageUrl(imageUrl: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
   imageCdn = environment.img;
-  ngOnInit(): void {}
 }

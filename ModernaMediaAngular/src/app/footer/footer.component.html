@@ -1,113 +1,115 @@
-<footer *ngIf="!hidden">
-  <div class="wrapper">
-    <div class="logo-copyright-container">
-      <div class="logo">
-        <img
+@if (!hidden) {
+  <footer>
+    <div class="wrapper">
+      <div class="logo-copyright-container">
+        <div class="logo">
+          <img
           [src]="
             sanitizeImageUrl('../../assets/Images/LogoV2/modernamedia-name.svg')
           "
-          alt="Moderna Media digitalbyrå logo"
-        />
-      </div>
-      <div class="copyright">
-        Copyright © 2024 Moderna Media orgnr. 926 670 018. All Rights Reserved.
-        Designet og bygget i Norge.
-      </div>
-    </div>
-    <div class="links-contact-container">
-      <div class="links">
-        <p class="strong">Lenker.</p>
-        <div class="link-container">
-          <div class="utvikling child">
-            <a href="" class="top-level-link">Utvikling</a>
-            <a href="">Nettsider</a>
-            <a href="">System</a>
-          </div>
-          <div class="design child">
-            <a href="" class="top-level-link">Design</a>
-            <a href="">Logo</a>
-            <a href="">Webdesign</a>
-          </div>
-          <div class="seo child">
-            <a href="" class="top-level-link">SEO</a>
-            <a href="">innholdsproduksjon</a>
-            <a href="">Teknsik SEO</a>
-            <a href="">Off-page SEO</a>
-          </div>
+            alt="Moderna Media digitalbyrå logo"
+            />
+        </div>
+        <div class="copyright">
+          Copyright © 2024 Moderna Media orgnr. 926 670 018. All Rights Reserved.
+          Designet og bygget i Norge.
         </div>
       </div>
-      <div class="contact">
-        <p class="strong">Kontakt oss.</p>
-        <div class="phone">
-          <img
+      <div class="links-contact-container">
+        <div class="links">
+          <p class="strong">Lenker.</p>
+          <div class="link-container">
+            <div class="utvikling child">
+              <a href="" class="top-level-link">Utvikling</a>
+              <a href="">Nettsider</a>
+              <a href="">System</a>
+            </div>
+            <div class="design child">
+              <a href="" class="top-level-link">Design</a>
+              <a href="">Logo</a>
+              <a href="">Webdesign</a>
+            </div>
+            <div class="seo child">
+              <a href="" class="top-level-link">SEO</a>
+              <a href="">innholdsproduksjon</a>
+              <a href="">Teknsik SEO</a>
+              <a href="">Off-page SEO</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact">
+          <p class="strong">Kontakt oss.</p>
+          <div class="phone">
+            <img
             [src]="
               sanitizeImageUrl('../../assets/Images/Icons/inputs/call.svg')
             "
-            role="presentation"
-            alt=""
-          />
-          <p>Telefon: <a href="tel:90265326">902 65 326</a></p>
-        </div>
-        <div class="phone">
-          <img
+              role="presentation"
+              alt=""
+              />
+            <p>Telefon: <a href="tel:90265326">902 65 326</a></p>
+          </div>
+          <div class="phone">
+            <img
             [src]="
               sanitizeImageUrl('../../assets/Images/Icons/inputs/email.svg')
             "
-            role="presentation"
-            alt=""
-          />
-          <p>
-            E-post:
-            <a href="mailto:kontakt@modernamedia.no">kontakt&#64;modernamedia.no</a>
-          </p>
+              role="presentation"
+              alt=""
+              />
+            <p>
+              E-post:
+              <a href="mailto:kontakt@modernamedia.no">kontakt&#64;modernamedia.no</a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="some">
-      <p class="strong find-us">Finn oss.</p>
-      <div class="some-links">
-        <a
-          href="https://www.facebook.com/ModernaMedia"
-          rel="nofollow"
-          title="moderna media facebook"
-          title="Moderna Media Digitalbyrå facebook"
-        >
-          <img
+      <div class="some">
+        <p class="strong find-us">Finn oss.</p>
+        <div class="some-links">
+          <a
+            href="https://www.facebook.com/ModernaMedia"
+            rel="nofollow"
+            title="moderna media facebook"
+            title="Moderna Media Digitalbyrå facebook"
+            >
+            <img
             [src]="
               sanitizeImageUrl('../../assets/Images/Icons/footer/facebook.svg')
             "
-            rel="nofollow"
-            role="presentation"
-            alt="facebook logo"
-          />
-        </a>
-        <a
-          href="https://www.instagram.com/moderna_media/"
-          title="moderna media instagram"
-          title="Moderna Media Digitalbyrå instagram"
-        >
-          <img
-            [src]="'../../assets/Images/Icons/footer/instagram.svg'"
-            rel="nofollow"
-            role="presentation"
-            alt="instagram logo"
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/company/moderna-media"
-          title="moderna media linkedin"
-          title="Moderna Media Digitalbyrå linkedin"
-        >
-          <img
+              rel="nofollow"
+              role="presentation"
+              alt="facebook logo"
+              />
+          </a>
+          <a
+            href="https://www.instagram.com/moderna_media/"
+            title="moderna media instagram"
+            title="Moderna Media Digitalbyrå instagram"
+            >
+            <img
+              [src]="'../../assets/Images/Icons/footer/instagram.svg'"
+              rel="nofollow"
+              role="presentation"
+              alt="instagram logo"
+              />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/moderna-media"
+            title="moderna media linkedin"
+            title="Moderna Media Digitalbyrå linkedin"
+            >
+            <img
             [src]="
               sanitizeImageUrl('../../assets/Images/Icons/footer/linkedin.svg')
             "
-            rel="nofollow"
-            role="presentation"
-            alt="linkedin logo"
-          />
-        </a>
+              rel="nofollow"
+              role="presentation"
+              alt="linkedin logo"
+              />
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
+}

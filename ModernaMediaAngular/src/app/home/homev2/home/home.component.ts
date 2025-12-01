@@ -1,11 +1,30 @@
-import { SeoUtils } from './../../../../utils/SeoUtils';
 import { Component, OnInit } from '@angular/core';
-import { SeoService } from './../../../services/seo.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from './../../../services/seo.service';
+import { SeoUtils } from './../../../../utils/SeoUtils';
+import { LandingComponent } from '../landing/landing.component';
+import { UspComponent } from '../usp/usp.component';
+import { ServicesComponent } from '../services/services.component';
+import { AboutComponent } from '../about/about.component';
+import { PricesComponent } from '../prices/prices.component';
+import { ContactComponent } from '../contact/contact.component';
+import { BlogShowcaseComponent } from '../blog-showcase/blog-showcase.component';
+import { AboutYourNextProjectComponent } from '../../../components/about-your-next-project/about-your-next-project.component';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  standalone: true,
+  imports: [
+    LandingComponent,
+    UspComponent,
+    ServicesComponent,
+    AboutComponent,
+    PricesComponent,
+    ContactComponent,
+    BlogShowcaseComponent,
+    AboutYourNextProjectComponent,
+  ],
 })
 export class HomeComponent implements OnInit {
   constructor(

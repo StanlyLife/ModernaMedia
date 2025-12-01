@@ -1,0 +1,118 @@
+<ng-container *ngIf="caseStudy as cs; else missingCase">
+  <section
+    class="cs-hero"
+    [style.background-image]="'url(' + cs.heroImage + ')'"
+    role="banner"
+    [attr.aria-label]="cs.heroImageAlt || cs.title"
+  >
+    <div
+      class="cs-hero__backdrop"
+      aria-hidden="true"
+      [style.background]="getHeroOverlay(cs)"
+    ></div>
+    <div class="cs-hero__content">
+      <p class="eyebrow">
+        {{ cs.industry }} • {{ cs.location }} • {{ cs.timeframe }}
+      </p>
+      <h1>{{ cs.title }}</h1>
+      <p class="subtitle">{{ cs.subtitle }}</p>
+      <p class="summary">
+        {{ cs.summary }}
+      </p>
+      <ul class="service-tags">
+        <li *ngFor="let service of cs.services; trackBy: trackByIndex">
+          {{ service }}
+        </li>
+      </ul>
+      <div class="hero-stats">
+        <article
+          class="hero-stat"
+          *ngFor="let stat of cs.stats; trackBy: trackByIndex"
+          aria-label="{{ stat.label }}"
+        >
+          <p class="value">{{ stat.value }}</p>
+          <p class="label">{{ stat.label }}</p>
+          <p class="description" *ngIf="stat.description">
+            {{ stat.description }}
+          </p>
+        </article>
+      </div>
+    </div>
+    <p class="hero-caption" *ngIf="cs.heroImageCaption || cs.heroImageAlt">
+      {{ cs.heroImageCaption || cs.heroImageAlt }}
+    </p>
+  </section>
+
+  <section class="cs-body" aria-label="Case study detaljer">
+    <article
+      class="cs-section"
+      *ngFor="let section of cs.sections; trackBy: trackByIndex"
+    >
+      <header>
+        <p class="eyebrow">Case insight</p>
+        <h2>{{ section.title }}</h2>
+      </header>
+      <div class="cs-section__content">
+        <p *ngFor="let paragraph of section.body; trackBy: trackByIndex">
+          {{ paragraph }}
+        </p>
+        <div class="bullets" *ngIf="section.bullets?.length">
+          <p class="bullet-title" *ngIf="section.bulletTitle">
+            {{ section.bulletTitle }}
+          </p>
+          <ul>
+            <li *ngFor="let bullet of section.bullets; trackBy: trackByIndex">
+              {{ bullet }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section
+    class="cs-gallery"
+    *ngIf="cs.gallery?.length"
+    aria-label="Tilleggsbilder"
+  >
+    <figure *ngFor="let media of cs.gallery; trackBy: trackByIndex">
+      <img [src]="media.src" [alt]="media.alt" loading="lazy" />
+      <figcaption *ngIf="media.caption">{{ media.caption }}</figcaption>
+    </figure>
+  </section>
+
+  <section class="cs-testimonial">
+    <div class="quote-card">
+      <p class="eyebrow">Kundetilbakemelding</p>
+      <p class="quote">“{{ cs.testimonial.quote }}”</p>
+      <p class="author">
+        {{ cs.testimonial.name }} · {{ cs.testimonial.role }},
+        {{ cs.testimonial.company }}
+      </p>
+    </div>
+    <div class="outcome-card">
+      <p class="eyebrow">Hva vi leverte</p>
+      <ul>
+        <li *ngFor="let outcome of cs.outcomes; trackBy: trackByIndex">
+          <h3>{{ outcome.title }}</h3>
+          <p>{{ outcome.description }}</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <app-about-your-next-project></app-about-your-next-project>
+
+  <script
+    type="application/ld+json"
+    *ngIf="structuredData"
+    [innerHTML]="structuredData"
+  ></script>
+</ng-container>
+
+<ng-template #missingCase>
+  <section class="cs-empty">
+    <p>Vi finner ikke casen du leter etter.</p>
+    <a routerLink="/" class="btn">Til forsiden</a>
+  </section>
+</ng-template>

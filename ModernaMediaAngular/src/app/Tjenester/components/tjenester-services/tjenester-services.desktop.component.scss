@@ -1,4 +1,4 @@
-@import "/src/variables.scss";
+﻿@use "src/variables" as *;
 @media screen and (min-width: $tablet) {
   .tjenester {
     .tjenester-container {
@@ -41,3 +41,4 @@
     }
   }
 }
+

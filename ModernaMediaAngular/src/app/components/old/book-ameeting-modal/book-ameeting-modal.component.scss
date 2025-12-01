@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 .Moderna-Media-book-a-meeting {
   .bg {
     height: 100vh;
@@ -60,7 +60,7 @@
       padding: 10px 0;
 
       &::before {
-        content: "•";
+        content: "â€¢";
       }
     }
     textarea {
@@ -103,3 +103,4 @@
     background-image: none;
   }
 }
+

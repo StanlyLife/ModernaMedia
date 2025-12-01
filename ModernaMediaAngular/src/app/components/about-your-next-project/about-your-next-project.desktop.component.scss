@@ -1,4 +1,4 @@
-@import "/src/variables.scss";
+﻿@use "src/variables" as *;
 
 @media screen and (min-width: 800px) {
   .about-your-next-project {
@@ -24,3 +24,4 @@
     margin: 0 0;
   }
 }
+

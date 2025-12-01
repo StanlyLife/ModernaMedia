@@ -1,13 +1,15 @@
-import { SeoService } from '../../../services/seo.service';
-import { Meta, Title } from '@angular/platform-browser';
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { ViewportScroller } from '@angular/common';
+import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from '../../../services/seo.service';
+import { AboutYourNextProjectComponent } from '../../../components/about-your-next-project/about-your-next-project.component';
 @Component({
   selector: 'app-utvikling-hjemmeside',
   templateUrl: './utvikling-hjemmeside.component.html',
   styleUrls: ['./utvikling-hjemmeside.component.scss'],
+  standalone: true,
+  imports: [CommonModule, AboutYourNextProjectComponent],
 })
 export class UtviklingHjemmesideComponent implements OnInit {
   constructor(
@@ -34,7 +36,7 @@ export class UtviklingHjemmesideComponent implements OnInit {
     });
   }
 
-  scrollToId(id) {
+  scrollToId(id: string) {
     this.scroller.scrollToAnchor(id);
   }
   sanitizeImageUrl(imageUrl: string): SafeUrl {

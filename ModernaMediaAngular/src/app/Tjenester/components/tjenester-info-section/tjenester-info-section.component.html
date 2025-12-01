@@ -9,24 +9,30 @@
           <p class="subtitle-gradient blue">{{ data.header.subtitle }}</p>
           <h2 class="title-bold">{{ data.header.title }}</h2>
         </div>
-        <p class="text-section" *ngFor="let text of data.text">
-          {{ text }}
-        </p>
+        @for (text of data.text; track text) {
+          <p class="text-section">
+            {{ text }}
+          </p>
+        }
         <ul class="usp-list">
-          <li *ngFor="let li of data.listItems">{{ li }}</li>
+          @for (li of data.listItems; track li) {
+            <li>{{ li }}</li>
+          }
         </ul>
-        <p class="text-section" *ngFor="let text of data.textSecond">
-          {{ text }}
-        </p>
+        @for (text of data.textSecond; track text) {
+          <p class="text-section">
+            {{ text }}
+          </p>
+        }
       </article>
       <div class="buttons">
         <a href="#kontakt" class="btn cta shadow"
           ><p>Book et uforpliktet møte</p></a
-        >
-        <a [routerLink]="data.button.url" class="btn cta-2"
-          ><p>{{ data.button.text }}</p></a
-        >
+          >
+          <a [routerLink]="data.button.url" class="btn cta-2"
+            ><p>{{ data.button.text }}</p></a
+            >
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>

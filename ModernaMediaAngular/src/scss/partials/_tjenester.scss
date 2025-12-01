@@ -1,4 +1,4 @@
-@import "../../variables.scss";
+﻿@use "src/variables" as *;
 
 /*LANDING COMPONENT*/
 /*LANDING COMPONENT*/
@@ -528,3 +528,4 @@ section.prices {
     list-style: none;
   }
 }
+

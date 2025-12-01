@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 
 .toast-container {
   position: fixed;
@@ -117,3 +117,4 @@
     transform: translateX(-6px) rotate(-1.2deg);
   }
 }
+

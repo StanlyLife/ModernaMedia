@@ -1,21 +1,25 @@
-import { Router } from '@angular/router';
-import { WindowRefService } from './../../services/window-ref.service';
+import { CommonModule, formatDate, isPlatformBrowser } from '@angular/common';
 import {
   Component,
   Inject,
   OnInit,
   PLATFORM_ID,
   Renderer2,
+  DOCUMENT,
 } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
+import { Router } from '@angular/router';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { SeoService } from 'src/app/services/seo.service';
-import { isPlatformBrowser, DOCUMENT } from '@angular/common';
-import { formatDate } from '@angular/common';
+import { AuthorComponent } from '../../components/author/author.component';
+import { WindowRefService } from './../../services/window-ref.service';
 
 @Component({
   selector: 'app-developer-salaray-charts',
   templateUrl: './developer-salaray-charts.component.html',
   styleUrls: ['./developer-salaray-charts.component.scss'],
+  standalone: true,
+  imports: [CommonModule, NgxChartsModule, AuthorComponent],
 })
 export class DeveloperSalarayChartsComponent implements OnInit {
   DeveloperSalaryReady = false;

@@ -1,4 +1,4 @@
-@import "../../../../variables.scss";
+﻿@use "src/variables" as *;
 @media screen and (min-width: $tablet) {
   section.prices-section {
     .wrapper header.prices-section-header .header-content {

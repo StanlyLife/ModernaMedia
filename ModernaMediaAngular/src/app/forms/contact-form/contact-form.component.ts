@@ -1,16 +1,15 @@
-import { SeoService } from 'src/app/services/seo.service';
-import { SeoUtils } from 'src/utils/SeoUtils';
-import { ContactService } from './../../services/contact.service';
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
-import { DomSanitizer, SafeUrl, Meta, Title } from '@angular/platform-browser';
-import { ViewportScroller } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import {
-  FormGroup,
-  FormControl,
+  ReactiveFormsModule,
   UntypedFormBuilder,
   Validators,
 } from '@angular/forms';
+import { environment } from 'src/environments/environment.prod';
+import { ContactService } from './../../services/contact.service';
+import { SeoService } from 'src/app/services/seo.service';
+import { SeoUtils } from 'src/utils/SeoUtils';
 @Component({
   selector: 'app-contact-form',
   templateUrl: './contact-form.component.html',
@@ -18,6 +17,8 @@ import {
     './contact-form.component.scss',
     './contact-form.desktop.component.scss',
   ],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
 })
 export class ContactFormComponent implements OnInit {
   constructor(
@@ -54,7 +55,7 @@ export class ContactFormComponent implements OnInit {
     title: 'Kontakt oss',
     subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktet!',
   };
-  scrollToId(id) {
+  scrollToId(id: string) {
     this.scroller.scrollToAnchor(id);
   }
   sanitizeImageUrl(imageUrl: string): SafeUrl {

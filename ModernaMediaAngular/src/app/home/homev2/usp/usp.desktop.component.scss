@@ -1,4 +1,4 @@
-@import "../../../../variables.scss";
+﻿@use "src/variables" as *;
 
 @media screen and (min-width: 1100px) {
   section.usp-section {
@@ -14,3 +14,4 @@
     }
   }
 }
+

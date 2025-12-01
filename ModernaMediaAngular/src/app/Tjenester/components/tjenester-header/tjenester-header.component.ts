@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { CommonModule, ViewportScroller } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { ViewportScroller } from '@angular/common';
+import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-tjenester-header',
   templateUrl: './tjenester-header.component.html',
@@ -9,14 +9,15 @@ import { ViewportScroller } from '@angular/common';
     './tjenester-header.component.scss',
     './tjenester-header.desktop.component.scss',
   ],
+  standalone: true,
+  imports: [CommonModule],
 })
-export class TjenesterHeaderComponent implements OnInit {
+export class TjenesterHeaderComponent {
   constructor(
     private sanitizer: DomSanitizer,
     private scroller: ViewportScroller
   ) {}
   imageCdn = environment.img;
-  ngOnInit(): void {}
   @Input() data: any = {
     background: {
       alt: '',
@@ -35,7 +36,7 @@ export class TjenesterHeaderComponent implements OnInit {
       { title: 'Hjemmesider', url: 'website' },
     ],
   };
-  scrollToId(id) {
+  scrollToId(id: string) {
     this.scroller.scrollToAnchor(id);
   }
   sanitizeImageUrl(imageUrl: string): SafeUrl {

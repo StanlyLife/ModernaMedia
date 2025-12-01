@@ -1,11 +1,14 @@
-import { Location } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 
 @Component({
   selector: 'app-nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss', './nav-bar.desktop.component.scss'],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
 })
 export class NavBarComponent implements OnInit {
   public nav;

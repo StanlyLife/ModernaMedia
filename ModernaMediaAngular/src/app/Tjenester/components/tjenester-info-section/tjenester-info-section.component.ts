@@ -1,9 +1,15 @@
-import { Renderer2, Component, Input, OnInit, Inject } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { CommonModule, formatDate } from '@angular/common';
+import {
+  Component,
+  Inject,
+  Input,
+  OnInit,
+  Renderer2,
+  DOCUMENT,
+} from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { DOCUMENT } from '@angular/common';
-import { Router } from '@angular/router';
-import { formatDate } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
+import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-tjenester-info-section',
   templateUrl: './tjenester-info-section.component.html',
@@ -11,6 +17,8 @@ import { formatDate } from '@angular/common';
     './tjenester-info-section.component.scss',
     './tjenester-info-section.desktop.component.scss',
   ],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
 })
 export class TjenesterInfoSectionComponent implements OnInit {
   constructor(

@@ -1,4 +1,4 @@
-@import "/src/variables.scss";
+﻿@use "src/variables" as *;
 .design-system {
   .container {
     background: $light;
@@ -55,3 +55,4 @@
     background-color: $base-color;
   }
 }
+

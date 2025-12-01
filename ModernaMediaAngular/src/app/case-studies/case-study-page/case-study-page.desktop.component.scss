@@ -1,0 +1,39 @@
+@use "src/variables" as *;
+
+@media (min-width: 992px) {
+  .cs-hero {
+    padding: 96px clamp(48px, 8vw, 140px) 128px;
+  }
+
+  .cs-hero__content {
+    max-width: 1040px;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+  }
+
+  .cs-body {
+    gap: 48px;
+    padding: 0 64px;
+  }
+
+  .cs-section {
+    padding-left: 56px;
+  }
+
+  .cs-section__content {
+    padding: 40px 48px;
+  }
+
+  .cs-testimonial {
+    flex-direction: row;
+    gap: 32px;
+    padding: 64px 64px 104px;
+  }
+
+  .quote-card,
+  .outcome-card {
+    flex: 1;
+  }
+}

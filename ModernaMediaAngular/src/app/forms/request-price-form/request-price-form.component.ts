@@ -1,16 +1,14 @@
-import { SeoService } from 'src/app/services/seo.service';
-import { SeoUtils } from 'src/utils/SeoUtils';
-import { ContactService } from './../../services/contact.service';
-import { Component, Input, OnInit, Output } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
-import { DomSanitizer, SafeUrl, Meta, Title } from '@angular/platform-browser';
-import { ViewportScroller } from '@angular/common';
+import { CommonModule } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import {
-  FormGroup,
-  FormControl,
+  ReactiveFormsModule,
   UntypedFormBuilder,
   Validators,
 } from '@angular/forms';
+import { ContactService } from './../../services/contact.service';
+import { SeoService } from 'src/app/services/seo.service';
+import { SeoUtils } from 'src/utils/SeoUtils';
 @Component({
   selector: 'app-request-price-form',
   templateUrl: './request-price-form.component.html',
@@ -19,11 +17,12 @@ import {
     '../contact-form/contact-form.component.scss',
     '../contact-form/contact-form.desktop.component.scss',
   ],
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule],
 })
 export class RequestPriceFormComponent implements OnInit {
   constructor(
     private sanitizer: DomSanitizer,
-    private scroller: ViewportScroller,
     private fb: UntypedFormBuilder,
     private cs: ContactService,
     private meta: Meta,
@@ -89,7 +88,7 @@ export class RequestPriceFormComponent implements OnInit {
       //   this.contactForm.controls['service'].touched) ||
       (!this.contactForm.controls['body'].valid &&
         this.contactForm.controls['body'].touched));
-  ChangingValue(e) {
+  ChangingValue(e: Event) {
     console.log(e);
   }
 }

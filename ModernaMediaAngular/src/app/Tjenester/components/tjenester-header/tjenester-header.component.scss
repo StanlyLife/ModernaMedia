@@ -1,4 +1,4 @@
-@import "../../../../variables.scss";
+﻿@use "src/variables" as *;
 
 .landing .bg {
   position: absolute;
@@ -92,3 +92,4 @@
 
 @media screen and (max-width: 465px) {
 }
+

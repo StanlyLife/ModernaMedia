@@ -1,4 +1,4 @@
-@import "../../../../variables.scss";
+﻿@use "src/variables" as *;
 
 .about {
   padding: 0px;
@@ -76,3 +76,4 @@
     }
   }
 }
+

@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 
 @media screen and (min-width: $tablet) {
   .blogg-post {
@@ -33,3 +33,4 @@
     }
   }
 }
+

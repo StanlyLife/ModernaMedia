@@ -6,33 +6,34 @@
     </header>
     <div class="blogs">
       <!-- BLOGG -->
-      <a
-        [routerLink]="blogg.url"
-        *ngFor="let blogg of blogs"
-        class="blogg-link"
-      >
-        <section class="blogg" title="{{ blogg.Title }}">
-          <header>
-            <img src="{{ blogg.img }}" alt="{{ blogg.alt }}" />
-          </header>
-          <div class="wrapper">
-            <h3>{{ blogg.Title }}</h3>
-            <p>{{ blogg.Description }}</p>
-            <p class="les-mer">
-              Les mer
-              <img
+      @for (blogg of blogs; track blogg) {
+        <a
+          [routerLink]="blogg.url"
+          class="blogg-link"
+          >
+          <section class="blogg" title="{{ blogg.Title }}">
+            <header>
+              <img src="{{ blogg.img }}" alt="{{ blogg.alt }}" />
+            </header>
+            <div class="wrapper">
+              <h3>{{ blogg.Title }}</h3>
+              <p>{{ blogg.Description }}</p>
+              <p class="les-mer">
+                Les mer
+                <img
                 [src]="
                   sanitizeImageUrl(
                     '../../../../assets/Images/Icons/right-arrow.svg'
                   )
                 "
-                role="presentation"
-                alt="{{ blogg.alt }}"
-              />
-            </p>
-          </div>
-        </section>
-      </a>
+                  role="presentation"
+                  alt="{{ blogg.alt }}"
+                  />
+              </p>
+            </div>
+          </section>
+        </a>
+      }
     </div>
   </div>
 </section>

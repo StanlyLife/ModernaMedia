@@ -1,4 +1,4 @@
-@import "./variables.scss";
+﻿@use "src/variables" as *;
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
@@ -260,3 +260,4 @@ h2.subtitle-gradient {
 .ngx-charts-tooltip-content.type-tooltip {
   background-color: $light !important;
 }
+

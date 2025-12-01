@@ -1,15 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-designsystem',
   templateUrl: './designsystem.component.html',
-  styleUrls: ['./designsystem.component.scss']
+  styleUrls: ['./designsystem.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
-export class DesignsystemComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class DesignsystemComponent {}

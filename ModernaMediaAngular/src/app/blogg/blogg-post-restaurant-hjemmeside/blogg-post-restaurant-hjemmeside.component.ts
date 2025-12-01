@@ -1,19 +1,12 @@
+import { CommonModule, ViewportScroller, formatDate } from '@angular/common';
+import { Component, Inject, OnInit, Renderer2, DOCUMENT } from '@angular/core';
+import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { SeoService } from 'src/app/services/seo.service';
 import { SeoUtils } from 'src/utils/SeoUtils';
+import { AboutYourNextProjectComponent } from '../../components/about-your-next-project/about-your-next-project.component';
 import { ContactService } from './../../services/contact.service';
-import {
-  Component,
-  Input,
-  OnInit,
-  Output,
-  Renderer2,
-  Inject,
-} from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
-import { DomSanitizer, SafeUrl, Meta, Title } from '@angular/platform-browser';
-import { ViewportScroller, DOCUMENT } from '@angular/common';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-blogg-post-restaurant-hjemmeside',
@@ -22,6 +15,8 @@ import { formatDate } from '@angular/common';
     './blogg-post-restaurant-hjemmeside.component.scss',
     './blogg-post-restaurant-hjemmeside.desktop.component.scss',
   ],
+  standalone: true,
+  imports: [CommonModule, AboutYourNextProjectComponent],
 })
 export class BloggPostRestaurantHjemmesideComponent implements OnInit {
   constructor(
@@ -139,7 +134,7 @@ export class BloggPostRestaurantHjemmesideComponent implements OnInit {
 
     this._renderer2.appendChild(this._document.body, script);
   }
-  scrollToId(id) {
+  scrollToId(id: string) {
     this.scroller.scrollToAnchor(id);
   }
   sanitizeImageUrl(imageUrl: string): SafeUrl {

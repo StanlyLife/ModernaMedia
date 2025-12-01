@@ -1,4 +1,4 @@
-@import "/src/variables.scss";
+﻿@use "src/variables" as *;
 .not-found {
   //   background: linear-gradient(45deg, #d06b30 0%, #c43ad6e3 50%, #30cfd0 100%);
   background: linear-gradient(
@@ -92,3 +92,4 @@
     background-position: 0% 50%;
   }
 }
+

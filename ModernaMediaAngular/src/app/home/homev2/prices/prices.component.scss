@@ -1,4 +1,4 @@
-@import "../../../../variables.scss";
+﻿@use "src/variables" as *;
 
 section.prices-section {
   .prices-section-header {
@@ -45,7 +45,6 @@ section.prices-section {
     margin-top: 30px;
     @include flexR;
     flex-wrap: wrap;
-    justify-content: center;
   }
   .price-box {
     margin: 1rem auto;

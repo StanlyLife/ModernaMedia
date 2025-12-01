@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 .wrapper {
   padding: 50px 0;
   // background-color: $light;
@@ -132,7 +132,7 @@ ul.list-decoration-disc li {
     padding: 0 0;
   }
   &::before {
-    content: "•";
+    content: "â€¢";
     padding-right: 5px;
     height: 100%;
   }
@@ -175,3 +175,4 @@ hr {
   border-radius: 500px;
   background-color: $dark-transparent-30;
 }
+

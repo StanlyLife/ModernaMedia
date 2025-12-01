@@ -1,14 +1,15 @@
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { WindowRefService } from './../services/window-ref.service';
+import { CommonModule, Location } from '@angular/common';
 import { Component, OnInit, Renderer2 } from '@angular/core';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { environment } from './../../environments/environment.prod';
-import { Location } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { WindowRefService } from './../services/window-ref.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss', './footer.desktop.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
 export class FooterComponent implements OnInit {
   constructor(

@@ -10,18 +10,20 @@
       </p>
     </div>
     <div class="service-wrapper">
-      <div class="service-container" *ngFor="let service of data.services">
-        <a href="{{ service.link }}" class="service">
-          <img
-            class="icon"
-            [src]="sanitizeImageUrl(service.icon.src)"
-            alt="{{ service.icon.alt }}"
-          />
-          <p class="subtitle-gradient">{{ service.title }}</p>
-          <p class="service-text">{{ service.text }}</p>
-          <p class="read-more">Les mer</p>
-        </a>
-      </div>
+      @for (service of data.services; track service) {
+        <div class="service-container">
+          <a href="{{ service.link }}" class="service">
+            <img
+              class="icon"
+              [src]="sanitizeImageUrl(service.icon.src)"
+              alt="{{ service.icon.alt }}"
+              />
+            <p class="subtitle-gradient">{{ service.title }}</p>
+            <p class="service-text">{{ service.text }}</p>
+            <p class="read-more">Les mer</p>
+          </a>
+        </div>
+      }
     </div>
   </div>
 </section>

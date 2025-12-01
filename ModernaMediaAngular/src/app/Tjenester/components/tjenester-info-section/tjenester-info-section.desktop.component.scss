@@ -1,4 +1,4 @@
-@import "/src/variables.scss";
+﻿@use "src/variables" as *;
 .info {
   min-height: 900px;
   &.white {
@@ -41,3 +41,4 @@
   &.left {
   }
 }
+

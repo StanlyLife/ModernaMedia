@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { BehaviorSubject } from 'rxjs';
 import { toast } from '../components/toast/toast.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ToastService {
-  public Toasts = new BehaviorSubject<Array<object>>([]);
+  public Toasts = new BehaviorSubject<Array<toast>>([]);
 
   constructor() {}
 

@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 section {
   &.white {
     color: $dark;
@@ -28,3 +28,4 @@ section {
     }
   }
 }
+

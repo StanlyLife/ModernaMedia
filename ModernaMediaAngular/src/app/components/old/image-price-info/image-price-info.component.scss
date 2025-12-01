@@ -1,4 +1,4 @@
-@import "../../../variables.scss";
+﻿@use "src/variables" as *;
 
 section.moderna-media-product {
   position: relative;
@@ -201,3 +201,4 @@ button.section-cta {
     opacity: 1;
   }
 }
+

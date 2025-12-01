@@ -1,4 +1,4 @@
-@import "src/variables.scss";
+﻿@use "src/variables" as *;
 
 footer {
   background: $black;
@@ -89,3 +89,4 @@ footer {
     @include ctaText;
   }
 }
+

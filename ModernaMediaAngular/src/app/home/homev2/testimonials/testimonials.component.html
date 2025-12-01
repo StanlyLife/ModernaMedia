@@ -1,25 +1,42 @@
 <div class="component">
   <div class="card">
     <div class="img-wrapper">
-      <span class="cover"></span>
+      <span
+        class="cover"
+        [style.background-color]="
+          testimonial.overlayColor || defaultOverlayColor
+        "
+      ></span>
       <img
         class="bg-img"
-        src="../../../../assets/Images/testimonials/solaparkering/Parkering-sola-flyplassparkering-på-sola.jpg"
-        alt=""
+        [src]="testimonial.backgroundImageSrc"
+        [alt]="testimonial.backgroundImageAlt"
       />
-      <a
-        href="solaparkering.no"
-        target="_blank"
-        title="sola parkering hjemmeside"
-        >Sola parkering</a
-      >
+      <ng-container *ngIf="testimonial.caseStudyPath; else externalLink">
+        <a
+          class="brand-link"
+          [routerLink]="testimonial.caseStudyPath"
+          [title]="testimonial.companyLinkTitle"
+          >{{ testimonial.companyLinkLabel }}</a
+        >
+      </ng-container>
+      <ng-template #externalLink>
+        <a
+          [href]="testimonial.companyLink"
+          target="_blank"
+          rel="noopener noreferrer"
+          [title]="testimonial.companyLinkTitle"
+          >{{ testimonial.companyLinkLabel }}</a
+        >
+      </ng-template>
     </div>
     <div class="person-container">
       <div class="person-wrapper">
         <img
-          class="person svein"
-          src="../../../../assets/Images/testimonials/solaparkering/31fa76d5-35b6-468c-8c42-4291d6716f5e.webp"
-          alt="Kunde av moderna media tjenester"
+          class="person"
+          [ngClass]="testimonial.personImageClass"
+          [src]="testimonial.personImageSrc"
+          [alt]="testimonial.personImageAlt"
         />
       </div>
     </div>
@@ -27,50 +44,42 @@
     <div class="content">
       <div class="header">
         <div class="row">
-          <p>Svein Magnar</p>
-          <p>Daglig leder</p>
-          <p>Bedrifts Nettside</p>
-          <p>SEO & Markedsføring</p>
+          <p *ngFor="let detail of testimonial.details">{{ detail }}</p>
         </div>
       </div>
-      <p class="content-text">
-        Vi fikk designet og utviklet en nettside for Sola Parkering som var i
-        tråd med vår identitet og som snakker godt til kundene. Vi er veldig
-        fornøyde med tjeneste og servicen som fulgte.
-        <br />
-        Jeg kan trygt anbefale Moderna Media til andre!
-      </p>
-      <div class="rating">
-        <div class="star-container">
+      <p class="content-text">{{ testimonial.quote }}</p>
+      <div class="rating" aria-label="Kundetilfredshet">
+        <div
+          class="star-container"
+          *ngFor="let _ of ratingStars; let idx = index; trackBy: trackByIndex"
+        >
           <img
             src="../../../../assets/Images/Icons/testiomonials/star-icon.svg"
             alt=""
+            aria-hidden="true"
           />
         </div>
-        <div class="star-container">
-          <img
-            src="../../../../assets/Images/Icons/testiomonials/star-icon.svg"
-            alt=""
-          />
-        </div>
-        <div class="star-container">
-          <img
-            src="../../../../assets/Images/Icons/testiomonials/star-icon.svg"
-            alt=""
-          />
-        </div>
-        <div class="star-container">
-          <img
-            src="../../../../assets/Images/Icons/testiomonials/star-icon.svg"
-            alt=""
-          />
-        </div>
-        <div class="star-container">
-          <img
-            src="../../../../assets/Images/Icons/testiomonials/star-icon.svg"
-            alt=""
-          />
-        </div>
+      </div>
+      <div
+        class="cta-row"
+        *ngIf="testimonial.caseStudyPath || testimonial.companyLink"
+      >
+        <a
+          *ngIf="testimonial.caseStudyPath"
+          class="btn"
+          [routerLink]="testimonial.caseStudyPath"
+        >
+          {{ testimonial.caseStudyCta || "Les casestudien" }}
+        </a>
+        <a
+          *ngIf="testimonial.companyLink"
+          class="btn ghost"
+          [href]="testimonial.companyLink"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Besøk nettsiden
+        </a>
       </div>
     </div>
   </div>

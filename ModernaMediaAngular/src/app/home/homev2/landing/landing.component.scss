@@ -1,4 +1,4 @@
-@import "../../../../variables.scss";
+﻿@use "src/variables" as *;
 
 .landing {
   width: 100%;
@@ -96,3 +96,4 @@
     }
   }
 }
+

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="240" viewBox="0 0 480 240">
+  <rect width="480" height="240" rx="24" fill="#111321" />
+  <text x="50%" y="52%" fill="#fdd835" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle">
+    FJERDINGBY
+  </text>
+  <text x="50%" y="72%" fill="#ffffff" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="400" letter-spacing="4" text-anchor="middle">
+    PIZZA &amp; GRILL
+  </text>
+  <text x="50%" y="90%" fill="#ffffff" font-family="'Segoe UI', Arial, sans-serif" font-size="14" opacity="0.6" text-anchor="middle">
+    Logo placeholder
+  </text>
+</svg>

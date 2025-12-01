@@ -1,13 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment.prod';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Meta, Title } from '@angular/platform-browser';
-import { SeoUtils } from './../../../utils/SeoUtils';
 import { SeoService } from './../../services/seo.service';
+import { SeoUtils } from './../../../utils/SeoUtils';
 @Component({
   selector: 'app-not-found',
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
 export class NotFoundComponent implements OnInit {
   constructor(

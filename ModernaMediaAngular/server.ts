@@ -1,18 +1,27 @@
 import 'zone.js/node';
 
 import { APP_BASE_HREF } from '@angular/common';
-import { CommonEngine } from '@angular/ssr';
-import * as compression from 'compression';
-import * as express from 'express';
+import { CommonEngine } from '@angular/ssr/node';
+import compression from 'compression';
+import express from 'express';
 import { existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { AppServerModule } from './src/main.server';
+import bootstrap from './src/main.server';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
   server.use(compression());
-  const distFolder = join(process.cwd(), 'dist/ModernaMediaAngular/browser');
+  const devBrowserPath = join(process.cwd(), 'dist', 'dev', 'browser');
+  const prodBrowserPath = join(
+    process.cwd(),
+    'dist',
+    'ModernaMediaAngular',
+    'browser'
+  );
+  const distFolder = existsSync(devBrowserPath)
+    ? devBrowserPath
+    : prodBrowserPath;
   const indexHtml = existsSync(join(distFolder, 'index.original.html'))
     ? join(distFolder, 'index.original.html')
     : join(distFolder, 'index.html');
@@ -26,8 +35,10 @@ export function app(): express.Express {
   // Example Express Rest API endpoints
   // server.get('/api/**', (req, res) => { });
   // Serve static files from /browser
+  // Express 5 no longer accepts wildcard strings such as '*.*', so use a regex
+  // that catches any request containing an extension and serve it statically.
   server.get(
-    '*.*',
+    /\.[^/]+$/,
     express.static(distFolder, {
       maxAge: '1y',
     })
@@ -41,13 +52,18 @@ export function app(): express.Express {
     }
   });
 
-  // All regular routes use the Angular engine
-  server.get('*', (req, res, next) => {
+  // All regular GET routes use the Angular engine. Avoid wildcard strings because
+  // Express 5's path-to-regexp no longer accepts bare '*' patterns.
+  server.use((req, res, next) => {
+    if (req.method !== 'GET') {
+      return next();
+    }
+
     const { protocol, originalUrl, baseUrl, headers } = req;
 
     commonEngine
       .render({
-        bootstrap: AppServerModule,
+        bootstrap,
         documentFilePath: indexHtml,
         url: `${protocol}://${headers.host}${originalUrl}`,
         publicPath: distFolder,

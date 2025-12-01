@@ -1,11 +1,24 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { SeoService } from '../../services/seo.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { SeoService } from '../../services/seo.service';
 import { SeoUtils } from 'src/utils/SeoUtils';
+import { AboutYourNextProjectComponent } from '../../components/about-your-next-project/about-your-next-project.component';
+import { TjenesterHeaderComponent } from '../components/tjenester-header/tjenester-header.component';
+import { TjenesterServicesComponent } from '../components/tjenester-services/tjenester-services.component';
+import { TjenesterInfoSectionComponent } from '../components/tjenester-info-section/tjenester-info-section.component';
 @Component({
   selector: 'app-design',
   templateUrl: './design.component.html',
   styleUrls: ['./design.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    TjenesterHeaderComponent,
+    TjenesterServicesComponent,
+    TjenesterInfoSectionComponent,
+    AboutYourNextProjectComponent,
+  ],
 })
 export class DesignComponent implements OnInit {
   constructor(

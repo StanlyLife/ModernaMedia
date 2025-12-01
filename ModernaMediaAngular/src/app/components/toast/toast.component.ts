@@ -1,14 +1,16 @@
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { ToastService } from './../../services/toast.service';
 import { toast } from './toast.model';
-import { Component, OnInit, ElementRef } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-toast',
   templateUrl: './toast.component.html',
   styleUrls: ['./toast.component.scss'],
+  standalone: true,
+  imports: [CommonModule],
 })
-export class ToastComponent implements OnInit {
+export class ToastComponent implements OnInit, OnDestroy {
   constructor(private toast: ToastService, protected elementRef: ElementRef) {}
 
   toasts = this.toast.Toasts;

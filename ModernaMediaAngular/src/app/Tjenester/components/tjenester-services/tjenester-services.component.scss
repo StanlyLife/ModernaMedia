@@ -1,4 +1,4 @@
-@import "/src/variables.scss";
+﻿@use "src/variables" as *;
 .tjenester {
   background: $clean-white;
   .tjenester-container {
@@ -56,3 +56,4 @@
     }
   }
 }
+

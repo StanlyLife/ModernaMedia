@@ -1,6 +1,6 @@
-@use "../../../../scss/partials/tjenester";
+﻿@use "../../../../scss/partials/tjenester";
 @use "../../../../scss/partials/tjenester-desktop";
-@import "../../../../variables.scss";
+@use "src/variables" as *;
 
 /*LANDING COMPONENT*/
 /*LANDING COMPONENT*/
@@ -218,3 +218,4 @@ section.landing {
 //     }
 //   }
 // }
+

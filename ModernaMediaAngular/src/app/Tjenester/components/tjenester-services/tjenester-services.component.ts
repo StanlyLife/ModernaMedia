@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { environment } from 'src/environments/environment.prod';
 @Component({
   selector: 'app-tjenester-services',
   templateUrl: './tjenester-services.component.html',
@@ -8,11 +9,12 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
     './tjenester-services.component.scss',
     './tjenester-services.desktop.component.scss',
   ],
+  standalone: true,
+  imports: [CommonModule],
 })
-export class TjenesterServicesComponent implements OnInit {
+export class TjenesterServicesComponent {
   constructor(private sanitizer: DomSanitizer) {}
   imageCdn = environment.img;
-  ngOnInit(): void {}
   @Input() data: any = {
     title: 'Systemer og hjemmesider',
     subtitle: 'Våre tjenester for bedrifter',

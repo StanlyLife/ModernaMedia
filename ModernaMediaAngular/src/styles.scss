@@ -1,5 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import "src/variables.scss";
+﻿/* You can add global styles to this file, and also import other style files */
+@use "src/variables" as *;
 // Required Core Stylesheet
 
 html {
@@ -120,3 +120,4 @@ img {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+

@@ -1,6 +1,9 @@
 
-# Modern evergreen browsers, plus Firefox ESR, while skipping dead/legacy targets
->0.5%
-last 2 versions
+# Align with Angular 21 supported evergreen browsers
+last 1 Chrome version
+last 1 Firefox version
+last 2 Edge major versions
+last 2 Safari major versions
+last 2 iOS major versions
 Firefox ESR
-not dead
+not ie 11

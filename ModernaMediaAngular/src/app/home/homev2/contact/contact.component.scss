@@ -1,4 +1,4 @@
-@import "../../../../variables.scss";
+﻿@use "src/variables" as *;
 
 .form-section {
   margin-top: 60px;
@@ -137,3 +137,4 @@
     }
   }
 }
+

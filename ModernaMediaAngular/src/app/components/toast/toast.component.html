@@ -1,30 +1,33 @@
 <div class="toast-container">
-  <div
-    class="toast-wrapper wobble-animation"
-    *ngFor="let t of toasts.value"
-    (click)="DestroyToast(t, $event)"
-    #toastEl
-  >
+  @for (t of toasts.value; track t) {
     <div
-      class="toast {{ t.Style }}"
-      [ngClass]="{ 'slide-out-animation': t.TimeLeft < 1 }"
-      (animationend)="SlideOutAnimationEnd(toastEl, t)"
-    >
-      <div class="notification-count" *ngIf="t.Count > 1">
-        {{ t.Count }}
+      class="toast-wrapper wobble-animation"
+      (click)="DestroyToast(t, $event)"
+      #toastEl
+      >
+      <div
+        class="toast {{ t.Style }}"
+        [ngClass]="{ 'slide-out-animation': t.TimeLeft < 1 }"
+        (animationend)="SlideOutAnimationEnd(toastEl, t)"
+        >
+        @if (t.Count > 1) {
+          <div class="notification-count">
+            {{ t.Count }}
+          </div>
+        }
+        <div class="content-container">
+          <p class="toast-title">
+            {{ t.Title }}
+          </p>
+          <p class="content">{{ t.Content }}</p>
+        </div>
+        <span class="progress">
+          <span
+            class="real-progress"
+            [ngStyle]="{ 'width.%': t.PercentageCompleted }"
+          ></span>
+        </span>
       </div>
-      <div class="content-container">
-        <p class="toast-title">
-          {{ t.Title }}
-        </p>
-        <p class="content">{{ t.Content }}</p>
-      </div>
-      <span class="progress">
-        <span
-          class="real-progress"
-          [ngStyle]="{ 'width.%': t.PercentageCompleted }"
-        ></span>
-      </span>
     </div>
-  </div>
+  }
 </div>

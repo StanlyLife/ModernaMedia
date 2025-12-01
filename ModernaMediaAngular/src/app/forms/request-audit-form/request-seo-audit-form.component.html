@@ -5,7 +5,7 @@
         [src]="sanitizeImageUrl(data.background.src)"
         alt="{{ data.background.alt }}"
         class="landing-image"
-      />
+        />
       <div class="bg-shade"></div>
     </div>
     <div class="content">
@@ -33,27 +33,27 @@
           alt=""
           role="presentation"
           class="icon"
-        />
+          />
         Mail: <span> kontakt&#64;modernamedia.no</span></a
-      >
-      <a href="tel:90265326" class="mail">
-        <img
+        >
+        <a href="tel:90265326" class="mail">
+          <img
           [src]="
             sanitizeImageUrl(
               '../../../assets/Images/Icons/forms/smartphone.svg'
             )
           "
-          alt=""
-          role="presentation"
-          class="icon"
-        />
-        Telefon: <span> 902 65 326</span></a
-      >
-    </div>
-    <p class="status-message">
-      Skjema status:
-      <span
-        class="status"
+            alt=""
+            role="presentation"
+            class="icon"
+            />
+          Telefon: <span> 902 65 326</span></a
+          >
+        </div>
+        <p class="status-message">
+          Skjema status:
+          <span
+            class="status"
         [ngClass]="{
           idle: !contactForm.valid && !contactForm.touched,
           error: formError,
@@ -61,40 +61,44 @@
           sent: sent && result,
           failed: sent && !result
         }"
-      >
-        <img
+            >
+            @if (!contactForm.valid && !formError && !sent && !result) {
+              <img
           [src]="
             sanitizeImageUrl('../../../assets/Images/Icons/forms/more.svg')
           "
-          alt=""
-          *ngIf="!contactForm.valid && !formError && !sent && !result"
-        />
-        <img
+                alt=""
+                />
+            }
+            @if (formError || (sent && !result)) {
+              <img
           [src]="
             sanitizeImageUrl('../../../assets/Images/Icons/forms/cancel.svg')
           "
-          alt=""
-          *ngIf="formError || (sent && !result)"
-        />
-        <img
+                alt=""
+                />
+            }
+            @if (
+              (contactForm.valid && contactForm.touched && sent && result) ||
+              (contactForm.valid && contactForm.touched && !sent && !result)
+              ) {
+              <img
           [src]="
             sanitizeImageUrl('../../../assets/Images/Icons/forms/check.svg')
           "
-          alt=""
-          *ngIf="
-            (contactForm.valid && contactForm.touched && sent && result) ||
-            (contactForm.valid && contactForm.touched && !sent && !result)
-          "
-        />
-        <img
+                alt=""
+                />
+            }
+            @if (sent && result) {
+              <img
           [src]="
             sanitizeImageUrl('../../../assets/Images/Icons/forms/mail.svg')
           "
-          alt=""
-          *ngIf="sent && result"
-        />
-        {{
-          formError
+                alt=""
+                />
+            }
+            {{
+            formError
             ? "feil! Fyll ut tekstfelt i rød"
             : contactForm.valid && contactForm.touched && !sent
             ? "klar til å sende melding"
@@ -103,31 +107,31 @@
             : sent
             ? "melding feilet, vennligst send mail til kontakt@modernamedia.no"
             : "fyll ut tekstfelt markert med (*)"
-        }}
-      </span>
-    </p>
-    <form
-      action="post"
-      class="kontakt-form"
-      [formGroup]="contactForm"
-      (ngSubmit)="onSubmit()"
-    >
-      <div class="form-group">
-        <img
+            }}
+          </span>
+        </p>
+        <form
+          action="post"
+          class="kontakt-form"
+          [formGroup]="contactForm"
+          (ngSubmit)="onSubmit()"
+          >
+          <div class="form-group">
+            <img
           [src]="
             sanitizeImageUrl('../../../assets/Images/Icons/forms/user.svg')
           "
-          alt=""
-          role="presentation"
-          class="icon"
-        />
-        <input
-          type="text"
-          placeholder="Fullt navn"
-          formControlName="name"
-          aria-label="Fullt navn"
-          type="name"
-          autocomplete="name"
+              alt=""
+              role="presentation"
+              class="icon"
+              />
+            <input
+              type="text"
+              placeholder="Fullt navn"
+              formControlName="name"
+              aria-label="Fullt navn"
+              type="name"
+              autocomplete="name"
           [ngClass]="{
             invalid:
               !contactForm.controls['name'].valid &&
@@ -135,24 +139,24 @@
             sent: result && sent,
             error: !result && sent
           }"
-        />
-      </div>
-      <div class="form-group">
-        <img
+              />
+          </div>
+          <div class="form-group">
+            <img
           [src]="
             sanitizeImageUrl('../../../assets/Images/Icons/forms/mail.svg')
           "
-          alt=""
-          role="presentation"
-          class="icon"
-        />
-        <input
-          type="text"
-          placeholder="E-post adresse *"
-          formControlName="email"
-          aria-label="E-post adresse, påkrevd"
-          type="email"
-          autocomplete="email"
+              alt=""
+              role="presentation"
+              class="icon"
+              />
+            <input
+              type="text"
+              placeholder="E-post adresse *"
+              formControlName="email"
+              aria-label="E-post adresse, påkrevd"
+              type="email"
+              autocomplete="email"
           [ngClass]="{
             invalid:
               !contactForm.controls['email'].valid &&
@@ -160,29 +164,29 @@
             sent: result && sent,
             error: !result && sent
           }"
-        />
-      </div>
-      <div class="form-group">
-        <img
+              />
+          </div>
+          <div class="form-group">
+            <img
           [src]="
             sanitizeImageUrl(
               '../../../assets/Images/Icons/forms/smartphone.svg'
             )
           "
-          alt=""
-          role="presentation"
-          class="icon"
-        />
-        <input
-          type="tel"
-          placeholder="Telefonnummer"
-          formControlName="phone"
-          max="99999999"
-          aria-label="telefonnummer"
-          autocomplete="tel"
-          minlength="8"
-          maxlength="8"
-          type="tel"
+              alt=""
+              role="presentation"
+              class="icon"
+              />
+            <input
+              type="tel"
+              placeholder="Telefonnummer"
+              formControlName="phone"
+              max="99999999"
+              aria-label="telefonnummer"
+              autocomplete="tel"
+              minlength="8"
+              maxlength="8"
+              type="tel"
           [ngClass]="{
             invalid:
               !contactForm.controls['phone'].valid &&
@@ -190,24 +194,24 @@
             sent: result && sent,
             error: !result && sent
           }"
-        />
-      </div>
-      <div class="form-group">
-        <img
+              />
+          </div>
+          <div class="form-group">
+            <img
           [src]="
             sanitizeImageUrl('../../../assets/Images/Icons/forms/suitcase.svg')
           "
-          alt=""
-          role="presentation"
-          class="icon"
-        />
-        <input
-          type="text"
-          placeholder="Hjemmeside"
-          formControlName="website"
-          aria-label="tilhørende hjemmeside"
-          type="text"
-          autocomplete="off"
+              alt=""
+              role="presentation"
+              class="icon"
+              />
+            <input
+              type="text"
+              placeholder="Hjemmeside"
+              formControlName="website"
+              aria-label="tilhørende hjemmeside"
+              type="text"
+              autocomplete="off"
           [ngClass]="{
             invalid:
               !contactForm.controls['website'].valid &&
@@ -215,23 +219,23 @@
             sent: result && sent,
             error: !result && sent
           }"
-        />
-      </div>
-      <div class="form-group">
-        <img
+              />
+          </div>
+          <div class="form-group">
+            <img
           [src]="
             sanitizeImageUrl('../../../assets/Images/Icons/forms/email.svg')
           "
-          alt=""
-          role="presentation"
-          class="icon"
-        />
-        <input
-          type="text"
-          placeholder="Meldings tittel *"
-          formControlName="title"
-          aria-label="Tittel på melding, påkrevd"
-          autocomplete="off"
+              alt=""
+              role="presentation"
+              class="icon"
+              />
+            <input
+              type="text"
+              placeholder="Meldings tittel *"
+              formControlName="title"
+              aria-label="Tittel på melding, påkrevd"
+              autocomplete="off"
           [ngClass]="{
             invalid:
               !contactForm.controls['title'].valid &&
@@ -239,18 +243,18 @@
             sent: result && sent,
             error: !result && sent
           }"
-          type="text"
-        />
-      </div>
-      <div class="form-group">
-        <textarea
-          type="text"
-          placeholder="Melding *"
-          aria-label="melding"
-          formControlName="body"
-          aria-label="meldings tekst, påkrevd"
-          type="text"
-          autocomplete="off"
+              type="text"
+              />
+          </div>
+          <div class="form-group">
+            <textarea
+              type="text"
+              placeholder="Melding *"
+              aria-label="melding"
+              formControlName="body"
+              aria-label="meldings tekst, påkrevd"
+              type="text"
+              autocomplete="off"
           [ngClass]="{
             invalid:
               !contactForm.controls['body'].valid &&
@@ -258,27 +262,27 @@
             sent: result && sent,
             error: !result && sent
           }"
-        ></textarea>
-      </div>
-      <button
-        class="btn cta-2"
-        name="send epost"
-        [disabled]="!contactForm.valid"
+            ></textarea>
+          </div>
+          <button
+            class="btn cta-2"
+            name="send epost"
+            [disabled]="!contactForm.valid"
         [ngClass]="{
           disabled: !contactForm.valid,
           sent: sent
         }"
-      >
-        Send melding
-      </button>
-    </form>
-  </div>
-  <div class="img">
-    <img
+            >
+            Send melding
+          </button>
+        </form>
+      </div>
+      <div class="img">
+        <img
       [src]="
         sanitizeImageUrl('../../../../assets/Images/forms/seo/seo analyse.jpg')
       "
-      alt=""
-    />
-  </div>
-</section>
+          alt=""
+          />
+      </div>
+    </section>
