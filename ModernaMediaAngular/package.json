@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "dev:ssr": "ng run ModernaMediaAngular:serve-ssr",
-    "build:ssr": "ng run ModernaMediaAngular:build --configuration=production",
+    "build:ssr": "ng run ModernaMediaAngular:build:production",
     "serve:ssr": "node dist/ModernaMediaAngular/server/server.mjs",
     "analyze": "webpack-bundle-analyzer dist/ModernaMediaAngular/browser/stats-es2015.json",
     "postinstall": "node tools/fix-babel-runtime.cjs"
