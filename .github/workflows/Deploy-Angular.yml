@@ -1,50 +1,38 @@
-
-name: Angular-Deploy
+name: Angular Deploy
 
 on:
   push:
-    branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
+    branches: [main]
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
+    defaults:
+      run:
+        working-directory: ModernaMediaAngular
 
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Cache node modules
-        uses: actions/cache@v1
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - name: Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Npm clean cache
-        working-directory: /home/runner/work/ModernaMedia/ModernaMedia/ModernaMediaAngular
-        run: |
-          npm cache clean --force
-          rm -rf node_modules/
-          rm package-lock.json
-      - name: npm install and npm run build:ssr
-        working-directory: /home/runner/work/ModernaMedia/ModernaMedia/ModernaMediaAngular
-        run: |
-          npm i
-          npm run build:ssr
+          node-version: 20
+          cache: npm
+          cache-dependency-path: ModernaMediaAngular/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build SSR bundles
+        run: npm run build:ssr
+
       - name: Deploy to prod
         uses: garygrossgarten/github-action-scp@release
         with:
-          local: /home/runner/work/ModernaMedia/ModernaMedia/ModernaMediaAngular/dist/
+          local: ${{ github.workspace }}/ModernaMediaAngular/dist/
           remote: /var/www/ModernaMedia/Angular/dist
           host: ${{ secrets.HOST }}
           username: ${{ secrets.HOST_NAME }}
@@ -57,6 +45,7 @@ jobs:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.HOST_NAME }}
           password: ${{ secrets.HOST_PASSWORD }}
+
       - name: Restart web-dev service
         uses: garygrossgarten/github-action-ssh@v0.5.0
         with:
