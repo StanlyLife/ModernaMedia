@@ -13,6 +13,10 @@ export const appServerConfig: ApplicationConfig = {
           renderMode: RenderMode.Prerender,
         },
         {
+          path: 'om-oss',
+          renderMode: RenderMode.Prerender,
+        },
+        {
           path: 'case-study/:slug',
           renderMode: RenderMode.Prerender,
           async getPrerenderParams() {

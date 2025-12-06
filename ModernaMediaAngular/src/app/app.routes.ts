@@ -21,6 +21,7 @@ import { DeveloperSalarayChartsComponent } from './tools/developer-salaray-chart
 import { DesignsystemComponent } from './misc/designsystem/designsystem.component';
 import { CaseStudyPageComponent } from './case-studies/case-study-page/case-study-page.component';
 import { CaseStudiesListComponent } from './case-studies/case-studies-list/case-studies-list.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -75,6 +76,10 @@ export const appRoutes: Routes = [
   {
     path: 'case-studies',
     component: CaseStudiesListComponent,
+  },
+  {
+    path: 'om-oss',
+    component: AboutUsComponent,
   },
   {
     path: 'case-study/:slug',
