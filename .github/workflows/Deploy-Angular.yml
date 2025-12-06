@@ -29,7 +29,7 @@ jobs:
       - name: Build SSR bundles
         run: npm run build:ssr
 
-      - name: Clean remote dist folder
+      - name: Clean remote dist folder and deploy
         uses: garygrossgarten/github-action-ssh@v0.5.0
         with:
           command: rm -rf /var/www/ModernaMedia/Angular/dist/*
@@ -37,14 +37,14 @@ jobs:
           username: ${{ secrets.HOST_NAME }}
           password: ${{ secrets.HOST_PASSWORD }}
 
-      - name: Deploy to prod
-        uses: garygrossgarten/github-action-scp@release
-        with:
-          local: ${{ github.workspace }}/ModernaMediaAngular/dist/
-          remote: /var/www/ModernaMedia/Angular/dist
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.HOST_NAME }}
-          password: ${{ secrets.HOST_PASSWORD }}
+      - name: Install sshpass
+        run: sudo apt-get install -y sshpass
+
+      - name: Deploy to prod via rsync
+        run: |
+          sshpass -p "${{ secrets.HOST_PASSWORD }}" rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" \
+            ${{ github.workspace }}/ModernaMediaAngular/dist/ \
+            ${{ secrets.HOST_NAME }}@${{ secrets.HOST }}:/var/www/ModernaMedia/Angular/dist/
 
       - name: Start pm2 with correct entry point
         uses: garygrossgarten/github-action-ssh@v0.5.0
