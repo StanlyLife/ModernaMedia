@@ -20,6 +20,7 @@ import { UtviklingSystemComponent } from './Tjenester/utvikling/utvikling-system
 import { DeveloperSalarayChartsComponent } from './tools/developer-salaray-charts/developer-salaray-charts.component';
 import { DesignsystemComponent } from './misc/designsystem/designsystem.component';
 import { CaseStudyPageComponent } from './case-studies/case-study-page/case-study-page.component';
+import { CaseStudiesListComponent } from './case-studies/case-studies-list/case-studies-list.component';
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
@@ -72,7 +73,11 @@ export const appRoutes: Routes = [
   },
   { path: 'blogg/utviklerlonn', component: DeveloperSalarayChartsComponent },
   {
-    path: 'case-studies/:slug',
+    path: 'case-studies',
+    component: CaseStudiesListComponent,
+  },
+  {
+    path: 'case-study/:slug',
     component: CaseStudyPageComponent,
   },
   { path: 'misc/designsystem', component: DesignsystemComponent },

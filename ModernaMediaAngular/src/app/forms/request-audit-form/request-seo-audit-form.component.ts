@@ -1,6 +1,6 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import {
   ReactiveFormsModule,
   UntypedFormBuilder,
@@ -26,25 +26,16 @@ export class RequestSeoAuditFormComponent implements OnInit {
     private scroller: ViewportScroller,
     private fb: UntypedFormBuilder,
     private cs: ContactService,
-    private meta: Meta,
-    private title: Title,
     private seo: SeoService
-  ) {
-    title.setTitle(SeoUtils.FormsSeoAudit.title);
-  }
+  ) {}
   imageCdn = environment.img;
+
   ngOnInit(): void {
-    this.seo.createLinkForCanonicalURL();
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: SeoUtils.FormsSeoAudit.description,
-      },
-      { name: 'robots', content: 'index, follow' },
-    ]);
-    this.meta.addTag({
-      name: 'angular.ModernaMedia',
-      content: 'ModernaMedia',
+    this.seo.updateSeo({
+      title: SeoUtils.FormsSeoAudit.title,
+      description: SeoUtils.FormsSeoAudit.description,
+      keywords: SeoUtils.FormsSeoAudit.keywords,
+      url: 'https://modernamedia.no/bestill/seo-analyse',
     });
   }
   @Input() data: any = {

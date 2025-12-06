@@ -41,6 +41,8 @@ export interface CaseStudy {
     name: string;
     role: string;
     company: string;
+    image?: string;
+    imageAlt?: string;
   };
   stats: CaseStudyStat[];
   sections: CaseStudySection[];
@@ -266,6 +268,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       name: 'Ena Hasanović',
       role: 'Daglig leder',
       company: 'Fjerdingby Pizza & Grill',
+      image: 'assets/Images/testimonials/fjerdingby/logo.webp',
+      imageAlt: 'Fjerdingby Pizza & Grill logo',
     },
     stats: [
       {

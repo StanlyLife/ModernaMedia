@@ -2,16 +2,7 @@ User-Agent: *
 Allow: /
 Disallow: /error
 Disallow: /info
-Disallow: /error
 Disallow: /misc
 Disallow: /misc/*
-Disallow: /misc/designsystem
-Disallow: /tjenester/bedrift/utvikling/programvare
-Disallow: /tjenester/bedrift/seo/innholdsproduksjon
-Disallow: /tjenester/bedrift/seo/off-page-seo
-Disallow: /tjenester/bedrift/seo/teknisk-seo
-Disallow: /tjenester/bedrift/design/logo-design
-Disallow: /tjenester/bedrift/design/web-design
-Disallow: /tjenester/bedrift/design/grafisk-design
 
 Sitemap: https://modernamedia.no/sitemap.xml

@@ -3,48 +3,131 @@ export const SeoUtils = {
     title: 'Moderna Media - Siden finnes ikke',
     description:
       'Denne siden finnes ikke lengre - Moderna Media Digitalbyrå - Invester i vekst',
+    robots: 'noindex, follow',
   },
   home: {
-    title:
-      'Digitalbyrå - Moderna Media - for bedriftens nettside, design og seo',
+    title: 'Digitalbyrå i Oslo | Nettside, Design & SEO | Moderna Media',
     description:
-      'Moderna Media Digitalbyrå - Invester i bedriftens vekst, øk omsetning og kundebase gjennom en ny nettside, ett nytt design og mer søkemotoroptimalisering.',
+      'Moderna Media er et digitalbyrå i Oslo som leverer skreddersydde nettsider, moderne design og SEO-strategier som øker synlighet og omsetning for din bedrift.',
+    keywords:
+      'digitalbyrå, nettside bedrift, webdesign oslo, SEO byrå, logo design, webutvikling',
   },
   TjenesterUtvikling: {
-    title: 'Nettsider og programvare for bedrifter Moderna Media Digitalbyrå',
+    title: 'Nettsider & Webutvikling for Bedrifter | Moderna Media',
     description:
-      'Skreddersydde hjemmesider, programvare og applikasjoner for bedrifter av top kvalitet kan du få hos Moderna Media digitalbyrå. Vi bygger alt fra bunn med neste-generasjons teknologi som spa-rammeverk og utnytter fulle cloud løsninger!',
+      'Vi bygger raske, moderne nettsider og webapplikasjoner med React, Angular og Next.js. Skreddersydd utvikling for bedrifter som vil vokse digitalt.',
+    keywords:
+      'nettside bedrift, webutvikling, React, Angular, Next.js, webapplikasjon',
   },
   TjenesterSeo: {
-    title: 'Søkemotoroptimalisering og seo - Moderna Media SEO byrå',
+    title: 'SEO & Søkemotoroptimalisering | Moderna Media SEO Byrå',
     description:
-      'Søkemotoroptimalsiering for bedrifter. Trenger hjemmesiden din innholdsprodusent, eller trenger dere å optimere nettsiden i form av teknisk seo? Les mer om Søkemotor optimalisering fra Moderna Media',
+      'Bli synlig på Google med profesjonell SEO. Vi tilbyr teknisk SEO, innholdsproduksjon og lokal søkemotoroptimalisering som gir målbare resultater.',
+    keywords:
+      'SEO, søkemotoroptimalisering, Google rangering, teknisk SEO, lokal SEO',
   },
   TjenesterDesign: {
-    title: 'Design | Logo design | Webdesign | Grafisk design | Moderna Media',
-    description: '',
+    title: 'Logo, Webdesign & Grafisk Design | Moderna Media',
+    description:
+      'Profesjonell designtjeneste for bedrifter. Vi lager unike logoer, moderne webdesign og grafisk materiell som styrker merkevaren din.',
+    keywords:
+      'logo design, webdesign, grafisk design, merkevarebygging, visuell identitet',
   },
   FormsKontakt: {
-    title: 'Kontakt moderna media digitalbyrå',
-    description: '',
+    title: 'Kontakt Oss | Moderna Media Digitalbyrå',
+    description:
+      'Ta kontakt med Moderna Media for en uforpliktende samtale om din bedrifts digitale behov. Vi svarer raskt og hjelper deg gjerne.',
+    keywords: 'kontakt digitalbyrå, gratis konsultasjon, nettside tilbud',
   },
   FormsSeoAudit: {
-    title: '',
-    description: '',
+    title: 'Gratis SEO-analyse | Moderna Media',
+    description:
+      'Få en gratis SEO-analyse av nettsiden din. Vi identifiserer forbedringspotensialet og gir deg konkrete tips for bedre synlighet på Google.',
+    keywords:
+      'gratis SEO analyse, SEO sjekk, nettside analyse, Google rangering',
   },
   FormsWebsiteAudit: {
-    title: '',
-    description: '',
+    title: 'Gratis Nettside-analyse | Moderna Media',
+    description:
+      'Bestill en gratis analyse av nettsiden din. Vi vurderer design, hastighet, brukervennlighet og SEO - og gir deg en rapport med forbedringer.',
+    keywords:
+      'nettside analyse, gratis hjemmeside sjekk, UX analyse, nettside vurdering',
   },
   FromsPrice: {
-    title:
-      'Få et pristilbud på din nye nettside, programvare, design eller SEO',
+    title: 'Få Pristilbud på Nettside, Design eller SEO | Moderna Media',
     description:
-      'Vi tilbyr blant de rimeligste prisene i Norge på digitale tjenester som nettsider, programvare og design. Fortell om prosjektet ditt å få et pristilbud.',
+      'Be om et uforpliktende pristilbud på nettside, webdesign, logo eller SEO. Konkurransedyktige priser og høy kvalitet for norske bedrifter.',
+    keywords: 'nettside pris, webdesign kostnad, SEO pris, logo pris',
   },
   BloggRestaurantHjemmeside: {
-    title: 'Hvorfor trenger en restaurant en nettside?',
+    title: 'Hvorfor Trenger en Restaurant en Nettside? | Moderna Media Blogg',
     description:
-      'Ifølge en undersøkelse utført under pandemien, sa 82% av kundene at de er mye mer tilbøyelige for å besøke en restaurant etter å ha sett nettsiden til bedriften.',
+      '82% av kunder er mer tilbøyelige til å besøke en restaurant etter å ha sett nettsiden. Les hvorfor din restaurant trenger en profesjonell nettside.',
+    keywords:
+      'restaurant nettside, restaurant markedsføring, digital tilstedeværelse restaurant',
+  },
+  Blogg: {
+    title: 'Blogg | Digital Markedsføring & Webutvikling | Moderna Media',
+    description:
+      'Les våre artikler om digital markedsføring, SEO, webutvikling og design. Tips og innsikt for bedrifter som vil vokse digitalt.',
+    keywords: 'digital markedsføring blogg, SEO tips, webutvikling artikler',
+  },
+  CaseStudies: {
+    title: 'Kundehistorier & Case Studies | Moderna Media',
+    description:
+      'Se hvordan vi har hjulpet norske bedrifter med nettsider, SEO og design. Les våre case studies og se resultatene.',
+    keywords:
+      'case studies, kundehistorier, nettside prosjekter, SEO resultater',
+  },
+  // Sub-service pages
+  UtviklingHjemmeside: {
+    title: 'Hjemmeside for Bedrift | Profesjonell Nettside | Moderna Media',
+    description:
+      'Få en profesjonell hjemmeside som konverterer besøkende til kunder. Responsivt design, rask lasting og SEO-optimalisert fra dag én.',
+    keywords: 'hjemmeside bedrift, profesjonell nettside, responsiv webdesign',
+  },
+  UtviklingProgramvare: {
+    title: 'Programvareutvikling & Webapplikasjoner | Moderna Media',
+    description:
+      'Skreddersydd programvare og webapplikasjoner for din bedrift. Vi bygger løsninger som effektiviserer arbeidsflyten din.',
+    keywords:
+      'programvareutvikling, webapplikasjon, custom software, bedriftsløsninger',
+  },
+  SeoTeknisk: {
+    title: 'Teknisk SEO | Optimaliser Nettsiden Din | Moderna Media',
+    description:
+      'Forbedre nettsidens tekniske ytelse for bedre Google-rangering. Core Web Vitals, hastighet, struktur og crawlability.',
+    keywords: 'teknisk SEO, Core Web Vitals, nettside hastighet, crawlability',
+  },
+  SeoInnhold: {
+    title: 'SEO Innholdsproduksjon | Innholdsmarkedsføring | Moderna Media',
+    description:
+      'Profesjonell innholdsproduksjon som rangerer på Google. Vi skriver SEO-optimaliserte artikler og nettsider som tiltrekker kunder.',
+    keywords:
+      'SEO innhold, innholdsmarkedsføring, artikkelskriving, content marketing',
+  },
+  SeoOffPage: {
+    title: 'Off-Page SEO & Linkbygging | Moderna Media',
+    description:
+      'Styrk nettsidens autoritet med profesjonell off-page SEO og kvalitetslenker. Øk synligheten og rangeringen på Google.',
+    keywords: 'off-page SEO, linkbygging, backlinks, domeneautoritet',
+  },
+  DesignLogo: {
+    title: 'Logo Design | Unik Logo for Din Bedrift | Moderna Media',
+    description:
+      'Få en profesjonell og unik logo som representerer bedriften din. Vi designer logoer som skiller seg ut og bygger merkevaren.',
+    keywords: 'logo design, bedriftslogo, merkevareidentitet, visuell profil',
+  },
+  DesignWeb: {
+    title: 'Webdesign | Moderne UI/UX Design | Moderna Media',
+    description:
+      'Profesjonelt webdesign som kombinerer estetikk og brukervennlighet. Vi designer nettsider som engasjerer og konverterer.',
+    keywords: 'webdesign, UI design, UX design, moderne nettside design',
+  },
+  DesignGrafisk: {
+    title: 'Grafisk Design | Visuelt Materiell for Bedrifter | Moderna Media',
+    description:
+      'Profesjonell grafisk design for trykk og digital bruk. Brosjyrer, visittkort, sosiale medier-grafikk og mer.',
+    keywords: 'grafisk design, brosjyrer, visittkort, markedsføringsmateriell',
   },
 };

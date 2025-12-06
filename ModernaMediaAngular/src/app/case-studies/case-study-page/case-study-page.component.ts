@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, DestroyRef, inject } from '@angular/core';
-import { DomSanitizer, Meta, SafeHtml, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SeoService } from 'src/app/services/seo.service';
@@ -24,16 +23,12 @@ import { AboutYourNextProjectComponent } from 'src/app/components/about-your-nex
 export class CaseStudyPageComponent {
   readonly caseStudies = CASE_STUDIES;
   caseStudy?: CaseStudy;
-  structuredData?: SafeHtml;
   private readonly defaultOverlay =
     'linear-gradient(135deg, rgba(9, 14, 36, 0.85), rgba(38, 66, 142, 0.65))';
 
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
-  private readonly meta = inject(Meta);
-  private readonly title = inject(Title);
   private readonly seo = inject(SeoService);
-  private readonly sanitizer = inject(DomSanitizer);
   private readonly destroyRef = inject(DestroyRef);
 
   constructor() {
@@ -48,39 +43,33 @@ export class CaseStudyPageComponent {
         }
 
         this.caseStudy = study;
-        this.updateMetaTags(study);
-        this.updateStructuredData(study);
+        this.updateSeo(study);
       });
   }
 
-  private updateMetaTags(study: CaseStudy): void {
-    this.title.setTitle(study.seoTitle);
-    this.meta.updateTag({ name: 'description', content: study.seoDescription });
-    this.meta.updateTag({ property: 'og:title', content: study.seoTitle });
-    this.meta.updateTag({
-      property: 'og:description',
-      content: study.seoDescription,
-    });
-    this.meta.updateTag({ property: 'og:type', content: 'article' });
-    this.meta.updateTag({
-      property: 'og:image',
-      content: study.heroImage,
-    });
-    this.seo.createLinkForCanonicalURL();
-  }
+  private updateSeo(study: CaseStudy): void {
+    const canonicalUrl = `https://modernamedia.no/case-study/${study.slug}`;
 
-  private updateStructuredData(study: CaseStudy): void {
-    const canonicalUrl =
-      typeof window !== 'undefined'
-        ? `${window.location.origin}${this.router.url}`
-        : this.router.url;
+    this.seo.updateSeo({
+      title: study.seoTitle,
+      description: study.seoDescription,
+      keywords: study.services.join(', '),
+      url: canonicalUrl,
+      image: study.heroImage.startsWith('http')
+        ? study.heroImage
+        : `https://modernamedia.no${study.heroImage}`,
+      type: 'article',
+    });
 
-    const structured = {
+    // Add structured data for the case study
+    this.seo.addStructuredData({
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: study.title,
       description: study.seoDescription,
-      image: study.heroImage,
+      image: study.heroImage.startsWith('http')
+        ? study.heroImage
+        : `https://modernamedia.no${study.heroImage}`,
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': canonicalUrl,
@@ -88,21 +77,18 @@ export class CaseStudyPageComponent {
       author: {
         '@type': 'Organization',
         name: 'Moderna Media',
+        url: 'https://modernamedia.no',
       },
       publisher: {
         '@type': 'Organization',
         name: 'Moderna Media',
         logo: {
           '@type': 'ImageObject',
-          url: '/assets/favicons/android-chrome-512x512.png',
+          url: 'https://modernamedia.no/assets/favicons/android-chrome-512x512.png',
         },
       },
       keywords: study.services,
-    };
-
-    this.structuredData = this.sanitizer.bypassSecurityTrustHtml(
-      JSON.stringify(structured)
-    );
+    });
   }
 
   trackByIndex(index: number): number {

@@ -9,7 +9,11 @@ export const appServerConfig: ApplicationConfig = {
     provideServerRendering(
       withRoutes([
         {
-          path: 'case-studies/:slug',
+          path: 'case-studies',
+          renderMode: RenderMode.Prerender,
+        },
+        {
+          path: 'case-study/:slug',
           renderMode: RenderMode.Prerender,
           async getPrerenderParams() {
             return CASE_STUDIES.map((study) => ({ slug: study.slug }));

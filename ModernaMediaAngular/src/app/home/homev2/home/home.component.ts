@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from './../../../services/seo.service';
 import { SeoUtils } from './../../../../utils/SeoUtils';
 import { LandingComponent } from '../landing/landing.component';
+import { TrustBadgesComponent } from '../trust-badges/trust-badges.component';
 import { UspComponent } from '../usp/usp.component';
 import { ServicesComponent } from '../services/services.component';
+import { ProcessComponent } from '../process/process.component';
+import { TestimonialsSectionComponent } from '../testimonials-section/testimonials-section.component';
 import { AboutComponent } from '../about/about.component';
 import { PricesComponent } from '../prices/prices.component';
 import { ContactComponent } from '../contact/contact.component';
 import { BlogShowcaseComponent } from '../blog-showcase/blog-showcase.component';
 import { AboutYourNextProjectComponent } from '../../../components/about-your-next-project/about-your-next-project.component';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -17,8 +20,11 @@ import { AboutYourNextProjectComponent } from '../../../components/about-your-ne
   standalone: true,
   imports: [
     LandingComponent,
+    TrustBadgesComponent,
     UspComponent,
     ServicesComponent,
+    ProcessComponent,
+    TestimonialsSectionComponent,
     AboutComponent,
     PricesComponent,
     ContactComponent,
@@ -27,26 +33,18 @@ import { AboutYourNextProjectComponent } from '../../../components/about-your-ne
   ],
 })
 export class HomeComponent implements OnInit {
-  constructor(
-    private meta: Meta,
-    private title: Title,
-    private seo: SeoService
-  ) {
-    title.setTitle(SeoUtils.home.title);
-  }
+  constructor(private seo: SeoService) {}
 
   ngOnInit() {
-    this.seo.createLinkForCanonicalURL();
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: SeoUtils.home.description,
-      },
-      { name: 'robots', content: 'index, follow' },
-    ]);
-    this.meta.addTag({
-      name: 'angular.ModernaMedia',
-      content: 'ModernaMedia',
+    this.seo.updateSeo({
+      title: SeoUtils.home.title,
+      description: SeoUtils.home.description,
+      keywords: SeoUtils.home.keywords,
+      url: 'https://modernamedia.no/',
+      type: 'website',
     });
+
+    // Add local business structured data
+    this.seo.addStructuredData(this.seo.createLocalBusinessSchema());
   }
 }

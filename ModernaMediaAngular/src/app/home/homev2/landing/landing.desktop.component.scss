@@ -1,163 +1,148 @@
 ﻿@use "src/variables" as *;
 
 @media screen and (min-width: 360px) {
-  .landing .content {
-    max-width: 356px;
-    .titles {
-      height: 190px;
-      .super-title {
-        font-size: 3rem;
-        line-height: 40px;
-      }
-      .subtitle {
-        margin-top: 120px;
-        font-size: 1.15rem;
-      }
+  .landing .content .titles {
+    .super-title {
+      font-size: 3rem;
+    }
+    .subtitle {
+      font-size: 1.1rem;
     }
   }
 }
+
 @media screen and (min-width: 570px) {
   .landing .content {
-    max-width: 450px;
+    max-width: 550px;
+
     .titles {
-      height: 200px;
+      gap: 24px;
+
       .super-title {
         font-size: 4rem;
-        line-height: 50px;
       }
       .subtitle {
-        margin-top: 154px;
-        font-size: 1.15rem;
+        font-size: 1.2rem;
       }
     }
   }
-  .landing .buttons {
-    width: 60%;
-  }
 }
-@media screen and (min-width: $desktop) {
-  .landing .content {
-    max-width: 675px;
-    .titles {
-      height: 175px;
-      .super-title {
-        font-size: 4rem;
-        line-height: 50px;
-      }
-      .subtitle {
-        margin-top: 102px;
-        font-size: 1.75rem;
-      }
-    }
-  }
-  // font weight
-  .landing .content .info {
-    font-weight: 600;
-  }
-}
+
 @media screen and (min-width: $tablet) {
-  .landing .content {
-    max-width: 675px;
-    .titles {
-      height: 225px;
-      .super-title {
-        font-size: 5rem;
-        line-height: 70px;
-      }
-      .subtitle {
-        margin-top: 140px;
-        font-size: 1.75rem;
-      }
-    }
-  }
   .landing {
     width: 97.5%;
-    box-shadow: $box-shadow;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.15);
     max-width: $max-width;
     margin: 1rem auto;
     overflow: hidden;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .buttons {
-      max-width: 275px;
-    }
+    border-radius: 28px;
+
     .wrapper {
-      min-height: 750px;
-      width: 100%;
+      min-height: 650px;
+      height: 70vh;
     }
+
     .bg {
-      .bg-shade,
-      .landing-image {
-        min-width: 100%;
-      }
+      min-height: 650px;
+      height: 70vh;
+
       .bg-shade {
-        opacity: 0.35;
+        background: linear-gradient(
+          135deg,
+          rgba(6, 12, 32, 0.8) 0%,
+          rgba(20, 40, 80, 0.5) 50%,
+          rgba(59, 130, 246, 0.2) 100%
+        );
       }
     }
-    .content .info {
-      margin-top: -5px;
-      font-size: 1.25rem;
-      text-shadow: $text-shadow;
+
+    .content {
+      max-width: 700px;
+
+      .titles {
+        gap: 28px;
+
+        .super-title {
+          font-size: 5rem;
+          letter-spacing: -2px;
+        }
+
+        .subtitle {
+          font-size: 1.4rem;
+          max-width: 600px;
+        }
+      }
+    }
+
+    .buttons .btn {
+      padding: 18px 48px;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .landing .content {
+    max-width: 750px;
+
+    .titles {
+      .super-title {
+        font-size: 4.5rem;
+      }
+      .subtitle {
+        font-size: 1.5rem;
+      }
     }
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .landing .content {
-    max-width: 690px;
-    .titles {
-      height: 250px;
-      .super-title {
-        font-size: 5.25rem;
-        line-height: 80px;
-      }
-      .subtitle {
-        margin-top: 170px;
-        font-size: 1.75rem;
-        margin-left: 8px;
-      }
-    }
-  }
-
   .landing {
-    width: 97.5%;
-    box-shadow: $box-shadow;
-    max-width: $max-width;
-    margin: 1rem auto;
-    overflow: hidden;
-    border-radius: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .buttons {
-      max-width: 475px;
-    }
-    .wrapper {
-      min-height: 750px;
-      width: 100%;
-    }
+    border-radius: 32px;
+
+    .wrapper,
     .bg {
-      .bg-shade,
-      .landing-image {
-        min-width: 100%;
-      }
-      .bg-shade {
-      }
+      min-height: 700px;
+      height: 72vh;
     }
+
     .content {
-      margin-left: -150px;
-      .info {
-        margin-left: 8px;
-        margin-top: 0px;
-        font-size: 1.25rem;
+      max-width: 850px;
+
+      .titles {
+        gap: 32px;
+
+        .super-title {
+          font-size: 5.5rem;
+          letter-spacing: -3px;
+        }
+
+        .subtitle {
+          font-size: 1.6rem;
+          max-width: 700px;
+        }
       }
     }
-    .buttons {
-      margin-left: 8px;
-      width: 260px;
+
+    .buttons .btn {
+      padding: 20px 56px;
+      font-size: 1.15rem;
     }
   }
 }
 
+@media screen and (min-width: 1440px) {
+  .landing .content {
+    max-width: 950px;
+
+    .titles {
+      .super-title {
+        font-size: 6rem;
+      }
+      .subtitle {
+        font-size: 1.7rem;
+        max-width: 750px;
+      }
+    }
+  }
+}

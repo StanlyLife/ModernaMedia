@@ -53,19 +53,24 @@ export class ContactComponent {
   });
   result = false;
   sent = false;
+  loading = false;
+
   onSubmit(): void {
-    if (this.result || this.sent) {
+    if (this.result || this.sent || this.loading) {
       return;
     }
-    var request = this.cs.SendContactRequest(this.contactForm.value);
+    this.loading = true;
+    this.cs.SendContactRequest(this.contactForm.value);
     this.cs.SendContactRequestResult.subscribe((arg) => {
       this.result = arg;
+      this.loading = false;
       if (this.result) {
         this.contactForm.reset();
       }
       this.sent = true;
     });
   }
+
   formError =
     !this.contactForm.valid &&
     this.contactForm.touched &&

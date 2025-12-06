@@ -58,6 +58,17 @@ section.services {
         font-family: $ff-mosk;
         font-weight: 500;
       }
+      .price-hint {
+        display: inline-block;
+        margin-top: 0.75rem;
+        padding: 0.4rem 0.8rem;
+        background: rgba(84, 208, 236, 0.9);
+        color: white;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border-radius: 20px;
+        font-family: $ff-mosk;
+      }
       p,
       h2,
       h3 {
@@ -130,4 +141,3 @@ section.services {
     }
   }
 }
-

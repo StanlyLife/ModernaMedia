@@ -242,8 +242,22 @@
   line-height: 1.6;
 }
 
+.author-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.author-image {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .author {
-  margin-top: 12px;
   font-weight: 600;
 }
 

@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from '../../services/seo.service';
 import { SeoUtils } from 'src/utils/SeoUtils';
 import { AboutYourNextProjectComponent } from '../../components/about-your-next-project/about-your-next-project.component';
@@ -21,26 +20,14 @@ import { TjenesterServicesComponent } from '../components/tjenester-services/tje
   ],
 })
 export class SeoComponent implements OnInit {
-  constructor(
-    private meta: Meta,
-    private title: Title,
-    private SEO: SeoService
-  ) {
-    title.setTitle(SeoUtils.TjenesterSeo.title);
-  }
+  constructor(private seo: SeoService) {}
 
   ngOnInit() {
-    this.SEO.createLinkForCanonicalURL();
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: SeoUtils.TjenesterSeo.description,
-      },
-      { name: 'robots', content: 'index, follow' },
-    ]);
-    this.meta.addTag({
-      name: 'angular.ModernaMedia',
-      content: 'ModernaMedia',
+    this.seo.updateSeo({
+      title: SeoUtils.TjenesterSeo.title,
+      description: SeoUtils.TjenesterSeo.description,
+      keywords: SeoUtils.TjenesterSeo.keywords,
+      url: 'https://modernamedia.no/tjenester/bedrift/seo',
     });
   }
 

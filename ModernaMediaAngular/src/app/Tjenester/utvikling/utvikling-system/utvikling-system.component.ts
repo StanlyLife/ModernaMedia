@@ -1,8 +1,8 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { Meta, Title } from '@angular/platform-browser';
 import { SeoService } from '../../../services/seo.service';
+import { SeoUtils } from 'src/utils/SeoUtils';
 import { AboutYourNextProjectComponent } from '../../../components/about-your-next-project/about-your-next-project.component';
 @Component({
   selector: 'app-utvikling-system',
@@ -13,26 +13,17 @@ import { AboutYourNextProjectComponent } from '../../../components/about-your-ne
 })
 export class UtviklingSystemComponent implements OnInit {
   constructor(
-    private meta: Meta,
-    private title: Title,
     private seo: SeoService,
     private sanitizer: DomSanitizer,
     private scroller: ViewportScroller
-  ) {
-    title.setTitle('');
-  }
+  ) {}
+
   ngOnInit() {
-    this.seo.createLinkForCanonicalURL();
-    this.meta.addTags([
-      {
-        name: 'description',
-        content: '',
-      },
-      { name: 'robots', content: 'index, follow' },
-    ]);
-    this.meta.addTag({
-      name: 'angular.ModernaMedia',
-      content: 'ModernaMedia',
+    this.seo.updateSeo({
+      title: SeoUtils.UtviklingProgramvare.title,
+      description: SeoUtils.UtviklingProgramvare.description,
+      keywords: SeoUtils.UtviklingProgramvare.keywords,
+      url: 'https://modernamedia.no/tjenester/bedrift/utvikling/programvare',
     });
   }
 

@@ -13,54 +13,97 @@ section.usp-section {
     margin-top: 15px;
   }
   header {
+    text-align: center;
+
     .subtitle {
       margin-bottom: 15px;
+      color: $blue-primary;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .title {
       margin: 0;
-    }
-    .testimonials-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      align-items: stretch;
-      justify-content: center;
-      margin: 30px 0;
-
-      app-testimonials {
-        flex: 1 1 48%;
-        min-width: 280px;
-        max-width: 600px;
-        display: flex;
-      }
+      font-size: 2.25rem;
+      font-weight: 800;
     }
     .section-info {
-      margin: 15px 0;
+      margin: 20px auto;
       margin-bottom: 30px;
+      max-width: 700px;
+      color: #64748b;
+      line-height: 1.7;
     }
   }
   .usp {
     position: relative;
-    height: 350px;
+    height: 380px;
     width: 350px;
     margin: 0 auto;
     margin-top: 30px;
     border-radius: 25px;
     overflow: hidden;
     @include flexC;
-    justify-content: space-between;
+    justify-content: flex-end;
     padding: 2rem;
+    transition: all 0.4s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+
+      .bg img {
+        transform: scale(1.05);
+      }
+
+      .usp-icon {
+        transform: scale(1.1);
+        background: linear-gradient(135deg, $blue-primary, $purple-primary);
+      }
+    }
+
+    .usp-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      z-index: 2;
+
+      svg {
+        color: $blue-primary;
+        transition: color 0.3s ease;
+      }
+
+      &:hover svg,
+      .usp:hover & svg {
+        color: white;
+      }
+    }
+
     .usp-title,
     .usp-content {
       text-align: left;
       color: $clean-white;
+      position: relative;
+      z-index: 2;
     }
     .usp-title {
       text-shadow: $text-shadow-white;
-      font-size: 1.75rem;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
     }
     .usp-content {
-      font-size: 1.15rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      opacity: 0.95;
     }
     .bg {
       pointer-events: none;
@@ -78,8 +121,16 @@ section.usp-section {
         position: absolute;
         z-index: -1;
       }
+      img {
+        transition: transform 0.4s ease;
+      }
       .shadow {
-        background: rgba(51, 51, 51, 0.55);
+        background: linear-gradient(
+          to top,
+          rgba(15, 23, 42, 0.9) 0%,
+          rgba(15, 23, 42, 0.5) 50%,
+          rgba(15, 23, 42, 0.2) 100%
+        );
       }
     }
   }

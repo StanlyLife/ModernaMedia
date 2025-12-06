@@ -1,148 +1,263 @@
 ﻿@use "src/variables" as *;
 
 section.prices-section {
+  background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+
   .prices-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+
+    .subtitle {
+      color: $blue-primary;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
     .title {
       margin: 0;
-    }
-    .subtitle {
-      margin-bottom: 15px;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: $dark;
     }
     .header-content {
-      margin-top: 15px;
-      width: 75%;
+      margin-top: 16px;
+      color: #64748b;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      width: 100%;
     }
   }
   .wrapper {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem;
-    padding-top: 60px;
+    padding-top: 80px;
+    padding-bottom: 80px;
   }
-  .price-box-anchor-wrapper:hover {
-    .price-box {
-      box-shadow: $elevation-5;
-    }
-    header .header-content-container .les-mer img {
-      margin-left: 20px;
-    }
-    header .bg .shadow {
-      background: rgba(51, 51, 51, 0.25);
-    }
-  }
-  .price-box-anchor-wrapper:active {
-    .price-box {
-      box-shadow: $elevation-1;
-    }
-    header .header-content-container .les-mer img {
-      margin-left: 30px;
-    }
-    header .bg .shadow {
-      background: rgba(51, 51, 51, 0.15);
-    }
-  }
-  .price-container {
-    margin-top: 30px;
-    @include flexR;
-    flex-wrap: wrap;
-  }
-  .price-box {
-    margin: 1rem auto;
-    box-shadow: $elevation-3;
-    max-width: 515px;
-    min-width: 325px;
-    min-height: 640px;
-    background: $light-second;
-    padding-bottom: 60px;
-    position: relative;
-    transition: box-shadow 0.25s ease;
-    .content {
-      padding: 2rem;
-      .info {
-        margin-top: 30px;
+
+  .price-box-anchor-wrapper {
+    text-decoration: none;
+
+    &:hover {
+      .price-box {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      }
+      header .header-content-container .les-mer img {
+        margin-left: 20px;
+      }
+      header .bg .shadow {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.7) 0%,
+          rgba(139, 92, 246, 0.5) 100%
+        );
+      }
+      header .bg img {
+        transform: scale(1.05);
       }
     }
+
+    &:active {
+      .price-box {
+        transform: translateY(-4px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+      }
+    }
+  }
+
+  .price-container {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .price-box {
+    max-width: 100%;
+    width: 100%;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+
+    .content {
+      padding: 28px;
+
+      .info {
+        margin-top: 20px;
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+    }
+
     .usp-list {
       list-style: none;
+      padding: 0;
+      margin: 0;
+
       li {
-        padding: 12px 0;
-        @include flexR;
-        justify-content: flex-start;
+        padding: 10px 0;
+        display: flex;
         align-items: center;
+        border-bottom: 1px solid #f1f5f9;
+
+        &:last-child {
+          border-bottom: none;
+        }
+
         img {
-          height: 18px;
-          margin-right: 10px;
+          height: 20px;
+          width: 20px;
+          margin-right: 12px;
+          filter: hue-rotate(200deg) saturate(1.5);
+        }
+
+        p {
+          color: $dark;
+          font-weight: 500;
+          margin: 0;
         }
       }
     }
+
     .price-box-price {
-      position: absolute;
-      height: 60px;
-      width: 100%;
-      bottom: 0;
-      background: $clean-white;
-      left: 0;
-      @include flexC;
+      margin-top: 24px;
+      padding: 20px 28px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-top: 1px solid #e2e8f0;
+
       .price {
-        @include ctaText-blue;
-        font-weight: 600;
         font-size: 1.5rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, $blue-primary, $purple-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin: 0;
+        text-align: center;
       }
     }
+
     header {
-      height: 285px;
+      height: 240px;
       width: 100%;
       position: relative;
+      overflow: hidden;
+
       .header-content-container {
         position: absolute;
         height: 100%;
         width: 100%;
         z-index: 2;
-        padding: 1rem 2rem;
-        padding-bottom: 75px;
-        @include flexC;
+        padding: 24px 28px;
+        display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
+
         .price-box-title,
         .price-box-content,
         .les-mer p {
-          color: $clean-white;
+          color: #fff;
+          margin: 0;
         }
+
+        .price-box-title {
+          font-size: 2.25rem;
+          font-weight: 800;
+          text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .price-box-content {
+          font-size: 1.1rem;
+          font-weight: 500;
+          line-height: 1.4;
+          text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+          max-width: 90%;
+        }
+
         .les-mer {
-          @include flexR;
+          display: flex;
+          align-items: center;
+          font-weight: 600;
+
+          p {
+            font-size: 0.95rem;
+          }
+
           img {
             margin-left: 10px;
-            height: 18px;
-            transition: all 0.5s ease;
+            height: 16px;
+            transition: margin-left 0.3s ease;
           }
         }
-        .price-box-title {
-          font-size: 3rem;
-        }
-        .price-box-content {
-          font-size: 1.5rem;
-          font-weight: 600;
-        }
       }
+
       .bg {
         pointer-events: none;
         height: 100%;
         width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
         img,
         .shadow {
           pointer-events: none;
           height: 100%;
           width: 100%;
-        }
-        .shadow {
-          background: rgba(51, 51, 51, 0.55);
-          transition: background 0.5s ease;
           position: absolute;
+          top: 0;
+          left: 0;
         }
+
+        .shadow {
+          background: linear-gradient(
+            135deg,
+            rgba(6, 12, 32, 0.75) 0%,
+            rgba(20, 40, 80, 0.5) 100%
+          );
+          transition: background 0.4s ease;
+          z-index: 1;
+        }
+
         img {
           object-fit: cover;
+          transition: transform 0.5s ease;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  section.prices-section {
+    .price-container {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 480px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.prices-section {
+    .wrapper {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+
+    .prices-section-header .title {
+      font-size: 1.75rem;
     }
   }
 }

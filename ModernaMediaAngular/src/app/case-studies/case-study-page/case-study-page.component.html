@@ -84,11 +84,19 @@
   <section class="cs-testimonial">
     <div class="quote-card">
       <p class="eyebrow">Kundetilbakemelding</p>
-      <p class="quote">“{{ cs.testimonial.quote }}”</p>
-      <p class="author">
-        {{ cs.testimonial.name }} · {{ cs.testimonial.role }},
-        {{ cs.testimonial.company }}
-      </p>
+      <p class="quote">"{{ cs.testimonial.quote }}"</p>
+      <div class="author-row">
+        <img
+          *ngIf="cs.testimonial.image"
+          [src]="cs.testimonial.image"
+          [alt]="cs.testimonial.imageAlt || cs.testimonial.name"
+          class="author-image"
+        />
+        <p class="author">
+          {{ cs.testimonial.name }} · {{ cs.testimonial.role }},
+          {{ cs.testimonial.company }}
+        </p>
+      </div>
     </div>
     <div class="outcome-card">
       <p class="eyebrow">Hva vi leverte</p>
@@ -102,12 +110,6 @@
   </section>
 
   <app-about-your-next-project></app-about-your-next-project>
-
-  <script
-    type="application/ld+json"
-    *ngIf="structuredData"
-    [innerHTML]="structuredData"
-  ></script>
 </ng-container>
 
 <ng-template #missingCase>

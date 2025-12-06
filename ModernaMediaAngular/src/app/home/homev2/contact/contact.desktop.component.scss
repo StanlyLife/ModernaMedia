@@ -5,14 +5,58 @@
     flex-direction: row;
     flex-wrap: nowrap;
     max-width: 1280px;
-    margin: 0 auto;
-    gap: 1rem;
+    margin: 4rem auto;
+    gap: 4rem;
+    padding: 2rem 3rem;
+
+    header {
+      .title {
+        font-size: 2.5rem;
+      }
+    }
+
+    .kontakt-info {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      a {
+        flex: 1;
+        min-width: fit-content;
+      }
+    }
+
     .img {
+      flex: 0 0 45%;
+      max-width: 550px;
       height: auto;
-      height: 700px;
-      width: 80%;
-      margin-bottom: 0rem;
+      min-height: 650px;
+      margin-bottom: 0;
+
+      img {
+        height: 100%;
+        border-radius: 28px;
+      }
+    }
+
+    .kontakt-form {
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      input,
+      textarea {
+        height: 56px;
+      }
+
+      textarea {
+        min-height: 140px;
+      }
+
+      button.btn {
+        height: 58px;
+        font-size: 1.15rem;
+      }
     }
   }
 }
-

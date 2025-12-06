@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { environment } from 'src/environments/environment.prod';
@@ -14,9 +15,27 @@ import { environment } from 'src/environments/environment.prod';
   imports: [CommonModule],
 })
 export class AboutYourNextProjectComponent {
-  constructor(private sanitizer: DomSanitizer) {}
+  constructor(
+    private sanitizer: DomSanitizer,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
+
   sanitizeImageUrl(imageUrl: string): SafeUrl {
     return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
+
   imageCdn = environment.img;
+
+  scrollToContact(event: Event) {
+    event.preventDefault();
+    if (isPlatformBrowser(this.platformId)) {
+      const element = document.getElementById('kontakt');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        // Fallback: navigate to /kontakt if section not found
+        window.location.href = '/kontakt';
+      }
+    }
+  }
 }

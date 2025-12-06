@@ -1,17 +1,35 @@
 ﻿@use "src/variables" as *;
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .landing {
   width: 100%;
   position: relative;
+
   .wrapper {
     height: calc(90vh - 2rem);
-    min-height: 850px;
+    min-height: 700px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
   .bg {
     position: absolute;
     width: 100%;
     height: calc(90vh - 2rem);
-    min-height: 850px;
+    min-height: 700px;
+
     .bg-shade,
     .landing-image {
       object-fit: cover;
@@ -20,80 +38,223 @@
       width: 100%;
       position: absolute;
     }
+
     .bg-shade {
-      @include backgroundShade;
+      background: linear-gradient(
+        135deg,
+        rgba(6, 12, 32, 0.85) 0%,
+        rgba(20, 40, 80, 0.6) 50%,
+        rgba(59, 130, 246, 0.3) 100%
+      );
     }
   }
+
   .content {
-    max-width: 600px;
+    max-width: 650px;
     color: $light;
-    padding: 1rem;
+    padding: 1.5rem;
     width: 100%;
-    position: absolute;
-    @include aAbs;
+    position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &.fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
     .titles {
-      position: relative;
-      border: 2px solid transparent;
-      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+
+      .super-title-wrapper {
+        position: relative;
+        display: inline-block;
+      }
+
       .super-title {
         font-size: 2.75rem;
-        line-height: 36px;
+        line-height: 1.1;
         text-transform: uppercase;
         font-weight: 900;
-        position: absolute;
+        letter-spacing: -1px;
+        margin: 0;
       }
+
       .super-title:not(.bg) {
-        @include gradientTitle-landing;
-        z-index: 3;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #e0f2fe 25%,
+          #7dd3fc 50%,
+          #c4b5fd 75%,
+          #e879f9 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+        z-index: 2;
       }
+
       .super-title.bg {
+        position: absolute;
+        top: 0;
+        left: 0;
         z-index: 1;
-        text-shadow: 0px 0px 14px rgb(0 0 0 / 38%);
+        text-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
         pointer-events: none;
+        opacity: 0.3;
       }
+
       .subtitle {
-        margin-top: 110px;
-        font-weight: 900;
-        text-shadow: $text-shadow;
-        font-size: 1.15rem;
+        font-weight: 500;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+        max-width: 500px;
+        margin: 0;
       }
     }
   }
-  .buttons,
-  .info {
-    color: $light;
-    p {
-      color: $light;
-    }
-  }
+
   .buttons {
-    margin-top: 10px;
+    margin-top: 28px;
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    gap: 16px;
+    width: 100%;
+    flex-wrap: wrap;
+
     .btn {
-      width: 100%;
-      flex: 3;
-      &:nth-child(2) {
-        margin-left: 10px;
-        flex: 2;
+      padding: 18px 32px;
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      p {
+        margin: 0;
+        font-weight: 700;
+      }
+
+      &.primary {
+        background: #fff;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2),
+          0 0 0 0 rgba(255, 255, 255, 0.3);
+
+        p {
+          background: linear-gradient(135deg, $blue-primary, $purple-primary);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        &:hover {
+          transform: translateY(-3px) scale(1.02);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25),
+            0 0 0 3px rgba(255, 255, 255, 0.2);
+        }
+      }
+
+      &.secondary {
+        background: rgba(255, 255, 255, 0.55);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.4);
+
+        p {
+          color: #fff;
+          text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.25);
+          border-color: rgba(255, 255, 255, 0.7);
+          transform: translateY(-3px);
+        }
+      }
+
+      &:active {
+        transform: translateY(-1px) scale(1);
+      }
+    }
+  }
+
+  .social-proof {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    .avatars {
+      display: flex;
+
+      img {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        object-fit: cover;
+        margin-left: -10px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .proof-text {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0;
+
+      strong {
+        color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .landing {
+    .buttons {
+      flex-direction: column;
+      align-items: center;
+
+      .btn {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+
+    .social-proof {
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px 20px;
+
+      .avatars img {
+        width: 32px;
+        height: 32px;
       }
     }
   }
 }
 
 @media screen and (max-width: 465px) {
-  .landing .content .titles .title {
+  .landing .content .titles .super-title {
     font-size: 2.25rem;
   }
-  .landing .buttons {
-    flex-direction: column;
-    .btn {
-      margin: 0.25rem 0 !important;
-    }
-  }
 }
-
