@@ -41,7 +41,7 @@ jobs:
       - name: Restart pm2
         uses: garygrossgarten/github-action-ssh@v0.5.0
         with:
-          command: pm2 restart ModernaMedia
+          command: pm2 restart moderna-media
           host: ${{ secrets.HOST }}
           username: ${{ secrets.HOST_NAME }}
           password: ${{ secrets.HOST_PASSWORD }}
