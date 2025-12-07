@@ -133,14 +133,11 @@ import { CommonModule } from '@angular/common';
               display: block;
               font-size: 2.5rem;
               font-weight: 800;
-              background: linear-gradient(
-                135deg,
-                $blue-primary,
-                $purple-primary
-              );
+              background: linear-gradient(135deg, #3b82f6, #8b5cf6);
               -webkit-background-clip: text;
               -webkit-text-fill-color: transparent;
               background-clip: text;
+              color: #3b82f6;
               line-height: 1.1;
             }
 
