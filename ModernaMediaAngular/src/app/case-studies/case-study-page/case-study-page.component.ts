@@ -55,6 +55,7 @@ export class CaseStudyPageComponent {
       description: study.seoDescription,
       keywords: study.services.join(', '),
       url: canonicalUrl,
+      robots: 'noindex, nofollow',
       image: study.heroImage.startsWith('http')
         ? study.heroImage
         : `https://modernamedia.no${study.heroImage}`,

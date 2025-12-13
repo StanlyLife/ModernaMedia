@@ -4,5 +4,8 @@ Disallow: /error
 Disallow: /info
 Disallow: /misc
 Disallow: /misc/*
+Disallow: /case-study
+Disallow: /case-study/*
+Disallow: /case-studies
 
 Sitemap: https://modernamedia.no/sitemap.xml

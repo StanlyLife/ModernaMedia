@@ -327,6 +327,7 @@ export class CaseStudiesListComponent implements OnInit {
       keywords:
         'casestudier, kundehistorier, nettside resultater, SEO resultater, digital markedsføring, Moderna Media prosjekter',
       url: 'https://modernamedia.no/case-studies',
+      robots: 'noindex, nofollow',
       type: 'website',
     });
   }

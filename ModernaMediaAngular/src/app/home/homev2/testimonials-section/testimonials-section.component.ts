@@ -196,7 +196,7 @@ export class TestimonialsSectionComponent {
       personImageAlt: 'Daglig leder Marbella Car Spa',
       caseStudyPath: '/case-study/marbella-car-spa',
       details: [
-        'Patryk W. Mamrot',
+        'Patrik',
         'Daglig leder',
         'Nettside + SEO',
         'Digitale kampanjer',

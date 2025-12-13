@@ -150,11 +150,11 @@ export const CASE_STUDIES: CaseStudy[] = [
   },
   {
     slug: 'marbella-car-spa',
-    title: 'Marbella Car Spa – ny nettopplevelse for Patrik Mamrot',
+    title: 'Marbella Car Spa – ny nettopplevelse for Patrik',
     subtitle:
       'Fra serverdrift på Gardermoen til Next.js-basert nettside for nyoppstartet premium-detailer i Marbella.',
     summary:
-      'Patrik Mamrot drev bilpleie ved Gardermoen og lot Moderna Media drifte mamrotcarspa.no. Da han åpnet i Marbella trengte han en fleksibel og rask nettside. Vi videreførte relasjonen med hosting, Next.js-utvikling og teknisk SEO.',
+      'Da han åpnet i Marbella trengte han en fleksibel og rask nettside. Vi videreførte relasjonen med hosting, Next.js-utvikling og teknisk SEO.',
     heroImage: 'assets/Images/testimonials/mamrot/bg.jpeg',
     heroImageAlt: 'Detaljert bilpleie hos Marbella Car Spa',
     heroOverlay:
@@ -171,7 +171,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     testimonial: {
       quote:
         'Moderna Media tok over driften av mamrotcarspa.no og leverte pålitelig support. Da vi åpnet i Marbella bygde de den fleksible Next.js-nettsiden vi trengte, uten at vi måtte starte fra scratch.',
-      name: 'Patrik W. Mamrot',
+      name: 'Patrik',
       role: 'Daglig leder',
       company: 'Marbella Car Spa',
     },
@@ -196,7 +196,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: 'Utgangspunktet',
         body: [
-          'Patrik Mamrot hadde driftet car detailing ved Gardermoen og brukte oss til servervedlikehold. Da han startet Marbella Car Spa trengte han mer enn hosting – han trengte en moderne plattform som kunne vokse med virksomheten.',
+          'Patrik hadde driftet car detailing ved Gardermoen og brukte oss til servervedlikehold. Da han startet Marbella Car Spa trengte han mer enn hosting – han trengte en moderne plattform som kunne vokse med virksomheten.',
           'Vi utviklet en plan og et design som reflekterte den premium opplevelsen Marbella Car Spa tilbyr sine kunder.',
         ],
       },
