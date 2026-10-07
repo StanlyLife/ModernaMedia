@@ -50,7 +50,7 @@ export class RequestPriceFormComponent implements OnInit {
       alt: '',
       src: '../../../../assets/Images/forms/contact/trollstigen i molde eller kristansund.jpg',
     },
-    title: 'Få et uforpliktet pristilbud',
+    title: 'Få et uforpliktende pristilbud',
     subtitle: '100% fornøyd garanti på nettsider, programvare og design!',
   };
   sanitizeImageUrl(imageUrl: string): SafeUrl {

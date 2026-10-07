@@ -1,18 +1,129 @@
-<app-tjenester-header [data]="dataHeader"></app-tjenester-header>
-<app-tjenester-services
-  [data]="dataServices"
-  id="services"
-></app-tjenester-services>
-<app-tjenester-info-section
-  [data]="dataInfoSection"
-  id="tekniskseo"
-></app-tjenester-info-section>
-<app-tjenester-info-section
-  [data]="dataInfoSection2"
-  id="offpageseo"
-></app-tjenester-info-section>
-<app-tjenester-info-section
-  [data]="dataInfoSection3"
-  id="innholdsproduksjon"
-></app-tjenester-info-section>
-<app-about-your-next-project></app-about-your-next-project>
+<div class="v2">
+  <v2-svc-hero
+    [crumbs]="[{ label: 'Tjenester', link: '/tjenester' }, { label: 'SEO' }]"
+    [pill]="['SEO', 'SEO-byrå i Oslo']"
+    h1="Søkemotoroptimalisering (SEO)"
+    sub="Vi øker synlighet, vekst og omsetning gjennom søkemotoroptimalisering for bedriften din – med teknisk SEO, innholdsproduksjon og off-page SEO."
+    [checks]="['SEO fra 5.000 kr/mnd eks. mva', 'Gratis SEO-analyse', '100 % fornøyd-garanti']"
+    primary="Bestill gratis SEO-analyse"
+    [bg]="{ src: '/assets/Images/Tjenester/header/seo/1920/Søkemotor optimalisering av seo byrå.webp' }"
+    [anchors]="[['Tjenester', 'tjenester'], ['Teknisk SEO', 'teknisk-seo'], ['Off-page SEO', 'off-page-seo'], ['Innholdsproduksjon', 'innholdsproduksjon'], ['Priser', 'priser'], ['Spørsmål og svar', 'faq']]"
+    formTitle="Bestill gratis SEO-analyse"
+    formSub="Få en rapport med konkrete forbedringer for nettsiden din. Vi svarer vanligvis innen 2 timer."
+    formMessage="Adressen til nettsiden din, f.eks. dinbedrift.no"
+    formButton="Få gratis SEO-analyse"
+    preselect="SEO"
+    source="Gratis SEO-analyse – SEO-siden"
+  />
+
+  <v2-trust />
+
+  <section class="soft" id="tjenester" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="head center">
+        <span class="kicker">Søkemotoroptimalisering – moderne markedsføring</span>
+        <h2 class="h2" id="services-title">Våre SEO-tjenester for bedrifter</h2>
+        <p class="lead">
+          Når du er på ferie og skal ut å spise, hvordan velger du en restaurant? De aller fleste starter med et Google-søk og besøker sjelden restauranten på side 2. Ranger på topp med SEO.
+        </p>
+      </div>
+      <div class="grid3">
+        <v2-svc-card
+          icon="/assets/Images/Icons/tjenester/services/teknisk seo.svg"
+          title="Teknisk SEO"
+          text="Vi bearbeider nettsiden din og optimaliserer den for rangering."
+          [list]="['Hastighet og Core Web Vitals', 'Mobilvennlighet', 'Sikkerhet (HTTPS) og strukturerte data']"
+          link="/tjenester/bedrift/seo/teknisk-seo"
+          linkLabel="Les mer om teknisk SEO"
+        />
+        <v2-svc-card
+          icon="/assets/Images/Icons/tjenester/services/seo innholdsproduksjon.svg"
+          title="Innholdsproduksjon"
+          text="For å rangere på topp må nettsiden ha innhold. Vi skriver og lager innhold for hjemmesiden deres."
+          [list]="['Søkeordsanalyse', 'SEO-tekster og blogginnlegg', 'Optimalisering av eksisterende sider']"
+          link="/tjenester/bedrift/seo/innholdsproduksjon"
+          linkLabel="Les mer om innholdsproduksjon"
+        />
+        <v2-svc-card
+          icon="/assets/Images/Icons/tjenester/services/off page seo.svg"
+          title="Off-page SEO"
+          text="Vi jobber tett med våre partnere for å oppnå den beste søkemotoroptimaliseringen uten å endre hjemmesiden deres."
+          [list]="['Lenkebygging', 'Lokal SEO og Google Bedriftsprofil', 'Trygg og etisk strategi']"
+          link="/tjenester/bedrift/seo/off-page-seo"
+          linkLabel="Les mer om off-page SEO"
+        />
+      </div>
+    </div>
+  </section>
+
+  @defer (on idle; hydrate on viewport) {
+    <v2-info
+      anchor="teknisk-seo"
+      img="/assets/Images/Tjenester/info-section/utvikling/system.jpg"
+      alt="Teknisk SEO og hastighetsoptimalisering"
+      kicker="Grunnmuren i SEO"
+      title="Teknisk SEO"
+      [text]="tekniskText"
+      [list]="['Økt søkemotoroptimalisering', 'Styrket søkemotortilstedeværelse', 'Økt brukervennlighet', 'Styrket nettsideoppsett']"
+      [after]="['Dersom bedriften din ønsker en raskere og bedre nettside, og bedre søkemotoroptimalisering, ta kontakt med oss for et uforpliktende møte i dag.']"
+      link="/tjenester/bedrift/seo/teknisk-seo"
+      linkLabel="Les mer om teknisk SEO"
+      [fact]="['100/100', 'PageSpeed på mobil – Marbella Car Spa']"
+    />
+    <v2-info
+      anchor="off-page-seo"
+      [soft]="true"
+      [rev]="true"
+      img="/assets/Images/Tjenester/info-section/seo/backlink søkemotor optimalisering.webp"
+      alt="Lenkebygging og off-page SEO"
+      kicker="Bygg en sterk merkevare med"
+      title="Off-page SEO og lenkebygging"
+      [text]="offpageText"
+      [list]="['Økt søkemotoroptimalisering', 'Styrket søkemotortilstedeværelse', 'Høyere rangering i søkeresultatene', 'Styrket merkevare']"
+      [after]="['Dersom bedriften din ønsker en sterkere merkevare ved hjelp av off-page SEO, ta kontakt med oss for et uforpliktende møte i dag.']"
+      link="/tjenester/bedrift/seo/off-page-seo"
+      linkLabel="Les mer om off-page SEO"
+      [fact]="['3×', 'flere kvalifiserte leads – Østlandet Brønnboring']"
+    />
+    <v2-info
+      anchor="innholdsproduksjon"
+      img="/assets/Images/Tjenester/info-section/seo/innholdsproduksjon for søkemotor optimalisering.webp"
+      alt="Innholdsproduksjon for søkemotoroptimalisering"
+      kicker="Øk rangeringen med"
+      title="Innholdsproduksjon (on-page SEO)"
+      [text]="innholdText"
+      link="/tjenester/bedrift/seo/innholdsproduksjon"
+      linkLabel="Les mer om innholdsproduksjon"
+      [fact]="['+160.000', 'i organisk trafikk – Sola Parkering']"
+    />
+
+    <section class="soft" aria-label="Kundehistorie">
+      <div class="wrap">
+        <v2-case
+          key="ostlandet"
+          kicker="Kundehistorie · Nettside + SEO"
+          title="Østlandet Brønnboring fikk 3× flere kvalifiserte leads"
+          [metrics]="[['3×', 'kvalifiserte leads'], ['−55 %', 'tid fra henvendelse til tilbud'], ['100/100', 'indeks-score']]"
+        />
+      </div>
+    </section>
+  }
+
+  @defer (on idle; hydrate on viewport) {
+    <v2-price-band
+      title="Hva koster SEO?"
+      badge="Løpende SEO-avtale"
+      name="SEO"
+      price="5.000 kr"
+      per="/mnd"
+      [list]="['Teknisk SEO og hastighet', 'Søkeordsanalyse og innholdsproduksjon', 'Off-page SEO og lenkebygging', 'Lokal SEO og Google Bedriftsprofil']"
+      cta="Få pristilbud på SEO"
+      cta2="Gratis SEO-analyse"
+      cta2Link="/gratis-seo-analyse"
+      [factors]="[['Konkurranse', 'Hvor hard konkurransen om søkeordene er i bransjen din.'], ['Søkeord og områder', 'Hvor mange søkeord og steder du vil rangere på.'], ['Teknisk tilstand', 'Hvor mye som må fikses på nettsiden før vi kan bygge videre.'], ['Innhold', 'Hvor mye nytt innhold som skal produseres hver måned.']]"
+    />
+    <v2-process cta="Bestill gratis SEO-analyse" />
+    <v2-faq title="Spørsmål og svar om SEO" intro="Det bedrifter oftest lurer på før de investerer i SEO." [items]="faq" [soft]="false" />
+    <v2-contact preselect="SEO" source="seo" />
+  }
+</div>

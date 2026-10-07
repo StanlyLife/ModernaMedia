@@ -1,17 +1,18 @@
-<section
-  class="about"
-  aria-label="Om Moderna Media digitalbyrå"
-  aria-labelledby="about-section-title"
->
+<section class="about" aria-labelledby="about-section-title">
   <div class="wrapper">
     <div class="image">
       <img
-        [src]="
-          sanitizeImageUrl(
-            '../../../../assets/Images/Home/about/640/Informasjon-om-digitalbyrå-eksperter-Moderna-Media-seo.webp'
-          )
+        src="/assets/img/home/om-moderna-media-480.webp"
+        srcset="
+          /assets/img/home/om-moderna-media-480.webp 480w,
+          /assets/img/home/om-moderna-media-960.webp 960w
         "
-        alt="Digitalbyrå som jobber med bedrift nettsider og design"
+        sizes="(min-width: 1000px) 520px, 100vw"
+        width="480"
+        height="720"
+        loading="lazy"
+        decoding="async"
+        alt="Moderna Media jobber med nettsider og design for bedrifter"
       />
     </div>
     <div class="content">
@@ -22,13 +23,13 @@
           </h2>
           <p class="innhold">
             Moderna Media er et digitalt markedsføringsbyrå som spesialiserer
-            seg på webdesign, SEO og grafisk design som styrker din digital
+            seg på webdesign, SEO og grafisk design som styrker din digitale
             tilstedeværelse og synlighet.
           </p>
           <p class="innhold">
             Våre tjenester hjelper deg å bli funnet av dine ideelle kunder,
             fremstå profesjonell på digitale kanaler og øke din sjanse for
-            suksess på digitale flatter.
+            suksess på digitale flater.
           </p>
         </div>
         <div class="liste">

@@ -1,11 +1,153 @@
-<app-landing></app-landing>
-<app-trust-badges></app-trust-badges>
-<app-usp></app-usp>
-<app-services></app-services>
-<app-testimonials-section></app-testimonials-section>
-<app-process></app-process>
-<app-about></app-about>
-<app-prices></app-prices>
-<app-contact></app-contact>
-<app-blog-showcase></app-blog-showcase>
-<app-about-your-next-project></app-about-your-next-project>
+<div class="v2">
+  <section class="hero">
+    <div class="bg">
+      <img
+        src="/assets/img/home/digitalbyra-oslo-hero-1280.webp"
+        srcset="
+          /assets/img/home/digitalbyra-oslo-hero-640.webp   640w,
+          /assets/img/home/digitalbyra-oslo-hero-960.webp   960w,
+          /assets/img/home/digitalbyra-oslo-hero-1280.webp 1280w,
+          /assets/img/home/digitalbyra-oslo-hero-1920.webp 1920w
+        "
+        sizes="100vw"
+        width="1280"
+        height="853"
+        fetchpriority="high"
+        alt="Team fra Moderna Media som planlegger nettside, design og SEO for en bedrift"
+      />
+    </div>
+    <div class="wrap">
+      <div>
+        <span class="pill"><span>OSLO</span>Digitalbyrå for nettsider, design og SEO</span>
+        <h1>
+          <span class="l">Nettsider, design og SEO</span>&ngsp;<span class="l">som gir bedriften din</span>&ngsp;<span class="gt">flere kunder</span>
+        </h1>
+        <p class="sub">
+          Moderna Media er et digitalbyrå i Oslo som lager nettsider, design og SEO som gir bedriften din vekst og flere kunder.
+        </p>
+        <div class="checks">
+          @for (c of checks; track c) {
+            <span class="check"><span class="tick"><v2-icon name="check" /></span>{{ c }}</span>
+          }
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" [routerLink]="[]" fragment="kontakt">Book et uforpliktende møte <v2-icon name="arrow" /></a>
+          <a class="btn btn-ghost" [routerLink]="[]" fragment="tjenester">Se våre tjenester</a>
+        </div>
+        <v2-proof />
+      </div>
+      <v2-lead-form source="Pristilbud – forside" />
+    </div>
+  </section>
+
+  <v2-trust />
+
+  @defer (on idle; hydrate on viewport) {
+    <section class="soft" id="tjenester" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="head center">
+          <span class="kicker">Våre tjenester</span>
+          <h2 class="h2" id="services-title">Invester i vekst med våre beste tjenester</h2>
+          <p class="lead">Alt du trenger for å bli funnet, fremstå profesjonell og få flere kunder – samlet hos ett digitalbyrå.</p>
+        </div>
+        <div class="grid4">
+          @for (s of services; track s.title) {
+            <v2-svc-card [img]="img + s.img + '-840.webp'" [tag]="s.tag" [title]="s.title" [text]="s.text" [list]="s.list" [price]="s.price" [per]="s.per" [link]="s.link" [linkLabel]="s.linkLabel" />
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="dark" id="kundehistorier" aria-labelledby="cases-title">
+      <div class="wrap">
+        <div class="head center">
+          <span class="kicker">Kundehistorier</span>
+          <h2 class="h2" id="cases-title">Hva våre kunder sier</h2>
+          <p class="lead">Se hva bedrifter som deg har oppnådd med Moderna Media.</p>
+        </div>
+        <div class="grid2">
+          @for (k of testimonials; track k) {
+            <v2-tcard [key]="k" />
+          }
+        </div>
+        <div class="more"><a class="btn btn-ghost" routerLink="/case-studies">Se alle våre casestudier <v2-icon name="arrow" /></a></div>
+      </div>
+    </section>
+  }
+
+  @defer (on idle; hydrate on viewport) {
+    <v2-magnet />
+
+    <section style="padding: 56px 0 112px" aria-labelledby="usp-title">
+      <div class="wrap">
+        <div class="head center">
+          <span class="kicker">Gode grunner til å modernisere</span>
+          <h2 class="h2" id="usp-title">Derfor bør du velge Moderna Media</h2>
+          <p class="lead">
+            <b style="color: var(--ink)">Tjenestene vi tilbyr skal være en investering, ikke en kostnad.</b>
+            Digital markedsføring handler om mer enn kun synlighet eller betalt reklamering: Det handler om å skape spesifikke og målbare resultater.
+          </p>
+        </div>
+        <div class="grid3">
+          @for (u of usps; track u.title) {
+            <div class="usp">
+              <img [src]="img + u.img" width="800" height="533" loading="lazy" decoding="async" [alt]="u.alt" />
+              <div class="b">
+                <div class="ic"><v2-icon [name]="u.icon" /></div>
+                <h3>{{ u.title }}</h3>
+                <p>{{ u.text }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <v2-process />
+  }
+
+  @defer (on idle; hydrate on viewport) {
+    <section id="priser" aria-labelledby="prices-title">
+      <div class="wrap">
+        <div class="head center">
+          <span class="kicker">Våre priser</span>
+          <h2 class="h2" id="prices-title">Hva koster nettside, design og SEO?</h2>
+          <p class="lead">Veiledende priser. Du får alltid en fast pris før vi starter – uten skjulte kostnader.</p>
+        </div>
+        <div class="grid4">
+          @for (p of prices; track p.name) {
+            <v2-pcard [data]="p" [showMore]="true" />
+          }
+        </div>
+        <v2-assure />
+      </div>
+    </section>
+
+    <section class="soft" id="om-oss" aria-labelledby="about-title">
+      <div class="wrap about">
+        <img [src]="img + 'om-moderna-media-960.webp'" width="960" height="1440" loading="lazy" decoding="async" alt="Moderna Media jobber med nettsider og design for bedrifter" />
+        <div>
+          <span class="kicker">Om oss</span>
+          <h2 class="h2" id="about-title">Om Moderna Media Digitalbyrå</h2>
+          <p style="margin-bottom: 16px">
+            Moderna Media er et digitalt markedsføringsbyrå som spesialiserer seg på webdesign, SEO og grafisk design som styrker din digitale tilstedeværelse og synlighet.
+          </p>
+          <p>
+            Våre tjenester hjelper deg å bli funnet av dine ideelle kunder, fremstå profesjonell på digitale kanaler og øke din sjanse for suksess på digitale flater.
+          </p>
+          <div class="factors">
+            @for (a of about; track a[0]; let i = $index) {
+              <div><span class="n">{{ i + 1 }}</span><div><b>{{ a[0] }}</b><p>{{ a[1] }}</p></div></div>
+            }
+          </div>
+          <p style="margin-top: 24px"><a class="link" routerLink="/om-oss">Les mer om oss <v2-icon name="arrow" /></a></p>
+        </div>
+      </div>
+    </section>
+  }
+
+  @defer (on idle; hydrate on viewport) {
+    <v2-faq title="Spørsmål og svar om nettsider, design og SEO" intro="Her finner du svar på det bedrifter oftest lurer på før de tar kontakt med oss." [items]="faq" [soft]="false" />
+    <v2-contact source="forside" />
+  }
+</div>

@@ -1,91 +1,212 @@
 import { Routes } from '@angular/router';
-import { BloggPostRestaurantHjemmesideComponent } from './blogg/blogg-post-restaurant-hjemmeside/blogg-post-restaurant-hjemmeside.component';
-import { ContactFormComponent } from './forms/contact-form/contact-form.component';
-import { RequestPriceFormComponent } from './forms/request-price-form/request-price-form.component';
-import { RequestSeoAuditFormComponent } from './forms/request-audit-form/request-seo-audit-form.component';
-import { RequestWebsiteAuditFormComponent } from './forms/request-website-audit-form/request-website-audit-form.component';
 import { HomeComponent } from './home/homev2/home/home.component';
-import { NotFoundComponent } from './error/not-found/not-found.component';
-import { DesignComponent } from './Tjenester/design/design.component';
-import { DesignGrafiskComponent } from './Tjenester/design/design-grafisk/design-grafisk.component';
-import { DesignLogoComponent } from './Tjenester/design/design-logo/design-logo.component';
-import { DesignWebComponent } from './Tjenester/design/design-web/design-web.component';
-import { SeoComponent } from './Tjenester/seo/seo.component';
-import { SeoTekniskComponent } from './Tjenester/seo/seo-teknisk/seo-teknisk.component';
-import { SeoInnholdsproduksjonComponent } from './Tjenester/seo/seo-innholdsproduksjon/seo-innholdsproduksjon.component';
-import { SeoOffPageComponent } from './Tjenester/seo/seo-off-page/seo-off-page.component';
-import { UtviklingComponent } from './Tjenester/utvikling/utvikling.component';
-import { UtviklingHjemmesideComponent } from './Tjenester/utvikling/utvikling-hjemmeside/utvikling-hjemmeside.component';
-import { UtviklingSystemComponent } from './Tjenester/utvikling/utvikling-system/utvikling-system.component';
-import { DeveloperSalarayChartsComponent } from './tools/developer-salaray-charts/developer-salaray-charts.component';
-import { DesignsystemComponent } from './misc/designsystem/designsystem.component';
-import { CaseStudyPageComponent } from './case-studies/case-study-page/case-study-page.component';
-import { CaseStudiesListComponent } from './case-studies/case-studies-list/case-studies-list.component';
-import { AboutUsComponent } from './about-us/about-us.component';
+
+// The homepage is part of the main bundle; every other page is loaded on demand.
+const article = (slug: string) => ({
+  path: `blogg/${slug}`,
+  data: { slug },
+  loadComponent: () =>
+    import('./v2/pages/article.page').then((m) => m.ArticlePageComponent),
+});
 
 export const appRoutes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'kontakt', component: ContactFormComponent },
-  { path: 'pris', component: RequestPriceFormComponent },
+  {
+    path: 'tjenester',
+    loadComponent: () =>
+      import('./v2/pages/tjenester.page').then((m) => m.TjenesterPageComponent),
+  },
+  {
+    path: 'priser',
+    loadComponent: () =>
+      import('./v2/pages/priser.page').then((m) => m.PriserPageComponent),
+  },
+  {
+    path: 'takk',
+    loadComponent: () =>
+      import('./v2/pages/takk.page').then((m) => m.TakkPageComponent),
+  },
+  {
+    path: 'personvern',
+    loadComponent: () =>
+      import('./v2/pages/personvern.page').then((m) => m.PersonvernPageComponent),
+  },
+  {
+    path: 'digitalbyra-oslo',
+    loadComponent: () =>
+      import('./v2/pages/oslo.page').then((m) => m.OsloPageComponent),
+  },
+  {
+    path: 'blogg',
+    pathMatch: 'full',
+    loadComponent: () =>
+      import('./v2/pages/blogg.page').then((m) => m.BloggPageComponent),
+  },
+  article('hva-koster-en-nettside'),
+  article('teknisk-seo-sjekkliste'),
+  article('slik-far-du-en-god-logo'),
+  article('google-bedriftsprofil'),
+  {
+    path: 'kontakt',
+    loadComponent: () =>
+      import('./forms/contact-form/contact-form.component').then(
+        (m) => m.ContactFormComponent
+      ),
+  },
+  {
+    path: 'pris',
+    loadComponent: () =>
+      import('./forms/request-price-form/request-price-form.component').then(
+        (m) => m.RequestPriceFormComponent
+      ),
+  },
   {
     path: 'gratis-hjemmeside-analyse',
-    component: RequestWebsiteAuditFormComponent,
+    loadComponent: () =>
+      import(
+        './forms/request-website-audit-form/request-website-audit-form.component'
+      ).then((m) => m.RequestWebsiteAuditFormComponent),
   },
-  { path: 'gratis-seo-analyse', component: RequestSeoAuditFormComponent },
-  { path: 'tjenester/bedrift/design', component: DesignComponent },
+  {
+    path: 'gratis-seo-analyse',
+    loadComponent: () =>
+      import('./forms/request-audit-form/request-seo-audit-form.component').then(
+        (m) => m.RequestSeoAuditFormComponent
+      ),
+  },
+  {
+    path: 'tjenester/bedrift/design',
+    loadComponent: () =>
+      import('./Tjenester/design/design.component').then(
+        (m) => m.DesignComponent
+      ),
+  },
   {
     path: 'tjenester/bedrift/design/grafisk-design',
-    component: DesignGrafiskComponent,
+    loadComponent: () =>
+      import('./Tjenester/design/design-grafisk/design-grafisk.component').then(
+        (m) => m.DesignGrafiskComponent
+      ),
   },
   {
     path: 'tjenester/bedrift/design/logo-design',
-    component: DesignLogoComponent,
+    loadComponent: () =>
+      import('./Tjenester/design/design-logo/design-logo.component').then(
+        (m) => m.DesignLogoComponent
+      ),
   },
   {
     path: 'tjenester/bedrift/design/web-design',
-    component: DesignWebComponent,
+    loadComponent: () =>
+      import('./Tjenester/design/design-web/design-web.component').then(
+        (m) => m.DesignWebComponent
+      ),
   },
   {
+    // Legacy URL; the server answers it with a 301 to /tjenester/bedrift/seo.
     path: 'tjenester/bedrift/seo/søkemotoroptimalisering',
-    component: SeoComponent,
+    redirectTo: 'tjenester/bedrift/seo',
   },
-  { path: 'tjenester/bedrift/seo', component: SeoComponent },
-  { path: 'tjenester/bedrift/seo/teknisk-seo', component: SeoTekniskComponent },
+  {
+    path: 'tjenester/bedrift/seo',
+    loadComponent: () =>
+      import('./Tjenester/seo/seo.component').then((m) => m.SeoComponent),
+  },
+  {
+    path: 'tjenester/bedrift/seo/teknisk-seo',
+    loadComponent: () =>
+      import('./Tjenester/seo/seo-teknisk/seo-teknisk.component').then(
+        (m) => m.SeoTekniskComponent
+      ),
+  },
   {
     path: 'tjenester/bedrift/seo/innholdsproduksjon',
-    component: SeoInnholdsproduksjonComponent,
+    loadComponent: () =>
+      import(
+        './Tjenester/seo/seo-innholdsproduksjon/seo-innholdsproduksjon.component'
+      ).then((m) => m.SeoInnholdsproduksjonComponent),
   },
   {
     path: 'tjenester/bedrift/seo/off-page-seo',
-    component: SeoOffPageComponent,
+    loadComponent: () =>
+      import('./Tjenester/seo/seo-off-page/seo-off-page.component').then(
+        (m) => m.SeoOffPageComponent
+      ),
   },
-  { path: 'tjenester/bedrift/utvikling', component: UtviklingComponent },
+  {
+    path: 'tjenester/bedrift/utvikling',
+    loadComponent: () =>
+      import('./Tjenester/utvikling/utvikling.component').then(
+        (m) => m.UtviklingComponent
+      ),
+  },
   {
     path: 'tjenester/bedrift/utvikling/hjemmeside-bedrift',
-    component: UtviklingHjemmesideComponent,
+    loadComponent: () =>
+      import(
+        './Tjenester/utvikling/utvikling-hjemmeside/utvikling-hjemmeside.component'
+      ).then((m) => m.UtviklingHjemmesideComponent),
   },
   {
     path: 'tjenester/bedrift/utvikling/programvare',
-    component: UtviklingSystemComponent,
+    loadComponent: () =>
+      import(
+        './Tjenester/utvikling/utvikling-system/utvikling-system.component'
+      ).then((m) => m.UtviklingSystemComponent),
   },
   {
     path: 'blogg/hjemmeside-for-restaurant-bedrift',
-    component: BloggPostRestaurantHjemmesideComponent,
+    loadComponent: () =>
+      import(
+        './blogg/blogg-post-restaurant-hjemmeside/blogg-post-restaurant-hjemmeside.component'
+      ).then((m) => m.BloggPostRestaurantHjemmesideComponent),
   },
-  { path: 'blogg/utviklerlonn', component: DeveloperSalarayChartsComponent },
+  {
+    path: 'blogg/utviklerlonn',
+    loadComponent: () =>
+      import(
+        './tools/developer-salaray-charts/developer-salaray-charts.component'
+      ).then((m) => m.DeveloperSalarayChartsComponent),
+  },
   {
     path: 'case-studies',
-    component: CaseStudiesListComponent,
+    loadComponent: () =>
+      import('./case-studies/case-studies-list/case-studies-list.component').then(
+        (m) => m.CaseStudiesListComponent
+      ),
   },
   {
     path: 'om-oss',
-    component: AboutUsComponent,
+    loadComponent: () =>
+      import('./about-us/about-us.component').then((m) => m.AboutUsComponent),
   },
   {
     path: 'case-study/:slug',
-    component: CaseStudyPageComponent,
+    loadComponent: () =>
+      import('./case-studies/case-study-page/case-study-page.component').then(
+        (m) => m.CaseStudyPageComponent
+      ),
   },
-  { path: 'misc/designsystem', component: DesignsystemComponent },
-  { path: 'error', component: NotFoundComponent },
-  { path: '**', redirectTo: 'error' },
+  {
+    path: 'misc/designsystem',
+    loadComponent: () =>
+      import('./misc/designsystem/designsystem.component').then(
+        (m) => m.DesignsystemComponent
+      ),
+  },
+  {
+    path: 'error',
+    loadComponent: () =>
+      import('./error/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
+  },
+  {
+    // Rendered in place (no redirect) so the server can answer with a real 404.
+    path: '**',
+    loadComponent: () =>
+      import('./error/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent
+      ),
+  },
 ];

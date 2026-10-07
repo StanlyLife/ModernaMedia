@@ -2,11 +2,15 @@ import { CommonModule } from '@angular/common';
 import { Component, DestroyRef, inject } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { SeoService } from 'src/app/services/seo.service';
 import {
-  CASE_STUDIES,
+  ORGANIZATION_ID,
+  SeoService,
+  SITE_ORIGIN,
+} from 'src/app/services/seo.service';
+import {
   CaseStudy,
   getCaseStudyBySlug,
+  INDEXABLE_CASE_STUDIES,
 } from '../case-studies.data';
 import { AboutYourNextProjectComponent } from 'src/app/components/about-your-next-project/about-your-next-project.component';
 
@@ -21,8 +25,8 @@ import { AboutYourNextProjectComponent } from 'src/app/components/about-your-nex
   ],
 })
 export class CaseStudyPageComponent {
-  readonly caseStudies = CASE_STUDIES;
   caseStudy?: CaseStudy;
+  otherCaseStudies: CaseStudy[] = [];
   private readonly defaultOverlay =
     'linear-gradient(135deg, rgba(9, 14, 36, 0.85), rgba(38, 66, 142, 0.65))';
 
@@ -43,53 +47,64 @@ export class CaseStudyPageComponent {
         }
 
         this.caseStudy = study;
+        this.otherCaseStudies = INDEXABLE_CASE_STUDIES.filter(
+          (other) => other.slug !== study.slug
+        );
         this.updateSeo(study);
       });
   }
 
   private updateSeo(study: CaseStudy): void {
-    const canonicalUrl = `https://modernamedia.no/case-study/${study.slug}`;
+    const path = `/case-study/${study.slug}`;
+    const canonicalUrl = `${SITE_ORIGIN}${path}`;
+    const ogImage = `${SITE_ORIGIN}${study.ogImage}`;
 
     this.seo.updateSeo({
       title: study.seoTitle,
       description: study.seoDescription,
-      keywords: study.services.join(', '),
       url: canonicalUrl,
-      robots: 'noindex, nofollow',
-      image: study.heroImage.startsWith('http')
-        ? study.heroImage
-        : `https://modernamedia.no${study.heroImage}`,
+      robots: study.indexable
+        ? 'index, follow, max-image-preview:large'
+        : 'noindex, follow',
+      image: ogImage,
       type: 'article',
     });
 
-    // Add structured data for the case study
     this.seo.addStructuredData({
       '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: study.title,
-      description: study.seoDescription,
-      image: study.heroImage.startsWith('http')
-        ? study.heroImage
-        : `https://modernamedia.no${study.heroImage}`,
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': canonicalUrl,
-      },
-      author: {
-        '@type': 'Organization',
-        name: 'Moderna Media',
-        url: 'https://modernamedia.no',
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: 'Moderna Media',
-        logo: {
-          '@type': 'ImageObject',
-          url: 'https://modernamedia.no/assets/favicons/android-chrome-512x512.png',
+      '@graph': [
+        this.seo.createOrganizationNode(),
+        {
+          '@type': 'Article',
+          '@id': `${canonicalUrl}#article`,
+          headline: study.title,
+          description: study.seoDescription,
+          image: [ogImage, `${SITE_ORIGIN}${study.heroImage}`],
+          datePublished: study.datePublished,
+          dateModified: study.dateModified,
+          inLanguage: 'nb-NO',
+          mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl },
+          author: { '@id': ORGANIZATION_ID },
+          publisher: { '@id': ORGANIZATION_ID },
+          about: {
+            '@type': 'Organization',
+            name: study.testimonial.company,
+            url: study.website,
+            address: study.location,
+          },
+          keywords: study.services.join(', '),
         },
-      },
-      keywords: study.services,
+        this.seo.createBreadcrumbs([
+          { name: 'Forside', path: '/' },
+          { name: 'Kundecaser', path: '/case-studies' },
+          { name: study.testimonial.company, path },
+        ]),
+      ],
     });
+  }
+
+  websiteLabel(url: string): string {
+    return new URL(url).hostname.replace(/^www\./, '');
   }
 
   trackByIndex(index: number): number {

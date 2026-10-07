@@ -1,14 +1,111 @@
-<app-tjenester-header [data]="dataHeader"></app-tjenester-header>
-<app-tjenester-services
-  [data]="dataServices"
-  id="services"
-></app-tjenester-services>
-<app-tjenester-info-section
-  [data]="dataInfoSection"
-  id="webutvikling"
-></app-tjenester-info-section>
-<app-tjenester-info-section
-  [data]="dataInfoSection2"
-  id="systemutvikling"
-></app-tjenester-info-section>
-<app-about-your-next-project></app-about-your-next-project>
+<div class="v2">
+  <v2-svc-hero
+    [crumbs]="[{ label: 'Tjenester', link: '/tjenester' }, { label: 'Utvikling' }]"
+    [pill]="['UTVIKLING', 'Nettsider & Programvare']"
+    h1="Webutvikling – nettsider og programvare"
+    sub="Skreddersydde hjemmesider, programvare og applikasjoner for bedrifter – bygget helt fra bunn med banebrytende teknologi som SPA-rammeverk og full cloud-service."
+    [checks]="['Nettsider fra 25.000 kr eks. mva', 'Fast pris før oppstart', 'SEO-optimalisert fra dag én']"
+    primary="Få pristilbud på nettside"
+    [bg]="{ src: '/assets/Images/Tjenester/header/utvikling/1280/Bedrifts nettside og datasytem for bedrifter.webp' }"
+    [anchors]="[['Tjenester', 'tjenester'], ['Hjemmeside for bedrift', 'webutvikling'], ['Programvare', 'programvare'], ['Priser', 'priser'], ['Spørsmål og svar', 'faq']]"
+    formTitle="Få pristilbud på nettside eller programvare"
+    preselect="Nettside"
+    source="Pristilbud – utvikling"
+  />
+
+  <v2-trust />
+
+  <section class="soft" id="tjenester" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="head center">
+        <span class="kicker">Webutvikling og programvareutvikling</span>
+        <h2 class="h2" id="services-title">Våre utviklingstjenester for bedrifter</h2>
+        <p class="lead">Våre hjemmesider og programvare er bygget helt fra bunn med banebrytende teknologi som SPA-rammeverk og full cloud-service.</p>
+      </div>
+      <div class="grid2">
+        <v2-svc-card
+          icon="/assets/Images/Icons/tjenester/services/hjemmeside-bedrift.svg"
+          title="Hjemmeside for bedrift"
+          text="Invester i en nettside for bedriften av topp kvalitet – designet for å bygge tillit, bli funnet på Google og gi deg flere henvendelser."
+          [list]="['Skreddersydd, mobilvennlig design', 'Rask med SPA-teknologi og server-side rendering', 'SEO-grunnmur og Google Analytics', 'Oppsett av Google Bedriftsprofil']"
+          price="25.000 kr"
+          link="/tjenester/bedrift/utvikling/hjemmeside-bedrift"
+          linkLabel="Les mer om hjemmesider"
+        />
+        <v2-svc-card
+          icon="/assets/Images/Icons/tjenester/services/system-bedrift.svg"
+          title="Systemer for bedrifter"
+          text="Automatiser daglige gjøremål eller gjør livet enklere for kundene med vår skreddersydde programvare."
+          [list]="['Bookingsystem', 'Kundebehandlingssystem (CRM)', 'Drift- og logikksystemer', 'Database og API-integrasjoner']"
+          price="25.000 kr"
+          link="/tjenester/bedrift/utvikling/programvare"
+          linkLabel="Les mer om programvare"
+        />
+      </div>
+    </div>
+  </section>
+
+  @defer (on idle; hydrate on viewport) {
+    <v2-info
+      anchor="webutvikling"
+      img="/assets/Images/Tjenester/info-section/utvikling/utvikling av hjemmeside for bedrifter i oslo.webp"
+      alt="Utvikling av hjemmeside for bedrifter i Oslo"
+      kicker="Øk din online tilstedeværelse med en"
+      title="Hjemmeside for bedriften din"
+      [text]="hjemmesideText"
+      [list]="['Styrket merkevare', 'Økte leads', 'God søkemotoroptimalisering', 'Organisk trafikk', 'Økt organisk vekst']"
+      [after]="['En nettside kan bygges på en måte som sparer tid og penger. Hos digitalbyrået Moderna Media setter vi kundene først, og jobber fortløpende for at du får en nettside skreddersydd til din bedrift og din prisklasse. Husk, en hjemmeside er ikke en kostnad, men en investering!']"
+      link="/tjenester/bedrift/utvikling/hjemmeside-bedrift"
+      linkLabel="Les mer om hjemmesider"
+      [fact]="['+68 %', 'flere leads fra skjema etter ny nettside – Marbella Car Spa']"
+    />
+    <v2-info
+      anchor="programvare"
+      [soft]="true"
+      [rev]="true"
+      img="/assets/Images/Tjenester/info-section/utvikling/utvikling av datasystem for bedrifter.webp"
+      alt="Utvikling av programvare og datasystem for bedrifter"
+      kicker="Spar kostnader med"
+      title="Programvare for bedriften din"
+      [text]="programvareText"
+      [list]="['Forbedrer produktivitet og effektivitet', 'Gir deg skreddersydde løsninger', 'Gir deg økt sikkerhet', 'Gir deg et konkurransefortrinn']"
+      [after]="['Vårt mål er å gjøre hverdagen enklere for deg og dine kunder. Om du har behov for et bookingsystem, kundebehandlingssystem eller drift- og logikksystem, er vi her for deg og leverer det du trenger.']"
+      link="/tjenester/bedrift/utvikling/programvare"
+      linkLabel="Les mer om programvare"
+      [fact]="['−70 %', 'tid brukt på oppdateringer – Fjerdingby Pizza & Grill']"
+    />
+
+    <section aria-label="Kundehistorie">
+      <div class="wrap">
+        <v2-case
+          key="fjerdingby"
+          kicker="Kundehistorie · Nettside + bestillingsløsning"
+          title="Fjerdingby Pizza & Grill fikk ny nettside med moderne bestillingsløsning"
+          [metrics]="[['Topp 1', 'på «pizza Fjerdingby»'], ['<1,2 s', 'lastetid på mobil'], ['−70 %', 'tid på oppdateringer']]"
+        />
+      </div>
+    </section>
+  }
+
+  @defer (on idle; hydrate on viewport) {
+    <section class="soft" id="priser" aria-labelledby="price-title">
+      <div class="wrap">
+        <div class="head center">
+          <span class="kicker">Priser</span>
+          <h2 class="h2" id="price-title">Hva koster en nettside for bedrift?</h2>
+          <p class="lead">Alle priser er veiledende og oppgitt eks. mva. Du får alltid en fast pris før vi starter.</p>
+        </div>
+        <div class="grid4">
+          @for (p of packages; track p.name) {
+            <v2-pcard [data]="p" />
+          }
+        </div>
+        <v2-assure />
+      </div>
+    </section>
+
+    <v2-process [soft]="false" />
+    <v2-faq title="Spørsmål og svar om nettsider og webutvikling" intro="Det bedrifter oftest lurer på før de bestiller ny nettside eller programvare." [items]="faq" />
+    <v2-contact preselect="Nettside" source="utvikling" />
+  }
+</div>

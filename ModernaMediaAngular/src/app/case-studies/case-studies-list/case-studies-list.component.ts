@@ -1,8 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { CASE_STUDIES, CaseStudy } from '../case-studies.data';
-import { SeoService } from '../../services/seo.service';
+import {
+  CASE_STUDIES,
+  CaseStudy,
+  INDEXABLE_CASE_STUDIES,
+} from '../case-studies.data';
+import {
+  ORGANIZATION_ID,
+  SeoService,
+  SITE_ORIGIN,
+} from '../../services/seo.service';
 
 @Component({
   selector: 'app-case-studies-list',
@@ -12,10 +20,10 @@ import { SeoService } from '../../services/seo.service';
     <section class="case-studies-hero">
       <div class="wrapper">
         <p class="subtitle">Våre prosjekter</p>
-        <h1 class="title">Casestudier</h1>
+        <h1 class="title">Kundecaser</h1>
         <p class="description">
           Se hvordan vi har hjulpet bedrifter som din med å vokse digitalt. Fra
-          nettsider til SEO - her er resultatene som taler for seg selv.
+          nettsider til SEO – her er resultatene som taler for seg selv.
         </p>
       </div>
     </section>
@@ -24,12 +32,21 @@ import { SeoService } from '../../services/seo.service';
       <div class="wrapper">
         <div class="cases-grid">
           <a
-            *ngFor="let caseStudy of caseStudies"
+            *ngFor="let caseStudy of caseStudies; let i = index"
             [routerLink]="['/case-study', caseStudy.slug]"
             class="case-card"
           >
             <div class="case-image">
-              <img [src]="caseStudy.heroImage" [alt]="caseStudy.heroImageAlt" />
+              <img
+                [src]="'/assets/img/case/' + caseStudy.slug + '-640.webp'"
+                [attr.srcset]="caseStudy.heroImageSrcset"
+                sizes="(max-width: 768px) 100vw, 420px"
+                width="640"
+                height="384"
+                [attr.loading]="i < 2 ? null : 'lazy'"
+                decoding="async"
+                [alt]="caseStudy.heroImageAlt"
+              />
               <div class="overlay"></div>
             </div>
             <div class="case-content">
@@ -65,7 +82,7 @@ import { SeoService } from '../../services/seo.service';
     <section class="cta-section">
       <div class="wrapper">
         <h2>Klar for å bli vår neste suksesshistorie?</h2>
-        <p>Ta kontakt for en uforpliktet samtale om ditt prosjekt.</p>
+        <p>Ta kontakt for en uforpliktende samtale om ditt prosjekt.</p>
         <a routerLink="/kontakt" class="btn primary">Book et møte</a>
       </div>
     </section>
@@ -320,15 +337,46 @@ export class CaseStudiesListComponent implements OnInit {
   constructor(private seo: SeoService) {}
 
   ngOnInit() {
+    const title = 'Kundecaser – nettsider og SEO med resultater | Moderna Media';
+    const description =
+      'Se hvordan Moderna Media har hjulpet Sola Parkering, Fjerdingby Pizza & Grill og Østlandet Brønnboring med nettsider og SEO – med konkrete resultater.';
+    const url = `${SITE_ORIGIN}/case-studies`;
+
     this.seo.updateSeo({
-      title: 'Casestudier | Moderna Media - Se våre kunders suksesshistorier',
-      description:
-        'Utforsk hvordan vi har hjulpet bedrifter med nettsider, SEO og digital markedsføring. Se konkrete resultater og kundehistorier fra Moderna Media.',
-      keywords:
-        'casestudier, kundehistorier, nettside resultater, SEO resultater, digital markedsføring, Moderna Media prosjekter',
-      url: 'https://modernamedia.no/case-studies',
-      robots: 'noindex, nofollow',
+      title,
+      description,
+      url,
+      image: `${SITE_ORIGIN}/assets/img/case/sola-parkering-og.jpg`,
       type: 'website',
+    });
+
+    this.seo.addStructuredData({
+      '@context': 'https://schema.org',
+      '@graph': [
+        this.seo.createOrganizationNode(),
+        {
+          '@type': 'CollectionPage',
+          '@id': `${url}#page`,
+          url,
+          name: title,
+          description,
+          inLanguage: 'nb-NO',
+          publisher: { '@id': ORGANIZATION_ID },
+          mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: INDEXABLE_CASE_STUDIES.map((study, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              url: `${SITE_ORIGIN}/case-study/${study.slug}`,
+              name: study.title,
+            })),
+          },
+        },
+        this.seo.createBreadcrumbs([
+          { name: 'Forside', path: '/' },
+          { name: 'Kundecaser', path: '/case-studies' },
+        ]),
+      ],
     });
   }
 }

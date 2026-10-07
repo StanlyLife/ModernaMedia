@@ -20,6 +20,9 @@ export interface CaseStudyOutcome {
 
 export interface CaseStudyMedia {
   src: string;
+  srcset?: string;
+  width: number;
+  height: number;
   alt: string;
   caption?: string;
 }
@@ -29,10 +32,19 @@ export interface CaseStudy {
   title: string;
   subtitle: string;
   summary: string;
+  /** The client's own website. */
+  website: string;
+  /** false keeps the page out of search engines, the sitemap and llms.txt. */
+  indexable: boolean;
   heroImage: string;
+  heroImageSrcset: string;
+  heroImageWidth: number;
+  heroImageHeight: number;
   heroImageAlt: string;
   heroImageCaption?: string;
   heroOverlay?: string;
+  /** 1200x630 JPG for social sharing. */
+  ogImage: string;
   industry: string;
   location: string;
   timeframe: string;
@@ -50,21 +62,31 @@ export interface CaseStudy {
   gallery?: CaseStudyMedia[];
   seoTitle: string;
   seoDescription: string;
+  datePublished: string;
+  dateModified: string;
 }
+
+const img = (slug: string, widths: number[]) =>
+  widths.map((w) => `/assets/img/case/${slug}-${w}.webp ${w}w`).join(', ');
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'sola-parkering',
-    title: 'Sola Parkering',
+    title: 'Sola Parkering: rask nettside og lokal SEO for flyplassparkering',
     subtitle:
-      'Ny merkevareopplevelse, SEO-løp slik at reisende finner parkeringen først.',
+      'Ny merkevareopplevelse og SEO-løp slik at reisende finner parkeringen først.',
     summary:
-      'Som en ny oppstartet tjeneste hadde Sola Parkering behov for en enkel og rask side som kunne formidle informasjon enkelt og effektivt til sine eksisterende og nye kunder.',
-    heroImage:
-      'assets/Images/testimonials/solaparkering/Parkering-sola-flyplassparkering-på-sola.jpg',
-    heroImageAlt: 'Nytt nettsidedesign for Sola Parkering',
+      'Som en nyoppstartet tjeneste hadde Sola Parkering behov for en enkel og rask side som kunne formidle informasjon effektivt til eksisterende og nye kunder.',
+    website: 'https://solaparkering.no/',
+    indexable: true,
+    heroImage: '/assets/img/case/sola-parkering-1280.webp',
+    heroImageSrcset: img('sola-parkering', [640, 1280, 1920]),
+    heroImageWidth: 1280,
+    heroImageHeight: 853,
+    heroImageAlt: 'Parkeringsplassen til Sola Parkering ved Stavanger lufthavn',
     heroOverlay:
       'linear-gradient(135deg, rgba(6, 12, 32, 0.9), rgba(20, 88, 181, 0.65))',
+    ogImage: '/assets/img/case/sola-parkering-og.jpg',
     industry: 'Reiseliv & parkering',
     location: 'Stavanger lufthavn, Sola',
     timeframe: '4 uker fra ordre til lansering',
@@ -73,7 +95,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Nettsideutvikling',
       'Integrert parkeringsoversikt',
       'SEO',
-      'Google ads',
+      'Google Ads',
     ],
     testimonial: {
       quote:
@@ -81,6 +103,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       name: 'Svein Magnar',
       role: 'Daglig leder',
       company: 'Sola Parkering',
+      image: '/assets/img/home/kunde-svein-magnar-200.webp',
+      imageAlt: 'Svein Magnar, daglig leder i Sola Parkering',
     },
     stats: [
       {
@@ -144,9 +168,11 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Klare CTA-er til telefon og e-post lar teamet håndtere henvendelser uten nytt system.',
       },
     ],
-    seoTitle: 'Case: Sola Parkering – lynrask infoside for ny parkeringsplass',
+    seoTitle: 'Case: Sola Parkering – nettside og lokal SEO | Moderna Media',
     seoDescription:
-      'Vi bygde en lett HTML/CSS/JS-side som ga Sola Parkering synlighet på “parkering Stavanger lufthavn” og gjorde henvendelser enkle uten bookingsystem.',
+      'Ny nettside og lokal SEO for Sola Parkering ved Stavanger lufthavn: +160 000 årlige besøk og 5,6× flere bookinger etter lansering.',
+    datePublished: '2025-12-01',
+    dateModified: '2026-10-07',
   },
   {
     slug: 'marbella-car-spa',
@@ -155,10 +181,17 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Fra serverdrift på Gardermoen til Next.js-basert nettside for nyoppstartet premium-detailer i Marbella.',
     summary:
       'Da han åpnet i Marbella trengte han en fleksibel og rask nettside. Vi videreførte relasjonen med hosting, Next.js-utvikling og teknisk SEO.',
-    heroImage: 'assets/Images/testimonials/mamrot/bg.jpeg',
+    website: 'https://www.carspamarbella.es/',
+    // Deliberately kept out of search engines (still reachable on the site).
+    indexable: false,
+    heroImage: '/assets/img/case/marbella-car-spa-1280.webp',
+    heroImageSrcset: img('marbella-car-spa', [640, 1280, 1920]),
+    heroImageWidth: 1280,
+    heroImageHeight: 721,
     heroImageAlt: 'Detaljert bilpleie hos Marbella Car Spa',
     heroOverlay:
       'linear-gradient(135deg, rgba(8, 5, 17, 0.92), rgba(135, 67, 32, 0.55))',
+    ogImage: '/assets/img/case/marbella-car-spa-og.jpg',
     industry: 'Bilpleie & detailing',
     location: 'Marbella, Spania',
     timeframe: '6 uker fra spesifikasjon til lansering',
@@ -237,22 +270,29 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Deploy-pipeline og struktur gjør at nye funksjoner kan legges til på minutter.',
       },
     ],
-    seoTitle:
-      'Case: Marbella Car Spa – Next.js-side og drift fra Moderna Solutions',
+    seoTitle: 'Case: Marbella Car Spa – Next.js-nettside og drift | Moderna Media',
     seoDescription:
       'Vi tok over serverhosting for mamrotcarspa.no og bygde en Next.js/React-side for den nye satsingen i Marbella med fokus på ytelse og fleksibilitet.',
+    datePublished: '2025-12-01',
+    dateModified: '2026-10-07',
   },
   {
     slug: 'fjerdingby-pizza',
-    title: 'Fjerdingby Pizza & Grill',
+    title: 'Fjerdingby Pizza & Grill: nettside med digital meny og lokal SEO',
     subtitle:
       'Minimal Next.js-side med meny, åpningstider og priser – laget for lokal synlighet.',
     summary:
-      'Oppdraget var å lage en lett, informativ nettløsning med meny og praktisk info. Vi bygget siden i React/Next.js med SCSS for god SEO, enkel vedlikehold og dynamisk restaurantmeny.',
-    heroImage: 'assets/Images/testimonials/fjerdingby/logo.webp',
-    heroImageAlt: 'Ny nettside for Fjerdingby Pizza og Grill',
+      'Oppdraget var å lage en lett, informativ nettløsning med meny og praktisk info. Vi bygget siden i React/Next.js med SCSS for god SEO, enkelt vedlikehold og dynamisk restaurantmeny.',
+    website: 'https://www.fjerdingbypizzaoggrill.no/',
+    indexable: true,
+    heroImage: '/assets/img/case/fjerdingby-pizza-1280.webp',
+    heroImageSrcset: img('fjerdingby-pizza', [640, 1280, 1920]),
+    heroImageWidth: 1280,
+    heroImageHeight: 768,
+    heroImageAlt: 'Logoen til Fjerdingby Pizza & Grill',
     heroOverlay:
       'linear-gradient(135deg, rgba(8, 11, 28, 0.92), rgba(142, 34, 52, 0.58))',
+    ogImage: '/assets/img/case/fjerdingby-pizza-og.jpg',
     industry: 'Restaurant og take-away',
     location: 'Fjerdingby, Rælingen',
     timeframe: '5 uker fra oppstart til publisering',
@@ -268,7 +308,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       name: 'Ena Hasanović',
       role: 'Daglig leder',
       company: 'Fjerdingby Pizza & Grill',
-      image: 'assets/Images/testimonials/fjerdingby/logo.webp',
+      image: '/assets/img/case/fjerdingby-pizza-logo-112.webp',
       imageAlt: 'Fjerdingby Pizza & Grill logo',
     },
     stats: [
@@ -300,7 +340,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         title: 'Leveransen',
         body: [
           'Vi bygde siden i React/Next.js med SCSS-moduler for å holde koden lett og tilgjengelig.',
-          'Menyen er strukturert som reusable komponenter slik at ukens tilbud og priser oppdateres på sekunder.',
+          'Menyen er bygget som gjenbrukbare komponenter slik at ukens tilbud og priser oppdateres på sekunder.',
         ],
         bullets: [
           'Strukturert data (Menu + LocalBusiness) for rikere søkeresultater',
@@ -318,15 +358,22 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     gallery: [
       {
-        src: 'assets/Images/testimonials/fjerdingby/menu.webp',
-        alt: 'Placeholder for take-away meny til Fjerdingby Pizza & Grill',
-        caption:
-          'Take-away meny – placeholder som viser layout for fremtidig design.',
+        src: '/assets/img/case/fjerdingby-pizza-meny-800.webp',
+        srcset:
+          '/assets/img/case/fjerdingby-pizza-meny-800.webp 800w, /assets/img/case/fjerdingby-pizza-meny-1600.webp 1600w',
+        width: 800,
+        height: 600,
+        alt: 'Take-away-menyen vi designet for Fjerdingby Pizza & Grill',
+        caption: 'Take-away-meny designet for trykk.',
       },
       {
-        src: 'assets/Images/testimonials/fjerdingby/logo.webp',
-        alt: 'Placeholder-logo for Fjerdingby Pizza & Grill',
-        caption: 'Logo-konsept placeholder til brandingpakken.',
+        src: '/assets/img/case/fjerdingby-pizza-640.webp',
+        srcset:
+          '/assets/img/case/fjerdingby-pizza-640.webp 640w, /assets/img/case/fjerdingby-pizza-1280.webp 1280w',
+        width: 640,
+        height: 384,
+        alt: 'Logoen vi designet for Fjerdingby Pizza & Grill',
+        caption: 'Ny logo for Fjerdingby Pizza & Grill.',
       },
     ],
     outcomes: [
@@ -336,9 +383,9 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Dynamisk komponentstruktur gjør menyendringer enkle og konsekvente.',
       },
       {
-        title: 'Brand assets',
+        title: 'Merkevare',
         description:
-          'Take-away meny og logo-maler klare for trykk – placeholders i assets/Images/placeholders/fjerdingby-menu-placeholder.svg og .../fjerdingby-logo-placeholder.svg.',
+          'Ny logo og take-away-meny, designet og klargjort for trykk.',
       },
       {
         title: 'Lokal synlighet',
@@ -346,10 +393,11 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Strukturert data og SEO gir topp-plassering på “pizza Fjerdingby”.',
       },
     ],
-    seoTitle:
-      'Case: Fjerdingby Pizza & Grill – minimal Next.js-side for meny og åpningstider',
+    seoTitle: 'Case: Fjerdingby Pizza & Grill – nettside og lokal SEO',
     seoDescription:
-      'Vi leverte en lett React/Next.js-side med meny, priser og lokal SEO slik at Fjerdingby Pizza & Grill kan eie kommunikasjonen selv.',
+      'Lett Next.js-nettside med digital meny og lokal SEO. Fjerdingby Pizza & Grill rangerer øverst på «pizza Fjerdingby» og laster på under 1,2 sekunder.',
+    datePublished: '2025-12-01',
+    dateModified: '2026-10-07',
   },
   {
     slug: 'ostlandet-bronnboring',
@@ -358,11 +406,16 @@ export const CASE_STUDIES: CaseStudy[] = [
       'Teknisk SEO, bransjesider og smart leadshåndtering fylte kalenderen i høysesongen.',
     summary:
       'Østlandet Brønnboring konkurrerer om store anbud og privatkunder i hele regionen. Vi bygget en robust presentasjon av referanseprosjekter, sørget for at teknisk data ble forståelig, og implementerte scoring som prioriterer riktige forespørsler.',
-    heroImage:
-      'assets/Images/testimonials/ostlandske/ostlandetbronnboring.webp',
+    website: 'https://bronn-energiboring.no/',
+    indexable: true,
+    heroImage: '/assets/img/case/ostlandet-bronnboring-1280.webp',
+    heroImageSrcset: img('ostlandet-bronnboring', [640, 1280, 1920]),
+    heroImageWidth: 1280,
+    heroImageHeight: 781,
     heroImageAlt: 'Borerigg i arbeid for Østlandet Brønnboring',
     heroOverlay:
       'linear-gradient(135deg, rgba(5, 16, 33, 0.94), rgba(25, 87, 156, 0.62))',
+    ogImage: '/assets/img/case/ostlandet-bronnboring-og.jpg',
     industry: 'Bygg og anlegg',
     location: 'Østlandet',
     timeframe: '7 uker inkl. foto og film',
@@ -431,12 +484,17 @@ export const CASE_STUDIES: CaseStudy[] = [
         description: 'Dokumenterer prosesser og skaper tillit i tilbudsfasen.',
       },
     ],
-    seoTitle:
-      'Case: Østlandet Brønnboring – tre ganger flere kvalifiserte leads',
+    seoTitle: 'Case: Østlandet Brønnboring – 3× flere kvalifiserte leads',
     seoDescription:
-      'Se hvordan ny nettside, HubSpot og teknisk SEO ga Østlandet Brønnboring flere riktige forespørsler.',
+      'Ny nettside, HubSpot og teknisk SEO ga Østlandet Brønnboring 3× flere kvalifiserte leads på fire måneder og 55 % kortere tid til tilbud.',
+    datePublished: '2025-12-01',
+    dateModified: '2026-10-07',
   },
 ];
+
+export const INDEXABLE_CASE_STUDIES = CASE_STUDIES.filter(
+  (study) => study.indexable
+);
 
 export const CASE_STUDY_LOOKUP = new Map(
   CASE_STUDIES.map((study) => [study.slug, study])

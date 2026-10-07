@@ -1,114 +1,42 @@
 @if (!hidden) {
-  <footer>
-    <div class="wrapper">
-      <div class="logo-copyright-container">
-        <div class="logo">
-          <img
-          [src]="
-            sanitizeImageUrl('../../assets/Images/LogoV2/modernamedia-name.svg')
-          "
-            alt="Moderna Media digitalbyrå logo"
-            />
+  <footer class="v2 footer">
+    <div class="wrap">
+      <div class="top">
+        <div class="brand">
+          <a class="logo" routerLink="/" aria-label="Moderna Media – til forsiden">
+            <img src="/assets/Images/LogoV2/modernamedia-plain.svg" width="82" height="30" loading="lazy" alt="" />
+            <span class="name">MODERNA MEDIA</span>
+          </a>
+          <p class="about">Digitalbyrå i Oslo som lager nettsider, design og SEO som gir bedriften din vekst og flere kunder.</p>
+          <div class="social">
+            <a href="https://www.facebook.com/ModernaMedia" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/moderna_media/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.linkedin.com/company/moderna-media" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
         </div>
-        <div class="copyright">
-          Copyright © 2024 Moderna Media orgnr. 926 670 018. All Rights Reserved.
-          Designet og bygget i Norge.
+        @for (col of columns; track col.title) {
+          <nav [attr.aria-label]="col.title">
+            <h2 class="h4"><a [routerLink]="col.url">{{ col.title }}</a></h2>
+            <ul>
+              @for (l of col.links; track l[1]) {
+                <li><a [routerLink]="l[1]">{{ l[0] }}</a></li>
+              }
+            </ul>
+          </nav>
+        }
+        <div>
+          <h2 class="h4">Kontakt</h2>
+          <ul>
+            <li><a href="tel:+4790265326">902 65 326</a></li>
+            <li><a href="mailto:kontakt@modernamedia.no">kontakt&#64;modernamedia.no</a></li>
+            <li>Oscars gate 76b, Oslo</li>
+            <li><a routerLink="/gratis-hjemmeside-analyse">Gratis nettside-analyse</a></li>
+          </ul>
         </div>
       </div>
-      <div class="links-contact-container">
-        <div class="links">
-          <p class="strong">Lenker.</p>
-          <div class="link-container">
-            <div class="utvikling child">
-              <a href="" class="top-level-link">Utvikling</a>
-              <a href="">Nettsider</a>
-              <a href="">System</a>
-            </div>
-            <div class="design child">
-              <a href="" class="top-level-link">Design</a>
-              <a href="">Logo</a>
-              <a href="">Webdesign</a>
-            </div>
-            <div class="seo child">
-              <a href="" class="top-level-link">SEO</a>
-              <a href="">innholdsproduksjon</a>
-              <a href="">Teknsik SEO</a>
-              <a href="">Off-page SEO</a>
-            </div>
-          </div>
-        </div>
-        <div class="contact">
-          <p class="strong">Kontakt oss.</p>
-          <div class="phone">
-            <img
-            [src]="
-              sanitizeImageUrl('../../assets/Images/Icons/inputs/call.svg')
-            "
-              role="presentation"
-              alt=""
-              />
-            <p>Telefon: <a href="tel:90265326">902 65 326</a></p>
-          </div>
-          <div class="phone">
-            <img
-            [src]="
-              sanitizeImageUrl('../../assets/Images/Icons/inputs/email.svg')
-            "
-              role="presentation"
-              alt=""
-              />
-            <p>
-              E-post:
-              <a href="mailto:kontakt@modernamedia.no">kontakt&#64;modernamedia.no</a>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="some">
-        <p class="strong find-us">Finn oss.</p>
-        <div class="some-links">
-          <a
-            href="https://www.facebook.com/ModernaMedia"
-            rel="nofollow"
-            title="moderna media facebook"
-            title="Moderna Media Digitalbyrå facebook"
-            >
-            <img
-            [src]="
-              sanitizeImageUrl('../../assets/Images/Icons/footer/facebook.svg')
-            "
-              rel="nofollow"
-              role="presentation"
-              alt="facebook logo"
-              />
-          </a>
-          <a
-            href="https://www.instagram.com/moderna_media/"
-            title="moderna media instagram"
-            title="Moderna Media Digitalbyrå instagram"
-            >
-            <img
-              [src]="'../../assets/Images/Icons/footer/instagram.svg'"
-              rel="nofollow"
-              role="presentation"
-              alt="instagram logo"
-              />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/moderna-media"
-            title="moderna media linkedin"
-            title="Moderna Media Digitalbyrå linkedin"
-            >
-            <img
-            [src]="
-              sanitizeImageUrl('../../assets/Images/Icons/footer/linkedin.svg')
-            "
-              rel="nofollow"
-              role="presentation"
-              alt="linkedin logo"
-              />
-          </a>
-        </div>
+      <div class="bottom">
+        <span>© {{ year }} Moderna Media, org.nr. 926 670 018. Alle priser er oppgitt eks. mva.</span>
+        <div><a routerLink="/personvern">Personvern</a><a routerLink="/kontakt">Kontakt</a></div>
       </div>
     </div>
   </footer>

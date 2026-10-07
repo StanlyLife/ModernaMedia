@@ -1,29 +1,49 @@
 <ng-container *ngIf="caseStudy as cs; else missingCase">
-  <section
-    class="cs-hero"
-    [style.background-image]="'url(' + cs.heroImage + ')'"
-    role="banner"
-    [attr.aria-label]="cs.heroImageAlt || cs.title"
-  >
+  <section class="cs-hero" aria-labelledby="cs-title">
+    <img
+      class="cs-hero__image"
+      [src]="cs.heroImage"
+      [attr.srcset]="cs.heroImageSrcset"
+      sizes="100vw"
+      [width]="cs.heroImageWidth"
+      [height]="cs.heroImageHeight"
+      fetchpriority="high"
+      [alt]="cs.heroImageAlt"
+    />
     <div
       class="cs-hero__backdrop"
       aria-hidden="true"
       [style.background]="getHeroOverlay(cs)"
     ></div>
     <div class="cs-hero__content">
+      <nav class="breadcrumbs" aria-label="Brødsmulesti">
+        <a routerLink="/">Forside</a>
+        <span aria-hidden="true">›</span>
+        <a routerLink="/case-studies">Kundecaser</a>
+        <span aria-hidden="true">›</span>
+        <span aria-current="page">{{ cs.testimonial.company }}</span>
+      </nav>
       <p class="eyebrow">
         {{ cs.industry }} • {{ cs.location }} • {{ cs.timeframe }}
       </p>
-      <h1>{{ cs.title }}</h1>
+      <h1 id="cs-title">{{ cs.title }}</h1>
       <p class="subtitle">{{ cs.subtitle }}</p>
       <p class="summary">
         {{ cs.summary }}
       </p>
-      <ul class="service-tags">
+      <ul class="service-tags" aria-label="Tjenester i prosjektet">
         <li *ngFor="let service of cs.services; trackBy: trackByIndex">
           {{ service }}
         </li>
       </ul>
+      <a
+        class="client-link"
+        [href]="cs.website"
+        target="_blank"
+        rel="noopener"
+      >
+        Se nettsiden: {{ websiteLabel(cs.website) }} ↗
+      </a>
       <div class="hero-stats">
         <article
           class="hero-stat"
@@ -43,13 +63,13 @@
     </p>
   </section>
 
-  <section class="cs-body" aria-label="Case study detaljer">
+  <section class="cs-body" aria-label="Om prosjektet">
     <article
       class="cs-section"
       *ngFor="let section of cs.sections; trackBy: trackByIndex"
     >
       <header>
-        <p class="eyebrow">Case insight</p>
+        <p class="eyebrow">{{ cs.testimonial.company }}</p>
         <h2>{{ section.title }}</h2>
       </header>
       <div class="cs-section__content">
@@ -73,23 +93,35 @@
   <section
     class="cs-gallery"
     *ngIf="cs.gallery?.length"
-    aria-label="Tilleggsbilder"
+    aria-label="Bilder fra prosjektet"
   >
     <figure *ngFor="let media of cs.gallery; trackBy: trackByIndex">
-      <img [src]="media.src" [alt]="media.alt" loading="lazy" />
+      <img
+        [src]="media.src"
+        [attr.srcset]="media.srcset || null"
+        sizes="(min-width: 1040px) 500px, 100vw"
+        [width]="media.width"
+        [height]="media.height"
+        [alt]="media.alt"
+        loading="lazy"
+        decoding="async"
+      />
       <figcaption *ngIf="media.caption">{{ media.caption }}</figcaption>
     </figure>
   </section>
 
-  <section class="cs-testimonial">
+  <section class="cs-testimonial" aria-label="Kundetilbakemelding og leveranse">
     <div class="quote-card">
       <p class="eyebrow">Kundetilbakemelding</p>
-      <p class="quote">"{{ cs.testimonial.quote }}"</p>
+      <blockquote class="quote">"{{ cs.testimonial.quote }}"</blockquote>
       <div class="author-row">
         <img
           *ngIf="cs.testimonial.image"
           [src]="cs.testimonial.image"
           [alt]="cs.testimonial.imageAlt || cs.testimonial.name"
+          width="56"
+          height="56"
+          loading="lazy"
           class="author-image"
         />
         <p class="author">
@@ -107,6 +139,30 @@
         </li>
       </ul>
     </div>
+  </section>
+
+  <section
+    class="cs-more"
+    *ngIf="otherCaseStudies.length"
+    aria-labelledby="cs-more-title"
+  >
+    <h2 id="cs-more-title">Flere kundecaser</h2>
+    <ul>
+      <li *ngFor="let other of otherCaseStudies; trackBy: trackByIndex">
+        <a [routerLink]="['/case-study', other.slug]">
+          <img
+            [src]="'/assets/img/case/' + other.slug + '-640.webp'"
+            [alt]="other.heroImageAlt"
+            width="640"
+            height="384"
+            loading="lazy"
+            decoding="async"
+          />
+          <span class="cs-more__title">{{ other.title }}</span>
+        </a>
+      </li>
+    </ul>
+    <a class="cs-more__all" routerLink="/case-studies">Se alle kundecaser →</a>
   </section>
 
   <app-about-your-next-project></app-about-your-next-project>

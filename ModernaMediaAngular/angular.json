@@ -15,31 +15,35 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular/build:application",
           "options": {
             "outputPath": {
               "base": "dist/ModernaMediaAngular"
             },
             "index": "src/index.html",
+            "browser": "src/main.ts",
+            "server": "src/main.server.ts",
             "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets",
               "src/robots.txt",
-              "src/sitemap.xml"
+              "src/sitemap.xml",
+              "src/llms.txt",
+              "src/1435d8d3dc63085d1c3b85e5e52be65c.txt"
             ],
             "styles": ["src/globals.scss", "src/styles.scss"],
             "scripts": [],
-            "browser": "src/main.ts",
-            "server": "src/main.server.ts",
             "stylePreprocessorOptions": {
               "includePaths": ["."]
             },
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
+            },
+            "security": {
+              "allowedHosts": ["modernamedia.no", "www.modernamedia.no"]
             }
           },
           "configurations": {
@@ -50,7 +54,14 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
+              "optimization": {
+                "scripts": true,
+                "fonts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                }
+              },
               "outputHashing": "all",
               "sourceMap": true,
               "namedChunks": false,
@@ -58,8 +69,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "5mb",
-                  "maximumError": "6mb"
+                  "maximumWarning": "550kb",
+                  "maximumError": "750kb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -67,128 +78,34 @@
                   "maximumError": "30kb"
                 }
               ]
-            }
-          }
-        },
-        "browser": {
-          "builder": "@angular-devkit/build-angular:browser-esbuild",
-          "options": {
-            "outputPath": "dist/dev/browser",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": ["src/polyfills.ts"],
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/robots.txt",
-              "src/sitemap.xml"
-            ],
-            "styles": ["src/globals.scss", "src/styles.scss"],
-            "scripts": [],
-            "stylePreprocessorOptions": {
-              "includePaths": ["."]
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
             }
           },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractLicenses": true
-            }
-          }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/dev/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "inlineStyleLanguage": "scss",
-            "stylePreprocessorOptions": {
-              "includePaths": ["."]
-            }
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
+          "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "buildTarget": "ModernaMediaAngular:build"
-          },
+          "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "ModernaMediaAngular:build:production"
+            },
+            "development": {
+              "buildTarget": "ModernaMediaAngular:build:development"
             }
-          }
-        },
-        "serve-ssr": {
-          "builder": "@angular-devkit/build-angular:ssr-dev-server",
-          "options": {
-            "browserTarget": "ModernaMediaAngular:browser",
-            "serverTarget": "ModernaMediaAngular:server"
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "buildTarget": "ModernaMediaAngular:build"
-          }
+          "builder": "@angular/build:extract-i18n"
         },
         "test": {
-          "builder": "@angular-devkit/build-angular:karma",
+          "builder": "@angular/build:unit-test",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets",
-              "src/robots.txt",
-              "src/sitemap.xml"
-            ],
-            "styles": ["src/styles.scss"],
-            "scripts": []
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
-        },
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ModernaMediaAngular:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ModernaMediaAngular:serve:production"
-            }
+            "tsConfig": "tsconfig.spec.json"
           }
         }
       }

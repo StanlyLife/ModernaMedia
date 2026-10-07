@@ -1,11 +1,26 @@
-User-Agent: *
+# modernamedia.no
+User-agent: *
 Allow: /
 Disallow: /error
 Disallow: /info
 Disallow: /misc
-Disallow: /misc/*
-Disallow: /case-study
-Disallow: /case-study/*
-Disallow: /case-studies
+# /case-study/marbella-car-spa stays crawlable so search engines can read its noindex tag.
+
+# AI search engines and assistants are welcome (they read only their own group)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+Allow: /
+Disallow: /error
+Disallow: /info
+Disallow: /misc
+Disallow: /case-study/marbella-car-spa
 
 Sitemap: https://modernamedia.no/sitemap.xml

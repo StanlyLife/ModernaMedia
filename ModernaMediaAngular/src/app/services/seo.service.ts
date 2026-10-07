@@ -5,6 +5,7 @@ import { Meta, Title } from '@angular/platform-browser';
 export interface SeoConfig {
   title: string;
   description: string;
+  /** Ignored by search engines; kept so existing callers still compile. */
   keywords?: string;
   image?: string;
   url?: string;
@@ -12,11 +13,15 @@ export interface SeoConfig {
   robots?: string;
 }
 
+export const SITE_ORIGIN = 'https://modernamedia.no';
+export const ORGANIZATION_ID = `${SITE_ORIGIN}/#organization`;
+const WEBSITE_ID = `${SITE_ORIGIN}/#website`;
+
 @Injectable({
   providedIn: 'root',
 })
 export class SeoService {
-  private defaultImage = 'https://modernamedia.no/assets/Images/og-image.jpg';
+  private defaultImage = `${SITE_ORIGIN}/assets/Images/og-image.jpg`;
   private siteName = 'Moderna Media';
 
   constructor(
@@ -26,24 +31,17 @@ export class SeoService {
   ) {}
 
   updateSeo(config: SeoConfig): void {
-    // Update title
     this.titleService.setTitle(config.title);
 
-    // Update meta description
     this.meta.updateTag({ name: 'description', content: config.description });
+    this.meta.removeTag('name="keywords"');
 
-    // Update keywords if provided
-    if (config.keywords) {
-      this.meta.updateTag({ name: 'keywords', content: config.keywords });
-    }
-
-    // Update robots
     this.meta.updateTag({
       name: 'robots',
-      content: config.robots || 'index, follow',
+      content: config.robots || 'index, follow, max-image-preview:large',
     });
 
-    // Update Open Graph tags
+    // Open Graph
     this.meta.updateTag({ property: 'og:title', content: config.title });
     this.meta.updateTag({
       property: 'og:description',
@@ -54,16 +52,17 @@ export class SeoService {
       content: config.type || 'website',
     });
     this.meta.updateTag({ property: 'og:site_name', content: this.siteName });
+    this.meta.updateTag({ property: 'og:locale', content: 'nb_NO' });
     this.meta.updateTag({
       property: 'og:image',
       content: config.image || this.defaultImage,
     });
+    this.meta.updateTag({
+      property: 'og:url',
+      content: config.url || this.currentUrl(),
+    });
 
-    if (config.url) {
-      this.meta.updateTag({ property: 'og:url', content: config.url });
-    }
-
-    // Update Twitter Card tags
+    // Twitter / X
     this.meta.updateTag({
       name: 'twitter:card',
       content: 'summary_large_image',
@@ -78,24 +77,18 @@ export class SeoService {
       content: config.image || this.defaultImage,
     });
 
-    // Update canonical URL
     this.updateCanonicalURL(config.url);
   }
 
   updateCanonicalURL(url?: string): void {
-    // Remove existing canonical link if present
     const existingCanonical = this.doc.querySelector('link[rel="canonical"]');
     if (existingCanonical) {
       existingCanonical.remove();
     }
 
-    // Create new canonical link
     const link: HTMLLinkElement = this.doc.createElement('link');
     link.setAttribute('rel', 'canonical');
-
-    const canonicalUrl = url || this.doc.URL.replace('http://', 'https://');
-    link.setAttribute('href', canonicalUrl);
-
+    link.setAttribute('href', url || this.currentUrl());
     this.doc.head.appendChild(link);
   }
 
@@ -104,8 +97,31 @@ export class SeoService {
     this.updateCanonicalURL();
   }
 
+  /**
+   * The current page on the public origin. Built from the path only, so the
+   * host the server (or the prerenderer) saw never leaks into canonical URLs.
+   */
+  private currentUrl(): string {
+    const path = new URL(this.doc.URL, SITE_ORIGIN).pathname;
+    return `${SITE_ORIGIN}${path === '/' ? '/' : path.replace(/\/$/, '')}`;
+  }
+
+  /** Lets the browser start loading the LCP image before it parses the body. */
+  preloadImage(href: string, srcset: string, sizes: string): void {
+    if (this.doc.head.querySelector(`link[rel="preload"][href="${href}"]`)) {
+      return;
+    }
+    const link: HTMLLinkElement = this.doc.createElement('link');
+    link.setAttribute('rel', 'preload');
+    link.setAttribute('as', 'image');
+    link.setAttribute('href', href);
+    link.setAttribute('imagesrcset', srcset);
+    link.setAttribute('imagesizes', sizes);
+    link.setAttribute('fetchpriority', 'high');
+    this.doc.head.appendChild(link);
+  }
+
   addStructuredData(schema: object): void {
-    // Remove existing structured data
     this.removeStructuredData();
 
     const script = this.doc.createElement('script');
@@ -122,27 +138,32 @@ export class SeoService {
     }
   }
 
-  // Helper to create LocalBusiness schema
+  // The business as one entity. Other pages can reference it by @id.
   createLocalBusinessSchema(): object {
     return {
-      '@context': 'https://schema.org',
       '@type': 'ProfessionalService',
-      '@id': 'https://modernamedia.no',
+      '@id': ORGANIZATION_ID,
       name: 'Moderna Media',
+      alternateName: 'Moderna Media Digitalbyrå',
       description:
-        'Digitalbyrå i Oslo som leverer nettsider, design og SEO for bedrifter',
-      url: 'https://modernamedia.no',
+        'Digitalbyrå i Oslo som leverer nettsider, programvare, design og SEO for bedrifter',
+      url: `${SITE_ORIGIN}/`,
+      logo: `${SITE_ORIGIN}/assets/Images/LogoV2/Updated/Moderna%20Media%20-%20Logo%20&%20Text%20-%20Dark.jpg`,
+      image: this.defaultImage,
       telephone: '+47 902 65 326',
       email: 'kontakt@modernamedia.no',
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'Organisasjonsnummer',
+        value: '926670018',
+      },
       address: {
         '@type': 'PostalAddress',
+        streetAddress: 'Oscars gate 76b',
+        postalCode: '0256',
         addressLocality: 'Oslo',
+        addressRegion: 'Oslo',
         addressCountry: 'NO',
-      },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: 59.9139,
-        longitude: 10.7522,
       },
       areaServed: {
         '@type': 'Country',
@@ -151,43 +172,144 @@ export class SeoService {
       priceRange: '$$',
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '09:00',
-        closes: '17:00',
+        dayOfWeek: [
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+          'Sunday',
+        ],
+        opens: '08:00',
+        closes: '23:00',
       },
+      founder: {
+        '@type': 'Person',
+        name: 'Stian Håve',
+        jobTitle: 'Daglig leder',
+        sameAs: ['https://www.linkedin.com/in/stianhave/'],
+      },
+      knowsAbout: [
+        'Webutvikling',
+        'Nettsider for bedrifter',
+        'Programvareutvikling',
+        'Webdesign',
+        'Logodesign',
+        'Grafisk design',
+        'Søkemotoroptimalisering',
+        'Teknisk SEO',
+      ],
       sameAs: [
-        'https://www.facebook.com/modernamedia',
+        'https://www.facebook.com/ModernaMedia',
+        'https://www.instagram.com/moderna_media/',
         'https://www.linkedin.com/company/moderna-media',
       ],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
-        name: 'Digitale Tjenester',
+        name: 'Digitale tjenester',
         itemListElement: [
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Webutvikling',
-              description: 'Profesjonelle nettsider og webapplikasjoner',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'SEO',
-              description: 'Søkemotoroptimalisering for bedre synlighet',
-            },
-          },
-          {
-            '@type': 'Offer',
-            itemOffered: {
-              '@type': 'Service',
-              name: 'Design',
-              description: 'Logo, webdesign og grafisk design',
-            },
-          },
+          this.serviceOffer(
+            'Nettsider for bedrifter',
+            'Profesjonelle, responsive og SEO-optimaliserte nettsider',
+            '/tjenester/bedrift/utvikling/hjemmeside-bedrift'
+          ),
+          this.serviceOffer(
+            'Programvare og webapplikasjoner',
+            'Skreddersydd programvare som automatiserer arbeidshverdagen',
+            '/tjenester/bedrift/utvikling/programvare'
+          ),
+          this.serviceOffer(
+            'Design',
+            'Logo, webdesign og grafisk design',
+            '/tjenester/bedrift/design'
+          ),
+          this.serviceOffer(
+            'Søkemotoroptimalisering (SEO)',
+            'Teknisk SEO, innholdsproduksjon og off-page SEO',
+            '/tjenester/bedrift/seo'
+          ),
         ],
+      },
+    };
+  }
+
+  /** Short form of the business, for pages that only need to name it. */
+  createOrganizationNode(): object {
+    return {
+      '@type': 'Organization',
+      '@id': ORGANIZATION_ID,
+      name: 'Moderna Media',
+      url: `${SITE_ORIGIN}/`,
+      logo: `${SITE_ORIGIN}/assets/Images/LogoV2/Updated/Moderna%20Media%20-%20Logo%20&%20Text%20-%20Dark.jpg`,
+    };
+  }
+
+  createBreadcrumbs(items: { name: string; path: string }[]): object {
+    return {
+      '@type': 'BreadcrumbList',
+      itemListElement: items.map((item, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: item.name,
+        item: `${SITE_ORIGIN}${item.path}`,
+      })),
+    };
+  }
+
+  /** Structured data for the homepage: business, website, page and FAQ. */
+  createHomeSchema(
+    page: { title: string; description: string },
+    faq: { question: string; answer: string }[]
+  ): object {
+    const pageUrl = `${SITE_ORIGIN}/`;
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        this.createLocalBusinessSchema(),
+        {
+          '@type': 'WebSite',
+          '@id': WEBSITE_ID,
+          url: pageUrl,
+          name: 'Moderna Media',
+          inLanguage: 'nb-NO',
+          publisher: { '@id': ORGANIZATION_ID },
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${pageUrl}#webpage`,
+          url: pageUrl,
+          name: page.title,
+          description: page.description,
+          inLanguage: 'nb-NO',
+          isPartOf: { '@id': WEBSITE_ID },
+          about: { '@id': ORGANIZATION_ID },
+          primaryImageOfPage: this.defaultImage,
+        },
+        {
+          '@type': 'FAQPage',
+          '@id': `${pageUrl}#faq`,
+          inLanguage: 'nb-NO',
+          mainEntity: faq.map((item) => ({
+            '@type': 'Question',
+            name: item.question,
+            acceptedAnswer: { '@type': 'Answer', text: item.answer },
+          })),
+        },
+      ],
+    };
+  }
+
+  private serviceOffer(name: string, description: string, path: string) {
+    return {
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name,
+        description,
+        url: `${SITE_ORIGIN}${path}`,
+        provider: { '@id': ORGANIZATION_ID },
+        areaServed: { '@type': 'Country', name: 'Norway' },
       },
     };
   }

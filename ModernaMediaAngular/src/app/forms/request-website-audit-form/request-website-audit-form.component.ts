@@ -35,7 +35,7 @@ export class RequestWebsiteAuditFormComponent implements OnInit {
       title: SeoUtils.FormsWebsiteAudit.title,
       description: SeoUtils.FormsWebsiteAudit.description,
       keywords: SeoUtils.FormsWebsiteAudit.keywords,
-      url: 'https://modernamedia.no/bestill/nettside-analyse',
+      url: 'https://modernamedia.no/gratis-hjemmeside-analyse',
     });
   }
   @Input() data: any = {
@@ -44,7 +44,7 @@ export class RequestWebsiteAuditFormComponent implements OnInit {
       src: '../../../../assets/Images/forms/hjemmeside/anylse av hjemmeside.jpg',
     },
     title: 'Kontakt oss',
-    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktet!',
+    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktende!',
   };
   scrollToId(id: string) {
     this.scroller.scrollToAnchor(id);

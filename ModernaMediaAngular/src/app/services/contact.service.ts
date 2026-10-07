@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ToastService } from './toast.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -19,6 +20,31 @@ export class ContactService {
 
   public errorMessage: string | undefined;
   public SendContactRequestResult = new BehaviorSubject<boolean>(false);
+
+  /** Lead from the V2 forms (quote, contact, free analyses). The caller handles success and errors. */
+  sendLead(lead: {
+    source: string;
+    service?: string;
+    name?: string;
+    email?: string;
+    phone?: string;
+    website?: string;
+    message?: string;
+    page?: string;
+  }): Observable<unknown> {
+    const payload = {
+      name: lead.name || '',
+      email: lead.email || '',
+      phone: lead.phone || '',
+      service: lead.service || '',
+      website: lead.website || '',
+      message: lead.message || '',
+      page: lead.page || '',
+      source: lead.source,
+      timestamp: new Date().toISOString(),
+    };
+    return this.http.post(this.formsparkUrl, payload, { headers: this.headers });
+  }
 
   SendContactRequest(model: any) {
     const payload = {

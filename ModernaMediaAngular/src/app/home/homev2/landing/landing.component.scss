@@ -1,16 +1,5 @@
 ﻿@use "src/variables" as *;
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .landing {
   width: 100%;
   position: relative;
@@ -61,10 +50,6 @@
     align-items: center;
     text-align: center;
 
-    &.fade-in {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
     .titles {
       display: flex;
       flex-direction: column;
@@ -74,6 +59,25 @@
       .super-title-wrapper {
         position: relative;
         display: inline-block;
+
+        // Soft glow behind the title, drawn from data-text so the
+        // headline only exists once in the HTML.
+        &::before {
+          content: attr(data-text);
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+          font-family: $ff-primary;
+          font-size: 2.75rem;
+          line-height: 1.1;
+          text-transform: uppercase;
+          font-weight: 900;
+          letter-spacing: -1px;
+          @include gradientTitle;
+          text-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
+          pointer-events: none;
+          opacity: 0.3;
+        }
       }
 
       .super-title {
@@ -85,7 +89,7 @@
         margin: 0;
       }
 
-      .super-title:not(.bg) {
+      .super-title {
         background: linear-gradient(
           135deg,
           #ffffff 0%,
@@ -99,16 +103,6 @@
         background-clip: text;
         position: relative;
         z-index: 2;
-      }
-
-      .super-title.bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 1;
-        text-shadow: 0px 4px 30px rgba(0, 0, 0, 0.5);
-        pointer-events: none;
-        opacity: 0.3;
       }
 
       .subtitle {
@@ -254,7 +248,8 @@
 }
 
 @media screen and (max-width: 465px) {
-  .landing .content .titles .super-title {
+  .landing .content .titles .super-title,
+  .landing .content .titles .super-title-wrapper::before {
     font-size: 2.25rem;
   }
 }

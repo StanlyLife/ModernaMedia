@@ -1,10 +1,14 @@
 ﻿/* You can add global styles to this file, and also import other style files */
 @use "src/variables" as *;
+@use "src/scss/fonts";
+@use "src/scss/v2";
 // Required Core Stylesheet
 
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  // clip (where supported) keeps position: sticky working; hidden would make html/body a scroll container.
+  overflow-x: clip;
 }
 
 *,
@@ -16,7 +20,6 @@ html {
 }
 * {
   color: $dark;
-  font-display: swap;
 }
 
 html,
@@ -30,6 +33,8 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-family: $ff-article;
   overflow-x: hidden;
+  // clip (where supported) keeps position: sticky working; hidden would make html/body a scroll container.
+  overflow-x: clip;
 }
 
 // //Montserrat alt
@@ -76,6 +81,12 @@ a {
 
 img {
   pointer-events: none;
+  // Lets width/height attributes reserve space without stretching the image.
+  height: auto;
+}
+
+.gradient-line {
+  background: linear-gradient(to right, #d06b30 0%, #c43ad6 50%, #30cfd0 100%);
 }
 
 //Select color

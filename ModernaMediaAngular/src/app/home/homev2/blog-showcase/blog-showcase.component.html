@@ -6,14 +6,20 @@
     </header>
     <div class="blogs">
       <!-- BLOGG -->
-      @for (blogg of blogs; track blogg) {
-        <a
-          [routerLink]="blogg.url"
-          class="blogg-link"
-          >
-          <section class="blogg" title="{{ blogg.Title }}">
+      @for (blogg of blogs; track blogg.url) {
+        <a [routerLink]="blogg.url" class="blogg-link">
+          <article class="blogg">
             <header>
-              <img src="{{ blogg.img }}" alt="{{ blogg.alt }}" />
+              <img
+                [src]="blogg.img"
+                [attr.srcset]="blogg.imgSrcset"
+                sizes="335px"
+                width="360"
+                height="203"
+                loading="lazy"
+                decoding="async"
+                [alt]="blogg.alt"
+              />
             </header>
             <div class="wrapper">
               <h3>{{ blogg.Title }}</h3>
@@ -21,17 +27,15 @@
               <p class="les-mer">
                 Les mer
                 <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Icons/right-arrow.svg'
-                  )
-                "
-                  role="presentation"
-                  alt="{{ blogg.alt }}"
-                  />
+                  src="/assets/Images/Icons/right-arrow.svg"
+                  width="16"
+                  height="16"
+                  loading="lazy"
+                  alt=""
+                />
               </p>
             </div>
-          </section>
+          </article>
         </a>
       }
     </div>

@@ -13,22 +13,25 @@
       <a
         routerLink="/tjenester/bedrift/utvikling/hjemmeside-bedrift"
         class="service"
-        title="nettside for bedrift"
+        title="Nettside for bedrift"
       >
         <div class="service-container">
           <div class="serivice-container-inner">
             <h3>Nettsider</h3>
             <div class="bg">
-              <picture>
-                <img
-                  [src]="
-                    sanitizeImageUrl(
-                      '../../../../assets/Images/Home/tjenester/400/Liten butikk eier som har fått hjelp med digitale tjenester som hjemmeside og design.webp'
-                    )
-                  "
-                  alt="En utvikler som lager hjemmeside for bedrift i Oslo når han jobber i et digitalbyrå"
-                />
-              </picture>
+              <img
+                src="/assets/img/home/tjeneste-nettsider-420.webp"
+                srcset="
+                  /assets/img/home/tjeneste-nettsider-420.webp 420w,
+                  /assets/img/home/tjeneste-nettsider-840.webp 840w
+                "
+                sizes="420px"
+                width="420"
+                height="524"
+                loading="lazy"
+                decoding="async"
+                alt="Butikkeier som har fått ny nettside for bedriften sin"
+              />
               <div class="shadow"></div>
             </div>
             <p class="usp-text">Øk din online tilstedeværelse</p>
@@ -46,25 +49,30 @@
       <a
         routerLink="/tjenester/bedrift/utvikling/programvare"
         class="service"
-        title="programvare utvikling for bedrifter"
+        title="Programvareutvikling for bedrifter"
       >
         <div class="service-container">
           <div class="serivice-container-inner">
             <h3>Programvare</h3>
             <div class="bg">
               <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Home/tjenester/500/To personer som jobber med teknologi i en startup og jobber med digitalisering.webp'
-                  )
+                src="/assets/img/home/tjeneste-programvare-840.webp"
+                srcset="
+                  /assets/img/home/tjeneste-programvare-420.webp 420w,
+                  /assets/img/home/tjeneste-programvare-840.webp 840w
                 "
-                alt="Programvare utvikling for bedrifter gjennom et digitalbyrå"
+                sizes="780px"
+                width="840"
+                height="560"
+                loading="lazy"
+                decoding="async"
+                alt="To personer som jobber med teknologi i en oppstartsbedrift"
               />
               <div class="shadow"></div>
             </div>
             <p class="usp-text">Systemer som sparer deg penger</p>
             <p class="service-information">
-              Få programvare som automatiserer dine daglige gjøremål å gjør
+              Få programvare som automatiserer dine daglige gjøremål og gjør
               livet ditt enklere, samtidig som du reduserer kostnader.
             </p>
             <p class="price-hint">Pris ved forespørsel</p>
@@ -77,19 +85,24 @@
       <a
         routerLink="/tjenester/bedrift/design"
         class="service"
-        title="Design tjenester for bedrifter"
+        title="Designtjenester for bedrifter"
       >
         <div class="service-container">
           <div class="serivice-container-inner">
             <h3>Design</h3>
             <div class="bg">
               <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Home/tjenester/400/Restaurant eier som moderniseres med hjemmeside.webp'
-                  )
+                src="/assets/img/home/tjeneste-design-420.webp"
+                srcset="
+                  /assets/img/home/tjeneste-design-420.webp 420w,
+                  /assets/img/home/tjeneste-design-840.webp 840w
                 "
-                alt="Grafisk design for logo og webdesign"
+                sizes="420px"
+                width="420"
+                height="630"
+                loading="lazy"
+                decoding="async"
+                alt="Restauranteier som har fått ny visuell profil"
               />
               <div class="shadow"></div>
             </div>
@@ -108,27 +121,32 @@
       <!-- Design slutt -->
       <!-- SEO  -->
       <a
-        routerLink="/tjenester/bedrift/seo/søkemotoroptimalisering"
+        routerLink="/tjenester/bedrift/seo"
         class="service"
-        title="SEO tjenester for bedrifter"
+        title="SEO-tjenester for bedrifter"
       >
         <div class="service-container">
           <div class="serivice-container-inner">
             <h3>SEO</h3>
             <div class="bg">
               <img
-                [src]="
-                  sanitizeImageUrl(
-                    '../../../../assets/Images/Home/tjenester/500/Dame som har fått hjelp med programvare og automatisering i blomsterbutikk.webp'
-                  )
+                src="/assets/img/home/tjeneste-seo-840.webp"
+                srcset="
+                  /assets/img/home/tjeneste-seo-420.webp 420w,
+                  /assets/img/home/tjeneste-seo-840.webp 840w
                 "
-                alt="Et seo byrå som jobber med søkemotor optimalisering"
+                sizes="780px"
+                width="840"
+                height="562"
+                loading="lazy"
+                decoding="async"
+                alt="Blomsterbutikkeier som har fått hjelp med synlighet på nett"
               />
               <div class="shadow"></div>
             </div>
             <p class="usp-text">La kundene dine finne deg på nett</p>
             <p class="service-information">
-              Søkemotoroptimalisering lar kunde finne deg før de finner dine
+              Søkemotoroptimalisering lar kundene finne deg før de finner dine
               konkurrenter. Med organisk vekst kan vi hjelpe deg å øke
               inntektene dine.
             </p>
@@ -137,15 +155,7 @@
           <p class="cta-link">Se våre SEO tjenester</p>
         </div>
       </a>
-      <!-- Programvare slutt -->
+      <!-- SEO slutt -->
     </div>
-    <!-- <div class="buttons">
-      <a routerLink="/" hreflang="no" class="btn shadow section-cta">
-        <p>
-          <img src="../../../../assets/Images/Icons/se_mer.svg" alt="" />
-          Se alle våre tjenester
-        </p>
-      </a>
-    </div> -->
   </div>
 </section>

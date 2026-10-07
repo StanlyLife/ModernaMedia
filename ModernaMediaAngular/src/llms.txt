@@ -1,0 +1,53 @@
+# Moderna Media
+
+> Moderna Media (Moderna Media Digitalbyrå) er et digitalbyrå i Oslo som lager nettsider, skreddersydd programvare, design og SEO for norske bedrifter. Målet er at bedriften skal bli synlig på nett, fremstå profesjonell og få flere kunder.
+
+- Organisasjonsnummer: 926 670 018
+- Adresse: Oscars gate 76b, 0256 Oslo
+- Telefon: +47 902 65 326
+- E-post: kontakt@modernamedia.no
+- Åpningstider: mandag–søndag 08:00–23:00
+- Daglig leder og prosjektleder: Stian Håve
+- Område: hele Norge
+
+## Tjenester
+
+- [Alle tjenester](https://modernamedia.no/tjenester): Oversikt over nettsider, programvare, design og SEO.
+- [Priser](https://modernamedia.no/priser): Nettsider fra 25.000 kr, programvare fra 25.000 kr, design fra 7.500 kr og SEO fra 5.000 kr/mnd (alle eks. mva).
+- [Digitalbyrå i Oslo](https://modernamedia.no/digitalbyra-oslo): Nettsider, design og lokal SEO for bedrifter i Oslo og på Østlandet.
+- [Nettsider for bedrifter](https://modernamedia.no/tjenester/bedrift/utvikling/hjemmeside-bedrift): Profesjonelle, responsive og SEO-optimaliserte nettsider som gjør besøkende til kunder.
+- [Programvare og webapplikasjoner](https://modernamedia.no/tjenester/bedrift/utvikling/programvare): Skreddersydde systemer som automatiserer arbeid og kobles sammen via API.
+- [Webutvikling](https://modernamedia.no/tjenester/bedrift/utvikling): Raske, moderne nettsider og webapplikasjoner bygget med React, Angular og Next.js.
+- [Design](https://modernamedia.no/tjenester/bedrift/design): Logo, webdesign og grafisk design som styrker merkevaren.
+  - [Logo design](https://modernamedia.no/tjenester/bedrift/design/logo-design)
+  - [Webdesign](https://modernamedia.no/tjenester/bedrift/design/web-design)
+  - [Grafisk design](https://modernamedia.no/tjenester/bedrift/design/grafisk-design)
+- [SEO / søkemotoroptimalisering](https://modernamedia.no/tjenester/bedrift/seo): Teknisk SEO, innholdsproduksjon og off-page SEO som gir bedre synlighet på Google.
+  - [Teknisk SEO](https://modernamedia.no/tjenester/bedrift/seo/teknisk-seo)
+  - [Innholdsproduksjon](https://modernamedia.no/tjenester/bedrift/seo/innholdsproduksjon)
+  - [Off-page SEO og lenkebygging](https://modernamedia.no/tjenester/bedrift/seo/off-page-seo)
+
+## Kundecaser
+
+- [Sola Parkering](https://modernamedia.no/case-study/sola-parkering): Rask nettside og lokal SEO for ny parkeringsplass ved Stavanger lufthavn. +160 000 årlige organiske besøk og 5,6× flere bookinger etter lansering.
+- [Fjerdingby Pizza & Grill](https://modernamedia.no/case-study/fjerdingby-pizza): Next.js-nettside med digital meny, ny logo, take-away-meny og lokal SEO. Lastetid under 1,2 s på mobil og førsteplass på «pizza Fjerdingby».
+- [Østlandet Brønnboring](https://modernamedia.no/case-study/ostlandet-bronnboring): Ny nettside, HubSpot og teknisk SEO ga 3× flere kvalifiserte leads på fire måneder og 55 % kortere tid til tilbud.
+- [Alle kundecaser](https://modernamedia.no/case-studies)
+
+## Kontakt og tilbud
+
+- [Kontakt oss](https://modernamedia.no/kontakt)
+- [Be om pristilbud](https://modernamedia.no/pris)
+- [Gratis nettside-analyse](https://modernamedia.no/gratis-hjemmeside-analyse)
+- [Gratis SEO-analyse](https://modernamedia.no/gratis-seo-analyse)
+- [Om oss](https://modernamedia.no/om-oss)
+
+## Artikler
+
+- [Blogg](https://modernamedia.no/blogg)
+- [Hva koster en nettside for bedrift?](https://modernamedia.no/blogg/hva-koster-en-nettside)
+- [Teknisk SEO: sjekkliste for små bedrifter](https://modernamedia.no/blogg/teknisk-seo-sjekkliste)
+- [Slik får du en logo som holder i mange år](https://modernamedia.no/blogg/slik-far-du-en-god-logo)
+- [Google Bedriftsprofil: kom høyere i lokale søk](https://modernamedia.no/blogg/google-bedriftsprofil)
+- [Hvorfor restauranten din trenger en hjemmeside](https://modernamedia.no/blogg/hjemmeside-for-restaurant-bedrift)
+- [Utviklerlønn i Norge](https://modernamedia.no/blogg/utviklerlonn): Lønnsdata fra 1529 norske utviklere.

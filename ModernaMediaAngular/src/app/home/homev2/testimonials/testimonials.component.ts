@@ -7,10 +7,12 @@ export interface Testimonial {
   companyLinkLabel: string;
   companyLinkTitle: string;
   backgroundImageSrc: string;
+  backgroundImageSrcset?: string;
   backgroundImageAlt: string;
-  personImageSrc: string;
-  personImageAlt: string;
-  personImageClass?: string;
+  /** Leave out to show `personInitials` instead of a photo. */
+  personImageSrc?: string;
+  personImageAlt?: string;
+  personInitials?: string;
   caseStudyPath?: string;
   caseStudyCta?: string;
   details: string[];
@@ -25,13 +27,10 @@ const DEFAULT_TESTIMONIAL: Testimonial = {
   companyLink: 'https://solaparkering.no',
   companyLinkLabel: 'Sola parkering',
   companyLinkTitle: 'sola parkering hjemmeside',
-  backgroundImageSrc:
-    '../../../../assets/Images/testimonials/solaparkering/Parkering-sola-flyplassparkering-på-sola.jpg',
+  backgroundImageSrc: '/assets/img/home/case-sola-parkering-650.webp',
   backgroundImageAlt: 'Sola Parkering forsidebilde',
-  personImageSrc:
-    '../../../../assets/Images/testimonials/solaparkering/31fa76d5-35b6-468c-8c42-4291d6716f5e.webp',
-  personImageAlt: 'Kunde av Moderna Media tjenester',
-  personImageClass: 'svein',
+  personImageSrc: '/assets/img/home/kunde-svein-magnar-200.webp',
+  personImageAlt: 'Svein Magnar, daglig leder i Sola Parkering',
   details: [
     'Svein Magnar',
     'Daglig leder',
@@ -42,7 +41,7 @@ const DEFAULT_TESTIMONIAL: Testimonial = {
     'Vi fikk designet og utviklet en nettside for Sola Parkering som var i tråd med vår identitet og som snakker godt til kundene. Vi er veldig fornøyde med tjeneste og servicen som fulgte. Jeg kan trygt anbefale Moderna Media til andre!',
   rating: 5,
   overlayColor: DEFAULT_OVERLAY_COLOR,
-  caseStudyPath: '/case-studies/sola-parkering',
+  caseStudyPath: '/case-study/sola-parkering',
   caseStudyCta: 'Les casestudien',
 };
 

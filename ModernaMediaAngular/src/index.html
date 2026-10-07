@@ -1,46 +1,47 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="nb">
   <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="alternate" href="https://modernamedia.no/" />
+    <base href="/" />
+    <title>Digitalbyrå i Oslo | Nettside, Design & SEO | Moderna Media</title>
+
+    <!-- Fonts used above the fold on every page (avoids a visible font swap) -->
     <link
-      rel="alternate"
-      href="https://modernamedia.no/tjenester/bedrift/design"
+      rel="preload"
+      href="/assets/fonts/woff2/Mosk900.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
     <link
-      rel="alternate"
-      href="https://modernamedia.no/tjenester/bedrift/utvikling"
+      rel="preload"
+      href="/assets/fonts/woff2/IBMPlexSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-    <link
-      rel="alternate"
-      href="https://modernamedia.no/tjenester/bedrift/utvikling/hjemmeside-bedrift"
-    />
-    <link
-      rel="alternate"
-      href="https://modernamedia.no/tjenester/bedrift/seo/søkemotoroptimalisering"
-    />
+
     <meta
       name="google-site-verification"
       content="eLVPpGwJJH4LHRw5fy1pvS0NYXGT1CH6IIN45PPfoOc"
     />
+
+    <!-- Google Analytics (GA4) -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-C4P3665WWC"
     ></script>
-
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
       gtag("js", new Date());
-
       gtag("config", "G-C4P3665WWC");
     </script>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
 
-    <!-- PIXEL -->
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel -->
     <script>
       !(function (f, b, e, v, n, t, s) {
         if (f.fbq) return;
@@ -68,119 +69,74 @@
       fbq("init", "391525145291863");
       fbq("track", "PageView");
     </script>
-    <!-- End Meta Pixel Code -->
-    <!-- PIXEL END -->
 
-    <!-- gtagmanager -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-170639525-2"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "UA-170639525-2");
-    </script>
-    <!-- gtagmanager -->
+    <!-- Favicons -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./assets/favicons/apple-touch-icon.png"
+      href="/assets/favicons/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/favicons/favicon-32x32.png"
+      href="/assets/favicons/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./assets/favicons/favicon-16x16.png"
+      href="/assets/favicons/favicon-16x16.png"
     />
-    <link rel="manifest" href="./assets/favicons/site.webmanifest" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicons/favicon.ico" />
+    <link rel="manifest" href="/assets/favicons/site.webmanifest" />
     <link
       rel="mask-icon"
-      href="./assets/favicons/safari-pinned-tab.svg"
+      href="/assets/favicons/safari-pinned-tab.svg"
       color="#5bbad5"
     />
-    <link rel="shortcut icon" href="./assets/favicons/favicon.ico" />
     <meta name="msapplication-TileColor" content="#eeeeee" />
     <meta
       name="msapplication-config"
-      content="./assets/favicons/browserconfig.xml"
+      content="/assets/favicons/browserconfig.xml"
     />
     <meta name="theme-color" content="#333333" />
-    <!-- favicons end -->
-    <meta charset="utf-8" />
-    <base href="/" />
-    <link rel="icon" type="image/x-icon" href="./assets/favicons/favicon.ico" />
-    <title>
-      Moderna Media Digitalbyrå - For bedriftens hjemmeside, design og seo
-    </title>
 
-    <!-- twitter card -->
+    <!-- Defaults; each page overrides these through SeoService -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@modernamedia" />
     <meta
       name="twitter:title"
-      content="Moderna Media Digitalbyrå - Hjemmesider, design og seo"
+      content="Digitalbyrå i Oslo | Nettside, Design & SEO | Moderna Media"
     />
     <meta
       name="twitter:description"
-      content="Moderna Media Digitalbyrå leverer hjemmesider, datasystemer, design og seo til bedrifter som har et mål om å øke konvertering og omsetning."
+      content="Moderna Media er et digitalbyrå i Oslo som leverer skreddersydde nettsider, moderne design og SEO-strategier som øker synlighet og omsetning for din bedrift."
     />
     <meta
       name="twitter:image"
-      content="https://modernamedia.no/assets/Images/LogoV2/Updated/Moderna%20Media%20-%20Logo%20&%20Text%20-%20Left%20-%20Light.jpg"
+      content="https://modernamedia.no/assets/Images/og-image.jpg"
     />
-    <!-- twitter card end -->
-
-    <!-- open graph -->
-    <meta property="og:title" content="Moderna Media Digitalbyrå" />
-    <meta property="og:site_name" content="Moderna Media Digitalbyrå" />
-    <meta property="og:url" content="https://modernamedia.no" />
+    <meta
+      property="og:title"
+      content="Digitalbyrå i Oslo | Nettside, Design & SEO | Moderna Media"
+    />
+    <meta property="og:site_name" content="Moderna Media" />
+    <meta property="og:locale" content="nb_NO" />
+    <meta property="og:url" content="https://modernamedia.no/" />
     <meta
       property="og:description"
-      content="Moderna Media Digitalbyrå leverer hjemmesider, datasystemer, design og seo til bedrifter."
+      content="Moderna Media er et digitalbyrå i Oslo som leverer skreddersydde nettsider, moderne design og SEO-strategier som øker synlighet og omsetning for din bedrift."
     />
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
-      content="https://modernamedia.no/assets/Images/LogoV2/Updated/Moderna%20Media%20-%20Logo%20&%20Text%20-%20Left%20-%20Light.jpg"
+      content="https://modernamedia.no/assets/Images/og-image.jpg"
     />
-    <!-- open graph end -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
   </head>
   <body>
     <app-root></app-root>
-    <script type="application/ld+json">
-      {
-        "@context": "http://www.schema.org",
-        "@type": "ProfessionalService",
-        "name": "Moderna Media Digitalbyrå",
-        "url": "https://modernamedia.no/",
-        "logo": "https://modernamedia.no/assets/Images/LogoV2/Updated/Moderna%20Media%20-%20Logo%20&%20Text%20-%20Dark.jpg",
-        "image": "https://modernamedia.no/assets/Images/Home/Landing/Digitalbyr%C3%A5%20i%20oslo%20Moderna%20Media%20for%20grafisk%20design%20logo%20design%20og%20web%20design%20-%20hjemmeside%20for%20bedrift.jpg",
-        "description": "Invester i bedriftens vekst, øk omsetning og kundebase gjennom en ny nettside, ett nytt design og mer søkemotoroptimalisering.",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Oscars gate 76b",
-          "addressLocality": "OSLO",
-          "addressRegion": "Oslo",
-          "postalCode": "0256",
-          "addressCountry": "Norge"
-        },
-        "openingHours": "Mo, Tu, We, Th, Fr, Sa, Su 08:00-23:00",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "90265326"
-        }
-      }
-    </script>
   </body>
 </html>

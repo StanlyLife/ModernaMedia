@@ -68,12 +68,22 @@
       z-index: 2;
       .person {
         height: 100%;
+        width: 100%;
+        object-fit: cover;
         position: absolute;
         top: 0;
         left: 0;
-        &.svein {
-          left: -25px;
-        }
+      }
+      .initials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(120deg, $blue-primary, $purple-primary);
+        color: white;
+        font-family: $ff-primary;
+        font-weight: 800;
+        font-size: 2rem;
+        letter-spacing: 1px;
       }
     }
   }
@@ -135,7 +145,7 @@
         background: linear-gradient(120deg, $blue-primary, $purple-primary);
         z-index: 2;
         mix-blend-mode: overlay;
-        mask: url("../../../../assets/Images/Icons/testiomonials/star-icon.svg")
+        mask: url("/assets/Images/Icons/testiomonials/star-icon.svg")
           no-repeat center / contain;
       }
     }

@@ -1,0 +1,10 @@
+.about {
+  display: grid;
+  grid-template-columns: 480px 1fr;
+  gap: 80px;
+  align-items: center;
+  img { width: 100%; height: 560px; object-fit: cover; border-radius: 24px; }
+}
+@media (max-width: 1000px) {
+  .about { grid-template-columns: 1fr; gap: 40px; img { height: 360px; } }
+}

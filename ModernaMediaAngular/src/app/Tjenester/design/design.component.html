@@ -1,18 +1,123 @@
-<app-tjenester-header [data]="dataHeader"></app-tjenester-header>
-<app-tjenester-services
-  [data]="dataServices"
-  id="services"
-></app-tjenester-services>
-<app-tjenester-info-section
-  [data]="dataInfoSection"
-  id="grafisk_design"
-></app-tjenester-info-section>
-<app-tjenester-info-section
-  [data]="dataInfoSection2"
-  id="web_design"
-></app-tjenester-info-section>
-<app-tjenester-info-section
-  [data]="dataInfoSection3"
-  id="logo_design"
-></app-tjenester-info-section>
-<app-about-your-next-project></app-about-your-next-project>
+<div class="v2">
+  <v2-svc-hero
+    [crumbs]="[{ label: 'Tjenester', link: '/tjenester' }, { label: 'Design' }]"
+    [pill]="['DESIGN', 'Logo, webdesign og grafisk design']"
+    h1="Logo, webdesign og grafisk design"
+    sub="Vi skaper vakre design med kunden i fokus. Et godt design skal øke en bedrifts verdi, tillit og tilstedeværelse gjennom et godt førsteinntrykk. Hvilket førsteinntrykk gir bedriften din?"
+    [checks]="['Design fra 7.500 kr eks. mva', 'Fast pris før oppstart', '100 % fornøyd-garanti']"
+    primary="Få pristilbud på design"
+    [bg]="{ src: '/assets/Images/Tjenester/header/design/1920/Bedrift design - grafisk design.webp' }"
+    [anchors]="[['Tjenester', 'tjenester'], ['Logo design', 'logo-design'], ['Webdesign', 'webdesign'], ['Grafisk design', 'grafisk-design'], ['Priser', 'priser'], ['Spørsmål og svar', 'faq']]"
+    formTitle="Få pristilbud på design"
+    formMessage="Hva trenger du? F.eks. ny logo, profil eller webdesign"
+    preselect="Design"
+    source="Pristilbud – design"
+  />
+
+  <v2-trust />
+
+  <section class="soft" id="tjenester" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="head center">
+        <span class="kicker">Webdesign · Logo design · Grafisk design</span>
+        <h2 class="h2" id="services-title">Våre designtjenester for bedrifter</h2>
+        <p class="lead">Et godt design skal øke en bedrifts verdi, tillit og tilstedeværelse gjennom et godt førsteinntrykk.</p>
+      </div>
+      <div class="grid3">
+        <v2-svc-card
+          icon="/assets/Images/Icons/tjenester/services/logo_design.svg"
+          title="Logo design"
+          text="En logo skal bygge tillit ved å validere og gjenspeile bedriftens profesjonalitet."
+          [list]="['Logo i flere varianter', 'Farger og fonter', 'Revisjon av eksisterende logo']"
+          price="7.500 kr"
+          link="/tjenester/bedrift/design/logo-design"
+          linkLabel="Les mer om logo design"
+        />
+        <v2-svc-card
+          icon="/assets/Images/Icons/tjenester/services/hjemmeside-bedrift.svg"
+          title="Webdesign"
+          text="Et nyttig webdesign skal hjelpe brukeren å oppnå sine mål enklest mulig."
+          [list]="['UI- og UX-design', 'Mobile-first', 'Design som konverterer']"
+          link="/tjenester/bedrift/design/web-design"
+          linkLabel="Les mer om webdesign"
+        />
+        <v2-svc-card
+          icon="/assets/Images/Icons/tjenester/services/grafisk_design.svg"
+          title="Grafisk design"
+          text="Et godt grafisk design bruker statistikk til å øke omsetning ved hjelp av ulike metoder."
+          [list]="['Visittkort og trykksaker', 'Annonser og kampanjer', 'Grafikk til sosiale medier']"
+          link="/tjenester/bedrift/design/grafisk-design"
+          linkLabel="Les mer om grafisk design"
+        />
+      </div>
+    </div>
+  </section>
+
+  @defer (on idle; hydrate on viewport) {
+    <v2-info
+      anchor="logo-design"
+      img="/assets/Images/Tjenester/info-section/design/logo design for bedrift.webp"
+      alt="Logo design for bedrift"
+      kicker="Bygg en sterk merkevare med en"
+      title="Logo design for bedriften din"
+      [text]="logoText"
+      [list]="['Gi et godt førsteinntrykk', 'Si noe om hva bedriften gjør', 'Gi bedre merkevaregjenkjenning']"
+      [after]="logoAfter"
+      link="/tjenester/bedrift/design/logo-design"
+      linkLabel="Se vår logodesign-tjeneste"
+      [fact]="['7.500 kr', 'Design fra 7.500 kr eks. mva – fast pris før vi starter']"
+    />
+    <v2-info
+      anchor="webdesign"
+      [soft]="true"
+      [rev]="true"
+      img="/assets/Images/Tjenester/info-section/design/web design for bedrift oslo.webp"
+      alt="Webdesign for bedrift i Oslo"
+      kicker="Voks organisk med skreddersydd"
+      title="Webdesign for bedriften din"
+      [text]="webText"
+      [list]="['Ditt førsteinntrykk', 'Dine konkurransefortrinn', 'Tilliten fra kundene dine', 'Din brukervennlighet']"
+      [after]="['Invester i en neste generasjons nettside for bedriften din! Ta kontakt med oss i Moderna Media i dag.']"
+      link="/tjenester/bedrift/design/web-design"
+      linkLabel="Se vår webdesign-tjeneste"
+      [fact]="['0,5 s', 'er alt en besøkende bruker på å danne seg et førsteinntrykk av bedriften din']"
+    />
+    <v2-info
+      anchor="grafisk-design"
+      img="/assets/Images/Tjenester/info-section/design/grafisk design for bedrift oslo.webp"
+      alt="Grafisk design for bedrift i Oslo"
+      kicker="Uttrykk dine verdier med"
+      title="Grafisk design"
+      [text]="grafiskText"
+      link="/tjenester/bedrift/design/grafisk-design"
+      linkLabel="Se vår grafisk design-tjeneste"
+      [fact]="['$200 mill.', 'i ekstra omsetning for Google etter å ha testet 50 blåfarger på lenkene']"
+    />
+
+    <section class="soft" aria-label="Kundehistorie">
+      <div class="wrap">
+        <v2-case
+          key="sola"
+          kicker="Kundehistorie · Design og nettside"
+          title="Sola Parkering fikk en nettside i tråd med sin identitet"
+          [metrics]="[['+160.000', 'i organisk trafikk'], ['5,6×', 'flere bookinger'], ['−40 %', 'supporthenvendelser']]"
+        />
+      </div>
+    </section>
+  }
+
+  @defer (on idle; hydrate on viewport) {
+    <v2-price-band
+      title="Hva koster logo og design?"
+      badge="Logo, profil og grafisk design"
+      name="Design"
+      price="7.500 kr"
+      [list]="['Logo design', 'Visuell profil med farger og fonter', 'Webdesign (UI/UX)', 'Grafisk design og markedsføringsmateriell', 'Revisjon av eksisterende logo']"
+      cta="Få pristilbud på design"
+      [factors]="[['Omfang', 'Trenger du kun en logo, eller en hel visuell profil?'], ['Konsepter og revisjoner', 'Hvor mange forslag og runder med endringer du ønsker.'], ['Flater', 'Hvor designet skal brukes: nett, trykk, skilt eller sosiale medier.'], ['Webdesign', 'Om du også trenger design av nettsiden.']]"
+    />
+    <v2-process />
+    <v2-faq title="Spørsmål og svar om logo og design" intro="Det bedrifter oftest lurer på før de bestiller logo, webdesign eller grafisk design." [items]="faq" [soft]="false" />
+    <v2-contact preselect="Design" source="design" />
+  }
+</div>

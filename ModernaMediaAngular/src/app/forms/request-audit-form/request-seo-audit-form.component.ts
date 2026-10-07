@@ -35,7 +35,7 @@ export class RequestSeoAuditFormComponent implements OnInit {
       title: SeoUtils.FormsSeoAudit.title,
       description: SeoUtils.FormsSeoAudit.description,
       keywords: SeoUtils.FormsSeoAudit.keywords,
-      url: 'https://modernamedia.no/bestill/seo-analyse',
+      url: 'https://modernamedia.no/gratis-seo-analyse',
     });
   }
   @Input() data: any = {
@@ -44,7 +44,7 @@ export class RequestSeoAuditFormComponent implements OnInit {
       src: '../../../../assets/Images/forms/seo/gratis søkemotoroptimalisering undersøkelse.jpg',
     },
     title: 'Kontakt oss',
-    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktet!',
+    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktende!',
   };
   scrollToId(id: string) {
     this.scroller.scrollToAnchor(id);

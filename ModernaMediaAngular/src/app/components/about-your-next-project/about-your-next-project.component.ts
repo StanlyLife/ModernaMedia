@@ -1,8 +1,5 @@
 import { Component, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
-import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: 'app-about-your-next-project',
@@ -12,30 +9,20 @@ import { environment } from 'src/environments/environment.prod';
     './about-your-next-project.desktop.component.scss',
   ],
   standalone: true,
-  imports: [CommonModule],
 })
 export class AboutYourNextProjectComponent {
-  constructor(
-    private sanitizer: DomSanitizer,
-    @Inject(PLATFORM_ID) private platformId: Object
-  ) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
 
-  sanitizeImageUrl(imageUrl: string): SafeUrl {
-    return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
-  }
-
-  imageCdn = environment.img;
-
+  // Scrolls to the contact form when it is on the page; otherwise the
+  // link's href takes the visitor to /kontakt.
   scrollToContact(event: Event) {
-    event.preventDefault();
-    if (isPlatformBrowser(this.platformId)) {
-      const element = document.getElementById('kontakt');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        // Fallback: navigate to /kontakt if section not found
-        window.location.href = '/kontakt';
-      }
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+    const element = document.getElementById('kontakt');
+    if (element) {
+      event.preventDefault();
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }

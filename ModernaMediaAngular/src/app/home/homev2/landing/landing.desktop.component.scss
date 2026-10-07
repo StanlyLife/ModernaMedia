@@ -2,7 +2,8 @@
 
 @media screen and (min-width: 360px) {
   .landing .content .titles {
-    .super-title {
+    .super-title,
+    .super-title-wrapper::before {
       font-size: 3rem;
     }
     .subtitle {
@@ -18,7 +19,8 @@
     .titles {
       gap: 24px;
 
-      .super-title {
+      .super-title,
+      .super-title-wrapper::before {
         font-size: 4rem;
       }
       .subtitle {
@@ -62,7 +64,8 @@
       .titles {
         gap: 28px;
 
-        .super-title {
+        .super-title,
+        .super-title-wrapper::before {
           font-size: 5rem;
           letter-spacing: -2px;
         }
@@ -86,7 +89,8 @@
     max-width: 750px;
 
     .titles {
-      .super-title {
+      .super-title,
+      .super-title-wrapper::before {
         font-size: 4.5rem;
       }
       .subtitle {
@@ -112,7 +116,8 @@
       .titles {
         gap: 32px;
 
-        .super-title {
+        .super-title,
+        .super-title-wrapper::before {
           font-size: 5.5rem;
           letter-spacing: -3px;
         }
@@ -136,7 +141,8 @@
     max-width: 950px;
 
     .titles {
-      .super-title {
+      .super-title,
+      .super-title-wrapper::before {
         font-size: 6rem;
       }
       .subtitle {

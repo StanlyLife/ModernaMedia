@@ -10,6 +10,12 @@
       <img
         class="bg-img"
         [src]="testimonial.backgroundImageSrc"
+        [attr.srcset]="testimonial.backgroundImageSrcset || null"
+        sizes="(max-width: 768px) 100vw, 600px"
+        width="650"
+        height="400"
+        loading="lazy"
+        decoding="async"
         [alt]="testimonial.backgroundImageAlt"
       />
       <ng-container *ngIf="testimonial.caseStudyPath; else externalLink">
@@ -32,12 +38,21 @@
     </div>
     <div class="person-container">
       <div class="person-wrapper">
-        <img
-          class="person"
-          [ngClass]="testimonial.personImageClass"
-          [src]="testimonial.personImageSrc"
-          [alt]="testimonial.personImageAlt"
-        />
+        @if (testimonial.personImageSrc) {
+          <img
+            class="person"
+            [src]="testimonial.personImageSrc"
+            width="100"
+            height="100"
+            loading="lazy"
+            decoding="async"
+            [alt]="testimonial.personImageAlt"
+          />
+        } @else {
+          <span class="person initials" aria-hidden="true">{{
+            testimonial.personInitials
+          }}</span>
+        }
       </div>
     </div>
 
@@ -48,13 +63,20 @@
         </div>
       </div>
       <p class="content-text">{{ testimonial.quote }}</p>
-      <div class="rating" aria-label="Kundetilfredshet">
+      <div
+        class="rating"
+        role="img"
+        [attr.aria-label]="testimonial.rating + ' av 5 stjerner'"
+      >
         <div
           class="star-container"
           *ngFor="let _ of ratingStars; let idx = index; trackBy: trackByIndex"
         >
           <img
-            src="../../../../assets/Images/Icons/testiomonials/star-icon.svg"
+            src="/assets/Images/Icons/testiomonials/star-icon.svg"
+            width="22"
+            height="22"
+            loading="lazy"
             alt=""
             aria-hidden="true"
           />

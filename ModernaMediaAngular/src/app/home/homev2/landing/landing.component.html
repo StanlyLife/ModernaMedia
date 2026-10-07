@@ -1,67 +1,68 @@
 <section class="landing">
   <div class="wrapper">
     <div class="bg">
-      <picture>
-        <source
-          media="(min-width:800px)"
-          [srcset]="
-            sanitizeImageUrl(
-              '../../../../assets/Images/Home/Landing/1280/Digitalbyrå-i-oslo-Moderna-Media-for-grafisk-design-logo-design-og-web-design-hjemmeside-for-bedrift.webp'
-            )
-          "
-        />
-        <source
-          media="(min-width:0px)"
-          [srcset]="
-            sanitizeImageUrl(
-              '../../../../assets/Images/Home/Landing/640/Digitalbyrå-i-oslo-Moderna-Media-for-grafisk-design-logo-design-og-web-design-hjemmeside-for-bedrift.webp'
-            )
-          "
-        />
-        <img
-          [src]="
-            sanitizeImageUrl(
-              '../../../../assets/Images/Home/Landing/1280/Digitalbyrå-i-oslo-Moderna-Media-for-grafisk-design-logo-design-og-web-design-hjemmeside-for-bedrift.webp'
-            )
-          "
-          alt="Moderna media Digitalbyrå for bedriftens nettsider, programvare, grafisk design og søkemotoroptimalisering"
-          class="landing-image"
-        />
-      </picture>
+      <img
+        class="landing-image"
+        src="/assets/img/home/digitalbyra-oslo-hero-1280.webp"
+        srcset="
+          /assets/img/home/digitalbyra-oslo-hero-640.webp   640w,
+          /assets/img/home/digitalbyra-oslo-hero-960.webp   960w,
+          /assets/img/home/digitalbyra-oslo-hero-1280.webp 1280w,
+          /assets/img/home/digitalbyra-oslo-hero-1920.webp 1920w
+        "
+        sizes="100vw"
+        width="1280"
+        height="853"
+        fetchpriority="high"
+        alt="Team fra Moderna Media som planlegger nettside, design og SEO for en bedrift"
+      />
       <div class="bg-shade"></div>
     </div>
-    <div class="content fade-in">
+    <div class="content">
       <div class="titles">
-        <div class="super-title-wrapper">
+        <div class="super-title-wrapper" data-text="Nettsider, Design og SEO">
           <p class="super-title">Nettsider, Design og SEO</p>
-          <p class="super-title bg">Nettsider, Design og SEO</p>
         </div>
         <h1 class="subtitle large">
-          Øk din digitale tilstedeværelse, opplev vekst og oppnå dine mål med
-          Moderna Media Digitalbyrå
+          Moderna Media er et digitalbyrå i Oslo som lager nettsider, design og
+          SEO som gir bedriften din vekst og flere kunder.
         </h1>
       </div>
       <div class="buttons">
-        <button class="btn cta primary" (click)="scrollToId('kontakt')">
-          <p>Book et uforpliktet møte</p>
-        </button>
-        <button class="btn cta secondary" (click)="scrollToId('tjenester')">
+        <a
+          class="btn cta primary"
+          href="#kontakt"
+          (click)="scrollToId($event, 'kontakt')"
+        >
+          <p>Book et uforpliktende møte</p>
+        </a>
+        <a
+          class="btn cta secondary"
+          href="#tjenester"
+          (click)="scrollToId($event, 'tjenester')"
+        >
           <p>Se våre tjenester</p>
-        </button>
+        </a>
       </div>
       <div class="social-proof">
         <div class="avatars">
           <img
-            src="../../../../assets/Images/testimonials/solaparkering/31fa76d5-35b6-468c-8c42-4291d6716f5e.webp"
-            alt="Kunde"
+            src="/assets/img/home/kunde-svein-magnar-96.webp"
+            width="36"
+            height="36"
+            alt="Svein Magnar, daglig leder i Sola Parkering"
           />
           <img
-            src="../../../../assets/Images/testimonials/mamrot/patrikmamrot.jpg"
-            alt="Kunde"
+            src="/assets/img/home/kunde-patrik-96.webp"
+            width="36"
+            height="36"
+            alt="Patrik, daglig leder i Marbella Car Spa"
           />
           <img
-            src="../../../../assets/Images/testimonials/fjerdingby/person_dana.jpg"
-            alt="Kunde"
+            src="/assets/img/home/kunde-ena-96.webp"
+            width="36"
+            height="36"
+            alt="Ena Hasanović, daglig leder i Fjerdingby Pizza & Grill"
           />
         </div>
         <p class="proof-text"><strong>50+ bedrifter</strong> har valgt oss</p>

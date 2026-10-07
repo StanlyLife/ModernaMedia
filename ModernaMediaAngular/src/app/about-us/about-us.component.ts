@@ -190,7 +190,7 @@ interface TeamMember {
       <div class="wrapper">
         <h2>Klar til å starte et prosjekt med oss?</h2>
         <p>
-          Ta kontakt for en uforpliktet prat om hvordan vi kan hjelpe din
+          Ta kontakt for en uforpliktende prat om hvordan vi kan hjelpe din
           bedrift.
         </p>
         <a routerLink="/kontakt" class="btn primary">Ta kontakt</a>

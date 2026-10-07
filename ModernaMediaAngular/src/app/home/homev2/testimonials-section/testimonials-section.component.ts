@@ -166,13 +166,12 @@ export class TestimonialsSectionComponent {
       companyLink: 'https://solaparkering.no',
       companyLinkLabel: 'Sola parkering',
       companyLinkTitle: 'sola parkering hjemmeside',
-      backgroundImageSrc:
-        '../../../../assets/Images/testimonials/solaparkering/Parkering-sola-flyplassparkering-på-sola.webp',
-      backgroundImageAlt: 'Sola Parkering forsidebilde',
-      personImageSrc:
-        '../../../../assets/Images/testimonials/solaparkering/31fa76d5-35b6-468c-8c42-4291d6716f5e.webp',
-      personImageAlt: 'Kunde av Moderna Media tjenester',
-      personImageClass: 'svein',
+      backgroundImageSrc: '/assets/img/home/case-sola-parkering-650.webp',
+      backgroundImageSrcset:
+        '/assets/img/home/case-sola-parkering-650.webp 650w, /assets/img/home/case-sola-parkering-1300.webp 1300w',
+      backgroundImageAlt: 'Parkeringsplassen til Sola Parkering',
+      personImageSrc: '/assets/img/home/kunde-svein-magnar-200.webp',
+      personImageAlt: 'Svein Magnar, daglig leder i Sola Parkering',
       caseStudyPath: '/case-study/sola-parkering',
       details: [
         'Svein Magnar',
@@ -186,14 +185,15 @@ export class TestimonialsSectionComponent {
       overlayColor: 'rgba(0, 115, 255, 0.403)',
     },
     {
-      companyLink: 'https://marbellacarwash.es',
+      companyLink: 'https://www.carspamarbella.es/',
       companyLinkLabel: 'Marbella car spa',
       companyLinkTitle: 'Marbella Car Spa prosjekt',
-      backgroundImageSrc: 'https://i.ibb.co/2YFtr2mG/image.png',
-      backgroundImageAlt: 'Marbella Car Spa bilvask',
-      personImageSrc:
-        '../../../../assets/Images/testimonials/mamrot/patrikmamrot.jpg',
-      personImageAlt: 'Daglig leder Marbella Car Spa',
+      backgroundImageSrc: '/assets/img/home/case-marbella-car-spa-650.webp',
+      backgroundImageSrcset:
+        '/assets/img/home/case-marbella-car-spa-650.webp 650w, /assets/img/home/case-marbella-car-spa-1300.webp 1300w',
+      backgroundImageAlt: 'Polering av bil hos Marbella Car Spa',
+      personImageSrc: '/assets/img/home/kunde-patrik-200.webp',
+      personImageAlt: 'Patrik, daglig leder i Marbella Car Spa',
       caseStudyPath: '/case-study/marbella-car-spa',
       details: [
         'Patrik',
@@ -207,15 +207,15 @@ export class TestimonialsSectionComponent {
       overlayColor: 'rgba(209, 165, 44, 0.31)',
     },
     {
-      companyLink: 'https://fjerdingbypizzaoggrill.no',
+      companyLink: 'https://www.fjerdingbypizzaoggrill.no/',
       companyLinkLabel: 'Fjerdingby Pizza & Grill',
       companyLinkTitle: 'Fjerdingby Pizza og Grill hjemmeside',
-      backgroundImageSrc:
-        '../../../../assets/Images/testimonials/fjerdingby/logo.webp',
-      backgroundImageAlt: 'Fjerdingby Pizza og Grill restaurantinteriør',
-      personImageSrc:
-        '../../../../assets/Images/testimonials/fjerdingby/person_dana.jpg',
-      personImageAlt: 'Daglig leder hos Fjerdingby Pizza og Grill',
+      backgroundImageSrc: '/assets/img/home/case-fjerdingby-pizza-650.webp',
+      backgroundImageSrcset:
+        '/assets/img/home/case-fjerdingby-pizza-650.webp 650w, /assets/img/home/case-fjerdingby-pizza-1300.webp 1300w',
+      backgroundImageAlt: 'Fjerdingby Pizza & Grill',
+      personImageSrc: '/assets/img/home/kunde-ena-200.webp',
+      personImageAlt: 'Ena Hasanović, daglig leder i Fjerdingby Pizza & Grill',
       caseStudyPath: '/case-study/fjerdingby-pizza',
       details: [
         'Ena Hasanović',
@@ -229,15 +229,14 @@ export class TestimonialsSectionComponent {
       overlayColor: 'rgba(227, 118, 16, 0.65)',
     },
     {
-      companyLink: 'https://ostlandetbronnboring.no',
+      companyLink: 'https://bronn-energiboring.no/',
       companyLinkLabel: 'Østlandet Brønnboring',
       companyLinkTitle: 'Østlandet Brønnboring prosjekt',
-      backgroundImageSrc:
-        '../../../../assets/Images/testimonials/ostlandske/ostlandetbronnboring.webp',
+      backgroundImageSrc: '/assets/img/home/case-ostlandet-bronnboring-650.webp',
+      backgroundImageSrcset:
+        '/assets/img/home/case-ostlandet-bronnboring-650.webp 650w, /assets/img/home/case-ostlandet-bronnboring-1300.webp 1300w',
       backgroundImageAlt: 'Borerigg i arbeid for Østlandet Brønnboring',
-      personImageSrc:
-        'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=320&q=80',
-      personImageAlt: 'Prosjektleder i Østlandet Brønnboring',
+      personInitials: 'MH',
       caseStudyPath: '/case-study/ostlandet-bronnboring',
       details: [
         'Marcus Hannevig',

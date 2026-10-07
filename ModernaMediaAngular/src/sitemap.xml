@@ -1,138 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Every <loc> must match a route in app.routes.ts exactly. -->
+  <url>
+    <loc>https://modernamedia.no/</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/om-oss</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
 
-<!-- Homepage -->
-<url>
-  <loc>https://modernamedia.no/</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.0</priority>
-</url>
+  <!-- Kundecaser (marbella-car-spa is noindex and left out on purpose) -->
+  <url>
+    <loc>https://modernamedia.no/case-studies</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/case-study/sola-parkering</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/case-study/fjerdingby-pizza</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/case-study/ostlandet-bronnboring</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
 
-<!-- About Us -->
-<url>
-  <loc>https://modernamedia.no/om-oss</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <!-- Utvikling -->
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/utvikling</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/utvikling/hjemmeside-bedrift</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/utvikling/programvare</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
 
-<!-- Main Service Pages -->
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/utvikling</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/seo</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/design</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.9</priority>
-</url>
+  <!-- Design -->
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/design</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/design/logo-design</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/design/web-design</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/design/grafisk-design</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
 
-<!-- Service Detail Pages - Utvikling -->
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/utvikling/hjemmeside-bedrift</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/utvikling/programvare</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <!-- SEO -->
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/seo</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/seo/teknisk-seo</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/seo/innholdsproduksjon</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester/bedrift/seo/off-page-seo</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
 
-<!-- Service Detail Pages - SEO -->
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/seo/sokemotoroptimalisering</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/seo/teknisk</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/seo/innhold</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/seo/off-page</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
+  <!-- Kontakt og tilbud -->
+  <url>
+    <loc>https://modernamedia.no/kontakt</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/pris</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/gratis-hjemmeside-analyse</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/gratis-seo-analyse</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
 
-<!-- Service Detail Pages - Design -->
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/design/logo</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/design/webdesign</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/tjenester/bedrift/design/grafisk</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.8</priority>
-</url>
-
-<!-- Blog Posts -->
-<url>
-  <loc>https://modernamedia.no/blogg/utviklerlonn</loc>
-  <lastmod>2021-12-21T12:28:20+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.6</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/blogg/hjemmeside-for-restaurant-bedrift</loc>
-  <lastmod>2022-04-15T12:28:20+00:00</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.6</priority>
-</url>
-
-<!-- Forms / Contact Pages -->
-<url>
-  <loc>https://modernamedia.no/bestill/kontakt</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/bestill/seo-analyse</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-<url>
-  <loc>https://modernamedia.no/bestill/nettside-analyse</loc>
-  <lastmod>2025-01-20T12:00:00+00:00</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.7</priority>
-</url>
-
+  <!-- Blogg -->
+  <url>
+    <loc>https://modernamedia.no/blogg/hjemmeside-for-restaurant-bedrift</loc>
+    <lastmod>2022-03-22</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/blogg/utviklerlonn</loc>
+    <lastmod>2025-12-01</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/tjenester</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/priser</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/digitalbyra-oslo</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/personvern</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/blogg</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/blogg/hva-koster-en-nettside</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/blogg/teknisk-seo-sjekkliste</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/blogg/slik-far-du-en-god-logo</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://modernamedia.no/blogg/google-bedriftsprofil</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
 </urlset>

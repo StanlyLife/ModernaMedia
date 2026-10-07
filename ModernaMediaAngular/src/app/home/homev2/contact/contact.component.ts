@@ -1,15 +1,11 @@
 import { CommonModule, ViewportScroller } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import {
   ReactiveFormsModule,
   UntypedFormBuilder,
   Validators,
 } from '@angular/forms';
-import { environment } from 'src/environments/environment.prod';
 import { ContactService } from './../../../services/contact.service';
-import { SeoService } from 'src/app/services/seo.service';
-import { SeoUtils } from 'src/utils/SeoUtils';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -19,30 +15,20 @@ import { SeoUtils } from 'src/utils/SeoUtils';
 })
 export class ContactComponent {
   constructor(
-    private sanitizer: DomSanitizer,
     private scroller: ViewportScroller,
     private fb: UntypedFormBuilder,
-    private cs: ContactService,
-    private meta: Meta,
-    private title: Title,
-    private seo: SeoService
-  ) {
-    title.setTitle(SeoUtils.home.title);
-  }
-  imageCdn = environment.img;
+    private cs: ContactService
+  ) {}
   @Input() data: any = {
     background: {
       alt: '',
       src: '../../../../assets/Images/forms/contact/trollstigen i molde eller kristansund.jpg',
     },
     title: 'Kontakt oss',
-    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktet!',
+    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktende!',
   };
   scrollToId(id: string) {
     this.scroller.scrollToAnchor(id);
-  }
-  sanitizeImageUrl(imageUrl: string): SafeUrl {
-    return this.sanitizer.bypassSecurityTrustUrl(imageUrl);
   }
   contactForm = this.fb.group({
     name: [''],

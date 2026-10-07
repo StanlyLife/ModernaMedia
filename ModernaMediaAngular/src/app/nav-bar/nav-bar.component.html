@@ -1,64 +1,35 @@
-<header [hidden]="hidden">
-  <div class="wrapper">
-    <a
-      class="logo-anchor"
-      routerLink="/"
-      title="Hjemmeside"
-      aria-label="Hjemmeside"
-    >
-      <div class="logo">
-        <img
-          src="{{
-            imageCdn == '' ? '' : imageCdn
-          }}../../assets/Images/LogoV2/modernamedia-small-small.png"
-          alt="Moderna media logo"
-        />
-      </div>
-    </a>
-    <nav role="navigation" id="navbar">
-      <a
-        routerLink="/tjenester/bedrift/utvikling"
-        [routerLinkActive]="[true]"
-        class="nav-link {{ textClass }}"
-      >
-        <div class="slide"></div>
-        <p>Utvikling</p>
-      </a>
-      <a
-        routerLink="/tjenester/bedrift/design"
-        [routerLinkActive]="[true]"
-        class="nav-link {{ textClass }}"
-      >
-        <div class="slide"></div>
-        <p>Design</p>
-      </a>
-      <a
-        routerLink="/tjenester/bedrift/seo/søkemotoroptimalisering"
-        [routerLinkActive]="[true]"
-        class="nav-link {{ textClass }}"
-      >
-        <div class="slide"></div>
-        <p>SEO</p>
-      </a>
-      <a
-        routerLink="/om-oss"
-        [routerLinkActive]="[true]"
-        class="nav-link {{ textClass }}"
-      >
-        <div class="slide"></div>
-        <p>Om oss</p>
-      </a>
-    </nav>
-    <div class="buttons">
-      <a
-        class="btn cta-2 contact"
-        (click)="ContactUs($event)"
-        routerLink="/kontakt"
-        title="skroll til kontakt monderna media"
-      >
-        <p>Kontakt</p>
-      </a>
-      <button class="btn cta-2 menu" (click)="Menu($event)"><p>Meny</p></button>
+@if (!hidden) {
+  <div class="v2 chrome">
+    <div class="topbar">
+      <span class="tag">GRATIS</span>
+      <span class="long">Hvor godt presterer nettsiden din? Få en gratis nettside-analyse med konkrete forbedringer.</span>
+      <span class="short">Gratis nettside-analyse.</span>
+      <a routerLink="/gratis-hjemmeside-analyse">Bestill analyse →</a>
     </div>
+    <header class="nav" [class.open]="mobileOpen">
+      <div class="wrap">
+        <a class="logo" routerLink="/" aria-label="Moderna Media – til forsiden" (click)="close()">
+          <img src="/assets/Images/LogoV2/modernamedia-plain.svg" width="82" height="30" alt="" />
+          <span class="name">MODERNA MEDIA</span>
+        </a>
+        <nav class="menu" id="navbar" aria-label="Hovedmeny">
+          @for (l of links; track l.url) {
+            <a [routerLink]="l.url" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: l.exact }" (click)="close()">{{ l.label }}</a>
+          }
+          <a class="btn btn-primary mobile-cta" routerLink="/kontakt" (click)="close()">Få gratis tilbud</a>
+          <a class="mobile-phone" href="tel:+4790265326">Ring oss: 902 65 326</a>
+        </nav>
+        <div class="nav-right">
+          <a class="phone" href="tel:+4790265326" aria-label="Ring oss på 902 65 326">
+            <span class="ic"><v2-icon name="phone" /></span>
+            <span class="txt"><small>Ring oss</small><b>902 65 326</b></span>
+          </a>
+          <a class="btn btn-primary btn-sm cta" routerLink="/kontakt" (click)="cta($event)">Få gratis tilbud <v2-icon name="arrow" /></a>
+          <button class="burger" type="button" (click)="toggle()" aria-controls="navbar" [attr.aria-expanded]="mobileOpen" [attr.aria-label]="mobileOpen ? 'Lukk meny' : 'Åpne meny'">
+            <v2-icon [name]="mobileOpen ? 'close' : 'menu'" />
+          </button>
+        </div>
+      </div>
+    </header>
   </div>
-</header>
+}

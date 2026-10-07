@@ -1,0 +1,68 @@
+// Self-hosted fonts, subset to Latin (incl. æøå) and served as WOFF2.
+// Loaded once from styles.scss. Never @use this file from component styles,
+// or every component will repeat the @font-face rules.
+
+@mixin face($family, $file, $weight, $style: normal) {
+  @font-face {
+    font-family: $family;
+    font-style: $style;
+    font-weight: $weight;
+    font-display: swap;
+    src: url("/assets/fonts/woff2/#{$file}.woff2") format("woff2");
+  }
+}
+
+// Metric-matched fallbacks: local Arial scaled to each brand font, so text
+// barely moves when the web font swaps in (avoids layout shift / CLS).
+// Values computed from the font files (avg. glyph width + vertical metrics).
+@mixin fallback($family, $local, $weight, $size, $ascent, $descent, $gap) {
+  @font-face {
+    font-family: $family;
+    font-weight: $weight;
+    src: local($local);
+    size-adjust: $size;
+    ascent-override: $ascent;
+    descent-override: $descent;
+    line-gap-override: $gap;
+  }
+}
+
+@include fallback("Mosk Fallback", "Arial", 100 500, 92.35%, 99.4%, 24.9%, 2.82%);
+@include fallback("Mosk Fallback", "Arial Bold", 600 900, 91.41%, 103.16%, 25.16%, 2.95%);
+// Pier is only used for the uppercase .subtitle style, so it is matched on capitals.
+@include fallback("Pier Fallback", "Arial", 100 500, 98.88%, 102.65%, 18.71%, 0%);
+@include fallback("Pier Fallback", "Arial Bold", 600 900, 100.86%, 100.64%, 18.34%, 0%);
+@include fallback("Plex Fallback", "Arial", 100 500, 100.52%, 101.97%, 27.36%, 0%);
+@include fallback("Plex Fallback", "Arial Bold", 600 900, 96.61%, 106.1%, 28.46%, 0%);
+
+// Mosk
+@include face("Mosk", "Mosk100", 100);
+@include face("Mosk", "Mosk200", 200);
+@include face("Mosk", "Mosk300", 300);
+@include face("Mosk", "Mosk400", 400);
+@include face("Mosk", "Mosk500", 500);
+@include face("Mosk", "Mosk600", 600);
+@include face("Mosk", "Mosk700", 700);
+@include face("Mosk", "Mosk800", 800);
+@include face("Mosk", "Mosk900", 900);
+
+// Pier Sans
+@include face("Pier", "PierSans-Light", 400);
+@include face("Pier", "PierSans-regular", 500);
+@include face("Pier", "PierSans-Medium", 600);
+@include face("Pier", "PierSans-Bold", 700);
+@include face("Pier", "PierSans-Black", 900);
+
+// IBM Plex Sans (weights mapped as before: Regular = 500, Medium = 600, ...)
+@include face("Plex", "IBMPlexSans-Thin", 100);
+@include face("Plex", "IBMPlexSans-ThinItalic", 100, italic);
+@include face("Plex", "IBMPlexSans-ExtraLight", 200);
+@include face("Plex", "IBMPlexSans-Light", 300);
+@include face("Plex", "IBMPlexSans-LightItalic", 300, italic);
+@include face("Plex", "IBMPlexSans-Regular", 500);
+@include face("Plex", "IBMPlexSans-Medium", 600);
+@include face("Plex", "IBMPlexSans-MediumItalic", 600, italic);
+@include face("Plex", "IBMPlexSans-SemiBold", 800);
+@include face("Plex", "IBMPlexSans-SemiBoldItalic", 800, italic);
+@include face("Plex", "IBMPlexSans-Bold", 900);
+@include face("Plex", "IBMPlexSans-BoldItalic", 900, italic);

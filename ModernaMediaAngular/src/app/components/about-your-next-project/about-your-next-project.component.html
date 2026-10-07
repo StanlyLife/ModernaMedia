@@ -1,48 +1,19 @@
 <section class="about-your-next-project">
   <div class="bg">
-    <picture>
-      <source
-        media="(min-width:1280px)"
-        [srcset]="
-          sanitizeImageUrl(
-            '../../../assets/Images/Components/about-your-next-project/1920/Moderna Media Digitalybyrå Background pattern.webp'
-          )
-        "
-      />
-      <source
-        media="(min-width:640px)"
-        [srcset]="
-          sanitizeImageUrl(
-            '../../../assets/Images/Components/about-your-next-project/1280/Moderna Media Digitalybyrå Background pattern.webp'
-          )
-        "
-      />
-      <source
-        media="(min-width:400px)"
-        [srcset]="
-          sanitizeImageUrl(
-            '../../../assets/Images/Components/about-your-next-project/640/Moderna Media Digitalybyrå Background pattern.webp'
-          )
-        "
-      />
-      <source
-        media="(min-width:0px)"
-        [srcset]="
-          sanitizeImageUrl(
-            '../../../assets/Images/Components/about-your-next-project/400/Moderna Media Digitalybyrå Background pattern.webp'
-          )
-        "
-      />
-      <img
-        [src]="
-          sanitizeImageUrl(
-            '../../../assets/Images/Components/about-your-next-project/1920/Moderna Media Digitalybyrå Background pattern.webp'
-          )
-        "
-        alt=""
-        role="presentation"
-      />
-    </picture>
+    <img
+      src="/assets/img/home/bakgrunn-monster-1280.webp"
+      srcset="
+        /assets/img/home/bakgrunn-monster-640.webp   640w,
+        /assets/img/home/bakgrunn-monster-1280.webp 1280w,
+        /assets/img/home/bakgrunn-monster-1750.webp 1750w
+      "
+      sizes="100vw"
+      width="1750"
+      height="561"
+      loading="lazy"
+      decoding="async"
+      alt=""
+    />
   </div>
   <div class="wrapper">
     <div class="text">
@@ -51,8 +22,8 @@
       <p class="scream last">neste prosjekt.</p>
     </div>
     <div class="get-in-touch">
-      <a class="btn cta-2" href="#kontakt" (click)="scrollToContact($event)"
-        ><p>Book et uforpliktet møte</p></a
+      <a class="btn cta-2" href="/kontakt" (click)="scrollToContact($event)"
+        ><p>Book et uforpliktende møte</p></a
       >
     </div>
   </div>

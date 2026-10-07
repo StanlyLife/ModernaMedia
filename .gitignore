@@ -6,6 +6,9 @@ CyberrangeProject.assets.cache
 *.cache
 *.txt
 !robots.txt
+!llms.txt
+# IndexNow key file, served from the site root
+!ModernaMediaAngular/src/1435d8d3dc63085d1c3b85e5e52be65c.txt
 # Logs
 logs
 *.log

@@ -1,13 +1,11 @@
 # ModernaMediaAngular
 
-Angular 21 + @angular/ssr application for Moderna Media. The project ships with both the browser bundle and an Express host (see `server.ts`) so we can deploy a single Node process that handles SSR, caching, and static assets.
+Angular 21 + @angular/ssr application for Moderna Media (modernamedia.no). The build produces browser bundles, prerendered HTML for every static page, and an Express host (`src/server.ts`) that handles SSR, redirects, caching headers and static assets in a single Node process.
 
 ## Requirements
 
-- Node.js 18.x (required for Angular 18 toolchain)
-- npm 9+
-- `npm install` must be run from the repo root; a postinstall hook (`tools/fix-babel-runtime.cjs`) automatically syncs the correct `@babel/runtime` version into Angular's build tooling, so leave that script in place.
-- `@swimlane/ngx-charts` still only declares Angular <=20 as a peer dependency; the repo-level `.npmrc` sets `legacy-peer-deps=true` so npm will install anyway until Swimlane ships Angular 21 metadata.
+- Node.js 24 LTS (Angular 21 supports `^20.19 || ^22.12 || >=24`; the deploy workflow uses 24)
+- npm 11+
 
 ## Install
 
@@ -15,116 +13,89 @@ Angular 21 + @angular/ssr application for Moderna Media. The project ships with 
 npm install
 ```
 
-> `npm install` also copies `node_modules/@babel/runtime` into `node_modules/@angular-devkit/build-angular/node_modules` to keep Babel helpers in sync. Do not delete `tools/fix-babel-runtime.cjs` unless you replace it with another solution.
->
-> The install runs with `legacy-peer-deps` (via `.npmrc`) so the unresolved Angular 21 peer warning from `@swimlane/ngx-charts@23.x` does not block the install. Remove this override once Swimlane publishes Angular 21 peer support.
+No `legacy-peer-deps`, postinstall hooks or overrides are needed any more.
 
 ## Useful npm scripts
 
-| Command             | Description                                                                 |
-| ------------------- | --------------------------------------------------------------------------- |
-| `npm run start`     | Client-only dev server with HMR on port 4200                                |
-| `npm run dev:ssr`   | Live-reloading SSR dev server (wraps the `serve-ssr` target)                |
-| `npm run build`     | Production browser build -> `dist/ModernaMediaAngular/browser`              |
-| `npm run build:ssr` | Builds browser + server bundles for deployment                              |
-| `npm run serve:ssr` | Runs `node dist/ModernaMediaAngular/server/main.js` (use after `build:ssr`) |
-| `npm run prerender` | Generates static HTML via the SSR server configuration                      |
-| `npm test`          | Karma unit tests                                                            |
-| `npm run e2e`       | Protractor end-to-end tests                                                 |
+| Command             | Description                                                                |
+| ------------------- | -------------------------------------------------------------------------- |
+| `npm run start`     | Dev server with SSR on port 4200                                           |
+| `npm run build`     | Production build (same as `build:ssr`)                                     |
+| `npm run build:ssr` | Builds browser + server bundles and prerenders static pages                |
+| `npm run serve:ssr` | Runs `node dist/ModernaMediaAngular/server/server.mjs` (after a build)     |
+| `npm test`          | Unit tests (Vitest)                                                        |
+| `npm run analyze`   | Production build with `stats.json`; open it at https://esbuild.github.io/analyze/ |
 
 ## Development workflows
-
-### SPA-only preview
 
 ```powershell
 npm run start
 ```
 
-Visit `http://localhost:4200/`. Hot reload handles most template/style edits quickly.
+Visit `http://localhost:4200/`. The application builder's dev server renders on the server too.
 
-### Full SSR preview
+### Running the production server locally
+
+The SSR server only renders requests for hosts listed in `angular.json` (`security.allowedHosts`), which protects against SSRF/host-header attacks. For local testing allow `localhost` explicitly:
 
 ```powershell
-npm run dev:ssr
+$env:NG_ALLOWED_HOSTS = "localhost"; npm run serve:ssr
 ```
-
-The script maps to the custom `serve-ssr` architect target (see `angular.json`) which runs the standard dev server with the SSR build pipeline enabled. Browser and server bundles rebuild on change while Express streams responses from `server.ts` at `http://localhost:4200/`.
 
 ### Styling conventions
 
-- Common tokens/mixins/fonts live in `src/variables.scss` and are consumed via Sass modules.
-- Any SCSS file that needs those definitions must use the module syntax:
-  ```scss
-  @use "src/variables" as *;
-  ```
-- Legacy `@import` has been removed project-wide to avoid Dart Sass deprecation warnings. Keep using `@use/@forward` when introducing new partials.
+- Tokens and mixins live in `src/variables.scss` and are consumed with `@use "src/variables" as *;`.
+- `src/variables.scss` must not output CSS: every component that `@use`s it would repeat that CSS.
+- Fonts are self-hosted WOFF2 (Latin subset) in `src/assets/fonts/woff2` and declared once in `src/scss/_fonts.scss`, which only `src/styles.scss` loads. Never `@use` the fonts file from a component.
+- `_fonts.scss` also defines metric-matched fallbacks ("Mosk Fallback", "Plex Fallback", "Pier Fallback": local Arial with `size-adjust`), listed right after each web font in the `$ff-*` stacks, so the font swap does not shift the layout.
+- Critical CSS inlining is turned off in `angular.json` on purpose: the global stylesheet is small (~2 KB gzipped), and loading it normally prevented a large layout shift on the case-study pages.
+
+### Images
+
+- Homepage images live in `src/assets/img/home` as WebP in 1x/2x widths (`name-<width>.webp`) and are referenced with `srcset`, `sizes`, `width`/`height` and `loading="lazy"` (except the hero, which uses `fetchpriority="high"`).
+- Use absolute `/assets/...` paths in templates.
+
+### Rendering and routing
+
+- Every page except the homepage is lazy-loaded (`loadComponent` in `src/app/app.routes.ts`).
+- Homepage sections below the fold use `@defer (on idle; hydrate on viewport)`: they are server-rendered for crawlers and hydrate when scrolled into view (incremental hydration).
+- `src/app/app.config.server.ts` lists the prerendered pages; unknown URLs render the not-found page with HTTP 404.
+- Old URLs are 301-redirected in `src/server.ts` (`LEGACY_REDIRECTS`).
+
+### SEO files
+
+- `src/sitemap.xml`: every `<loc>` must match a route exactly.
+- `src/robots.txt`: includes an explicit group for AI search crawlers.
+- Case studies are indexed, except those with `indexable: false` in `case-studies.data.ts` (currently Marbella Car Spa): those get `noindex`, stay out of the sitemap/llms.txt, and are blocked for AI crawlers in robots.txt.
+- `src/llms.txt`: short company summary for AI assistants.
+- `src/1435d8d3dc63085d1c3b85e5e52be65c.txt`: IndexNow key. After each deploy, `tools/indexnow.mjs` submits the sitemap URLs to Bing/IndexNow.
+- Structured data for the homepage is built in `SeoService.createHomeSchema()`. The FAQ content in `src/app/home/homev2/faq/faq.data.ts` feeds both the page and the FAQPage schema.
 
 ### SSR bootstrap notes
 
-- `src/main.server.ts` bootstraps the standalone app with `bootstrapApplication` and now receives the `BootstrapContext` argument provided by Angular's SSR pipeline. If you customize the server bootstrap, preserve that signature so route extraction and prerendering continue to work.
+- `src/main.server.ts` bootstraps the standalone app with `bootstrapApplication` and receives the `BootstrapContext` argument provided by Angular's SSR pipeline. Preserve that signature so route extraction and prerendering keep working.
 
 ## Production build + hosting
 
-1. Compile optimized bundles:
-   ```powershell
-   npm run build:ssr
-   ```
-   Outputs go to `dist/ModernaMediaAngular/browser` and `dist/ModernaMediaAngular/server`.
-2. Launch the compiled Express app (locally or on the server):
-   ```powershell
-   npm run serve:ssr
-   ```
-   or
-   ```powershell
-   node dist/ModernaMediaAngular/server/main.js
-   ```
-3. Behind IIS/Nginx/Apache, proxy all routes to the Node process. Static assets live in `dist/ModernaMediaAngular/browser`; `server.ts` already serves them with long-lived caching and handles `robots.txt`.
+The GitHub workflow in the repository root (`.github/workflows/Deploy-Angular.yml`) runs tests, builds, rsyncs `dist/` to the server, restarts PM2 and pings IndexNow on every push to `main`.
 
-### Example: Ubuntu server under `/var/www/ModernaMedia`
-
-1. **Get the code or build artifacts onto the box**
-   - Git checkout: `git clone https://github.com/<org>/ModernaMedia.git /var/www/ModernaMedia/Angular && cd /var/www/ModernaMedia/Angular`
-   - OR copy the already-built `dist/` folder into `/var/www/ModernaMedia/Angular/dist` (as in your current layout: `/var/www/ModernaMedia/Angular/dist/ModernaMediaAngular`).
-2. **Install runtime dependencies** (skip if you copied the full repo and already ran `npm install`):
-   ```bash
-   cd /var/www/ModernaMedia/Angular
-   npm ci --omit=dev
-   ```
-   If you only deploy the `dist` folder, install from the packaged `package-lock.json` inside `dist/ModernaMediaAngular` before starting the server:
-   ```bash
-   cd /var/www/ModernaMedia/Angular/dist/ModernaMediaAngular
-   npm ci --omit=dev
-   ```
-3. **Start the SSR server**
-   ```bash
-   cd /var/www/ModernaMedia/Angular
-   PORT=4000 node dist/ModernaMediaAngular/server/main.js
-   ```
-   Run it under a process manager (PM2, systemd, etc.) so it restarts automatically:
-   ```bash
-   pm2 start dist/ModernaMediaAngular/server/main.js --name moderna-media --env production --cwd /var/www/ModernaMedia/Angular
-   ```
-4. **Front it with Nginx/Apache** (recommended)
-   - Reverse proxy `https://your-domain` to `http://127.0.0.1:4000`.
-   - Serve TLS and configure gzip/caching at the proxy; the Express app already serves `/browser` assets with far-future caching headers.
-   - If you want Nginx to handle static files directly, point it at `/var/www/ModernaMedia/Angular/dist/ModernaMediaAngular/browser` and keep `/` proxied to Node for SSR routes.
-
-Whenever you deploy new code:
+Manual equivalent:
 
 ```bash
-cd /var/www/ModernaMedia/Angular
-git pull # or copy the fresh build
-npm ci --omit=dev
+npm ci
 npm run build:ssr
-pm2 restart moderna-media
+PORT=4000 node dist/ModernaMediaAngular/server/server.mjs
 ```
+
+Run it under PM2 (`pm2 start dist/ModernaMediaAngular/server/server.mjs --name moderna-media`) behind Nginx. Nginx must forward the real host (`proxy_set_header Host $host;`), otherwise the allowed-hosts check rejects the request.
+
+Caching set by `src/server.ts`:
+
+- Hashed JS/CSS: 1 year, `immutable`
+- `/assets/*`: 30 days
+- `robots.txt`, `sitemap.xml`, `llms.txt`: 1 hour
+- HTML: `no-cache`
 
 ## Testing
 
-- Unit tests: `npm test`
-- Legacy e2e: `npm run e2e` (Protractor is deprecated; migrate when possible)
-
-## Notes
-
-- The build currently warns that target browsers no longer require Autoprefixer. Update `.browserslistrc` if you want silent builds.
-- If you install new Angular build tooling, keep an eye on the `postinstall` script so the Babel runtime stays in sync.
+- Unit tests: `npm test` (Vitest + jsdom via `@angular/build:unit-test`)

@@ -35,7 +35,7 @@ export class ContactFormComponent implements OnInit {
       title: SeoUtils.FormsKontakt.title,
       description: SeoUtils.FormsKontakt.description,
       keywords: SeoUtils.FormsKontakt.keywords,
-      url: 'https://modernamedia.no/bestill/kontakt',
+      url: 'https://modernamedia.no/kontakt',
     });
   }
   @Input() data: any = {
@@ -44,7 +44,7 @@ export class ContactFormComponent implements OnInit {
       src: '../../../../assets/Images/forms/contact/trollstigen i molde eller kristansund.jpg',
     },
     title: 'Kontakt oss',
-    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktet!',
+    subtitle: 'Kontakt oss, uansett hva det skulle være, 100% uforpliktende!',
   };
   scrollToId(id: string) {
     this.scroller.scrollToAnchor(id);

@@ -27,9 +27,13 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
         </div>
 
         <div class="cta-container">
-          <button class="btn primary" (click)="scrollToContact()">
-            Start i dag - 100% uforpliktet
-          </button>
+          <a
+            class="btn primary"
+            href="#kontakt"
+            (click)="scrollToContact($event)"
+          >
+            Start i dag – 100% uforpliktende
+          </a>
           <p class="cta-note">Vi svarer vanligvis innen 2 timer</p>
         </div>
       </div>
@@ -140,6 +144,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
       }
 
       .btn.primary {
+        display: inline-block;
+        text-decoration: none;
         padding: 18px 40px;
         font-size: 1rem;
         font-weight: 700;
@@ -198,7 +204,7 @@ export class ProcessComponent {
 
   steps = [
     {
-      title: 'Uforpliktet samtale',
+      title: 'Uforpliktende samtale',
       description:
         'Vi starter med en gratis konsultasjon for å forstå dine behov og mål.',
       icon: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>`,
@@ -217,7 +223,8 @@ export class ProcessComponent {
     },
   ];
 
-  scrollToContact() {
+  scrollToContact(event: Event) {
+    event.preventDefault();
     this.scroller.scrollToAnchor('kontakt');
   }
 }
