@@ -477,6 +477,25 @@ export const CASE_STUDIES: CaseStudy[] = [
         ],
       },
     ],
+    showcase: {
+      title: 'Nytt design: før og etter',
+      intro:
+        'Vi har tegnet en ny, enklere versjon av fjerdingbypizzaoggrill.no. Menyen er ett trykk unna, telefon, adresse og åpningstider ligger øverst, og maten får mer plass. Videoen viser den gamle og den nye siden side om side, og forklarer hvorfor vi valgte som vi gjorde.',
+      videos: [
+        {
+          title: 'Før og etter',
+          src: '/assets/Videos/fjerdingby-pizza-for-og-etter.mp4',
+          poster: '/assets/img/case/fjerdingby-pizza-for-og-etter-poster-1280.webp',
+          width: 1920,
+          height: 1080,
+          name: 'Fjerdingby Pizza & Grill – før og etter det nye designet',
+          description:
+            'Case-video om det nye designet til Fjerdingby Pizza & Grill: hva som skurret på den gamle siden, hvorfor menyen er ett trykk unna, telefon og adresse alltid synlige, maten i fokus, SEO, farger fra logoen og hvordan siden tilpasser seg mobil og PC.',
+          duration: 'PT1M56S',
+          uploadDate: '2026-10-08',
+        },
+      ],
+    },
     gallery: [
       {
         src: '/assets/img/case/fjerdingby-pizza-meny-800.webp',
@@ -518,7 +537,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     seoDescription:
       'Lett Next.js-nettside med digital meny og lokal SEO. Fjerdingby Pizza & Grill rangerer øverst på «pizza Fjerdingby» og laster på under 1,2 sekunder.',
     datePublished: '2025-12-01',
-    dateModified: '2026-10-07',
+    dateModified: '2026-10-08',
   },
   {
     slug: 'ostlandet-bronnboring',
