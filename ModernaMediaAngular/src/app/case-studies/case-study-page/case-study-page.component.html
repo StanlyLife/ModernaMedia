@@ -91,15 +91,51 @@
   </section>
 
   <section
+    class="cs-showcase"
+    *ngIf="cs.showcase as showcase"
+    aria-labelledby="cs-showcase-title"
+  >
+    <header>
+      <p class="eyebrow">{{ cs.testimonial.company }}</p>
+      <h2 id="cs-showcase-title">{{ showcase.title }}</h2>
+      <p class="cs-showcase__intro" *ngIf="showcase.intro">
+        {{ showcase.intro }}
+      </p>
+    </header>
+    <figure class="cs-video" *ngIf="showcase.video as video">
+      <video
+        controls
+        playsinline
+        preload="none"
+        [attr.poster]="video.poster"
+        [width]="video.width"
+        [height]="video.height"
+        [attr.aria-label]="video.name"
+      >
+        <source [src]="video.src" type="video/mp4" />
+        <a [href]="video.src">Last ned videoen ({{ video.name }})</a>
+      </video>
+      <figcaption>{{ video.description }}</figcaption>
+    </figure>
+  </section>
+
+  <section
     class="cs-gallery"
     *ngIf="cs.gallery?.length"
     aria-label="Bilder fra prosjektet"
   >
-    <figure *ngFor="let media of cs.gallery; trackBy: trackByIndex">
+    <figure
+      *ngFor="let media of cs.gallery; trackBy: trackByIndex"
+      [class.wide]="media.wide"
+    >
       <img
         [src]="media.src"
         [attr.srcset]="media.srcset || null"
-        sizes="(min-width: 1040px) 500px, 100vw"
+        [attr.sizes]="
+          media.wide
+            ? '(min-width: 1040px) 1000px, 100vw'
+            : '(min-width: 1040px) 500px, 100vw'
+        "
         [width]="media.width"
         [height]="media.height"
         [alt]="media.alt"

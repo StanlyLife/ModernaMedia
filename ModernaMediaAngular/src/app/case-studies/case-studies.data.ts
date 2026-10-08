@@ -25,6 +25,29 @@ export interface CaseStudyMedia {
   height: number;
   alt: string;
   caption?: string;
+  /** Spans the whole gallery row instead of one column. */
+  wide?: boolean;
+}
+
+export interface CaseStudyVideo {
+  /** H.264 MP4 with faststart, so it can play while it downloads. */
+  src: string;
+  poster: string;
+  width: number;
+  height: number;
+  /** Name and description are also used in the VideoObject structured data. */
+  name: string;
+  description: string;
+  /** ISO 8601 duration, e.g. PT1M16S. */
+  duration: string;
+  uploadDate: string;
+}
+
+/** A titled block with an optional video, shown above the gallery. */
+export interface CaseStudyShowcase {
+  title: string;
+  intro?: string;
+  video?: CaseStudyVideo;
 }
 
 export interface CaseStudy {
@@ -59,6 +82,7 @@ export interface CaseStudy {
   stats: CaseStudyStat[];
   sections: CaseStudySection[];
   outcomes: CaseStudyOutcome[];
+  showcase?: CaseStudyShowcase;
   gallery?: CaseStudyMedia[];
   seoTitle: string;
   seoDescription: string;
@@ -68,6 +92,24 @@ export interface CaseStudy {
 
 const img = (slug: string, widths: number[]) =>
   widths.map((w) => `/assets/img/case/${slug}-${w}.webp ${w}w`).join(', ');
+
+/** Gallery image from `/assets/img/case/<name>-<width>.webp`, one file per width. */
+const galleryImage = (
+  name: string,
+  widths: number[],
+  aspect: [number, number],
+  alt: string,
+  caption: string,
+  wide = false
+): CaseStudyMedia => ({
+  src: `/assets/img/case/${name}-${widths[0]}.webp`,
+  srcset: img(name, widths),
+  width: widths[0],
+  height: Math.round((widths[0] * aspect[1]) / aspect[0]),
+  alt,
+  caption,
+  wide,
+});
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
@@ -168,11 +210,73 @@ export const CASE_STUDIES: CaseStudy[] = [
           'Klare CTA-er til telefon og e-post lar teamet håndtere henvendelser uten nytt system.',
       },
     ],
+    showcase: {
+      title: 'Nytt design: «Start reisen med ro»',
+      intro:
+        'Vi har tegnet en ny versjon av solaparkering.no. I det nye designet ligger priskalkulatoren øverst på forsiden, prisene er enklere å sammenligne, og SmartPark-guiden og kontaktskjemaet fungerer like godt på mobil som på desktop. Traileren viser hvordan det henger sammen.',
+      video: {
+        src: '/assets/Videos/sola-parkering-trailer.mp4',
+        poster: '/assets/img/case/sola-parkering-trailer-poster-1280.webp',
+        width: 1920,
+        height: 1080,
+        name: 'Sola Parkering – trailer for det nye designet',
+        description:
+          'Trailer for det nye designet til Sola Parkering: priskalkulatoren «Hva koster parkeringen?», alle 21 døgnpriser, kontaktskjemaet og hvordan nettsiden tilpasser seg mobil, nettbrett, laptop og desktop.',
+        duration: 'PT1M16S',
+        uploadDate: '2026-10-08',
+      },
+    },
+    gallery: [
+      galleryImage(
+        'sola-parkering-design-forside',
+        [960, 1920],
+        [1920, 1011],
+        'Forsiden i det nye designet for Sola Parkering, med overskriften «Start reisen med ro.» og priskalkulator',
+        'Forsiden: «Start reisen med ro.», med priskalkulatoren rett under overskriften.',
+        true
+      ),
+      galleryImage(
+        'sola-parkering-design-kalkulator',
+        [640, 1280],
+        [16, 9],
+        'Priskalkulatoren med nedtrekksliste for antall døgn og prisen for hvert valg',
+        'Velg antall døgn og se prisen med en gang. Bussen er alltid inkludert.'
+      ),
+      galleryImage(
+        'sola-parkering-design-priser',
+        [800, 1600],
+        [16, 9],
+        'Oversikt over alle 21 døgnpriser hos Sola Parkering',
+        'Alle 21 døgnpriser samlet i én oversikt.'
+      ),
+      galleryImage(
+        'sola-parkering-design-enheter',
+        [960, 1920],
+        [16, 9],
+        'Det nye designet vist på desktop, laptop, nettbrett og mobil',
+        'Samme innhold, tilpasset desktop, laptop, nettbrett og mobil.',
+        true
+      ),
+      galleryImage(
+        'sola-parkering-design-smartpark',
+        [800, 1600],
+        [16, 9],
+        'SmartPark-seksjonen med skjermbilder fra appen og seks steg for automatisk betaling',
+        'SmartPark-guiden forklarer automatisk betaling i seks steg.'
+      ),
+      galleryImage(
+        'sola-parkering-design-kontakt',
+        [600, 1020],
+        [1020, 574],
+        'Kontaktskjemaet med feltene navn, e-post og melding',
+        'Kontaktskjema med tydelige felt og bekreftelse når meldingen er sendt.'
+      ),
+    ],
     seoTitle: 'Case: Sola Parkering – nettside og lokal SEO | Moderna Media',
     seoDescription:
       'Ny nettside og lokal SEO for Sola Parkering ved Stavanger lufthavn: +160 000 årlige besøk og 5,6× flere bookinger etter lansering.',
     datePublished: '2025-12-01',
-    dateModified: '2026-10-07',
+    dateModified: '2026-10-08',
   },
   {
     slug: 'marbella-car-spa',
