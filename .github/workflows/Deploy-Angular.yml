@@ -32,41 +32,28 @@ jobs:
       - name: Build SSR bundles
         run: npm run build:ssr
 
-      - name: Clean remote dist folder and deploy
-        uses: garygrossgarten/github-action-ssh@v0.5.0
-        with:
-          command: rm -rf /var/www/ModernaMedia/Angular/dist/*
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.HOST_NAME }}
-          password: ${{ secrets.HOST_PASSWORD }}
-
-      - name: Install sshpass
-        run: sudo apt-get install -y sshpass
-
-      - name: Deploy to prod via rsync
+      - name: Set up SSH key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
         run: |
-          sshpass -p "${{ secrets.HOST_PASSWORD }}" rsync -avz --delete -e "ssh -o StrictHostKeyChecking=no" \
-            ${{ github.workspace }}/ModernaMediaAngular/dist/ \
-            ${{ secrets.HOST_NAME }}@${{ secrets.HOST }}:/var/www/ModernaMedia/Angular/dist/
+          install -d -m 700 ~/.ssh
+          # tr strips Windows line endings in case the secret was pasted from a Windows shell.
+          printf '%s\n' "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          # The server's public host key, pinned so the deploy only ever talks to our server.
+          echo "${{ secrets.HOST }} ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGGofxldLeqNATRTOH8A2md7QPUNV9bXZr9KHJS9vCXa" > ~/.ssh/known_hosts
 
-      - name: Start pm2 with correct entry point
-        uses: garygrossgarten/github-action-ssh@v0.5.0
-        with:
-          command: |
-            pm2 delete moderna-media || true
-            pm2 start /var/www/ModernaMedia/Angular/dist/ModernaMediaAngular/server/server.mjs --name moderna-media
-            pm2 save
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.HOST_NAME }}
-          password: ${{ secrets.HOST_PASSWORD }}
+      - name: Deploy to prod
+        env:
+          TARGET: ${{ secrets.HOST_NAME }}@${{ secrets.HOST }}
+        run: |
+          SSH="ssh -i $HOME/.ssh/deploy_key -o IdentitiesOnly=yes -o BatchMode=yes"
+          # Only changed files are copied and --delete drops old bundles, so the site never runs without files.
+          rsync -az --delete -e "$SSH" dist/ "$TARGET:/var/www/ModernaMedia/Angular/dist/"
+          $SSH "$TARGET" 'pm2 delete moderna-media || true; pm2 start /var/www/ModernaMedia/Angular/dist/ModernaMediaAngular/server/server.mjs --name moderna-media && pm2 save && systemctl reload nginx'
 
-      - name: Restart web-dev service
-        uses: garygrossgarten/github-action-ssh@v0.5.0
-        with:
-          command: systemctl restart nginx
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.HOST_NAME }}
-          password: ${{ secrets.HOST_PASSWORD }}
+      - name: Check that the site answers
+        run: curl -fsS -o /dev/null --retry 6 --retry-delay 5 --retry-all-errors https://modernamedia.no/
 
       - name: Notify search engines (IndexNow)
         continue-on-error: true
