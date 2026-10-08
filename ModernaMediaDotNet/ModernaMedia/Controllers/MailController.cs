@@ -23,9 +23,9 @@ namespace ModernaMediaDotNet.Controllers
                 await mailService.SendEmailAsync(request);
                 return Ok();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
 
         }

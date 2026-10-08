@@ -40,7 +40,7 @@ namespace ModernaMediaDotNet.Services.Service
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e);
-                throw e;
+                throw;
             }
         }
         public bool SendMessageToAdmin(string body)
@@ -66,7 +66,7 @@ namespace ModernaMediaDotNet.Services.Service
             {
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e);
-                throw e;
+                throw;
             }
         }
     }
