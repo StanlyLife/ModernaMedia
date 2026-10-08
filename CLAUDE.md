@@ -20,7 +20,10 @@
 ## Server
 - Linode, 1 GB RAM, Ubuntu 24.04 (upgraded from 20.04 on 2026-10-08), reached with `ssh modernamedia`. The key is on the owner's PC, never in the repo.
 - Node 24 (NodeSource), which matches the CI build. pm2 7 runs the SSR server as `moderna-media`, and `pm2-root.service` starts it on boot. After changing Node or pm2, run `pm2 save` and reboot-test.
-- nginx (`/etc/nginx/conf.d/ModernaMedia.conf`) proxies to the SSR server on `localhost:4000`. Certbot renews the certificates.
+- nginx (`/etc/nginx/conf.d/ModernaMedia.conf`) proxies to the SSR server on `localhost:4000`. Certbot renews the certificates through the nginx plugin.
+  - api.modernamedia.no answers 503 while the API is retired. The proxy block is commented out in the same file.
+  - The old `sites-enabled/default` is disabled. nginx.conf allows TLS 1.2/1.3 only and has `server_tokens off`.
+- pm2-logrotate keeps app logs at 10 MB × 7 files, compressed. Unattended upgrades reboot at 02:00 UTC when an update requires it.
 - Firewall (ufw) allows only ports 22, 80 and 443. fail2ban guards SSH, SSH accepts keys only (`/etc/ssh/sshd_config.d/10-key-only.conf`), and security updates install automatically.
 - PostgreSQL 16 listens on localhost only, with database and user `modernamedia`. The connection string is in `/etc/modernamedia/database.env` (root only, never in the repo). A cron job (`/etc/cron.d/postgres-backup`) dumps the database nightly to `/var/backups/postgres` and keeps 14 days. There is no off-server copy yet.
 - The .NET runtimes were removed during the upgrade. A revived API should target a current .NET installed from the Ubuntu repos.
