@@ -58,8 +58,8 @@ export class CaseStudyPageComponent {
     const path = `/case-study/${study.slug}`;
     const canonicalUrl = `${SITE_ORIGIN}${path}`;
     const ogImage = `${SITE_ORIGIN}${study.ogImage}`;
-    const video = study.showcase?.video;
-    const videoId = `${canonicalUrl}#video`;
+    const videos = study.showcase?.videos ?? [];
+    const videoId = (i: number) => `${canonicalUrl}#video-${i + 1}`;
 
     this.seo.updateSeo({
       title: study.seoTitle,
@@ -95,24 +95,22 @@ export class CaseStudyPageComponent {
             address: study.location,
           },
           keywords: study.services.join(', '),
-          ...(video ? { video: { '@id': videoId } } : {}),
+          ...(videos.length
+            ? { video: videos.map((_, i) => ({ '@id': videoId(i) })) }
+            : {}),
         },
-        ...(video
-          ? [
-              {
-                '@type': 'VideoObject',
-                '@id': videoId,
-                name: video.name,
-                description: video.description,
-                thumbnailUrl: [`${SITE_ORIGIN}${video.poster}`],
-                contentUrl: `${SITE_ORIGIN}${video.src}`,
-                uploadDate: video.uploadDate,
-                duration: video.duration,
-                inLanguage: 'nb-NO',
-                publisher: { '@id': ORGANIZATION_ID },
-              },
-            ]
-          : []),
+        ...videos.map((video, i) => ({
+          '@type': 'VideoObject',
+          '@id': videoId(i),
+          name: video.name,
+          description: video.description,
+          thumbnailUrl: [`${SITE_ORIGIN}${video.poster}`],
+          contentUrl: `${SITE_ORIGIN}${video.src}`,
+          uploadDate: video.uploadDate,
+          duration: video.duration,
+          inLanguage: 'nb-NO',
+          publisher: { '@id': ORGANIZATION_ID },
+        })),
         this.seo.createBreadcrumbs([
           { name: 'Forside', path: '/' },
           { name: 'Kundecaser', path: '/case-studies' },

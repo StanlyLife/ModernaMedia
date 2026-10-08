@@ -214,6 +214,15 @@
     font-size: 0.9rem;
     color: rgba($dark, 0.7);
   }
+
+  & + & {
+    margin-top: 28px;
+  }
+}
+
+.cs-video__title {
+  margin: 4px 4px 14px;
+  font-size: 1.15rem;
 }
 
 .cs-gallery {

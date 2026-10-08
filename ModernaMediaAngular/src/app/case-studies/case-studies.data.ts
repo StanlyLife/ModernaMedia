@@ -30,6 +30,8 @@ export interface CaseStudyMedia {
 }
 
 export interface CaseStudyVideo {
+  /** Short heading shown above the video. */
+  title: string;
   /** H.264 MP4 with faststart, so it can play while it downloads. */
   src: string;
   poster: string;
@@ -43,11 +45,11 @@ export interface CaseStudyVideo {
   uploadDate: string;
 }
 
-/** A titled block with an optional video, shown above the gallery. */
+/** A titled block with videos, shown above the gallery. */
 export interface CaseStudyShowcase {
   title: string;
   intro?: string;
-  video?: CaseStudyVideo;
+  videos?: CaseStudyVideo[];
 }
 
 export interface CaseStudy {
@@ -213,18 +215,33 @@ export const CASE_STUDIES: CaseStudy[] = [
     showcase: {
       title: 'Nytt design: «Start reisen med ro»',
       intro:
-        'Vi har tegnet en ny versjon av solaparkering.no. I det nye designet ligger priskalkulatoren øverst på forsiden, prisene er enklere å sammenligne, og SmartPark-guiden og kontaktskjemaet fungerer like godt på mobil som på desktop. Traileren viser hvordan det henger sammen.',
-      video: {
-        src: '/assets/Videos/sola-parkering-trailer.mp4',
-        poster: '/assets/img/case/sola-parkering-trailer-poster-1280.webp',
-        width: 1920,
-        height: 1080,
-        name: 'Sola Parkering – trailer for det nye designet',
-        description:
-          'Trailer for det nye designet til Sola Parkering: priskalkulatoren «Hva koster parkeringen?», alle 21 døgnpriser, kontaktskjemaet og hvordan nettsiden tilpasser seg mobil, nettbrett, laptop og desktop.',
-        duration: 'PT1M16S',
-        uploadDate: '2026-10-08',
-      },
+        'Vi har tegnet en ny versjon av solaparkering.no. I det nye designet ligger priskalkulatoren øverst på forsiden, prisene er enklere å sammenligne, og SmartPark-guiden og kontaktskjemaet fungerer like godt på mobil som på desktop. Traileren viser hvordan det henger sammen, og i case-videoen forteller vi hvordan vi kom fram til designet.',
+      videos: [
+        {
+          title: 'Trailer',
+          src: '/assets/Videos/sola-parkering-trailer.mp4',
+          poster: '/assets/img/case/sola-parkering-trailer-poster-1280.webp',
+          width: 1920,
+          height: 1080,
+          name: 'Sola Parkering – trailer for det nye designet',
+          description:
+            'Trailer for det nye designet til Sola Parkering: priskalkulatoren «Hva koster parkeringen?», alle 21 døgnpriser, kontaktskjemaet og hvordan nettsiden tilpasser seg mobil, nettbrett, laptop og desktop.',
+          duration: 'PT1M16S',
+          uploadDate: '2026-10-08',
+        },
+        {
+          title: 'Slik designet vi den',
+          src: '/assets/Videos/sola-parkering-designprosess.mp4',
+          poster: '/assets/img/case/sola-parkering-designprosess-poster-1280.webp',
+          width: 1920,
+          height: 1080,
+          name: 'Sola Parkering – slik designet vi den nye nettsiden',
+          description:
+            'Case-video om designprosessen bak den nye nettsiden til Sola Parkering: kundenes spørsmål, farger, typografi, skisser, valget av priskalkulator, komponenter og alle skjermstørrelser.',
+          duration: 'PT2M6S',
+          uploadDate: '2026-10-08',
+        },
+      ],
     },
     gallery: [
       galleryImage(

@@ -102,7 +102,11 @@
         {{ showcase.intro }}
       </p>
     </header>
-    <figure class="cs-video" *ngIf="showcase.video as video">
+    <figure
+      class="cs-video"
+      *ngFor="let video of showcase.videos; trackBy: trackByIndex"
+    >
+      <h3 class="cs-video__title">{{ video.title }}</h3>
       <video
         controls
         playsinline
