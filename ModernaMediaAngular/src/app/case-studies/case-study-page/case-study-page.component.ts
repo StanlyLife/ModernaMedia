@@ -41,6 +41,7 @@ const SERVICE_LINKS: [RegExp, string][] = [
 
 const CLIENT_COPY = {
   crumb: 'Kundecaser',
+  storyTitle: 'Fra behov til resultat',
   delivKicker: 'Leveransen',
   delivTitle: 'Hva vi leverte',
   moreKicker: 'Flere kundehistorier',
@@ -52,6 +53,7 @@ const CLIENT_COPY = {
 
 const CONCEPT_COPY: typeof CLIENT_COPY = {
   crumb: 'Casestudier',
+  storyTitle: 'Slik ble det til',
   delivKicker: 'Innholdet',
   delivTitle: 'Hva vi laget',
   moreKicker: 'Flere caser',

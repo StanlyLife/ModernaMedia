@@ -205,7 +205,7 @@
       <div class="wrap">
         <div class="head center">
           <span class="kicker">Historien</span>
-          <h2 class="h2" id="cs-story-title">Fra behov til resultat</h2>
+          <h2 class="h2" id="cs-story-title">{{ copy().storyTitle }}</h2>
         </div>
         @for (section of cs.sections; track section.title; let i = $index) {
           <article class="srow" [class.rev]="!!section.image && i % 2 === 1" [class.solo]="!section.image">
