@@ -1,4 +1,5 @@
 import { Testimonial } from '../home/homev2/testimonials/testimonials.component';
+import { DAL_SUSHI } from './cases/dal-sushi';
 
 export interface CaseStudyStat {
   label: string;
@@ -719,6 +720,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     datePublished: '2025-12-01',
     dateModified: '2026-10-11',
   },
+  DAL_SUSHI,
 ];
 
 export const INDEXABLE_CASE_STUDIES = CASE_STUDIES.filter(
