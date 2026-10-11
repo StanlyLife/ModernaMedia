@@ -1,6 +1,10 @@
 import { Testimonial } from '../home/homev2/testimonials/testimonials.component';
 import { CUT_N_COLORS } from './cases/cut-n-colors';
 import { DAL_SUSHI } from './cases/dal-sushi';
+import { MASSIMO_YOGA } from './cases/massimo-yoga';
+import { MR_BAO } from './cases/mr-bao';
+import { MUDO_GYM } from './cases/mudo-gym';
+import { RENE_BORGHAGEN } from './cases/rene-borghagen';
 
 export interface CaseStudyStat {
   label: string;
@@ -728,7 +732,11 @@ export const CASE_STUDIES: CaseStudy[] = [
     dateModified: '2026-10-11',
   },
   DAL_SUSHI,
+  MASSIMO_YOGA,
+  MR_BAO,
+  RENE_BORGHAGEN,
   CUT_N_COLORS,
+  MUDO_GYM,
 ];
 
 export const INDEXABLE_CASE_STUDIES = CASE_STUDIES.filter(
