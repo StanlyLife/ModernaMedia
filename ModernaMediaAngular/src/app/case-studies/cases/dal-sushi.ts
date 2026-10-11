@@ -19,15 +19,14 @@ export const DAL_SUSHI: CaseStudy = {
   slug: 'dal-sushi',
   client: 'Dal Sushi',
   title:
-    'Dal Sushi: logo, visuell profil og tre nettsideforslag til ny sushibar på Oppsal',
+    'Dal Sushi: logo, visuell profil og tre nettsideretninger for sushibaren på Oppsal',
   heroTitle: 'En fersk start for Dal Sushi',
   subtitle:
     'Soya Sushi la ned, og Dal Sushi tok over lokalet i Vetlandsveien. Vi laget logo, visuell profil og tre retninger for nettsiden – og en kort video som forklarer valgene.',
   summary:
-    'Dal Sushi er en ny sushi-takeaway på Oppsal i Oslo, i lokalet der Soya Sushi holdt til. De hadde verken logo, profil eller nettside. Vi tegnet en logo som fungerer overalt, bygde en visuell profil rundt den og laget tre forslag til nettside – fra moderne takeaway med bestilling til en rolig, norsk nabolagsside og en fargerik fast food-sjappe.',
-  // Design proposal Dal Sushi hasn't approved yet: reachable by link only.
+    'Dal Sushi er en ny sushi-takeaway på Oppsal i Oslo, i lokalet der Soya Sushi holdt til. De hadde verken logo, profil eller nettside. Vi tegnet en logo som fungerer overalt, bygde en visuell profil rundt den og tegnet tre retninger for nettsiden – fra moderne takeaway med bestilling til en rolig, norsk nabolagsside og en fargerik fast food-sjappe.',
+  // Our own concept work, not a client project: listed, but kept out of search engines.
   indexable: false,
-  listed: false,
   kind: 'concept',
   heroImage: '/assets/img/case/dal-sushi-1280.webp',
   heroImageSrcset: [640, 1280, 1920]
@@ -39,33 +38,32 @@ export const DAL_SUSHI: CaseStudy = {
   heroOverlay:
     'linear-gradient(100deg, rgba(10, 18, 15, 0.94) 0%, rgba(10, 18, 15, 0.76) 45%, rgba(19, 32, 27, 0.3) 100%)',
   ogImage: '/assets/img/case/dal-sushi-og.jpg',
-  cardImage: '/assets/img/case/dal-sushi-kort-640.webp',
   industry: 'Restaurant og take-away',
   location: 'Vetlandsveien, Oppsal (Oslo)',
-  timeframe: 'Designforslag, oktober 2026',
+  timeframe: 'Oktober 2026',
   services: [
     'Logodesign',
     'Visuell profil',
-    'Webdesign – tre forslag',
+    'Webdesign – tre retninger',
     'Menydesign',
     'Mobildesign',
-    'Presentasjonsvideo',
+    'Designvideo',
   ],
   stats: [
     { value: '3', label: 'designretninger', description: 'samme logo, tre uttrykk' },
     {
       value: '12',
       label: 'skisser',
-      description: 'forside, meny, mobil og profil per forslag',
+      description: 'forside, meny, mobil og profil per retning',
     },
-    { value: '74 s', label: 'presentasjonsvideo', description: 'forklarer valgene' },
+    { value: '74 s', label: 'designvideo', description: 'forklarer valgene' },
   ],
   sections: [
     {
       title: 'Utgangspunktet: nytt navn, kjent lokale',
       body: [
         'Soya Sushi i Vetlandsveien har lagt ned, og Dal Sushi har tatt over lokalet. Mange i nabolaget kjenner adressen, men ikke navnet – og det fantes verken logo, profil eller nettside.',
-        'Dal Sushi ønsket en ren, moderne og appetittvekkende profil. Den skulle føles tilgjengelig for nabolaget, ikke dyr og «premium».',
+        'Målet var en ren, moderne og appetittvekkende profil som føles tilgjengelig for nabolaget – ikke dyr og «premium».',
       ],
       bulletTitle: 'Dette skulle på plass',
       bullets: [
@@ -85,7 +83,7 @@ export const DAL_SUSHI: CaseStudy = {
       title: 'Logoen: en maki – og en D',
       body: [
         'Logoen er en maki sett ovenfra. Fyllet danner en D for Dal: avokado er stammen, laks er buen. Den er enkel nok til å fungere som app-ikon og favicon, og tydelig nok til skilt, poser og takeaway-esker.',
-        'Vi bestemte tidlig at logoen skulle være lik i alle forslagene. Da kan Dal Sushi velge retning for nettsiden uten å begynne på nytt med merkevaren.',
+        'Vi bestemte tidlig at logoen skulle være lik i alle retningene. Da kan nettsiden ta ulike retninger uten at merkevaren må begynne på nytt.',
       ],
       bulletTitle: 'Profilen inneholder',
       bullets: [
@@ -103,9 +101,9 @@ export const DAL_SUSHI: CaseStudy = {
     {
       title: 'Tre retninger for nettsiden',
       body: [
-        'I stedet for ett forslag laget vi tre, med samme logo men ulikt uttrykk. Det gjør det lettere for Dal Sushi å kjenne seg igjen og velge det som passer driften.',
+        'I stedet for én nettside tegnet vi tre, med samme logo men ulikt uttrykk. Sammen viser de hvordan én merkevare kan passe til ulike måter å drive en sushibar på.',
       ],
-      bulletTitle: 'Forslagene',
+      bulletTitle: 'Retningene',
       bullets: [
         'Moderne takeaway: «Bestill nå» øverst, meny med bilder og handlekurv for henting eller levering.',
         'Rolig og norsk: ingen bestilling og ingen levering – åpningstider, adresse og en enkel meny i dempede farger og vanlig språk.',
@@ -114,35 +112,35 @@ export const DAL_SUSHI: CaseStudy = {
       image: image(
         'tre-retninger',
         [16, 9],
-        'De tre nettsideforslagene til Dal Sushi side om side'
+        'De tre nettsideretningene for Dal Sushi side om side'
       ),
     },
     {
       title: 'Laget for mobilen først',
       body: [
-        'De fleste sjekker åpningstid, meny og telefonnummer på mobilen, gjerne på vei hjem. Derfor er alle tre forslagene tegnet for mobil først, med meny og telefon lett tilgjengelig.',
-        'Til slutt satte vi alt sammen i en video på 74 sekunder. Den går gjennom logoen, de tre retningene og mobilversjonene, så det er lett å vise forslagene videre.',
+        'De fleste sjekker åpningstid, meny og telefonnummer på mobilen, gjerne på vei hjem. Derfor er alle tre retningene tegnet for mobil først, med meny og telefon lett tilgjengelig.',
+        'Til slutt satte vi alt sammen i en video på 74 sekunder som går gjennom logoen, de tre retningene og mobilversjonene.',
       ],
       image: image(
         'mobil',
         [16, 9],
-        'Mobilversjonene av de tre nettsideforslagene til Dal Sushi'
+        'Mobilversjonene av de tre nettsideretningene for Dal Sushi'
       ),
     },
   ],
   showcase: {
-    title: 'Presentasjonsvideoen',
+    title: 'Designet forklart på 74 sekunder',
     videos: [
       {
-        label: 'Se presentasjonen',
-        title: 'Designforslagene på 74 sekunder',
+        label: 'Se videoen',
+        title: 'Designvideoen',
         src: '/assets/Videos/dal-sushi-designforslag.mp4',
         poster: '/assets/img/case/dal-sushi-1280.webp',
         width: 1920,
         height: 1080,
-        name: 'Dal Sushi – logo, visuell profil og tre nettsideforslag',
+        name: 'Dal Sushi – logo, visuell profil og tre nettsideretninger',
         description:
-          'Presentasjonsvideo for Dal Sushi på Oppsal: utgangspunktet, logoen (en maki som danner en D), tre retninger for nettsiden – moderne takeaway, rolig og norsk, og fast food-sjappe – og hvordan alle tre ser ut på mobil.',
+          'Video om designet for Dal Sushi på Oppsal: utgangspunktet, logoen (en maki som danner en D), tre retninger for nettsiden – moderne takeaway, rolig og norsk, og fast food-sjappe – og hvordan alle tre ser ut på mobil.',
         duration: 'PT1M14S',
         uploadDate: '2026-10-11',
       },
@@ -152,55 +150,55 @@ export const DAL_SUSHI: CaseStudy = {
     image(
       'v1-forside',
       [16, 10],
-      'Forslag 1, moderne takeaway: forside med «Bestill nå» og matbilde',
-      'Forslag 1 · Moderne takeaway – forside'
+      'Retning 1, moderne takeaway: forside med «Bestill nå» og matbilde',
+      'Retning 1 · Moderne takeaway – forside'
     ),
     image(
       'v2-forside',
       [16, 10],
-      'Forslag 2, rolig og norsk: forside med åpningstider og adresse øverst',
-      'Forslag 2 · Rolig og norsk – forside'
+      'Retning 2, rolig og norsk: forside med åpningstider og adresse øverst',
+      'Retning 2 · Rolig og norsk – forside'
     ),
     image(
       'v3-forside',
       [16, 10],
-      'Forslag 3, fast food-sjappe: gul forside med store bokstaver og lunsjtilbud',
-      'Forslag 3 · Fast food-sjappe – forside'
+      'Retning 3, fast food-sjappe: gul forside med store bokstaver og lunsjtilbud',
+      'Retning 3 · Fast food-sjappe – forside'
     ),
     image(
       'v1-meny',
       [16, 10],
-      'Forslag 1: meny med kategorier, bilder og handlekurv',
+      'Retning 1: meny med kategorier, bilder og handlekurv',
       'Meny med handlekurv'
     ),
     image(
       'v2-meny',
       [16, 10],
-      'Forslag 2: enkel menyliste med priser',
+      'Retning 2: enkel menyliste med priser',
       'Meny som en rolig liste'
     ),
     image(
       'v3-meny',
       [16, 10],
-      'Forslag 3: menytavle med nummererte menyer',
+      'Retning 3: menytavle med nummererte menyer',
       'Menytavle med nummer'
     ),
     image(
       'v1-profil',
       [16, 10],
-      'Profilside for forslag 1 med logo og laks på mørk bakgrunn',
+      'Profilside for retning 1 med logo og laks på mørk bakgrunn',
       'Profil · Ren, fersk og fristende'
     ),
     image(
       'v2-profil',
       [16, 10],
-      'Profilside for forslag 2 i rolige, dempede farger',
+      'Profilside for retning 2 i rolige, dempede farger',
       'Profil · Rolig, enkel og til å stole på'
     ),
     image(
       'v3-profil',
       [16, 10],
-      'Profilside for forslag 3 i gult med tekst i store bokstaver',
+      'Profilside for retning 3 i gult med tekst i store bokstaver',
       'Profil · Fast food-sushi, gjort ordentlig'
     ),
   ],
@@ -208,11 +206,11 @@ export const DAL_SUSHI: CaseStudy = {
     {
       title: 'Logo og visuell profil',
       description:
-        'En maki som danner en D, med farger, typografi, bildestil og tone samlet på én profilside per forslag.',
+        'En maki som danner en D, med farger, typografi, bildestil og tone samlet på én profilside per retning.',
       icon: 'star',
     },
     {
-      title: 'Tre nettsideforslag',
+      title: 'Tre nettsideretninger',
       description:
         'Forside og meny i tre retninger – fra bestilling med handlekurv til en rolig menyliste og en menytavle med nummer.',
       icon: 'globe',
@@ -220,19 +218,19 @@ export const DAL_SUSHI: CaseStudy = {
     {
       title: 'Mobilversjoner',
       description:
-        'Alle forslagene er tegnet for mobil først, med meny og telefon lett tilgjengelig.',
+        'Alle retningene er tegnet for mobil først, med meny og telefon lett tilgjengelig.',
       icon: 'smartphone',
     },
     {
-      title: 'Presentasjonsvideo',
+      title: 'Designvideo',
       description:
-        '74 sekunder som forklarer valgene – laget for å vise forslagene til kunden.',
+        '74 sekunder som går gjennom logoen, de tre retningene og valgene bak dem.',
       icon: 'film',
     },
   ],
-  seoTitle: 'Case: Dal Sushi – logo, profil og nettsideforslag på Oppsal',
+  seoTitle: 'Case: Dal Sushi – logo, profil og nettside på Oppsal',
   seoDescription:
-    'Logo, visuell profil og tre nettsideforslag for Dal Sushi, ny sushi-takeaway i Vetlandsveien på Oppsal. Se presentasjonsvideoen og alle forslagene.',
+    'Logo, visuell profil og tre nettsideretninger for Dal Sushi, sushi-takeaway i Vetlandsveien på Oppsal. Se designvideoen og alle retningene.',
   datePublished: '2026-10-11',
   dateModified: '2026-10-11',
 };

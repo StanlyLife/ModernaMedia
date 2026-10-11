@@ -1,8 +1,8 @@
 import type { CaseStudy, CaseStudyMedia } from '../case-studies.data';
 
-// CutnColors – redesign proposal for the hair salon at Storo (Prosjekter/Cut n Colors: design, Figma file
-// kuVJ1JKjaumRmjWEv3itNK, video). A case study for a potential customer, not a customer story: no client
-// quote and no results. The page stays out of search and the case lists (link only).
+// CutnColors – concept work for the hair salon at Storo (Prosjekter/Cut n Colors: design, Figma file
+// kuVJ1JKjaumRmjWEv3itNK, video). Our own case study, not a client story: no client quote and no
+// results, and neutral wording (no «forslag»). Listed on /case-studies, kept out of search engines.
 // No website link on purpose: the live site is not this design, and a link invites a before/after comparison.
 // Real: prices and durations, the 14 hairdressers, opening hours, address and the salon's own photos.
 
@@ -20,14 +20,13 @@ const image = (name: string, widths: number[], height: number, alt: string, capt
 export const CUT_N_COLORS: CaseStudy = {
   slug: 'cut-n-colors',
   client: 'CutnColors',
-  title: 'CutnColors: designforslag for frisøren på Storo',
+  title: 'CutnColors: ny nettside og enklere booking for frisøren på Storo',
   heroTitle: 'Samme enkle konsept – skarpere uttrykk',
   subtitle:
     'Ny nettside, booking på tre måter og en plan for å bli funnet på «frisør Storo» – for en rask og rimelig frisør ved BI Nydalen.',
   summary:
-    'CutnColors på Storo har et konsept som funker: rask klipp, faste priser og lange åpningstider. Vi laget et forslag til ny nettside som gir konseptet et like effektivt uttrykk, med salongens egne bilder, en tydelig prisliste og booking som alltid er ett trykk unna.',
+    'CutnColors på Storo har et konsept som funker: rask klipp, faste priser og lange åpningstider. Vi tegnet en ny nettside som gir konseptet et like effektivt uttrykk, med salongens egne bilder, en tydelig prisliste og booking som alltid er ett trykk unna.',
   indexable: false,
-  listed: false,
   kind: 'concept',
   heroImage: `${C}cut-n-colors-1280.webp`,
   heroImageSrcset: `${C}cut-n-colors-640.webp 640w, ${C}cut-n-colors-1280.webp 1280w, ${C}cut-n-colors-1920.webp 1920w`,
@@ -39,7 +38,7 @@ export const CUT_N_COLORS: CaseStudy = {
   ogImage: `${C}cut-n-colors-og.jpg`,
   industry: 'Frisør',
   location: 'Storo, Oslo',
-  timeframe: 'Designforslag, oktober 2026',
+  timeframe: 'Oktober 2026',
   services: ['Webdesign', 'Booking med Timma, skjema og telefon', 'Lokal SEO', 'Logo-opprydding', 'Trailer'],
   stats: [
     { value: '3', label: 'Veier til time', description: 'Timma, skjema og telefon' },
@@ -118,18 +117,18 @@ export const CUT_N_COLORS: CaseStudy = {
     },
   ],
   showcase: {
-    title: 'Designforslaget forklart på 84 sekunder',
+    title: 'Designet forklart på 84 sekunder',
     intro:
-      'CutnColors har et konsept som funker – derfor handler forslaget om uttrykket og veien til time. I videoen viser vi hvordan farger, prisliste, booking på tre måter og mobilversjonen kan gi salongen flere bookinger og bedre synlighet på Storo.',
+      'CutnColors har et konsept som funker – derfor handler designet om uttrykket og veien til time. I videoen viser vi hvordan farger, prisliste, booking på tre måter og mobilversjonen kan gi salongen flere bookinger og bedre synlighet på Storo.',
     videos: [
       {
-        title: 'Trailer: designforslaget for CutnColors',
+        title: 'Trailer: den nye nettsiden til CutnColors',
         label: 'Se traileren',
         src: '/assets/Videos/cut-n-colors-designforslag.mp4',
         poster: `${C}cut-n-colors-designforslag-poster-1280.webp`,
         width: 1920,
         height: 1080,
-        name: 'CutnColors – designforslag (trailer)',
+        name: 'CutnColors – trailer for den nye nettsiden',
         description:
           'Trailer som viser konseptet, designet og hvordan den nye nettsiden kan gi CutnColors flere bookinger og bedre synlighet på Storo.',
         duration: 'PT1M24S',
@@ -145,7 +144,7 @@ export const CUT_N_COLORS: CaseStudy = {
           { title: 'Hva CutnColors kan få', start: 70 },
         ],
         transcript:
-          'CutnColors – forslag til ny nettside. Et konsept som funker: Cut’n Run på 20 minutter, 650 kr fast pris og åpent 10–20. Målet: en nettside som jobber like effektivt som salongen – flere bookinger, flere nye kunder og et proft uttrykk. Samme konsept, skarpere uttrykk: farger fra salongen, en ny forside og «Rask klipp. Fast pris.». Nettsiden: booking ett trykk unna, prisene selger jobben, studentene i fokus, teamet med KRED og ekstra inntekt fra events og gavekort. Tre veier til time: book på nett i Timma, send en forespørsel eller ring. Laget for mobilen, der studentene booker. Funnet på «frisør Storo» med Google-profil, strukturerte data og flere anmeldelser. Rask klipp. Fast pris. Rett ved Storo.',
+          'CutnColors – ny nettside. Et konsept som funker: Cut’n Run på 20 minutter, 650 kr fast pris og åpent 10–20. Målet: en nettside som jobber like effektivt som salongen – flere bookinger, flere nye kunder og et proft uttrykk. Samme konsept, skarpere uttrykk: farger fra salongen, en ny forside og «Rask klipp. Fast pris.». Nettsiden: booking ett trykk unna, prisene selger jobben, studentene i fokus, teamet med KRED og ekstra inntekt fra events og gavekort. Tre veier til time: book på nett i Timma, send en forespørsel eller ring. Laget for mobilen, der studentene booker. Funnet på «frisør Storo» med Google-profil, strukturerte data og flere anmeldelser. Rask klipp. Fast pris. Rett ved Storo.',
       },
     ],
   },
@@ -154,7 +153,7 @@ export const CUT_N_COLORS: CaseStudy = {
       'cut-n-colors-design-forside',
       [1600, 800],
       1000,
-      'Forsiden til CutnColors i designforslaget',
+      'Den nye forsiden til CutnColors',
       'Forsiden: «Rask klipp. Fast pris. Rett ved Storo.» med tre veier til time.'
     ),
     image(
@@ -173,9 +172,9 @@ export const CUT_N_COLORS: CaseStudy = {
     ),
   ],
   cardMetric: { value: '3', label: 'veier til time' },
-  seoTitle: 'Case: CutnColors – designforslag for frisør på Storo',
+  seoTitle: 'Case: CutnColors – nettside for frisør på Storo',
   seoDescription:
-    'Designforslag for frisøren CutnColors på Storo: ny nettside med faste priser, booking via Timma, skjema eller telefon, og lokal SEO for «frisør Storo».',
+    'Ny nettside for frisøren CutnColors på Storo: faste priser, booking via Timma, skjema eller telefon, og lokal SEO for «frisør Storo».',
   datePublished: '2026-10-11',
   dateModified: '2026-10-11',
 };
