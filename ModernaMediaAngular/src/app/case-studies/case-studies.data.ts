@@ -1,4 +1,5 @@
 import { Testimonial } from '../home/homev2/testimonials/testimonials.component';
+import { CUT_N_COLORS } from './cases/cut-n-colors';
 import { DAL_SUSHI } from './cases/dal-sushi';
 
 export interface CaseStudyStat {
@@ -727,6 +728,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     dateModified: '2026-10-11',
   },
   DAL_SUSHI,
+  CUT_N_COLORS,
 ];
 
 export const INDEXABLE_CASE_STUDIES = CASE_STUDIES.filter(
