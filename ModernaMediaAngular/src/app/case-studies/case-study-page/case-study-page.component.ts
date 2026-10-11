@@ -39,6 +39,28 @@ const SERVICE_LINKS: [RegExp, string][] = [
   [/nettside|utvikling|meny/i, '/tjenester/bedrift/utvikling'],
 ];
 
+const CLIENT_COPY = {
+  crumb: 'Kundecaser',
+  delivKicker: 'Leveransen',
+  delivTitle: 'Hva vi leverte',
+  moreKicker: 'Flere kundehistorier',
+  moreTitle: 'Se hva vi har gjort for andre',
+  moreLink: 'Se alle kundecaser',
+  contactTitle: 'Vil du ha resultater som dette?',
+  source: 'Kundecase',
+};
+
+const CONCEPT_COPY: typeof CLIENT_COPY = {
+  crumb: 'Casestudier',
+  delivKicker: 'Innholdet',
+  delivTitle: 'Hva vi laget',
+  moreKicker: 'Flere caser',
+  moreTitle: 'Se flere av arbeidene våre',
+  moreLink: 'Se alle caser',
+  contactTitle: 'Vil du ha noe lignende?',
+  source: 'Case',
+};
+
 /** 'PT1M16S' → 76 */
 function isoSeconds(iso: string): number {
   const m = /PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?/.exec(iso);
@@ -72,8 +94,12 @@ export class CaseStudyPageComponent {
     const hero = this.heroVideo();
     return hero?.chapters?.length || hero?.transcript ? hero : undefined;
   });
+  /** Fixed texts. Concepts are our own work, so nothing may read as a client story. */
+  readonly copy = computed(() =>
+    this.caseStudy()?.kind === 'concept' ? CONCEPT_COPY : CLIENT_COPY
+  );
   readonly crumbs = computed<Crumb[]>(() => [
-    { label: 'Kundecaser', link: '/case-studies' },
+    { label: this.copy().crumb, link: '/case-studies' },
     { label: this.caseStudy()?.client ?? '' },
   ]);
 
@@ -403,7 +429,10 @@ export class CaseStudyPageComponent {
         }),
         this.seo.createBreadcrumbs([
           { name: 'Forside', path: '/' },
-          { name: 'Kundecaser', path: '/case-studies' },
+          {
+            name: study.kind === 'concept' ? CONCEPT_COPY.crumb : CLIENT_COPY.crumb,
+            path: '/case-studies',
+          },
           { name: study.client, path },
         ]),
       ],

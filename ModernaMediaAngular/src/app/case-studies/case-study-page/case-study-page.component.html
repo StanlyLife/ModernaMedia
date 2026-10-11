@@ -292,8 +292,8 @@
     <section class="deliv" aria-labelledby="cs-deliv-title">
       <div class="wrap">
         <div class="head center">
-          <span class="kicker">Leveransen</span>
-          <h2 class="h2" id="cs-deliv-title">Hva vi leverte</h2>
+          <span class="kicker">{{ copy().delivKicker }}</span>
+          <h2 class="h2" id="cs-deliv-title">{{ copy().delivTitle }}</h2>
         </div>
         <div class="cards">
           @for (outcome of cs.outcomes; track outcome.title) {
@@ -312,8 +312,8 @@
       <section class="soft more-cases" aria-labelledby="cs-more-title">
         <div class="wrap">
           <div class="head center">
-            <span class="kicker">Flere kundehistorier</span>
-            <h2 class="h2" id="cs-more-title">Se hva vi har gjort for andre</h2>
+            <span class="kicker">{{ copy().moreKicker }}</span>
+            <h2 class="h2" id="cs-more-title">{{ copy().moreTitle }}</h2>
           </div>
           <div class="cards">
             @for (other of otherCaseStudies; track other.slug) {
@@ -336,13 +336,13 @@
             }
           </div>
           <div class="more">
-            <a class="link" routerLink="/case-studies">Se alle kundecaser <v2-icon name="arrow" /></a>
+            <a class="link" routerLink="/case-studies">{{ copy().moreLink }} <v2-icon name="arrow" /></a>
           </div>
         </div>
       </section>
     }
 
-    <v2-contact title="Vil du ha resultater som dette?" [source]="'Kundecase – ' + cs.client" />
+    <v2-contact [title]="copy().contactTitle" [source]="copy().source + ' – ' + cs.client" />
   </div>
 } @else {
   <section class="cs-empty">

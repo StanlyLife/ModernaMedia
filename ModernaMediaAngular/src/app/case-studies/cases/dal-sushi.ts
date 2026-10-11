@@ -28,6 +28,7 @@ export const DAL_SUSHI: CaseStudy = {
   // Design proposal Dal Sushi hasn't approved yet: reachable by link only.
   indexable: false,
   listed: false,
+  kind: 'concept',
   heroImage: '/assets/img/case/dal-sushi-1280.webp',
   heroImageSrcset: [640, 1280, 1920]
     .map((w) => `/assets/img/case/dal-sushi-${w}.webp ${w}w`)

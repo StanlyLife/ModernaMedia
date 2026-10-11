@@ -93,6 +93,12 @@ export interface CaseStudy {
    * reachable by its link. For design proposals to prospects. Default true.
    */
   listed?: boolean;
+  /**
+   * 'concept' = our own work for a business that is not a client (design proposals).
+   * The page then avoids client wording: «Casestudier» instead of «Kundecaser»,
+   * «Hva vi laget» instead of «Hva vi leverte», and so on. Default 'client'.
+   */
+  kind?: 'client' | 'concept';
   /** Hero background, and the poster of the hero video (1280 px). */
   heroImage: string;
   heroImageSrcset: string;
