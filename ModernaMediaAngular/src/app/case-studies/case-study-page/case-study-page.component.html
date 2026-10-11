@@ -1,216 +1,352 @@
-<ng-container *ngIf="caseStudy as cs; else missingCase">
-  <section class="cs-hero" aria-labelledby="cs-title">
-    <img
-      class="cs-hero__image"
-      [src]="cs.heroImage"
-      [attr.srcset]="cs.heroImageSrcset"
-      sizes="100vw"
-      [width]="cs.heroImageWidth"
-      [height]="cs.heroImageHeight"
-      fetchpriority="high"
-      [alt]="cs.heroImageAlt"
-    />
-    <div
-      class="cs-hero__backdrop"
-      aria-hidden="true"
-      [style.background]="getHeroOverlay(cs)"
-    ></div>
-    <div class="cs-hero__content">
-      <nav class="breadcrumbs" aria-label="Brødsmulesti">
-        <a routerLink="/">Forside</a>
-        <span aria-hidden="true">›</span>
-        <a routerLink="/case-studies">Kundecaser</a>
-        <span aria-hidden="true">›</span>
-        <span aria-current="page">{{ cs.testimonial.company }}</span>
-      </nav>
-      <p class="eyebrow">
-        {{ cs.industry }} • {{ cs.location }} • {{ cs.timeframe }}
-      </p>
-      <h1 id="cs-title">{{ cs.title }}</h1>
-      <p class="subtitle">{{ cs.subtitle }}</p>
-      <p class="summary">
-        {{ cs.summary }}
-      </p>
-      <ul class="service-tags" aria-label="Tjenester i prosjektet">
-        <li *ngFor="let service of cs.services; trackBy: trackByIndex">
-          {{ service }}
-        </li>
-      </ul>
-      <a
-        class="client-link"
-        [href]="cs.website"
-        target="_blank"
-        rel="noopener"
-      >
-        Se nettsiden: {{ websiteLabel(cs.website) }} ↗
-      </a>
-      <div class="hero-stats">
-        <article
-          class="hero-stat"
-          *ngFor="let stat of cs.stats; trackBy: trackByIndex"
-          aria-label="{{ stat.label }}"
-        >
-          <p class="value">{{ stat.value }}</p>
-          <p class="label">{{ stat.label }}</p>
-          <p class="description" *ngIf="stat.description">
-            {{ stat.description }}
-          </p>
-        </article>
-      </div>
-    </div>
-    <p class="hero-caption" *ngIf="cs.heroImageCaption || cs.heroImageAlt">
-      {{ cs.heroImageCaption || cs.heroImageAlt }}
-    </p>
-  </section>
-
-  <section class="cs-body" aria-label="Om prosjektet">
-    <article
-      class="cs-section"
-      *ngFor="let section of cs.sections; trackBy: trackByIndex"
+@if (caseStudy(); as cs) {
+  <div class="v2">
+    <!-- Hero: photo + story + KPIs; play turns it into the trailer. -->
+    <section
+      #cine
+      class="cine"
+      [class.has-film]="!!heroVideo()"
+      [class.playing]="state() === 'playing'"
+      [class.ended]="state() === 'ended'"
+      aria-labelledby="cs-title"
+      (keydown.escape)="close()"
     >
-      <header>
-        <p class="eyebrow">{{ cs.testimonial.company }}</p>
-        <h2>{{ section.title }}</h2>
-      </header>
-      <div class="cs-section__content">
-        <p *ngFor="let paragraph of section.body; trackBy: trackByIndex">
-          {{ paragraph }}
-        </p>
-        <div class="bullets" *ngIf="section.bullets?.length">
-          <p class="bullet-title" *ngIf="section.bulletTitle">
-            {{ section.bulletTitle }}
-          </p>
-          <ul>
-            <li *ngFor="let bullet of section.bullets; trackBy: trackByIndex">
-              {{ bullet }}
-            </li>
+      @if (heroVideo(); as film) {
+        <video
+          #film
+          class="film"
+          [src]="film.src"
+          [attr.poster]="cs.heroImage"
+          [width]="film.width"
+          [height]="film.height"
+          playsinline
+          preload="none"
+          [attr.aria-label]="film.name"
+          (timeupdate)="onTime()"
+          (play)="paused.set(false)"
+          (pause)="paused.set(true)"
+          (ended)="close()"
+          (click)="state() === 'playing' && togglePause()"
+        ></video>
+      } @else {
+        <img
+          class="poster"
+          [src]="cs.heroImage"
+          [attr.srcset]="cs.heroImageSrcset"
+          sizes="100vw"
+          [width]="cs.heroImageWidth"
+          [height]="cs.heroImageHeight"
+          fetchpriority="high"
+          [alt]="cs.heroImageAlt"
+        />
+      }
+      <div class="shade" aria-hidden="true" [style.background]="overlay(cs)"></div>
+
+      <div class="over" [attr.inert]="state() === 'playing' ? '' : null">
+        <div class="wrap"><v2-crumbs [items]="crumbs()" /></div>
+        <div class="wrap">
+          <div class="copy">
+            <span class="pill"><span>CASE</span>{{ cs.client }} · {{ cs.industry }}</span>
+            <h1 id="cs-title">{{ cs.heroTitle || cs.title }}</h1>
+            <p class="sub">{{ cs.subtitle }}</p>
+            <div class="playrow">
+              @if (heroVideo(); as film) {
+                <button class="playbtn" type="button" (click)="play()">
+                  <span class="disc">
+                    <v2-icon [name]="state() === 'ended' ? 'replay' : 'play'" [class.replay]="state() === 'ended'" />
+                  </span>
+                  <span>
+                    <b>{{ state() === 'ended' ? 'Se igjen' : film.label || 'Se videoen' }}</b>
+                    <small>Video · {{ videoLength(film) }}</small>
+                  </span>
+                </button>
+              }
+              <a class="ghost-link" href="#historien" (click)="scrollToStory($event)">
+                Les hele historien <v2-icon name="down" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="wrap">
+          <ul class="hkpis" aria-label="Resultater">
+            @for (stat of cs.stats; track $index) {
+              <li class="hkpi">
+                <b>{{ stat.value }}</b>
+                <span><strong>{{ stat.label }}</strong> {{ stat.description }}</span>
+              </li>
+            }
           </ul>
         </div>
       </div>
-    </article>
-  </section>
 
-  <section
-    class="cs-showcase"
-    *ngIf="cs.showcase as showcase"
-    aria-labelledby="cs-showcase-title"
-  >
-    <header>
-      <p class="eyebrow">{{ cs.testimonial.company }}</p>
-      <h2 id="cs-showcase-title">{{ showcase.title }}</h2>
-      <p class="cs-showcase__intro" *ngIf="showcase.intro">
-        {{ showcase.intro }}
-      </p>
-    </header>
-    <figure
-      class="cs-video"
-      *ngFor="let video of showcase.videos; trackBy: trackByIndex"
-    >
-      <h3 class="cs-video__title">{{ video.title }}</h3>
-      <video
-        controls
-        playsinline
-        preload="none"
-        [attr.poster]="video.poster"
-        [width]="video.width"
-        [height]="video.height"
-        [attr.aria-label]="video.name"
-      >
-        <source [src]="video.src" type="video/mp4" />
-        <a [href]="video.src">Last ned videoen ({{ video.name }})</a>
-      </video>
-      <figcaption>{{ video.description }}</figcaption>
-    </figure>
-  </section>
+      @if (heroVideo(); as film) {
+        <div class="top" [attr.inert]="state() === 'playing' ? null : ''">
+          <span><b>{{ cs.client }}</b> · {{ film.title }}</span>
+          <button type="button" (click)="close()"><v2-icon name="close" /> Lukk video</button>
+        </div>
+        <div class="controls" [attr.inert]="state() === 'playing' ? null : ''">
+          <button type="button" (click)="togglePause()" [attr.aria-label]="paused() ? 'Spill av' : 'Pause'">
+            <v2-icon [name]="paused() ? 'play' : 'pause'" />
+          </button>
+          <div
+            class="track"
+            role="slider"
+            tabindex="0"
+            aria-label="Tidslinje"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [attr.aria-valuenow]="percent()"
+            [attr.aria-valuetext]="clock(current()) + ' av ' + videoLength(film)"
+            [style.--p]="progress() + '%'"
+            (click)="seek($event)"
+            (keydown.arrowleft)="nudge(-5)"
+            (keydown.arrowright)="nudge(5)"
+          ><i></i></div>
+          <span class="time">{{ clock(current()) }} / {{ videoLength(film) }}</span>
+          <button type="button" (click)="toggleMute()" [attr.aria-label]="muted() ? 'Slå på lyden' : 'Slå av lyden'">
+            <v2-icon [name]="muted() ? 'mute' : 'volume'" />
+          </button>
+          <button type="button" (click)="fullscreen()" aria-label="Fullskjerm"><v2-icon name="full" /></button>
+        </div>
+      }
+    </section>
 
-  <section
-    class="cs-gallery"
-    *ngIf="cs.gallery?.length"
-    aria-label="Bilder fra prosjektet"
-  >
-    <figure
-      *ngFor="let media of cs.gallery; trackBy: trackByIndex"
-      [class.wide]="media.wide"
-    >
-      <img
-        [src]="media.src"
-        [attr.srcset]="media.srcset || null"
-        [attr.sizes]="
-          media.wide
-            ? '(min-width: 1040px) 1000px, 100vw'
-            : '(min-width: 1040px) 500px, 100vw'
-        "
-        [width]="media.width"
-        [height]="media.height"
-        [alt]="media.alt"
-        loading="lazy"
-        decoding="async"
-      />
-      <figcaption *ngIf="media.caption">{{ media.caption }}</figcaption>
-    </figure>
-  </section>
-
-  <section class="cs-testimonial" aria-label="Kundetilbakemelding og leveranse">
-    <div class="quote-card">
-      <p class="eyebrow">Kundetilbakemelding</p>
-      <blockquote class="quote">"{{ cs.testimonial.quote }}"</blockquote>
-      <div class="author-row">
-        <img
-          *ngIf="cs.testimonial.image"
-          [src]="cs.testimonial.image"
-          [alt]="cs.testimonial.imageAlt || cs.testimonial.name"
-          width="56"
-          height="56"
-          loading="lazy"
-          class="author-image"
-        />
-        <p class="author">
-          {{ cs.testimonial.name }} · {{ cs.testimonial.role }},
-          {{ cs.testimonial.company }}
-        </p>
+    <!-- Facts strip -->
+    <section class="facts" aria-label="Om prosjektet">
+      <div class="wrap">
+        <div><small>Bransje</small><b>{{ cs.industry }}</b></div>
+        <div><small>Sted</small><b>{{ cs.location }}</b></div>
+        <div><small>Tidsramme</small><b>{{ cs.timeframe }}</b></div>
+        @if (cs.website) {
+          <a class="visit" [href]="cs.website" target="_blank" rel="noopener">
+            {{ websiteLabel(cs) }} <v2-icon name="out" />
+          </a>
+        }
+        <div class="tags">
+          <small>Tjenester</small>
+          @for (service of cs.services; track service) {
+            @if (serviceLink(service); as link) {
+              <a [routerLink]="link">{{ service }}</a>
+            } @else {
+              <span>{{ service }}</span>
+            }
+          }
+        </div>
       </div>
-    </div>
-    <div class="outcome-card">
-      <p class="eyebrow">Hva vi leverte</p>
-      <ul>
-        <li *ngFor="let outcome of cs.outcomes; trackBy: trackByIndex">
-          <h3>{{ outcome.title }}</h3>
-          <p>{{ outcome.description }}</p>
-        </li>
-      </ul>
-    </div>
-  </section>
+    </section>
 
-  <section
-    class="cs-more"
-    *ngIf="otherCaseStudies.length"
-    aria-labelledby="cs-more-title"
-  >
-    <h2 id="cs-more-title">Flere kundecaser</h2>
-    <ul>
-      <li *ngFor="let other of otherCaseStudies; trackBy: trackByIndex">
-        <a [routerLink]="['/case-study', other.slug]">
-          <img
-            [src]="'/assets/img/case/' + other.slug + '-640.webp'"
-            [alt]="other.heroImageAlt"
-            width="640"
-            height="384"
-            loading="lazy"
-            decoding="async"
-          />
-          <span class="cs-more__title">{{ other.title }}</span>
-        </a>
-      </li>
-    </ul>
-    <a class="cs-more__all" routerLink="/case-studies">Se alle kundecaser →</a>
-  </section>
+    <!-- Behind the design: explainer video, chapters and transcript -->
+    @if (cs.showcase; as showcase) {
+      @if (explainer() || chapterVideo() || showcase.intro) {
+        <section class="soft explainer" id="video" aria-labelledby="cs-explainer-title">
+          <div class="wrap">
+            <div class="head">
+              <span class="kicker">Bak designet</span>
+              <h2 class="h2" id="cs-explainer-title">{{ showcase.title }}</h2>
+              @if (showcase.intro) {
+                <p class="lead">{{ showcase.intro }}</p>
+              }
+            </div>
+            @if (explainer() || chapterVideo()) {
+              <div class="grid" [class.solo]="!explainer() || !chapterVideo()">
+                @if (explainer(); as ex) {
+                  <figure class="vcard" [class.on]="explainerOn()">
+                    <video
+                      #explainerFilm
+                      [src]="ex.src"
+                      [attr.poster]="ex.poster"
+                      [width]="ex.width"
+                      [height]="ex.height"
+                      [attr.controls]="explainerOn() ? '' : null"
+                      playsinline
+                      preload="none"
+                      [attr.aria-label]="ex.name"
+                    ></video>
+                    @if (!explainerOn()) {
+                      <button class="start" type="button" (click)="startExplainer()" [attr.aria-label]="'Spill av: ' + ex.title">
+                        <span class="disc"><v2-icon name="play" /></span>
+                        <span class="label"><b>{{ ex.title }}</b><span>Case-video fra Moderna Media</span></span>
+                        <span class="dur">{{ videoLength(ex) }}</span>
+                      </button>
+                    }
+                    <figcaption class="sr-only">{{ ex.description }}</figcaption>
+                  </figure>
+                }
+                @if (chapterVideo(); as cv) {
+                  <aside>
+                    @if (cv.chapters?.length) {
+                      <h3>Dette ser du i videoen</h3>
+                      <ol>
+                        @for (chapter of cv.chapters; track chapter.start) {
+                          <li>
+                            <button type="button" (click)="playChapter(chapter.start)">
+                              <span class="t">{{ clock(chapter.start) }}</span>{{ chapter.title }}
+                            </button>
+                          </li>
+                        }
+                      </ol>
+                    }
+                    @if (cv.transcript) {
+                      <details class="transcript">
+                        <summary>Les hva som blir sagt i videoen</summary>
+                        <p>{{ cv.transcript }}</p>
+                      </details>
+                    }
+                  </aside>
+                }
+              </div>
+            }
+          </div>
+        </section>
+      }
+    }
 
-  <app-about-your-next-project></app-about-your-next-project>
-</ng-container>
+    <!-- The story -->
+    <section id="historien" aria-labelledby="cs-story-title">
+      <div class="wrap">
+        <div class="head center">
+          <span class="kicker">Historien</span>
+          <h2 class="h2" id="cs-story-title">Fra behov til resultat</h2>
+        </div>
+        @for (section of cs.sections; track section.title; let i = $index) {
+          <article class="srow" [class.rev]="!!section.image && i % 2 === 1" [class.solo]="!section.image">
+            <div class="txt">
+              <span class="num" aria-hidden="true">{{ i + 1 < 10 ? '0' : '' }}{{ i + 1 }}</span>
+              <h3>{{ section.title }}</h3>
+              @for (paragraph of section.body; track $index) {
+                <p>{{ paragraph }}</p>
+              }
+              @if (section.bullets?.length) {
+                @if (section.bulletTitle) {
+                  <p class="ltitle">{{ section.bulletTitle }}</p>
+                }
+                <ul>
+                  @for (bullet of section.bullets; track $index) {
+                    <li><span class="tick"><v2-icon name="check" /></span>{{ bullet }}</li>
+                  }
+                </ul>
+              }
+            </div>
+            @if (section.image; as image) {
+              <figure>
+                <img
+                  [src]="image.src"
+                  [attr.srcset]="image.srcset || null"
+                  sizes="(min-width: 1000px) 600px, 100vw"
+                  [width]="image.width"
+                  [height]="image.height"
+                  [alt]="image.alt"
+                  loading="lazy"
+                  decoding="async"
+                />
+                @if (image.caption) {
+                  <figcaption>{{ image.caption }}</figcaption>
+                }
+              </figure>
+            }
+          </article>
+        }
+        @if (cs.gallery?.length) {
+          <div class="cgal">
+            @for (media of cs.gallery; track media.src) {
+              <figure>
+                <img
+                  [src]="media.src"
+                  [attr.srcset]="media.srcset || null"
+                  sizes="(min-width: 1000px) 400px, 100vw"
+                  [width]="media.width"
+                  [height]="media.height"
+                  [alt]="media.alt"
+                  loading="lazy"
+                  decoding="async"
+                />
+                @if (media.caption) {
+                  <figcaption>{{ media.caption }}</figcaption>
+                }
+              </figure>
+            }
+          </div>
+        }
+      </div>
+    </section>
 
-<ng-template #missingCase>
+    <!-- Quote -->
+    @if (cs.testimonial; as t) {
+      <section class="soft cquote" aria-label="Kundetilbakemelding">
+        <div class="wrap">
+          <figure>
+            <blockquote>{{ t.quote }}</blockquote>
+            <figcaption class="who">
+              @if (t.image) {
+                <img [src]="t.image" [alt]="t.imageAlt || t.name" width="56" height="56" loading="lazy" />
+              } @else {
+                <span class="ini" aria-hidden="true">{{ initials(t.name) }}</span>
+              }
+              <span><b>{{ t.name }}</b><span>{{ t.role }}, {{ t.company }}</span></span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+    }
+
+    <!-- What we delivered -->
+    <section class="deliv" aria-labelledby="cs-deliv-title">
+      <div class="wrap">
+        <div class="head center">
+          <span class="kicker">Leveransen</span>
+          <h2 class="h2" id="cs-deliv-title">Hva vi leverte</h2>
+        </div>
+        <div class="cards">
+          @for (outcome of cs.outcomes; track outcome.title) {
+            <div class="card">
+              <div class="ic"><v2-icon [name]="outcome.icon || 'check'" /></div>
+              <h3>{{ outcome.title }}</h3>
+              <p>{{ outcome.description }}</p>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- More cases -->
+    @if (otherCaseStudies.length) {
+      <section class="soft more-cases" aria-labelledby="cs-more-title">
+        <div class="wrap">
+          <div class="head center">
+            <span class="kicker">Flere kundehistorier</span>
+            <h2 class="h2" id="cs-more-title">Se hva vi har gjort for andre</h2>
+          </div>
+          <div class="cards">
+            @for (other of otherCaseStudies; track other.slug) {
+              <a class="mcard" [routerLink]="['/case-study', other.slug]">
+                <div class="img">
+                  <img [src]="cardImage(other)" alt="" width="650" height="390" loading="lazy" decoding="async" />
+                  @if (other.showcase?.videos?.length) {
+                    <span class="badge"><v2-icon name="play" /> Video</span>
+                  }
+                </div>
+                <div class="b">
+                  <small>{{ other.industry }}</small>
+                  <h3>{{ other.title }}</h3>
+                  <div class="metric">
+                    <b class="gt">{{ cardMetric(other).value }}</b>
+                    <span>{{ cardMetric(other).label }}</span>
+                  </div>
+                </div>
+              </a>
+            }
+          </div>
+          <div class="more">
+            <a class="link" routerLink="/case-studies">Se alle kundecaser <v2-icon name="arrow" /></a>
+          </div>
+        </div>
+      </section>
+    }
+
+    <v2-contact title="Vil du ha resultater som dette?" [source]="'Kundecase – ' + cs.client" />
+  </div>
+} @else {
   <section class="cs-empty">
     <p>Vi finner ikke casen du leter etter.</p>
     <a routerLink="/" class="btn">Til forsiden</a>
   </section>
-</ng-template>
+}

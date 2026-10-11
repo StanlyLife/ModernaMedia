@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
-  CASE_STUDIES,
   CaseStudy,
   INDEXABLE_CASE_STUDIES,
+  LISTED_CASE_STUDIES,
 } from '../case-studies.data';
 import {
   ORGANIZATION_ID,
@@ -332,7 +332,7 @@ import {
   ],
 })
 export class CaseStudiesListComponent implements OnInit {
-  caseStudies: CaseStudy[] = CASE_STUDIES;
+  caseStudies: CaseStudy[] = LISTED_CASE_STUDIES;
 
   constructor(private seo: SeoService) {}
 

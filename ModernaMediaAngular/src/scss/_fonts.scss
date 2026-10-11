@@ -34,6 +34,8 @@
 @include fallback("Pier Fallback", "Arial Bold", 600 900, 100.86%, 100.64%, 18.34%, 0%);
 @include fallback("Plex Fallback", "Arial", 100 500, 100.52%, 101.97%, 27.36%, 0%);
 @include fallback("Plex Fallback", "Arial Bold", 600 900, 96.61%, 106.1%, 28.46%, 0%);
+// Measured against Arial Bold in Chrome (text width and font bounding box).
+@include fallback("Jakarta Fallback", "Arial Bold", 600 800, 100.5%, 103.5%, 21.9%, 0%);
 
 // Mosk
 @include face("Mosk", "Mosk100", 100);
@@ -66,3 +68,7 @@
 @include face("Plex", "IBMPlexSans-SemiBoldItalic", 800, italic);
 @include face("Plex", "IBMPlexSans-Bold", 900);
 @include face("Plex", "IBMPlexSans-BoldItalic", 900, italic);
+
+// Plus Jakarta Sans (variable 600–800, Latin subset from Google Fonts, OFL).
+// Only the case-study hero uses it: headline, play label and the KPI numbers.
+@include face("Plus Jakarta Sans", "PlusJakartaSans-latin", 600 800);
