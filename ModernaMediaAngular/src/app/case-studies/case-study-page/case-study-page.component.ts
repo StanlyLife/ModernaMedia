@@ -40,13 +40,13 @@ const SERVICE_LINKS: [RegExp, string][] = [
 ];
 
 const CLIENT_COPY = {
-  crumb: 'Kundecaser',
+  crumb: 'Casestudier',
   storyTitle: 'Fra behov til resultat',
   delivKicker: 'Leveransen',
   delivTitle: 'Hva vi leverte',
   moreKicker: 'Flere kundehistorier',
   moreTitle: 'Se hva vi har gjort for andre',
-  moreLink: 'Se alle kundecaser',
+  moreLink: 'Se alle casestudier',
   contactTitle: 'Vil du ha resultater som dette?',
   source: 'Kundecase',
 };
@@ -58,7 +58,7 @@ const CONCEPT_COPY: typeof CLIENT_COPY = {
   delivTitle: 'Hva vi laget',
   moreKicker: 'Flere caser',
   moreTitle: 'Se flere av arbeidene våre',
-  moreLink: 'Se alle caser',
+  moreLink: 'Se alle casestudier',
   contactTitle: 'Vil du ha noe lignende?',
   source: 'Case',
 };

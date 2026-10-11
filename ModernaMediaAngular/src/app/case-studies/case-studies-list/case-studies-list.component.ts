@@ -20,10 +20,10 @@ import {
     <section class="case-studies-hero">
       <div class="wrapper">
         <p class="subtitle">Våre prosjekter</p>
-        <h1 class="title">Kundecaser</h1>
+        <h1 class="title">Casestudier</h1>
         <p class="description">
-          Se hvordan vi har hjulpet bedrifter som din med å vokse digitalt. Fra
-          nettsider til SEO – her er resultatene som taler for seg selv.
+          Et utvalg av arbeidet vårt: nettsider, logoer, visuelle profiler og SEO
+          for bedrifter i mange bransjer.
         </p>
       </div>
     </section>
@@ -38,7 +38,7 @@ import {
           >
             <div class="case-image">
               <img
-                [src]="'/assets/img/case/' + caseStudy.slug + '-640.webp'"
+                [src]="caseStudy.heroImage"
                 [attr.srcset]="caseStudy.heroImageSrcset"
                 sizes="(max-width: 768px) 100vw, 420px"
                 width="640"
@@ -81,7 +81,7 @@ import {
 
     <section class="cta-section">
       <div class="wrapper">
-        <h2>Klar for å bli vår neste suksesshistorie?</h2>
+        <h2>Vil du ha noe lignende?</h2>
         <p>Ta kontakt for en uforpliktende samtale om ditt prosjekt.</p>
         <a routerLink="/kontakt" class="btn primary">Book et møte</a>
       </div>
@@ -337,9 +337,9 @@ export class CaseStudiesListComponent implements OnInit {
   constructor(private seo: SeoService) {}
 
   ngOnInit() {
-    const title = 'Kundecaser – nettsider og SEO med resultater | Moderna Media';
+    const title = 'Casestudier – nettsider, design og SEO | Moderna Media';
     const description =
-      'Se hvordan Moderna Media har hjulpet Sola Parkering, Fjerdingby Pizza & Grill og Østlandet Brønnboring med nettsider og SEO – med konkrete resultater.';
+      'Et utvalg av arbeidet til Moderna Media: nettsider, logoer, visuelle profiler og SEO – blant annet for Sola Parkering, Fjerdingby Pizza & Grill og Østlandet Brønnboring.';
     const url = `${SITE_ORIGIN}/case-studies`;
 
     this.seo.updateSeo({
@@ -374,7 +374,7 @@ export class CaseStudiesListComponent implements OnInit {
         },
         this.seo.createBreadcrumbs([
           { name: 'Forside', path: '/' },
-          { name: 'Kundecaser', path: '/case-studies' },
+          { name: 'Casestudier', path: '/case-studies' },
         ]),
       ],
     });
