@@ -9,7 +9,7 @@
     <!-- Fonts used above the fold on every page (avoids a visible font swap) -->
     <link
       rel="preload"
-      href="/assets/fonts/woff2/Mosk900.woff2"
+      href="/assets/fonts/woff2/Mosk800.woff2"
       as="font"
       type="font/woff2"
       crossorigin
@@ -27,11 +27,9 @@
       content="eLVPpGwJJH4LHRw5fy1pvS0NYXGT1CH6IIN45PPfoOc"
     />
 
-    <!-- Google Analytics (GA4) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-C4P3665WWC"
-    ></script>
+    <!-- Google Analytics (GA4) and Meta Pixel. The queues are ready at once, so nothing is lost,
+         but the scripts load after the page has loaded: they no longer compete with the
+         hero image and the app for bandwidth and main-thread time. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -39,35 +37,44 @@
       }
       gtag("js", new Date());
       gtag("config", "G-C4P3665WWC");
-    </script>
 
-    <!-- Meta Pixel -->
-    <script>
-      !(function (f, b, e, v, n, t, s) {
+      !(function (f) {
         if (f.fbq) return;
-        n = f.fbq = function () {
+        var n = (f.fbq = function () {
           n.callMethod
             ? n.callMethod.apply(n, arguments)
             : n.queue.push(arguments);
-        };
+        });
         if (!f._fbq) f._fbq = n;
         n.push = n;
         n.loaded = !0;
         n.version = "2.0";
         n.queue = [];
-        t = b.createElement(e);
-        t.async = !0;
-        t.src = v;
-        s = b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t, s);
-      })(
-        window,
-        document,
-        "script",
-        "https://connect.facebook.net/en_US/fbevents.js"
-      );
+      })(window);
       fbq("init", "391525145291863");
       fbq("track", "PageView");
+
+      (function () {
+        function load(src) {
+          var s = document.createElement("script");
+          s.async = true;
+          s.src = src;
+          document.head.appendChild(s);
+        }
+        function start() {
+          load("https://www.googletagmanager.com/gtag/js?id=G-C4P3665WWC");
+          load("https://connect.facebook.net/en_US/fbevents.js");
+        }
+        function later() {
+          if ("requestIdleCallback" in window) {
+            requestIdleCallback(start, { timeout: 2000 });
+          } else {
+            setTimeout(start, 1);
+          }
+        }
+        if (document.readyState === "complete") later();
+        else window.addEventListener("load", later, { once: true });
+      })();
     </script>
 
     <!-- Favicons -->

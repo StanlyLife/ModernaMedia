@@ -21,7 +21,7 @@ const CONTENTS = { style: 'display:contents' };
         <img src="${IMG}kunde-ena-96.webp" width="44" height="44" alt="Ena Hasanović, Fjerdingby Pizza & Grill" />
       </div>
       <div>
-        <span class="stars" aria-label="5 av 5 stjerner">@for (s of [1, 2, 3, 4, 5]; track s) {<v2-icon name="star" />}</span>
+        <span class="stars" role="img" aria-label="5 av 5 stjerner">@for (s of [1, 2, 3, 4, 5]; track s) {<v2-icon name="star" />}</span>
         <p><b>50+ bedrifter</b> har valgt oss{{ extra() }}</p>
       </div>
     </div>
@@ -74,7 +74,7 @@ export class V2TrustComponent {
       </div>
       <div class="b">
         <div class="metric"><b class="gt">{{ t.metric }}</b><span>{{ t.metricLabel }}</span></div>
-        <span class="stars" aria-label="5 av 5 stjerner">@for (s of [1, 2, 3, 4, 5]; track s) {<v2-icon name="star" />}</span>
+        <span class="stars" role="img" aria-label="5 av 5 stjerner">@for (s of [1, 2, 3, 4, 5]; track s) {<v2-icon name="star" />}</span>
         <p class="quote">«{{ t.quote }}»</p>
         <div class="person">
           @if (t.person) {
@@ -83,7 +83,7 @@ export class V2TrustComponent {
             <span class="ini" aria-hidden="true">{{ t.initials }}</span>
           }
           <p><b>{{ t.name }}</b>{{ t.role }}, {{ t.company }}</p>
-          <a class="link" [routerLink]="t.caseStudy">Les casestudien <v2-icon name="arrow" /></a>
+          <a class="link" [routerLink]="t.caseStudy">Les casestudien<span class="sr-only"> om {{ t.company }}</span> <v2-icon name="arrow" /></a>
         </div>
       </div>
     </article>
@@ -390,7 +390,7 @@ export class V2PageHeroComponent {
   template: `
     <a class="svc" [routerLink]="link()">
       @if (img()) {
-        <img [src]="img()" width="840" height="560" loading="lazy" decoding="async" alt="" />
+        <img [src]="img()" [attr.srcset]="srcset()" sizes="(max-width: 640px) 100vw, (max-width: 1000px) 50vw, 300px" width="840" height="560" loading="lazy" decoding="async" alt="" />
       }
       <div class="b">
         @if (icon()) {
@@ -420,6 +420,11 @@ export class V2PageHeroComponent {
 })
 export class V2SvcCardComponent {
   img = input('');
+  /** Card images come as <name>-840.webp with a <name>-420.webp next to them. */
+  srcset = computed(() => {
+    const src = this.img();
+    return src.endsWith('-840.webp') ? `${src.replace(/-840\.webp$/, '-420.webp')} 420w, ${src} 840w` : null;
+  });
   icon = input('');
   tag = input('');
   title = input.required<string>();

@@ -292,7 +292,8 @@ $phone-v2: 640px;
     border-top: 1px dashed var(--line);
     font-size: 14px;
     color: var(--muted);
-    b { font: 800 18px $ff-primary; color: #9c9ab0; letter-spacing: 0.01em; }
+    // var(--muted) keeps the quiet look and passes WCAG AA contrast on white.
+    b { font: 800 18px $ff-primary; color: var(--muted); letter-spacing: 0.01em; }
   }
 
   // Grids and cards
