@@ -1,10 +1,12 @@
 import { Testimonial } from '../home/homev2/testimonials/testimonials.component';
+import { BERGEN_PIZZA } from './cases/bergen-pizza';
 import { CUT_N_COLORS } from './cases/cut-n-colors';
 import { DAL_SUSHI } from './cases/dal-sushi';
 import { MASSIMO_YOGA } from './cases/massimo-yoga';
 import { MR_BAO } from './cases/mr-bao';
 import { MUDO_GYM } from './cases/mudo-gym';
 import { RENE_BORGHAGEN } from './cases/rene-borghagen';
+import { YUMMY_SUSHI } from './cases/yummy-sushi';
 
 export interface CaseStudyStat {
   label: string;
@@ -164,7 +166,14 @@ const galleryImage = (
   wide,
 });
 
-export const CASE_STUDIES: CaseStudy[] = [
+/**
+ * Concept cases (kind 'concept': our own design work for businesses that are not clients) are hidden for now –
+ * no card, no page (the URL goes to /error) and not prerendered. Their files in cases/ stay; set this to true to
+ * bring them all back.
+ */
+const SHOW_CONCEPT_CASES = false;
+
+const ALL_CASE_STUDIES: CaseStudy[] = [
   {
     slug: 'sola-parkering',
     client: 'Sola Parkering',
@@ -737,7 +746,13 @@ export const CASE_STUDIES: CaseStudy[] = [
   RENE_BORGHAGEN,
   CUT_N_COLORS,
   MUDO_GYM,
+  YUMMY_SUSHI,
+  BERGEN_PIZZA,
 ];
+
+export const CASE_STUDIES: CaseStudy[] = ALL_CASE_STUDIES.filter(
+  (study) => SHOW_CONCEPT_CASES || study.kind !== 'concept'
+);
 
 export const INDEXABLE_CASE_STUDIES = CASE_STUDIES.filter(
   (study) => study.indexable
