@@ -56,8 +56,6 @@ export interface SubServicePage {
   related: { title: string; items: { icon: string; title: string; text: string; link: string; linkLabel: string }[] };
 }
 
-const D = '/assets/Images/Tjenester/info-section/design/';
-const S = '/assets/Images/Tjenester/info-section/seo/';
 /** Info-section images, resized to the 1040 px the block shows. */
 const I = '/assets/img/info/';
 const C = '/assets/img/case/';
@@ -65,9 +63,10 @@ const ICON = '/assets/Images/Icons/tjenester/services/';
 
 /** srcset with the spaces in the file names encoded, so the browser can split it. */
 const set = (...items: [string, number][]) => items.map(([src, w]) => `${encodeURI(src)} ${w}w`).join(', ');
-const hero = (dir: string, name: string, sizes: [string, number][]): HeroImage => ({
-  src: encodeURI(`${dir}${sizes[sizes.length - 1][0]}/${name}`),
-  srcset: set(...sizes.map(([folder, w]): [string, number] => [`${dir}${folder}/${name}`, w])),
+/** Hero image as 640/1280/1920 px WebP from src/assets/img/svc/. */
+const svcHero = (name: string): HeroImage => ({
+  src: `/assets/img/svc/${name}-hero-1920.webp`,
+  srcset: [640, 1280, 1920].map((w) => `/assets/img/svc/${name}-hero-${w}.webp ${w}w`).join(', '),
 });
 
 const DESIGN_CRUMB: Crumb = { label: 'Design', link: '/tjenester/bedrift/design' };
@@ -117,7 +116,7 @@ export const SUB_SERVICES: Record<string, SubServicePage> = {
     sub: 'Vi designer nettsider som er enkle å bruke, ser profesjonelle ut og gjør det lett å ta kontakt – på mobil først. Du ser og godkjenner designet før noe bygges.',
     checks: [`Fra ${kr(PRICES.design)} eks. mva`, 'Du ser designet før vi bygger', '100 % fornøyd-garanti'],
     primary: 'Få pristilbud på webdesign',
-    bg: hero(D, 'web design for bedrift oslo.webp', [['640', 640], ['1280', 1280], ['1980', 1980]]),
+    bg: svcHero('web'),
     form: { title: 'Få pristilbud på webdesign', message: 'Hva trenger du? F.eks. ny nettside eller nytt design på den du har', button: 'Få pristilbud' },
     preselect: 'Design',
     source: 'Pristilbud – webdesign',
@@ -225,7 +224,7 @@ export const SUB_SERVICES: Record<string, SubServicePage> = {
     sub: 'Menyer, visittkort, plakater, annonser og innhold til sosiale medier – i samme stil som logoen og nettsiden din, og klart til trykk og publisering.',
     checks: [`Fra ${kr(PRICES.design)} eks. mva`, 'Klart til trykk og publisering', '100 % fornøyd-garanti'],
     primary: 'Få pristilbud på grafisk design',
-    bg: hero(D, 'grafisk design for bedrift oslo.webp', [['640', 640], ['1280', 1280], ['1980', 1980]]),
+    bg: svcHero('grafisk'),
     form: { title: 'Få pristilbud på grafisk design', message: 'Hva trenger du? F.eks. meny, visittkort eller annonser', button: 'Få pristilbud' },
     preselect: 'Design',
     source: 'Pristilbud – grafisk design',
@@ -329,7 +328,7 @@ export const SUB_SERVICES: Record<string, SubServicePage> = {
     sub: 'Vi lager en logo som er enkel, lett å kjenne igjen og fungerer overalt – fra skiltet og menyen til nettsiden og app-ikonet. Du får flere forslag og velger selv.',
     checks: [`Fra ${kr(PRICES.design)} eks. mva`, 'Flere forslag å velge mellom', '100 % fornøyd-garanti'],
     primary: 'Få pristilbud på logo',
-    bg: hero(D, 'logo design for bedrift.webp', [['640', 640], ['1280', 1280], ['1980', 1980]]),
+    bg: svcHero('logo'),
     form: { title: 'Få pristilbud på logo', message: 'Hva trenger du? F.eks. ny logo eller fornying av logoen du har', button: 'Få pristilbud' },
     preselect: 'Design',
     source: 'Pristilbud – logo design',
@@ -434,7 +433,7 @@ export const SUB_SERVICES: Record<string, SubServicePage> = {
     sub: 'Er nettsiden treg, vanskelig å bruke på mobil eller vanskelig for Google å lese, hjelper det lite med gode tekster. Vi fikser grunnmuren, så resten av SEO-arbeidet gir resultater.',
     checks: ['Gratis SEO-analyse', `SEO fra ${kr(PRICES.seo)}/mnd eks. mva`, '100 % fornøyd-garanti'],
     primary: 'Bestill gratis SEO-analyse',
-    bg: hero('/assets/Images/Tjenester/header/seo/', 'Søkemotor optimalisering av seo byrå.webp', [['640', 640], ['1280', 1280], ['1920', 1920]]),
+    bg: svcHero('seo'),
     form: SEO_FORM,
     preselect: 'SEO',
     source: 'Gratis SEO-analyse – teknisk SEO',
@@ -528,7 +527,7 @@ export const SUB_SERVICES: Record<string, SubServicePage> = {
     sub: 'Folk søker etter svar. Vi finner ut hva kundene dine spør Google om, og skriver tekster, artikler og sider som svarer – så de finner deg, ikke konkurrentene.',
     checks: ['Søkeordsanalyse', `SEO fra ${kr(PRICES.seo)}/mnd eks. mva`, '100 % fornøyd-garanti'],
     primary: 'Bestill gratis SEO-analyse',
-    bg: hero(S, 'innholdsproduksjon for søkemotor optimalisering.webp', [['640', 640], ['1280', 1280]]),
+    bg: svcHero('innhold'),
     form: SEO_FORM,
     preselect: 'SEO',
     source: 'Gratis SEO-analyse – innholdsproduksjon',
@@ -625,7 +624,7 @@ export const SUB_SERVICES: Record<string, SubServicePage> = {
     sub: 'Google ser på hva andre sier om deg: hvem som lenker til nettsiden din, hva kundene skriver i anmeldelser og om bedriften står riktig oppført. Vi bygger opp dette – trygt og uten snarveier.',
     checks: ['Gratis SEO-analyse', `SEO fra ${kr(PRICES.seo)}/mnd eks. mva`, 'Trygg strategi uten kjøpte lenker'],
     primary: 'Bestill gratis SEO-analyse',
-    bg: hero(S, 'backlink søkemotor optimalisering.webp', [['640', 640], ['1280', 1280]]),
+    bg: svcHero('offpage'),
     form: SEO_FORM,
     preselect: 'SEO',
     source: 'Gratis SEO-analyse – off-page SEO',

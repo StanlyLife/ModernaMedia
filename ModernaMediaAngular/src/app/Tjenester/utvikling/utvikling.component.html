@@ -6,7 +6,7 @@
     sub="Skreddersydde hjemmesider, programvare og applikasjoner for bedrifter – bygget helt fra bunn med banebrytende teknologi som SPA-rammeverk og full cloud-service."
     [checks]="['Nettsider fra ' + kr(P.nettside) + ' eks. mva', 'Fast pris før oppstart', 'SEO-optimalisert fra dag én']"
     primary="Få pristilbud på nettside"
-    [bg]="{ src: '/assets/Images/Tjenester/header/utvikling/1280/Bedrifts nettside og datasytem for bedrifter.webp' }"
+    [bg]="{ src: '/assets/img/svc/utvikling-hero-1920.webp', srcset: '/assets/img/svc/utvikling-hero-640.webp 640w, /assets/img/svc/utvikling-hero-1280.webp 1280w, /assets/img/svc/utvikling-hero-1920.webp 1920w' }"
     [anchors]="[['Tjenester', 'tjenester'], ['Hjemmeside for bedrift', 'webutvikling'], ['Programvare', 'programvare'], ['Priser', 'priser'], ['Spørsmål og svar', 'faq']]"
     formTitle="Få pristilbud på nettside eller programvare"
     preselect="Nettside"
@@ -48,7 +48,7 @@
   @defer (on idle; hydrate on viewport) {
     <v2-info
       anchor="webutvikling"
-      img="/assets/Images/Tjenester/info-section/utvikling/utvikling av hjemmeside for bedrifter i oslo.webp"
+      img="/assets/img/svc/utvikling-hjemmeside-1040.webp"
       alt="Utvikling av hjemmeside for bedrifter i Oslo"
       kicker="Øk din online tilstedeværelse med en"
       title="Hjemmeside for bedriften din"
@@ -63,7 +63,7 @@
       anchor="programvare"
       [soft]="true"
       [rev]="true"
-      img="/assets/Images/Tjenester/info-section/utvikling/utvikling av datasystem for bedrifter.webp"
+      img="/assets/img/svc/utvikling-datasystem-1040.webp"
       alt="Utvikling av programvare og datasystem for bedrifter"
       kicker="Spar kostnader med"
       title="Programvare for bedriften din"

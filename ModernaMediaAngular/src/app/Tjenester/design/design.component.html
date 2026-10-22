@@ -6,7 +6,7 @@
     sub="Vi skaper vakre design med kunden i fokus. Et godt design skal øke en bedrifts verdi, tillit og tilstedeværelse gjennom et godt førsteinntrykk. Hvilket førsteinntrykk gir bedriften din?"
     [checks]="['Design fra ' + kr(P.design) + ' eks. mva', 'Fast pris før oppstart', '100 % fornøyd-garanti']"
     primary="Få pristilbud på design"
-    [bg]="{ src: '/assets/Images/Tjenester/header/design/1920/Bedrift design - grafisk design.webp' }"
+    [bg]="{ src: '/assets/img/svc/design-hero-1920.webp', srcset: '/assets/img/svc/design-hero-640.webp 640w, /assets/img/svc/design-hero-1280.webp 1280w, /assets/img/svc/design-hero-1920.webp 1920w' }"
     [anchors]="[['Tjenester', 'tjenester'], ['Logo design', 'logo-design'], ['Webdesign', 'webdesign'], ['Grafisk design', 'grafisk-design'], ['Priser', 'priser'], ['Spørsmål og svar', 'faq']]"
     formTitle="Få pristilbud på design"
     formMessage="Hva trenger du? F.eks. ny logo, profil eller webdesign"
@@ -56,7 +56,7 @@
   @defer (on idle; hydrate on viewport) {
     <v2-info
       anchor="logo-design"
-      img="/assets/Images/Tjenester/info-section/design/logo design for bedrift.webp"
+      img="/assets/img/svc/design-logo-1350.webp"
       alt="Logo design for bedrift"
       kicker="Bygg en sterk merkevare med en"
       title="Logo design for bedriften din"
@@ -71,7 +71,7 @@
       anchor="webdesign"
       [soft]="true"
       [rev]="true"
-      img="/assets/Images/Tjenester/info-section/design/web design for bedrift oslo.webp"
+      img="/assets/img/svc/design-web-1350.webp"
       alt="Webdesign for bedrift i Oslo"
       kicker="Voks organisk med skreddersydd"
       title="Webdesign for bedriften din"
@@ -84,7 +84,7 @@
     />
     <v2-info
       anchor="grafisk-design"
-      img="/assets/Images/Tjenester/info-section/design/grafisk design for bedrift oslo.webp"
+      img="/assets/img/svc/design-grafisk-1348.webp"
       alt="Grafisk design for bedrift i Oslo"
       kicker="Uttrykk dine verdier med"
       title="Grafisk design"
