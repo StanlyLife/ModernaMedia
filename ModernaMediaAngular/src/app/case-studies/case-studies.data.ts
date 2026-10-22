@@ -167,11 +167,11 @@ const galleryImage = (
 });
 
 /**
- * Concept cases (kind 'concept': our own design work for businesses that are not clients) are hidden for now –
- * no card, no page (the URL goes to /error) and not prerendered. Their files in cases/ stay; set this to true to
- * bring them all back.
+ * Concept cases (kind 'concept': our own design work for businesses that are not clients) are shown on
+ * /case-studies and get their own (noindex) page. Set this to false to hide them all again – no card, no page
+ * (the URL goes to /error) and not prerendered. Their files in cases/ stay either way.
  */
-const SHOW_CONCEPT_CASES = false;
+const SHOW_CONCEPT_CASES = true;
 
 const ALL_CASE_STUDIES: CaseStudy[] = [
   {
