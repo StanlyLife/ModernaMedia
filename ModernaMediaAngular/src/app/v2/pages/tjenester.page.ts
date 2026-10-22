@@ -4,6 +4,7 @@ import { SeoService } from '../../services/seo.service';
 import { V2_BLOCKS } from '../v2-blocks';
 import { IMG, SERVICES } from '../v2-data';
 import { applyV2Seo } from '../v2-seo';
+import { kr, PRICES } from '../prices';
 
 @Component({
   selector: 'app-v2-tjenester',
@@ -137,7 +138,7 @@ export class TjenesterPageComponent implements OnInit {
     applyV2Seo(this.seo, {
       path: '/tjenester',
       title: 'Tjenester: nettsider, design og SEO for bedrifter | Moderna Media',
-      description: 'Se alle tjenestene til Moderna Media: nettsider og programvare, logo og webdesign, og SEO. Fra 7.500 kr eks. mva – fast pris før vi starter.',
+      description: `Se alle tjenestene til Moderna Media: nettsider og programvare, logo og webdesign, og SEO. Fra ${kr(PRICES.design)} eks. mva – fast pris før vi starter.`,
       crumbs: [{ name: 'Tjenester', path: '/tjenester' }],
     });
   }

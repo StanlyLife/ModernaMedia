@@ -4,7 +4,7 @@
     [pill]="['SEO', 'SEO-byrå i Oslo']"
     h1="Søkemotoroptimalisering (SEO)"
     sub="Vi øker synlighet, vekst og omsetning gjennom søkemotoroptimalisering for bedriften din – med teknisk SEO, innholdsproduksjon og off-page SEO."
-    [checks]="['SEO fra 5.000 kr/mnd eks. mva', 'Gratis SEO-analyse', '100 % fornøyd-garanti']"
+    [checks]="['SEO fra ' + kr(P.seo) + '/mnd eks. mva', 'Gratis SEO-analyse', '100 % fornøyd-garanti']"
     primary="Bestill gratis SEO-analyse"
     [bg]="{ src: '/assets/Images/Tjenester/header/seo/1920/Søkemotor optimalisering av seo byrå.webp' }"
     [anchors]="[['Tjenester', 'tjenester'], ['Teknisk SEO', 'teknisk-seo'], ['Off-page SEO', 'off-page-seo'], ['Innholdsproduksjon', 'innholdsproduksjon'], ['Priser', 'priser'], ['Spørsmål og svar', 'faq']]"
@@ -94,7 +94,7 @@
       [text]="innholdText"
       link="/tjenester/bedrift/seo/innholdsproduksjon"
       linkLabel="Les mer om innholdsproduksjon"
-      [fact]="['+160.000', 'i organisk trafikk – Sola Parkering']"
+      [fact]="['+160 000', 'i organisk trafikk – Sola Parkering']"
     />
 
     <section class="soft" aria-label="Kundehistorie">
@@ -114,7 +114,7 @@
       title="Hva koster SEO?"
       badge="Løpende SEO-avtale"
       name="SEO"
-      price="5.000 kr"
+      [price]="kr(P.seo)"
       per="/mnd"
       [list]="['Teknisk SEO og hastighet', 'Søkeordsanalyse og innholdsproduksjon', 'Off-page SEO og lenkebygging', 'Lokal SEO og Google Bedriftsprofil']"
       cta="Få pristilbud på SEO"

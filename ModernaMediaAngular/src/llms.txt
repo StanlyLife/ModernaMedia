@@ -31,7 +31,7 @@
 
 - [Sola Parkering](https://modernamedia.no/case-study/sola-parkering): Rask nettside og lokal SEO for ny parkeringsplass ved Stavanger lufthavn. +160 000 årlige organiske besøk og 5,6× flere bookinger etter lansering.
 - [Fjerdingby Pizza & Grill](https://modernamedia.no/case-study/fjerdingby-pizza): Next.js-nettside med digital meny, ny logo, take-away-meny og lokal SEO. Lastetid under 1,2 s på mobil og førsteplass på «pizza Fjerdingby».
-- [Østlandet Brønnboring](https://modernamedia.no/case-study/ostlandet-bronnboring): Ny nettside, HubSpot og teknisk SEO ga 3× flere kvalifiserte leads på fire måneder og 55 % kortere tid til tilbud.
+- [Østlandet Brønnboring](https://modernamedia.no/case-study/ostlandet-bronnboring): Ny nettside, et smartere kontaktskjema og teknisk SEO ga 3× flere kvalifiserte leads på fire måneder og 55 % kortere tid til tilbud.
 - [Alle kundecaser](https://modernamedia.no/case-studies)
 
 ## Kontakt og tilbud

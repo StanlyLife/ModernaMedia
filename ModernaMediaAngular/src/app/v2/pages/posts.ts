@@ -1,4 +1,5 @@
 import { PostCard } from '../v2-blocks';
+import { kr, PRICES } from '../prices';
 
 export type ArticleBlock =
   | { h2: string }
@@ -29,7 +30,7 @@ export const ARTICLES: Article[] = [
     title: 'Hva koster en nettside for bedrift?',
     metaTitle: 'Hva koster en nettside for bedrift i 2026? | Moderna Media',
     description:
-      'Hva koster en nettside for bedrift? Vi går gjennom hva som påvirker prisen, hva som bør være inkludert, og hva du bør se etter i et tilbud. Nettsider fra 25.000 kr eks. mva.',
+      `Hva koster en nettside for bedrift? Vi går gjennom hva som påvirker prisen, hva som bør være inkludert, og hva du bør se etter i et tilbud. Nettsider fra ${kr(PRICES.nettside)} eks. mva.`,
     sub: 'En ærlig gjennomgang av hva som påvirker prisen – og hva du bør se etter i et tilbud.',
     category: 'Nettsider',
     datePublished: '2026-10-07',
@@ -40,14 +41,14 @@ export const ARTICLES: Article[] = [
     contactService: 'Nettside',
     blocks: [
       { h2: 'Kort svar' },
-      { p: 'En profesjonell nettside for bedrift koster som regel fra 25.000 kr eks. mva hos oss. Prisen avhenger av hvor mange sider du trenger, hvilke funksjoner som skal med, og hvor mye innhold som må lages.' },
+      { p: `En profesjonell nettside for bedrift koster som regel fra ${kr(PRICES.nettside)} eks. mva hos oss. Prisen avhenger av hvor mange sider du trenger, hvilke funksjoner som skal med, og hvor mye innhold som må lages.` },
       { p: 'Under går vi gjennom hva som påvirker prisen, slik at du vet hva du betaler for – uansett hvem du velger.' },
       { h2: 'Hva påvirker prisen?' },
       { p: 'Ingen nettsider er like, men det er stort sett de samme tingene som avgjør hvor mye arbeid som kreves:' },
       { ul: ['Antall sider, og hvor mye innhold som skal skrives', 'Design: ferdig mal eller skreddersydd design', 'Funksjoner som booking, nettbutikk, innlogging eller integrasjoner', 'SEO og hastighetsoptimalisering', 'Hvem som skriver tekstene og tar bildene'] },
       { h2: 'Våre pakker' },
       { p: 'For å gjøre det enklere har vi tre pakker som dekker behovene til de fleste bedrifter. Alle priser er eks. mva.' },
-      { ul: ['Flersiders – fra 25.000 kr: en optimalisert nettside med flere sider, som vokser med bedriften.', 'Komplett pakke – fra 50.000 kr: alt de fleste etablerte bedrifter trenger, inkludert søkemotoroptimalisering.', 'Kompleks pakke – fra 115.000 kr: for bedrifter som trenger betaling, innlogging, database og API-er.'] },
+      { ul: [`Flersiders – fra ${kr(PRICES.nettside)}: en optimalisert nettside med flere sider, som vokser med bedriften.`, `Komplett pakke – fra ${kr(PRICES.komplett)}: alt de fleste etablerte bedrifter trenger, inkludert søkemotoroptimalisering.`, `Kompleks pakke – fra ${kr(PRICES.kompleks)}: for bedrifter som trenger betaling, innlogging, database og API-er.`] },
       { callout: { title: 'Se alle priser og pakker', text: 'Sammenlign pakkene og se hva som er inkludert.', cta: 'Se priser', link: '/priser' } },
       { h2: 'Hva er inkludert?' },
       { p: 'Alle nettsidene våre leveres med oppsett av Google Analytics og Google Bedriftsprofil, hastighetsoptimalisering, serveroppsett og TLS-sikkerhet. Mange tar ekstra betalt for dette – hos oss er det en del av jobben.' },
@@ -114,7 +115,7 @@ export const ARTICLES: Article[] = [
       { p: 'Før du starter et logoprosjekt, er det lurt å tenke gjennom noen spørsmål:' },
       { ol: ['Hvem er kundene dine?', 'Hvilke tre ord skal folk tenke på når de ser bedriften din?', 'Hvilke konkurrenter vil du skille deg fra?', 'Hvor skal logoen brukes mest?'] },
       { p: 'Med svar på disse spørsmålene blir det mye enklere å lage en logo som treffer – og som holder i mange år.' },
-      { callout: { title: 'Trenger du en ny logo?', text: 'Design fra 7.500 kr eks. mva – fast pris før vi starter.', cta: 'Se logo design', link: '/tjenester/bedrift/design/logo-design' } },
+      { callout: { title: 'Trenger du en ny logo?', text: `Design fra ${kr(PRICES.design)} eks. mva – fast pris før vi starter.`, cta: 'Se logo design', link: '/tjenester/bedrift/design/logo-design' } },
     ],
   },
   {

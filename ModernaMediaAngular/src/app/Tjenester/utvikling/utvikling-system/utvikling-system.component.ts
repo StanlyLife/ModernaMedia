@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 import { SeoService } from '../../../services/seo.service';
 import { SeoUtils } from 'src/utils/SeoUtils';
+import { kr, PRICES } from '../../../v2/prices';
 import { AboutYourNextProjectComponent } from '../../../components/about-your-next-project/about-your-next-project.component';
 @Component({
   selector: 'app-utvikling-system',
@@ -12,6 +13,8 @@ import { AboutYourNextProjectComponent } from '../../../components/about-your-ne
   imports: [CommonModule, AboutYourNextProjectComponent],
 })
 export class UtviklingSystemComponent implements OnInit {
+  readonly kr = kr;
+  readonly P = PRICES;
   constructor(
     private seo: SeoService,
     private sanitizer: DomSanitizer,

@@ -639,9 +639,9 @@ const ALL_CASE_STUDIES: CaseStudy[] = [
     title: 'Østlandet Brønnboring fikk 3× flere kvalifiserte leads',
     heroTitle: '3× flere kvalifiserte leads',
     subtitle:
-      'Teknisk SEO, bransjesider og smart leadshåndtering fylte kalenderen i høysesongen.',
+      'Teknisk SEO, bransjesider og et smartere kontaktskjema fylte kalenderen i høysesongen.',
     summary:
-      'Østlandet Brønnboring konkurrerer om store anbud og privatkunder i hele regionen. Vi bygget en robust presentasjon av referanseprosjekter, sørget for at teknisk data ble forståelig, og implementerte scoring som prioriterer riktige forespørsler.',
+      'Østlandet Brønnboring konkurrerer om store anbud og privatkunder i hele regionen. Vi bygget en robust presentasjon av referanseprosjekter, sørget for at teknisk data ble forståelig, og laget et kontaktskjema som gir selgerne det de trenger å vite.',
     website: 'https://bronn-energiboring.no/',
     indexable: true,
     heroImage: '/assets/img/case/ostlandet-bronnboring-1280.webp',
@@ -655,7 +655,7 @@ const ALL_CASE_STUDIES: CaseStudy[] = [
     industry: 'Bygg og anlegg',
     location: 'Østlandet',
     timeframe: '7 uker inkl. foto og film',
-    services: ['Nettside', 'SEO', 'HubSpot', 'Video'],
+    services: ['Nettside', 'SEO', 'Kontaktskjema', 'Video'],
     testimonial: {
       quote:
         'Vi hadde behov for flere, bedre kvalifiserte leads i byggeperiodene. Den nye løsningen fra Moderna Media har gitt oss tre ganger flere forespørsler og bedre struktur på salgsprosessen.',
@@ -690,12 +690,11 @@ const ALL_CASE_STUDIES: CaseStudy[] = [
       {
         title: 'Leveransen',
         body: [
-          'Vi laget prosjektkort der bilder, sted, grunnforhold og leveranse beskrives likt. Kortene kan filtreres og brukes i tilbud. Samtidig koblet vi skjemaet til HubSpot, som prioriterer henvendelsene etter boretype, budsjett og tidspunkt.',
+          'Vi laget prosjektkort der bilder, sted, grunnforhold og leveranse beskrives likt. Kortene kan filtreres og brukes i tilbud. Samtidig laget vi et kontaktskjema som spør om boretype, budsjett og tidspunkt, så selgerne vet hva henvendelsen gjelder før de tar kontakt.',
         ],
         bullets: [
           'Teknisk SEO med strukturert data og FAQ',
           'Film fra byggeplassen til sosiale medier',
-          'Oversikt for salg og produksjon',
         ],
         image: {
           src: '/assets/img/home/case-ostlandet-bronnboring-650.webp',
@@ -723,8 +722,8 @@ const ALL_CASE_STUDIES: CaseStudy[] = [
       },
       {
         icon: 'users',
-        title: 'Prioriterte henvendelser',
-        description: 'HubSpot sorterer og varsler om de beste forespørslene.',
+        title: 'Bedre henvendelser',
+        description: 'Skjemaet spør om det selgerne trenger å vite, så de kan svare raskere.',
       },
       {
         icon: 'star',
@@ -736,7 +735,7 @@ const ALL_CASE_STUDIES: CaseStudy[] = [
     cardMetric: { value: '3×', label: 'kvalifiserte leads' },
     seoTitle: 'Case: Østlandet Brønnboring – 3× flere kvalifiserte leads',
     seoDescription:
-      'Ny nettside, HubSpot og teknisk SEO ga Østlandet Brønnboring 3× flere kvalifiserte leads på fire måneder og 55 % kortere tid til tilbud.',
+      'Ny nettside, et smartere kontaktskjema og teknisk SEO ga Østlandet Brønnboring 3× flere kvalifiserte leads på fire måneder og 55 % kortere tid til tilbud.',
     datePublished: '2025-12-01',
     dateModified: '2026-10-11',
   },

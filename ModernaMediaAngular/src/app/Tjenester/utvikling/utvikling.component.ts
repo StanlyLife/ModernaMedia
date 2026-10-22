@@ -4,6 +4,7 @@ import { SeoUtils } from 'src/utils/SeoUtils';
 import { V2_BLOCKS } from '../../v2/v2-blocks';
 import { PROGRAMVARE_CARD, UTVIKLING_FAQ, WEBSITE_PACKAGES } from '../../v2/v2-data';
 import { applyV2Seo } from '../../v2/v2-seo';
+import { kr, PRICES } from '../../v2/prices';
 
 @Component({
   selector: 'app-utvikling',
@@ -15,6 +16,8 @@ export class UtviklingComponent implements OnInit {
   constructor(private seo: SeoService) {}
 
   faq = UTVIKLING_FAQ;
+  readonly kr = kr;
+  readonly P = PRICES;
   packages = [...WEBSITE_PACKAGES, PROGRAMVARE_CARD];
 
   hjemmesideText = [
@@ -26,7 +29,7 @@ export class UtviklingComponent implements OnInit {
 
   programvareText = [
     'En programvare er fellesbetegnelse for flere tjenester som sammen betjener en digital plattform. I dag er det gode muligheter for å få utviklet din egen skreddersydde programvare som har gode løsninger til de utfordringene og kravene din bedrift har.',
-    'Vi kjenner fra erfaring at de fleste som driver bedrifter bruker programvare som ikke er helt optimal: et POS-system i restauranten som ikke fungerer godt, et dyrt CRM-system som er lite oversiktlig, eller et KS-system i bygg- og anleggsbransjen som er vanskelig å bruke og ikke gir deg dokumentasjonen du trenger. Vi i Moderna kan tilby deg din egen skreddersydde løsning, slik at du får maks ut av driften.',
+    'Vi kjenner fra erfaring at de fleste som driver bedrifter bruker programvare som ikke er helt optimal: et POS-system i restauranten som ikke fungerer godt, eller et KS-system i bygg- og anleggsbransjen som er vanskelig å bruke og ikke gir deg dokumentasjonen du trenger. Vi i Moderna kan tilby deg din egen skreddersydde løsning, slik at du får maks ut av driften.',
     'En god programvare:',
   ];
 
@@ -40,7 +43,7 @@ export class UtviklingComponent implements OnInit {
         { name: 'Utvikling', path: '/tjenester/bedrift/utvikling' },
       ],
       faq: UTVIKLING_FAQ,
-      service: { name: 'Nettsider og programvare for bedrifter', description: SeoUtils.TjenesterUtvikling.description, lowPrice: 25000 },
+      service: { name: 'Nettsider og programvare for bedrifter', description: SeoUtils.TjenesterUtvikling.description, lowPrice: PRICES.nettside },
     });
   }
 }

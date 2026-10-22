@@ -1,15 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { SeoService } from '../../services/seo.service';
+import { ORGANIZATION_ID, SeoService, SITE_ORIGIN } from '../../services/seo.service';
 import { V2_BLOCKS } from '../v2-blocks';
 import { PRICE_FAQ, PriceCardData, WEBSITE_PACKAGES } from '../v2-data';
 import { applyV2Seo } from '../v2-seo';
+import { kr, PRICE_LIST, PRICES } from '../prices';
 
 const CARDS: PriceCardData[] = [
   {
     name: 'Nettside',
     description: 'Den digitale broen mellom deg og kundene dine.',
-    price: '25.000 kr',
+    price: kr(PRICES.nettside),
     list: ['Skreddersydd design for bedriften din', 'Fungerer på mobil, nettbrett og PC', 'Google Analytics og Google Bedriftsprofil', 'Hastighetsoptimalisering og TLS-sikkerhet'],
     fit: 'Passer for: Bedrifter som vil bli funnet og få flere henvendelser.',
     more: { href: '/tjenester/bedrift/utvikling/hjemmeside-bedrift', label: 'Les om nettsider' },
@@ -17,16 +18,16 @@ const CARDS: PriceCardData[] = [
   {
     name: 'Programvare',
     description: 'Gjør hverdagen enklere gjennom automatisering.',
-    price: '25.000 kr',
+    price: kr(PRICES.programvare),
     list: ['Skreddersydd for din bedrift', 'Automatiserte jobber', 'Synkronisering gjennom API', 'Estimat etter et uforpliktende møte'],
-    note: 'Enkel fra 25.000 kr · Avansert fra 50.000 kr',
+    note: `Enkel fra ${kr(PRICES.programvare)} · Avansert fra ${kr(PRICES.programvareAvansert)}`,
     fit: 'Passer for: Bedrifter med manuelle og tidkrevende rutiner.',
     more: { href: '/tjenester/bedrift/utvikling/programvare', label: 'Les om programvare' },
   },
   {
     name: 'Design',
     description: 'Skill deg ut med minneverdig design.',
-    price: '7.500 kr',
+    price: kr(PRICES.design),
     list: ['Logo design', 'Webdesign', 'Grafisk design og visuell profil', 'Ferdige filer for nett og trykk'],
     fit: 'Passer for: Nye bedrifter og bedrifter som vil fornye seg.',
     more: { href: '/tjenester/bedrift/design', label: 'Les om design' },
@@ -34,7 +35,7 @@ const CARDS: PriceCardData[] = [
   {
     name: 'SEO',
     description: 'Gjør det enkelt for kundene å finne deg.',
-    price: '5.000 kr',
+    price: kr(PRICES.seo),
     per: '/mnd',
     list: ['Teknisk SEO', 'Innholdsproduksjon', 'Off-page SEO og lenkebygging', 'Målbare resultater'],
     fit: 'Passer for: Bedrifter som vil ha flere kunder fra Google.',
@@ -57,6 +58,7 @@ const CARDS: PriceCardData[] = [
         <nav class="anchors" aria-label="På denne siden">
           <span>Hopp til:</span>
           <a [routerLink]="[]" fragment="startpriser">Alle tjenester</a>
+          <a [routerLink]="[]" fragment="prisliste">Prisliste</a>
           <a [routerLink]="[]" fragment="nettsider">Nettsidepakker</a>
           <a [routerLink]="[]" fragment="inkludert">Inkludert</a>
           <a [routerLink]="[]" fragment="faq">Spørsmål og svar</a>
@@ -79,7 +81,42 @@ const CARDS: PriceCardData[] = [
         </div>
       </section>
 
-      <section class="soft" id="nettsider" aria-labelledby="packages-title">
+      <section class="soft" id="prisliste" aria-labelledby="list-title">
+        <div class="wrap">
+          <div class="head center">
+            <span class="kicker">Prisliste</span>
+            <h2 class="h2" id="list-title">Alle priser samlet</h2>
+            <p class="lead">Startprisen for hver tjeneste. Velg en tjeneste for å lese mer om hva som er med.</p>
+          </div>
+          <div class="plist">
+            @for (g of priceList; track g.id) {
+              <div class="pgroup" [id]="g.id">
+                <h3>{{ g.title }}</h3>
+                <p class="pg-lead">{{ g.lead }}</p>
+                <ul>
+                  @for (r of g.rows; track r.name) {
+                    <li>
+                      <a [routerLink]="r.link">
+                        <span class="pl-txt"><b>{{ r.name }}</b><small>{{ r.text }}</small></span>
+                        <span class="pl-price">
+                          @if (r.price) {
+                            <small>fra</small> {{ kr(r.price) }}@if (r.per) {<small>{{ r.per }}</small>}
+                          } @else {
+                            Gratis
+                          }
+                        </span>
+                      </a>
+                    </li>
+                  }
+                </ul>
+              </div>
+            }
+          </div>
+          <p class="pl-note">Alle priser er startpriser eks. 25 % mva. Du får alltid fast pris før vi starter.</p>
+        </div>
+      </section>
+
+      <section id="nettsider" aria-labelledby="packages-title">
         <div class="wrap">
           <div class="head center">
             <span class="kicker">Nettsider</span>
@@ -94,7 +131,7 @@ const CARDS: PriceCardData[] = [
         </div>
       </section>
 
-      <section aria-labelledby="know-title">
+      <section class="soft" aria-labelledby="know-title">
         <div class="wrap">
           <div class="head center">
             <span class="kicker">Godt å vite</span>
@@ -109,7 +146,7 @@ const CARDS: PriceCardData[] = [
         </div>
       </section>
 
-      <section class="soft" id="inkludert" aria-labelledby="incl-title">
+      <section id="inkludert" aria-labelledby="incl-title">
         <div class="wrap">
           <div class="head center">
             <span class="kicker">Uten ekstra kostnad</span>
@@ -124,7 +161,7 @@ const CARDS: PriceCardData[] = [
         </div>
       </section>
 
-      <section aria-labelledby="buy-title">
+      <section class="soft" aria-labelledby="buy-title">
         <div class="wrap">
           <div class="head center">
             <span class="kicker">Slik kjøper du</span>
@@ -147,10 +184,13 @@ const CARDS: PriceCardData[] = [
       <v2-contact source="priser" />
     </div>
   `,
+  styleUrl: './priser.page.scss',
 })
 export class PriserPageComponent implements OnInit {
   private seo = inject(SeoService);
+  readonly kr = kr;
   cards = CARDS;
+  priceList = PRICE_LIST;
   packages = WEBSITE_PACKAGES;
   faq = PRICE_FAQ;
   know = [
@@ -179,9 +219,35 @@ export class PriserPageComponent implements OnInit {
     applyV2Seo(this.seo, {
       path: '/priser',
       title: 'Priser på nettside, design og SEO | Moderna Media',
-      description: 'Hva koster en nettside? Nettsider fra 25.000 kr, programvare fra 25.000 kr, design fra 7.500 kr og SEO fra 5.000 kr/mnd – alle eks. mva. Fast pris før oppstart.',
+      description: `Hva koster en nettside? Nettsider fra ${kr(PRICES.nettside)}, programvare fra ${kr(PRICES.programvare)}, design fra ${kr(PRICES.design)} og SEO fra ${kr(PRICES.seo)}/mnd – alle eks. mva. Fast pris før oppstart.`,
       crumbs: [{ name: 'Priser', path: '/priser' }],
       faq: PRICE_FAQ,
+      extraNodes: [
+        {
+          '@type': 'OfferCatalog',
+          '@id': `${SITE_ORIGIN}/priser#prisliste`,
+          name: 'Priser hos Moderna Media',
+          provider: { '@id': ORGANIZATION_ID },
+          itemListElement: PRICE_LIST.flatMap((g) =>
+            g.rows.map((r) => ({
+              '@type': 'Offer',
+              name: r.name,
+              description: r.text,
+              url: `${SITE_ORIGIN}${r.link}`,
+              category: g.title,
+              price: r.price,
+              priceCurrency: 'NOK',
+              priceSpecification: {
+                '@type': r.per ? 'UnitPriceSpecification' : 'PriceSpecification',
+                minPrice: r.price,
+                priceCurrency: 'NOK',
+                valueAddedTaxIncluded: false,
+                ...(r.per ? { unitText: 'måned' } : {}),
+              },
+            }))
+          ),
+        },
+      ],
     });
   }
 }

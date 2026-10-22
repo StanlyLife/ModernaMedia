@@ -4,6 +4,7 @@ import { SeoUtils } from 'src/utils/SeoUtils';
 import { V2_BLOCKS } from '../../v2/v2-blocks';
 import { SEO_FAQ } from '../../v2/v2-data';
 import { applyV2Seo } from '../../v2/v2-seo';
+import { kr, PRICES } from '../../v2/prices';
 
 @Component({
   selector: 'app-seo',
@@ -15,6 +16,8 @@ export class SeoComponent implements OnInit {
   constructor(private seo: SeoService) {}
 
   faq = SEO_FAQ;
+  readonly kr = kr;
+  readonly P = PRICES;
 
   tekniskText = [
     'Teknisk SEO omhandler å forbedre de tekniske delene av en nettside, som hjelper søkemotorer å enkelt registrere og lagre nettsiden. Kort fortalt er teknisk SEO å forsikre at en nettside møter de tekniske kravene til moderne søkemotorer, som Google, Bing og Yahoo.',
@@ -47,7 +50,7 @@ export class SeoComponent implements OnInit {
         { name: 'SEO', path: '/tjenester/bedrift/seo' },
       ],
       faq: SEO_FAQ,
-      service: { name: 'Søkemotoroptimalisering (SEO)', description: SeoUtils.TjenesterSeo.description, lowPrice: 5000 },
+      service: { name: 'Søkemotoroptimalisering (SEO)', description: SeoUtils.TjenesterSeo.description, lowPrice: PRICES.seo },
     });
   }
 }

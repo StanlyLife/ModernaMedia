@@ -1,4 +1,6 @@
-// Shared content for the V2 pages. Numbers come from the case studies (case-studies.data.ts).
+// Shared content for the V2 pages. Numbers come from the case studies (case-studies.data.ts),
+// prices from prices.ts.
+import { kr, num, PRICES } from './prices';
 
 export const PHONE = '902 65 326';
 export const PHONE_HREF = 'tel:+4790265326';
@@ -89,7 +91,7 @@ export const SERVICES = [
     title: 'Nettsider for bedrift',
     text: 'Design og teknisk oppsett av moderne og brukervennlige hjemmesider som trekker oppmerksomhet, bygger tillit og øker din omsetning.',
     list: ['Skreddersydd design', 'Mobilvennlig og rask', 'SEO-optimalisert fra dag én'],
-    price: '25.000 kr',
+    price: kr(PRICES.nettside),
     per: 'eks. mva',
     link: '/tjenester/bedrift/utvikling/hjemmeside-bedrift',
     linkLabel: 'Se hjemmeside-tjenesten',
@@ -99,8 +101,8 @@ export const SERVICES = [
     tag: 'Systemer som sparer deg penger',
     title: 'Programvare og systemer',
     text: 'Få programvare som automatiserer dine daglige gjøremål og gjør livet ditt enklere, samtidig som du reduserer kostnader.',
-    list: ['Booking, CRM og fagsystemer', 'Automatiserer daglige gjøremål', 'Bygget for din bedrift'],
-    price: '25.000 kr',
+    list: ['Booking- og fagsystemer', 'Automatiserer daglige gjøremål', 'Bygget for din bedrift'],
+    price: kr(PRICES.programvare),
     per: 'eks. mva',
     link: '/tjenester/bedrift/utvikling/programvare',
     linkLabel: 'Se programvare-tjenesten',
@@ -111,7 +113,7 @@ export const SERVICES = [
     title: 'Logo og grafisk design',
     text: 'Merkevarebygging, design av logo, visittkort, og generell grafisk design til nettsider, kampanjer eller markedsføringsmateriell.',
     list: ['Logo og visuell profil', 'Webdesign (UI/UX)', 'Markedsføringsmateriell'],
-    price: '7.500 kr',
+    price: kr(PRICES.design),
     per: 'eks. mva',
     link: '/tjenester/bedrift/design',
     linkLabel: 'Se design-tjenestene',
@@ -122,7 +124,7 @@ export const SERVICES = [
     title: 'SEO – synlighet på Google',
     text: 'Søkemotoroptimalisering lar kundene finne deg før de finner dine konkurrenter. Med organisk vekst kan vi hjelpe deg å øke inntektene dine.',
     list: ['Teknisk SEO', 'Innholdsproduksjon', 'Off-page og lokal SEO'],
-    price: '5.000 kr',
+    price: kr(PRICES.seo),
     per: '/mnd eks. mva',
     link: '/tjenester/bedrift/seo',
     linkLabel: 'Se SEO-tjenestene',
@@ -145,31 +147,31 @@ export const SERVICE_PRICES: PriceCardData[] = [
   {
     name: 'Nettside',
     description: 'For bedrifter som vil bli funnet og få flere henvendelser.',
-    price: '25.000 kr',
+    price: kr(PRICES.nettside),
     list: ['Skreddersydd, mobilvennlig design', 'SEO-grunnmur fra dag én', 'Google Analytics og Google Bedriftsprofil', 'Fast pris før oppstart'],
-    note: 'Flersiders fra 25.000 · Komplett fra 50.000 · Kompleks fra 115.000',
+    note: `Flersiders fra ${num(PRICES.nettside)} · Komplett fra ${num(PRICES.komplett)} · Kompleks fra ${num(PRICES.kompleks)}`,
     badge: 'Anbefalt start',
     more: { href: '/priser', label: 'Se nettsidepakkene' },
   },
   {
     name: 'Programvare',
     description: 'Skreddersydde systemer som automatiserer og forenkler hverdagen.',
-    price: '25.000 kr',
-    list: ['Booking-, CRM- eller fagsystem', 'Database og API-integrasjoner', 'Bygget for din bedrift', 'Fast pris før oppstart'],
-    note: 'Enkel fra 25.000 · Avansert fra 50.000',
+    price: kr(PRICES.programvare),
+    list: ['Booking- eller fagsystem', 'Database og API-integrasjoner', 'Bygget for din bedrift', 'Fast pris før oppstart'],
+    note: `Enkel fra ${num(PRICES.programvare)} · Avansert fra ${num(PRICES.programvareAvansert)}`,
     more: { href: '/tjenester/bedrift/utvikling/programvare', label: 'Les om programvare' },
   },
   {
     name: 'Design',
     description: 'Logo, visuell profil og grafisk materiell som bygger tillit.',
-    price: '7.500 kr',
+    price: kr(PRICES.design),
     list: ['Logo design', 'Webdesign (UI/UX)', 'Grafisk design og markedsføringsmateriell', 'Revisjon av eksisterende logo'],
     more: { href: '/tjenester/bedrift/design', label: 'Les om design' },
   },
   {
     name: 'SEO',
     description: 'Løpende søkemotoroptimalisering som gir flere kunder fra Google.',
-    price: '5.000 kr',
+    price: kr(PRICES.seo),
     per: '/mnd',
     list: ['Teknisk SEO', 'Innholdsproduksjon', 'Off-page SEO og lenkebygging', 'Lokal SEO'],
     more: { href: '/tjenester/bedrift/seo', label: 'Les om SEO' },
@@ -180,14 +182,14 @@ export const WEBSITE_PACKAGES: PriceCardData[] = [
   {
     name: 'Flersiders',
     description: 'Nettside for små bedrifter som vil vokse.',
-    price: '25.000 kr',
+    price: kr(PRICES.nettside),
     list: ['Flere sider og tydelig navigasjon', 'Google Analytics og Google Bedriftsprofil', 'Semrush-integrasjon', 'Mobilvennlig og SEO-klar'],
     fit: 'Passer for: Små bedrifter som trenger en profesjonell nettside.',
   },
   {
     name: 'Komplett',
     description: 'Nettside for etablerte bedrifter – alt de fleste har behov for.',
-    price: '50.000 kr',
+    price: kr(PRICES.komplett),
     list: ['Alt i Flersiders', 'Søkemotoroptimalisering', 'SPA-teknologi og server-side rendering', 'Bygget som vår egen nettside'],
     fit: 'Passer for: Etablerte bedrifter som vil vokse på nett.',
     badge: 'Dekker de fleste behov',
@@ -195,7 +197,7 @@ export const WEBSITE_PACKAGES: PriceCardData[] = [
   {
     name: 'Kompleks',
     description: 'For bedrifter med spesifikke og komplekse krav.',
-    price: '115.000 kr',
+    price: kr(PRICES.kompleks),
     list: ['Betalingssystem', 'Innlogging og autorisering', 'Database og API', 'Integrerte databehandlingsløsninger'],
     fit: 'Passer for: Bedrifter med spesifikke og komplekse krav.',
   },
@@ -203,9 +205,9 @@ export const WEBSITE_PACKAGES: PriceCardData[] = [
 
 export const PROGRAMVARE_CARD: PriceCardData = {
   name: 'Programvare',
-  description: 'Booking, CRM eller drift- og logikksystem for din bedrift.',
-  price: '25.000 kr',
-  list: ['Enkel fra 25.000 kr', 'Avansert fra 50.000 kr', 'Kartlegging av behov', 'Fast pris før oppstart'],
+  description: 'Booking-, drift- eller logikksystem for din bedrift.',
+  price: kr(PRICES.programvare),
+  list: [`Enkel fra ${kr(PRICES.programvare)}`, `Avansert fra ${kr(PRICES.programvareAvansert)}`, 'Kartlegging av behov', 'Fast pris før oppstart'],
 };
 
 export const PROCESS_STEPS = [
@@ -223,13 +225,13 @@ export const HOME_FAQ_V2: FaqEntry[] = [
   {
     question: 'Hva koster en nettside for bedrift?',
     answer:
-      'En nettside fra oss koster fra 25.000 kr eks. mva. Prisen avhenger av hvor stor og avansert nettsiden skal være: Flersiders nettside fra 25.000 kr, Komplett pakke fra 50.000 kr og Kompleks pakke fra 115.000 kr (alle eks. mva). Du får alltid en fast pris før vi starter.',
+      `En nettside fra oss koster fra ${kr(PRICES.nettside)} eks. mva. Prisen avhenger av hvor stor og avansert nettsiden skal være: Flersiders nettside fra ${kr(PRICES.nettside)}, Komplett pakke fra ${kr(PRICES.komplett)} og Kompleks pakke fra ${kr(PRICES.kompleks)} (alle eks. mva). Du får alltid en fast pris før vi starter.`,
     link: { href: '/priser', label: 'Se alle priser' },
   },
   {
     question: 'Hva koster SEO?',
     answer:
-      'SEO koster fra 5.000 kr i måneden eks. mva. Innholdet i avtalen tilpasses målene dine, og kan omfatte teknisk SEO, innholdsproduksjon og off-page SEO. Start gjerne med en gratis SEO-analyse.',
+      `SEO koster fra ${kr(PRICES.seo)} i måneden eks. mva. Innholdet i avtalen tilpasses målene dine, og kan omfatte teknisk SEO, innholdsproduksjon og off-page SEO. Start gjerne med en gratis SEO-analyse.`,
     link: { href: '/gratis-seo-analyse', label: 'Bestill gratis SEO-analyse' },
   },
   {
@@ -274,7 +276,7 @@ export const UTVIKLING_FAQ: FaqEntry[] = [
   {
     question: 'Hva koster en nettside for bedrift?',
     answer:
-      'En nettside fra Moderna Media koster fra 25.000 kr eks. mva. Flersiders nettside koster fra 25.000 kr, Komplett pakke fra 50.000 kr og Kompleks pakke fra 115.000 kr (alle eks. mva). Prisen avhenger av antall sider, funksjoner og integrasjoner, og du får alltid en fast pris før vi starter.',
+      `En nettside fra Moderna Media koster fra ${kr(PRICES.nettside)} eks. mva. Flersiders nettside koster fra ${kr(PRICES.nettside)}, Komplett pakke fra ${kr(PRICES.komplett)} og Kompleks pakke fra ${kr(PRICES.kompleks)} (alle eks. mva). Prisen avhenger av antall sider, funksjoner og integrasjoner, og du får alltid en fast pris før vi starter.`,
     link: { href: '/priser', label: 'Se alle priser' },
   },
   {
@@ -300,7 +302,7 @@ export const UTVIKLING_FAQ: FaqEntry[] = [
   {
     question: 'Hva koster skreddersydd programvare?',
     answer:
-      'Programvare koster fra 25.000 kr eks. mva for enklere løsninger og fra 50.000 kr eks. mva for avanserte systemer. Vi kartlegger behovet ditt først, slik at du får en fast pris.',
+      `Programvare koster fra ${kr(PRICES.programvare)} eks. mva for enklere løsninger og fra ${kr(PRICES.programvareAvansert)} eks. mva for avanserte systemer. Vi kartlegger behovet ditt først, slik at du får en fast pris.`,
   },
   {
     question: 'Kan dere forbedre nettsiden jeg har i dag?',
@@ -319,7 +321,7 @@ export const DESIGN_FAQ: FaqEntry[] = [
   {
     question: 'Hva koster en logo?',
     answer:
-      'Design hos Moderna Media starter fra 7.500 kr eks. mva. Prisen på en logo avhenger av omfanget – om du trenger kun logo eller en hel visuell profil – og hvor mange konsepter og revisjoner du ønsker. Du får en fast pris før vi starter.',
+      `Design hos Moderna Media starter fra ${kr(PRICES.design)} eks. mva. Prisen på en logo avhenger av omfanget – om du trenger kun logo eller en hel visuell profil – og hvor mange konsepter og revisjoner du ønsker. Du får en fast pris før vi starter.`,
   },
   {
     question: 'Hva er forskjellen på en logo og en visuell profil?',
@@ -367,7 +369,7 @@ export const SEO_FAQ: FaqEntry[] = [
   {
     question: 'Hva koster SEO?',
     answer:
-      'SEO hos Moderna Media koster fra 5.000 kr i måneden eks. mva. Prisen avhenger av konkurransen i bransjen din, hvor mange søkeord du vil rangere på og nettsidens tekniske tilstand. Start gjerne med en gratis SEO-analyse.',
+      `SEO hos Moderna Media koster fra ${kr(PRICES.seo)} i måneden eks. mva. Prisen avhenger av konkurransen i bransjen din, hvor mange søkeord du vil rangere på og nettsidens tekniske tilstand. Start gjerne med en gratis SEO-analyse.`,
     link: { href: '/gratis-seo-analyse', label: 'Bestill gratis SEO-analyse' },
   },
   {
@@ -422,17 +424,17 @@ export const PRICE_FAQ: FaqEntry[] = [
   {
     question: 'Hvordan prises programvare?',
     answer:
-      'Enkel programvare (under 75 timer utvikling) starter fra 25.000 kr, og avansert programvare fra 50.000 kr – begge eks. mva. Du får et estimat etter et uforpliktende møte.',
+      `Enkel programvare (under 75 timer utvikling) starter fra ${kr(PRICES.programvare)}, og avansert programvare fra ${kr(PRICES.programvareAvansert)} – begge eks. mva. Du får et estimat etter et uforpliktende møte.`,
   },
   {
     question: 'Hvordan fungerer SEO-prisen?',
     answer:
-      'SEO er løpende arbeid og starter fra 5.000 kr i måneden eks. mva. Vi starter med en gjennomgang, så du vet hva pengene går til.',
+      `SEO er løpende arbeid og starter fra ${kr(PRICES.seo)} i måneden eks. mva. Vi starter med en gjennomgang, så du vet hva pengene går til.`,
   },
   {
     question: 'Hva koster logo og design?',
     answer:
-      'Design starter fra 7.500 kr eks. mva. Prisen avhenger av om du trenger kun logo eller en hel visuell profil, og hvor mange konsepter og revisjoner du ønsker.',
+      `Design starter fra ${kr(PRICES.design)} eks. mva. Prisen avhenger av om du trenger kun logo eller en hel visuell profil, og hvor mange konsepter og revisjoner du ønsker.`,
   },
 ];
 
@@ -445,7 +447,7 @@ export const OSLO_FAQ: FaqEntry[] = [
   {
     question: 'Hva koster en nettside for en bedrift i Oslo?',
     answer:
-      'Nettsider fra oss starter fra 25.000 kr eks. mva, uansett hvor i landet du holder til. Du får alltid en fast pris før vi starter.',
+      `Nettsider fra oss starter fra ${kr(PRICES.nettside)} eks. mva, uansett hvor i landet du holder til. Du får alltid en fast pris før vi starter.`,
     link: { href: '/priser', label: 'Se alle priser' },
   },
   {

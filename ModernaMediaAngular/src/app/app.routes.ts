@@ -84,23 +84,20 @@ export const appRoutes: Routes = [
   {
     path: 'tjenester/bedrift/design/grafisk-design',
     loadComponent: () =>
-      import('./Tjenester/design/design-grafisk/design-grafisk.component').then(
-        (m) => m.DesignGrafiskComponent
-      ),
+      import('./v2/pages/sub-service.page').then((m) => m.V2SubServicePage),
+    data: { page: 'grafisk-design' },
   },
   {
     path: 'tjenester/bedrift/design/logo-design',
     loadComponent: () =>
-      import('./Tjenester/design/design-logo/design-logo.component').then(
-        (m) => m.DesignLogoComponent
-      ),
+      import('./v2/pages/sub-service.page').then((m) => m.V2SubServicePage),
+    data: { page: 'logo-design' },
   },
   {
     path: 'tjenester/bedrift/design/web-design',
     loadComponent: () =>
-      import('./Tjenester/design/design-web/design-web.component').then(
-        (m) => m.DesignWebComponent
-      ),
+      import('./v2/pages/sub-service.page').then((m) => m.V2SubServicePage),
+    data: { page: 'web-design' },
   },
   {
     // Legacy URL; the server answers it with a 301 to /tjenester/bedrift/seo.
@@ -115,23 +112,20 @@ export const appRoutes: Routes = [
   {
     path: 'tjenester/bedrift/seo/teknisk-seo',
     loadComponent: () =>
-      import('./Tjenester/seo/seo-teknisk/seo-teknisk.component').then(
-        (m) => m.SeoTekniskComponent
-      ),
+      import('./v2/pages/sub-service.page').then((m) => m.V2SubServicePage),
+    data: { page: 'teknisk-seo' },
   },
   {
     path: 'tjenester/bedrift/seo/innholdsproduksjon',
     loadComponent: () =>
-      import(
-        './Tjenester/seo/seo-innholdsproduksjon/seo-innholdsproduksjon.component'
-      ).then((m) => m.SeoInnholdsproduksjonComponent),
+      import('./v2/pages/sub-service.page').then((m) => m.V2SubServicePage),
+    data: { page: 'innholdsproduksjon' },
   },
   {
     path: 'tjenester/bedrift/seo/off-page-seo',
     loadComponent: () =>
-      import('./Tjenester/seo/seo-off-page/seo-off-page.component').then(
-        (m) => m.SeoOffPageComponent
-      ),
+      import('./v2/pages/sub-service.page').then((m) => m.V2SubServicePage),
+    data: { page: 'off-page-seo' },
   },
   {
     path: 'tjenester/bedrift/utvikling',

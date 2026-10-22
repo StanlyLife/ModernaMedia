@@ -4,6 +4,7 @@ import { SeoUtils } from 'src/utils/SeoUtils';
 import { V2_BLOCKS } from '../../v2/v2-blocks';
 import { DESIGN_FAQ } from '../../v2/v2-data';
 import { applyV2Seo } from '../../v2/v2-seo';
+import { kr, PRICES } from '../../v2/prices';
 
 @Component({
   selector: 'app-design',
@@ -15,6 +16,8 @@ export class DesignComponent implements OnInit {
   constructor(private seo: SeoService) {}
 
   faq = DESIGN_FAQ;
+  readonly kr = kr;
+  readonly P = PRICES;
 
   logoText = [
     'En logo skal enkelt kommunisere bedriftens personlighet, tjenester og verdier ved hjelp av fargeteori, former og fonter. En god logo bør presentere et tydelig bilde av bedriften din og hva din bedrift står for.',
@@ -48,7 +51,7 @@ export class DesignComponent implements OnInit {
         { name: 'Design', path: '/tjenester/bedrift/design' },
       ],
       faq: DESIGN_FAQ,
-      service: { name: 'Logo design, webdesign og grafisk design', description: SeoUtils.TjenesterDesign.description, lowPrice: 7500 },
+      service: { name: 'Logo design, webdesign og grafisk design', description: SeoUtils.TjenesterDesign.description, lowPrice: PRICES.design },
     });
   }
 }

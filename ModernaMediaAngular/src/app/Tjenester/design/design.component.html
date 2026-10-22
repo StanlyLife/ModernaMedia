@@ -4,7 +4,7 @@
     [pill]="['DESIGN', 'Logo, webdesign og grafisk design']"
     h1="Logo, webdesign og grafisk design"
     sub="Vi skaper vakre design med kunden i fokus. Et godt design skal øke en bedrifts verdi, tillit og tilstedeværelse gjennom et godt førsteinntrykk. Hvilket førsteinntrykk gir bedriften din?"
-    [checks]="['Design fra 7.500 kr eks. mva', 'Fast pris før oppstart', '100 % fornøyd-garanti']"
+    [checks]="['Design fra ' + kr(P.design) + ' eks. mva', 'Fast pris før oppstart', '100 % fornøyd-garanti']"
     primary="Få pristilbud på design"
     [bg]="{ src: '/assets/Images/Tjenester/header/design/1920/Bedrift design - grafisk design.webp' }"
     [anchors]="[['Tjenester', 'tjenester'], ['Logo design', 'logo-design'], ['Webdesign', 'webdesign'], ['Grafisk design', 'grafisk-design'], ['Priser', 'priser'], ['Spørsmål og svar', 'faq']]"
@@ -29,7 +29,7 @@
           title="Logo design"
           text="En logo skal bygge tillit ved å validere og gjenspeile bedriftens profesjonalitet."
           [list]="['Logo i flere varianter', 'Farger og fonter', 'Revisjon av eksisterende logo']"
-          price="7.500 kr"
+          [price]="kr(P.design)"
           link="/tjenester/bedrift/design/logo-design"
           linkLabel="Les mer om logo design"
         />
@@ -65,7 +65,7 @@
       [after]="logoAfter"
       link="/tjenester/bedrift/design/logo-design"
       linkLabel="Se vår logodesign-tjeneste"
-      [fact]="['7.500 kr', 'Design fra 7.500 kr eks. mva – fast pris før vi starter']"
+      [fact]="[kr(P.design), 'Design fra ' + kr(P.design) + ' eks. mva – fast pris før vi starter']"
     />
     <v2-info
       anchor="webdesign"
@@ -100,7 +100,7 @@
           key="sola"
           kicker="Kundehistorie · Design og nettside"
           title="Sola Parkering fikk en nettside i tråd med sin identitet"
-          [metrics]="[['+160.000', 'i organisk trafikk'], ['5,6×', 'flere bookinger'], ['−40 %', 'supporthenvendelser']]"
+          [metrics]="[['+160 000', 'i organisk trafikk'], ['5,6×', 'flere bookinger'], ['−40 %', 'supporthenvendelser']]"
         />
       </div>
     </section>
@@ -111,7 +111,7 @@
       title="Hva koster logo og design?"
       badge="Logo, profil og grafisk design"
       name="Design"
-      price="7.500 kr"
+      [price]="kr(P.design)"
       [list]="['Logo design', 'Visuell profil med farger og fonter', 'Webdesign (UI/UX)', 'Grafisk design og markedsføringsmateriell', 'Revisjon av eksisterende logo']"
       cta="Få pristilbud på design"
       [factors]="[['Omfang', 'Trenger du kun en logo, eller en hel visuell profil?'], ['Konsepter og revisjoner', 'Hvor mange forslag og runder med endringer du ønsker.'], ['Flater', 'Hvor designet skal brukes: nett, trykk, skilt eller sosiale medier.'], ['Webdesign', 'Om du også trenger design av nettsiden.']]"

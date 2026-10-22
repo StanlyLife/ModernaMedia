@@ -1,0 +1,56 @@
+// Styles for the service sub-pages; shared V2 styles live in src/scss/_v2.scss.
+@use "src/variables" as *;
+
+// Six tiles read best as 3 × 2 on desktop.
+.tiles {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tile h3 {
+  font: 800 18px $ff-primary;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  &.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 980px;
+    margin: 0 auto;
+  }
+  figure {
+    margin: 0;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 48px -30px rgba(13, 14, 33, 0.45);
+  }
+  figcaption {
+    font-size: 14.5px;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .tiles,
+  .examples,
+  .examples.two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .tiles,
+  .examples,
+  .examples.two {
+    grid-template-columns: 1fr;
+  }
+}

@@ -242,7 +242,7 @@ export class TestimonialsSectionComponent {
         'Marcus Hannevig',
         'Prosjektleder',
         'Nettside + SEO',
-        'Leadshåndtering',
+        'Kontaktskjema',
       ],
       quote:
         'Etter å ha jobbet med flere byråer tidligere, er det befriende å endelig finne en partner som faktisk leverer det de lover. Profesjonelt fra start til slutt.',

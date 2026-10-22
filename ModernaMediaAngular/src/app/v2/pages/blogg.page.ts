@@ -4,6 +4,7 @@ import { V2_BLOCKS } from '../v2-blocks';
 import { IMG } from '../v2-data';
 import { applyV2Seo } from '../v2-seo';
 import { POSTS } from './posts';
+import { kr, PRICES } from '../prices';
 
 @Component({
   selector: 'app-v2-blogg',
@@ -40,9 +41,9 @@ import { POSTS } from './posts';
             <p class="lead">Artiklene gir deg et godt utgangspunkt. Vil du heller at vi gjør jobben, hjelper vi deg gjerne.</p>
           </div>
           <div class="grid3">
-            <v2-svc-card [img]="img + 'tjeneste-nettsider-840.webp'" title="Nettsider" text="Raske, mobilvennlige nettsider som gjør besøkende om til kunder." price="25.000 kr" link="/tjenester/bedrift/utvikling" linkLabel="Les mer om nettsider" />
-            <v2-svc-card [img]="img + 'tjeneste-design-840.webp'" title="Design" text="Logo, webdesign og grafisk design som gjør deg lett å huske." price="7.500 kr" link="/tjenester/bedrift/design" linkLabel="Les mer om design" />
-            <v2-svc-card [img]="img + 'tjeneste-seo-840.webp'" title="SEO" text="Bli funnet av kundene som søker etter det du tilbyr." price="5.000 kr" per="/mnd eks. mva" link="/tjenester/bedrift/seo" linkLabel="Les mer om SEO" />
+            <v2-svc-card [img]="img + 'tjeneste-nettsider-840.webp'" title="Nettsider" text="Raske, mobilvennlige nettsider som gjør besøkende om til kunder." [price]="kr(P.nettside)" link="/tjenester/bedrift/utvikling" linkLabel="Les mer om nettsider" />
+            <v2-svc-card [img]="img + 'tjeneste-design-840.webp'" title="Design" text="Logo, webdesign og grafisk design som gjør deg lett å huske." [price]="kr(P.design)" link="/tjenester/bedrift/design" linkLabel="Les mer om design" />
+            <v2-svc-card [img]="img + 'tjeneste-seo-840.webp'" title="SEO" text="Bli funnet av kundene som søker etter det du tilbyr." [price]="kr(P.seo)" per="/mnd eks. mva" link="/tjenester/bedrift/seo" linkLabel="Les mer om SEO" />
           </div>
         </div>
       </section>
@@ -54,6 +55,8 @@ import { POSTS } from './posts';
 export class BloggPageComponent implements OnInit {
   private seo = inject(SeoService);
   img = IMG;
+  readonly kr = kr;
+  readonly P = PRICES;
   categories = ['Alle', 'Nettsider', 'Design', 'SEO', 'Utvikling'];
   filter = signal('Alle');
   shown = computed(() => (this.filter() === 'Alle' ? POSTS : POSTS.filter((p) => p.category === this.filter())));

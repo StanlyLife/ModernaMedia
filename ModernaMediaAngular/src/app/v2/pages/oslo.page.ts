@@ -4,6 +4,7 @@ import { SeoService } from '../../services/seo.service';
 import { V2_BLOCKS } from '../v2-blocks';
 import { IMG, OSLO_FAQ } from '../v2-data';
 import { applyV2Seo } from '../v2-seo';
+import { kr, PRICES } from '../prices';
 
 /** Local landing page for «digitalbyrå Oslo» searches. */
 @Component({
@@ -35,9 +36,9 @@ import { applyV2Seo } from '../v2-seo';
             <p class="lead">Vi hjelper små og mellomstore bedrifter i Oslo med å bli funnet, skape tillit og få flere henvendelser på nett.</p>
           </div>
           <div class="grid3">
-            <v2-svc-card [img]="img + 'tjeneste-nettsider-840.webp'" title="Nettsider" text="Raske, mobilvennlige nettsider – fra enkle sider til komplette løsninger." price="25.000 kr" link="/tjenester/bedrift/utvikling/hjemmeside-bedrift" linkLabel="Les mer om nettsider" />
-            <v2-svc-card [img]="img + 'tjeneste-seo-840.webp'" title="Lokal SEO" text="Bli funnet når kunder i nærheten søker etter det du tilbyr." price="5.000 kr" per="/mnd eks. mva" link="/tjenester/bedrift/seo" linkLabel="Les mer om SEO" />
-            <v2-svc-card [img]="img + 'tjeneste-design-840.webp'" title="Design" text="Logo og visuell profil som gjør at du skiller deg ut i et konkurransepreget marked." price="7.500 kr" link="/tjenester/bedrift/design" linkLabel="Les mer om design" />
+            <v2-svc-card [img]="img + 'tjeneste-nettsider-840.webp'" title="Nettsider" text="Raske, mobilvennlige nettsider – fra enkle sider til komplette løsninger." [price]="kr(P.nettside)" link="/tjenester/bedrift/utvikling/hjemmeside-bedrift" linkLabel="Les mer om nettsider" />
+            <v2-svc-card [img]="img + 'tjeneste-seo-840.webp'" title="Lokal SEO" text="Bli funnet når kunder i nærheten søker etter det du tilbyr." [price]="kr(P.seo)" per="/mnd eks. mva" link="/tjenester/bedrift/seo" linkLabel="Les mer om SEO" />
+            <v2-svc-card [img]="img + 'tjeneste-design-840.webp'" title="Design" text="Logo og visuell profil som gjør at du skiller deg ut i et konkurransepreget marked." [price]="kr(P.design)" link="/tjenester/bedrift/design" linkLabel="Les mer om design" />
           </div>
         </div>
       </section>
@@ -91,6 +92,8 @@ export class OsloPageComponent implements OnInit {
   private seo = inject(SeoService);
   img = IMG;
   faq = OSLO_FAQ;
+  readonly kr = kr;
+  readonly P = PRICES;
   testimonials = ['sola', 'fjerdingby', 'ostlandet', 'marbella'];
   local = ['Google Bedriftsprofil', 'Lokale landingssider', 'Omtaler og anmeldelser', 'Måling av henvendelser'];
 

@@ -1,3 +1,4 @@
+import { kr, PRICES } from '../app/v2/prices';
 export const SeoUtils = {
   notfound: {
     title: 'Moderna Media - Siden finnes ikke',
@@ -8,28 +9,28 @@ export const SeoUtils = {
   home: {
     title: 'Digitalbyrå i Oslo | Nettside, Design & SEO | Moderna Media',
     description:
-      'Digitalbyrå i Oslo som lager nettsider, design og SEO for bedrifter. Nettsider fra 25.000 kr eks. mva. Få et uforpliktende tilbud – svar innen 2 timer.',
+      `Digitalbyrå i Oslo som lager nettsider, design og SEO for bedrifter. Nettsider fra ${kr(PRICES.nettside)} eks. mva. Få et uforpliktende tilbud – svar innen 2 timer.`,
     keywords:
       'digitalbyrå, nettside bedrift, webdesign oslo, SEO byrå, logo design, webutvikling',
   },
   TjenesterUtvikling: {
     title: 'Nettside for bedrift & webutvikling i Oslo | Moderna Media',
     description:
-      'Vi lager raske, skreddersydde nettsider og programvare for bedrifter i Oslo og hele Norge. Nettsider fra 25.000 kr eks. mva – få et uforpliktende tilbud.',
+      `Vi lager raske, skreddersydde nettsider og programvare for bedrifter i Oslo og hele Norge. Nettsider fra ${kr(PRICES.nettside)} eks. mva – få et uforpliktende tilbud.`,
     keywords:
       'nettside bedrift, webutvikling, React, Angular, Next.js, webapplikasjon',
   },
   TjenesterSeo: {
     title: 'SEO-byrå i Oslo | Søkemotoroptimalisering | Moderna Media',
     description:
-      'Bli synlig på Google med SEO fra 5.000 kr/mnd eks. mva. Teknisk SEO, innholdsproduksjon og off-page SEO med målbare resultater. Bestill gratis SEO-analyse.',
+      `Bli synlig på Google med SEO fra ${kr(PRICES.seo)}/mnd eks. mva. Teknisk SEO, innholdsproduksjon og off-page SEO med målbare resultater. Bestill gratis SEO-analyse.`,
     keywords:
       'SEO, søkemotoroptimalisering, Google rangering, teknisk SEO, lokal SEO',
   },
   TjenesterDesign: {
     title: 'Logo design, webdesign & grafisk design i Oslo | Moderna Media',
     description:
-      'Profesjonell logo design, webdesign og grafisk design for bedrifter. Design fra 7.500 kr eks. mva. Book et uforpliktende møte med Moderna Media i Oslo.',
+      `Profesjonell logo design, webdesign og grafisk design for bedrifter. Design fra ${kr(PRICES.design)} eks. mva. Book et uforpliktende møte med Moderna Media i Oslo.`,
     keywords:
       'logo design, webdesign, grafisk design, merkevarebygging, visuell identitet',
   },
